@@ -1,18 +1,15 @@
 'use client';
-import React from 'react';
 import { Box } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Header from '../../Widgets/Header';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function HeroSection() {
-  const slides = [1, 2, 3]; 
+  const slides = [1, 2, 3];
 
   return (
-    <Box sx={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
-      <Header />
+    <Box sx={{ position: 'relative', width: '1403px',maxWidth: "calc(100% - 40px)", height: '100vh',mt:2,mx:"auto",borderRadius:'20px',overflow:'hidden' }}>
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true, el: '.custom-pagination' }}

@@ -1,15 +1,14 @@
 "use client";
-import React from "react";
-import {
-  Container,
-  Stack,
-  Divider,
-  Typography,
-  Grid,
-  Box,
-} from "@mui/material";
 import { programs } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 const ArrowIcon = () => (
   <svg

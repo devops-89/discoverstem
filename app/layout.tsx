@@ -1,10 +1,11 @@
+import Providers from "@/components/Providers";
+import Footer from "@/components/Widgets/Footer";
+import Header from "@/components/Widgets/Header";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
-import Header from "@/components/Widgets/Header";
-import Footer from "@/components/Widgets/Footer";
-import Providers from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,15 @@ export default function RootLayout({
           <Providers>
             <Header />
             <main>{children}</main>
+            <Toaster position="top-right"
+            toastOptions={{
+            style: {
+                  borderRadius: "10px",
+                  background: "#1C2539",
+                  color: "#fff",
+              },
+            }}
+            />
             <Footer />
           </Providers>
         </AppRouterCacheProvider>
