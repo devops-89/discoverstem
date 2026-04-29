@@ -7,67 +7,68 @@ import Image from "next/image";
 
 const ResearchLabs = () => {
 return (
-    <Box sx={{ py: { xs: 4, md: 6 } }}>
     <Container
-        maxWidth="xl"
-        sx={{
-            pl: { xs: 2, sm: 3, md: 4, lg: 14},
-            pr: { xs: 2, sm: 3, md: 4, lg:  20 },
-        }}
-    >
-        <Box
-        sx={{
-            maxWidth: "1220px",
-            mx: "auto",
-        }}
+            maxWidth="lg"
+            sx={{
+                maxWidth: "min(1196px, 100%)",
+                py: { xs: 5, md: 7 },
+                px: { xs: 3, md: 4 },
+            }}
         >
-        <Grid container spacing={{ xs: 2.5, md: 3, lg: 4 }}>
+        <Grid container spacing={{ xs: "20px", md: "24px", lg: "32px" }}>
             
             {researchLabs.map((lab, index) => (
             <Grid size={{xs:12,sm:6,md:4}} key={index}>
                 
-                <Box>
-                <Box
-                    sx={{
-                    position: "relative",
-                    width: "100%",
-                    height: { xs: "200px", md: "220px" },
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    }}
-                >
-                    <Image
-                    src={lab.image}
-                    alt={lab.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    />
-                </Box>
+            <Box
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  }}
+>
+  {/* Image */}
+  <Box
+    sx={{
+      position: "relative",
+      width: "100%",
+      height: { xs: "200px", md: "179px" },
+      borderRadius: "13px",
+      overflow: "hidden",
+    }}
+  >
+    <Image
+      src={lab.image}
+      alt={lab.title}
+      fill
+      style={{ objectFit: "cover" }}
+    />
+  </Box>
 
-                <Typography
-                    sx={{
-                    mt: 2,
-                    mb:3,
-                    fontFamily: FONT_FAMILY.body,
-                    fontWeight: 18,
-                    fontSize: { xs: "14px", md: "16px" },
-                    color:"#111827",
-                    textAlign: "center",
-                    maxWidth: "280px",
-                    mx: "auto",
-                    }}
-                >
-                    {lab.title}
-                </Typography>
-                </Box>
+  {/* Text BELOW image */}
+  <Typography
+    sx={{
+      mt: 1.5,
+      fontFamily: FONT_FAMILY.body,
+      fontWeight: 500,
+      fontSize: { xs: "14px", md: "18px" },
+      lineHeight:"22px",
+      letterSpacing:"-0.03em",
+      color: "#111827",
+      textAlign: "center",
+      maxWidth: "280px",
+      mb:3,
+    }}
+  >
+    {lab.title}
+  </Typography>
+</Box>
 
             </Grid>
             ))}
 
         </Grid>
-        </Box>
     </Container>
-    </Box>
 );
 };
 

@@ -12,20 +12,19 @@ const ContactData = () => {
         maxWidth: { xs: "100%", md: "600px" },
 
         mx: { xs: "auto", md: 0 },
-
-        px: { xs: 2, sm: 3, md: 0 },
-        pl: { lg: 14 },
       }}
     >
       <Typography
         sx={{
+          width: { xs: "100%", md: "484px" },
+          height: { xs: "auto", md: "61px" },
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: 600,
+          fontWeight: 500,
           fontSize: { xs: "20px", sm: "24px", md: "28px" },
           lineHeight: { xs: "30px", sm: "34px", md: "43px" },
           letterSpacing: "-0.03em",
           color: "#111827",
-          mb: { xs: 2, md: 3 },
+          mb: { xs: 2, md: 6 },
           textAlign: { xs: "center", md: "left" },
         }}
       >
@@ -34,14 +33,16 @@ const ContactData = () => {
 
       <Typography
         sx={{
+          width: { xs: "100%", md: "526px" },
+          height: { xs: "auto", md: "187px" },
           whiteSpace: "pre-line",
           fontFamily: FONT_FAMILY.body,
           fontWeight: 400,
-          fontSize: { xs: "14px", md: "21px" },
-          lineHeight: { xs: "22px", md: "26px" },
-          letterSpacing: "-0.01em",
-          color: "#6B7280",
-          mb: { xs: 3, md: 4 },
+          fontSize: { xs: "14px", md: "22px" },
+          lineHeight: { xs: "22px", md: "43px" },
+          letterSpacing: "-0.03em",
+          color: "#777777",
+          mb: { xs: 3, md: 8 },
           textAlign: { xs: "center", md: "left" },
         }}
       >
@@ -61,11 +62,12 @@ const ContactData = () => {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: 600,
+              fontWeight: 500,
               fontSize: { xs: "20px", sm: "24px", md: "28px" },
               lineHeight: { xs: "30px", sm: "34px", md: "43px" },
+              letterSpacing:"-0.03em",
               color: "#111827",
-              mb: 1,
+              mb: 3,
             }}
           >
             {item.title}
@@ -76,9 +78,10 @@ const ContactData = () => {
               whiteSpace: "pre-line",
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
-              fontSize: { xs: "14px", md: "21px" },
-              lineHeight: { xs: "22px", md: "26px" },
-              color: "#6B7280",
+              fontSize: { xs: "14px", md: "22px" },
+              lineHeight: { xs: "22px", md: "43px" },
+              letterSpacing:"-0.03em",
+              color: "#777777",
             }}
           >
             {item.text}

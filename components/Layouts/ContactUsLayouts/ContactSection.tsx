@@ -1,13 +1,19 @@
 "use client";
 
-import { Box, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import ContactData from "./ContactData";
 import ContactForm from "./ContactForm";
 
 const ContactSection = () => {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 } }}>
-      <Container maxWidth="xl">
+    <Container
+            maxWidth={false}
+            sx={{
+                maxWidth: "min(1196px, 100%)",
+                py: { xs: 5, md: 7 },
+                px: { xs: 3, md: 4 },
+            }}
+        >
 
         <Grid
           container
@@ -22,7 +28,7 @@ const ContactSection = () => {
             size={{xs:12,md:6}}
             sx={{
               display: "flex",
-              justifyContent: { xs: "center", md: "flex-end" },
+              justifyContent: { xs: "center", md: "center" },
             }}
           >
             <ContactForm />
@@ -31,7 +37,6 @@ const ContactSection = () => {
         
 
       </Container>
-    </Box>
   );
 };
 

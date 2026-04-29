@@ -36,14 +36,15 @@ export default function MediaCenterLayout({ blogs = [] }: Props) {
     <Box component="main">
       
       <HeroSection />
-      <Box sx={{
-                pt: { xs: 6, md: 10 },
-                pb: { xs: 2, md: 3 },
-              }}>
-        <Container
-          maxWidth="xl"
-          sx={{ px: { xs: 2, sm: 3, md: 4, lg: 12 } }}
+      <Container
+            maxWidth="lg"
+            sx={{
+                maxWidth: "min(1196px, 100%)",
+                py: { xs: 5, md: 7 },
+                px: { xs: 3, md: 4 },
+            }}
         >
+        
           <Grid container spacing={4} alignItems="flex-start">
 
             <Grid size={{ xs: 12, md: 7.5 }}>
@@ -116,7 +117,6 @@ export default function MediaCenterLayout({ blogs = [] }: Props) {
 
           </Grid>
         </Container>
-      </Box>
       <CtaBanner/>
 
     </Box>

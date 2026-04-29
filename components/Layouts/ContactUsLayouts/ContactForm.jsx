@@ -75,29 +75,35 @@ return (
     sx={{
         width: "100%",
         maxWidth: { xs: "100%", md: "480px" },
-        mx: { xs: "auto", md: 0 },
-        mr: { md: 4, lg: 20 },
+        ml: { xs: "auto", md: "auto" },
+        mr: { xs: "auto", md: 0 },
     }}
     >
     <Box
         component="form"
         onSubmit={formik.handleSubmit}
         sx={{
-        backgroundColor: "#EDE7F6",
-        borderRadius: "16px",
+        width: "100%",
+        maxWidth: "585px",
+        height: { xs: "auto", md: "1320px" },
+        backgroundColor: "#FAF5FF",
+        borderRadius: "18px",
         px: { xs: 2, sm: 3, md: 4 },
         py: { xs: 3, md: 4 },
         }}
     >
         <Typography
         sx={{
+            width: { xs: "100%", md: "400px" },
+            height: { xs: "auto", md: "18px" },
             textAlign: "center",
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: 600,
-            fontSize: { xs: "20px", md: "22px" },
-            lineHeight: "32px",
+            fontWeight: 700,
+            fontSize: { xs: "20px", md: "28px" },
+            lineHeight: "46px",
+            letterSpacing:"-0.02em",
             color: "#111827",
-            mb: 2,
+            mb: 6,
         }}
         >
         Send Your Message To Us
@@ -105,7 +111,7 @@ return (
 
         <Divider sx={{ mb: 3 }} />
 
-        <Grid container spacing={{ xs: 2, md: 2.5 }}>
+        <Grid container sx={{mt:8}} spacing={{ xs: 2, md: 3 }}>
 
         <Grid size={{ xs: 12 }}>
             <TextField
@@ -257,7 +263,7 @@ return (
             label="Enter Your Message"
             fullWidth
             multiline
-            rows={4}
+            rows={6}
             value={formik.values.message}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -269,7 +275,7 @@ return (
 
         </Grid>
 
-        <Box sx={{ mt: 4 }}>
+        <Box sx={{ mt: 8 }}>
         <PrimaryButton type="submit" disabled={formik.isSubmitting}>
             {formik.isSubmitting ? "Sending..." : "Send Message Here"}
         </PrimaryButton>
@@ -278,15 +284,19 @@ return (
 
     <Typography
         sx={{
+        width:{xs:"100%",md:"490px"},
+        height:{xs:"auto",md:"57px"},
+        letterSpacing:"-0.03em",
+        lineHeight:"22px",
         mt: 3,
         fontFamily: FONT_FAMILY.body,
-        fontSize: "14px",
+        fontSize: "18px",
         }}
     >
         <Box component="span" sx={{ fontWeight: 600 }}>
         Privacy Note:
         </Box>{" "}
-        We do not sell or share your contact details with anyone.
+        We do not sell or share your contact details with anyone, ever. We never follow up except for a one-time text to help ensure you don’t miss our email.
     </Typography>
     </Box>
 );

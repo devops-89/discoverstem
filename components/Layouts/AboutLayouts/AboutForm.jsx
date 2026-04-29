@@ -62,8 +62,14 @@ const AboutForm = () => {
     });
 
 return (
-    <Box sx={{ py: { xs: 6, md: 8, lg: 10 } }}>
-    <Container maxWidth="xl">
+    <Container
+        maxWidth={false}
+        sx={{
+            maxWidth: "min(1196px, 100%)",
+            py: { xs: 5, md: 7 },
+            px: { xs: 3, md: 4 },
+        }}
+    >
         <Box
             component="form"
             onSubmit={formik.handleSubmit}
@@ -207,7 +213,6 @@ return (
 
         </Box>
     </Container>
-    </Box>
 );
 };
 

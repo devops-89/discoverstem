@@ -6,22 +6,25 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 
 const FounderAwards = () => {
 return (
-    <Box sx={{ py: { xs: 6, md: 8, lg: 10 } }}>
-    <Container maxWidth="xl">
-        <Box
+    <Container
+        maxWidth={false}
         sx={{
-            px: { xs: 2, sm: 4, md: 6, lg: 12 }, // align with your other sections
+            maxWidth: "min(1196px, 100%)",
+            py: { xs: 5, md: 7 },
+            px: { xs: 3, md: 4 },
         }}
-        >
+    >
         <Typography
             sx={{
+            width: { xs: "100%", md: "292px" },
+            height: { xs: "auto", md: "24px" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
             fontSize: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
             lineHeight: { xs: "32px", md: "40px", lg: "46px" },
             letterSpacing: "-0.02em",
             color: "#111827",
-            mb: { xs: 3, md: 4 },
+            mb: { xs: 3, md: 8 },
             }}
         >
             Awards & Honors
@@ -33,6 +36,8 @@ return (
             <Box sx={{ maxWidth: { md: "560px", xs: "100%" } }}>
                 <Typography
                 sx={{
+                    width: { xs: "100%", md: "533px" },
+                    height: { xs: "auto", md: "77px" },
                     fontFamily: FONT_FAMILY.body,
                     fontSize: { xs: "15px", md: "17px", lg: "18px" },
                     lineHeight: "32px",
@@ -83,11 +88,13 @@ return (
             <Box sx={{ maxWidth: { md: "560px", xs: "100%" } }}>
                 <Typography
                 sx={{
+                    width: { xs: "100%", md: "533px" },
+                    height: { xs: "auto", md: "77px" },
                     fontFamily: FONT_FAMILY.body,
                     fontSize: { xs: "15px", md: "17px", lg: "18px" },
                     lineHeight: "32px",
                     color: "#474A55",
-                    mb: "16px",
+                    mb: "38px",
                 }}
                 >
                 {mirzaFaizan.awards.rightTitle}
@@ -130,10 +137,8 @@ return (
             </Grid>
 
         </Grid>
-        </Box>
 
         </Container>
-    </Box>
 );
 };
 

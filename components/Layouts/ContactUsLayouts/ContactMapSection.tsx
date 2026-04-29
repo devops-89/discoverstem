@@ -6,27 +6,32 @@ import { Box, Container, Grid, IconButton, Typography, } from "@mui/material";
 
 const ContactMapSection = () => {
 return (
-    <Box sx={{ py: { xs: 6, md: 10 } }}>
     <Container
-        maxWidth="xl"
-        sx={{
-        px: { xs: 2, sm: 3, md: 4, lg: 17 },
-        }}
-    >
+            maxWidth="lg"
+            sx={{
+                maxWidth: "min(1196px, 100%)",
+                py: { xs: 5, md: 7 },
+                px: { xs: 3, md: 4 },
+            }}
+        >
         <Grid
         container
-        spacing={{ xs: 4, md: 8 }}
+        spacing={{ xs: 4, md: 6 }}
         alignItems="center"
         >
         <Grid size={{xs:12,md:4}}>
             <Box>
             <Typography
                 sx={{
+                width:{xs:"100%",md:"330px"},
+                height:{xs:"auto",md:"94px"},
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
-                fontSize: { xs: "28px", md: "40px" },
-                lineHeight: { xs: "36px", md: "48px" },
+                fontSize: { xs: "28px", md: "48px" },
+                lineHeight: { xs: "36px", md: "62px" },
+                letterSpacing:"-0.03em",
                 color: "#111827",
+                mb:6,
                 }}
             >
                 DiscoverSTEM <br /> Innovation Lab
@@ -34,11 +39,15 @@ return (
 
             <Typography
                 sx={{
+                width:{xs:"100%",md:"335px"},
+                height:{xs:"auto",md:"58px"},
                 mt: 2,
                 fontFamily: FONT_FAMILY.body,
-                fontSize: { xs: "14px", md: "16px" },
-                lineHeight: "24px",
+                fontSize: { xs: "14px", md: "22px" },
+                lineHeight: "43px",
+                letterSpacing:"-0.03em",
                 color: "#777777",
+                mb:6,
                 }}
             >
                 555 Republic Drive, Suite 201 <br />
@@ -79,12 +88,12 @@ return (
             </Box>
         </Grid>
 
-        <Grid size={{xs:12,md:7.7}}>
+        <Grid size={{xs:12,md:7.7}} sx={{display:"flex",justifyContent:"flex-end"}}>
             <Box
             sx={{
                 width: "100%",
-                height: { xs: "250px", sm: "300px", md: "350px" },
-                borderRadius: "20px",
+                height: { xs: "250px", sm: "300px", md: "358px" },
+                borderRadius: "25px",
                 overflow: "hidden",
                 boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
             }}
@@ -104,7 +113,6 @@ return (
         </Grid>
         </Grid>
     </Container>
-    </Box>
 );
 };
 

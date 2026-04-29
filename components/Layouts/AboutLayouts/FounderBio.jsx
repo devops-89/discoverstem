@@ -2,20 +2,23 @@
 
 import { mirzaFaizan } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 const FounderBio = () => {
   return (
-    <Box sx={{ mt: { xs: 4, md: 6, lg: 6 } }}>
-      <Container maxWidth="xl">
-        
-        <Box
+    <Container
+          maxWidth={false}
           sx={{
-            px: { xs: 2, sm: 4, md: 6, lg: 12 },
+            maxWidth: "min(1196px, 100%)",
+            py: { xs: 5, md: 7 },
+            px: { xs: 3, md: 4 },
           }}
         >
+        
           <Typography
             sx={{
+              width: { xs: "100%", md: "273px" },
+              height: { xs: "auto", md: "24px" },
               fontFamily: FONT_FAMILY.heading,
               fontWeight: 600,
               fontSize: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
@@ -30,7 +33,9 @@ const FounderBio = () => {
 
           <Typography
             sx={{
-              mt: 2,
+              width: { xs: "100%", md: "1160px" },
+              height: { xs: "auto", md: "77px" },
+              mt: 6,
               fontFamily: FONT_FAMILY.body,
               fontSize: { xs: "14px", sm: "16px", md: "17px", lg: "18px" },
               lineHeight: { xs: "24px", md: "28px", lg: "32px" },
@@ -43,10 +48,8 @@ const FounderBio = () => {
           >
             {mirzaFaizan.shortBio}
           </Typography>
-        </Box>
 
-      </Container>
-    </Box>
+    </Container>
   );
 };
 

@@ -7,16 +7,22 @@ import Image from "next/image";
 
 const FounderSection = () => {
   return (
-    <Box sx={{ py: {xs:6,md:10} }}>
-      <Container maxWidth="xl">
+    <Container
+              maxWidth={false}
+              sx={{
+                maxWidth: "min(1196px, 100%)",
+                py: { xs: 5, md: 7 },
+                px: { xs: 3, md: 4 },
+              }}
+            >
         <Grid container spacing={{xs:4,md:6}} alignItems="center">
         <Grid size={{xs:12,lg:6}}>
       <Box sx={{display: "flex",
       justifyContent: { xs: "center", lg: "flex-start" },
-      ml:{lg:12}}}>
+      }}>
     <Box sx={{ position: "relative",
-        width:"100%",
-        maxWidth: "538px",
+        width: { xs: "100%", md: "537.99px" },
+        height: { xs: "auto", md: "650px" },
         aspectRatio:"4/5",
         // height: "650px",
         borderRadius: "18px",
@@ -41,6 +47,8 @@ const FounderSection = () => {
               textAlign:{xs:"center",lg:"left"}
             }}>
             <Typography sx={{
+                            width: { xs: "100%", md: "278px" },
+                            height: { xs: "auto", md: "32px" },
                             fontFamily: FONT_FAMILY.heading,
                             fontWeight: 600,
                             fontSize: { xs: "32px", md: "42px", lg: "48px" },
@@ -48,18 +56,21 @@ const FounderSection = () => {
                             letterSpacing: "-0.03em",
                             color: "#111827",
                             // maxWidth: "278px",
-                            // mt:"45px"
+                            mb:"40px"
                             }}>
                               {mirzaFaizan.name}
             </Typography>
 
         <Typography sx={{
-                          mt: 1,
+                          width: { xs: "100%", md: "431px" },
+                          height: { xs: "auto", md: "15px" },
+                          mt: 2,
+                          mb:4,
                           fontFamily: FONT_FAMILY.body,
                           fontWeight: 600, // SemiBold
                           fontSize: { xs: "18px", md: "20px", lg: "22px" },
                           lineHeight: "30px",
-                          // letterSpacing: "-0.01em",
+                          letterSpacing: "-0.01em",
                           color: "#111827",
                           // maxWidth: "431px",
                           }}>
@@ -67,23 +78,23 @@ const FounderSection = () => {
         </Typography>
 
         <Typography sx={{
+                          width: { xs: "100%", md: "531px" },
+                          height: { xs: "auto", md: "229px" },
                           whiteSpace:"pre-line",
                           mt: 2,
                           fontFamily:FONT_FAMILY.body,
                           fontWeight: 400,
                           fontSize: { xs: "15px", md: "17px", lg: "18px" },
-                          lineHeight: "30px",
-                          // letterSpacing: "0em",
+                          lineHeight: "32px",
                           color: "#474A55",
                           opacity: 0.9,
-                          // maxWidth: "561px",
                           }}>
                           {mirzaFaizan.description}
         </Typography>
 
     <Box
       sx={{
-        mt: { xs: 4, md: 6 },
+        mt: { xs: 4, md: 12},
         display: "flex",
         justifyContent: { xs: "center", lg: "flex-start" },
         alignItems: "center",
@@ -99,6 +110,8 @@ const FounderSection = () => {
 
   <Typography
     sx={{
+      width:"fit-content",
+        height:"auto",
       fontFamily: FONT_FAMILY.body,
       fontWeight: 400,
       fontSize: "16px",
@@ -121,8 +134,8 @@ const FounderSection = () => {
     <IconButton
       key={i}
       sx={{
-        width: "44px",
-        height: "44px",
+        width: "fit-content",
+        height: "auto",
         borderRadius: "50%",
         backgroundColor: "#F6EDFF",
         color: "#4B5563", // icon color
@@ -142,7 +155,6 @@ const FounderSection = () => {
 
         </Grid>
       </Container>
-    </Box>
   );
 };
 
