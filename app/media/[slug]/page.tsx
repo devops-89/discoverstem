@@ -4,8 +4,14 @@ type Props = {
   };
 };
 
-export default function MediaDetailPage({ params }: Props) {
-  const { slug } = params;
+export default async function MediaDetailPage({ params }: Props) {
+  const {slug}  = await params;
+  return (
+    <div style={{ padding: "100px", }}>
+      <h1>Media Detail Page</h1>
 
-  return <h1>Blog Details: {slug}</h1>;
+      <p>Slug: {slug}</p>
+
+    </div>
+  );
 }
