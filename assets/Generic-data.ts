@@ -297,7 +297,7 @@ export const recentPosts: RecentPostType[] = [
 
 export const sipData = {
   title: "Summer Impact Program (SIP)",
-  image:"/Images/Programs/sip/summerImpactt.avif",
+  image:"/Images/Programs/sip/SummerImpact.jpg",
   description1: "Every year, we meet exceptional High School students—those with near-perfect GPAs, top-tier SAT/ACT scores, and a full roster of AP courses - who realize too late that academic excellence alone isn't enough to stand out in elite college admissions. They missed the opportunity to join our 4-year Ivy League Mentorship (ILM) program, where students build startups, file patents, publish research, and cultivate a profile that truly sets them apart.",
   description2:"To bridge that gap, we created the Summer Impact Program (SIP) – an accelerated, high-intensity version of ILM designed to deliver the same prestigious outcomes in 8 transformative weeks. SIP empowers High School students to become innovators, entrepreneurs, and researchers -fast. It's the perfect opportunity for students who are running out of time but still want to craft a college application that demands attention. Time is running out. This summer could change everything.",
   statsTitle: "ILM Success Stories: First Batch Results (2025)",
@@ -448,3 +448,174 @@ export const stepsData: Step[] = [
       "Selected students will receive an offer and can complete enrollment to begin their journey.",
   },
 ];
+
+
+export const expertsData = [
+  {
+    image: "/Images/AboutUs/PanelExperts/Anthony-Gregg.jpg",
+    category: "Genomics, Genetics & Biotechnology",
+    name: "Dr. Anthony Gregg",
+    degree: "MD, MBA",
+    org: "@American College of Obstetricians",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/peterGuida.jpeg",
+    category: "Neuroscience & Cognitive Psychology",
+    name: "Dr. Emily Carter",
+    degree: "PhD",
+    org: "@Harvard University",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/BabarM.jpg",
+    category: "Artificial Intelligence & Machine Learning",
+    name: "Dr. Liam Chen",
+    degree: "MSc",
+    org: "@Stanford University",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/Sanjay.jpg",
+    category: "Environmental Science & Sustainability",
+    name: "Dr. Sarah Johnson",
+    degree: "PhD",
+    org: "@University of California",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/shahin.jpg",
+    category: "Biomedical Engineering & Robotics",
+    name: "Dr. Jason Lee",
+    degree: "MEng",
+    org: "@MIT",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/Anthony-Gregg.jpg",
+    category: "Genomics, Genetics & Biotechnology",
+    name: "Dr. Anthony Gregg",
+    degree: "MD, MBA",
+    org: "@American College of Obstetricians",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/peterGuida.jpeg",
+    category: "Neuroscience & Cognitive Psychology",
+    name: "Dr. Emily Carter",
+    degree: "PhD",
+    org: "@Harvard University",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/BabarM.jpg",
+    category: "Artificial Intelligence & Machine Learning",
+    name: "Dr. Liam Chen",
+    degree: "MSc",
+    org: "@Stanford University",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/Sanjay.jpg",
+    category: "Environmental Science & Sustainability",
+    name: "Dr. Sarah Johnson",
+    degree: "PhD",
+    org: "@University of California",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/shahin.jpg",
+    category: "Biomedical Engineering & Robotics",
+    name: "Dr. Jason Lee",
+    degree: "MEng",
+    org: "@MIT",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/Anthony-Gregg.jpg",
+    category: "Genomics, Genetics & Biotechnology",
+    name: "Dr. Anthony Gregg",
+    degree: "MD, MBA",
+    org: "@American College of Obstetricians",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/peterGuida.jpeg",
+    category: "Neuroscience & Cognitive Psychology",
+    name: "Dr. Emily Carter",
+    degree: "PhD",
+    org: "@Harvard University",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/BabarM.jpg",
+    category: "Artificial Intelligence & Machine Learning",
+    name: "Dr. Liam Chen",
+    degree: "MSc",
+    org: "@Stanford University",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/Sanjay.jpg",
+    category: "Environmental Science & Sustainability",
+    name: "Dr. Sarah Johnson",
+    degree: "PhD",
+    org: "@University of California",
+  },
+  {
+    image: "/Images/AboutUs/PanelExperts/shahin.jpg",
+    category: "Biomedical Engineering & Robotics",
+    name: "Dr. Jason Lee",
+    degree: "MEng",
+    org: "@MIT",
+  },
+];
+
+export const advisoryData = [
+  {
+    title: "ADVISORY & LEADERSHIP",
+    name: "Col. Richard Graham",
+    role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
+    description:
+      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
+      commission, became a T-37 instructor and flight examiner, and
+      was selected for the prestigious U-2 program in 1974.`,
+    image: "/Images/AboutUs/richard.jpg",
+    reverse: false,
+  },
+  {
+    title: "ADVISORY & TECH",
+    name: "Col. Richard Graham",
+    role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
+    description:
+      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
+      commission, became a T-37 instructor and flight examiner, and
+      was selected for the prestigious U-2 program in 1974.`,
+    image: "/Images/AboutUs/richard.jpg",
+    reverse: true,
+  },
+  {
+    title: "AEROSPACE & FUTURE",
+    name: "Col. Richard Graham",
+    role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
+    description:
+      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
+      commission, became a T-37 instructor and flight examiner, and
+      was selected for the prestigious U-2 program in 1974.`,
+    image: "/Images/AboutUs/richard.jpg",
+    reverse: false,
+  },
+    {
+    title: "ADVISORY & TECH",
+    name: "Col. Richard Graham",
+    role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
+    description:
+      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
+      commission, became a T-37 instructor and flight examiner, and
+      was selected for the prestigious U-2 program in 1974.`,
+    image: "/Images/AboutUs/richard.jpg",
+    reverse: true,
+  },
+];
+
+export const stemEducationData = {
+  title: "STEM & Innovation Education – FREE",
+  description:
+    "We take great pride in our vision of making a positive impact in students’ lives. At DiscoverSTEM, we are keen to empower students with distinct capabilities and help them capitalize on their talent and deliver breakthrough innovations. Aligning with our commitment, we extend our support to students who face financial constraints.",
+
+  points: [
+    "We offer 10% to 100% scholarships to students whose parent’s combined annual income is less than $65,000.",
+    "Every year up to 25% of students are offered scholarships to pursue their innovation spirit.",
+    "We also take into account any special circumstances of parents & students and try to support them with as much assistance as we can.",
+    "In honor of their service and contribution to our communities, we ALWAYS offer 100% scholarship to the children of current & ex-Police, and US Armed Forces Officers, irrespective of parent’s family income, with a cap of 3% of our total intake in each program.",
+  ],
+
+  image: "/Images/AboutUs/StemFoundation.png", // replace with your image
+};

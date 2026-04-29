@@ -45,8 +45,10 @@ export default function Header() {
     {
       label: "About Us",
       items: [
+        {label:"Advisory Board",href:"/about/advisory-board"},
         { label: "Our Founder", href: "/about/founder" },
-        { label: "Team", href: "/about/team" },
+        { label: "Panel Of Experts", href: "/about/panel-of-experts" },
+        {label:"DiscoverSTEM Foundation",href:"/about/discoverstem-foundation"}
       ],
     },
     {

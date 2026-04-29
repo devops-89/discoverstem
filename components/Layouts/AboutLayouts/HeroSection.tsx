@@ -27,9 +27,9 @@ export default function HeroSection() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 '&::after': {
-                   content: '""',
-                   position: 'absolute',
-                   inset: 0,
+                  content: '""',
+                  position: 'absolute',
+                  inset: 0,
                    bgcolor: 'rgba(0,0,0,0.1)' // optional subtle overlay if needed to make Header pop
                 }
               }}
