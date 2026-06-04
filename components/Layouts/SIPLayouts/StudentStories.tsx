@@ -18,9 +18,7 @@ return (
     }}
     >
         <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1 }}>
-        <Divider
-        sx={{ width: 36, borderColor: "#9e9e9e", borderWidth: "1.5px" }}
-        />
+        
         <Typography
         sx={{
             width: { xs: "100%", md: "309px" },
@@ -33,7 +31,7 @@ return (
             lineHeight:"43px"
         }}
         >
-        From Ambition to Admisssion!
+        From Ambition to Admission!
         </Typography>
     </Stack>
         <Typography
@@ -48,7 +46,7 @@ return (
         mb: 3,
         }}
     >
-        Hear From Our Students
+       Hear From Our Students
     </Typography>
 
       {/* Cards */}

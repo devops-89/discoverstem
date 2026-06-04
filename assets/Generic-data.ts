@@ -7,6 +7,7 @@ import type {
   mediaCenter,
   NavItem,
   PatentCard,
+  PatentCardData,
   ProgramCard,
   RecentPostType,
   Research,
@@ -34,28 +35,28 @@ export const featureCards: FeatureCard[] = [
   {
     title: "Nurturing Prodigies",
     description:
-      "DiscoverSTEM nurtures a child's inborn capability to think outside the box and solve real-world challenges through critical thinking.",
+      "DiscoverSTEM creates Wunderkind! We nurture a child’s inborn capability to think outside of the box, empower them with logical thinking and critical analysis skills and then challenge them to solve the world's toughest problems.",
     borderColor: "#7b53a1",
     iconBg: "rgba(123,83,161,0.18)",
   },
   {
     title: "Inspiring Innovation",
     description:
-      "Children learn the nuances of innovation while parents are mentored to build an innovation-first culture at home.",
+      "We pride ourselves in providing the right conditioning and stimuli for children to capitalize on their creative thinking. While children learn nuances of innovation, we also mentor parents to develop an ‘innovation culture’ at home.",
     borderColor: "#ee4823",
     iconBg: "rgba(238,72,35,0.16)",
   },
   {
     title: "Launching Startups",
     description:
-      "Students receive complete support to transform ideas into market-ready startups, from validation to company formation.",
+      "We have developed a startup ecosystem for children to transform their ideas and solutions to market-ready commercial innovations. From raising funds to company formation, our students get complete & complimentary support in forming their startups.",
     borderColor: "#f9a51e",
     iconBg: "rgba(249,165,30,0.2)",
   },
   {
     title: "Expert Mentors",
     description:
-      "Exclusive access to innovation facilitators and domain experts who sharpen logic, analysis, and invention skills.",
+      "Exclusive access to Innovation Facilitators and a Panel of Experts who dedicate their time to enhancing the intellectual abilities of growing minds. They mentor students and challenge them towards logical thinking and critical analysis.",
     borderColor: "#619040",
     iconBg: "rgba(98,142,67,0.2)",
   },
@@ -130,7 +131,7 @@ export const mirzaFaizan = {
   image: "/Images/AboutUs/MirzaFaizan.png",
   experience: "10 years of experience",
   description:
-    "Faizan is an aerospace scientist and inventor of the GRIPS system, a real-time runway safety technology that prevents incursions, excursions, and detects debris. He has extensive experience in aerospace, defense, and mission-critical system development. His collision-prediction algorithm is highly appreciated by experts from NASA, the Pentagon-AMRDEC, and the US Air Force. \nHe is frequently consulted by global R&D teams for his expertise in innovation, aerospace design, and aviation safety.",
+    "Faizan is an aerospace scientist and inventor of the GRIPS system, a real-time runway safety technology that prevents incursions, excursions, and detects debris. He has extensive experience in aerospace, defense, and mission-critical system development. His collision-prediction algorithm is highly appreciated by experts from NASA, the Pentagon-AMRDEC, and the US Air Force. \nHe is frequently consulted by global R&D teams for his expertise in innovation, aerospace design, and aviation safety.\n\nAlongside his technical work, Faizan holds a Bachelor’s degree in Psychology with a focus on child learning and development. His exceptional contributions to aerospace and defense earned him a U.S. permanent residency under the prestigious ‘Einstein Visa’ category.",
   email:"mirza.faizan@discoverstem.info",
   socialLinks: {
     facebook: "#",
@@ -150,30 +151,30 @@ export const mirzaFaizan = {
     "In recognition of his remarkable mentoring in STEM, Innovation, Creative Thinking, and enabling school kids to Think, Explore and Innovate, he was awarded:",
 
   left: [
-    "'Business Leaders of Tomorrow Award-2011' by Economic Times and Ernst & Young (Top 5 in India among 50,000 nominees, evaluated by the Jury panel which includes Innovation Advisor to the Prime Minister of India),",
+    "Business Leaders of Tomorrow Award-2011’ by Economic Times and Ernst & Young (Top 5 in India among 50,000 nominees, evaluated by the Jury panel which includes Innovation Advisor to the Prime Minister of India),",
     
-    "'Airline Industry Innovation Award-2013' (Winner),",
+    "‘Airline Industry Innovation Award–2013’ (Winner),",
     
-    "'IHS Jane's Air Traffic Management Award-2014' (shortlisted among the Top 4 runway safety technologies developed globally) by World Air Traffic Management Congress.",
+    "‘IHS Jane’s Air Traffic Management Award–2014’ (shortlisted among the Top 4 runway safety technologies developed globally) by World Air Traffic Management Congress.",
     
-    "Listed among '8 lesser known Biharis who Played a Key Role in Shaping Modern India'",
+    "Listed among ‘8 Lesser known Biharis who Played a Key Role in Shaping Modern India’",
   ],
 
   right: [
-    "Freedoms Foundation's National Award; the 'George Washington Honor Medal (Education)-2020'.",
+    "Freedoms Foundation’s National Award; the ‘George Washington Honor Medal (Education)-2020’",
     
-    "He was also awarded 'Innovative Teacher of the Year-2017' by Conrad Foundation at NASA Kennedy Space Center for mentoring youths for Innovation and Creativity.",
+    "He was also awarded ‘Innovative Teacher of the Year-2017’ by Conrad Foundation at NASA Kennedy Space Center for mentoring youths for Innovation and Creativity.",
     
-    "Faizan also received a 'Teacher's Certificate of Recognition' from the National Space Society at International Space Development Conference 2018 in Los Angeles for mentoring over 25 award-winning students at NASA Ames Space Settlement International Challenge.",
+    "Faizan also received a ‘Teacher’s Certificate of Recognition’ from the National Space Society at International Space Development Conference 2018 in Los Angeles for mentoring over 25 award-winning students at NASA Ames Space Settlement International Challenge.",
     
-    "The Grand Lodge of Texas awarded him with the 'Apollo Science Teaching Award 2017' (an award given in honor of NASA's Apollo Mission).",
+    "The Grand Lodge of Texas awarded him with the ‘Apollo Science Teaching Award 2017’ (an award given in honor of NASA’s Apollo Mission).",
   ],
 }
 };
 
 export const ContactUs:Contact ={
   title:"Contact Us",
-  description:"Get started on your journey to become an innovator, researcher or entrepreneur.",
+  description:"Get Started on Your Journey to Become an Innovator, Researcher or Entrepreneur.",
   image:"/Images/ContactUs/HeroSection.jpg",
 };
 
@@ -185,7 +186,7 @@ export const Heromedia:mediaCenter=
   };
 
 export const contactData = {
-  title: "What happens in a Free Information Session?",
+  title: "What happens in our Free Information Session?",
 
   description:
     "DiscoverSTEM Information Session is the first opportunity to explore more about our programs and discover a clear pathway to help children become innovators, researchers, or entrepreneurs.\nDuring the session, you will learn about:",
@@ -193,7 +194,7 @@ export const contactData = {
   sections: [
     {
       title: "About DiscoverSTEM",
-      text: "Understand our mission, how we empower young minds, and what makes us the world's leading platform for future researchers, inventors, and entrepreneurs.",
+      text: "Understand our mission, how we empower young minds, and what makes us the world’s leading platform for future researchers, inventors, and entrepreneurs.",
     },
     {
       title: "Programs",
@@ -201,11 +202,11 @@ export const contactData = {
     },
     {
       title: "Accomplishments",
-      text: "Get inspired by our students achievements—patents, global awards, published research, and admissions to top universities through their DiscoverSTEM experience.",
+      text: "Get inspired by what our students achieve through DiscoverSTEM: patents, global awards, published research, and top university admissions.",
     },
     {
       title: "Enrollment",
-      text: "Get clarity on how a student can join DiscoverSTEM – from application steps and eligibility to selection steps.\nThe information session is followed by the Tour of the Innovation & Research Labs.",
+      text: "Get clarity on how you can join DiscoverSTEM, from application steps to the final enrollment.The information session is followed by the Tour of the Innovation & Research Labs.",
     },
   ],
 };
@@ -298,12 +299,12 @@ export const recentPosts: RecentPostType[] = [
 export const sipData = {
   title: "Summer Impact Program (SIP)",
   image:"/Images/Programs/sip/SummerImpact.jpg",
-  description1: "Every year, we meet exceptional High School students—those with near-perfect GPAs, top-tier SAT/ACT scores, and a full roster of AP courses - who realize too late that academic excellence alone isn't enough to stand out in elite college admissions. They missed the opportunity to join our 4-year Ivy League Mentorship (ILM) program, where students build startups, file patents, publish research, and cultivate a profile that truly sets them apart.",
-  description2:"To bridge that gap, we created the Summer Impact Program (SIP) – an accelerated, high-intensity version of ILM designed to deliver the same prestigious outcomes in 8 transformative weeks. SIP empowers High School students to become innovators, entrepreneurs, and researchers -fast. It's the perfect opportunity for students who are running out of time but still want to craft a college application that demands attention. Time is running out. This summer could change everything.",
+  description1: "Every year, we meet exceptional high school students, those with near-perfect GPAs, top-tier SAT/ACT scores, and a full roster of AP courses, who realize too late that academic excellence alone isn't enough to stand out in elite college admissions. They missed the opportunity to join our 4-year Ivy League Mentorship (ILM) program, where students build startups, file patents, publish research, and cultivate a profile that truly sets them apart.",
+  description2:"To bridge that gap, we created the Summer Impact Program (SIP), an accelerated, high-intensity version of ILM designed to deliver the same prestigious outcomes in eight transformative weeks. SIP empowers high school students to become innovators, entrepreneurs, and researchers, fast. It's the perfect opportunity for students who are running out of time but still want to craft a college application that demands attention. Time is running out. This summer could change everything.",
   statsTitle: "ILM Success Stories: First Batch Results (2025)",
 
   statsDescription:
-    "The first batch of DiscoverSTEM's Ivy League Mentorship (ILM 2021-25) program has achieved extraordinary success in their college admissions journey. These students have secured acceptances at some of the most prestigious universities in the United States. The exceptional outcome validates our unique approach to nurturing future innovators, researchers, entrepreneurs and leaders.",
+    "The first batch of DiscoverSTEM’s Ivy League Mentorship (ILM 2021-25) program has achieved extraordinary success in their college admissions journey. These students have secured acceptances at some of the most prestigious universities in the United States. The exceptional outcome validates our unique approach to nurturing future innovators, researchers, entrepreneurs and leaders.",
 
   points: [
     "83% ILM Students who graduated high school in 2025 accepted to the Top 10 US Schools",
@@ -316,7 +317,7 @@ export const sipData = {
 export const programDetailsData = {
   title: "Program Details",
   description:
-    "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow. We offer three high impact learning tracks. We mentor you with the goal that you achieve unparalleled and meaningful outcomes by the end of the program.",
+    "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.\n We offer three high impact learning tracks. We mentor you with the goal that you achieve unparalleled and meaningful outcomes by the end of the program.",
 
   cards: [
     {
@@ -325,29 +326,29 @@ export const programDetailsData = {
       description:
         "Commercialize great ideas that can positively impact the world. Launch your start up. Who knows, by the time you finish college, you could be leading the next unicorn.",
       outcome:
-        "Startup incorporated, Seed funding arranged, product R&D completed, prototyping/MVP initiated, website developed and social media presence set up.",
+        "Outcome: Startup incorporated, Seed funding arranged, product R&D completed, prototyping/MVP initiated, website developed and social media presence set up.",
       footer:
-        "Startup launched & credentialed by 15th October, 2025.",
+        "Startup launched and credentialed by 15th October, 2025.",
     },
     {
       title: "Inventors",
       image: "/Images/programs/sip/inventors.jpg",
       description:
-        "Commercialize great ideas that can positively impact the world. Launch your start up. Who knows, by the time you finish college, you could be leading the next unicorn.",
+        "Generate great ideas to solve the problems that matter to our world. Invent, design and create a patentable innovation. Perhaps your invention will change the world positively.",
       outcome:
-        "Startup incorporated, Seed funding arranged, product R&D completed, prototyping/MVP initiated, website developed and social media presence set up.",
+        " One patentable innovation ready, technical design complete, patent application filed at the United States Patent & Trademark Office.",
       footer:
-        "Startup launched & credentialed by 15th October, 2025.",
+        "US Patent Pending status credentialed by 15th October, 2025.",
     },
     {
       title: "Researchers",
       image: "/Images/programs/sip/researchers.jpg",
       description:
-        "Commercialize great ideas that can positively impact the world. Launch your start up. Who knows, by the time you finish college, you could be leading the next unicorn.",
+        "Lead with influence. Convert your out-of-the-box ideas into purposeful research, conducted scientifically, and submit for publication. You might discover the next miracle medicine!",
       outcome:
-        "Startup incorporated, Seed funding arranged, product R&D completed, prototyping/MVP initiated, website developed and social media presence set up.",
+        "One ready-to-publish research, submitted to journals and publishers",
       footer:
-        "Startup launched & credentialed by 15th October, 2025.",
+        "Publication pending status by 15th October, 2025.",
     },
   ],
 };
@@ -386,7 +387,7 @@ export const startupsData: Startup[] = [
     logo: "/Images/Programs/sip/meb.png",
     title: "Mental Emotional Behavioral",
     description:
-      "Unique peer-to-peer feedback system to predict mental, emotional and behavioral wellness",
+      "Unique peer-to-peer feedback system to predict mental, emotional and behavioral wellness.",
   },
 ];
 
@@ -417,37 +418,28 @@ export const studentsData: Student[] = [
 ];
 
 export const stepsData: Step[] = [
-  {
-    step: "Step - 01",
-    title: "Register",
-    description:
-      "Request a free information session through the CONTACT US page.",
-  },
-  {
-    step: "Step - 02",
-    title: "Information Session",
-    description:
-      "We’ll schedule an information and Q&A session where we explain the program and answer your questions.",
-  },
-  {
-    step: "Step - 03",
-    title: "Application",
-    description:
-      "If you meet our eligibility criteria, we will send the Application Form to begin the process.",
-  },
-  {
-    step: "Step - 04",
-    title: "Selection Test",
-    description:
-      "You will be invited to take a selection test designed to evaluate your aptitude and potential.",
-  },
-  {
-    step: "Step - 05",
-    title: "Final Enrollment",
-    description:
-      "Selected students will receive an offer and can complete enrollment to begin their journey.",
-  },
-];
+   { step: "Step - 01", 
+    title: "Register", 
+    description: "Request a free information session through the CONTACT US page.", },
+    { step: "Step - 02",
+       title: "Free Information Session", 
+       description: "We’ll schedule an information and Q&A session where we will provide more details about the program and answer your questions. The information session is followed by a tour of our Innovation & Research Labs. Both the student and parent must attend to proceed.", },
+        { step: "Step - 03",
+           title: "Application Form",
+            description: "If you meet our eligibility criteria and are interested in joining this program, we’ll send the Application Form and schedule the selection test.", },
+             { step: "Step - 04", 
+              title: "Selection Test", 
+              description: `Please fill out the application form and attend our very interesting selection test along with your parents. The selection test comprises of:
+               i. Left and Right Brain Coordination Test
+                ii. Learning Curve Test 
+                iii. Creativity & Family Innovation Culture Test 
+                iv. Abstract, Forward & Backward Thinking Test 
+                v. Interview`, },
+                 { step: "Step - 05",
+                   title: "Final Enrollment",
+                    description: "If you make it to our merit list, we’ll inform you via email and text message to allot you a seat! You may now start your journey to be our next young inventor, researcher, or entrepreneur!", 
+                  }, 
+                  ];
 
 
 export const expertsData = [
@@ -564,49 +556,61 @@ export const advisoryData = [
     name: "Col. Richard Graham",
     role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
     description:
-      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
-      commission, became a T-37 instructor and flight examiner, and
-      was selected for the prestigious U-2 program in 1974.`,
+      `A 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC commission, became a T-37 instructor and flight examiner, and
+was selected for the prestigious U-2 program in 1974.`,
     image: "/Images/AboutUs/richard.jpg",
     reverse: false,
   },
   {
     title: "ADVISORY & TECH",
-    name: "Col. Richard Graham",
+    name: "Dr. Charles Rodenberger",
     role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
     description:
-      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
-      commission, became a T-37 instructor and flight examiner, and
-      was selected for the prestigious U-2 program in 1974.`,
+      `He is a top NASA scientist and a Professor Emeritus in Aerospace Engineering at Texas A&M University. He completed his Master’s in Mechanical Engineering and Doctorate in Aerospace Engineering.`,
     image: "/Images/AboutUs/richard.jpg",
     reverse: true,
   },
   {
     title: "AEROSPACE & FUTURE",
-    name: "Col. Richard Graham",
+    name: "Dr. Abdul A. Baker\n (MD, FAANS)",
     role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
     description:
-      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
-      commission, became a T-37 instructor and flight examiner, and
-      was selected for the prestigious U-2 program in 1974.`,
+      `He is a serial innovator and has several patent-pending innovations, including BCI and AI-powered exoskeleton, a holistic system to\n access the mental, behavioral, and emotional well-being of an\n individual, and a system and method to provide consultation,\n checkup, and surgery to patients remotely.`,
     image: "/Images/AboutUs/richard.jpg",
     reverse: false,
   },
     {
     title: "ADVISORY & TECH",
-    name: "Col. Richard Graham",
+    name: "Sanjay Soni",
     role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
     description:
-      `An 25+ strategic reconnaissance pilot, author, and FAA safety representative, Col. Graham received his USAF ROTC
-      commission, became a T-37 instructor and flight examiner, and
-      was selected for the prestigious U-2 program in 1974.`,
+      `Sameer received a B. S. in Biology from Southern Methodist\n University and worked in the legal department of Ernst & Young,\n LLP. He decided to attend law school and earn his J.D. from\n South Texas College of Law in 1997.
+`,
     image: "/Images/AboutUs/richard.jpg",
     reverse: true,
+  },
+  {
+    title: "ADVISORY & TECH",
+    name: "M. Sameer Ahmed - \nAttorney at Law",
+    role: "Sr. STEM Strategic Innovation Advisor & Aviation Consultant",
+    description:
+      `Sameer received a B. S. in Biology from Southern Methodist \nUniversity and worked in the legal department of Ernst & Young,\n LLP. He decided to attend law school and earn his J.D. from \nSouth Texas College of Law in 1997.`,
+    image: "/Images/AboutUs/richard.jpg",
+    reverse: false,
   },
 ];
 
 export const stemEducationData = {
-  title: "STEM & Innovation Education – FREE",
+   heading: "About DiscoverSTEM Foundation",
+  description2:[
+    "DiscoverSTEM Foundation is a registered 501(c)(3) non-profit organization devoted to helping underprivileged, deprived, and deserving children through scholarships and other financial aid.",
+    "DiscoverSTEM Foundation, an arm of DiscoverSTEM emerged out of our inherent and long-standing desire of seeing children innovate and bring their ideas to reality, and in the process make a positive impact on our communities, our country, and the World at large. However, for many children, getting access to top-quality education remains a distant dream.",
+    "Running state-of-the-art research and innovation labs, mentoring our students for innovation, and filing patent applications for patentable ideas are costly affairs. However, we want every passionate young kid of ours to have access to these facilities without worrying about finances. We help our young geniuses overcome this hurdle by assisting at every possible stage so that they focus on their innovation and realize their true potential.",
+    "The DiscoverSTEM Foundation is our attempt to bring all our financial assistance, scholarships, donations, and other activities under one umbrella. This formal structure will streamline our efforts, formalize a proper structure, and develop a dedicated channel to seek aid and distribute it further to deserving children.",
+    "Since 2016, DiscoverSTEM has come forth to support 167 deserving students(96 boys and 71 girls) who had financial constraints to attend our programs Adhering to our philosophy of not leaving any deserving child behind, so far, we have granted USD 1,012,636 in full/partial scholarships to our young innovators.",
+    "Here are some of the other ways how DiscoverSTEM Foundation has been at the forefront when it comes to assisting children and helping them with scholarships.",
+  ],
+  title: "STEM & Innovation Education - FREE",
   description:
     "We take great pride in our vision of making a positive impact in students’ lives. At DiscoverSTEM, we are keen to empower students with distinct capabilities and help them capitalize on their talent and deliver breakthrough innovations. Aligning with our commitment, we extend our support to students who face financial constraints.",
 
@@ -619,3 +623,132 @@ export const stemEducationData = {
 
   image: "/Images/AboutUs/StemFoundation.png", // replace with your image
 };
+
+
+export const PatentsGrantedSlider =[
+  {
+    title: "Patents Granted to DiscoverSTEM Students",
+ description: "",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "Patents Granted to DiscoverSTEM Students",
+   description: "",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "Patents Granted to DiscoverSTEM Students",
+    description: "",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+];
+
+export const PatentIntroData = {
+  title: "Inventions that left the lab — and entered the patent registry.",
+  description:
+    "Every entry below is a granted patent — issued by the United States Patent & Trademark Office or the Companies and Intellectual Property Commission of South Africa. The inventors? DiscoverSTEM students, with their ages at the time of innovation listed alongside their names. Search, filter by jurisdiction, and explore the breadth of what young innovators are capable of.",
+};
+
+
+
+export const patentsData: PatentCardData[] = [
+  {
+    id: "US-12341",
+    type: "US",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "SA-12342",
+    type: "SA",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "US-12343",
+    type: "US",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "SA-12344",
+    type: "SA",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "US-12345",
+    type: "US",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "SA-12346",
+    type: "SA",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "US-12347",
+    type: "US",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+  {
+    id: "SA-12348",
+    type: "SA",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+   {
+    id: "SA-12349",
+    type: "SA",
+    title: "Relay-based system to launch a projectile",
+      image: "/Images/patent-granted/preview.png",
+    inventorCount: 4,
+    inventors:
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+    googlePatentLink: "#",
+    certificateLink: "#",
+  },
+];

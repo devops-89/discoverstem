@@ -10,19 +10,19 @@ import { FONT_FAMILY } from "@/utils/Fonts";
 const heroSlides = [
   {
     image: heroImage,
-    title: "Texas State Capital Honors DiscoverSTEM and Our Young Innovators",
+    title: "Texas State Capitol Honors DiscoverSTEM and Our Young Innovators",
     description:
-      "The Texas House of Representatives passed a House Resolution #403, commemorating DiscoverSTEM's profound impact on shaping the next generation of innovators & leaders.",
+      "The Texas House of Representatives passed a House Resolution #403, commemorating DiscoverSTEM’s \n profound impact on shaping the next generation of innovators & leaders.",
   },
   {
     image: heroImage,
     title: "600+ Kids Have Filed Patents Through DiscoverSTEM",
     description:
-      "314 kids got their patents granted in the last two years, turning innovative ideas into real intellectual property.",
+      "314 kids got their patents granted in the last two years, turning their innovative ideas into real intellectual property.",
   },
   {
     image: heroImage,
-    title: "Empowering the Next Generation of STEM Leaders",
+    title: "Empowering the Next Generation of Leader",
     description:
       "From Ivy League mentorship to startup ecosystems, DiscoverSTEM opens doors for young innovators across the globe.",
   },
@@ -112,14 +112,15 @@ export default function HeroSection() {
                   </Grid>
                   <Grid size={{ xs: 12, md: 6 }}>
                     <Typography
-                      sx={{
-                        color: "#f0f0f0",
-                        fontSize: { xs: 15, md: 18 },
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {slide.description}
-                    </Typography>
+  sx={{
+    color: "#f0f0f0",
+    fontSize: { xs: 15, md: 18 },
+    lineHeight: 1.6,
+    whiteSpace: "pre-line", // Fixed here
+  }}
+>
+  {slide.description}
+</Typography>
                   </Grid>
                 </Grid>
               </Box>

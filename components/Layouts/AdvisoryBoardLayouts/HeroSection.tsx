@@ -9,19 +9,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 export default function HeroSection() {
   const slides = [
     {
-      title: "Advisory Board",
+      title: "Discover STEM’s Advisory Board",
       description:
-        "A distinguished group of leaders from aerospace, medicine, entrepreneurship, and law — guiding DiscoverSTEM’s mission to inspire the next generation of innovators.",
+        "Our board consists of group leaders from the fields of aerospace, medicine, entrepreneurship, and law, guiding DiscoverSTEM’s  mission to inspire the next generation of innovators.",
     },
     {
-      title: "Advisory Board",
+       title: "Discover STEM’s Advisory Board",
       description:
-        "A distinguished group of leaders from aerospace, medicine, entrepreneurship, and law — guiding DiscoverSTEM’s mission to inspire the next generation of innovators.",
+        "Our board consists of group leaders from the fields of aerospace, medicine, entrepreneurship, and law, guiding DiscoverSTEM’s  mission to inspire the next generation of innovators.",
     },
+    
     {
-      title: "Advisory Board",
+       title: "Discover STEM’s Advisory Board",
       description:
-        "A distinguished group of leaders from aerospace, medicine, entrepreneurship, and law — guiding DiscoverSTEM’s mission to inspire the next generation of innovators.",
+        "Our board consists of group leaders from the fields of aerospace, medicine, entrepreneurship, and law, guiding DiscoverSTEM’s  mission to inspire the next generation of innovators.",
     },
   ];
 
@@ -67,7 +68,7 @@ export default function HeroSection() {
                 <Typography
                   sx={{
                     fontFamily:FONT_FAMILY.heading,
-                    width: { xs: "100%", md: "500px" },
+                    whiteSpace: "nowrap",
                     height: { xs: "auto", md: "42px" },
                     fontSize: "64px",
                     fontWeight: 600,

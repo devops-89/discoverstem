@@ -44,7 +44,7 @@ export default function OurYoungInnovators() {
               fontWeight: 500,
             }}
           >
-            Texas State Capital Honors{" "}
+            Texas State Capitol Honors{" "}
             <Box
               component="span"
               sx={{
@@ -67,9 +67,8 @@ export default function OurYoungInnovators() {
               fontSize: { xs: 15, md: 17 },
             }}
           >
-            The Texas House of Representatives passed a House Resolution #403,
-            commemorating DiscoverSTEM&apos;s profound impact on shaping the
-            next generation of innovators & leaders.
+            The Texas House of Representatives passed a House Resolution #403, commemorating DiscoverSTEM&apos;s profound impact on shaping the next generation of innovators & leaders.
+            
           </Typography>
           <Button
             variant="outlined"

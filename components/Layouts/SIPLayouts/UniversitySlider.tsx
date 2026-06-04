@@ -37,17 +37,17 @@ return (
     <Box sx={{ maxWidth: "1200px", mx: "auto", pr: { md: 4 } }}>
         <Typography
         sx={{
-            width: { xs: "100%", md: "685px" },
+            
             height: { xs: "auto", md: "32px" },
             fontFamily: FONT_FAMILY.heading,
             fontSize: { xs: "20px", md: "48px" },
             lineHeight: "62px",
             letterSpacing: "-0.03em",
             fontWeight: 600,
-            mb: 12,
+            mb: 24,
             }}
         >
-        We Have Sent Our Students To
+       Our Students Have Been Accepted To The World's Best Universities
         </Typography>
 
         {/* SWIPER */}

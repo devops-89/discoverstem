@@ -1,3 +1,5 @@
+import { string } from "yup";
+
 export type NavItem = {
   label: string;
   href: string;
@@ -90,3 +92,23 @@ export interface Step  {
   title: string;
   description: string;
 };
+
+export interface PatentIntroData {
+  title: string;
+  description: string;
+   
+};
+export type PatentType = "US" | "SA";
+
+export type PatentFilterType = "All" | PatentType;
+
+export interface PatentCardData {
+  id: string;
+  type: PatentType;
+  title: string;
+  image: string;
+  inventors: string;
+  inventorCount: number;
+  googlePatentLink?: string;
+  certificateLink?: string;
+}
