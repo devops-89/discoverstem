@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 interface HeroSlide {
   title: string;
-  description: string;
+  description?: string;
   image: string;
 }
 
@@ -87,7 +87,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
                   right: 0,
                   px: { xs: 3, md: 16 },
                   zIndex: 2,
-                  maxWidth: "727px",
+                  maxWidth: "900px",
                 }}
               >
                 <Typography

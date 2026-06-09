@@ -41,48 +41,79 @@ export default function Header() {
     setActiveMenu(label);
   };
 
-  const navItems = [
-    {
-      label: "About Us",
-      items: [
-        {label:"Advisory Board",href:"/about/advisory-board"},
-        { label: "Our Founder", href: "/about/founder" },
-        { label: "Panel Of Experts", href: "/about/panel-of-experts" },
-        {label:"DiscoverSTEM Foundation",href:"/about/discoverstem-foundation"}
-      ],
-    },
-    {
-      label: "Programs",
-      items: [
-        { label: "SIP", href: "/programs/sip" },
-        { label: "ILM", href: "/programs/ilm" },
-        { label: "DIP", href: "/programs/dip" },
-      ],
-    },
-    {
-      label: "Opportunities",
-      items: [
-        { label: "Internships", href: "/opportunities" },
-        { label: "Careers", href: "/opportunities/careers" },
-      ],
-    },
-    {
-      label: "Success Stories",
-      items: [
-        { label: "Students", href: "/success-stories" },
-        { label: "Alumni", href: "/success-stories/alumni" },
-      ],
-    },
-    { label: "Media Center", href: "/media" },
-    {
-      label: "Events",
-      items: [
-        { label: "Workshops", href: "/events" },
-        { label: "Webinars", href: "/events/webinars" },
-      ],
-    },
-    { label: "Contact", href: "/contact" },
-  ];
+ const navItems = [
+  {
+    label: "About Us",
+    items: [
+      { label: "Advisory Board", href: "/about/advisory-board" },
+      { label: "Our Founder", href: "/about/founder" },
+      { label: "Panel Of Experts", href: "/about/panel-of-experts" },
+      {
+        label: "DiscoverSTEM Foundation",
+        href: "/about/discoverstem-foundation",
+      },
+    ],
+  },
+  {
+    label: "Programs",
+    items: [
+      { label: "SIP", href: "/programs/sip" },
+      { label: "ILM", href: "/programs/ilm" },
+      { label: "DIP", href: "/programs/dip" },
+    ],
+  },
+  {
+    label: "Opportunities",
+    items: [
+      { label: "Internships", href: "/opportunities" },
+      { label: "Careers", href: "/opportunities/careers" },
+    ],
+  },
+  {
+    label: "Success Stories",
+    items: [
+      {
+        label: "Patents Granted",
+        href: "/success-stories/patents-granted",
+      },
+      {
+        label: "College Acceptance",
+        href: "/success-stories/college-acceptance",
+      },
+      {
+        label: "Awards & Recognition",
+        href: "/success-stories/awards-recognition",
+      },
+      {
+        label: "Student Innovations",
+        href: "/success-stories/student-innovations",
+      },
+      {
+        label: "Impact",
+        href: "/success-stories/impact",
+      },
+      {
+        label: "UVSET",
+        href: "/success-stories/uvset",
+      },
+      {
+        label: "Young Investors",
+        href: "/success-stories/young-investors",
+      },
+    ],
+  },
+  { label: "Media Center", href: "/media" },
+  {
+    label: "Events",
+    items: [
+      {
+        label: "Meeting With Nobel Laureates",
+        href: "/events/meeting_with_nobel_laureates",
+      },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
+];
 
   return (
     <Box
