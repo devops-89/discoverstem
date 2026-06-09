@@ -57,7 +57,7 @@ return (
                 mb: 6,
             }}
             >
-            Research Papers And Abstracts Published By Our Students
+            Research Papers and Abstracts Published by Our Students
             </Typography>
 
             <Typography
@@ -73,10 +73,8 @@ return (
                 mb:6,
             }}
             >
-            Innovations in Digital Health, Diagnostics, and Wearables (IDHW)
-            is an interdisciplinary annual journal, dedicated to distinguished
-            editorial board and selected by leading experts, including
-            representatives from the World Health Organization (WHO).
+            Innovations in Digital Health, Diagnostics, and Biomarkers (IDDB) is an international peer-reviewed journal, guided by a distinguished editorial board and directed by leading experts, including representatives from the World Health Organization (WHO).
+
             </Typography>
         </Box>
         <Box sx={{ mt: { md: 6 } ,px: { xs: 2.5, md: 6 },}}>

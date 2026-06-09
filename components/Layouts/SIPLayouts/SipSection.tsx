@@ -46,18 +46,19 @@ return (
             lineHeight: "30px",
             letterSpacing: "-0.01em",
             color: "#111827",
+            whiteSpace: "nowrap",
             }}>
         A{" "}
         <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
         Program
         </Box>{" "}
-        that converts{" "}
+        that transforms{" "}
         <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
-        High School Students
+       high school students
         </Box>{" "}
         into{" "}
         <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
-        Inventors, Researchers & Entrepreneurs
+        into inventors, researchers, and entrepreneurs!
         </Box>
         !
         </Typography>
@@ -177,7 +178,7 @@ return (
           <PrimaryButton>
             Request a
             <Box component="span" sx={{ fontWeight: 700, ml: 0.5 }}>
-              FREE Information Session
+               Free Information Session
             </Box>
           </PrimaryButton>
         </Box>

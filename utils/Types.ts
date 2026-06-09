@@ -1,3 +1,5 @@
+import { string } from "yup";
+
 export type NavItem = {
   label: string;
   href: string;
@@ -67,6 +69,7 @@ export type RecentPostType = {
 
 export type Logo={
   image:string;
+   alt?: string;
 };
 
 export type Startup = {
@@ -90,3 +93,207 @@ export interface Step  {
   title: string;
   description: string;
 };
+
+export interface PatentIntroData {
+  title: string;
+  description: string;
+   
+};
+export type PatentType = "US" | "SA";
+
+export type PatentFilterType = "All" | PatentType;
+
+export interface PatentCardData {
+  id: string;
+  type: PatentType;
+  title: string;
+  image: string;
+  inventors: string;
+  inventorCount: number;
+  googlePatentLink?: string;
+  certificateLink?: string;
+}
+export interface StatItem {
+  value: string;
+  color: string;
+  label?: string;
+  flag?: string;
+}
+
+
+
+interface CollegeAcceptance {
+  title: string;
+  description?: string;
+  image: string;
+ 
+}
+
+export interface CommonTextSectionData {
+  title?: string;
+  description?: string;
+  points?: string[];
+}
+
+export type AdmissionBatchFilter =
+  | "All Batches"
+  | "Class of 2025"
+  | "Previous Batches";
+
+export type AdmissionProgramFilter =
+  | "All"
+  | "DIP"
+  | "ILM"
+  | "X-AILM"
+  | "DIP & DEP";
+
+export interface AdmissionStudent {
+  id: number;
+  name: string;
+  initials: string;
+  batch: AdmissionBatchFilter;
+  program: Exclude<AdmissionProgramFilter, "All">;
+  school: string;
+  acceptedTo: string;
+}
+export interface CtaBannerData {
+  title: string;
+  highlight?: string;
+  subtitle?: string;
+  buttonText?: string;
+}
+
+export interface AwardImageItem {
+  image: string;
+  alt: string;
+}
+
+export type InnovationFilter = "All Statuses" | "Granted" | "Pending";
+
+export interface InnovationCardItem {
+  id: number;
+  category: string;
+  filterType: "Granted" | "Pending";
+  statusIcon: string;
+  image: string;
+  title: string;
+  awardIcon?: string;
+  award: string;
+  patentLink: string;
+  certificateLink: string;
+}
+export interface SuccessStoryCard {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+  description: string;
+  size: "large" | "small";
+  position: "left" | "right";
+}
+
+
+export interface TeamMember {
+  initials: string;
+  name: string;
+  role: string;
+  color: string;
+}
+
+export interface StartupDetailData {
+  title: string;
+  subtitle: string;
+
+  teamTitle: string;
+  team: TeamMember[];
+
+  problemTitle: string;
+  problem: string;
+
+  innovationTitle: string;
+  innovation: string[];
+
+  logo: string;
+  startupImage: string;
+
+  status: {
+    title: string;
+    value: string;
+    description: string;
+  };
+
+  patent: {
+    title: string;
+    value: string;
+    description: string;
+  };
+
+  website: {
+    title: string;
+    value: string;
+    buttons: string[];
+  };
+}
+
+export interface MediaSectionData {
+  title: string;
+  items: {
+    id: number;
+    tag: string;
+    source: string;
+    title: string;
+    image: string;
+    visitLink: string;
+    pdfLink: string;
+  }[];
+}
+
+
+export interface CenterDescriptionData {
+  description: string;
+}
+
+export interface QuoteBannerData {
+  quote: string;
+  author: string;
+}
+
+export interface PatentFacesData {
+  title: string;
+  searchPlaceholder: string;
+  students: {
+    id: number;
+    name: string;
+    role: string;
+    image: string;
+    tag?: string;
+  }[];
+}
+
+export interface AchievementStatItem {
+  value: string;
+  label: string;
+  color: string;
+}
+
+export interface GallerySectionData {
+  eyebrow: string;
+  title: string;
+  images: {
+    id: number;
+    image: string;
+    alt: string;
+    variant: "large" | "wide" | "small" | "last";
+  }[];
+}
+
+
+
+export interface VideoSectionData {
+  title: string;
+  subtitle?: string;
+  videoUrl: string;
+}
+export interface ContentSectionData {
+  paragraphs: string[];
+}

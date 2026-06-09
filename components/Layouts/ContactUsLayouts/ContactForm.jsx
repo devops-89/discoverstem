@@ -296,7 +296,9 @@ return (
         <Box component="span" sx={{ fontWeight: 600 }}>
         Privacy Note:
         </Box>{" "}
-        We do not sell or share your contact details with anyone, ever. We never follow up except for a one-time text to help ensure you don’t miss our email.
+       Privacy Note: We do not sell or share your contact details with anyone, EVER.<br/>
+We never follow up except for a one-time text to help ensure you don’t miss our email.
+
     </Typography>
     </Box>
 );

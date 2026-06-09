@@ -9,13 +9,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 export default function HeroSection() {
     const slides = [
     {
-    title: "Foundation of DiscoverSTEM",
+    title: "DiscoverSTEM Foundation",
     },
     {
-    title: "Foundation of DiscoverSTEM",
+    title: "DiscoverSTEM Foundation",
     },
     {
-    title: "Foundation of DiscoverSTEM",
+    title: "DiscoverSTEM Foundation",
     },
 ];
 

@@ -44,6 +44,8 @@ export default function ProgramDetails() {
             lineHeight: "43px",
             letterSpacing: "-0.03em",
             color: "#777777",
+            whiteSpace: "pre-line",
+            mb: 10,
           }}
         >
           {programDetailsData.description}
