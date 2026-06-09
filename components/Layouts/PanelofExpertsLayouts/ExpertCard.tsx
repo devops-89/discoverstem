@@ -12,6 +12,7 @@ return (
         display: "flex",
         gap: 2,
         alignItems: "flex-start",
+        cursor:"pointer",
     }}
     >
     <Box

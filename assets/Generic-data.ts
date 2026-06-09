@@ -34,28 +34,28 @@ export const featureCards: FeatureCard[] = [
   {
     title: "Nurturing Prodigies",
     description:
-      "DiscoverSTEM nurtures a child's inborn capability to think outside the box and solve real-world challenges through critical thinking.",
+      "DiscoverSTEM creates Wunderkind! We nurture a child’s inborn capability to think outside of the box, empower them with logical thinking and critical analysis skills and then challenge them to solve the ,world’s toughest problems.",
     borderColor: "#7b53a1",
     iconBg: "rgba(123,83,161,0.18)",
   },
   {
     title: "Inspiring Innovation",
     description:
-      "Children learn the nuances of innovation while parents are mentored to build an innovation-first culture at home.",
+      "We pride ourselves in providing the right conditioning and stimuli for children to capitalize on their creative thinking. While children learn nuances of innovation, we also mentor parents to develop an ‘innovation culture’ at home.",
     borderColor: "#ee4823",
     iconBg: "rgba(238,72,35,0.16)",
   },
   {
     title: "Launching Startups",
     description:
-      "Students receive complete support to transform ideas into market-ready startups, from validation to company formation.",
+      "We have developed a startup ecosystem for children to transform their ideas and solutions to market-ready commercial innovations. From raising funds to company formation, our students get complete & complimentary support in forming their startups",
     borderColor: "#f9a51e",
     iconBg: "rgba(249,165,30,0.2)",
   },
   {
     title: "Expert Mentors",
     description:
-      "Exclusive access to innovation facilitators and domain experts who sharpen logic, analysis, and invention skills.",
+      "Exclusive access to Innovation Facilitators and a Panel of Experts who dedicate their time to enhancing the intellectual abilities of growing minds. They mentor students and challenge them towards logical thinking and critical analysis.",
     borderColor: "#619040",
     iconBg: "rgba(98,142,67,0.2)",
   },
@@ -457,6 +457,22 @@ export const expertsData = [
     name: "Dr. Anthony Gregg",
     degree: "MD, MBA",
     org: "@American College of Obstetricians",
+    modalData: {
+      title: "Dr. Anthony Gregg, MD, MBA",
+      description: [
+        "Dr. Anthony Gregg is a world-renowned expert in Genomics, Genetics, and Biotechnology. He is a practicing doctor in Obstetrics & Gynecology and has served in various positions from Adjunct Professor to the Chief and Chair of Obstetrics and Gynecology and Human Genetics at some of the top health institutions in the US.",
+
+        "He is a Past Chair of the American College of Obstetricians and Gynecologists Committee on Genetics and previously served in a liaison capacity to that Committee. He spent the early part of his genetics career exploring hypertension during pregnancy using transgenic and knock-out mice.",
+
+        "He co-wrote American College of Medical Genetics and Genomics policy statements on carrier screening and non-invasive prenatal screening for fetal aneuploidy using cell-free fetal DNA.",
+
+        "Dr. Gregg is an avid researcher and has served on the review panel with the National Institute of Health, mentored several post-doctoral fellows across the globe, published over 45 research papers, and spoken at 140+ research events worldwide.",
+
+        "He contributes to clinical practice guidelines and national policies that focus on the introduction of genetic and genomic technologies into clinical practice.",
+
+        "Dr. Gregg is committed to nurturing the next generation of Genomics and Genetics experts. Our Genomics, Biotechnology, and Health Sciences research labs run under his esteemed guidance."
+      ]
+    }
   },
   {
     image: "/Images/AboutUs/PanelExperts/peterGuida.jpeg",

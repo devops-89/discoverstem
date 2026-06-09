@@ -225,14 +225,14 @@ export default function Header() {
                             py: 1.2,
                             borderRadius: 1,
                             "&:hover": {
-                              background: "#f5f5f5",
+                              background: "#7B53A1",
                             },
                           }}
                         >
                           <Typography
                             sx={{
                               color: "#666",
-                              "&:hover": { color: "#000" },
+                              "&:hover": { color: "#FFFFFF" },
                             }}
                           >
                             {sub.label}
