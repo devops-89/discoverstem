@@ -8,6 +8,7 @@ import type {
   AwardImageItem,
 
   BlogCardType,
+  CategoryAwardsData,
   CenterDescriptionData,
   CommonTextSectionData,
   Contact,
@@ -15,6 +16,9 @@ import type {
   CtaBannerData,
   FeatureCard,
   GallerySectionData,
+  ImageContentSplitData,
+  ImageTextHighlightSectionData,
+  ImpactQuoteSectionData,
   InnovationCardItem,
   InnovationFilter,
   Logo,
@@ -22,14 +26,19 @@ import type {
   mediaCenter,
   MediaSectionData,
   NavItem,
+  OutcomesSectionData,
   PatentCard,
   PatentCardData,
+  PatentCertificatesData,
   PatentFacesData,
   ProgramCard,
   QuoteBannerData,
   RecentPostType,
   Research,
+ 
   ResearchLab,
+  ResearchMentorTextData,
+  ResearchModulesSectionData,
   SpotlightCard,
   Startup,
   StartupDetailData,
@@ -1958,5 +1967,498 @@ praised our student’s work with a comment – “That’s remarkable work!”`
 
     `This event marks a significant achievement in our mission to nurture the next generation of researchers and<br />
 innovators through meaningful global academic experiences.`,
+  ],
+};
+
+export const texasInnovationDayContentData :ContentSectionData = {
+  paragraphs: [
+    `On March 18, 2025, DiscoverSTEM achieved a historic milestone as the Texas House of Representatives honored the organization with House Resolution 403, officially declaring the day as DiscoverSTEM Innovation Day. This remarkable honor highlights DiscoverSTEM’s commitment to empowering young innovators and fostering a culture of creativity, research, and entrepreneurship.`,
+
+    `The event, held at the Texas State Capitol, was attended by DiscoverSTEM’s founder, Mr. Faizan, and a group of outstanding young innovators. Their work—spanning patented inventions and scientific breakthroughs—was commended by many Texas state representatives, underscoring the organization’s powerful impact on youth development in the field of innovation, research & entrepreneurship.`,
+
+    `House Resolution 403 acknowledges the profound impact of DiscoverSTEM’s programs in equipping students with critical thinking skills, fostering an innovative mindset, and providing hands-on learning experiences. Through unique programs such as the Summer Impact Program (SIP), DiscoverSTEM Innovation Program (DIP), and Ivy League Mentorship (ILM), the organization has mentored hundreds of students, helping them translate their ideas into real-world solutions.`,
+
+    `Mr. Faizan expressed heartfelt gratitude, calling the recognition a testament to the spirit of curiosity and perseverance. He reaffirmed DiscoverSTEM’s mission to inspire the next generation of changemakers—regardless of background—through inclusive education and scholarships. As DiscoverSTEM celebrates this milestone, it continues its commitment to building future-ready leaders equipped to solve complex global challenges through innovation and vision.`,
+  ],
+};
+
+
+export const innovationDayHighlightsData:ImageContentSplitData = {
+  topSection: {
+    description: [
+      "DiscoverSTEM Innovation Day 2025 was a remarkable celebration of young minds, showcasing their innovations, research, and entrepreneurial skills. Students who secured patents for their inventions were honored with a patent certificate, marking a milestone achievement in their journey of innovation.",
+      "Adding to this year's prestige, the Texas State Capitol honored DiscoverSTEM and its young innovators in March 2025 with an official House Resolution #403, recognizing their profound impact on shaping future leaders. Each student was invited on stage and presented with a personalized letter from the Capitol, making it a once-in-a-lifetime recognition.",
+    ],
+    image: "/Images/innovation-day/top-image.png",
+  },
+
+  bottomSection: {
+    image: "/Images/innovation-day/bottom-image.png",
+    description: [
+      "The highlight of the event was the Grand Finale of Top Young Innovators 2025, where the most promising student innovators took center stage. Their visionary work, bold thinking, and relentless pursuit of solutions for a better world were celebrated with great honor.",
+      "Each innovation highlighted DiscoverSTEM's mission to inspire, mentor, and empower the next generation of changemakers. To close the day on an exciting note, the Innovation Quiz 2025 challenged participants with thought-provoking questions and rewarded winners with exclusive Apple merchandise, turning the event into a perfect blend of learning, recognition, and inspiration.",
+    ],
+  },
+};
+
+export const patentCertificatesData: PatentCertificatesData = {
+  title: "Patent Certificates Granted in 2024-25",
+
+  items: [
+    {
+      id: 1,
+      label: "PATENT #01",
+      image: "/Images/patents/certificate-1.png",
+      videoUrl: "https://youtube.com/watch?v=1",
+    },
+    {
+      id: 2,
+      label: "PATENT #02",
+      image: "/Images/patents/certificate-2.png",
+      videoUrl: "https://youtube.com/watch?v=2",
+    },
+    {
+      id: 3,
+      label: "PATENT #03",
+      image: "/Images/patents/certificate-3.png",
+      videoUrl: "https://youtube.com/watch?v=3",
+    },
+    {
+      id: 4,
+      label: "PATENT #04",
+      image: "/Images/patents/certificate-4.png",
+      videoUrl: "https://youtube.com/watch?v=4",
+    },
+    {
+      id: 5,
+      label: "PATENT #05",
+      image: "/Images/patents/certificate-5.png",
+      videoUrl: "https://youtube.com/watch?v=5",
+    },
+  ],
+};
+
+
+
+export const grandFinaleSectionData: ImageTextHighlightSectionData = {
+  title: "Grand Finale of America's Top Young Innovators\n2025",
+
+  image: "/Images/innovation-day/grand-finale.png",
+
+  imageAlt: "Grand Finale of America's Top Young Innovators 2025",
+
+  content: `
+    The DiscoverSTEM Innovation Day 2025 event featured the Grand Finale of America’s Top Young Innovators 2025,
+    a celebration of young visionaries pushing the boundaries of science, technology, and innovation. From across
+    the nation, students showcased groundbreaking ideas with the power to shape a healthier, smarter, and more
+    sustainable future.
+
+    <br /><br />
+
+    Among the standout participants was <strong>Arjun Kommidi</strong>, who earned the coveted title of
+    <strong> America’s Top Young Innovator 2025</strong>. Arjun was recognized for his remarkable contributions
+    and his leadership as Chief Technology Officer in launching an app designed to record and report the mental,
+    emotional, behavioral, and intellectual well-being of teenagers. His work represents a bold, practical,
+    and forward-looking approach to addressing some of the most urgent mental health challenges facing today’s youth.
+  `,
+};
+
+export const categoryAwardsData = {
+  title: "Category Awards",
+
+  items: [
+    {
+      question: "Best Innovation in Neurotechnology & Brain-Computer Interface",
+      answer: [
+        `<strong>Dummy Student One</strong> was awarded for building a smart neurotechnology concept that explores how brain-computer interface systems can support accessibility and assistive communication.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Computer Science",
+      answer: [
+        `<strong>Dummy Student Two</strong> received recognition for developing a computer science project focused on problem-solving, automation, and scalable digital systems.`,
+      ],
+    },
+    {
+      question: "Best Innovation in AI Category",
+      answer: [
+        `<strong>Ashaz Haque</strong> and <strong>Hadiya Sameen</strong> were jointly awarded for developing the AI algorithm behind the MyUNI app, a groundbreaking tool designed to record and report the mental, emotional, behavioral, and intellectual well-being of teenagers.`,
+        `<strong>Aryanshi Sundaram</strong> was recognized for her outstanding research in Green AI, using a comparative study of different LLM and SLM models.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Healthcare Category",
+      answer: [
+        `<strong>Dummy Student Three</strong> was honored for creating a healthcare innovation that supports early awareness, patient care, and better access to health-related information.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Robotics Category",
+      answer: [
+        `<strong>Dummy Student Four</strong> earned this award for designing a robotics project that demonstrates creativity, engineering skills, and real-world problem-solving.`,
+      ],
+    },
+  ],
+};
+export const researchMentorsTextData: ResearchMentorTextData = {
+  title: "Research Mentors",
+  content: [
+    {
+      type: "paragraph",
+      text: `At DiscoverSTEM, <strong>research mentorship is not delegated – it is delivered by the best.</strong><br />
+Unlike many research programs that pair students with college graduate students, we have taken a bold and unmatched approach. We have invited some of the <strong>world’s foremost experts</strong> – leaders in their respective fields – to personally mentor our students. Under their esteemed guidance, our young researchers receive the kind of mentorship typically reserved for graduate-level scholars.`,
+    },
+    {
+      type: "heading",
+      text: "Our distinguished research mentors support students by:",
+    },
+    {
+      type: "list",
+      items: [
+        "Recommending and approving high-impact, relevant research topics",
+        "Hosting personalized kickoff sessions to outline methodology, available resources, and strategic approaches",
+        "Providing ongoing, expert-level mentorship throughout the research process",
+        "Reviewing manuscripts prior to journal submission to ensure academic excellence",
+        "Advising on best-fit journals and conferences for publication and presentation",
+        "Instilling scientific rigor, intellectual curiosity, and the highest standards of research ethics",
+      ],
+    },
+  ],
+};
+
+
+export const HEADER_DATA: NavItem[] = [
+  {
+    label: "About Us",
+    items: [
+      {
+        label: "Advisory Board",
+        href: "/about/advisory-board",
+      },
+      {
+        label: "Our Founder",
+        href: "/about/founder",
+      },
+      {
+        label: "Panel Of Experts",
+        href: "/about/panel-of-experts",
+      },
+      {
+        label: "DiscoverSTEM Foundation",
+        href: "/about/discoverstem-foundation",
+      },
+    ],
+  },
+
+  {
+    label: "Programs",
+    items: [
+      {
+        label: "SIP",
+        href: "/programs/sip",
+      },
+      {
+        label: "ILM",
+        href: "/programs/ilm",
+      },
+      {
+        label: "DIP",
+        href: "/programs/dip",
+      },
+    ],
+  },
+
+  {
+    label: "Opportunities",
+    items: [
+      {
+        label: "Research",
+        items: [
+          {
+            label: "Research Mentors",
+            href: "/opportunities/research/research_mentors",
+          },
+          {
+            label: "Aerospace Research Lab",
+            href: "/opportunities/research/aerospace_research_lab",
+          },
+        ],
+      },
+      {
+        label: "Startup Opportunities",
+        href: "/opportunities/startup_opportunities",
+      },
+      {
+        label: "Partners Ecosystem",
+        href: "/opportunities/partners_ecosystem",
+      },
+    ],
+  },
+
+  {
+    label: "Success Stories",
+    items: [
+      {
+        label: "Patents Granted",
+        href: "/success-stories/patents-granted",
+      },
+      {
+        label: "College Acceptance",
+        href: "/success-stories/college-acceptance",
+      },
+      {
+        label: "Awards & Recognition",
+        href: "/success-stories/awards-recognition",
+      },
+      {
+        label: "Student Innovations",
+        href: "/success-stories/student-innovations",
+      },
+      {
+        label: "Impact",
+        href: "/success-stories/impact",
+      },
+      {
+        label: "UVSET",
+        href: "/success-stories/uvset",
+      },
+      {
+        label: "Young Investors",
+        href: "/success-stories/young-investors",
+      },
+    ],
+  },
+
+  {
+    label: "Media Center",
+    href: "/media",
+  },
+
+  {
+    label: "Events",
+    items: [
+      {
+        label: "Meeting With Nobel Laureates",
+        href: "/events/meeting_with_nobel_laureates",
+      },
+      {
+        label: "Innovation Day at Texas State Capitol",
+        href: "/events/innovation_day_at_texas_state_capitol",
+      },
+      {
+        label: "Innovation Day 2025",
+        href: "/events/innovation_day_2025",
+      },
+    ],
+  },
+
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
+
+
+export const impactQuoteSectionData: ImpactQuoteSectionData = {
+  tag: "THE IMPACT",
+
+  description: `
+    Recently, DiscoverSTEM students engaged in a rare three-hour scientific
+    exchange with two <span>Nobel Laureates</span> in a single day. At the
+    conclusion of this session, one of the Laureates praised our student's work:
+  `,
+
+  quote: `"That's remarkable work."`,
+
+  footerText:
+    `A powerful validation of the caliber, depth, and promise of research emerging from 
+    DiscoverSTEM.`,
+};
+
+export const aerospaceResearchLabTextData: ResearchMentorTextData = {
+  title: "Aerospace Research Lab",
+  content: [
+    {
+      type: "paragraph",
+      text: `Space is the NEXT BIG destination of humanity! With private players taking giant leaps in space travel, it is evident that the second space race is going on and aerospace has become one of the in-demand disciplines in today's era.`,
+    },
+    {
+      type: "paragraph",
+      text: `Our aerospace research lab provides exposure to the basic and advanced concepts in aerospace as well as present and future challenges in the aerospace industry. Innovators at DiscoverSTEM gain great insights into the design and engineering of aircraft, spacecraft, and satellites and then indulge further in solving some real-world challenges in this field.`,
+    },
+    {
+      type: "heading",
+      text: "At our Aerospace Research Lab, we provide our students:",
+    },
+    {
+      type: "list",
+      items: [
+        "Domain-specific training.",
+        "Activities to understand domain concepts.",
+        "One large project at the end of the module.",
+        "We leave our students by introducing them to some of the most pressing problems in the aerospace domain, encouraging them to find solutions to these problems.",
+      ],
+    },
+  ],
+};
+
+
+export const aerospaceOutcomesData: OutcomesSectionData = {
+  eyebrow: "Designed For Outcomes",
+
+  title: "Inspired by the world's\nbest universities.",
+
+  description:
+    "Our Domain Research Lab Curriculum is inspired by curriculums of some of the best universities in the world. The labs are designed with three outcomes in mind:",
+
+  items: [
+    {
+      number: "1",
+      text: "Introduce you to the basic and advanced topics of these domains through interesting and easy-to-understand modules.",
+    },
+    {
+      number: "2",
+      text: "Introduce you to some of the challenges in these domains and encourage you to brainstorm ways to solve them.",
+    },
+    {
+      number: "3",
+      text: "Enable you to find your passion early and empower you to make better, more informed career decisions later in life.",
+    },
+  ],
+};
+
+export const aerospaceModulesData: ResearchModulesSectionData = {
+  title: "Aerospace Research Lab—14 Modules",
+  buttonText: "Download Curriculum",
+  modules: [
+    {
+      id: 1,
+      title: "Introduction & Team Building",
+      description:
+        "Build collaborative foundations and learn to work effectively in innovation teams.",
+      duration: "2 weeks",
+      level: "Beginner",
+    },
+    {
+      id: 2,
+      title: "Introduction to Innovation",
+      description:
+        "Discover the principles, mindset, and processes that drive innovative thinking.",
+      duration: "3 weeks",
+      level: "Beginner",
+    },
+    {
+      id: 3,
+      title: "How to Think Like an Innovator",
+      description:
+        "Master asking the right questions and finding meaningful answers.",
+      duration: "4 weeks",
+      level: "Intermediate",
+    },
+    {
+      id: 4,
+      title: "Brainstorming & Persuasion",
+      description:
+        "Generate breakthrough ideas and communicate them with clarity and confidence.",
+      duration: "3 weeks",
+      level: "Intermediate",
+    },
+    {
+      id: 5,
+      title: "Introduction to Patents",
+      description:
+        "Learn how to protect intellectual property and navigate the patent landscape.",
+      duration: "2 weeks",
+      level: "Intermediate",
+    },
+    {
+      id: 6,
+      title: "Research & Problem Dividing",
+      description:
+        "Break down complex problems into manageable components for effective research.",
+      duration: "4 weeks",
+      level: "Advanced",
+    },
+    {
+      id: 7,
+      title: "Establishing Research Statements",
+      description:
+        "Craft precise problem statements that drive focused, impactful research.",
+      duration: "3 weeks",
+      level: "Advanced",
+    },
+    {
+      id: 8,
+      title: "The Logic of Scientific Discovery",
+      description:
+        "Apply scientific reasoning to validate hypotheses and uncover new insights.",
+      duration: "5 weeks",
+      level: "Advanced",
+    },
+    {
+      id: 1,
+      title: "Introduction & Team Building",
+      description:
+        "Build collaborative foundations and learn to work effectively in innovation teams.",
+      duration: "2 weeks",
+      level: "Beginner",
+    },
+    {
+      id: 2,
+      title: "Introduction to Innovation",
+      description:
+        "Discover the principles, mindset, and processes that drive innovative thinking.",
+      duration: "3 weeks",
+      level: "Beginner",
+    },
+    {
+      id: 3,
+      title: "How to Think Like an Innovator",
+      description:
+        "Master asking the right questions and finding meaningful answers.",
+      duration: "4 weeks",
+      level: "Intermediate",
+    },
+    {
+      id: 4,
+      title: "Brainstorming & Persuasion",
+      description:
+        "Generate breakthrough ideas and communicate them with clarity and confidence.",
+      duration: "3 weeks",
+      level: "Intermediate",
+    },
+    {
+      id: 5,
+      title: "Introduction to Patents",
+      description:
+        "Learn how to protect intellectual property and navigate the patent landscape.",
+      duration: "2 weeks",
+      level: "Intermediate",
+    },
+    {
+      id: 6,
+      title: "Research & Problem Dividing",
+      description:
+        "Break down complex problems into manageable components for effective research.",
+      duration: "4 weeks",
+      level: "Advanced",
+    },
+    {
+      id: 7,
+      title: "Establishing Research Statements",
+      description:
+        "Craft precise problem statements that drive focused, impactful research.",
+      duration: "3 weeks",
+      level: "Advanced",
+    },
+    {
+      id: 8,
+      title: "The Logic of Scientific Discovery",
+      description:
+        "Apply scientific reasoning to validate hypotheses and uncover new insights.",
+      duration: "5 weeks",
+      level: "Advanced",
+    },
   ],
 };

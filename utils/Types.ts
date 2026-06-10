@@ -1,9 +1,6 @@
 import { string } from "yup";
 
-export type NavItem = {
-  label: string;
-  href: string;
-};
+
 
 export type FeatureCard = {
   title: string;
@@ -297,3 +294,90 @@ export interface VideoSectionData {
 export interface ContentSectionData {
   paragraphs: string[];
 }
+
+export interface ImageContentSplitData {
+  topSection: {
+    description: string[];
+    image: string;
+  };
+  bottomSection: {
+    image: string;
+    description: string[];
+  };
+}
+
+export interface PatentCertificatesData {
+  title: string;
+  items: {
+    id: number;
+    label: string;
+    image: string;
+    videoUrl: string;
+  }[];
+}
+
+export interface ImageTextHighlightSectionData {
+  title: string;
+  image: string;
+  imageAlt: string;
+  content: string;
+}
+export interface CategoryAwardsData {
+  title: string;
+  items: {
+    question: string;
+    answer?: string[];
+  }[];
+}
+export interface ResearchMentorTextData {
+  title: string;
+  content: (
+    | {
+        type: "paragraph";
+        text: string;
+      }
+    | {
+        type: "heading";
+        text: string;
+      }
+    | {
+        type: "list";
+        items: string[];
+      }
+  )[];
+}
+
+export interface NavItem {
+  label: string;
+  href?: string;
+  items?: NavItem[];
+}
+
+export interface ImpactQuoteSectionData {
+  tag: string;
+  description: string;
+  quote: string;
+  footerText: string;
+}
+export interface OutcomesSectionData {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: {
+    number: string;
+    text: string;
+  }[];
+}
+
+export interface ResearchModulesSectionData {
+  title: string;
+  buttonText: string;
+  modules: {
+    id: number;
+    title: string;
+    description: string;
+    duration: string;
+    level: "Beginner" | "Intermediate" | "Advanced";
+  }[];
+}
+
