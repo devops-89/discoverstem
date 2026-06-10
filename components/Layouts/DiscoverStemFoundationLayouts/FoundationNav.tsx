@@ -2,7 +2,6 @@
 
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Chip, Container } from "@mui/material";
-import { useState } from "react";
 
 const categories = [
     "Foundation",
@@ -15,9 +14,12 @@ const categories = [
     "Mentoring"
 ];
 
-export default function FoundationNav() {
-  const [active, setActive] = useState("All experts");
+interface FoundationNavProps {
+  active: string;
+  onChange: (category: string) => void;
+}
 
+export default function FoundationNav({ active, onChange }: FoundationNavProps) {
   return (
     <Container
     maxWidth={false}
@@ -31,28 +33,35 @@ export default function FoundationNav() {
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          gap: { xs: 1, md: 1.5 },
           width: "100%",
-          height: "64px",
+          minHeight: "64px",
           px: { xs: "12px", md: "16px" },
+          py: 1.5,
           borderRadius: "30px",
           backgroundColor: "#F3EDF7",
+          overflowX: "auto",
+          flexWrap: "nowrap",
+          scrollBehavior: "smooth",
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
         }}
       >
         {categories.map((item) => (
           <Chip
             key={item}
             label={item}
-            onClick={() => setActive(item)}
+            onClick={() => onChange(item)}
             sx={{
               height: "44px",
-              px: "16px",
+              px: "8px",
               borderRadius: "30px",
               fontFamily: FONT_FAMILY.heading,
               fontWeight: 500,
               fontSize: "15px",
               lineHeight: "20px",
               whiteSpace: "nowrap",
+              flexShrink: 0,
 
               backgroundColor:
                 active === item ? "#7B53A1" : "transparent",

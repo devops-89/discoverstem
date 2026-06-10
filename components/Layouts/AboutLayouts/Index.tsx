@@ -3,7 +3,6 @@ import { Box } from '@mui/material';
 import CtaBanner from '../HomeLayouts/CtaBanner';
 import AboutForm from './AboutForm';
 import FounderAwards from './FounderAwards';
-import FounderBio from './FounderBio';
 import FounderSection from './FounderSection';
 import HeroSection from './HeroSection';
 
@@ -12,7 +11,7 @@ export default function AboutUsLayout() {
     <Box component="main">
       <HeroSection />
       <FounderSection/>
-      <FounderBio/>
+      {/* <FounderBio/> */}
       <FounderAwards/>
       <AboutForm/>
       <CtaBanner/>

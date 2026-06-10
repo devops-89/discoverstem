@@ -1,4 +1,3 @@
-import { string } from "yup";
 
 export type NavItem = {
   label: string;
@@ -296,4 +295,16 @@ export interface VideoSectionData {
 }
 export interface ContentSectionData {
   paragraphs: string[];
+}
+
+import { StaticImageData } from "next/image";
+
+export interface AdvisoryMember {
+  title: string;
+  name: string;
+  role: string;
+  desc:string,
+  description: string[];
+  image: string | StaticImageData;
+  reverse: boolean;
 }

@@ -1,11 +1,55 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import { expertsData } from "@/assets/Generic-data";
 import { Container, Grid } from "@mui/material";
 import ExpertCard from "./ExpertCard";
+import ExpertsModal from "./ExpertsModal";
 
-export default function ExpertsSection() {
-    return (
+const categoryTabMap: Record<string, string> = {
+  "Genomics, Genetics & Biotechnology": "BioTech & Health",
+  "Molecular Biologist": "BioTech & Health",
+  "Islet Cell Transplant": "BioTech & Health",
+  "Transplant Immunologist": "BioTech & Health",
+  "Bioengineering": "BioTech & Health",
+  "Clinical and Molecular Diagnostics": "BioTech & Health",
+  "Oncology Therapeutic Area": "BioTech & Health",
+  "Pharmaceutics": "BioTech & Health",
+  "Laboratory Services & Biobanking": "BioTech & Health",
+  "Oncology & Healthcare Innovation": "BioTech & Health",
+  "Artificial Intelligence & Machine Learning": "AI & Tech",
+  "Professor of Practice, CSE, Texas A&M": "AI & Tech",
+  "Blockchain & Fintech": "Finance & Fintech",
+  "Finance & Investment": "Finance & Fintech",
+  "Fintech": "Finance & Fintech",
+  "Aerospace": "Aerospace",
+  "Energy & Environment": "Energy & Inv",
+  "Entrepreneur": "Design & Business",
+  "Product Design": "Design & Business",
+  "Product Design & Innovations": "Design & Business",
+  "Marketing": "Design & Business",
+};
+
+function getTab(category: string): string {
+  return categoryTabMap[category] || "BioTech & Health";
+}
+
+interface Props {
+  activeTab: string;
+}
+
+export default function ExpertsSection({ activeTab }: Props) {
+  const [selectedExpert, setSelectedExpert] = useState<typeof expertsData[number] | null>(null);
+
+  const filtered = useMemo(
+    () =>
+      activeTab === "All experts"
+        ? expertsData
+        : expertsData.filter((item) => getTab(item.category) === activeTab),
+    [activeTab]
+  );
+
+  return (
     <Container
     maxWidth={false}
     sx={{
@@ -15,12 +59,18 @@ export default function ExpertsSection() {
     }}
     >
     <Grid container rowSpacing={6} columnSpacing={20}>
-        {expertsData.map((item, index) => (
+        {filtered.map((item, index) => (
         <Grid key={index} size={{ xs: 12, md: 6 }}>
-            <ExpertCard data={item} />
+            <ExpertCard data={item} onClick={() => setSelectedExpert(item)} />
         </Grid>
         ))}
     </Grid>
+
+    <ExpertsModal
+      open={!!selectedExpert}
+      onClose={() => setSelectedExpert(null)}
+      data={selectedExpert}
+    />
     </Container>
 );
 }

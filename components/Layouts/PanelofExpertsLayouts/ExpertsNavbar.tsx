@@ -2,7 +2,6 @@
 
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Chip, Container } from "@mui/material";
-import { useState } from "react";
 
 const categories = [
   "All experts",
@@ -14,8 +13,12 @@ const categories = [
   "Design & Business",
 ];
 
-export default function ExpertsNavbar() {
-  const [active, setActive] = useState("All experts");
+interface Props {
+  active: string;
+  onChange: (tab: string) => void;
+}
+
+export default function ExpertsNavbar({ active, onChange }: Props) {
 
   return (
     <Container
@@ -42,7 +45,7 @@ export default function ExpertsNavbar() {
           <Chip
             key={item}
             label={item}
-            onClick={() => setActive(item)}
+            onClick={() => onChange(item)}
             sx={{
               height: "44px",
               px: "16px",
