@@ -3,15 +3,17 @@ import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-export default function ExpertCard({ data }: any) {
+export default function ExpertCard({ data, onClick }: any) {
 return (
     <Box
+    onClick={onClick}
     sx={{
         width:{xs:"100%",md:"471px"},
         height:{xs:"auto",md:"150px"},
         display: "flex",
         gap: 2,
         alignItems: "flex-start",
+        cursor:"pointer",
     }}
     >
     <Box
@@ -43,7 +45,7 @@ return (
             fontFamily: FONT_FAMILY.heading,
             fontWeight:300,
             lineHeight:"32px",
-            mb: 0.5,
+            mb: 1,
         }}
         >
         {data.category}
@@ -51,15 +53,12 @@ return (
 
         <Typography
         sx={{
-            width:{xs:"100%",md:"195px"},
-            height:{xs:"auto",md:"15px"},
             fontSize: "22px",
             fontWeight: 600,
             fontFamily: FONT_FAMILY.body,
-            lineHeight:"62px",
+            lineHeight:"60px",
             letterSpacing:"-0.03em",
             color: "#000",
-            mt:2
         }}
         >
         {data.name}
@@ -72,7 +71,7 @@ return (
             fontFamily:FONT_FAMILY.body,
             fontWeight:300,
             lineHeight:"32px",
-            mt:3,
+            mt:-2
             }}>
             {data.degree}
         </Typography>

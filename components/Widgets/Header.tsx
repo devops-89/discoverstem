@@ -133,120 +133,76 @@ export default function Header() {
                       />
                     </Box>
 
-                    <Popover
-                      open={activeMenu === item.label}
-                      anchorEl={anchorEl}
-                      onClose={handleClose}
-                      anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "center",
-                      }}
-                      transformOrigin={{
-                        vertical: "top",
-                        horizontal: "center",
-                      }}
-                      disableScrollLock
-                      disableRestoreFocus
-                      disableAutoFocus
-                      disableEnforceFocus
-                      sx={{
-                        pointerEvents: "none",
-                        "& .MuiPopover-paper": {
-                          pointerEvents: "auto",
+                  {/* Dropdown */}
+                  <Popover
+                    open={activeMenu === item.label}
+                    anchorEl={anchorEl}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "center",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "center",
+                    }}
+                    disableScrollLock
+                    disableRestoreFocus
+                    disableAutoFocus
+                    disableEnforceFocus
+                    sx={{
+                      pointerEvents: "none",
+                      "& .MuiPopover-paper": {
+                        pointerEvents: "auto",
+                      },
+                    }}
+                    slotProps={{
+                      paper: {
+                        onMouseEnter: () =>
+                          handleEnterMenu(item.label),
+                        onMouseLeave: handleClose,
+                        sx: {
+                          mt: 1,
+                          borderRadius: 2,
+                          minWidth: 180,
+                          boxShadow:
+                            "0px 10px 30px rgba(0,0,0,0.08)",
+                          p: 1,
                         },
-                      }}
-                      slotProps={{
-                        paper: {
-                          onMouseEnter: () => handleEnterMenu(item.label),
-                          onMouseLeave: handleClose,
-                          sx: {
-                            mt: 1,
-                            borderRadius: 2,
-                            minWidth: 230,
-                            boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
-                            p: 1,
-                          },
-                        },
-                      }}
-                    >
-                      {item.items.map((sub) =>
-                        sub.items ? (
-                          <Box key={sub.label}>
-                            <Typography
-                              sx={{
-                                px: 2,
-                                py: 1,
-                                fontWeight: 600,
-                                color: "#111827",
-                                fontSize: "14px",
-                              }}
-                            >
-                              {sub.label}
-                            </Typography>
-
-                            {sub.items.map((nested) => (
-                              <Link
-                                key={nested.label}
-                                href={nested.href!}
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Box
-                                  sx={{
-                                    pl: 4,
-                                    pr: 2,
-                                    py: 1,
-                                    borderRadius: 1,
-                                    "&:hover": {
-                                      background: "#f5f5f5",
-                                    },
-                                  }}
-                                >
-                                  <Typography
-                                    sx={{
-                                      color: "#666",
-                                      fontSize: "14px",
-                                      "&:hover": { color: "#000" },
-                                    }}
-                                  >
-                                    {nested.label}
-                                  </Typography>
-                                </Box>
-                              </Link>
-                            ))}
-                          </Box>
-                        ) : (
-                          <Link
-                            key={sub.label}
-                            href={sub.href!}
-                            style={{ textDecoration: "none" }}
+                      },
+                    }}
+                  >
+                    {item.items.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Box
+                          sx={{
+                            px: 2,
+                            py: 1.2,
+                            borderRadius: 1,
+                            "&:hover": {
+                              background: "#7B53A1",
+                            },
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              color: "#666",
+                              "&:hover": { color: "#FFFFFF" },
+                            }}
                           >
-                            <Box
-                              sx={{
-                                px: 2,
-                                py: 1.2,
-                                borderRadius: 1,
-                                "&:hover": {
-                                  background: "#f5f5f5",
-                                },
-                              }}
-                            >
-                              <Typography
-                                sx={{
-                                  color: "#666",
-                                  fontSize: "14px",
-                                  "&:hover": { color: "#000" },
-                                }}
-                              >
-                                {sub.label}
-                              </Typography>
-                            </Box>
-                          </Link>
-                        )
-                      )}
-                    </Popover>
-                  </Box>
-                );
-              }
+                            {sub.label}
+                          </Typography>
+                        </Box>
+                      </Link>
+                    ))}
+                  </Popover>
+                </Box>
+              );
+            }
 
               const isActive = pathname.startsWith(item.href || "");
 
