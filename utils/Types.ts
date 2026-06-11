@@ -1,8 +1,9 @@
-
-export type NavItem = {
+import { StaticImageData } from "next/image";
+export interface NavItem {
   label: string;
-  href: string;
-};
+  href?: string;
+  items?: NavItem[];
+}
 
 export type FeatureCard = {
   title: string;
@@ -286,6 +287,13 @@ export interface GallerySectionData {
   }[];
 }
 
+export interface AccordionSectionData {
+  title: string;
+  items: {
+    question: string;
+    answer: string[];
+  }[];
+}
 
 
 export interface VideoSectionData {
@@ -297,7 +305,7 @@ export interface ContentSectionData {
   paragraphs: string[];
 }
 
-import { StaticImageData } from "next/image";
+
 
 export interface AdvisoryMember {
   title: string;
@@ -307,4 +315,213 @@ export interface AdvisoryMember {
   description: string[];
   image: string | StaticImageData;
   reverse: boolean;
+}
+
+export interface IlmSuccessStoryData {
+  title: string;
+  description: string;
+  points: string[];
+  buttonText: string;
+  buttonLink: string;
+  image: string;
+}
+
+export interface ProgramDetailData {
+  title: string;
+  description: string;
+}
+export interface IlmLearningTracksData {
+  title: string;
+  tracks: {
+    id: number;
+    title: string;
+    description: string;
+    outcome: string;
+    icon: string;
+    color: string;
+  }[];
+}
+
+export interface InfoCardItem {
+  id: number;
+  label: string;
+  value: string;
+  description: string;
+  color: string;
+}
+
+export interface OtherProgramsData {
+  eyebrow: string;
+  title: string;
+  programs: {
+    id: number;
+    shortName: string;
+    title: string;
+    description: string;
+    buttonText: string;
+    href: string;
+  }[];
+}
+
+export interface DIPProgramDetailData {
+  title: string;
+  content: string[];
+}
+
+export interface CardsSectionData {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+}
+
+export interface ResearchModule {
+  id: number;
+  title: string;
+  description: string;
+  duration: string; 
+  level: "Beginner" | "Intermediate" | "Advanced"; 
+}
+
+export interface ResearchModulesSectionData {
+  title: string;
+  buttonText: string;
+  modules: ResearchModule[];
+}
+
+export interface FoundationCoursesData {
+  eyebrow: string;
+  title: string;
+  description: string;
+
+  cards: {
+    id: number;
+    icon:
+      | "users"
+      | "lightbulb"
+      | "target"
+      | "message"
+      | "file"
+      | "puzzle"
+      | "clipboard"
+      | "science";
+    level: string;
+    title: string;
+    description: string;
+    duration: string;
+  }[];
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface FaqCategory {
+  id: string;
+  label: string;
+  faqs: FaqItem[];
+}
+
+export interface SimpleTextSectionData {
+  paragraphs: string[];
+}
+
+export interface EntrepreneurshipFundingData {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  points: string[];
+}
+export interface ImageTextPartnerSectionData {
+  title: string;
+  description: string[];
+  image: string;
+  imageAlt: string;
+}
+
+export interface ImageContentSplitData {
+  topSection: {
+    description: string[];
+    image: string;
+  };
+  bottomSection: {
+    image: string;
+    description: string[];
+  };
+}
+
+export interface PatentCertificatesData {
+  title: string;
+  items: {
+    id: number;
+    label: string;
+    image: string;
+    videoUrl: string;
+  }[];
+}
+
+export interface ImageTextHighlightSectionData {
+  title: string;
+  image: string;
+  imageAlt: string;
+  content: string;
+}
+export interface CategoryAwardsData {
+  title: string;
+  items: {
+    question: string;
+    answer?: string[];
+  }[];
+}
+export interface ResearchMentorTextData {
+  title: string;
+  content: (
+    | {
+        type: "paragraph";
+        text: string;
+      }
+    | {
+        type: "heading";
+        text: string;
+      }
+    | {
+        type: "list";
+        items: string[];
+      }
+  )[];
+}
+
+export interface NavItem {
+  label: string;
+  href?: string;
+  items?: NavItem[];
+}
+
+export interface ImpactQuoteSectionData {
+  tag: string;
+  description: string;
+  quote: string;
+  footerText: string;
+}
+export interface OutcomesSectionData {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: {
+    number: string;
+    text: string;
+  }[];
+}
+
+export interface ResearchModulesSectionData {
+  title: string;
+  buttonText: string;
+  modules: {
+    id: number;
+    title: string;
+    description: string;
+    duration: string;
+    level: "Beginner" | "Intermediate" | "Advanced";
+  }[];
 }

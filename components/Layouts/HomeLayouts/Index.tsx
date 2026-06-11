@@ -15,6 +15,7 @@ import AwardsSection from "./AwardsSection";
 import TestimonialsSection from "./TestimonialsSection";
 import CtaBanner from "./CtaBanner";
 
+
 export default function HomeLayout() {
   return (
     <>

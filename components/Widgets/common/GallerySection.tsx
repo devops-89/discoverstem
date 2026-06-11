@@ -1,10 +1,16 @@
 "use client";
 
-import { gallerySectionData } from "@/assets/Generic-data";
+import { GallerySectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 
-export default function GallerySection() {
+interface GallerySectionProps {
+  data: GallerySectionData;
+}
+
+export default function GallerySection({
+  data,
+}: GallerySectionProps) {
   return (
     <Container
       maxWidth={false}
@@ -16,6 +22,7 @@ export default function GallerySection() {
       }}
     >
       <Box sx={{ width: "100%" }}>
+        {/* Heading */}
         <Box
           sx={{
             display: "flex",
@@ -24,7 +31,13 @@ export default function GallerySection() {
             mb: 1,
           }}
         >
-          <Box sx={{ width: "38px", height: "1px", bgcolor: "#9CA3AF" }} />
+          <Box
+            sx={{
+              width: "38px",
+              height: "1px",
+              bgcolor: "#9CA3AF",
+            }}
+          />
 
           <Typography
             sx={{
@@ -36,7 +49,7 @@ export default function GallerySection() {
               color: "#737373",
             }}
           >
-            {gallerySectionData.eyebrow}
+            {data.eyebrow}
           </Typography>
         </Box>
 
@@ -51,9 +64,10 @@ export default function GallerySection() {
             mb: { xs: 4, md: "64px" },
           }}
         >
-          {gallerySectionData.title}
+          {data.title}
         </Typography>
 
+        {/* Gallery Grid */}
         <Box
           sx={{
             display: "grid",
@@ -68,7 +82,7 @@ export default function GallerySection() {
             gap: "16px",
           }}
         >
-          {gallerySectionData.images.map((item) => (
+          {data.images.map((item) => (
             <Box
               key={item.id}
               sx={{

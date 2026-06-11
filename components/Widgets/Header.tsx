@@ -1,6 +1,5 @@
 "use client";
 
-
 import { HEADER_DATA } from "@/assets/Generic-data";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -24,7 +23,6 @@ export default function Header() {
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
   const [openNestedMenu, setOpenNestedMenu] = useState<string | null>(null);
@@ -47,6 +45,12 @@ export default function Header() {
   const handleEnterMenu = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setActiveMenu(label);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setOpenMobileMenu(null);
+    setOpenNestedMenu(null);
   };
 
   return (
@@ -88,6 +92,7 @@ export default function Header() {
             />
           </Link>
 
+          {/* Desktop Nav */}
           <Stack
             direction="row"
             spacing={{ md: 2, lg: 4 }}
@@ -133,83 +138,137 @@ export default function Header() {
                       />
                     </Box>
 
-                  {/* Dropdown */}
-                  <Popover
-                    open={activeMenu === item.label}
-                    anchorEl={anchorEl}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "center",
-                    }}
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "center",
-                    }}
-                    disableScrollLock
-                    disableRestoreFocus
-                    disableAutoFocus
-                    disableEnforceFocus
-                    sx={{
-                      pointerEvents: "none",
-                      "& .MuiPopover-paper": {
-                        pointerEvents: "auto",
-                      },
-                    }}
-                    slotProps={{
-                      paper: {
-                        onMouseEnter: () =>
-                          handleEnterMenu(item.label),
-                        onMouseLeave: handleClose,
-                        sx: {
-                          mt: 1,
-                          borderRadius: 2,
-                          minWidth: 180,
-                          boxShadow:
-                            "0px 10px 30px rgba(0,0,0,0.08)",
-                          p: 1,
+                    <Popover
+                      open={activeMenu === item.label}
+                      anchorEl={anchorEl}
+                      onClose={handleClose}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "center",
+                      }}
+                      transformOrigin={{
+                        vertical: "top",
+                        horizontal: "center",
+                      }}
+                      disableScrollLock
+                      disableRestoreFocus
+                      disableAutoFocus
+                      disableEnforceFocus
+                      sx={{
+                        pointerEvents: "none",
+                        "& .MuiPopover-paper": {
+                          pointerEvents: "auto",
                         },
-                      },
-                    }}
-                  >
-                    {item.items.map((sub) => (
-                      <Link
-                        key={sub.label}
-                        href={sub.href}
-                        style={{ textDecoration: "none" }}
-                      >
-                        <Box
-                          sx={{
-                            px: 2,
-                            py: 1.2,
-                            borderRadius: 1,
-                            "&:hover": {
-                              background: "#7B53A1",
-                            },
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              color: "#666",
-                              "&:hover": { color: "#FFFFFF" },
-                            }}
-                          >
-                            {sub.label}
-                          </Typography>
-                        </Box>
-                      </Link>
-                    ))}
-                  </Popover>
-                </Box>
-              );
-            }
+                      }}
+                      slotProps={{
+                        paper: {
+                          onMouseEnter: () => handleEnterMenu(item.label),
+                          onMouseLeave: handleClose,
+                          sx: {
+                            mt: 1,
+                            borderRadius: 2,
+                            minWidth: 230,
+                            boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
+                            p: 1,
+                          },
+                        },
+                      }}
+                    >
+                      {item.items.map((sub) =>
+                        sub.items ? (
+                          <Box key={sub.label}>
+                            <Typography
+                              sx={{
+                                px: 2,
+                                py: 1.2,
+                                fontWeight: 600,
+                                color: "#111827",
+                                fontSize: "14px",
+                              }}
+                            >
+                              {sub.label}
+                            </Typography>
 
-              const isActive = pathname.startsWith(item.href || "");
+                            {sub.items.map((nested) =>
+                              nested.href ? (
+                                <Link
+                                  key={nested.label}
+                                  href={nested.href}
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Box
+                                    sx={{
+                                      pl: 4,
+                                      pr: 2,
+                                      py: 1.2,
+                                      borderRadius: 1,
+                                      "&:hover": {
+                                        background: "#7B53A1",
+                                      },
+                                      "&:hover .menu-text": {
+                                        color: "#FFFFFF",
+                                      },
+                                    }}
+                                  >
+                                    <Typography
+                                      className="menu-text"
+                                      sx={{
+                                        color: "#666",
+                                        fontSize: "14px",
+                                      }}
+                                    >
+                                      {nested.label}
+                                    </Typography>
+                                  </Box>
+                                </Link>
+                              ) : null
+                            )}
+                          </Box>
+                        ) : sub.href ? (
+                          <Link
+                            key={sub.label}
+                            href={sub.href}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <Box
+                              sx={{
+                                px: 2,
+                                py: 1.2,
+                                borderRadius: 1,
+                                "&:hover": {
+                                  background: "#7B53A1",
+                                },
+                                "&:hover .menu-text": {
+                                  color: "#FFFFFF",
+                                },
+                              }}
+                            >
+                              <Typography
+                                className="menu-text"
+                                sx={{
+                                  color: "#666",
+                                  fontSize: "14px",
+                                }}
+                              >
+                                {sub.label}
+                              </Typography>
+                            </Box>
+                          </Link>
+                        ) : null
+                      )}
+                    </Popover>
+                  </Box>
+                );
+              }
+
+              if (!item.href) return null;
+
+              const isActive = pathname.startsWith(item.href);
 
               return (
                 <Link
                   key={item.label}
-                  href={item.href!}
+                  href={item.href}
                   style={{ textDecoration: "none" }}
                 >
                   <Typography
@@ -226,6 +285,7 @@ export default function Header() {
             })}
           </Stack>
 
+          {/* Mobile Menu Icon */}
           <IconButton
             onClick={() => setMobileOpen(true)}
             sx={{
@@ -238,10 +298,11 @@ export default function Header() {
         </Stack>
       </Box>
 
+      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
+        onClose={closeMobileMenu}
         PaperProps={{
           sx: {
             width: "85%",
@@ -253,7 +314,7 @@ export default function Header() {
         }}
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <Link href="/" onClick={() => setMobileOpen(false)}>
+          <Link href="/" onClick={closeMobileMenu}>
             <Image
               src="/logo-discoverstem.png"
               alt="logo"
@@ -263,7 +324,7 @@ export default function Header() {
             />
           </Link>
 
-          <IconButton onClick={() => setMobileOpen(false)}>
+          <IconButton onClick={closeMobileMenu}>
             <CloseIcon />
           </IconButton>
         </Stack>
@@ -271,20 +332,20 @@ export default function Header() {
         <Box sx={{ mt: 4 }}>
           {HEADER_DATA.map((item) => {
             if (!item.items) {
+              if (!item.href) return null;
+
               return (
                 <Link
                   key={item.label}
-                  href={item.href!}
+                  href={item.href}
                   style={{ textDecoration: "none" }}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   <Typography
                     sx={{
                       py: 1.6,
                       fontSize: "16px",
-                      color: pathname.startsWith(item.href || "")
-                        ? "#000"
-                        : "#555",
+                      color: pathname.startsWith(item.href) ? "#000" : "#555",
                       borderBottom: "1px solid #eee",
                     }}
                   >
@@ -366,33 +427,35 @@ export default function Header() {
 
                           <Collapse in={openNestedMenu === sub.label}>
                             <Box sx={{ pl: 2 }}>
-                              {sub.items.map((nested) => (
-                                <Link
-                                  key={nested.label}
-                                  href={nested.href!}
-                                  style={{ textDecoration: "none" }}
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  <Typography
-                                    sx={{
-                                      py: 1,
-                                      fontSize: "14px",
-                                      color: "#666",
-                                    }}
+                              {sub.items.map((nested) =>
+                                nested.href ? (
+                                  <Link
+                                    key={nested.label}
+                                    href={nested.href}
+                                    style={{ textDecoration: "none" }}
+                                    onClick={closeMobileMenu}
                                   >
-                                    {nested.label}
-                                  </Typography>
-                                </Link>
-                              ))}
+                                    <Typography
+                                      sx={{
+                                        py: 1,
+                                        fontSize: "14px",
+                                        color: "#666",
+                                      }}
+                                    >
+                                      {nested.label}
+                                    </Typography>
+                                  </Link>
+                                ) : null
+                              )}
                             </Box>
                           </Collapse>
                         </Box>
-                      ) : (
+                      ) : sub.href ? (
                         <Link
                           key={sub.label}
-                          href={sub.href!}
+                          href={sub.href}
                           style={{ textDecoration: "none" }}
-                          onClick={() => setMobileOpen(false)}
+                          onClick={closeMobileMenu}
                         >
                           <Typography
                             sx={{
@@ -404,7 +467,7 @@ export default function Header() {
                             {sub.label}
                           </Typography>
                         </Link>
-                      )
+                      ) : null
                     )}
                   </Box>
                 </Collapse>

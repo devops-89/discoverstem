@@ -33,33 +33,47 @@ import funding from "@/public/Images/AboutUs/StemFoundation/seedFunding.png";
 import stem from "@/public/Images/AboutUs/StemFoundation/StemFoundation.png";
 
 import type {
+  AccordionSectionData,
   AchievementStatItem,
   AwardCard,
   AwardImageItem,
   BlogCardType,
-  CategoryAwardsData,
+  CardsSectionData,
+ 
   CenterDescriptionData,
   CommonTextSectionData,
   Contact,
   ContentSectionData,
   CtaBannerData,
+  DIPProgramDetailData,
+  EntrepreneurshipFundingData,
+  FaqCategory,
   FeatureCard,
+  FoundationCoursesData,
   GallerySectionData,
+  
+  IlmLearningTracksData,
+  IlmSuccessStoryData,
   ImageContentSplitData,
   ImageTextHighlightSectionData,
+  ImageTextPartnerSectionData,
   ImpactQuoteSectionData,
+  InfoCardItem,
   InnovationCardItem,
   InnovationFilter,
   Logo,
   mediaCenter,
   MediaSectionData,
   NavItem,
+  OtherProgramsData,
   OutcomesSectionData,
   PatentCard,
   PatentCardData,
   PatentCertificatesData,
   PatentFacesData,
   ProgramCard,
+  ProgramDetailData,
+  
   QuoteBannerData,
   RecentPostType,
   Research,
@@ -67,6 +81,7 @@ import type {
   ResearchLab,
   ResearchMentorTextData,
   ResearchModulesSectionData,
+  SimpleTextSectionData,
   SpotlightCard,
   Startup,
   StartupDetailData,
@@ -372,7 +387,7 @@ export const sipData = {
 
 // data/programDetailsData.ts
 
-export const programDetailsData = {
+export const programDetailsData= {
   title: "Program Details",
   description:
     "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.\n We offer three high impact learning tracks. We mentor you with the goal that you achieve unparalleled and meaningful outcomes by the end of the program.",
@@ -2251,55 +2266,55 @@ export const gallerySectionData: GallerySectionData = {
   images: [
     {
       id: 1,
-      image: "/Images/gallery/gallery-1.png",
+      image: "/Images/Finale/Students presenting research.png",
       alt: "Laboratory glassware",
       variant: "large",
     },
     {
       id: 2,
-      image: "/Images/gallery/gallery-2.png",
+      image: "/Images/Finale/Lab discussion.png",
       alt: "Students meet-up group",
       variant: "small",
     },
     {
       id: 3,
-      image: "/Images/gallery/gallery-3.png",
+      image: "/Images/Finale/Student with research poster.png",
       alt: "Student in science goggles",
       variant: "small",
     },
     {
       id: 4,
-      image: "/Images/gallery/gallery-4.png",
+      image: "/Images/Finale/Group meeting.png",
       alt: "Computer research screen",
       variant: "small",
     },
     {
       id: 5,
-      image: "/Images/gallery/gallery-5.png",
+      image: "/Images/Finale/Speaker at podium.png",
       alt: "Students working at table",
       variant: "small",
     },
     {
       id: 6,
-      image: "/Images/gallery/gallery-6.png",
+      image: "/Images/Finale/Researcher and student.png",
       alt: "Programming and research",
       variant: "wide",
     },
     {
       id: 7,
-      image: "/Images/gallery/gallery-7.png",
+      image: "/Images/Finale/Discussion with mentor.png",
       alt: "Lecture room",
       variant: "small",
     },
     {
       id: 8,
-      image: "/Images/gallery/gallery-8.png",
+      image: "/Images/Finale/Audience listening.png",
       alt: "Students with laptops",
       variant: "small",
     },
     {
       id: 9,
-      image: "/Images/gallery/gallery-9.png",
+      image: "/Images/Finale/Notebook and research.png",
       alt: "AI innovation note",
       variant: "last",
     },
@@ -2410,7 +2425,7 @@ export const patentCertificatesData: PatentCertificatesData = {
 export const grandFinaleSectionData: ImageTextHighlightSectionData = {
   title: "Grand Finale of America's Top Young Innovators\n2025",
 
-  image: "/Images/innovation-day/grand-finale.png",
+  image: "/Images/Finale/image 2025.png",
 
   imageAlt: "Grand Finale of America's Top Young Innovators 2025",
 
@@ -2418,19 +2433,18 @@ export const grandFinaleSectionData: ImageTextHighlightSectionData = {
     The DiscoverSTEM Innovation Day 2025 event featured the Grand Finale of America’s Top Young Innovators 2025,
     a celebration of young visionaries pushing the boundaries of science, technology, and innovation. From across
     the nation, students showcased groundbreaking ideas with the power to shape a healthier, smarter, and more
-    sustainable future.
+                                            sustainable future.
 
     <br /><br />
 
-    Among the standout participants was <strong>Arjun Kommidi</strong>, who earned the coveted title of
-    <strong> America’s Top Young Innovator 2025</strong>. Arjun was recognized for his remarkable contributions
-    and his leadership as Chief Technology Officer in launching an app designed to record and report the mental,
-    emotional, behavioral, and intellectual well-being of teenagers. His work represents a bold, practical,
-    and forward-looking approach to addressing some of the most urgent mental health challenges facing today’s youth.
-  `,
+    Among the standout participants was <strong>Arjun Kommidi</strong>, who earned the coveted title of<strong> America’s Top 
+    Young Innovator 2025</strong>. Arjun was recognized for his remarkable contributions and his leadership as Chief Technology
+    Officer in launching an app designed to record and report the mental, emotional, behavioral, and intellectual 
+    well-being of teenagers. His work represents a bold, practical,and forward-looking approach to addressing 
+                    some of the most urgent mental health challenges facing today’s youth.`,
 };
 
-export const categoryAwardsData = {
+export const categoryAwardsData:AccordionSectionData = {
   title: "Category Awards",
 
   items: [
@@ -2531,33 +2545,55 @@ export const HEADER_DATA: NavItem[] = [
       {
         label: "DIP",
         href: "/programs/dip",
+        
+      },
+          {
+        label: "FAQ",
+        href: "/programs/faq",
+        
       },
     ],
   },
 
   {
     label: "Opportunities",
-    items: [
-      {
-        label: "Research",
+   
         items: [
           {
             label: "Research Mentors",
-            href: "/opportunities/research/research_mentors",
+            href: "/opportunities/research-mentors",
           },
           {
             label: "Aerospace Research Lab",
-            href: "/opportunities/research/aerospace_research_lab",
+            href: "/opportunities/aerospace_research_lab",
           },
-        ],
-      },
+          {
+            label: "AI-ML and Autonomous Tech Research Lab",
+            href: "/opportunities/ai-autonomous-tech-and-robotics-research-lab",
+          },
+           {
+            label: "Banking, Finance & Fintech Research Lab",
+            href: "/opportunities/banking-finance-fintech-research-lab",
+          },
+          {
+            label: "Energy & Environment Research Lab",
+            href: "/opportunities/energy-environment-research-lab",
+          },
+          {
+            label: "Genomics, Biotechnology & Health Sciences Research Lab",
+            href: "/opportunities/energy-environment-research-lab",
+          },
+          {
+            label: "Neurotechnology & Brain-Computer Interface Research Lab",
+            href: "/opportunities/neurotech-brain-computer-interface",
+          },
       {
         label: "Startup Opportunities",
         href: "/opportunities/startup_opportunities",
       },
       {
         label: "Partners Ecosystem",
-        href: "/opportunities/partners_ecosystem",
+        href: "/opportunities/partners-ecosystem",
       },
     ],
   },
@@ -2615,6 +2651,18 @@ export const HEADER_DATA: NavItem[] = [
       {
         label: "Innovation Day 2025",
         href: "/events/innovation_day_2025",
+      },
+      {
+        label: "Innovation Day 2024",
+        href: "/events/innovation_day_2024",
+      },
+      {
+        label: "Innovation Day 2023",
+        href: "/events/innovation_day_2023",
+      },
+      {
+        label: "Innovation Day 2020",
+        href: "/events/innovation_day_2020",
       },
     ],
   },
@@ -2764,7 +2812,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Advanced",
     },
     {
-      id: 1,
+      id: 9,
       title: "Introduction & Team Building",
       description:
         "Build collaborative foundations and learn to work effectively in innovation teams.",
@@ -2772,7 +2820,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Beginner",
     },
     {
-      id: 2,
+      id: 10,
       title: "Introduction to Innovation",
       description:
         "Discover the principles, mindset, and processes that drive innovative thinking.",
@@ -2780,7 +2828,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Beginner",
     },
     {
-      id: 3,
+      id: 11,
       title: "How to Think Like an Innovator",
       description:
         "Master asking the right questions and finding meaningful answers.",
@@ -2788,7 +2836,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Intermediate",
     },
     {
-      id: 4,
+      id: 12,
       title: "Brainstorming & Persuasion",
       description:
         "Generate breakthrough ideas and communicate them with clarity and confidence.",
@@ -2796,7 +2844,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Intermediate",
     },
     {
-      id: 5,
+      id: 13,
       title: "Introduction to Patents",
       description:
         "Learn how to protect intellectual property and navigate the patent landscape.",
@@ -2804,7 +2852,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Intermediate",
     },
     {
-      id: 6,
+      id: 14,
       title: "Research & Problem Dividing",
       description:
         "Break down complex problems into manageable components for effective research.",
@@ -2812,7 +2860,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Advanced",
     },
     {
-      id: 7,
+      id: 15,
       title: "Establishing Research Statements",
       description:
         "Craft precise problem statements that drive focused, impactful research.",
@@ -2820,7 +2868,7 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
       level: "Advanced",
     },
     {
-      id: 8,
+      id: 16,
       title: "The Logic of Scientific Discovery",
       description:
         "Apply scientific reasoning to validate hypotheses and uncover new insights.",
@@ -2829,3 +2877,534 @@ export const aerospaceModulesData: ResearchModulesSectionData = {
     },
   ],
 };
+
+export const DIPData =[
+  {
+    title: "DiscoverSTEM Innovation Program (DIP)",
+ description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "DiscoverSTEM Innovation Program (DIP)",
+    description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "DiscoverSTEM Innovation Program (DIP)",
+  description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+];
+
+export const ILMData =[
+  {
+    title: "DiscoverSTEM Innovation Program (ILM)",
+ description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "DiscoverSTEM Innovation Program (ILM)",
+    description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "DiscoverSTEM Innovation Program (ILM)",
+  description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+];
+export const ilmSuccessStoryData: IlmSuccessStoryData = {
+  title: "ILM Success Stories: First Batch Results (2025)",
+
+  description:
+    "The first batch of DiscoverSTEM’s Ivy League Mentorship (ILM 2021–25) program has achieved extraordinary success in their college admissions journey. These students have secured acceptances at some of the most prestigious universities in the United States. The exceptional outcome validates our unique approach to nurturing future innovators, researchers, entrepreneurs and leaders.",
+
+   points: [
+    "83% ILM Students who graduated high school in 2025 accepted to the Top 10 US Schools",
+    "94% ILM Students who graduated high school in 2025 accepted to the Top 21 US Schools",
+  ],
+
+  buttonText:
+    "Request a <strong>FREE Information Session</strong>",
+
+  buttonLink: "/contact",
+
+  image: "/Images/ilm/image-23.png",
+};
+
+
+
+
+export const ProgramDetailsData:ProgramDetailData = {
+  title: "Program Details",
+
+  description: `This elite, immersive four-year program is meticulously designed to cultivate critical thinking, innovation, problem-solving, research, and leadership skills while fostering an entrepreneurial mindset.
+
+Structured as a parallel education pathway, it offers hands-on experiences, enabling students to develop groundbreaking innovations, conduct research, and launch startups—shaping them into future leaders.
+
+Beyond academic excellence, this program strategically strengthens your child’s college admissions profile, setting them apart for Ivy League and other top-tier institutions.`,
+};
+
+
+
+export const ilmLearningTracksData: IlmLearningTracksData = {
+  title: "ILM Program consists of Four Learning Tracks",
+
+  tracks: [
+    {
+      id: 1,
+      title: "Innovation Track",
+      description:
+        "Identify a real-world problem and develop a patentable solution through hands-on problem-solving and expert-guided mentorship.",
+      outcome: "Patent-pending Innovation.",
+      icon: "/Images/ilm/innovation.png",
+      color: "#7B53A1",
+    },
+    {
+      id: 2,
+      title: "Leadership Track",
+      description:
+        "Master soft skills, strategic thinking, and entrepreneurial leadership, preparing you for success in professional and startup ecosystems.",
+      outcome: "Soft Skills, Entrepreneurial & Professional Readiness.",
+      icon: "/Images/ilm/leadership.png",
+      color: "#EE4823",
+    },
+    {
+      id: 3,
+      title: "Research Track",
+      description:
+        "Gain deep domain knowledge, engage in hands-on research activities, and write a research paper that drives real-world advancements.",
+      outcome: "Writing and submitting research papers.",
+      icon: "/Images/ilm/research.png",
+      color: "#F9A51E",
+    },
+    {
+      id: 4,
+      title: "Entrepreneurship Track",
+      description:
+        "Turn your ideas into reality by learning to develop, market, and scale an innovative business—guided by expert mentorship and real-world case studies.",
+      outcome:
+        "Startup launched and product prototype developed for crowdfunding.",
+      icon: "/Images/ilm/entrepreneurship.png",
+      color: "#619040",
+    },
+  ],
+};
+
+export const ilmInfoCardsData: InfoCardItem[] = [
+  {
+    id: 1,
+    label: "Eligibility",
+    value: "10–16 years",
+    description:
+      "Students in 10th grade may get accepted for the Accelerated ILM program.",
+    color: "#7B53A1",
+  },
+  {
+    id: 2,
+    label: "Duration",
+    value: "4 years",
+    description: "Parallel education pathway alongside school.",
+    color: "#EE4823",
+  },
+  {
+    id: 3,
+    label: "Time Commitment",
+    value: "3 hrs / week",
+    description: "Could be attended in-person or online.",
+    color: "#F9A51E",
+  },
+  {
+    id: 4,
+    label: "Enrollment Deadline",
+    value: "Sep 30, 2026",
+    description: "Rolling admission for ILM 2025–26.",
+    color: "#619040",
+  },
+];
+
+export const ilmOtherProgramsData: OtherProgramsData = {
+  eyebrow: "More From DiscoverSTEM",
+  title: "Explore Our Other Programs",
+  programs: [
+    {
+      id: 1,
+      shortName: "SIP",
+      title: "Summer Impact Program",
+      description:
+        "A highly selective summer program. An accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
+      buttonText: "Explore SIP →",
+      href: "/programs/sip",
+    },
+    {
+      id: 2,
+      shortName: "DIP",
+      title: "DiscoverSTEM Innovation Program",
+      description:
+        "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+      buttonText: "Explore DIP →",
+      href: "/programs/dip",
+    },
+  ],
+};
+
+export const dipProgramDetailsData:DIPProgramDetailData = {
+  title: "Program Details",
+
+  content: [
+    `The DiscoverSTEM Innovation Program is designed to turn kids into innovators and problem-solvers of tomorrow.
+Kids are natural out-of-the-box thinkers and have unique ideas. But due to their limitations, they do not know
+how to convert their ideas into an invention or innovations. That's where our program comes in and teaches
+children how to solve real-world problems and become an innovator.`,
+
+    `The program comprises two fundamental parts – <strong>the Foundation Course (Part 1)</strong> and <strong>the Implementation
+Course (Part 2)</strong>. The Foundation course trains them to think like innovators and problem solvers and arms them
+with the skills required to research and innovate. In the Implementation Course, their acquired skills are put to
+the test wherein they identify a real-world problem and innovate solutions to that problem.`,
+  ],
+};
+
+export const foundationCoursesSectionData:CardsSectionData = {
+  eyebrow: "Part I",
+  title: "Foundation Courses of Innovation",
+  description:
+    "Build the essential skills, mindset, and framework needed to become an innovator before moving into real-world implementation.",
+};
+
+export const foundationCoursesData: FoundationCoursesData = {
+  eyebrow: "Part I",
+  title: "Foundation Courses of Innovation",
+  description:
+    "Build the essential skills, mindset, and frameworks needed to think and act like a true innovator.",
+
+  cards: [
+    {
+      id: 1,
+      icon: "users",
+      level: "BEGINNER",
+      title: "Introduction & Team Building",
+      description:
+        "Build collaborative foundations and learn to work effectively in innovation teams.",
+      duration: "2 weeks",
+    },
+    {
+      id: 2,
+      icon: "lightbulb",
+      level: "BEGINNER",
+      title: "Introduction to Innovation",
+      description:
+        "Discover the principles, mindset, and processes that drive innovative thinking.",
+      duration: "3 weeks",
+    },
+    {
+      id: 3,
+      icon: "target",
+      level: "INTERMEDIATE",
+      title: "How to Think Like an Innovator",
+      description:
+        "Master asking the right questions and finding meaningful answers.",
+      duration: "4 weeks",
+    },
+    {
+      id: 4,
+      icon: "message",
+      level: "INTERMEDIATE",
+      title: "Brainstorming & Persuasion",
+      description:
+        "Generate breakthrough ideas and communicate them with clarity and confidence.",
+      duration: "3 weeks",
+    },
+    {
+      id: 5,
+      icon: "file",
+      level: "INTERMEDIATE",
+      title: "Introduction to Patents",
+      description:
+        "Learn how to protect intellectual property and navigate the patent landscape.",
+      duration: "2 weeks",
+    },
+    {
+      id: 6,
+      icon: "puzzle",
+      level: "ADVANCED",
+      title: "Research & Problem Dividing",
+      description:
+        "Break down complex problems into manageable components for effective research.",
+      duration: "4 weeks",
+    },
+    {
+      id: 7,
+      icon: "clipboard",
+      level: "ADVANCED",
+      title: "Establishing Research Statements",
+      description:
+        "Craft precise problem statements that drive focused, impactful research.",
+      duration: "3 weeks",
+    },
+    {
+      id: 8,
+      icon: "science",
+      level: "ADVANCED",
+      title: "The Logic of Scientific Discovery",
+      description:
+        "Apply scientific reasoning to validate hypotheses and uncover new insights.",
+      duration: "5 weeks",
+    },
+  ],
+};
+
+export const ImplementationCoursesData: FoundationCoursesData = {
+  eyebrow: "Part II",
+  title: "Implementation course",
+  description:
+    "to identify a real-world problem and innovate solutions to this problem",
+
+  cards: [
+    {
+      id: 1,
+      icon: "users",
+      level: "BEGINNER",
+      title: "Introduction & Team Building",
+      description:
+        "Build collaborative foundations and learn to work effectively in innovation teams.",
+      duration: "2 weeks",
+    },
+    {
+      id: 2,
+      icon: "lightbulb",
+      level: "BEGINNER",
+      title: "Introduction to Innovation",
+      description:
+        "Discover the principles, mindset, and processes that drive innovative thinking.",
+      duration: "3 weeks",
+    },
+    {
+      id: 3,
+      icon: "target",
+      level: "INTERMEDIATE",
+      title: "How to Think Like an Innovator",
+      description:
+        "Master asking the right questions and finding meaningful answers.",
+      duration: "4 weeks",
+    },
+    {
+      id: 4,
+      icon: "message",
+      level: "INTERMEDIATE",
+      title: "Brainstorming & Persuasion",
+      description:
+        "Generate breakthrough ideas and communicate them with clarity and confidence.",
+      duration: "3 weeks",
+    },
+    {
+      id: 5,
+      icon: "file",
+      level: "INTERMEDIATE",
+      title: "Introduction to Patents",
+      description:
+        "Learn how to protect intellectual property and navigate the patent landscape.",
+      duration: "2 weeks",
+    },
+    {
+      id: 6,
+      icon: "puzzle",
+      level: "ADVANCED",
+      title: "Research & Problem Dividing",
+      description:
+        "Break down complex problems into manageable components for effective research.",
+      duration: "4 weeks",
+    },
+    {
+      id: 7,
+      icon: "clipboard",
+      level: "ADVANCED",
+      title: "Establishing Research Statements",
+      description:
+        "Craft precise problem statements that drive focused, impactful research.",
+      duration: "3 weeks",
+    },
+    {
+      id: 8,
+      icon: "science",
+      level: "ADVANCED",
+      title: "The Logic of Scientific Discovery",
+      description:
+        "Apply scientific reasoning to validate hypotheses and uncover new insights.",
+      duration: "5 weeks",
+    },
+  ],
+};
+
+
+
+export const faqData: FaqCategory[] = [
+  {
+    id: "program",
+    label: "Program and Teams",
+    faqs: [
+      {
+        question: "How are teams formed?",
+        answer:
+          "Students are grouped based on interests, skills, and program requirements.",
+      },
+      {
+        question: "Can students switch teams later?",
+        answer:
+          "Yes, depending on mentor approval and project availability.",
+      },
+      {
+        question: "How many students are in a team?",
+        answer:
+          "Typically 3–5 students work together on a project.",
+      },
+    ],
+  },
+
+  {
+    id: "innovation",
+    label: "Innovation and Patents",
+    faqs: [
+      {
+        question:
+          "Will my child be automatically listed as a co-inventor if a patent application is filed?",
+        answer:
+          "Yes. Anyone who contributes to the inventive concept may be listed as an inventor.",
+      },
+      {
+        question:
+          "What is the cost of filing a patent and who pays for it?",
+        answer:
+          "Patent filing costs vary depending on jurisdiction and filing strategy.",
+      },
+      {
+        question: "Is the grant of a patent guaranteed?",
+        answer:
+          "The patent is granted by respective patent offices of different countries and DiscoverSTEM has no control in the grant of the patent. The grant, therefore, is not guaranteed by DiscoverSTEM. Our responsibility ceases once we apply for a patent.",
+      },
+      {
+        question: "Who owns the patent?",
+        answer:
+          "Ownership depends on inventor agreements and applicable laws.",
+      },
+    ],
+  },
+
+  {
+    id: "application",
+    label: "Application",
+    faqs: [
+      {
+        question: "How do I apply?",
+        answer:
+          "Complete the online application form and submit the required information.",
+      },
+      {
+        question: "Is there an interview?",
+        answer:
+          "Some applicants may be invited for a short interview.",
+      },
+    ],
+  },
+
+  {
+    id: "tuition",
+    label: "Tution, fee, Scholarship",
+    faqs: [
+      {
+        question: "Are scholarships available?",
+        answer:
+          "Yes. Merit-based and need-based scholarships may be available.",
+      },
+      {
+        question: "Can fees be paid in installments?",
+        answer:
+          "Yes. Flexible payment plans are available.",
+      },
+    ],
+  },
+];
+
+
+export const partnersEcosystemTextData: SimpleTextSectionData = {
+  paragraphs: [
+    `Over the last couple of years, our young innovators have been generating great ideas that can positively  
+    impact the world. But what good an idea will do by staying on paper & patents, and not getting
+    commercialized?`,
+
+    `Many of our students want to launch their startups and commercialize their innovations. So, we’ve gone ahead and developed an ecosystem of partners worldwide, which include Business Mentors, Technology Mentors, 
+    Management Consultants, Product Designers, Product Prototyping firms, Manufacturers, Packagers, Marketing 
+    &amp; Promotion firms, Shipping firms, Clearing &amp; Forwarding Agencies, CPA and Attorneys among others.`,
+  ],
+};
+
+export const EcosystemTextData: SimpleTextSectionData = {
+  paragraphs: [
+    `At DiscoverSTEM, we leave no stone unturned to help our innovators turn their unique ideas and inventions into commercialized products or solutions to solve real-world problems. Our startup ecosystem is designed to provide all the tangible and intangible support our innovators might need to commercialize their innovation successfully. Right from giving them intellectual support, critical inputs & reviews to infrastructure and seed funding, we assist our innovators in all ways possible to commercialize their innovation and become entrepreneurs.`,
+
+    `DiscoverSTEM has built advanced infrastructure with the finest research labs for our students to pursue their inventions. We also have a long list of illustrious mentors and seasoned professionals in our panel of experts who help students at every step of their innovation.`,
+  ],
+};
+
+
+export const entrepreneurshipFundingData: EntrepreneurshipFundingData = {
+  title:
+    "<strong>$10,000 to $30,000</strong> per startup, to kickstart your company.",
+
+  description:
+    "The DiscoverSTEM Entrepreneurship Program teaches what is missing even in the best management schools in the world: how to actually launch and run your own company. By the time you finish college, you may already own a successful business enterprise.",
+
+  image: "/Images/entrepreneurship/founders-collaborating.png",
+  imageAlt: "Founders collaborating",
+
+  points: [
+    "Direct cash injection per founding team",
+    "Tied to milestones, not paperwork",
+    "Backed by mentors, not just capital",
+    "Lab + infrastructure access included",
+  ],
+};
+
+export const productDesignPartnersData: ImageTextPartnerSectionData = {
+  title: "Product Design, Prototyping, and Manufacturing Partners",
+
+  description: [
+    `Innovating a product or solution demands a lot of testing with trials and errors. Prototyping an invention idea often makes a significant contribution to projects as it allows refining ideas through repetitive experimentation.`,
+
+    `At DiscoverSTEM, we are partnering with credible product design, prototyping, and manufacturing partners who help our innovators bring their thoughts and ideas to concrete solutions through product design and prototyping. It enables our innovators to understand and identify any potential issues with initial designs and amend accordingly before progressing further. It also helps our innovators avoid any design-related manufacturing problems which may prove costly or delay the manufacturing process.`,
+  ],
+
+  image: "/Images/partners/product-design.png",
+  imageAlt: "Product Design Partner",
+};
+
+export const DesignPartnersData: ImageTextPartnerSectionData = {
+  title: "Startup Ecosystem Partner CPA/Legal",
+
+  description: [
+    `From fundraising and company formation to the launch and the ongoing operations, a startup needs legal and financial advice at every step to ensure that all necessary compliances are met, and agreements are made. A startup is not some random dream that the founder sees and wakes up the next day to fulfill it. Startup demands organized efforts day in and day out and need professional counseling from legal experts and CPAs.`,
+
+    `At DiscoverSTEM, a huge ecosystem of partners is already on board to support our innovators in their entrepreneurial journey. While legal partners help innovators in documentation, agreements, contracts, and other legal compliance, our CPAs help shape a detailed cost structure, revenue generation, and a complete business model`,
+  ],
+
+  image: "/Images/partners/product-design.png",
+  imageAlt: "Product Design Partner",
+};
+
+export const FAQData =[
+  {
+    title: "Frequently Asked question",
+ description: "Have Question? You’re in the right place",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+     title: "Frequently Asked question",
+ description: "Have Question? You’re in the right place",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+     title: "Frequently Asked question",
+ description: "Have Question? You’re in the right place",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+];
+

@@ -34,7 +34,7 @@ export default function InfoSection({
             lineHeight: { xs: "42px", md: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 4, md: "68px" },
+            mb: { xs: 4, md: "30px" },
           }}
         >
           {data.title}

@@ -13,7 +13,9 @@ import {
 import React from "react";
 
 import { FONT_FAMILY } from "@/utils/Fonts";
-import VerticalStepper from "./VerticalStepper";
+import VerticalStepper from "./VerticalSteppers";
+
+
 
 export default function ProcessSection() {
     const [activeStep, setActiveStep] = React.useState(0);
@@ -23,7 +25,7 @@ export default function ProcessSection() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        pb: { xs: 5, md: 8 },
+        py: { xs: 5, md: 14 },
         px: { xs: 3, md: 4 },
       }}
     >

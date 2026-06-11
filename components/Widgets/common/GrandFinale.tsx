@@ -1,42 +1,42 @@
 "use client";
 
-import { grandFinaleSectionData } from "@/assets/Generic-data";
+import { ImageTextHighlightSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 
-export default function GrandFinale() {
-  const data = grandFinaleSectionData;
+interface GrandFinaleSectionProps {
+  data: ImageTextHighlightSectionData;
+}
 
+export default function GrandFinaleSection({
+  data,
+}: GrandFinaleSectionProps) {
   return (
     <Container
       maxWidth={false}
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        px: { xs: "20px", md: 0 },
+        pt: { xs: "50px", md: "0px" },
+        pb: { xs: "60px", md: "0px" },
       }}
     >
       <Typography
         sx={{
           width: "100%",
+          minHeight: { md: "130px" },
           whiteSpace: "pre-line",
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: {
-            xs: "32px",
-            md: "48px",
-          },
-          lineHeight: {
-            xs: "46px",
-            md: "65px",
-          },
+          fontSize: { xs: "28px", sm: "36px", md: "48px" },
+          lineHeight: { xs: "38px", sm: "48px", md: "65px" },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           textAlign: "center",
           color: "#101010",
-          mb: {
-            xs: 4,
-            md: "35px",
-          },
+          mb: { xs: "35px", md: "35px" },
         }}
       >
         {data.title}
@@ -47,16 +47,9 @@ export default function GrandFinale() {
           position: "relative",
           width: "100%",
           maxWidth: "1022.73px",
-          height: {
-            xs: "280px",
-            sm: "400px",
-            md: "515px",
-          },
+          height: { xs: "230px", sm: "360px", md: "515px" },
           mx: "auto",
-          mb: {
-            xs: 5,
-            md: "70px",
-          },
+          mb: { xs: "42px", md: "70px" },
           overflow: "hidden",
         }}
       >
@@ -64,6 +57,7 @@ export default function GrandFinale() {
           src={data.image}
           alt={data.imageAlt}
           fill
+          priority
           style={{
             objectFit: "cover",
           }}
@@ -76,20 +70,11 @@ export default function GrandFinale() {
           width: "100%",
           maxWidth: "1160px",
           mx: "auto",
-
           fontFamily: "Poppins, sans-serif",
+          fontStyle: "normal",
           fontWeight: 400,
-
-          fontSize: {
-            xs: "16px",
-            md: "22px",
-          },
-
-          lineHeight: {
-            xs: "30px",
-            md: "43px",
-          },
-
+          fontSize: { xs: "15px", sm: "18px", md: "22px" },
+          lineHeight: { xs: "28px", sm: "34px", md: "43px" },
           letterSpacing: "-0.03em",
           textAlign: "center",
           color: "#777777",
@@ -100,12 +85,7 @@ export default function GrandFinale() {
           },
 
           "& p": {
-            margin: 0,
-            marginBottom: "24px",
-          },
-
-          "& p:last-child": {
-            marginBottom: 0,
+            m: 0,
           },
         }}
         dangerouslySetInnerHTML={{

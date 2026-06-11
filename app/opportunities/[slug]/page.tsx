@@ -1,18 +1,43 @@
 import StartupOpportunities from "@/components/Layouts/StartupOpportunities";
 import PartnersEcosystem from "@/components/Layouts/PartnersEcosystem";
+import ResearchMentors from "@/components/Layouts/ResearchMentors";
+import AerospaceResearchLab from "@/components/Layouts/AerospaceResearchLab";
+import RoboticsResearchLab from "@/components/Layouts/RoboticsLabLayout";
+import NeurotechnologyResearchLab from "@/components/Layouts/NeurotechnologyLabLayouts";
+import EnergyResearchLab from "@/components/Layouts/EnergyLabLayouts";
+import BiotechnologyResearchLab from "@/components/Layouts/BiotechnologyLabLayouts";
+import FintechResearchLab from "@/components/Layouts/FintechLabLayouts";
 import { notFound } from "next/navigation";
 
 const routes: Record<string, React.ReactNode> = {
-  "startup_opportunities": <StartupOpportunities />,
-  "partners_ecosystem": <PartnersEcosystem />,
+  "startup-opportunities": <StartupOpportunities />,
+  "partners-ecosystem": <PartnersEcosystem />,
+  "research-mentors": <ResearchMentors />,
+
+  "aerospace_research_lab": <AerospaceResearchLab />,
+  "ai-autonomous-tech-and-robotics-research-lab": <RoboticsResearchLab />,
+
+  "banking-finance-fintech-research-lab": <FintechResearchLab />,
+
+  "energy-environment-research-lab": <EnergyResearchLab />,
+
+  "genomics-biotechnology-health-sciences-research-lab":
+    <BiotechnologyResearchLab />,
+
+  "neurotech-brain-computer-interface":
+    <NeurotechnologyResearchLab />,
 };
 
-export default async function Page({
+export default async function DynamicPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
 
-  return routes[slug] || notFound();
+  if (!routes[slug]) {
+    notFound();
+  }
+
+  return routes[slug];
 }
