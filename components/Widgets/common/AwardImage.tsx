@@ -9,6 +9,8 @@ interface AwardImageGridProps {
 }
 
 export default function AwardImageGrid({ data }: AwardImageGridProps) {
+  const [first, ...rest] = data;
+
   return (
     <Container
       maxWidth={false}
@@ -19,6 +21,26 @@ export default function AwardImageGrid({ data }: AwardImageGridProps) {
         py: { xs: 5, md: 8 },
       }}
     >
+      {first && (
+        <Box sx={{ display: "flex", justifyContent: "center",mt:-10 }}>
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: "600px",
+              height: { xs: "300px", md: "500px" },
+              position: "relative",
+            }}
+          >
+            <Image
+              src={first.image}
+              alt={first.alt}
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </Box>
+        </Box>
+      )}
+
       <Box
         sx={{
           width: "100%",
@@ -34,7 +56,7 @@ export default function AwardImageGrid({ data }: AwardImageGridProps) {
           },
         }}
       >
-        {data.map((item, index) => (
+        {rest.map((item, index) => (
           <Box
             key={index}
             sx={{

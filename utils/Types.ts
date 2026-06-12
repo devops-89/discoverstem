@@ -106,9 +106,20 @@ export interface PatentCardData {
   image: string;
   inventors: string;
   inventorCount: number;
+  patentNumber?: string;
   googlePatentLink?: string;
   certificateLink?: string;
 }
+export interface AdvisoryMember {
+  title: string;
+  name: string;
+  role: string;
+  desc: string;
+  description: string[];
+  image: any;
+  reverse: boolean;
+}
+
 export interface StatItem {
   value: string;
   color: string;
@@ -147,6 +158,7 @@ export interface AdmissionStudent {
   id: number;
   name: string;
   initials: string;
+  image: string;
   batch: AdmissionBatchFilter;
   program: Exclude<AdmissionProgramFilter, "All">;
   school: string;
@@ -194,6 +206,7 @@ export interface TeamMember {
   name: string;
   role: string;
   color: string;
+  image?: string;
 }
 
 export interface StartupDetailData {
@@ -211,6 +224,7 @@ export interface StartupDetailData {
 
   logo: string;
   startupImage: string;
+  videoUrl?: string;
 
   status: {
     title: string;
@@ -227,7 +241,7 @@ export interface StartupDetailData {
   website: {
     title: string;
     value: string;
-    buttons: string[];
+    buttons: { label: string; url: string }[];
   };
 }
 

@@ -2,20 +2,30 @@
 
 import { patentsData } from "@/assets/Generic-data";
 import { PatentFilterType } from "@/utils/Types";
+import { Close } from "@mui/icons-material";
 import {
   Box,
   Card,
   CardContent,
   Chip,
   Container,
+  Dialog,
+  IconButton,
+  Pagination,
+  PaginationItem,
   TextField,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
 
+const ROWS_PER_PAGE = 6;
+
 export default function PatentFilterSection() {
   const [filter, setFilter] = useState<PatentFilterType>("All");
   const [search, setSearch] = useState("");
+  const [certificateOpen, setCertificateOpen] = useState(false);
+  const [certificateImage, setCertificateImage] = useState("");
+  const [page, setPage] = useState(1);
 
   const filteredPatents = patentsData.filter((item) => {
     const matchFilter = filter === "All" || item.type === filter;
@@ -26,6 +36,12 @@ export default function PatentFilterSection() {
 
     return matchFilter && matchSearch;
   });
+
+  const pageCount = Math.ceil(filteredPatents.length / ROWS_PER_PAGE);
+  const paginatedPatents = filteredPatents.slice(
+    (page - 1) * ROWS_PER_PAGE,
+    page * ROWS_PER_PAGE
+  );
 
   return (
     <Container
@@ -50,7 +66,7 @@ export default function PatentFilterSection() {
           mb: 2,
         }}
       >
-        <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+        <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
           {(["All", "US", "SA"] as PatentFilterType[]).map((item) => (
             <Chip
               key={item}
@@ -58,11 +74,13 @@ export default function PatentFilterSection() {
                 item === "All"
                   ? "All Patents"
                   : item === "US"
-                  ? "🇺🇸 US"
-                  : "🇿🇦 SA"
+                  ? "US"
+                  : "SA"
               }
-              onClick={() => setFilter(item)}
+              onClick={() => { setFilter(item); setPage(1); }}
               sx={{
+                height: 40,
+                fontSize: "14px",
                 backgroundColor: filter === item ? "#7B53A1" : "#fff",
                 color: filter === item ? "#fff" : "#111827",
                 fontWeight: 600,
@@ -75,7 +93,7 @@ export default function PatentFilterSection() {
           size="small"
           placeholder="Search by title, inventor, or patent number..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => { setSearch(e.target.value); setPage(1); }}
           sx={{
             width: { xs: "100%", md: "420px" },
             "& .MuiOutlinedInput-root": {
@@ -101,7 +119,7 @@ export default function PatentFilterSection() {
           gap: { xs: 3, md: 4 },
         }}
       >
-        {filteredPatents.map((item) => (
+        {paginatedPatents.map((item) => (
           <Card
             key={item.id}
             sx={{
@@ -134,7 +152,7 @@ export default function PatentFilterSection() {
                 }}
               >
                 <Chip
-                  label={item.type === "US" ? "🇺🇸 US Patent" : "🇿🇦 SA Patent"}
+                  label={item.type === "US" ? "US Patent" : "SA Patent"}
                   size="small"
                   sx={{
                     height: "24px",
@@ -160,7 +178,7 @@ export default function PatentFilterSection() {
                     color: "#737373",
                   }}
                 >
-                  #{item.id}
+                  Patent No. {item.googlePatentLink?.split("/patent/")[1]?.replace("/en", "")}
                 </Typography>
               </Box>
 
@@ -238,8 +256,10 @@ export default function PatentFilterSection() {
                 </Typography>
 
                 <Typography
-                  component="a"
-                  href={item.certificateLink}
+                  onClick={() => {
+                    setCertificateImage(item.image);
+                    setCertificateOpen(true);
+                  }}
                   sx={{
                     fontFamily: "Inter, sans-serif",
                     fontSize: "14px",
@@ -256,6 +276,78 @@ export default function PatentFilterSection() {
           </Card>
         ))}
       </Box>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+        <Pagination
+          count={pageCount}
+          page={page}
+          onChange={(_, value) => setPage(value)}
+          renderItem={(item) => <PaginationItem {...item} />}
+          sx={{
+            "& .MuiPagination-ul": { gap: "8px" },
+            "& .MuiPaginationItem-root": {
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              fontSize: "14px",
+              fontWeight: 500,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#E5E7EB",
+              color: "#374151",
+            },
+            "& .MuiPaginationItem-ellipsis": {
+              backgroundColor: "transparent",
+              lineHeight: "40px",
+            },
+            "& .Mui-selected": {
+              backgroundColor: "#7B53A1 !important",
+              color: "#fff",
+            },
+          }}
+        />
+      </Box>
+    <Dialog
+      open={certificateOpen}
+      onClose={() => setCertificateOpen(false)}
+      maxWidth="lg"
+      slotProps={{
+        paper:{
+        sx: {
+          bgcolor: "transparent",
+          boxShadow: "none",
+          overflow: "visible",
+          position: "relative",
+        },
+      }
+      }}
+    >
+      <IconButton
+        onClick={() => setCertificateOpen(false)}
+        sx={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          zIndex: 10,
+          color: "#fff",
+          bgcolor: "rgba(0,0,0,0.5)",
+          "&:hover": { bgcolor: "rgba(0,0,0,0.7)" },
+        }}
+      >
+        <Close />
+      </IconButton>
+      <Box
+        component="img"
+        src={certificateImage}
+        alt="Patent Certificate"
+        sx={{
+          maxWidth: "90vw",
+          maxHeight: "90vh",
+          objectFit: "contain",
+          borderRadius: "8px",
+        }}
+      />
+    </Dialog>
     </Container>
   );
 }

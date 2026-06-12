@@ -10,12 +10,12 @@ const stats = [
   },
   {
     value: "31",
-    label: "🇺🇸 US Patents",
+    label: "US Patents",
     color: "#EF4123",
   },
   {
     value: "13",
-    label: "🇿🇦 SA Patents",
+    label: "SA Patents",
     color: "#F59E0B",
   },
   {

@@ -1,8 +1,16 @@
 "use client";
 
 import { InnovationCardItem } from "@/utils/Types";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  Grid,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
+import { useState } from "react";
 
 interface InnovationCardsGridProps {
   items: InnovationCardItem[];
@@ -11,18 +19,25 @@ interface InnovationCardsGridProps {
 export default function InnovationCardsGrid({
   items,
 }: InnovationCardsGridProps) {
+  const [certModal, setCertModal] = useState<{
+    open: boolean;
+    src: string;
+    title: string;
+  }>({ open: false, src: "", title: "" });
+
   return (
-    <Grid container spacing={{ xs: 3, md: 2, lg: 3 }}>
+    <>
+    <Grid container spacing={{ xs: 3, md: 2 }} >
       {items.map((item) => {
         const isGranted = item.filterType === "Granted";
 
         return (
-          <Grid key={item.id} size={{ xs: 12, sm: 6, md: 3 }}>
+          <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4 }}>
             <Box
               sx={{
                 width: "100%",
-                maxWidth: { xs: "100%", sm: 380, md: 290 },
-                minHeight: "411.14px",
+                maxWidth: { xs: "100%", sm: 380, md: 340 },
+                height: "100%",
                 backgroundColor: "#fff",
                 borderRadius: "16px",
                 border: "0.8px solid #0000001A",
@@ -126,38 +141,40 @@ export default function InnovationCardsGrid({
                   {item.title}
                 </Typography>
 
-                <Box
-                  sx={{
-                    backgroundColor: "#FFF5E6",
-                    border: "0.8px solid #F9A51E4D",
-                    borderRadius: "14px",
-                    px: "12.8px",
-                    py: "12.8px",
-                    minHeight: "103px",
-                  }}
-                >
-                  {item.awardIcon && (
-                    <Box sx={{ mb: 1 }}>
-                      <Image
-                        src={item.awardIcon}
-                        alt="Award"
-                        width={80}
-                        height={18}
-                        style={{ objectFit: "contain" }}
-                      />
-                    </Box>
-                  )}
-
-                  <Typography
+                {item.award && (
+                  <Box
                     sx={{
-                      fontSize: "13.5px",
-                      lineHeight: "19.25px",
-                      color: "#262626",
+                      backgroundColor: "#FFF5E6",
+                      border: "0.8px solid #F9A51E4D",
+                      borderRadius: "14px",
+                      px: "12.8px",
+                      py: "12.8px",
+                      minHeight: "103px",
                     }}
                   >
-                    {item.award}
-                  </Typography>
-                </Box>
+                    {item.awardIcon && (
+                      <Box sx={{ mb: 1 }}>
+                        <Image
+                          src={item.awardIcon}
+                          alt="Award"
+                          width={80}
+                          height={18}
+                          style={{ objectFit: "contain" }}
+                        />
+                      </Box>
+                    )}
+
+                    <Typography
+                      sx={{
+                        fontSize: "13.5px",
+                        lineHeight: "19.25px",
+                        color: "#262626",
+                      }}
+                    >
+                      {item.award}
+                    </Typography>
+                  </Box>
+                )}
 
                 <Stack direction="row" justifyContent="space-between" mt="auto">
                   <Typography
@@ -177,14 +194,22 @@ export default function InnovationCardsGrid({
                   </Typography>
 
                   <Typography
-                    component="a"
-                    href={item.certificateLink}
-                    target="_blank"
+                    onClick={() => {
+                      if (item.certificateLink !== "#") {
+                        setCertModal({
+                          open: true,
+                          src: item.certificateLink,
+                          title: item.title,
+                        });
+                      }
+                    }}
                     sx={{
                       fontSize: "14px",
                       lineHeight: "20px",
                       color: "#7B53A1",
                       textDecoration: "none",
+                      cursor: item.certificateLink !== "#" ? "pointer" : "default",
+                      opacity: item.certificateLink !== "#" ? 1 : 0.4,
                     }}
                   >
                     Patent
@@ -198,5 +223,52 @@ export default function InnovationCardsGrid({
         );
       })}
     </Grid>
+
+      <Dialog
+        open={certModal.open}
+        onClose={() => setCertModal({ open: false, src: "", title: "" })}
+        maxWidth="md"
+        fullWidth
+        PaperProps={{
+          sx: {
+            borderRadius: "16px",
+            position: "relative",
+            overflow: "visible",
+            p: 2,
+          },
+        }}
+      >
+        <IconButton
+          onClick={() => setCertModal({ open: false, src: "", title: "" })}
+          sx={{
+            position: "absolute",
+            top: -12,
+            right: -12,
+            width: 36,
+            height: 36,
+            backgroundColor: "#fff",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            zIndex: 1,
+            "&:hover": { backgroundColor: "#f5f5f5" },
+          }}
+        >
+          <Typography sx={{ fontSize: "18px", fontWeight: 700, lineHeight: 1 }}>
+            ✕
+          </Typography>
+        </IconButton>
+
+        <Box sx={{ position: "relative", width: "100%", minHeight: "60vh" }}>
+          {certModal.src && (
+            <Image
+              src={certModal.src}
+              alt={certModal.title}
+              fill
+              unoptimized
+              style={{ objectFit: "contain" }}
+            />
+          )}
+        </Box>
+      </Dialog>
+    </>
   );
 }
