@@ -66,6 +66,7 @@ export default function OtherProgramsSection({
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "repeat(2, 570px)" },
           gap: { xs: 3, md: "20px" },
+          alignItems: "stretch",
         }}
       >
         {data.programs.map((program) => (
@@ -80,6 +81,9 @@ export default function OtherProgramsSection({
                 "0px 1px 3px rgba(0,0,0,0.1), 0px 1px 2px -1px rgba(0,0,0,0.1)",
               borderRadius: "16px",
               p: { xs: "24px", md: "32.8px" },
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
             }}
           >
             <Box
@@ -138,6 +142,7 @@ export default function OtherProgramsSection({
                 fontSize: "16px",
                 lineHeight: "26px",
                 color: "#404040",
+                flexGrow: 1,
                 mb: "24px",
               }}
             >
@@ -159,6 +164,7 @@ export default function OtherProgramsSection({
                 fontSize: "14px",
                 lineHeight: "20px",
                 textTransform: "none",
+                alignSelf: "flex-start",
                 "&:hover": {
                   bgcolor: "#171717",
                 },

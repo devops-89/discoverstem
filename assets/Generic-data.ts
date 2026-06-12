@@ -88,6 +88,7 @@ import type {
   Step,
   Student,
   SuccessStoryCard,
+  VideoData,
   VideoSectionData
 } from "@/utils/Types";
 export const heroImage =
@@ -2230,110 +2231,9 @@ const innovationItems: InnovationCardItem[] = [
   { id:49, category:"Lifestyle", filterType:"Pending", statusIcon:"/Images/innovation/pending.png", image:`/Images/student-innovation/innovation49.${innovationImgExt[49]}`, title:"Multipurpose phone case", award:"", patentLink:"#", certificateLink:"#" },
 ];
 
+
 export const innovationCardsData: InnovationCardItem[] = innovationItems;
 
-
-
-export const successStoriesData: SuccessStoryCard[] = [
-  {
-    id: 1,
-    size: "large",
-    position: "left",
-    name: "Dr. Hashima Hasan",
-    designation:
-      "(Program Scientist @ NASA)\nPh.D. (Nuclear Physics – Oxford University)\nJames Webb Telescope",
-    image: "/Images/success-stories/hashima-hasan.jpg",
-    description:
-      "The program brings to life the true scientific process. Rather than focusing on book-centric activities, the students are encouraged to be inquisitive about real-life situations and seek answers through research and experimentation.\n\nThe down-to-earth approach of DiscoverSTEM takes the fear out of scientific learning. DiscoverSTEM encourages students to make their own discoveries. By working together in groups, they feed off each other's energies as each has his or her own 'Eureka' moment.\n\nWhat started as a small mentoring program in 2016 has now evolved to one where students have won NASA innovation awards, patented their innovations, and are now proceeding towards commercialization.",
-  },
-  {
-    id: 2,
-    size: "small",
-    position: "right",
-    name: "Dr. Charles A. Rodenberger",
-    designation:
-      "(NASA Scientist)\n-Designer of the Apollo Spacecraft\n-Inventor of Hypervelocity Gun\n-Researcher for NASA related to meteoroid protection of spacecraft",
-    image: "/Images/success-stories/charles-rodenberger.jpg",
-    description:
-      "As a scientist and one of the designers of the NASA Apollo spacecraft, I've seen intensive brain-storming and innovation activities in our team when we were designing systems to land a man on the moon and safely bring them back! The next time I saw such an activity is at DiscoverSTEM. This is the best STEM & Innovation program I've ever seen.",
-  },
-  {
-    id: 3,
-    size: "small",
-    position: "right",
-    name: "Shreeya Dasikan",
-    designation: "(DIP 2018-19)\nGreenhill School, Dallas",
-    image: "/Images/success-stories/shreeya-dasikan.jpg",
-    description:
-      "My favorite part about the program was when all of us would sit in the meeting room and begin to brainstorm ideas. I deeply enjoyed those moments when we were gathered together, throwing out crazy ideas that only seemed crazy until we made them a reality.",
-  },
-  {
-    id: 4,
-    size: "small",
-    position: "left",
-    name: "Jim Christensen",
-    designation:
-      "Director of Education\nNASA Kennedy Space Center Visitor's Complex",
-    image: "/Images/success-stories/jim-christensen.jpg",
-    description:
-      "One thing which is fascinating is 'How kids can be trained to be innovative?' Mirza has come up with a step-by-step kind of program and approach to help people create innovations, and I just love that. This program absolutely fascinates me!",
-  },
-  {
-    id: 5,
-    size: "small",
-    position: "right",
-    name: "Dr. Charles A. Rodenberger",
-    designation:
-      "(NASA Scientist)\n-Designer of the Apollo Spacecraft\n-Inventor of Hypervelocity Gun\n-Researcher for NASA related to meteoroid protection of spacecraft",
-    image: "/Images/success-stories/charles-rodenberger.jpg",
-    description:
-      "As a scientist and one of the designers of the NASA Apollo spacecraft, I've seen intensive brain-storming and innovation activities in our team when we were designing systems to land a man on the moon and safely bring them back! The next time I saw such an activity is at DiscoverSTEM. This is the best STEM & Innovation program I've ever seen.",
-  },
-  {
-    id: 6,
-    size: "large",
-    position: "left",
-    name: "Dr. Hashima Hasan",
-    designation:
-      "(Program Scientist @ NASA)\nPh.D. (Nuclear Physics – Oxford University)\nJames Webb Telescope",
-    image: "/Images/success-stories/hashima-hasan.jpg",
-    description:
-      "The program brings to life the true scientific process. Rather than focusing on book-centric activities, the students are encouraged to be inquisitive about real-life situations and seek answers through research and experimentation.\n\nThe down-to-earth approach of DiscoverSTEM takes the fear out of scientific learning. DiscoverSTEM encourages students to make their own discoveries. By working together in groups, they feed off each other's energies as each has his or her own 'Eureka' moment.\n\nWhat started as a small mentoring program in 2016 has now evolved to one where students have won NASA innovation awards, patented their innovations, and are now proceeding towards commercialization.",
-  },
-  {
-    id: 7,
-    size: "large",
-    position: "right",
-    name: "Dr. Hashima Hasan",
-    designation:
-      "(Program Scientist @ NASA)\nPh.D. (Nuclear Physics – Oxford University)\nJames Webb Telescope",
-    image: "/Images/success-stories/hashima-hasan.jpg",
-    description:
-      "The program brings to life the true scientific process. Rather than focusing on book-centric activities, the students are encouraged to be inquisitive about real-life situations and seek answers through research and experimentation.",
-  },
-  {
-    id: 8,
-    size: "small",
-    position: "left",
-    name: "Jim Christensen",
-    designation:
-      "Director of Education\nNASA Kennedy Space Center Visitor's Complex",
-    image: "/Images/success-stories/jim-christensen.jpg",
-    description:
-      "One thing which is fascinating is 'How kids can be trained to be innovative?' Mirza has come up with a step-by-step kind of program and approach to help people create innovations, and I just love that. This program absolutely fascinates me!",
-  },
-  {
-    id: 9,
-    size: "small",
-    position: "right",
-    name: "Jim Christensen",
-    designation:
-      "Director of Education\nNASA Kennedy Space Center Visitor's Complex",
-    image: "/Images/success-stories/jim-christensen.jpg",
-    description:
-      "One thing which is fascinating is 'How kids can be trained to be innovative?' Mirza has come up with a step-by-step kind of program and approach to help people create innovations, and I just love that. This program absolutely fascinates me!",
-  },
-];
 export const ImpactData =[
   {
     title: "InnovateSTEM Impact",
@@ -3913,3 +3813,47 @@ export const FAQData =[
   },
 ];
 
+export const successStoriesData: SuccessStoryCard[] = [
+  {
+    id: 1,
+    name: "Dr. Hashima Hasan",
+    designation:
+      "(Program Scientist @ NASA)\nPh.D. (Nuclear Physics – Oxford University)\nJames Webb Telescope",
+    image: "/Images/Finale/chiefguest.png",
+    description:
+      "The program brings to life the true scientific process. Rather than focusing on book-centric activities, the students are encouraged to be inquisitive about real-life situations and seek answers through research and experimentation.",
+  },
+  {
+    id: 2,
+    name: "Dr. Charles A. Rodenberger",
+    designation:
+      "(NASA Scientist)\nDesigner of the Apollo Spacecraft\nInventor of Hypervelocity Gun",
+    image: "/Images/Finale/chiefguest.png",
+    description:
+      "As a scientist and one of the designers of the NASA Apollo spacecraft, I've seen intensive brain-storming and innovation activities in our team.",
+  },
+  {
+    id: 3,
+    name: "Shreeya Dasikan",
+    designation:
+      "(DIP 2018-19)\nGreenhill School, Dallas",
+    image: "/Images/Finale/chiefguest.png",
+    description:
+      "My favorite part about the program was when all of us would sit in the meeting room and begin to brainstorm ideas.",
+  },
+  {
+    id: 4,
+    name: "Jim Christensen",
+    designation:
+      "Director of Education\nNASA Kennedy Space Center Visitor's Complex",
+    image: "/Images/Finale/chiefguest.png",
+    description:
+      "One thing which is fascinating is how kids can be trained to be innovative.",
+  },
+];
+
+
+export const AerospacevideoData: VideoData = {
+  youtubeUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+  title: "Program Video",
+};

@@ -114,15 +114,7 @@ export interface PatentCardData {
   googlePatentLink?: string;
   certificateLink?: string;
 }
-export interface AdvisoryMember {
-  title: string;
-  name: string;
-  role: string;
-  desc: string;
-  description: string[];
-  image: any;
-  reverse: boolean;
-}
+
 
 export interface StatItem {
   value: string;
@@ -194,15 +186,7 @@ export interface InnovationCardItem {
   patentLink: string;
   certificateLink: string;
 }
-export interface SuccessStoryCard {
-  id: number;
-  name: string;
-  designation: string;
-  image: string;
-  description: string;
-  size: "large" | "small";
-  position: "left" | "right";
-}
+
 
 
 export interface TeamMember {
@@ -536,4 +520,17 @@ export interface ResearchModulesSectionData {
     duration: string;
     level: "Beginner" | "Intermediate" | "Advanced";
   }[];
+}
+
+export interface SuccessStoryCard {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+  description: string;
+}
+
+export interface VideoData {
+  youtubeUrl: string;
+  title: string;
 }
