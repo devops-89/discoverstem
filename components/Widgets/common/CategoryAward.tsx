@@ -1,11 +1,23 @@
 "use client";
 
-import { categoryAwardsData } from "@/assets/Generic-data";
+import { AccordionSectionData } from "@/utils/Types";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
 
-export default function CategoryAwardsSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(2);
+interface AccordionSectionProps {
+  data: AccordionSectionData;
+  defaultOpenIndex?: number;
+}
+
+export default function AccordionSection({
+  data,
+  defaultOpenIndex = 0,
+}: AccordionSectionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(
+    defaultOpenIndex
+  );
 
   const handleToggle = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
@@ -18,7 +30,7 @@ export default function CategoryAwardsSection() {
         maxWidth: "1160px",
         mx: "auto",
         px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        py: { xs: 6, md: 6 },
       }}
     >
       <Typography
@@ -32,7 +44,7 @@ export default function CategoryAwardsSection() {
           mb: { xs: 4, md: "70px" },
         }}
       >
-        {categoryAwardsData.title}
+        {data.title}
       </Typography>
 
       <Box
@@ -44,7 +56,7 @@ export default function CategoryAwardsSection() {
           py: { xs: 2.5, md: "20px" },
         }}
       >
-        {categoryAwardsData.items.map((item, index) => {
+        {data.items.map((item, index) => {
           const isOpen = openIndex === index;
 
           return (
@@ -52,30 +64,70 @@ export default function CategoryAwardsSection() {
               key={index}
               sx={{
                 borderBottom:
-                  index === categoryAwardsData.items.length - 1
+                  index === data.items.length - 1
                     ? "none"
                     : "1px solid #E5E5E5",
                 py: { xs: 2, md: "18px" },
               }}
             >
-              <Typography
+              <Box
                 onClick={() => handleToggle(index)}
                 sx={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 400,
-                  fontSize: { xs: "15px", md: "18px" },
-                  lineHeight: "26px",
-                  letterSpacing: "-0.03em",
-                  color: "#000000",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "10px",
                   cursor: "pointer",
                   userSelect: "none",
                 }}
               >
-                {isOpen ? "⌄" : "›"} {item.question}
-              </Typography>
+                <Box
+                  sx={{
+                    mt: "2px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  {isOpen ? (
+                    <KeyboardArrowDownIcon
+                      sx={{
+                        fontSize: "24px",
+                        color: "#000000",
+                      }}
+                    />
+                  ) : (
+                    <KeyboardArrowRightIcon
+                      sx={{
+                        fontSize: "24px",
+                        color: "#000000",
+                      }}
+                    />
+                  )}
+                </Box>
+
+                <Typography
+                  sx={{
+                    flex: 1,
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: 400,
+                    fontSize: { xs: "15px", md: "18px" },
+                    lineHeight: "26px",
+                    letterSpacing: "-0.03em",
+                    color: "#000000",
+                  }}
+                >
+                  {item.question}
+                </Typography>
+              </Box>
 
               {isOpen && (
-                <Box sx={{ mt: 2, pl: { xs: 1, md: "14px" } }}>
+                <Box
+                  sx={{
+                    mt: 2,
+                    pl: "34px",
+                  }}
+                >
                   {item.answer.map((answer, answerIndex) => (
                     <Typography
                       key={answerIndex}
@@ -87,7 +139,10 @@ export default function CategoryAwardsSection() {
                         lineHeight: "26px",
                         letterSpacing: "-0.03em",
                         color: "#777777",
-                        mb: answerIndex === item.answer.length - 1 ? 0 : 1,
+                        mb:
+                          answerIndex === item.answer.length - 1
+                            ? 0
+                            : 1,
 
                         "& strong": {
                           fontWeight: 600,

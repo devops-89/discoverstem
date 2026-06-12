@@ -3,14 +3,13 @@ import {   aerospaceModulesData, aerospaceResearchLabTextData, ctaBannerData,  i
 import HeroSlider from "@/components/Widgets/common/HeroSection";
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 import InfoSection from "@/components/Widgets/common/InfoSection";
-import OutcomesSection from "./Outcomes";
-import ResearchModulesSection from "./Modules";
+
 import ExploreLabsSection from "@/components/Widgets/common/Explore";
 import InnovationShowcaseSection from "@/components/Widgets/common/Researchlab";
 
 
 
-export default function AerospaceResearchLab() {
+export default function NeurotechnologyResearchLab() {
 
     
   return (
@@ -18,8 +17,7 @@ export default function AerospaceResearchLab() {
       <HeroSlider slides={NobelLaureatesData}/>
     
      <InfoSection data={aerospaceResearchLabTextData} />
-     <OutcomesSection/>
-     <ResearchModulesSection data={aerospaceModulesData} />
+     
      
  <InnovationShowcaseSection
       title="Innovations made by DiscoverSTEM Students in this Research Lab are:"

@@ -43,7 +43,7 @@ export default function ChiefGuestSection() {
             }}
           >
             <Image
-              src="/Images/chief-guest/gurvinder-singh.png"
+              src="/Images/finale/chiefguest.png"
               alt="Gurvinder Singh Ahluwalia"
               fill
               style={{

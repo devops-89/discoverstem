@@ -1,14 +1,24 @@
 "use client";
 
-import { innovationCardsData } from "@/assets/Generic-data";
 import InnovationCardsGrid from "@/components/Widgets/common/InnovationCard";
-
+import { InnovationCardItem } from "@/utils/Types";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { Box, Button, Container, Typography } from "@mui/material";
 import Link from "next/link";
 
+interface InnovationShowcaseSectionProps {
+  title: string;
+  items: InnovationCardItem[];
+  buttonText?: string;
+  buttonLink?: string;
+}
 
-export default function InnovationShowcaseSection() {
+export default function InnovationShowcaseSection({
+  title,
+  items,
+  buttonText = "View All",
+  buttonLink = "/success-stories/student-innovations",
+}: InnovationShowcaseSectionProps) {
   return (
     <Container
       maxWidth={false}
@@ -40,35 +50,35 @@ export default function InnovationShowcaseSection() {
             color: "#111827",
           }}
         >
-          Innovations made by DiscoverSTEM Students in this Research Lab are:
+          {title}
         </Typography>
 
-        <Button
-          component={Link}
-          href="/success-stories/student-innovations"
-          endIcon={<NorthEastIcon sx={{ fontSize: 16 }} />}
-          sx={{
-            minWidth: "108px",
-            height: "48px",
-            px: "18px",
-            borderRadius: "999px",
-            border: "1px solid #EE4823",
-            color: "#EE4823",
-            textTransform: "none",
+        {buttonText && buttonLink && (
+          <Button
+            component={Link}
+            href={buttonLink}
+            endIcon={<NorthEastIcon sx={{ fontSize: 16 }} />}
+            sx={{
+              minWidth: "108px",
+              height: "48px",
+              px: "18px",
+              borderRadius: "999px",
+              border: "1px solid #EE4823",
+              color: "#EE4823",
+              textTransform: "none",
 
-            "&:hover": {
-              backgroundColor: "transparent",
-              borderColor: "#EE4823",
-            },
-          }}
-        >
-          View All
-        </Button>
+              "&:hover": {
+                backgroundColor: "transparent",
+                borderColor: "#EE4823",
+              },
+            }}
+          >
+            {buttonText}
+          </Button>
+        )}
       </Box>
 
-      <InnovationCardsGrid
-        items={innovationCardsData.slice(0, 4)}
-      />
+      <InnovationCardsGrid items={items} />
     </Container>
   );
 }
