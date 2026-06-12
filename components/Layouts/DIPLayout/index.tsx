@@ -1,5 +1,5 @@
 
-import { ctaBannerData, foundationCoursesData, foundationCoursesSectionData, ILMData, ilmInfoCardsData, ilmOtherProgramsData, ImplementationCoursesData,} from "@/assets/Generic-data";
+import { ctaBannerData, DipOtherProgramsData, foundationCoursesData,ILMData, ilmInfoCardsData, ImplementationCoursesData,} from "@/assets/Generic-data";
 import HeroSlider from "@/components/Widgets/common/HeroSection";
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 
@@ -44,7 +44,7 @@ export default function DIPLayouts() {
       data={ImplementationCoursesData}
     />
    <ProcessSection/>
-   <OtherProgramsSection data={ilmOtherProgramsData} />
+   <OtherProgramsSection data={DipOtherProgramsData} />
 
       <CtaBanner data={ctaBannerData} />
     </>

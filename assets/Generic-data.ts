@@ -1116,7 +1116,7 @@ export const patentsData: PatentCardData[] = [
       image: "/Images/patent-granted/preview.png",
     inventorCount: 4,
     inventors:
-      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shakoor (11), Ishaq Nadeem Khan (12), Shoaib Ali (14), Bilal Syed Ali Shah (11)",
     googlePatentLink: "#",
     certificateLink: "#",
   },
@@ -1127,7 +1127,7 @@ export const patentsData: PatentCardData[] = [
       image: "/Images/patent-granted/preview.png",
     inventorCount: 4,
     inventors:
-      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shakoor (11), Ishaq Nadeem Khan (12), Shoaib Ali (14), Bilal Syed Ali Shah (11)",
     googlePatentLink: "#",
     certificateLink: "#",
   },
@@ -1138,7 +1138,7 @@ export const patentsData: PatentCardData[] = [
       image: "/Images/patent-granted/preview.png",
     inventorCount: 4,
     inventors:
-      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shakoor (11), Ishaq Nadeem Khan (12), Shoaib Ali (14), Bilal Syed Ali Shah (11)",
     googlePatentLink: "#",
     certificateLink: "#",
   },
@@ -1149,7 +1149,7 @@ export const patentsData: PatentCardData[] = [
       image: "/Images/patent-granted/preview.png",
     inventorCount: 4,
     inventors:
-      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shakoor (11), Ishaq Nadeem Khan (12), Shoaib Ali (14), Bilal Syed Ali Shah (11)",
     googlePatentLink: "#",
     certificateLink: "#",
   },
@@ -1160,7 +1160,7 @@ export const patentsData: PatentCardData[] = [
       image: "/Images/patent-granted/preview.png",
     inventorCount: 4,
     inventors:
-      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shakoor (11), Ishaq Nadeem Khan (12), Shoaib Ali (14), Bilal Syed Ali Shah (11)",
     googlePatentLink: "#",
     certificateLink: "#",
   },
@@ -1171,7 +1171,7 @@ export const patentsData: PatentCardData[] = [
       image: "/Images/patent-granted/preview.png",
     inventorCount: 4,
     inventors:
-      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shaikoor (11)",
+      "Mikaeel Faisal Khan (12), Zaynab Khan (13), Faraz Rahman (13), Mohammed Omer Shakoor (11), Ishaq Nadeem Khan (12), Shoaib Ali (14), Bilal Syed Ali Shah (11)",
     googlePatentLink: "#",
     certificateLink: "#",
   },
@@ -2931,8 +2931,8 @@ export const ilmOtherProgramsData: OtherProgramsData = {
       shortName: "SIP",
       title: "Summer Impact Program",
       description:
-        "A highly selective summer program. An accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
-      buttonText: "Explore SIP →",
+        "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
+      buttonText: "Explore SIP",
       href: "/programs/sip",
     },
     {
@@ -2941,7 +2941,7 @@ export const ilmOtherProgramsData: OtherProgramsData = {
       title: "DiscoverSTEM Innovation Program",
       description:
         "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-      buttonText: "Explore DIP →",
+      buttonText: "Explore DIP ",
       href: "/programs/dip",
     },
   ],
@@ -3350,4 +3350,53 @@ export const successStoriesData: SuccessStoryCard[] = [
 export const AerospacevideoData: VideoData = {
   youtubeUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
   title: "Program Video",
+};
+
+export const SipOtherProgramsData: OtherProgramsData = {
+  eyebrow: "More From DiscoverSTEM",
+  title: "Explore Our Other Programs",
+  programs: [
+    {
+      id: 1,
+      shortName: "ILM",
+      title: "Ivy League Mentorship Program",
+      description:
+        "This elite, immersive four-year parallel education program is meticulously designed to cultivate critical thinking, innovation, problem-solving, research, and leadership skills while fostering an entrepreneurial mindset.",
+      buttonText: "Explore ILM",
+      href: "/programs/ilm",
+    },
+    {
+      id: 2,
+      shortName: "DIP",
+      title: "DiscoverSTEM Innovation Program",
+      description:
+        "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+      buttonText: "Explore DIP",
+      href: "/programs/dip",
+    },
+  ],
+};
+export const DipOtherProgramsData: OtherProgramsData = {
+  eyebrow: "More From DiscoverSTEM",
+  title: "Explore Our Other Programs",
+  programs: [
+    {
+      id: 1,
+      shortName: "SIP",
+      title: "Summer Impact Program ",
+      description:
+        "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
+      buttonText: "Explore SIP",
+      href: "/programs/sip",
+    },
+    {
+      id: 2,
+      shortName: "ILM",
+      title: "Ivy League Mentorship Program",
+      description:
+        "This elite, immersive four-year parallel education program is meticulously designed to cultivate critical thinking, innovation, problem-solving, research, and leadership skills while fostering an entrepreneurial mindset.",
+      buttonText: "Explore ILM",
+      href: "/programs/ilm",
+    },
+  ],
 };

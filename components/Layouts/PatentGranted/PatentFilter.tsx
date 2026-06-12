@@ -2,6 +2,7 @@
 
 import { patentsData } from "@/assets/Generic-data";
 import { PatentFilterType } from "@/utils/Types";
+import NorthEastIcon from "@mui/icons-material/NorthEast";
 import {
   Box,
   Card,
@@ -11,6 +12,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { US, ZA } from "country-flag-icons/react/3x2";
 import { useState } from "react";
 
 export default function PatentFilterSection() {
@@ -26,6 +28,29 @@ export default function PatentFilterSection() {
 
     return matchFilter && matchSearch;
   });
+
+  const renderFlag = (type: "US" | "SA") => {
+    const Flag = type === "US" ? US : ZA;
+
+    return (
+      <Box
+        sx={{
+          width: "16px",
+          height: "12px",
+          display: "flex",
+          flexShrink: 0,
+        }}
+      >
+        <Flag
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+          }}
+        />
+      </Box>
+    );
+  };
 
   return (
     <Container
@@ -55,11 +80,23 @@ export default function PatentFilterSection() {
             <Chip
               key={item}
               label={
-                item === "All"
-                  ? "All Patents"
-                  : item === "US"
-                  ? "🇺🇸 US"
-                  : "🇿🇦 SA"
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                >
+                  {item === "US" && renderFlag("US")}
+                  {item === "SA" && renderFlag("SA")}
+                  <span>
+                    {item === "All"
+                      ? "All Patents"
+                      : item === "US"
+                      ? "US"
+                      : "SA"}
+                  </span>
+                </Box>
               }
               onClick={() => setFilter(item)}
               sx={{
@@ -134,7 +171,20 @@ export default function PatentFilterSection() {
                 }}
               >
                 <Chip
-                  label={item.type === "US" ? "🇺🇸 US Patent" : "🇿🇦 SA Patent"}
+                  label={
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
+                      }}
+                    >
+                      {renderFlag(item.type)}
+                      <span>
+                        {item.type === "US" ? "US Patent" : "SA Patent"}
+                      </span>
+                    </Box>
+                  }
                   size="small"
                   sx={{
                     height: "24px",
@@ -222,35 +272,71 @@ export default function PatentFilterSection() {
                   flexWrap: "wrap",
                 }}
               >
-                <Typography
+                <Box
                   component="a"
                   href={item.googlePatentLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
                     color: "#7B53A1",
                     textDecoration: "none",
                     cursor: "pointer",
                   }}
                 >
-                  Google Patents ↗
-                </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "#7B53A1",
+                    }}
+                  >
+                    Google Patents
+                  </Typography>
 
-                <Typography
+                  <NorthEastIcon
+                    sx={{
+                      fontSize: "16px",
+                      color: "#7B53A1",
+                    }}
+                  />
+                </Box>
+
+                <Box
                   component="a"
                   href={item.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
                     color: "#7B53A1",
                     textDecoration: "none",
                     cursor: "pointer",
                   }}
                 >
-                  Patent Certificate ↗
-                </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "#7B53A1",
+                    }}
+                  >
+                    Patent Certificate
+                  </Typography>
+
+                  <NorthEastIcon
+                    sx={{
+                      fontSize: "16px",
+                      color: "#7B53A1",
+                    }}
+                  />
+                </Box>
               </Box>
             </CardContent>
           </Card>
