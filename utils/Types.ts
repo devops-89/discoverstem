@@ -182,15 +182,7 @@ export interface InnovationCardItem {
   patentLink: string;
   certificateLink: string;
 }
-export interface SuccessStoryCard {
-  id: number;
-  name: string;
-  designation: string;
-  image: string;
-  description: string;
-  size: "large" | "small";
-  position: "left" | "right";
-}
+
 
 
 export interface TeamMember {
@@ -524,4 +516,17 @@ export interface ResearchModulesSectionData {
     duration: string;
     level: "Beginner" | "Intermediate" | "Advanced";
   }[];
+}
+
+export interface SuccessStoryCard {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+  description: string;
+}
+
+export interface VideoData {
+  youtubeUrl: string;
+  title: string;
 }
