@@ -15,6 +15,7 @@ export type FeatureCard = {
 export type ProgramCard = {
   title: string;
   image: string;
+  link : string;
 };
 
 export type SpotlightCard = {

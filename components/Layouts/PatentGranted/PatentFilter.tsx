@@ -2,20 +2,18 @@
 
 import { patentsData } from "@/assets/Generic-data";
 import { PatentFilterType } from "@/utils/Types";
-import { Close } from "@mui/icons-material";
+import NorthEastIcon from "@mui/icons-material/NorthEast";
 import {
   Box,
   Card,
   CardContent,
   Chip,
   Container,
-  Dialog,
-  IconButton,
   Pagination,
-  PaginationItem,
   TextField,
   Typography,
 } from "@mui/material";
+import { US, ZA } from "country-flag-icons/react/3x2";
 import { useState } from "react";
 
 const ROWS_PER_PAGE = 6;
@@ -23,8 +21,6 @@ const ROWS_PER_PAGE = 6;
 export default function PatentFilterSection() {
   const [filter, setFilter] = useState<PatentFilterType>("All");
   const [search, setSearch] = useState("");
-  const [certificateOpen, setCertificateOpen] = useState(false);
-  const [certificateImage, setCertificateImage] = useState("");
   const [page, setPage] = useState(1);
 
   const filteredPatents = patentsData.filter((item) => {
@@ -38,10 +34,34 @@ export default function PatentFilterSection() {
   });
 
   const pageCount = Math.ceil(filteredPatents.length / ROWS_PER_PAGE);
+
   const paginatedPatents = filteredPatents.slice(
     (page - 1) * ROWS_PER_PAGE,
     page * ROWS_PER_PAGE
   );
+
+  const renderFlag = (type: "US" | "SA") => {
+    const Flag = type === "US" ? US : ZA;
+
+    return (
+      <Box
+        sx={{
+          width: "16px",
+          height: "12px",
+          display: "flex",
+          flexShrink: 0,
+        }}
+      >
+        <Flag
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+          }}
+        />
+      </Box>
+    );
+  };
 
   return (
     <Container
@@ -66,21 +86,34 @@ export default function PatentFilterSection() {
           mb: 2,
         }}
       >
-        <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+        <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
           {(["All", "US", "SA"] as PatentFilterType[]).map((item) => (
             <Chip
               key={item}
               label={
-                item === "All"
-                  ? "All Patents"
-                  : item === "US"
-                  ? "US"
-                  : "SA"
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                >
+                  {item === "US" && renderFlag("US")}
+                  {item === "SA" && renderFlag("SA")}
+                  <span>
+                    {item === "All"
+                      ? "All Patents"
+                      : item === "US"
+                      ? "US"
+                      : "SA"}
+                  </span>
+                </Box>
               }
-              onClick={() => { setFilter(item); setPage(1); }}
+              onClick={() => {
+                setFilter(item);
+                setPage(1);
+              }}
               sx={{
-                height: 40,
-                fontSize: "14px",
                 backgroundColor: filter === item ? "#7B53A1" : "#fff",
                 color: filter === item ? "#fff" : "#111827",
                 fontWeight: 600,
@@ -93,7 +126,10 @@ export default function PatentFilterSection() {
           size="small"
           placeholder="Search by title, inventor, or patent number..."
           value={search}
-          onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
           sx={{
             width: { xs: "100%", md: "420px" },
             "& .MuiOutlinedInput-root": {
@@ -152,13 +188,27 @@ export default function PatentFilterSection() {
                 }}
               >
                 <Chip
-                  label={item.type === "US" ? "US Patent" : "SA Patent"}
+                  label={
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
+                      }}
+                    >
+                      {renderFlag(item.type)}
+                      <span>
+                        {item.type === "US" ? "US Patent" : "SA Patent"}
+                      </span>
+                    </Box>
+                  }
                   size="small"
                   sx={{
                     height: "24px",
                     borderRadius: "26843500px",
                     px: "4px",
-                    backgroundColor: item.type === "US" ? "#1B0F2A" : "#F59E0B",
+                    backgroundColor:
+                      item.type === "US" ? "#1B0F2A" : "#F59E0B",
                     color: item.type === "US" ? "#fff" : "#111827",
                     fontFamily: "Poppins, sans-serif",
                     fontSize: "12px",
@@ -178,7 +228,7 @@ export default function PatentFilterSection() {
                     color: "#737373",
                   }}
                 >
-                  Patent No. {item.googlePatentLink?.split("/patent/")[1]?.replace("/en", "")}
+                  #{item.id}
                 </Typography>
               </Box>
 
@@ -194,31 +244,45 @@ export default function PatentFilterSection() {
                 }}
               />
 
-              <Typography
+              <Box
                 sx={{
-                  width: "100%",
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 600,
-                  fontSize: "18px",
-                  lineHeight: "23.4px",
-                  letterSpacing: "-0.45px",
-                  color: "#111827",
+                  minHeight: "90px",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
-                {item.title}
-              </Typography>
+                <Typography
+                  sx={{
+                    width: "100%",
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "18px",
+                    lineHeight: "23.4px",
+                    letterSpacing: "-0.45px",
+                    color: "#111827",
+                    mb: "12px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {item.title}
+                </Typography>
 
-              <Typography
-                sx={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: "12px",
-                  lineHeight: "16px",
-                  color: "#737373",
-                  textTransform: "uppercase",
-                }}
-              >
-                Inventors · {item.inventorCount} Students
-              </Typography>
+                <Typography
+                  sx={{
+                    mt: "auto",
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: "12px",
+                    lineHeight: "16px",
+                    color: "#737373",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Inventors · {item.inventorCount} Students
+                </Typography>
+              </Box>
 
               <Typography
                 sx={{
@@ -240,114 +304,85 @@ export default function PatentFilterSection() {
                   flexWrap: "wrap",
                 }}
               >
-                <Typography
+                <Box
                   component="a"
                   href={item.googlePatentLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
                     color: "#7B53A1",
                     textDecoration: "none",
                     cursor: "pointer",
                   }}
                 >
-                  Google Patents ↗
-                </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "#7B53A1",
+                    }}
+                  >
+                    Google Patents
+                  </Typography>
 
-                <Typography
-                  onClick={() => {
-                    setCertificateImage(item.image);
-                    setCertificateOpen(true);
-                  }}
+                  <NorthEastIcon sx={{ fontSize: "16px", color: "#7B53A1" }} />
+                </Box>
+
+                <Box
+                  component="a"
+                  href={item.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "14px",
-                    lineHeight: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
                     color: "#7B53A1",
                     textDecoration: "none",
                     cursor: "pointer",
                   }}
                 >
-                  Patent Certificate ↗
-                </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "#7B53A1",
+                    }}
+                  >
+                    Patent Certificate
+                  </Typography>
+
+                  <NorthEastIcon sx={{ fontSize: "16px", color: "#7B53A1" }} />
+                </Box>
               </Box>
             </CardContent>
           </Card>
         ))}
       </Box>
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
-        <Pagination
-          count={pageCount}
-          page={page}
-          onChange={(_, value) => setPage(value)}
-          renderItem={(item) => <PaginationItem {...item} />}
-          sx={{
-            "& .MuiPagination-ul": { gap: "8px" },
-            "& .MuiPaginationItem-root": {
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              fontSize: "14px",
-              fontWeight: 500,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "#E5E7EB",
-              color: "#374151",
-            },
-            "& .MuiPaginationItem-ellipsis": {
-              backgroundColor: "transparent",
-              lineHeight: "40px",
-            },
-            "& .Mui-selected": {
-              backgroundColor: "#7B53A1 !important",
-              color: "#fff",
-            },
-          }}
-        />
-      </Box>
-    <Dialog
-      open={certificateOpen}
-      onClose={() => setCertificateOpen(false)}
-      maxWidth="lg"
-      slotProps={{
-        paper:{
-        sx: {
-          bgcolor: "transparent",
-          boxShadow: "none",
-          overflow: "visible",
-          position: "relative",
-        },
-      }
-      }}
-    >
-      <IconButton
-        onClick={() => setCertificateOpen(false)}
-        sx={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          zIndex: 10,
-          color: "#fff",
-          bgcolor: "rgba(0,0,0,0.5)",
-          "&:hover": { bgcolor: "rgba(0,0,0,0.7)" },
-        }}
-      >
-        <Close />
-      </IconButton>
-      <Box
-        component="img"
-        src={certificateImage}
-        alt="Patent Certificate"
-        sx={{
-          maxWidth: "90vw",
-          maxHeight: "90vh",
-          objectFit: "contain",
-          borderRadius: "8px",
-        }}
-      />
-    </Dialog>
+
+      {pageCount > 1 && (
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+          <Pagination
+            count={pageCount}
+            page={page}
+            onChange={(_, value) => setPage(value)}
+            sx={{
+              "& .MuiPaginationItem-root": {
+                fontWeight: 600,
+              },
+              "& .Mui-selected": {
+                backgroundColor: "#7B53A1 !important",
+                color: "#fff",
+              },
+            }}
+          />
+        </Box>
+      )}
     </Container>
   );
 }

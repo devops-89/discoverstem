@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Container, Typography } from "@mui/material";
+import { US, ZA } from "country-flag-icons/react/3x2";
 
 const stats = [
   {
@@ -11,17 +12,19 @@ const stats = [
   {
     value: "31",
     label: "US Patents",
-    color: "#EF4123",
+    color: "#EE4823",
+    Flag: US,
   },
   {
     value: "13",
     label: "SA Patents",
-    color: "#F59E0B",
+    color: "#F9A51E",
+    Flag: ZA,
   },
   {
     value: "4",
     label: "Youngest Inventor (yrs)",
-    color: "#5A8F3D",
+    color: "#619040",
   },
 ];
 
@@ -43,53 +46,87 @@ export default function PatentStats() {
             xs: "1fr 1fr",
             md: "repeat(4, 1fr)",
           },
-          backgroundColor: "#fff",
-          border: "1px solid #eee",
-          borderRadius: "16px",
+          backgroundColor: "#FFFFFF",
+          border: "0.8px solid rgba(0, 0, 0, 0.05)",
+          boxShadow: "0px 8px 10px -6px rgba(0, 0, 0, 0.1)",
+          borderRadius: "24px",
           overflow: "hidden",
-          boxShadow: "0px 8px 18px rgba(0,0,0,0.15)",
         }}
       >
-        {stats.map((item, index) => (
-          <Box
-            key={index}
-            sx={{
-              px: { xs: 3, md: "25px" },
-              py: { xs: 2.5, md: "20px" },
-              minHeight: "96px",
-              borderRight: {
-                xs: index % 2 === 0 ? "1px solid #eee" : "none",
-                md: index !== stats.length - 1 ? "1px solid #eee" : "none",
-              },
-              borderBottom: {
-                xs: index < 2 ? "1px solid #eee" : "none",
-                md: "none",
-              },
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "30px",
-                lineHeight: "34px",
-                fontWeight: 700,
-                color: item.color,
-              }}
-            >
-              {item.value}
-            </Typography>
+        {stats.map((item, index) => {
+          const Flag = item.Flag;
 
-            <Typography
+          return (
+            <Box
+              key={index}
               sx={{
-                mt: 0.8,
-                fontSize: "11px",
-                lineHeight: "16px",
-                color: "#555",
+                minHeight: "127.25px",
+                px: { xs: "20px", md: "32px" },
+                pt: "32px",
+                pb: { xs: "24px", md: 0 },
+                borderLeft: {
+                  xs: index % 2 === 1 ? "0.8px solid rgba(0,0,0,0.05)" : "none",
+                  md: index !== 0 ? "0.8px solid rgba(0,0,0,0.05)" : "none",
+                },
+                borderTop: {
+                  xs: index > 1 ? "0.8px solid rgba(0,0,0,0.05)" : "none",
+                  md: "none",
+                },
               }}
             >
-              {item.label}
-            </Typography>
-          </Box>
-        ))}
+              <Typography
+                sx={{
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "36px",
+                  lineHeight: "36px",
+                  color: item.color,
+                  mb: "8px",
+                }}
+              >
+                {item.value}
+              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                }}
+              >
+                {Flag && (
+                  <Box
+                    sx={{
+                      width: "18px",
+                      height: "13px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Flag
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "block",
+                      }}
+                    />
+                  </Box>
+                )}
+
+                <Typography
+                  sx={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "19px",
+                    color: "#525252",
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              </Box>
+            </Box>
+          );
+        })}
       </Box>
     </Container>
   );

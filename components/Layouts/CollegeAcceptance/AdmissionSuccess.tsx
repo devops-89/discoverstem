@@ -5,7 +5,6 @@ import {
   admissionStudentsData,
 } from "@/assets/Generic-data";
 import {
-  Avatar,
   Box,
   Chip,
   Container,
@@ -18,6 +17,21 @@ import { useState } from "react";
 
 const ROWS_PER_PAGE = 8;
 
+const getProgramColor = (program: string) => {
+  switch (program) {
+    case "ILM":
+      return "#7B53A1";
+    case "DIP":
+      return "#EE4823";
+    case "X-AILM":
+      return "#F9A51E";
+    case "DIP & DEP":
+      return "#619040";
+    default:
+      return "#7B53A1";
+  }
+};
+
 export default function AdmissionSuccessSection() {
   const [batchFilter, setBatchFilter] = useState("All Batches");
   const [programFilter, setProgramFilter] = useState("All");
@@ -26,12 +40,10 @@ export default function AdmissionSuccessSection() {
 
   const filteredStudents = admissionStudentsData.filter((student) => {
     const batchMatch =
-      batchFilter === "All Batches" ||
-      student.batch === batchFilter;
+      batchFilter === "All Batches" || student.batch === batchFilter;
 
     const programMatch =
-      programFilter === "All" ||
-      student.program === programFilter;
+      programFilter === "All" || student.program === programFilter;
 
     const searchMatch =
       student.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -42,6 +54,7 @@ export default function AdmissionSuccessSection() {
   });
 
   const pageCount = Math.ceil(filteredStudents.length / ROWS_PER_PAGE);
+
   const paginatedStudents = filteredStudents.slice(
     (page - 1) * ROWS_PER_PAGE,
     page * ROWS_PER_PAGE
@@ -59,6 +72,7 @@ export default function AdmissionSuccessSection() {
     >
       <Typography
         sx={{
+          fontFamily: "Inter, sans-serif",
           fontWeight: 700,
           fontSize: { xs: "32px", md: "48px" },
           lineHeight: { xs: "40px", md: "58px" },
@@ -69,11 +83,10 @@ export default function AdmissionSuccessSection() {
         The 2025 admissions cycle
       </Typography>
 
-      {/* FILTER BAR */}
       <Box
         sx={{
           border: "1px solid #E5E5E5",
-          borderRadius: "999px",
+          borderRadius: { xs: "24px", md: "999px" },
           p: "12px",
           display: "flex",
           alignItems: "center",
@@ -86,12 +99,13 @@ export default function AdmissionSuccessSection() {
           <Chip
             key={item}
             label={item}
-            onClick={() => { setBatchFilter(item); setPage(1); }}
+            onClick={() => {
+              setBatchFilter(item);
+              setPage(1);
+            }}
             sx={{
-              background:
-                batchFilter === item ? "#7B53A1" : "#F5F5F5",
-              color:
-                batchFilter === item ? "#fff" : "#171717",
+              background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
+              color: batchFilter === item ? "#fff" : "#171717",
               fontWeight: 600,
             }}
           />
@@ -110,12 +124,13 @@ export default function AdmissionSuccessSection() {
           <Chip
             key={item}
             label={item}
-            onClick={() => { setProgramFilter(item); setPage(1); }}
+            onClick={() => {
+              setProgramFilter(item);
+              setPage(1);
+            }}
             sx={{
-              background:
-                programFilter === item ? "#000" : "#F5F5F5",
-              color:
-                programFilter === item ? "#fff" : "#171717",
+              background: programFilter === item ? "#000" : "#F5F5F5",
+              color: programFilter === item ? "#fff" : "#171717",
               fontWeight: 600,
             }}
           />
@@ -125,9 +140,12 @@ export default function AdmissionSuccessSection() {
           size="small"
           placeholder="Search by student or school..."
           value={search}
-          onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
           sx={{
-            ml: "auto",
+            ml: { xs: 0, md: "auto" },
             width: { xs: "100%", md: "280px" },
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
@@ -136,18 +154,11 @@ export default function AdmissionSuccessSection() {
         />
       </Box>
 
-      <Typography
-        sx={{
-          fontSize: "14px",
-          color: "#737373",
-          mb: 5,
-        }}
-      >
+      <Typography sx={{ fontSize: "14px", color: "#737373", mb: 5 }}>
         Showing <strong>{filteredStudents.length}</strong> of{" "}
         {admissionStudentsData.length} students
       </Typography>
 
-      {/* STUDENT CARDS */}
       <Box
         sx={{
           display: "grid",
@@ -159,159 +170,211 @@ export default function AdmissionSuccessSection() {
           gap: 3,
         }}
       >
-        {paginatedStudents.map((student) => (
-          <Box
-            key={student.id}
-            sx={{
-              border: "1px solid #E5E5E5",
-              borderRadius: "16px",
-              overflow: "hidden",
-              background: "#fff",
-            }}
-          >
-            {/* TOP AREA */}
+        {paginatedStudents.map((student) => {
+          const programColor = getProgramColor(student.program);
+
+          return (
             <Box
+              key={student.id}
               sx={{
-                height: "128px",
-                position: "relative",
-                backgroundImage: `url(${student.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                width: "100%",
+                maxWidth: "290px",
+                height: "390px",
+                mx: "auto",
+                background: "#FFFFFF",
+                border: "0.8px solid rgba(0, 0, 0, 0.05)",
+                boxShadow:
+                  "0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1)",
+                borderRadius: "16px",
+                overflow: "hidden",
               }}
             >
-              <Chip
-                label={student.program}
-                size="small"
+              <Box
                 sx={{
-                  position: "absolute",
-                  top: 16,
-                  right: 16,
-                  bgcolor: "#FFFFFFF2",
-                  color: "#7B53A1",
-                  fontWeight: 700,
-                }}
-              />
-
-              <Avatar
-                sx={{
-                  width: "80px",
-                  height: "80px",
-                  position: "absolute",
-                  left: 24,
-                  bottom: -40,
-                  border: "3px solid #fff",
-                  bgcolor: "#7B53A1",
-                  fontWeight: 700,
-                  fontSize: "20px",
-                  boxShadow:
-                    "0px 4px 6px -4px #0000001A,0px 10px 15px -3px #0000001A",
+                  height: "128px",
+                  bgcolor: "#C4C4C4",
+                  position: "relative",
+                  backgroundImage: student.image
+                    ? `url(${student.image})`
+                    : "none",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
               >
-                {student.initials}
-              </Avatar>
-            </Box>
+                <Chip
+                  label={student.program}
+                  size="small"
+                  sx={{
+                    position: "absolute",
+                    top: "16px",
+                    right: "16px",
+                    height: "24px",
+                    bgcolor: "rgba(255,255,255,0.95)",
+                    color: programColor,
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "12px",
+                    borderRadius: "999px",
+                  }}
+                />
 
-            <Box sx={{ p: 3, pt: 6 }}>
-              <Typography
-                sx={{
-                  fontSize: "18px",
-                  fontWeight: 600,
-                  color: "#171717",
-                }}
-              >
-                {student.name}
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: "12px",
-                  color: "#737373",
-                  textTransform: "uppercase",
-                  mt: 0.5,
-                  mb: 3,
-                }}
-              >
-                {student.school}
-              </Typography>
+                <Box
+                  sx={{
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "50%",
+                    bgcolor: "#FFFFFF",
+                    border: "4px solid #FFFFFF",
+                    position: "absolute",
+                    left: "24px",
+                    top: "88px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "24px",
+                    color: programColor,
+                    boxShadow:
+                      "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  {student.initials}
+                </Box>
+              </Box>
 
               <Box
                 sx={{
-                  borderTop: "1px solid #E5E5E5",
-                  pt: 2,
+                  position: "relative",
+                  height: "262px",
+                  px: "24.8px",
+                  pt: "48px",
+                  pb: "20px",
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: "12px",
-                    color: "#737373",
-                    textTransform: "uppercase",
-                    mb: 1,
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "18px",
+                    lineHeight: "27px",
+                    letterSpacing: "-0.45px",
+                    color: "#171717",
                   }}
                 >
-                  Accepted To
+                  {student.name}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "16px",
+                    letterSpacing: "0.6px",
+                    textTransform: "uppercase",
+                    color: "#737373",
+                    mt: "4px",
+                  }}
+                >
+                  {student.school}
                 </Typography>
 
                 <Box
                   sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1,
+                    position: "absolute",
+                    left: "24.8px",
+                    right: "24.8px",
+                    top: "145px",
+                    pt: "16.8px",
+                    borderTop: "0.8px solid rgba(0, 0, 0, 0.05)",
                   }}
                 >
-                  <Box
-                    sx={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: "50%",
-                      bgcolor: "#7B53A1",
-                    }}
-                  />
-
                   <Typography
                     sx={{
-                      fontSize: "14px",
-                      fontWeight: 500,
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 400,
+                      fontSize: "12px",
+                      lineHeight: "16px",
+                      letterSpacing: "0.6px",
+                      textTransform: "uppercase",
+                      color: "#737373",
+                      mb: "8px",
                     }}
                   >
-                    {student.acceptedTo}
+                    Accepted To
                   </Typography>
+
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "8px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "6px",
+                        height: "6px",
+                        borderRadius: "999px",
+                        bgcolor: programColor,
+                        mt: "7px",
+                        flexShrink: 0,
+                      }}
+                    />
+
+                    <Typography
+                      sx={{
+                        fontFamily: "Inter, sans-serif",
+                        fontWeight: 400,
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        color: "#262626",
+                      }}
+                    >
+                      {student.acceptedTo}
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
             </Box>
-          </Box>
-        ))}
+          );
+        })}
       </Box>
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
-        <Pagination
-          count={pageCount}
-          page={page}
-          onChange={(_, value) => setPage(value)}
-          renderItem={(item) => <PaginationItem {...item} />}
-          sx={{
-            "& .MuiPagination-ul": { gap: "8px" },
-            "& .MuiPaginationItem-root": {
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              fontSize: "14px",
-              fontWeight: 500,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "#E5E7EB",
-              color: "#374151",
-            },
-            "& .MuiPaginationItem-ellipsis": {
-              backgroundColor: "transparent",
-              lineHeight: "40px",
-            },
-            "& .Mui-selected": {
-              backgroundColor: "#7B53A1 !important",
-              color: "#fff",
-            },
-          }}
-        />
-      </Box>
+
+      {pageCount > 1 && (
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+          <Pagination
+            count={pageCount}
+            page={page}
+            onChange={(_, value) => setPage(value)}
+            renderItem={(item) => <PaginationItem {...item} />}
+            sx={{
+              "& .MuiPagination-ul": { gap: "8px" },
+              "& .MuiPaginationItem-root": {
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                fontSize: "14px",
+                fontWeight: 500,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#E5E7EB",
+                color: "#374151",
+              },
+              "& .MuiPaginationItem-ellipsis": {
+                backgroundColor: "transparent",
+                lineHeight: "40px",
+              },
+              "& .Mui-selected": {
+                backgroundColor: "#7B53A1 !important",
+                color: "#fff",
+              },
+            }}
+          />
+        </Box>
+      )}
     </Container>
   );
 }

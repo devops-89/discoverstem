@@ -139,14 +139,17 @@ export const programs: ProgramCard[] = [
   {
     title: "Summer Impact Program",
     image: "/Images/Home/Programs/OurProgram1.png",
+    link: "/programs/sip"
   },
   {
     title: "Ivy League Mentorship",
     image: "/Images/Home/Programs/OurProgram2.png",
+     link: "/programs/ilm"
   },
   {
     title: "DiscoverSTEM Innovation Program",
     image: "/Images/Home/Programs/OurProgram3.png",
+     link: "/programs/dip"
   },
 ];
 
@@ -3404,7 +3407,7 @@ export const HEADER_DATA: NavItem[] = [
           },
           {
             label: "Genomics, Biotechnology & Health Sciences Research Lab",
-            href: "/opportunities/energy-environment-research-lab",
+            href: "/opportunities/genomics-biotechnology-health-sciences-research-lab",
           },
           {
             label: "Neurotechnology & Brain-Computer Interface Research Lab",
@@ -3412,7 +3415,7 @@ export const HEADER_DATA: NavItem[] = [
           },
       {
         label: "Startup Opportunities",
-        href: "/opportunities/startup_opportunities",
+        href: "/opportunities/startup-opportunities",
       },
       {
         label: "Partners Ecosystem",
@@ -3812,8 +3815,8 @@ export const ilmOtherProgramsData: OtherProgramsData = {
       shortName: "SIP",
       title: "Summer Impact Program",
       description:
-        "A highly selective summer program. An accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
-      buttonText: "Explore SIP →",
+        "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
+      buttonText: "Explore SIP",
       href: "/programs/sip",
     },
     {
@@ -3822,7 +3825,7 @@ export const ilmOtherProgramsData: OtherProgramsData = {
       title: "DiscoverSTEM Innovation Program",
       description:
         "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-      buttonText: "Explore DIP →",
+      buttonText: "Explore DIP ",
       href: "/programs/dip",
     },
   ],
@@ -4994,4 +4997,53 @@ export const biotechVideoData: VideoData = {
 export const neuroVideoData: VideoData = {
   youtubeUrl: "https://www.youtube.com/embed/5nWVP8-GpII",
   title: "Program Video",
+};
+
+export const SipOtherProgramsData: OtherProgramsData = {
+  eyebrow: "More From DiscoverSTEM",
+  title: "Explore Our Other Programs",
+  programs: [
+    {
+      id: 1,
+      shortName: "ILM",
+      title: "Ivy League Mentorship Program",
+      description:
+        "This elite, immersive four-year parallel education program is meticulously designed to cultivate critical thinking, innovation, problem-solving, research, and leadership skills while fostering an entrepreneurial mindset.",
+      buttonText: "Explore ILM",
+      href: "/programs/ilm",
+    },
+    {
+      id: 2,
+      shortName: "DIP",
+      title: "DiscoverSTEM Innovation Program",
+      description:
+        "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
+      buttonText: "Explore DIP",
+      href: "/programs/dip",
+    },
+  ],
+};
+export const DipOtherProgramsData: OtherProgramsData = {
+  eyebrow: "More From DiscoverSTEM",
+  title: "Explore Our Other Programs",
+  programs: [
+    {
+      id: 1,
+      shortName: "SIP",
+      title: "Summer Impact Program ",
+      description:
+        "Summer Impact Program (SIP) is a highly selective summer program. It provides an accelerated pathway turning high school students into innovators, entrepreneurs and researchers of tomorrow.",
+      buttonText: "Explore SIP",
+      href: "/programs/sip",
+    },
+    {
+      id: 2,
+      shortName: "ILM",
+      title: "Ivy League Mentorship Program",
+      description:
+        "This elite, immersive four-year parallel education program is meticulously designed to cultivate critical thinking, innovation, problem-solving, research, and leadership skills while fostering an entrepreneurial mindset.",
+      buttonText: "Explore ILM",
+      href: "/programs/ilm",
+    },
+  ],
 };

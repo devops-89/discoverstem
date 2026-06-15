@@ -16,7 +16,7 @@ export default function PatentsSection() {
         label="Our Young Innovators'"
         title="Patents"
         swiperRef={swiperRef}
-        viewAllHref="/patents-granted"
+        viewAllHref="/success-stories/patents-granted"
       />
       <Box sx={{ "& .swiper": { width: "100%" } }}>
         <Swiper

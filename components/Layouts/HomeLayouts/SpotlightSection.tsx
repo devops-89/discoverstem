@@ -16,7 +16,7 @@ export default function SpotlightSection() {
         label="Celebrating excellence and innovation"
         title="Student Spotlight"
         swiperRef={swiperRef}
-        viewAllHref="/college-acceptance"
+        viewAllHref="/success-stories/college-acceptance"
       />
       <Box
         sx={{

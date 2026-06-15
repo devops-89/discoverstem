@@ -15,7 +15,7 @@ export default function AwardsSection() {
         px: { xs: 3, md: 4 },
       }}
     >
-      <SectionHeading label="Distinguished" title="Awards & Recognition" />
+      <SectionHeading label="Distinguished" title="Awards & Recognition"   viewAllHref =" /success-stories/awards-recognition "/>
       <Grid 
         container 
         columnSpacing={4} 

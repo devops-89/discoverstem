@@ -1,6 +1,7 @@
 "use client";
 
 import { Heromedia } from "@/assets/Generic-data";
+import Link from "next/link";
 import PrimaryButton from "@/components/Widgets/PrimaryButton";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Typography } from "@mui/material";
@@ -134,12 +135,14 @@ export default function HeroSection() {
     zIndex: 2,
   }}
 >
+ <Link href="/contact" style={{ textDecoration: "none" }}>
   <PrimaryButton>
     Request a
-    <Box component="span" sx={{ fontWeight: 700 ,ml:0.5}}>
+    <Box component="span" sx={{ fontWeight: 700, ml: 0.5 }}>
       Free Information Session
     </Box>
   </PrimaryButton>
+</Link>
 </Box>
                 </Box>
                 </Box>

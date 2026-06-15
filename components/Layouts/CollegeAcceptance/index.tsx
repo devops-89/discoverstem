@@ -19,7 +19,7 @@ export default function CollegeAcceptance() {
   return (
     <>
       <HeroSlider slides={CollegeAcceptanceData}/>
-      {/* <CollegeAcceptanceSection/> */}  <TextSection data={AcceptanceData} />
+      <TextSection data={AcceptanceData} />
       <LogoSlider logos={logosData}  />
       <TextSection data={collegeAcceptance2025Data} />
       <AdmissionSuccessSection/>

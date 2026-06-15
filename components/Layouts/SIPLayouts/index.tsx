@@ -11,6 +11,8 @@ import StartupCard from "./StartUpCard";
 import StudentStories from "./StudentStories";
 import UniversitySlider from "./UniversitySlider";
 import ProcessSection from "@/components/Widgets/common/ProccessSelection";
+import OtherProgramsSection from "@/components/Widgets/common/OtherProgram";
+import { SipOtherProgramsData } from "@/assets/Generic-data";
 
 export default function SIPLayouts(){
     return(
@@ -25,6 +27,7 @@ export default function SIPLayouts(){
             <ResearchSection/>
             <StudentStories/>
             <ProcessSection/>
+            <OtherProgramsSection data={SipOtherProgramsData} />
             <CtaBanner/>
         </Box>
         

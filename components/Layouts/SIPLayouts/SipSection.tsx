@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/Widgets/PrimaryButton";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SipSection() {
 return (
@@ -175,12 +176,14 @@ return (
         <Box sx={{
             mt: 4,
             }}>
-          <PrimaryButton>
-            Request a
-            <Box component="span" sx={{ fontWeight: 700, ml: 0.5 }}>
-               Free Information Session
-            </Box>
-          </PrimaryButton>
+           <Link href="/contact" style={{ textDecoration: "none" }}>
+  <PrimaryButton>
+    Request a
+    <Box component="span" sx={{ fontWeight: 700, ml: 0.5 }}>
+      Free Information Session
+    </Box>
+  </PrimaryButton>
+</Link>
         </Box>
       </Box>
     </Container>

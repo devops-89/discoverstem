@@ -3,6 +3,7 @@
 import { CtaBannerData } from "@/utils/Types";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Typography, Button } from "@mui/material";
+import Link from "next/link";
 
 interface CtaBannerProps {
   data: CtaBannerData;
@@ -65,6 +66,8 @@ export default function CtaBanner({ data }: CtaBannerProps) {
 
       {data.buttonText && (
         <Button
+         component={Link}
+    href="/contact" 
           variant="contained"
           sx={{
             mt: { xs: 3, md: 2.5 },

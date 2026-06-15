@@ -23,6 +23,7 @@ export default function InnovationsSection() {
       <SectionHeading
         label="DiscoverSTEM Students"
         title="Trailblazing Innovations"
+        viewAllHref ="/success-stories/young-investors "
         swiperRef={swiperRef}
       />
       <Box sx={{ "& .swiper": { width: "100%", overflow: "visible" }, mt: 4 }}>

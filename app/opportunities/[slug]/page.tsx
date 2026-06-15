@@ -10,22 +10,15 @@ import StartupOpportunities from "@/components/Layouts/StartupOpportunities";
 import { notFound } from "next/navigation";
 
 const routes: Record<string, React.ReactNode> = {
-  "startup_opportunities": <StartupOpportunities />,
-  "partners-ecosystem": <PartnersEcosystem />,
-  "research-mentors": <ResearchMentors />,
-
-  "aerospace_research_lab": <AerospaceResearchLab />,
-  "ai-autonomous-tech-and-robotics-research-lab": <RoboticsResearchLab />,
-
-  "banking-finance-fintech-research-lab": <FintechResearchLab />,
-
-  "energy-environment-research-lab": <EnergyResearchLab />,
-
-  "genomics-biotechnology-health-sciences-research-lab":
-    <BiotechnologyResearchLab />,
-
-  "neurotech-brain-computer-interface":
-    <NeurotechnologyResearchLab />,
+"startup-opportunities": <StartupOpportunities />,
+"partners-ecosystem": <PartnersEcosystem />,
+"research-mentors": <ResearchMentors />,
+"aerospace_research_lab": <AerospaceResearchLab />,
+"ai-autonomous-tech-and-robotics-research-lab": <RoboticsResearchLab />,
+"banking-finance-fintech-research-lab": <FintechResearchLab />,
+"energy-environment-research-lab": <EnergyResearchLab />,
+"genomics-biotechnology-health-sciences-research-lab": <BiotechnologyResearchLab />,
+"neurotech-brain-computer-interface": <NeurotechnologyResearchLab />,
 };
 
 export default async function DynamicPage({

@@ -1,6 +1,7 @@
 "use client";
 
 import { OtherProgramsData } from "@/utils/Types";
+import { ArrowBackIosNew, ArrowForward, NorthEast } from "@mui/icons-material";
 import { Box, Button, Container, Typography } from "@mui/material";
 import Link from "next/link";
 
@@ -149,29 +150,41 @@ export default function OtherProgramsSection({
               {program.description}
             </Typography>
 
-            <Button
-              component={Link}
-              href={program.href}
-              sx={{
-                minWidth: "126px",
-                height: "36px",
-                borderRadius: "999px",
-                bgcolor: "#171717",
-                color: "#FFFFFF",
-                px: "17px",
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 500,
-                fontSize: "14px",
-                lineHeight: "20px",
-                textTransform: "none",
-                alignSelf: "flex-start",
-                "&:hover": {
-                  bgcolor: "#171717",
-                },
-              }}
-            >
-              {program.buttonText}
-            </Button>
+          <Button
+  component={Link}
+  href={program.href}
+  endIcon={
+    <ArrowForward
+      sx={{
+        fontSize: "16px",
+      }}
+    />
+  }
+  sx={{
+    minWidth: "126px",
+    height: "36px",
+    borderRadius: "999px",
+    bgcolor: "#171717",
+    color: "#FFFFFF",
+    px: "17px",
+    fontFamily: "Poppins, sans-serif",
+    fontWeight: 500,
+    fontSize: "14px",
+    lineHeight: "20px",
+    textTransform: "none",
+    alignSelf: "flex-start",
+
+    "&:hover": {
+      bgcolor: "#171717",
+    },
+
+    "& .MuiButton-endIcon": {
+      ml: "4px",
+    },
+  }}
+>
+  {program.buttonText}
+</Button>
           </Box>
         ))}
       </Box>
