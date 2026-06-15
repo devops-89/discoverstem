@@ -9,6 +9,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import Link from "next/link";
 
 const ArrowIcon = () => (
   <svg
@@ -102,6 +103,8 @@ export default function ProgramsSection() {
                 {programs[0].title}
               </Typography>
               <Box
+              component={Link}
+  href={programs[0].link}
                 sx={{
                   width: 42,
                   height: 42,
@@ -176,6 +179,8 @@ export default function ProgramsSection() {
                     {program.title}
                   </Typography>
                   <Box
+                   component={Link}
+                     href={program.link}
                     sx={{
                       width: 38,
                       height: 38,

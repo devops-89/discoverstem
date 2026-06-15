@@ -6,10 +6,12 @@ export default function SectionHeading({
   label,
   title,
   swiperRef,
+  viewAllHref,
 }: {
   label: string;
   title: string;
   swiperRef?: React.MutableRefObject<import("swiper").Swiper | null>;
+  viewAllHref?: string;
 }) {
   return (
     <Box sx={{ mb: 3 }}>
@@ -33,6 +35,7 @@ export default function SectionHeading({
           <Button
             variant="outlined"
             disableElevation
+            href={viewAllHref}
             endIcon={<span style={{ fontSize: 18, marginLeft: 4 }}>↗</span>}
             sx={{
               borderRadius: "100px",

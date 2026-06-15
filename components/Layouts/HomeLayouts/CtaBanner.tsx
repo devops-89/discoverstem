@@ -2,6 +2,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { FONT_FAMILY } from "@/utils/Fonts";
+import Link from "next/link";
 
 export default function CtaBanner() {
   return (
@@ -29,18 +30,20 @@ export default function CtaBanner() {
       <Typography sx={{ mt: 1.5 }}>
         Innovation Quotient is the new IQ
       </Typography>
-      <Button
-        variant="contained"
-        sx={{
-          mt: 2.5,
-          bgcolor: "#f8a51e",
-          color: "#1a1a1a",
-          borderRadius: "10px",
-          px: 3.5,
-        }}
-      >
-        Request a FREE Information Session
-      </Button>
+     <Button
+  component={Link}
+  href="/contact"
+  variant="contained"
+  sx={{
+    mt: 2.5,
+    bgcolor: "#f8a51e",
+    color: "#1a1a1a",
+    borderRadius: "10px",
+    px: 3.5,
+  }}
+>
+  Request a FREE Information Session
+</Button>
     </Box>
   );
 }

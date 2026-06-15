@@ -3,16 +3,19 @@
 import {
   innovationCardsData,
 } from "@/assets/Generic-data";
+import InnovationCardsGrid from "@/components/Widgets/common/InnovationCard";
 import { InnovationFilter } from "@/utils/Types";
-import { Container } from "@mui/material";
+import { Box, Container, Pagination, PaginationItem } from "@mui/material";
 import { useState } from "react";
 import InnovationFilterSection from "./InnovationFilter";
-import InnovationCardsGrid from "@/components/Widgets/common/InnovationCard";
+
+const ROWS_PER_PAGE = 6;
 
 
 export default function InnovationCardGrid() {
   const [filter, setFilter] = useState<InnovationFilter>("All Statuses");
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   const filteredItems = innovationCardsData.filter((item) => {
     const matchFilter =
@@ -26,6 +29,18 @@ export default function InnovationCardGrid() {
     return matchFilter && matchSearch;
   });
 
+  const sortedItems = [...filteredItems].sort((a, b) => {
+    if (a.award && !b.award) return -1;
+    if (!a.award && b.award) return 1;
+    return 0;
+  });
+
+  const pageCount = Math.ceil(sortedItems.length / ROWS_PER_PAGE);
+  const paginatedItems = sortedItems.slice(
+    (page - 1) * ROWS_PER_PAGE,
+    page * ROWS_PER_PAGE
+  );
+
   return (
     <Container
       maxWidth={false}
@@ -38,14 +53,46 @@ export default function InnovationCardGrid() {
     >
       <InnovationFilterSection
         filter={filter}
-        setFilter={setFilter}
+        setFilter={(v) => { setFilter(v); setPage(1); }}
         search={search}
-        setSearch={setSearch}
+        setSearch={(v) => { setSearch(v); setPage(1); }}
         showingCount={filteredItems.length}
         totalCount={innovationCardsData.length}
       />
 
-      <InnovationCardsGrid items={filteredItems} />
+      <InnovationCardsGrid items={paginatedItems} />
+
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+        <Pagination
+          count={pageCount}
+          page={page}
+          onChange={(_, value) => setPage(value)}
+          renderItem={(item) => <PaginationItem {...item} />}
+          sx={{
+            "& .MuiPagination-ul": { gap: "8px" },
+            "& .MuiPaginationItem-root": {
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              fontSize: "14px",
+              fontWeight: 500,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#E5E7EB",
+              color: "#374151",
+            },
+            "& .MuiPaginationItem-ellipsis": {
+              backgroundColor: "transparent",
+              lineHeight: "40px",
+            },
+            "& .Mui-selected": {
+              backgroundColor: "#7B53A1 !important",
+              color: "#fff",
+            },
+          }}
+        />
+      </Box>
     </Container>
   );
 }

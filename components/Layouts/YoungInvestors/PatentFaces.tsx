@@ -1,16 +1,29 @@
 "use client";
 
 import { patentFacesData } from "@/assets/Generic-data";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Pagination, PaginationItem } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PatentFacesFilter from "./PatentFacesFilter";
 
 export default function PatentFacesSection() {
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 10;
+
+  // Reset to first page when search changes
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
 
   const filteredStudents = patentFacesData.students.filter((student) =>
     student.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredStudents.length / itemsPerPage);
+  const currentStudents = filteredStudents.slice(
+    (page - 1) * itemsPerPage,
+    page * itemsPerPage
   );
 
   return (
@@ -26,7 +39,6 @@ export default function PatentFacesSection() {
       <Box
         sx={{
           width: "100%",
-          minHeight: { xs: "auto", md: "1507.69px" },
         }}
       >
         {/* Heading */}
@@ -76,9 +88,10 @@ export default function PatentFacesSection() {
               xs: "20px",
               md: "23px",
             },
+            mb: "40px",
           }}
         >
-          {filteredStudents.map((student) => (
+          {currentStudents.map((student) => (
             <Box
               key={student.id}
               sx={{
@@ -100,14 +113,14 @@ export default function PatentFacesSection() {
                   backgroundColor: "#C4C4C4",
                 }}
               >
-                {/* {student.image && (
+                {student.image && (
                   <Image
                     src={student.image}
                     alt={student.name}
                     fill
                     style={{ objectFit: "cover" }}
                   />
-                )} */}
+                )}
 
                 {student.tag && (
                   <Box
@@ -179,6 +192,41 @@ export default function PatentFacesSection() {
             </Box>
           ))}
         </Box>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+            <Pagination
+              count={totalPages}
+              page={page}
+              onChange={(_, value) => setPage(value)}
+              renderItem={(item) => <PaginationItem {...item} />}
+              sx={{
+                "& .MuiPagination-ul": { gap: "8px" },
+                "& .MuiPaginationItem-root": {
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "#E5E7EB",
+                  color: "#374151",
+                },
+                "& .MuiPaginationItem-ellipsis": {
+                  backgroundColor: "transparent",
+                  lineHeight: "40px",
+                },
+                "& .Mui-selected": {
+                  backgroundColor: "#7B53A1 !important",
+                  color: "#fff",
+                },
+              }}
+            />
+          </Box>
+        )}
       </Box>
     </Container>
   );

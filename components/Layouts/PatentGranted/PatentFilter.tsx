@@ -9,15 +9,19 @@ import {
   CardContent,
   Chip,
   Container,
+  Pagination,
   TextField,
   Typography,
 } from "@mui/material";
 import { US, ZA } from "country-flag-icons/react/3x2";
 import { useState } from "react";
 
+const ROWS_PER_PAGE = 6;
+
 export default function PatentFilterSection() {
   const [filter, setFilter] = useState<PatentFilterType>("All");
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   const filteredPatents = patentsData.filter((item) => {
     const matchFilter = filter === "All" || item.type === filter;
@@ -28,6 +32,13 @@ export default function PatentFilterSection() {
 
     return matchFilter && matchSearch;
   });
+
+  const pageCount = Math.ceil(filteredPatents.length / ROWS_PER_PAGE);
+
+  const paginatedPatents = filteredPatents.slice(
+    (page - 1) * ROWS_PER_PAGE,
+    page * ROWS_PER_PAGE
+  );
 
   const renderFlag = (type: "US" | "SA") => {
     const Flag = type === "US" ? US : ZA;
@@ -98,7 +109,10 @@ export default function PatentFilterSection() {
                   </span>
                 </Box>
               }
-              onClick={() => setFilter(item)}
+              onClick={() => {
+                setFilter(item);
+                setPage(1);
+              }}
               sx={{
                 backgroundColor: filter === item ? "#7B53A1" : "#fff",
                 color: filter === item ? "#fff" : "#111827",
@@ -112,7 +126,10 @@ export default function PatentFilterSection() {
           size="small"
           placeholder="Search by title, inventor, or patent number..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
           sx={{
             width: { xs: "100%", md: "420px" },
             "& .MuiOutlinedInput-root": {
@@ -138,7 +155,7 @@ export default function PatentFilterSection() {
           gap: { xs: 3, md: 4 },
         }}
       >
-        {filteredPatents.map((item) => (
+        {paginatedPatents.map((item) => (
           <Card
             key={item.id}
             sx={{
@@ -190,7 +207,8 @@ export default function PatentFilterSection() {
                     height: "24px",
                     borderRadius: "26843500px",
                     px: "4px",
-                    backgroundColor: item.type === "US" ? "#1B0F2A" : "#F59E0B",
+                    backgroundColor:
+                      item.type === "US" ? "#1B0F2A" : "#F59E0B",
                     color: item.type === "US" ? "#fff" : "#111827",
                     fontFamily: "Poppins, sans-serif",
                     fontSize: "12px",
@@ -226,31 +244,45 @@ export default function PatentFilterSection() {
                 }}
               />
 
-              <Typography
+              <Box
                 sx={{
-                  width: "100%",
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 600,
-                  fontSize: "18px",
-                  lineHeight: "23.4px",
-                  letterSpacing: "-0.45px",
-                  color: "#111827",
+                  minHeight: "90px",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
-                {item.title}
-              </Typography>
+                <Typography
+                  sx={{
+                    width: "100%",
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "18px",
+                    lineHeight: "23.4px",
+                    letterSpacing: "-0.45px",
+                    color: "#111827",
+                    mb: "12px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {item.title}
+                </Typography>
 
-              <Typography
-                sx={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: "12px",
-                  lineHeight: "16px",
-                  color: "#737373",
-                  textTransform: "uppercase",
-                }}
-              >
-                Inventors · {item.inventorCount} Students
-              </Typography>
+                <Typography
+                  sx={{
+                    mt: "auto",
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: "12px",
+                    lineHeight: "16px",
+                    color: "#737373",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Inventors · {item.inventorCount} Students
+                </Typography>
+              </Box>
 
               <Typography
                 sx={{
@@ -297,12 +329,7 @@ export default function PatentFilterSection() {
                     Google Patents
                   </Typography>
 
-                  <NorthEastIcon
-                    sx={{
-                      fontSize: "16px",
-                      color: "#7B53A1",
-                    }}
-                  />
+                  <NorthEastIcon sx={{ fontSize: "16px", color: "#7B53A1" }} />
                 </Box>
 
                 <Box
@@ -330,18 +357,32 @@ export default function PatentFilterSection() {
                     Patent Certificate
                   </Typography>
 
-                  <NorthEastIcon
-                    sx={{
-                      fontSize: "16px",
-                      color: "#7B53A1",
-                    }}
-                  />
+                  <NorthEastIcon sx={{ fontSize: "16px", color: "#7B53A1" }} />
                 </Box>
               </Box>
             </CardContent>
           </Card>
         ))}
       </Box>
+
+      {pageCount > 1 && (
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+          <Pagination
+            count={pageCount}
+            page={page}
+            onChange={(_, value) => setPage(value)}
+            sx={{
+              "& .MuiPaginationItem-root": {
+                fontWeight: 600,
+              },
+              "& .Mui-selected": {
+                backgroundColor: "#7B53A1 !important",
+                color: "#fff",
+              },
+            }}
+          />
+        </Box>
+      )}
     </Container>
   );
 }

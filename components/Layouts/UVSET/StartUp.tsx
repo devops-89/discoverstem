@@ -101,9 +101,20 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                   fontWeight: 600,
                   fontSize: "16px",
                   flexShrink: 0,
+                  overflow: "hidden",
                 }}
               >
-                {member.initials}
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={52}
+                    height={52}
+                    style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  />
+                ) : (
+                  member.initials
+                )}
               </Box>
 
               <Box sx={{ width: "94.4px" }}>
@@ -205,43 +216,53 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             ))}
           </Box>
 
-          {/* Right Images */}
+          {/* Right Images + Video */}
           <Box>
             <Box
               sx={{
                 position: "relative",
-                width: { xs: "220px", md: "264px" },
+                width: "100%",
+                maxWidth: "264px",
                 height: { xs: "100px", md: "124px" },
                 mx: "auto",
-                mb: { xs: 4, md: "78px" },
+                mb: { xs: 3, md: "30px" },
               }}
             >
               <Image
                 src={data.logo}
                 alt={data.title}
                 fill
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: "contain", borderRadius: 0 }}
               />
             </Box>
 
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "516px",
-                height: { xs: "260px", sm: "320px", md: "347px" },
-                borderRadius: "16px",
-                backgroundColor: "#CFCFCF",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src={data.startupImage}
-                alt={data.subtitle}
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </Box>
+            {data.videoUrl && (
+              <Box
+                sx={{
+                  width: "100%",
+                  maxWidth: "516px",
+                  height: { xs: "auto", md: "290px" },
+                  mx: "auto",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  backgroundColor: "#D9D9D9",
+                }}
+              >
+                <video
+                  src={data.videoUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    borderRadius: "16px",
+                  }}
+                />
+              </Box>
+            )}
           </Box>
         </Box>
 
@@ -345,7 +366,10 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                     {item.buttons.map((button, i) => (
                       <Box
                         key={i}
-                        component="button"
+                        component="a"
+                        href={button.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         sx={{
                           border: "0.8px solid #E5E5E5",
                           borderRadius: "999px",
@@ -356,9 +380,11 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                           fontSize: "11px",
                           lineHeight: "16px",
                           cursor: "pointer",
+                          textDecoration: "none",
+                          color: "inherit",
                         }}
                       >
-                        {button}
+                        {button.label}
                       </Box>
                     ))}
                   </Box>

@@ -9,6 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { FONT_FAMILY } from "@/utils/Fonts";
+import Link from "next/link";
 
 const PlayIcon = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
@@ -71,6 +72,8 @@ export default function OurYoungInnovators() {
             
           </Typography>
           <Button
+            component={Link}
+    href="/success-stories/college-acceptance"
             variant="outlined"
             endIcon={<span style={{ fontSize: 18 }}>↗</span>}
             sx={{
