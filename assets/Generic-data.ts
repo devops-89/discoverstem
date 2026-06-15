@@ -154,10 +154,22 @@ export const programs: ProgramCard[] = [
 ];
 
 export const studentSpotlight: SpotlightCard[] = [
-  { name: "Madhalasa Iyer", image: "/Images/Home/Spotlight/1.png" },
-  { name: "Vedanth Venkatesh", image: "/Images/Home/Spotlight/2.jpg" },
-  { name: "Nikit Thoduguli", image: "/Images/Home/Spotlight/3.jpg" },
-  { name: "Adam Mhal", image: "/Images/Home/Spotlight/4.jpg" },
+  { name: "Madhalasa Iyer", image: "/Images/Home/Spotlight/1.png", college: "Princeton, UPenn, Cornell, Caltech" },
+  { name: "Vedanth Venkatesh", image: "/Images/Home/Spotlight/2.jpg", college: "Stanford University" },
+  { name: "Nikit Thoduguli", image: "/Images/Home/Spotlight/3.jpg", college: "MIT" },
+  { name: "Adam Mhal", image: "/Images/Home/Spotlight/4.jpg", college: "MIT (CS)" },
+  { name: "Prisha Bhat", image: "/Images/Home/Spotlight/prisha.jpg", college: "Harvard University" },
+  { name: "Zashaan Shaikh", image: "/Images/Home/Spotlight/Zashaan.jpg", college: "Princeton, Georgia Tech, Rice" },
+  { name: "Shreya Nair", image: "/Images/Home/Spotlight/shreya.jpg", college: "UPenn" },
+  { name: "Isha Agrawal", image: "/Images/Home/Spotlight/Isha.jpg", college: "Cornell, UT Austin, UIUC" },
+  { name: "Tanvi Saxena", image: "/Images/Home/Spotlight/Tanvi.jpg", college: "Cornell University" },
+  { name: "Dhruv Alamuri", image: "/Images/Home/Spotlight/Dhruv.jpg", college: "UT Austin (CS)" },
+  { name: "Aniq S.", image: "/Images/Home/Spotlight/Aniq.jpg", college: "UT Austin (CS)" },
+  { name: "Rayhan Shanavas", image: "/Images/Home/Spotlight/rayhan.png", college: "UNC Chapel Hill" },
+  { name: "Nakshatra Piduri", image: "/Images/Home/Spotlight/nakshatra.jpg", college: "UC Berkeley, Creighton, Ohio State" },
+  { name: "Reem Khan", image: "/Images/Home/Spotlight/reem.jpg", college: "USC IYA" },
+  { name: "Rania Khan", image: "/Images/Home/Spotlight/rania.jpg", college: "USC IYA (Dean's Scholar)" },
+  { name: "Abdullah Kabeer", image: "/Images/Home/Spotlight/abdullah.jpg", college: "McCombs School of Business" },
 ];
 
 export const patents: PatentCard[] = [
@@ -514,27 +526,41 @@ export const startupsData: Startup[] = [
 
 export const researchData: Research[] = [
   {
-    image: "/Images/Programs/sip/research.png",
-    title: "Reopen the doors of the world with UVSET safetouch",
+    image: "/Images/Programs/sip/research-thought-controlled-wheelchair.jpg",
+    title: "Converting an Electric Wheelchair into a Thought-Controlled Wheelchair for Paraplegics Using Brain-Computer Interface Technology",
+    link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/4/2024/89/505304/Converting-an-Electric-Wheelchair-into-a-Thought",
+    video: "https://www.youtube.com/embed/wc-8P8oZAlk",
   },
   {
-    image: "/Images/Programs/sip/research.png",
-    title: "Using Brain Waves And Computer Interface Technology As A Communication System",
+    image: "/Images/Programs/sip/research-eeg-wheelchair.jpg",
+    title: "Affordable EEG-Controlled Wheelchair Attachment for Fully Immobilized Individuals",
+    link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/2/2022/73/488269/Abstracts-Presented-at-the-2nd-Annual-Advancing#14834798",
+    video: "https://www.youtube.com/embed/NdObJRA7sYg",
   },
   {
-    image: "/Images/Programs/sip/research.png",
+    image: "/Images/Programs/sip/research-mental-behavioral.jpg",
     title: "Mental, Emotional and Behavioral Reporting System",
+    link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/2/2022/73/488269/Abstracts-Presented-at-the-2nd-Annual-Advancing#14834806",
+    video: "https://www.youtube.com/embed/3u8l95qT5Hc",
+  },
+  {
+    image: "/Images/Programs/sip/research-uvset-safetouch.jpg",
+    title: "Reopen the Doors of the World with UVSET Safetouch",
+    link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/2/2022/73/488269/Abstracts-Presented-at-the-2nd-Annual-Advancing#14834790",
+    video: "https://www.youtube.com/embed/LVDJbXqqtBI",
   },
 ];
 
 export const studentsData: Student[] = [
   {
-    image: "/Images/Programs/sip/madhalasa.png",
+    image: "/Images/Programs/sip/madhalasa-thumb.webp",
     name: "Madhalasa Iyer",
+    video: "https://www.youtube.com/embed/wc-8P8oZAlk",
   },
   {
-    image: "/Images/Programs/sip/wafiqah.png",
+    image: "/Images/Programs/sip/wafiqah-thumb.webp",
     name: "Wafiqah Zubair",
+    video: "https://www.youtube.com/embed/uEsHVoAlcCM",
   },
 ];
 

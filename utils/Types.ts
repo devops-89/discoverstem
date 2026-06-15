@@ -21,6 +21,7 @@ export type ProgramCard = {
 export type SpotlightCard = {
   name: string;
   image: string;
+  college?: string;
 };
 
 export type PatentCard = {
@@ -82,11 +83,14 @@ export type Startup = {
 export type Research = {
   image: string;
   title: string;
+  link?: string;
+  video?: string;
 };
 
 export type Student = {
   image: string;
   name: string;
+  video?: string;
 };
 
 export interface Step  {

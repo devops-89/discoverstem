@@ -5,7 +5,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import SectionHeading from "@/components/Widgets/SectionHeading";
-import { patents } from "@/assets/Generic-data";
+import { patentsData } from "@/assets/Generic-data";
+
+const homePatents = patentsData.slice(0, 10).map((p) => ({
+  title: p.title,
+  image: p.image,
+  patentNumber: p.googlePatentLink?.match(/US(\d+)/)?.[0] ? `USPTO ${p.googlePatentLink.match(/US(\d+)/)?.[0]}` : "",
+}));
 
 export default function PatentsSection() {
   const swiperRef = useRef<import("swiper").Swiper | null>(null);
@@ -28,7 +34,7 @@ export default function PatentsSection() {
           breakpoints={{ 0: { slidesPerView: 1 }, 900: { slidesPerView: 2 } }}
           onSwiper={(swiper) => { swiperRef.current = swiper; }}
         >
-          {[...patents, ...patents].map((patent, i) => (
+          {[...homePatents, ...homePatents].map((patent, i) => (
             <SwiperSlide key={i}>
               <Card
                 elevation={0}

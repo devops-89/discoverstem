@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { Container, Box } from "@mui/material";
+import { Container, Box, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -41,7 +41,7 @@ export default function SpotlightSection() {
               <Box
                 sx={{
                   borderRadius: "16px",
-                  height: 320,
+                  height: 340,
                   overflow: "hidden",
                   position: "relative",
                 }}
@@ -52,6 +52,26 @@ export default function SpotlightSection() {
                   alt={student.name}
                   sx={{ width: 1, height: 1, objectFit: "cover", display: "block" }}
                 />
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: "linear-gradient(transparent, rgba(0,0,0,0.75))",
+                    p: 2,
+                    pt: 5,
+                  }}
+                >
+                  <Typography sx={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>
+                    {student.name}
+                  </Typography>
+                  {student.college && (
+                    <Typography sx={{ color: "#e0e0e0", fontWeight: 500, fontSize: 13 }}>
+                      {student.college}
+                    </Typography>
+                  )}
+                </Box>
               </Box>
             </SwiperSlide>
           ))}
