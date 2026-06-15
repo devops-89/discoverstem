@@ -1,5 +1,5 @@
 
-import {  categoryAwardsData, ctaBannerData,  gallerySectionData,  grandFinaleSectionData,  innovationDayHighlightsData,  NobelLaureatesData,  nobelLaureatesVideoData,  quoteBannerData, texasInnovationDayContentData, } from "@/assets/Generic-data";
+import {  categoryAwardsData, ctaBannerData,  grandFinaleSectionData,  innovationDay2025GalleryData,  innovationDay2025VideoData,  innovationDayHighlightsData,  NobelLaureatesData,  quoteBannerData, } from "@/assets/Generic-data";
 import HeroSlider from "@/components/Widgets/common/HeroSection";
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 
@@ -25,14 +25,14 @@ export default function InnovationDay2025() {
     <>
       <HeroSlider slides={NobelLaureatesData}/>
     
-     <VideoContentSection data={nobelLaureatesVideoData} />
+     <VideoContentSection data={innovationDay2025VideoData} />
      <ImageContentSplitSection data={innovationDayHighlightsData}/>
      <PatentCertificatesSection/>
      <ChiefGuestSection/>
      < GrandFinaleSection data={grandFinaleSectionData} />
     <AccordionSection data={categoryAwardsData} defaultOpenIndex={2}/>
     
-    <GallerySection data={gallerySectionData} />
+    <GallerySection data={innovationDay2025GalleryData} />
 
       <CtaBanner data={ctaBannerData} />
     </>

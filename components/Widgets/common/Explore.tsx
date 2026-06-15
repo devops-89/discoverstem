@@ -9,53 +9,50 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import { Box, Container, Typography } from "@mui/material";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const labsData = [
   {
     title: "Aerospace Research Lab",
     icon: RocketLaunchIcon,
-    href: "/opportunities/Research/AerospaceResearchLab",
-    active: false,
+    slug: "aerospace_research_lab",
     color: "#7B53A1",
   },
   {
     title: "AI-ML and Autonomous Tech Lab",
     icon: SmartToyIcon,
-    href: "/opportunities/Research/AI-ML-Autonomous-Tech-Lab",
-    active: false,
+    slug: "ai-autonomous-tech-and-robotics-research-lab",
     color: "#7B53A1",
   },
   {
     title: "Banking, Finance & Fintech Lab",
     icon: AccountBalanceIcon,
-    href: "/opportunities/Research/Banking-Finance-Fintech-Lab",
-    active: false,
+    slug: "banking-finance-fintech-research-lab",
     color: "#EE4823",
   },
   {
     title: "Energy & Environment Lab",
     icon: EnergySavingsLeafIcon,
-    href: "/opportunities/Research/Energy-Environment-Lab",
-    active: false,
+    slug: "energy-environment-research-lab",
     color: "#5B8C3A",
   },
   {
     title: "Genomics, Biotechnology & Health Sciences Lab",
     icon: BiotechIcon,
-    href: "/opportunities/Research/Genomics-Biotechnology-Health-Sciences-Lab",
-    active: false,
+    slug: "genomics-biotechnology-health-sciences-research-lab",
     color: "#F9A51E",
   },
   {
     title: "Neurotechnology & Brain-Computer Interface Lab",
     icon: PsychologyIcon,
-    href: "/opportunities/Research/Neurotechnology-Brain-Computer-Interface-Lab",
-    active: false,
+    slug: "neurotech-brain-computer-interface",
     color: "#2F80ED",
   },
 ];
 
 export default function ExploreLabsSection() {
+  const pathname = usePathname();
+  const currentSlug = pathname.split("/").pop();
   return (
     <Box
       sx={{
@@ -101,17 +98,18 @@ export default function ExploreLabsSection() {
         >
           {labsData.map((item) => {
             const Icon = item.icon;
+            const isActive = currentSlug === item.slug;
 
             return (
               <Box
                 key={item.title}
-                component={item.active ? "div" : Link}
-                href={!item.active ? item.href : undefined}
+                component={isActive ? "div" : Link}
+                href={!isActive ? `/opportunities/${item.slug}` : undefined}
                 sx={{
                   minHeight: { xs: "174.2px", md: "174.2px" },
                   borderRadius: "16px",
-                  backgroundColor: item.active ? "#7B53A1" : "#FFFFFF",
-                  border: item.active
+                  backgroundColor: isActive ? item.color : "#FFFFFF",
+                  border: isActive
                     ? "0.8px solid rgba(255,255,255,0.1)"
                     : "0.8px solid rgba(0,0,0,0.05)",
                   p: "24.8px",
@@ -120,11 +118,11 @@ export default function ExploreLabsSection() {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   transition: "all .2s ease",
-                  cursor: item.active ? "default" : "pointer",
+                  cursor: isActive ? "default" : "pointer",
 
                   "&:hover": {
-                    transform: item.active ? "none" : "translateY(-2px)",
-                    backgroundColor: item.active ? "#7B53A1" : item.color,
+                    transform: isActive ? "none" : "translateY(-2px)",
+                    backgroundColor: isActive ? item.color : item.color,
                   },
 
                   "&:hover .lab-title": {
@@ -155,7 +153,7 @@ export default function ExploreLabsSection() {
                       width: "44px",
                       height: "44px",
                       borderRadius: "14px",
-                      backgroundColor: item.active
+                      backgroundColor: isActive
                         ? "rgba(240,255,229,0.1)"
                         : `${item.color}1A`,
                       display: "flex",
@@ -169,7 +167,7 @@ export default function ExploreLabsSection() {
                       className="lab-icon"
                       sx={{
                         fontSize: 22,
-                        color: item.active ? "#FFFFFF" : item.color,
+                        color: isActive ? "#FFFFFF" : item.color,
                         transition: "all .2s ease",
                       }}
                     />
@@ -183,7 +181,7 @@ export default function ExploreLabsSection() {
                       fontSize: "18px",
                       lineHeight: "27px",
                       letterSpacing: "-0.45px",
-                      color: item.active ? "#FFFFFF" : "#171717",
+                      color: isActive ? "#FFFFFF" : "#171717",
                       transition: "all .2s ease",
                     }}
                   >
@@ -191,7 +189,7 @@ export default function ExploreLabsSection() {
                   </Typography>
                 </Box>
 
-                {item.active ? (
+                {isActive ? (
                   <Typography
                     sx={{
                       mt: "16px",

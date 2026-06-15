@@ -1,5 +1,5 @@
 
-import { achievementStatsData, ctaBannerData, EventquoteBanner, gallerySectionData, nobelLaureatesContentData, NobelLaureatesData,  nobelLaureatesVideoData,  quoteBannerData, } from "@/assets/Generic-data";
+import { achievementStatsData, ctaBannerData, EventquoteBanner, nobelLaureatesContentData, NobelLaureatesData,  nobelLaureatesGalleryData,  nobelLaureatesVideoData,  quoteBannerData, } from "@/assets/Generic-data";
 import HeroSlider from "@/components/Widgets/common/HeroSection";
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 import StatsCard from "@/components/Widgets/common/StatsCard";
@@ -31,7 +31,7 @@ export default function NobelLaureates() {
      <VideoContentSection data={nobelLaureatesVideoData} />
      <ContentSection data ={nobelLaureatesContentData}/>
      <QuoteBanner data={EventquoteBanner} />
-     <GallerySection data={gallerySectionData} />
+      <GallerySection data={nobelLaureatesGalleryData} />
 
       <CtaBanner data={ctaBannerData} />
     </>

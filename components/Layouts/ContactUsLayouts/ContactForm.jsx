@@ -17,15 +17,10 @@ import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const gradeOptions = [
-                    { label: "1st" }, { label: "2nd" }, { label: "3rd" }, { label: "4th" },
-                    { label: "5th" }, { label: "6th" }, { label: "7th" }, { label: "8th" },
-                    { label: "9th" }, { label: "10th" }, { label: "11th" }, { label: "12th" },
-];
-
-const hearOptions = [
-                    { label: "Social Sites" },
-                    { label: "Friend" },
-                    { label: "School" },
+                    { label: "K" }, { label: "1" }, { label: "2" }, { label: "3" },
+                    { label: "4" }, { label: "5" }, { label: "6" }, { label: "7" },
+                    { label: "8" }, { label: "9" }, { label: "10" }, { label: "11" },
+                    { label: "12" }, { label: "Undergraduate" },
 ];
 
 const validationSchema = Yup.object({
@@ -39,7 +34,7 @@ const validationSchema = Yup.object({
     phone: Yup.string()
     .matches(/^[0-9]{10}$/, "Enter valid 10-digit phone")
     .required("Phone is required"),
-    hear: Yup.object().nullable().required("This field is required"),
+    hear: Yup.string().trim().required("This field is required"),
     message: Yup.string().required("Message is required"),
 });
 
@@ -54,7 +49,7 @@ const ContactForm = () => {
     parentName: "",
     email: "",
     phone: "",
-    hear: null,
+    hear: "",
     message: "",
     },
     validationSchema,
@@ -232,28 +227,22 @@ return (
             helperText={formik.touched.phone && formik.errors.phone}
             sx={inputStyle}
             />
+            <Typography sx={{ fontSize: "13px", color: "#999", mt: 0.5, fontStyle: "italic" }}>
+            (We never follow up except for a one-time text to help ensure you don't miss our email.)
+            </Typography>
         </Grid>
 
         <Grid size={{ xs: 12 }}>
-            <Autocomplete
-            options={hearOptions}
-            getOptionLabel={(o) => o.label}
+            <TextField
+            name="hear"
+            label="How did you hear about us?"
+            fullWidth
             value={formik.values.hear}
-            onChange={(_, val) => {
-                formik.setFieldValue("hear", val);
-                formik.setFieldTouched("hear", true);
-            }}
-            onBlur={() => formik.setFieldTouched("hear", true)}
-            popupIcon={<KeyboardArrowDownIcon />}
-            renderInput={(params) => (
-                <TextField
-                {...params}
-                label="How did you hear about us?"
-                error={formik.touched.hear && Boolean(formik.errors.hear)}
-                helperText={formik.touched.hear && formik.errors.hear}
-                sx={inputStyle}
-                />
-            )}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.hear && Boolean(formik.errors.hear)}
+            helperText={formik.touched.hear && formik.errors.hear}
+            sx={inputStyle}
             />
         </Grid>
 
@@ -277,7 +266,7 @@ return (
 
         <Box sx={{ mt: 8 }}>
         <PrimaryButton type="submit" disabled={formik.isSubmitting}>
-            {formik.isSubmitting ? "Sending..." : "Send Message Here"}
+            {formik.isSubmitting ? "Sending..." : "Send"}
         </PrimaryButton>
         </Box>
     </Box>

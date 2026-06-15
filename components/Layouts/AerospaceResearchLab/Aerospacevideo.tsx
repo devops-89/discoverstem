@@ -2,9 +2,10 @@
 
 import { AerospacevideoData } from "@/assets/Generic-data";
 import { Box, Container } from "@mui/material";
+import { VideoData } from "@/utils/Types";
 
 
-export default function AerospaceVideoSection() {
+export default function AerospaceVideoSection({ youtubeUrl, title }: VideoData) {
   return (
     <Container
       maxWidth={false}
@@ -31,8 +32,8 @@ export default function AerospaceVideoSection() {
       >
         <Box
           component="iframe"
-          src={AerospacevideoData.youtubeUrl}
-          title={AerospacevideoData.title}
+          src={youtubeUrl}
+          title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           sx={{

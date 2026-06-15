@@ -1,16 +1,16 @@
-import StartupOpportunities from "@/components/Layouts/StartupOpportunities";
+import AerospaceResearchLab from "@/components/Layouts/AerospaceResearchLab";
+import BiotechnologyResearchLab from "@/components/Layouts/BiotechnologyLabLayouts";
+import EnergyResearchLab from "@/components/Layouts/EnergyLabLayouts";
+import FintechResearchLab from "@/components/Layouts/FintechLabLayouts";
+import NeurotechnologyResearchLab from "@/components/Layouts/NeurotechnologyLabLayouts";
 import PartnersEcosystem from "@/components/Layouts/PartnersEcosystem";
 import ResearchMentors from "@/components/Layouts/ResearchMentors";
-import AerospaceResearchLab from "@/components/Layouts/AerospaceResearchLab";
 import RoboticsResearchLab from "@/components/Layouts/RoboticsLabLayout";
-import NeurotechnologyResearchLab from "@/components/Layouts/NeurotechnologyLabLayouts";
-import EnergyResearchLab from "@/components/Layouts/EnergyLabLayouts";
-import BiotechnologyResearchLab from "@/components/Layouts/BiotechnologyLabLayouts";
-import FintechResearchLab from "@/components/Layouts/FintechLabLayouts";
+import StartupOpportunities from "@/components/Layouts/StartupOpportunities";
 import { notFound } from "next/navigation";
 
 const routes: Record<string, React.ReactNode> = {
-  "startup-opportunities": <StartupOpportunities />,
+  "startup_opportunities": <StartupOpportunities />,
   "partners-ecosystem": <PartnersEcosystem />,
   "research-mentors": <ResearchMentors />,
 

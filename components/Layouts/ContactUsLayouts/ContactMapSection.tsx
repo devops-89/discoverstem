@@ -62,10 +62,19 @@ return (
                 flexWrap: "wrap",
                 }}
             >
-                {[Facebook, Instagram, LinkedIn, YouTube, Twitter].map(
-                (Icon, i) => (
+                {[
+                    { icon: Facebook, url: "http://www.facebook.com/discoverstem.official" },
+                    { icon: Instagram, url: "http://www.instagram.com/discoverstem.official" },
+                    { icon: LinkedIn, url: "https://www.linkedin.com/company/discoverstem/" },
+                    { icon: YouTube, url: "https://www.youtube.com/@discoverstem" },
+                    { icon: Twitter, url: "http://www.twitter.com/discoverstem_US" },
+                ].map(({ icon: Icon, url }, i) => (
                     <IconButton
                     key={i}
+                    component="a"
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     sx={{
                         width: 40,
                         height: 40,

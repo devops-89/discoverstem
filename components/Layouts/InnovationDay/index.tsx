@@ -1,4 +1,4 @@
-import {  ctaBannerData,  gallerySectionData,  NobelLaureatesData,  nobelLaureatesVideoData,  quoteBannerData, texasInnovationDayContentData, } from "@/assets/Generic-data";
+import {  ctaBannerData,  NobelLaureatesData,  quoteBannerData, texasGalleryData, texasInnovationDayContentData, texasVideoData, } from "@/assets/Generic-data";
 import HeroSlider from "@/components/Widgets/common/HeroSection";
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 import VideoContentSection from "@/components/Widgets/common/YoutubeContent";
@@ -13,10 +13,10 @@ export default function InnovationDay() {
     <>
       <HeroSlider slides={NobelLaureatesData}/>
     
-     <VideoContentSection data={nobelLaureatesVideoData} />
+     <VideoContentSection data={texasVideoData} />
      <ContentSection data ={texasInnovationDayContentData}/>
     
-     <GallerySection data={gallerySectionData} />
+     <GallerySection data={texasGalleryData} />
 
       <CtaBanner data={ctaBannerData} />
     </>

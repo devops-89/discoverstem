@@ -77,12 +77,32 @@ export default function GallerySection({
             },
             gridTemplateRows: {
               xs: "auto",
-              md: "170px 170px 170px 170px",
+              md: Array.from({ length: Math.ceil(data.images.length / 3) + 1 }, () => "170px").join(" "),
             },
             gap: "16px",
           }}
         >
-          {data.images.map((item) => (
+          {data.images.map((item) => {
+            const colMap: Record<number, string> = { 1: "1", 2: "2", 3: "3", 4: "2", 5: "3", 6: "1", 7: "2", 8: "3", 9: "1" };
+            const rowMap: Record<number, string> = { 1: "1 / 3", 2: "1 / 2", 3: "1 / 2", 4: "2 / 3", 5: "2 / 3", 6: "3 / 4", 7: "3 / 4", 8: "3 / 4", 9: "4 / 5" };
+            let col, row;
+            if (item.id <= 9) {
+              col = `${colMap[item.id]} / ${Number(colMap[item.id]) + 1}`;
+              row = rowMap[item.id];
+            } else {
+              const extraIndex = item.id - 10;
+              let colNum, rowNum;
+              if (extraIndex < 2) {
+                colNum = extraIndex + 2;
+                rowNum = 4;
+              } else {
+                colNum = ((extraIndex - 2) % 3) + 1;
+                rowNum = 5 + Math.floor((extraIndex - 2) / 3);
+              }
+              col = `${colNum} / ${colNum + 1}`;
+              row = `${rowNum} / ${rowNum + 1}`;
+            }
+            return (
             <Box
               key={item.id}
               sx={{
@@ -106,52 +126,15 @@ export default function GallerySection({
 
                 gridColumn: {
                   xs: "auto",
-                  md:
-                    item.id === 1
-                      ? "1 / 2"
-                      : item.id === 2
-                      ? "2 / 3"
-                      : item.id === 3
-                      ? "3 / 4"
-                      : item.id === 4
-                      ? "2 / 3"
-                      : item.id === 5
-                      ? "3 / 4"
-                      : item.id === 6
-                      ? "1 / 2"
-                      : item.id === 7
-                      ? "2 / 3"
-                      : item.id === 8
-                      ? "3 / 4"
-                      : "1 / 2",
+                  md: col,
                 },
 
                 gridRow: {
                   xs: "auto",
-                  md:
-                    item.id === 1
-                      ? "1 / 3"
-                      : item.id === 2
-                      ? "1 / 2"
-                      : item.id === 3
-                      ? "1 / 2"
-                      : item.id === 4
-                      ? "2 / 3"
-                      : item.id === 5
-                      ? "2 / 3"
-                      : item.id === 6
-                      ? "3 / 4"
-                      : item.id === 7
-                      ? "3 / 4"
-                      : item.id === 8
-                      ? "3 / 4"
-                      : "4 / 5",
+                  md: row,
                 },
 
-                maxWidth: {
-                  xs: "100%",
-                  md: item.id === 9 ? "278px" : "100%",
-                },
+                maxWidth: "100%",
               }}
             >
               <Image
@@ -163,7 +146,8 @@ export default function GallerySection({
                 }}
               />
             </Box>
-          ))}
+            );
+          })}
         </Box>
       </Box>
     </Container>

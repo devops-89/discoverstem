@@ -164,7 +164,7 @@ export default function ChiefGuestSection() {
 
             <Box
               component="a"
-              href="#"
+              href="https://www.linkedin.com/in/gurvinderahluwalia" target="_blank" rel="noopener noreferrer"
               sx={{
                 mt: "16px",
                 display: "inline-flex",

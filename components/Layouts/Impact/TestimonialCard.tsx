@@ -9,6 +9,8 @@ import {
   Dialog,
   DialogContent,
   IconButton,
+  Pagination,
+  PaginationItem,
   Typography,
 } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -16,10 +18,16 @@ import CloseIcon from "@mui/icons-material/Close";
 import { SuccessStoryCard } from "@/utils/Types";
 import { successStoriesData } from "@/assets/Generic-data";
 
+const ITEMS_PER_PAGE = 6;
 
 export default function SuccessStoriesCards() {
   const [selectedStory, setSelectedStory] =
     useState<SuccessStoryCard | null>(null);
+  const [page, setPage] = useState(1);
+
+  const pageCount = Math.ceil(successStoriesData.length / ITEMS_PER_PAGE);
+  const startIndex = (page - 1) * ITEMS_PER_PAGE;
+  const paginatedData = successStoriesData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
     <Container
@@ -39,7 +47,7 @@ export default function SuccessStoriesCards() {
           alignItems: "stretch",
         }}
       >
-        {successStoriesData.map((item, index) => {
+        {paginatedData.map((item, index) => {
           const isRightCard = index % 2 !== 0;
 
           return (
@@ -188,6 +196,40 @@ export default function SuccessStoriesCards() {
           );
         })}
       </Box>
+
+      {pageCount > 1 && (
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+          <Pagination
+            count={pageCount}
+            page={page}
+            onChange={(_, value) => setPage(value)}
+            renderItem={(item) => <PaginationItem {...item} />}
+            sx={{
+              "& .MuiPagination-ul": { gap: "8px" },
+              "& .MuiPaginationItem-root": {
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                fontSize: "14px",
+                fontWeight: 500,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#E5E7EB",
+                color: "#374151",
+              },
+              "& .MuiPaginationItem-ellipsis": {
+                backgroundColor: "transparent",
+                lineHeight: "40px",
+              },
+              "& .Mui-selected": {
+                backgroundColor: "#7B53A1 !important",
+                color: "#fff",
+              },
+            }}
+          />
+        </Box>
+      )}
 
       <Dialog
         open={Boolean(selectedStory)}

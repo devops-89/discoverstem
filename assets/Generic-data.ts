@@ -259,7 +259,7 @@ export const Heromedia:mediaCenter=
   };
 
 export const contactData = {
-  title: "What happens in our Free Information Session?",
+  title: "What happens in a Free Information Session?",
 
   description:
     "DiscoverSTEM Information Session is the first opportunity to explore more about our programs and discover a clear pathway to help children become innovators, researchers, or entrepreneurs.\nDuring the session, you will learn about:",
@@ -267,7 +267,7 @@ export const contactData = {
   sections: [
     {
       title: "About DiscoverSTEM",
-      text: "Understand our mission, how we empower young minds, and what makes us the world’s leading platform for future researchers, inventors, and entrepreneurs.",
+      text: "Understand our mission, how we empower young minds, and what makes us the world's leading platform for future researchers, inventors, and entrepreneurs.",
     },
     {
       title: "Programs",
@@ -275,40 +275,43 @@ export const contactData = {
     },
     {
       title: "Accomplishments",
-      text: "Get inspired by what our students achieve through DiscoverSTEM: patents, global awards, published research, and top university admissions.",
+      text: "Get inspired by our students' achievements—patents, global awards, published research, and admissions to top universities through their DiscoverSTEM experience.",
     },
     {
       title: "Enrollment",
-      text: "Get clarity on how you can join DiscoverSTEM, from application steps to the final enrollment.The information session is followed by the Tour of the Innovation & Research Labs.",
+      text: "Get clarity on how a student can join DiscoverSTEM — from application steps and eligibility to selection steps.",
     },
   ],
 };
+
+export const contactInfoSessionNote =
+  "The information session is followed by the Tour of the Innovation & Research Labs.";
 
 
 export const researchLabs: ResearchLab[] = [
   {
     title: "Aerospace Research Lab",
-    image: "/Images/ContactUs/ResearchLabImg.jpg",
+    image: "/Images/ContactUs/image2aerospacellab.jpg",
   },
   {
     title: "AI-ML and Autonomous Tech Research Lab",
-    image: "/Images/ContactUs/ResearchLabImg.jpg",
+    image: "/Images/ContactUs/image3ailab.jpg",
   },
   {
     title: "Banking, Finance & Fintech Research Lab",
-    image: "/Images/ContactUs/ResearchLabImg.jpg",
+    image: "/Images/ContactUs/image7bankinglab.jpg",
   },
   {
     title: "Energy & Environment Research Lab",
-    image: "/Images/ContactUs/ResearchLabImg.jpg",
+    image: "/Images/ContactUs/image5energylab.jpg",
   },
   {
     title: "Genomics, Biotechnology & Health Sciences Research Lab",
-    image: "/Images/ContactUs/ResearchLabImg.jpg",
+    image: "/Images/ContactUs/image4geolab.jpg",
   },
   {
     title: "Neurotechnology & Brain-Computer Interface Research Lab",
-    image: "/Images/ContactUs/ResearchLabImg.jpg",
+    image: "/Images/ContactUs/image1lab.jpg",
   },
 ];
 
@@ -2318,7 +2321,7 @@ export const uvsetData: StartupDetailData = {
 
   startupImage: "/Images/Uvset/uvsetimage.png",
 
-  videoUrl: "https://discoverstem.info/wp-content/uploads/2023/04/UVSET-5-Second.mp4",
+  videoUrl: "/Images/Uvset/UVSET-5-Second.mp4",
 
   status: {
     title: "STATUS",
@@ -2357,7 +2360,7 @@ export const mediaSectionData: MediaSectionData = {
         "Student-founded startup eyes product launch with LOIs worth nearly $750K",
       image: "/Images/Uvset/media-1.jpg",
       visitLink: "https://www.bizjournals.com/dallas/inno/stories/profiles/2021/12/14/uv-set-aimen-khan-humza-sheikh-manish-rangan.html",
-      pdfLink: "https://discoverstem.info/wp-content/uploads/2022/01/NXT-Inno-Article-UVSET-DiscoverSTEM.pdf",
+      pdfLink: "/Images/Uvset/NXT-Inno-Article-UVSET-DiscoverSTEM.pdf",
     },
     {
       id: 2,
@@ -2367,7 +2370,7 @@ export const mediaSectionData: MediaSectionData = {
         "Congressman Raja Krishnamoorthi honors 18 Indian American achievers under 18",
       image: "/Images/Uvset/media-2.jpg",
       visitLink: "https://indicanews.com/2022/10/05/congressman-raja-krishnamoorthi-honors-18-indian-american-achievers-under-18/",
-      pdfLink: "https://discoverstem.info/wp-content/uploads/2023/04/IndicaNews-18Under18.pdf",
+      pdfLink: "/Images/Uvset/IndicaNews-18Under18.pdf",
     },
     {
       id: 3,
@@ -2376,7 +2379,7 @@ export const mediaSectionData: MediaSectionData = {
       title: "CEOKID Spotlight: Meet Teen Inventor Manish Rangan",
       image: "/Images/Uvset/media-3.jpg",
       visitLink: "https://ceomommagazine.com/ceokid-spotlight-meet-teen-inventor-manish-rangan",
-      pdfLink: "https://discoverstem.info/wp-content/uploads/2023/04/CEO-MOM-Manish-Rangan.pdf",
+      pdfLink: "/Images/Uvset/CEO-MOM-Manish-Rangan.pdf",
     },
     {
       id: 4,
@@ -2385,7 +2388,7 @@ export const mediaSectionData: MediaSectionData = {
       title: "Preventing Infection through Sanitization",
       image: "/Images/Uvset/media-4.jpg",
       visitLink: "https://indicanews.com/2022/09/11/preventing-infection-through-sanitization/",
-      pdfLink: "https://discoverstem.info/wp-content/uploads/2023/04/IndicaNews-UVSET.pdf",
+      pdfLink: "/Images/Uvset/IndicaNews-UVSET.pdf",
     },
     {
       id: 5,
@@ -2465,149 +2468,149 @@ export const patentFacesData: PatentFacesData = {
       id: 1,
       name: "Madhalasa Iyer",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Madhalasa-Iyer.png",
+      image: "/Images/Home/Spotlight/Madhalasa-Iyer.png",
     },
     {
       id: 2,
       name: "Nikitha Thoduguli",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight12.jpg",
+      image: "/Images/Home/Spotlight/spotlight12.jpg",
     },
     {
       id: 3,
       name: "Wafiqah Zubair",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Wafiqah.jpg",
+      image: "/Images/Home/Spotlight/Wafiqah.jpg",
     },
     {
       id: 4,
       name: "Ryan Xie",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Ryan.jpg",
+      image: "/Images/Home/Spotlight/Ryan.jpg",
     },
     {
       id: 5,
       name: "Marium Khan",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Marium-Khan-1.png",
+      image: "/Images/Home/Spotlight/Marium-Khan-1.png",
     },
     {
       id: 6,
       name: "Ameer Syedibrahim",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight13.jpg",
+      image: "/Images/Home/Spotlight/spotlight13.jpg",
       tag: "Innovator",
     },
     {
       id: 7,
       name: "Shreeya Madhavanur",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/01/spotlight15.jpg",
+      image: "/Images/Home/Spotlight/spotlight15.jpg",
       tag: "Innovator",
     },
     {
       id: 8,
       name: "Raahi Jogani",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Raahi-1.jpg",
+      image: "/Images/Home/Spotlight/Raahi-1.jpg",
       tag: "Innovator",
     },
     {
       id: 9,
       name: "Manish Rangan",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Manish-Rangan-CEO-UVSET.jpg",
+      image: "/Images/Home/Spotlight/Manish-Rangan-CEO-UVSET.jpg",
       tag: "Innovator",
     },
     {
       id: 10,
       name: "Carcyn Coleman",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight6.jpg",
+      image: "/Images/Home/Spotlight/spotlight6.jpg",
       tag: "Innovator",
     },
     {
       id: 11,
       name: "Ridah Shanavas",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Ridah-1.jpg",
+      image: "/Images/Home/Spotlight/Ridah-1.jpg",
       tag: "Innovator",
     },
     {
       id: 12,
       name: "Ashton Rischer",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight2.jpg",
+      image: "/Images/Home/Spotlight/spotlight2.jpg",
       tag: "Innovator",
     },
     {
       id: 13,
       name: "Rishabh Siddamshetty",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/03/Rishab-Siddamshetty.jpg",
+      image: "/Images/Home/Spotlight/Rishab-Siddamshetty.jpg",
       tag: "Innovator",
     },
     {
       id: 14,
       name: "Isha Agrawal",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2025/04/Isha-1.jpg",
+      image: "/Images/Home/Spotlight/Isha-1.jpg",
       tag: "Innovator",
     },
     {
       id: 15,
       name: "Kayla Goodrich",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight8.jpg",
+      image: "/Images/Home/Spotlight/spotlight8.jpg",
       tag: "Innovator",
     },
     {
       id: 16,
       name: "Azal Amer",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/01/spotlight3.jpg",
+      image: "/Images/Home/Spotlight/spotlight3.jpg",
       tag: "Innovator",
     },
     {
       id: 17,
       name: "Bilal Ali Shah",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight5.jpg",
+      image: "/Images/Home/Spotlight/spotlight5.jpg",
       tag: "Innovator",
     },
     {
       id: 18,
       name: "Tarik Syed",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight16.jpg",
+      image: "/Images/Home/Spotlight/spotlight16.jpg",
       tag: "Innovator",
     },
     {
       id: 19,
       name: "Maya Kusumakar",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight11.jpg",
+      image: "/Images/Home/Spotlight/spotlight11.jpg",
       tag: "Innovator",
     },
     {
       id: 20,
       name: "Inaya Sheikh",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight7.jpg",
+      image: "/Images/Home/Spotlight/spotlight7.jpg",
       tag: "Innovator",
     },
     {
       id: 21,
       name: "Ben Stafford",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight4.jpg",
+      image: "/Images/Home/Spotlight/spotlight4.jpg",
       tag: "Innovator",
     },
     {
       id: 22,
       name: "Kenny DeCay",
       role: "DiscoverSTEM Student",
-      image: "https://discoverstem.info/wp-content/uploads/2022/02/spotlight9.jpg",
+      image: "/Images/Home/Spotlight/spotlight9.jpg",
       tag: "Innovator",
     },
   ],
@@ -2631,7 +2634,6 @@ export const NobelLaureatesData=[
    image:"/Images/ContactUs/HeroSection.jpg",
   },
 ];
-
 
 
 
@@ -2726,10 +2728,31 @@ export const gallerySectionData: GallerySectionData = {
   ],
 };
 
+export const nobelLaureatesGalleryData: GallerySectionData = {
+  eyebrow: "Gallery",
+  title: "Moments from the meet-up",
+  images: [
+    { id: 1, image: "/Images/NobelLauretes/Nobel1.jpg", alt: "Meeting with Nobel Laureates", variant: "large" },
+    { id: 2, image: "/Images/NobelLauretes/Nobel2.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 3, image: "/Images/NobelLauretes/Nobel3.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 4, image: "/Images/NobelLauretes/Nobel4.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 5, image: "/Images/NobelLauretes/Nobel5.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 6, image: "/Images/NobelLauretes/nobel6.jpg", alt: "Meeting with Nobel Laureates", variant: "wide" },
+    { id: 7, image: "/Images/NobelLauretes/Nobel7.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 8, image: "/Images/NobelLauretes/Nobel8.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 9, image: "/Images/NobelLauretes/Nobel9.jpg", alt: "Meeting with Nobel Laureates", variant: "wide" },
+    { id: 10, image: "/Images/NobelLauretes/Nobel10.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 11, image: "/Images/NobelLauretes/Nobel11.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 12, image: "/Images/NobelLauretes/Nobel12.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 13, image: "/Images/NobelLauretes/Nobel13.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+    { id: 14, image: "/Images/NobelLauretes/Nobel14.jpg", alt: "Meeting with Nobel Laureates", variant: "small" },
+  ],
+};
+
 export const nobelLaureatesVideoData: VideoSectionData = {
   title: "Where Young Minds Met Global Scientific Greats",
   subtitle: "Where Young Minds Met Global Scientific Greats",
-  videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+  videoUrl: "https://www.youtube.com/embed/avTCXG34FZw",
 };
 
 export const nobelLaureatesContentData: ContentSectionData = {
@@ -2757,6 +2780,39 @@ innovators through meaningful global academic experiences.`,
   ],
 };
 
+export const texasVideoData: VideoSectionData = {
+  title: "DiscoverSTEM Innovation Day at Texas State Capitol",
+  subtitle: "Texas House of Representatives Honors DiscoverSTEM",
+  videoUrl: "https://www.youtube.com/embed/q3Tm9qQtP6c",
+};
+
+export const texasGalleryData: GallerySectionData = {
+  eyebrow: "Gallery",
+  title: "Moments from the meet-up",
+  images: [
+    { id: 1, image: "/Images/InTexas/image1.jpg", alt: "Innovation Day Texas", variant: "large" },
+    { id: 2, image: "/Images/InTexas/image2.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 3, image: "/Images/InTexas/image3.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 4, image: "/Images/InTexas/image4.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 5, image: "/Images/InTexas/image5.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 6, image: "/Images/InTexas/image6.jpg", alt: "Innovation Day Texas", variant: "wide" },
+    { id: 7, image: "/Images/InTexas/image7.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 8, image: "/Images/InTexas/image8.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 9, image: "/Images/InTexas/image9.jpg", alt: "Innovation Day Texas", variant: "wide" },
+    { id: 10, image: "/Images/InTexas/image10.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 11, image: "/Images/InTexas/image11.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 12, image: "/Images/InTexas/image12.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 13, image: "/Images/InTexas/image13.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 14, image: "/Images/InTexas/image14.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 15, image: "/Images/InTexas/image15.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 16, image: "/Images/InTexas/image16.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 17, image: "/Images/InTexas/image17.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 18, image: "/Images/InTexas/image18.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 19, image: "/Images/InTexas/image19.jpg", alt: "Innovation Day Texas", variant: "small" },
+    { id: 20, image: "/Images/InTexas/image20.jpg", alt: "Innovation Day Texas", variant: "small" },
+  ],
+};
+
 export const texasInnovationDayContentData :ContentSectionData = {
   paragraphs: [
     `On March 18, 2025, DiscoverSTEM achieved a historic milestone as the Texas House of Representatives honored the organization with House Resolution 403, officially declaring the day as DiscoverSTEM Innovation Day. This remarkable honor highlights DiscoverSTEM’s commitment to empowering young innovators and fostering a culture of creativity, research, and entrepreneurship.`,
@@ -2770,17 +2826,42 @@ export const texasInnovationDayContentData :ContentSectionData = {
 };
 
 
+export const innovationDay2025VideoData: VideoSectionData = {
+  title: "Celebrating Youth Ingenuity, Innovations, Research and Entrepreneurship of DiscoverSTEM Students",
+  subtitle: "DiscoverSTEM Innovation Day 2025 Highlights",
+  videoUrl: "https://www.youtube.com/embed/pKTVqwC2ANk",
+};
+
+export const innovationDay2025GalleryData: GallerySectionData = {
+  eyebrow: "Gallery",
+  title: "Moments from the meet-up",
+  images: [
+    { id: 1, image: "/Images/innovation2025/g1.jpg", alt: "Innovation Day 2025", variant: "large" },
+    { id: 2, image: "/Images/innovation2025/g2.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 3, image: "/Images/innovation2025/g3.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 4, image: "/Images/innovation2025/g4.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 5, image: "/Images/innovation2025/g5.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 6, image: "/Images/innovation2025/g6.jpg", alt: "Innovation Day 2025", variant: "wide" },
+    { id: 7, image: "/Images/innovation2025/g7.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 8, image: "/Images/innovation2025/g8.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 9, image: "/Images/innovation2025/g9.jpg", alt: "Innovation Day 2025", variant: "wide" },
+    { id: 10, image: "/Images/innovation2025/g10.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 11, image: "/Images/innovation2025/g11.jpg", alt: "Innovation Day 2025", variant: "small" },
+    { id: 12, image: "/Images/innovation2025/g12.jpg", alt: "Innovation Day 2025", variant: "small" },
+  ],
+};
+
 export const innovationDayHighlightsData:ImageContentSplitData = {
   topSection: {
     description: [
       "DiscoverSTEM Innovation Day 2025 was a remarkable celebration of young minds, showcasing their innovations, research, and entrepreneurial skills. Students who secured patents for their inventions were honored with a patent certificate, marking a milestone achievement in their journey of innovation.",
       "Adding to this year's prestige, the Texas State Capitol honored DiscoverSTEM and its young innovators in March 2025 with an official House Resolution #403, recognizing their profound impact on shaping future leaders. Each student was invited on stage and presented with a personalized letter from the Capitol, making it a once-in-a-lifetime recognition.",
     ],
-    image: "/Images/innovation-day/top-image.png",
+    image: "/Images/innovation2025/image1.jpg",
   },
 
   bottomSection: {
-    image: "/Images/innovation-day/bottom-image.png",
+    image: "/Images/innovation2025/image2.jpg",
     description: [
       "The highlight of the event was the Grand Finale of Top Young Innovators 2025, where the most promising student innovators took center stage. Their visionary work, bold thinking, and relentless pursuit of solutions for a better world were celebrated with great honor.",
       "Each innovation highlighted DiscoverSTEM's mission to inspire, mentor, and empower the next generation of changemakers. To close the day on an exciting note, the Innovation Quiz 2025 challenged participants with thought-provoking questions and rewarded winners with exclusive Apple merchandise, turning the event into a perfect blend of learning, recognition, and inspiration.",
@@ -2788,40 +2869,377 @@ export const innovationDayHighlightsData:ImageContentSplitData = {
   },
 };
 
+export const innovationDay2023VideoData: VideoSectionData = {
+  title: "Innovation Day 2023",
+  subtitle: "Celebrating Youth Ingenuity, Creativity and Innovation Skills of DiscoverSTEM Students",
+  videoUrl: "https://www.youtube.com/embed/UdB5KuT5Ze8",
+};
+
+export const innovationDay2023HighlightsData: ImageContentSplitData = {
+  topSection: {
+    description: [
+      "The second edition of DiscoverSTEM Innovation Day in 2023 was a testament to the creative potential of young innovators. This inspiring event celebrated students who achieved the extraordinary feat of securing patents for their groundbreaking ideas. Recognizing their dedication and brilliance, we highlighted their accomplishments to motivate others to pursue innovation. The event also featured an engaging Innovation Quiz, where participants demonstrated their knowledge and competed for exclusive Apple merchandise, adding an element of excitement and reward to the celebration.",
+    ],
+    image: "/Images/innovation2023/2023-1.jpg",
+  },
+
+  bottomSection: {
+    image: "/Images/innovation2023/2023-2.jpg",
+    description: [
+      "Innovation Day 2023 served as a vibrant platform for fostering creativity and collaboration. By honoring these exceptional young minds, we strengthened our mission to cultivate a culture of innovation and problem-solving. The event left a lasting impact, encouraging students to think beyond boundaries and embrace their potential to shape the future. With each edition, DiscoverSTEM continues to inspire the leaders of tomorrow, igniting the passion for invention and progress in every participant.",
+    ],
+  },
+};
+
+export const patentCertificatesData2023: PatentCertificatesData = {
+  title: "Patent Certificates Granted in 2022-23",
+
+  items: [
+    { id: 1, label: "USA-1", image: "/Images/innovation2023/USA-1.jpg", videoUrl: "https://www.youtube.com/embed/pAEwfZbbJ-0" },
+    { id: 2, label: "USA-2", image: "/Images/innovation2023/USA-2.jpg", videoUrl: "https://www.youtube.com/embed/Ygq4dcq7eoo" },
+    { id: 3, label: "USA-3", image: "/Images/innovation2023/USA-3.jpg", videoUrl: "https://www.youtube.com/embed/QatcPeyt4xM" },
+    { id: 4, label: "USA-4", image: "/Images/innovation2023/USA-4.jpg", videoUrl: "https://www.youtube.com/embed/12-yKxPBa_o" },
+    { id: 5, label: "USA-5", image: "/Images/innovation2023/USA-5.jpg", videoUrl: "https://www.youtube.com/embed/DrbSxk3wLok" },
+    { id: 6, label: "USA-6", image: "/Images/innovation2023/USA-6.jpg", videoUrl: "https://www.youtube.com/embed/6jeQYj19M0c" },
+    { id: 7, label: "USA-7", image: "/Images/innovation2023/USA-7.jpg", videoUrl: "https://www.youtube.com/embed/UVheU-0Tnao" },
+    { id: 8, label: "USA-8", image: "/Images/innovation2023/USA-8.jpg", videoUrl: "https://www.youtube.com/embed/JqDhm7hK0Ds" },
+    { id: 9, label: "USA-9", image: "/Images/innovation2023/USA-9.jpg", videoUrl: "https://www.youtube.com/embed/DFjIVKIyNYw" },
+    { id: 10, label: "USA-10", image: "/Images/innovation2023/USA-10.jpg", videoUrl: "https://www.youtube.com/embed/qEqeWlOvaeQ" },
+    { id: 11, label: "USA-11", image: "/Images/innovation2023/USA-11.jpg", videoUrl: "https://www.youtube.com/embed/Ahcl-G9PsiA" },
+    { id: 12, label: "USA-12", image: "/Images/innovation2023/USA-12.jpg", videoUrl: "https://www.youtube.com/embed/t1MInCXaEOk" },
+    { id: 13, label: "USA-13", image: "/Images/innovation2023/USA-13.jpg", videoUrl: "https://www.youtube.com/embed/WwZNUKkWYRI" },
+    { id: 14, label: "SA-1", image: "/Images/innovation2023/SA-1.jpg", videoUrl: "https://www.youtube.com/embed/WHYvkpyJ8To" },
+    { id: 15, label: "SA-2", image: "/Images/innovation2023/SA-2.jpg", videoUrl: "https://www.youtube.com/embed/xr78rCSSLig" },
+    { id: 16, label: "SA-3", image: "/Images/innovation2023/SA-3.jpg", videoUrl: "https://www.youtube.com/embed/O6FKflVCWIc" },
+    { id: 17, label: "SA-4", image: "/Images/innovation2023/SA-4.jpg", videoUrl: "https://www.youtube.com/embed/_Ud88VadjnE" },
+    { id: 18, label: "SA-5", image: "/Images/innovation2023/SA-5.jpg", videoUrl: "https://www.youtube.com/embed/wCLjcZZ1PGU" },
+    { id: 19, label: "SA-6", image: "/Images/innovation2023/SA-6.jpg", videoUrl: "https://www.youtube.com/embed/Wn-uC4sazxw" },
+    { id: 20, label: "SA-7", image: "/Images/innovation2023/SA-7.jpg", videoUrl: "https://www.youtube.com/embed/ta65NHMNfXk" },
+    { id: 21, label: "SA-8", image: "/Images/innovation2023/SA-8.jpg", videoUrl: "https://www.youtube.com/embed/2L33yPiKQsU" },
+    { id: 22, label: "SA-9", image: "/Images/innovation2023/SA-9.jpg", videoUrl: "https://www.youtube.com/embed/uWZSHxWJXhE" },
+    { id: 23, label: "SA-10", image: "/Images/innovation2023/SA-10.jpg", videoUrl: "https://www.youtube.com/embed/na-bWkrDvt0" },
+    { id: 24, label: "SA-11", image: "/Images/innovation2023/SA-11.jpg", videoUrl: "https://www.youtube.com/embed/BbqCzxqm2JU" },
+    { id: 25, label: "SA-13", image: "/Images/innovation2023/SA-13.jpg", videoUrl: "https://www.youtube.com/embed/azj2MPyxE68" },
+  ],
+};
+
+export const specialMessagesData2023 = {
+  title: "Special Messages",
+  items: [
+    {
+      title: "Salman Bhojani Message",
+      image: "/Images/innovation2023/salman-bhojani.jpg",
+      videoUrl: "https://www.youtube.com/embed/LVDJbXqqtBI",
+    },
+    {
+      title: "Dr. Hashima Hasan Message",
+      image: "/Images/innovation2023/dr-hashima-hasan.jpg",
+      videoUrl: "https://www.youtube.com/embed/3u8l95qT5Hc",
+    },
+    {
+      title: "Madhalasa Iyer Message",
+      image: "/Images/innovation2023/madhalasa-iyer.jpg",
+      videoUrl: "https://www.youtube.com/embed/wc-8P8oZAlk",
+    },
+    {
+      title: "Yashas Pradeep Message",
+      image: "/Images/innovation2023/yashas-pradeep.jpg",
+      videoUrl: "https://www.youtube.com/embed/NdObJRA7sYg",
+    },
+  ],
+};
+
+export const innovationDay2023GalleryData: GallerySectionData = {
+  eyebrow: "Gallery",
+  title: "Moments from Innovation Day 2023",
+  images: [
+    { id: 1, image: "/Images/innovation2023/gallery-1.webp", alt: "Innovation Day 2023", variant: "large" },
+    { id: 2, image: "/Images/innovation2023/gallery-2.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 3, image: "/Images/innovation2023/gallery-3.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 4, image: "/Images/innovation2023/gallery-4.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 5, image: "/Images/innovation2023/gallery-5.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 6, image: "/Images/innovation2023/gallery-6.webp", alt: "Innovation Day 2023", variant: "wide" },
+    { id: 7, image: "/Images/innovation2023/gallery-7.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 8, image: "/Images/innovation2023/gallery-8.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 9, image: "/Images/innovation2023/gallery-9.webp", alt: "Innovation Day 2023", variant: "wide" },
+    { id: 10, image: "/Images/innovation2023/gallery-10.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 11, image: "/Images/innovation2023/gallery-11.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 12, image: "/Images/innovation2023/gallery-12.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 13, image: "/Images/innovation2023/gallery-13.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 14, image: "/Images/innovation2023/gallery-14.webp", alt: "Innovation Day 2023", variant: "small" },
+    { id: 15, image: "/Images/innovation2023/gallery-15.webp", alt: "Innovation Day 2023", variant: "small" },
+  ],
+};
+
+export const innovationDay2024VideoData: VideoSectionData = {
+  title: "Innovation Day 2024",
+  subtitle: "Celebrating Youth Ingenuity, Creativity and Innovation Skills of DiscoverSTEM Students",
+  videoUrl: "https://www.youtube.com/embed/QwGD7xCV5XI",
+};
+
+export const innovationDay2024HighlightsData: ImageContentSplitData = {
+  topSection: {
+    description: [
+      "Innovation Day 2024 was a remarkable celebration of young minds, showcasing their innovations, research, and entrepreneurial skills. Students who secured patents for their inventions were honored with a patent certificate, marking a milestone achievement in their journey of innovation.",
+      "The event was graced by the esteemed presence of Mr. Richard Green, Director General of DPS, who inspired our young innovators with his words of wisdom. Students from across the nation showcased groundbreaking ideas with the power to shape a healthier, smarter, and more sustainable future.",
+    ],
+    image: "/Images/innovation2024/2024-1.webp",
+  },
+
+  bottomSection: {
+    image: "/Images/innovation2024/2024-2.webp",
+    description: [
+      "The highlight of the event was the Grand Finale of Top Young Innovators 2024, where the most promising student innovators took center stage. Their visionary work, bold thinking, and relentless pursuit of solutions for a better world were celebrated with great honor.",
+      "Each innovation highlighted DiscoverSTEM's mission to inspire, mentor, and empower the next generation of changemakers. The event brought together students, parents, educators, and distinguished guests to celebrate the ingenuity and creativity of DiscoverSTEM students.",
+    ],
+  },
+};
+
+export const patentCertificatesData2024: PatentCertificatesData = {
+  title: "Patent Certificates Granted in 2023-24",
+
+  items: [
+    { id: 1, label: "USA-14", image: "/Images/patent-granted/USA-14-100-min.jpg", videoUrl: "https://www.youtube.com/embed/3k2u_Iv03Ns" },
+    { id: 2, label: "USA-15", image: "/Images/patent-granted/USA-15-100-min.jpg", videoUrl: "https://www.youtube.com/embed/f8a8vV_aJfU" },
+    { id: 3, label: "USA-16", image: "/Images/patent-granted/USA-16-100-min.jpg", videoUrl: "https://www.youtube.com/embed/44kwPMbH67o" },
+    { id: 4, label: "USA-17", image: "/Images/patent-granted/USA-17-100-min.jpg", videoUrl: "https://www.youtube.com/embed/PKE4e_tze2o" },
+    { id: 5, label: "USA-18", image: "/Images/patent-granted/USA-18-100-min.jpg", videoUrl: "https://www.youtube.com/embed/51dvT4uoFmo" },
+    { id: 6, label: "USA-19", image: "/Images/patent-granted/USA-19-100-min.jpg", videoUrl: "https://www.youtube.com/embed/Lf3a9UkeBt8" },
+    { id: 7, label: "USA-20", image: "/Images/patent-granted/USA-20-100-min.jpg", videoUrl: "https://www.youtube.com/embed/oDLIKowMNMc" },
+    { id: 8, label: "USA-21", image: "/Images/patent-granted/USA-21-100-min.jpg", videoUrl: "https://www.youtube.com/embed/dgCwWBKsrKU" },
+    { id: 9, label: "USA-22", image: "/Images/patent-granted/USA-22-100-min.jpg", videoUrl: "https://www.youtube.com/embed/vR3DjT7woPA" },
+    { id: 10, label: "USA-23", image: "/Images/patent-granted/USA-23-100-min.jpg", videoUrl: "https://www.youtube.com/embed/B0Zt7ptjEvI" },
+  ],
+};
+
+export const innovationDay2024GrandFinaleData: ImageTextHighlightSectionData = {
+  title: "Grand Finale of America's Top Young Innovators\n2024",
+
+  image: "/Images/innovation2024/TYI3-min.jpg",
+
+  imageAlt: "Grand Finale of America's Top Young Innovators 2024",
+
+  content: `
+    The DiscoverSTEM Innovation Day event featured the Grand Finale of the first-ever America's Top Young Innovators 2024,
+    celebrating exceptional young minds driving innovation forward. Dallas-based <strong>Hisham Ahmad</strong> was crowned
+    as <strong>'America's Top Young Innovator 2024'</strong>, a title that recognizes innovation with the potential to create
+    a lasting global impact.
+
+    <br /><br />
+
+    Selected from an exceptional pool of entries spanning the USA and UAE, Hisham's groundbreaking invention — a revolutionary
+    system that autonomously disinfects door handles — tackles a leading cause of germ transmission. With its capacity to
+    prevent future pandemics and reduce hospital-acquired infections, which are among the leading causes of death among the
+    elderly,     this innovation stands as a monumental leap in public health and safety.`,
+};
+
+export interface ChiefGuest {
+  name: string;
+  title: string;
+  role: string;
+  image: string;
+  socials: { icon: string; url: string }[];
+}
+
+export const chiefGuestsData2024: ChiefGuest[] = [
+  {
+    name: "Salman Bhojani",
+    title: "Hon'ble State Representative",
+    role: "",
+    image: "/Images/innovation2024/Salman_Bhojani_portrait.jpg",
+    socials: [
+      { icon: "linkedin", url: "https://www.linkedin.com/in/salman-bhojani-2a24b8a/" },
+      { icon: "instagram", url: "https://www.instagram.com/salmanbhojanitx/" },
+      { icon: "web", url: "https://house.texas.gov/members/4115" },
+    ],
+  },
+  {
+    name: "Dr. Hashima Hasan",
+    title: "Senior NASA Scientist",
+    role: "Program scientist at NASA, Deputy Program Scientist for the James Webb Space Telescope",
+    image: "/Images/innovation2024/Dr-Hashima-Hasan.png",
+    socials: [
+      { icon: "linkedin", url: "https://www.linkedin.com/in/hashima-hasan-03715515/" },
+      { icon: "web", url: "https://science.nasa.gov/astrophysics/astrophysics-organization-and-staff/staff-bios/dr-hashima-hasan/" },
+      { icon: "web", url: "https://science.nasa.gov/people/hashima-hasan/" },
+    ],
+  },
+];
+
+export const specialMessagesData2024 = {
+  title: "Special Messages",
+  items: [
+    {
+      title: "Dr. Zizi's Kozlakidis Message",
+      image: "/Images/innovation2024/DrZizis-Kozlakidis-Message.webp",
+      videoUrl: "https://www.youtube.com/embed/RnXRjVUxvU4",
+    },
+    {
+      title: "Wafiqah Zubair Message",
+      image: "/Images/innovation2024/Wafiqah-Zubair-Message.webp",
+      videoUrl: "https://www.youtube.com/embed/uEsHVoAlcCM",
+    },
+  ],
+};
+
+export const innovationDay2024CategoryAwards: AccordionSectionData = {
+  title: "Category Awards",
+
+  items: [
+    {
+      question: "Most Human-Centric Innovation Award",
+      answer: [
+        `<strong>Hajer Janabi</strong> & <strong>Jumana Janabi</strong> were conferred with the prestigious Most Human-Centric Innovation award for their groundbreaking system that understands and predicts human behaviors using peer-to-peer feedback and life events as key indicators. By putting human experience at the center of their innovation, the duo has created a transformative tool that empowers early intervention and holistic support, redefining how we view human interaction and mental well-being.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Biotechnology Category",
+      answer: [
+        `<strong>Abdullah Kabeer</strong>, <strong>Nithyashri Ramesh</strong>, <strong>Isha Agrawal</strong>, <strong>Nakshatra Piduri</strong>, <strong>Tarik Syed</strong>, and <strong>Zaynab Khan</strong> were recognized for developing a visionary solution that enables color-blind individuals to identify colors, offering newfound clarity and inclusivity to their world. This remarkable innovation, recently patented in the United States, demonstrates the team's commitment to enhancing the lives of millions of people globally.`,
+      ],
+    },
+    {
+      question: "Best Innovation in AI & Robotics Category",
+      answer: [
+        `<strong>Ali Humaid Ali Alloghani Al-Ali</strong>, who traveled from Dubai, UAE, to attend as a finalist, clinched the award for Best Innovation in Robotics Category for his AI-powered robotic doctor designed to revolutionize early patient diagnosis. Affectionately known as the 'Wonder Kid of the UAE,' this invention is a testament to his visionary approach to healthcare, providing a glimpse into the future of medical innovation.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Neurotechnology & Brain-Computer Interface",
+      answer: [
+        `<strong>Avaneesh Jakkireddy</strong>, <strong>Gautam Rao</strong>, <strong>Iliyan Mithani</strong>, <strong>Raj Kusumakar</strong>, <strong>Vihan Yerubandi</strong>, and <strong>Nihal Yerubandi</strong> were awarded for their life-altering solution for ALS patients. Their patented innovation allows individuals with ALS to communicate clearly, easily, and effectively, restoring hope and offering a renewed quality of life. This breakthrough represents a pivotal advancement in neurotechnology and healthcare.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Mental Health Category",
+      answer: [
+        `<strong>Anusha Nigam</strong>, <strong>Raisha Bhojani</strong>, and <strong>Meher Saanvi Singh</strong> were recognized with the Best Innovation in Mental Health Category award. Their pioneering technology, which predicts the onset of mental health challenges among teenagers, provides an invaluable opportunity for early intervention, addressing one of the most critical issues facing youth today and shaping a healthier, more resilient generation.`,
+      ],
+    },
+    {
+      question: "Best Innovation in Fitness Category",
+      answer: [
+        `<strong>Sparsh Kamdar</strong> received the Best Innovation in Fitness Category award for his revolutionary system that ensures optimal hydration by automatically monitoring an individual's water consumption. This solution exemplifies the potential of technology to support personal well-being and long-term health.`,
+      ],
+    },
+  ],
+};
+
+export const innovationDay2024GalleryData: GallerySectionData = {
+  eyebrow: "Gallery",
+  title: "Moments from Innovation Day 2024",
+  images: [
+    { id: 1, image: "/Images/innovation2024/1-1-768x432.webp", alt: "Innovation Day 2024", variant: "large" },
+    { id: 2, image: "/Images/innovation2024/2-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 3, image: "/Images/innovation2024/3-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 4, image: "/Images/innovation2024/4-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 5, image: "/Images/innovation2024/5-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 6, image: "/Images/innovation2024/6-1-768x432.webp", alt: "Innovation Day 2024", variant: "wide" },
+    { id: 7, image: "/Images/innovation2024/7-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 8, image: "/Images/innovation2024/8-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 9, image: "/Images/innovation2024/9-1-768x432.webp", alt: "Innovation Day 2024", variant: "wide" },
+    { id: 10, image: "/Images/innovation2024/10-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 11, image: "/Images/innovation2024/11-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 12, image: "/Images/innovation2024/12-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 13, image: "/Images/innovation2024/13-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 14, image: "/Images/innovation2024/14-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+    { id: 15, image: "/Images/innovation2024/15-1-768x432.webp", alt: "Innovation Day 2024", variant: "small" },
+  ],
+};
+
+export const innovationDay2020VideoData: VideoSectionData = {
+  title: "Innovation Day 2020",
+  subtitle: "Celebrating Youth Ingenuity, Creativity and Innovation Skills of DiscoverSTEM Students",
+  videoUrl: "https://www.youtube.com/embed/r4qfayZCHZQ",
+};
+
+export const innovationDay2020HighlightsData: ImageContentSplitData = {
+  topSection: {
+    description: [
+      "The inaugural DiscoverSTEM Innovation Day in 2020 marked the beginning of a transformative journey to inspire and empower young innovators. This groundbreaking event celebrated students who developed patent pending innovations for their pioneering ideas, highlighting their creativity and dedication. The event also featured the thrilling Innovation Quiz, where participants showcased their knowledge and competed for coveted Apple merchandise, creating an atmosphere of learning and excitement.",
+    ],
+    image: "/Images/innovation2020/2020-Main-Image1.jpg",
+  },
+
+  bottomSection: {
+    image: "/Images/innovation2020/2020-Main-Image2.jpg",
+    description: [
+      "As the first edition, Innovation Day 2020 laid the foundation for fostering a culture of innovation and exploration. By honoring the achievements of young minds, DiscoverSTEM demonstrated its commitment to nurturing future leaders equipped to solve real-world challenges. The success of this milestone event inspired students to dream big and paved the way for future editions that continue to elevate the spirit of creativity and progress.",
+    ],
+  },
+};
+
+export const chiefGuestsData2020: ChiefGuest[] = [
+  {
+    name: "Dr. Charles A. Rodenberger",
+    title: "Senior NASA Scientist",
+    role: "Senior NASA scientist, Professor Emeritus, Aerospace Engineering, Texas A&M University",
+    image: "/Images/innovation2020/Dr-Charles-A-Rodenberger.jpg",
+    socials: [
+      { icon: "web", url: "https://engineering.tamu.edu/aerospace/profiles/rodenberger-charles.html" },
+    ],
+  },
+  {
+    name: "Col. Richard Graham",
+    title: "SR-71 Pilot & Author",
+    role: "SR-71 pilot, author, speaker, aviation consultant, flight instructor, USAF (Ret.)",
+    image: "/Images/innovation2020/Colonel-Richard-Graham.jpg",
+    socials: [
+      { icon: "web", url: "https://airandspace.si.edu/multimedia-gallery/4940hjpg" },
+      { icon: "web", url: "http://www.habu.org/graham/graham-bio.html" },
+    ],
+  },
+  {
+    name: "Dr. Hashima Hasan",
+    title: "Senior NASA Scientist",
+    role: "Program scientist at NASA, Deputy Program Scientist for the James Webb Space Telescope",
+    image: "/Images/innovation2020/Dr-Hashima-Hasan.png",
+    socials: [
+      { icon: "linkedin", url: "https://www.linkedin.com/in/hashima-hasan-03715515/" },
+      { icon: "web", url: "https://science.nasa.gov/astrophysics/astrophysics-organization-and-staff/staff-bios/dr-hashima-hasan/" },
+      { icon: "web", url: "https://science.nasa.gov/people/hashima-hasan/" },
+    ],
+  },
+];
+
+export const innovationDay2020GalleryData: GallerySectionData = {
+  eyebrow: "Gallery",
+  title: "Moments from Innovation Day 2020",
+  images: [
+    { id: 1, image: "/Images/innovation2020/2020-1-min.jpg", alt: "Innovation Day 2020", variant: "large" },
+    { id: 2, image: "/Images/innovation2020/2020-1-min-1.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 3, image: "/Images/innovation2020/2020-2-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 4, image: "/Images/innovation2020/2020-3-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 5, image: "/Images/innovation2020/2020-4-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 6, image: "/Images/innovation2020/2020-5-min.jpg", alt: "Innovation Day 2020", variant: "wide" },
+    { id: 7, image: "/Images/innovation2020/2020-6-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 8, image: "/Images/innovation2020/2020-7-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 9, image: "/Images/innovation2020/2020-8-min.jpg", alt: "Innovation Day 2020", variant: "wide" },
+    { id: 10, image: "/Images/innovation2020/2020-9-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 11, image: "/Images/innovation2020/2020-10-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 12, image: "/Images/innovation2020/2020-3-min-1.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 13, image: "/Images/innovation2020/2020-11-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 14, image: "/Images/innovation2020/2020-12-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 15, image: "/Images/innovation2020/2020-13-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 16, image: "/Images/innovation2020/2020-14-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 17, image: "/Images/innovation2020/2020-2-min-1.jpg", alt: "Innovation Day 2020", variant: "small" },
+    { id: 18, image: "/Images/innovation2020/2020-15-min.jpg", alt: "Innovation Day 2020", variant: "small" },
+  ],
+};
+
 export const patentCertificatesData: PatentCertificatesData = {
   title: "Patent Certificates Granted in 2024-25",
 
   items: [
-    {
-      id: 1,
-      label: "PATENT #01",
-      image: "/Images/patents/certificate-1.png",
-      videoUrl: "https://youtube.com/watch?v=1",
-    },
-    {
-      id: 2,
-      label: "PATENT #02",
-      image: "/Images/patents/certificate-2.png",
-      videoUrl: "https://youtube.com/watch?v=2",
-    },
-    {
-      id: 3,
-      label: "PATENT #03",
-      image: "/Images/patents/certificate-3.png",
-      videoUrl: "https://youtube.com/watch?v=3",
-    },
-    {
-      id: 4,
-      label: "PATENT #04",
-      image: "/Images/patents/certificate-4.png",
-      videoUrl: "https://youtube.com/watch?v=4",
-    },
-    {
-      id: 5,
-      label: "PATENT #05",
-      image: "/Images/patents/certificate-5.png",
-      videoUrl: "https://youtube.com/watch?v=5",
-    },
+    { id: 1, label: "PATENT #01", image: "/Images/patent-granted/USA-Patent-Self-SanitizingDoorHandlesWithProtectiveCover.jpg", videoUrl: "https://www.youtube.com/embed/FsSeaDfqL44" },
+    { id: 2, label: "PATENT #02", image: "/Images/patent-granted/USAPatent-ASystemForDisplayingSelectedClothesOnADummHumanBody.jpg", videoUrl: "https://www.youtube.com/embed/oV28Bz25FuY" },
+    { id: 3, label: "PATENT #03", image: "/Images/patent-granted/USA-Patent-Smart-Rescue-SystemCoordinatedWithAnInteractiveApplication.jpg", videoUrl: "https://www.youtube.com/embed/fe8WUqE-OpM" },
+    { id: 4, label: "PATENT #04", image: "/Images/patent-granted/USA-Patent-AircraftTrackingSystemAndMethod.jpg", videoUrl: "https://www.youtube.com/embed/UVPj-Wh-kDY" },
+    { id: 5, label: "PATENT #05", image: "/Images/patent-granted/USA-Patent-PerfumeDispensingDevice.jpg", videoUrl: "https://www.youtube.com/embed/JMcYbSUPmZ8" },
+    { id: 6, label: "PATENT #06", image: "/Images/patent-granted/USA-Patent-SmartWhiteboardCleaner.jpg", videoUrl: "https://www.youtube.com/embed/0Yd1hYb-wPY" },
+    { id: 7, label: "PATENT #07", image: "/Images/patent-granted/USA-Patent-BiodegradableCoverForAPortableElectronicDevice.jpg", videoUrl: "https://www.youtube.com/embed/WNhXDETPAb0" },
+    { id: 8, label: "PATENT #08", image: "/Images/patent-granted/SA-Patent-StabilizerSystemForControllingTippingOfFurniture.jpg", videoUrl: "https://www.youtube.com/embed/TLfhpIUBows" },
+    { id: 9, label: "PATENT #09", image: "/Images/patent-granted/USA-Patent-SmartLadder.jpg", videoUrl: "https://www.youtube.com/embed/OCP7xJo4zQ4" },
   ],
 };
 
@@ -2830,7 +3248,7 @@ export const patentCertificatesData: PatentCertificatesData = {
 export const grandFinaleSectionData: ImageTextHighlightSectionData = {
   title: "Grand Finale of America's Top Young Innovators\n2025",
 
-  image: "/Images/Finale/image 2025.png",
+  image: "/Images/innovation2025/grandFinale.jpg",
 
   imageAlt: "Grand Finale of America's Top Young Innovators 2025",
 
@@ -3149,136 +3567,93 @@ export const aerospaceOutcomesData: OutcomesSectionData = {
 };
 
 export const aerospaceModulesData: ResearchModulesSectionData = {
-  title: "Aerospace Research Lab—14 Modules",
+  title: "Aerospace Research Lab — 14 Modules",
   buttonText: "Download Curriculum",
+  curriculumLink: "/Images/Aerospace-Lab-Curriculum-v3-1.pdf",
   modules: [
     {
       id: 1,
-      title: "Introduction & Team Building",
+      title: "DSA01 :: Aircraft Classification",
       description:
-        "Build collaborative foundations and learn to work effectively in innovation teams.",
-      duration: "2 weeks",
-      level: "Beginner",
+        "Early aircraft designs. Classification of aircraft based on various factors of their operations, design, propulsion, usage and wing type. Exercise: Design Analysis of Different Aircraft.",
     },
     {
       id: 2,
-      title: "Introduction to Innovation",
+      title: "DSA02 :: Airport and Airspace",
       description:
-        "Discover the principles, mindset, and processes that drive innovative thinking.",
-      duration: "3 weeks",
-      level: "Beginner",
+        "Runways, Taxiways, Airport Signs, and Lighting systems. Landing Aids, VASI, PAPI, VFR and IFR, ILS. Airspace classes. Exercise: Design crude attitude measurement equipment for an aircraft.",
     },
     {
       id: 3,
-      title: "How to Think Like an Innovator",
+      title: "DSA03 :: Basic Terms of Aeronautics and Astronautics",
       description:
-        "Master asking the right questions and finding meaningful answers.",
-      duration: "4 weeks",
-      level: "Intermediate",
+        "Inspired from Stanford AA100. Fundamental physics concepts: Air Pressure, Mass, Volume, Weight, Force, Density, Temperature, Fluid Friction, Drag, Altitude. Exercise: Analysis of an aircraft's flight with respect to different flight parameters.",
     },
     {
       id: 4,
-      title: "Brainstorming & Persuasion",
+      title: "DSA04 :: Atmospheric Flight",
       description:
-        "Generate breakthrough ideas and communicate them with clarity and confidence.",
-      duration: "3 weeks",
-      level: "Intermediate",
+        "Inspired from Stanford AA141. Aerodynamics of flight, forces acting on an aircraft, how wings generate lift. Airfoil design, angle of attack, center of pressure, wingtip vortex, lift coefficient. Exercise: Designing an Airfoil with Maximum Lift and Minimum Drag.",
     },
     {
       id: 5,
-      title: "Introduction to Patents",
+      title: "DSA05 :: Flight Mechanics and Controls",
       description:
-        "Learn how to protect intellectual property and navigate the patent landscape.",
-      duration: "2 weeks",
-      level: "Intermediate",
+        "Inspired from Stanford AA173. Airplane axis and degrees of freedom, Pitch, Yaw and Roll. Control surfaces: Aileron, Flaps, Slats, Rudder. Lift formula, drag forces, stall, principles of flight. Exercise: Designing and Building a Remote-controlled Aircraft.",
     },
     {
       id: 6,
-      title: "Research & Problem Dividing",
+      title: "DSA06 :: Space Flight Systems and Concepts",
       description:
-        "Break down complex problems into manageable components for effective research.",
-      duration: "4 weeks",
-      level: "Advanced",
+        "Inspired from Stanford AA131. What is Space and the Karman line. Satellites, ISS, Orbital Dynamics: Hohmann Transfer, Interplanetary Travel, Oberth Effect. Spacecraft attitude determination. Exercise: Designing a Hybrid Plane for Atmosphere and Space flight.",
     },
     {
       id: 7,
-      title: "Establishing Research Statements",
+      title: "DSA07 :: Air and Space Propulsion",
       description:
-        "Craft precise problem statements that drive focused, impactful research.",
-      duration: "3 weeks",
-      level: "Advanced",
+        "Inspired from Stanford AA103. Rocket science, rocket systems: Structural, Propulsion, Payload, Guidance. Jet engines, rocket propulsion types: Liquid, Solid, Hybrid. Future propulsion: Electric Plasma, Nuclear, Ion Engine, Solar sails. Exercise: Designing a futuristic propulsion system.",
     },
     {
       id: 8,
-      title: "The Logic of Scientific Discovery",
+      title: "DSA08 :: Guidance and Navigation",
       description:
-        "Apply scientific reasoning to validate hypotheses and uncover new insights.",
-      duration: "5 weeks",
-      level: "Advanced",
+        "Inspired from Stanford AA172. Introduction to Spacecraft Guidance, Navigation, and Control Systems (GN&C). Case study: Missile Guidance System. Exercise: Designing a Guidance and Navigation System for a Robot.",
     },
     {
       id: 9,
-      title: "Introduction & Team Building",
+      title: "DSA09 :: Space Mechanics",
       description:
-        "Build collaborative foundations and learn to work effectively in innovation teams.",
-      duration: "2 weeks",
-      level: "Beginner",
+        "Inspired from Stanford AA279A. Gravity and how it enables orbits. Orbit types, Kepler's Laws, Launch, Propulsion, and Re-entry. Orbital Rendezvous and Launch Window. Exercise: Designing a satellite system for 24x7 connectivity.",
     },
     {
       id: 10,
-      title: "Introduction to Innovation",
+      title: "DSA10 :: Introduction to Spacecraft Subsystems",
       description:
-        "Discover the principles, mindset, and processes that drive innovative thinking.",
-      duration: "3 weeks",
-      level: "Beginner",
+        "Inspired from Stanford AA136A. Introduction to Spacecraft Subsystems. Exercise: Designing, Building, and Launching a Satellite to Monitor Forest Fire.",
     },
     {
       id: 11,
-      title: "How to Think Like an Innovator",
+      title: "DSA11 :: Designing and Building a CubeSat",
       description:
-        "Master asking the right questions and finding meaningful answers.",
-      duration: "4 weeks",
-      level: "Intermediate",
+        "Inspired from Stanford AA136A. What is a CubeSat, Space 2.0. Challenges in CubeSat Engineering: Propulsion, Hardware and Software Design. SpaceX Falcon 9 and Dragon case study. Exercise: Designing a Nano Satellite for a Novel Space Application.",
     },
     {
       id: 12,
-      title: "Brainstorming & Persuasion",
+      title: "DSA12 :: Aircraft Design",
       description:
-        "Generate breakthrough ideas and communicate them with clarity and confidence.",
-      duration: "3 weeks",
-      level: "Intermediate",
+        "Inspired from Stanford AA146A. Aircraft structure, systems, and avionics. Fuselage, wing design, aircraft design process, engineering drawing, weight calculation. Exercise: Designing the Most Efficient Airplane in the World.",
     },
     {
       id: 13,
-      title: "Introduction to Patents",
+      title: "DSA13 :: Avionics Systems — 1",
       description:
-        "Learn how to protect intellectual property and navigate the patent landscape.",
-      duration: "2 weeks",
-      level: "Intermediate",
+        "Introduction to Avionics and Fly-By-Wire System. Cockpit Display Systems: PFD, MFD, EICAS. Case study: Boeing 737 and Gulfstream 6550 Flight deck. Exercise: Designing a Cockpit Display System to Prevent Human Error.",
     },
     {
       id: 14,
-      title: "Research & Problem Dividing",
+      title: "DSA14 :: Avionics Systems — 2",
       description:
-        "Break down complex problems into manageable components for effective research.",
-      duration: "4 weeks",
-      level: "Advanced",
-    },
-    {
-      id: 15,
-      title: "Establishing Research Statements",
-      description:
-        "Craft precise problem statements that drive focused, impactful research.",
-      duration: "3 weeks",
-      level: "Advanced",
-    },
-    {
-      id: 16,
-      title: "The Logic of Scientific Discovery",
-      description:
-        "Apply scientific reasoning to validate hypotheses and uncover new insights.",
-      duration: "5 weeks",
-      level: "Advanced",
+        "Flight Management System (FMS). Traffic Alert Collision Avoidance System (TCAS). Enhanced Ground Proximity Warning System (EGPWS) with 7 modes. Exercise: Designing Avionics for a Flying Bike for Urban Transportation.",
     },
   ],
 };
@@ -3736,9 +4111,13 @@ export const partnersEcosystemTextData: SimpleTextSectionData = {
     impact the world. But what good an idea will do by staying on paper & patents, and not getting
     commercialized?`,
 
-    `Many of our students want to launch their startups and commercialize their innovations. So, we’ve gone ahead and developed an ecosystem of partners worldwide, which include Business Mentors, Technology Mentors, 
+    `Many of our students want to launch their startups and commercialize their innovations. So, we've gone ahead and developed an ecosystem of partners worldwide, which include Business Mentors, Technology Mentors, 
     Management Consultants, Product Designers, Product Prototyping firms, Manufacturers, Packagers, Marketing 
     &amp; Promotion firms, Shipping firms, Clearing &amp; Forwarding Agencies, CPA and Attorneys among others.`,
+
+    `We've taken care of everything to launch an idea into the market. All we need are bright and promising individuals to pick up an idea and run their company. What's more, over and above, we provide a seed capital between $10,000/- to $30,000/- per startup to kickstart their business.`,
+
+    `To summarize, DiscoverSTEM Entrepreneurship Program teaches what is missing even in the best management schools in the world; launch and run your own company! Additionally, by the time you finish college, you may end up owning a successful business enterprise!`,
   ],
 };
 
@@ -3758,8 +4137,8 @@ export const entrepreneurshipFundingData: EntrepreneurshipFundingData = {
   description:
     "The DiscoverSTEM Entrepreneurship Program teaches what is missing even in the best management schools in the world: how to actually launch and run your own company. By the time you finish college, you may already own a successful business enterprise.",
 
-  image: "/Images/entrepreneurship/founders-collaborating.png",
-  imageAlt: "Founders collaborating",
+  image: "/Images/entrepreneurship/image1-1.jpg",
+  imageAlt: "Startup Entrepreneurship",
 
   points: [
     "Direct cash injection per founding team",
@@ -3778,7 +4157,7 @@ export const productDesignPartnersData: ImageTextPartnerSectionData = {
     `At DiscoverSTEM, we are partnering with credible product design, prototyping, and manufacturing partners who help our innovators bring their thoughts and ideas to concrete solutions through product design and prototyping. It enables our innovators to understand and identify any potential issues with initial designs and amend accordingly before progressing further. It also helps our innovators avoid any design-related manufacturing problems which may prove costly or delay the manufacturing process.`,
   ],
 
-  image: "/Images/partners/product-design.png",
+  image: "/Images/partners/image1-2.jpg",
   imageAlt: "Product Design Partner",
 };
 
@@ -3791,8 +4170,8 @@ export const DesignPartnersData: ImageTextPartnerSectionData = {
     `At DiscoverSTEM, a huge ecosystem of partners is already on board to support our innovators in their entrepreneurial journey. While legal partners help innovators in documentation, agreements, contracts, and other legal compliance, our CPAs help shape a detailed cost structure, revenue generation, and a complete business model`,
   ],
 
-  image: "/Images/partners/product-design.png",
-  imageAlt: "Product Design Partner",
+  image: "/Images/partners/image2-1.jpg",
+  imageAlt: "CPA Legal Partner",
 };
 
 export const FAQData =[
@@ -3817,43 +4196,802 @@ export const successStoriesData: SuccessStoryCard[] = [
   {
     id: 1,
     name: "Dr. Hashima Hasan",
-    designation:
-      "(Program Scientist @ NASA)\nPh.D. (Nuclear Physics – Oxford University)\nJames Webb Telescope",
-    image: "/Images/Finale/chiefguest.png",
+    designation: "(Program Scientist @ NASA)\nPh.D. (Nuclear Physics – Oxford University)\nJames Webb Telescope",
+    image: "/Images/impact/impect1dr.hashima-1.jpg",
     description:
-      "The program brings to life the true scientific process. Rather than focusing on book-centric activities, the students are encouraged to be inquisitive about real-life situations and seek answers through research and experimentation.",
+      "The program brings to life the true scientific process. Rather than focusing on book-centric activities, the students are encouraged to be inquisitive about real-life situations and seek answers through research and experimentation.\n\nThe down-to-earth approach of DiscoverSTEM takes the fear out of scientific learning. DiscoverSTEM encourages students to make their own discoveries. By working together in groups, they feed off each other's energies as each has his or her own Eureka moment.\n\nWhat started as a small mentoring program in 2016 has now evolved to one where students have won NASA innovation awards, patented their innovations, and are now proceeding towards commercialization.",
   },
   {
     id: 2,
     name: "Dr. Charles A. Rodenberger",
-    designation:
-      "(NASA Scientist)\nDesigner of the Apollo Spacecraft\nInventor of Hypervelocity Gun",
-    image: "/Images/Finale/chiefguest.png",
+    designation: "(NASA Scientist)\nDesigner of the Apollo Spacecraft\nInventor of Hypervelocity Gun\nResearcher for NASA related to meteoroid protection of spacecraft",
+    image: "/Images/impact/impect2.jpg",
     description:
-      "As a scientist and one of the designers of the NASA Apollo spacecraft, I've seen intensive brain-storming and innovation activities in our team.",
+      "As a scientist and one of the designers of the NASA Apollo spacecraft, I've seen intensive brain-storming and innovation activities in our team when we were designing systems to land a man on the moon and safely bring them back! The next time I saw such an activity is at DiscoverSTEM. This is the best STEM & Innovation program I've ever seen.",
   },
   {
     id: 3,
-    name: "Shreeya Dasikan",
-    designation:
-      "(DIP 2018-19)\nGreenhill School, Dallas",
-    image: "/Images/Finale/chiefguest.png",
+    name: "Jim Christensen",
+    designation: "Director of Education\nNASA Kennedy Space Center Visitor's Complex",
+    image: "/Images/impact/impect3.jpg",
     description:
-      "My favorite part about the program was when all of us would sit in the meeting room and begin to brainstorm ideas.",
+      "One thing which is fascinating is 'How kids can be trained to be innovative'? Mirza has come up with a step-by-step kind of program and approach to help people create innovations, and I just love that. This program absolutely fascinates me!",
   },
   {
     id: 4,
-    name: "Jim Christensen",
-    designation:
-      "Director of Education\nNASA Kennedy Space Center Visitor's Complex",
-    image: "/Images/Finale/chiefguest.png",
+    name: "Shreeya Dasikan",
+    designation: "(DIP 2018-19)\nGreenhill School, Dallas",
+    image: "/Images/impact/impect6.jpg",
     description:
-      "One thing which is fascinating is how kids can be trained to be innovative.",
+      "My favorite part about the program was when all of us would sit in the meeting room and begin to brainstorm ideas. I deeply enjoyed those moments when we were gathered together, throwing out crazy ideas that only seemed crazy until we made them a reality.",
+  },
+  {
+    id: 5,
+    name: "Dr. Medhat Askar",
+    designation: "(Transplant Immunologist)",
+    image: "/Images/impact/impect4.jpg",
+    description:
+      "As an ex-member of the admission committee of the Cleveland Clinic Lerner College of Medicine for many years, I think one of the most valuable qualities many top-tier medical schools are looking for is Innovations and patents on the applicant's CV. DiscoverSTEM programs mentors a student to earn these valuable additions to their profile.",
+  },
+  {
+    id: 6,
+    name: "Dr. Baron Hammon",
+    designation: "Father of Mollie Hammon (DIP2018-19)\nStanford University – B.S.\nHarvard Medical School – Cardiac Physiology\n(Author of 98 research and scholarly papers)",
+    image: "/Images/impact/impect5.jpg",
+    description:
+      "This program stands on the shoulder of other master innovators - Edison, Stanley Sarnoff, Ford, and others.",
+  },
+  {
+    id: 7,
+    name: "R. Dawlah",
+    designation: "Mother of Reya Dawlah\n(DIP2019-20), Sherman-TX, USA",
+    image: "/Images/impact/impect9.jpg",
+    description:
+      "Being a part of this program has been an amazing experience. I learned so much about innovation and patents. I have opened up my way of thinking, and now I am constantly looking around me and thinking of ways to innovate.",
+  },
+  {
+    id: 8,
+    name: "Jeanette Goodrich",
+    designation: "Pilot – United States Air Force\nMother of Kayla Goodrich (DIP2019-20)",
+    image: "/Images/impact/impect7.jpg",
+    description:
+      "DiscoverSTEM Innovation Programs truly prepare kids to become the next generation of innovators. I love how they are challenged to think and explore; to identify and solve everyday problems; I love how much I've seen my daughter grow.",
+  },
+  {
+    id: 9,
+    name: "Kayla Goodrich",
+    designation: "(DIP2019-20), Dallas-TX-USA",
+    image: "/Images/impact/impect8.jpg",
+    description:
+      "My time at DiscoverSTEM Innovation Program has been awesome! It has given me a constructive environment to learn how to think like an innovator and build on other people's ideas. I also love how it challenges me to think outside of the box and innovate. With these skills, my future has no limit!",
+  },
+  {
+    id: 10,
+    name: "Marium Khan",
+    designation: "(DIP2015-16), Irving-TX-USA",
+    image: "/Images/impact/WhatsApp-Image-2022-01-24-at-10.08.16-PM.jpeg",
+    description:
+      "DiscoverSTEM Innovation Program has helped in countless ways. Not only did it help me secure a full-ride to Duke University, the process of going to NASA, presenting our innovation, and being ranked first against over 50 teams from all over the world was a memorable experience.\n\nWith the mentorship I received through the program, I developed and strengthened various aspects of my personality. I learned what it was like to be an innovator, researcher, entrepreneur, and public speaker.\n\nThe invaluable skills I gained have tremendously aided my college career as I continue to explore the realms of biological research and innovation further at one of the best academic institutions.",
+  },
+  {
+    id: 11,
+    name: "Candice Coleman",
+    designation: "Mother of Carcyn Coleman\nDIP 2019-20), Dallas-TX-USA",
+    image: "/Images/impact/impect10.jpg",
+    description:
+      "DiscoverSTEM Innovation Program was an awesome experience for Carcyn. Since Carcyn participated in DiscoverSTEM, I have seen her flourish as a student, leader, and innovator. She has gained immense confidence, critical thinking skills, and the importance of teamwork which has given her leadership qualities to excel.\n\nFrom this experience, Carcyn was accepted to two summer programs with fellowships at John Hopkins University and Brown University. Carcyn was also extended the opportunity to attend Brown University online during the school year. Carcyn earned an 'A' in Physics, among her other classes, and has been invited to enroll in Honors Chemistry at The Greenhill School.\n\nThe mentorship component of the DiscoverSTEM program is invaluable, and the entire program was a remarkable experience for my family.",
+  },
+  {
+    id: 12,
+    name: "Mamta Prasad",
+    designation: "Mother of Anika Prasad\n(DIP2019-20), Frisco-TX, USA",
+    image: "/Images/impact/impect11.jpg",
+    description:
+      "I liked how the program is structured and geared towards developing the innovation spirit in kids. The brainstorming sessions helped my kids in learning how to speak up and work with a team. They also learned that turning ideas into a real product to address a problem is a process.",
+  },
+  {
+    id: 13,
+    name: "Surbhi Agrawal",
+    designation: "Mother of Isha Agrawal\n(DIP2019-20/ILM2020-24), Plano-TX, USA",
+    image: "/Images/impact/impect14.jpg",
+    description:
+      "This program gave exposure to children to observe problems and come up with innovative solutions. Students learned to work together in groups and take responsibility to develop better ideas.",
+  },
+  {
+    id: 14,
+    name: "Roderick Rischer",
+    designation: "Father of Ashton Richer\nGreenhill School, Dallas-TX (DIP2018-19), Dallas-TX-USA",
+    image: "/Images/impact/impect15.jpg",
+    description:
+      "I liked that the DiscoverSTEM Innovation Program fostered critical, analytical, and innovative thinking. I liked the fact that a world-class innovator taught Ashton and that he could be around other talented young children who are curious learners and are taught to think outside of the box. I liked the left-right brain activity.",
+  },
+  {
+    id: 15,
+    name: "Alejandra Salinas",
+    designation: "Father of Rafael Zapiain\n(DIP2018-19), Dallas-TX-USA",
+    image: "/Images/impact/impect13.jpg",
+    description:
+      "We liked that this program gives our children an opportunity to understand how work teams interact in the real world. We also liked that the program instills a feeling of responsibility by letting each participant work on their own assigned tasks and present their results to the whole team later on.\n\nAn essential part of this experience is developing entrepreneurial skills and the ability to solve problems by thinking outside the box. Additional to these observations, we sincerely appreciate Mr. Faizan's professionalism and courtesy towards the parents.",
+  },
+  {
+    id: 16,
+    name: "Dr. S. Iqbal",
+    designation: "Father of Shayaan and Zaina Iqbal\n(DIP2019-20), Dallas-TX, USA",
+    image: "/Images/impact/father-final.png",
+    description:
+      "I liked the most about the program is my child got tuned into thinking about the problems around them. They learned to think and brainstorm about how to solve them and came up with solutions.\n\nHe worked collaboratively with the team and mentors. He saw the deficiencies in their project and worked towards solving them. The kids worked independently with their team without spoon-feeding from parents.",
+  },
+  {
+    id: 17,
+    name: "S. Syed",
+    designation: "Mother of Tarik Syed\nGreenhill School, Dallas-TX\n(DIP2019-20/ILM2020-24), Plano-TX, USA",
+    image: "/Images/impact/mother-final.png",
+    description:
+      "I have never seen my son as enthusiastic about learning anything. He enjoys telling us all about the products they designed. I also think the team collaboration was very beneficial. He thinks more deeply about all details. It has been a great experience for him.",
+  },
+  {
+    id: 18,
+    name: "Suresh Rangan",
+    designation: "Father of Manish Rangan\n(DIP2019-20/DEP2020-22), Frisco-TX-USA",
+    image: "/Images/impact/impect16.jpg",
+    description:
+      "First of all, thanks to Mr. Faizan and the entire DiscoverSTEM team for starting this program in North Texas. While most of the current learning is geared towards GPA, AP, and school curriculum, this came out so different as an opportunity to engage with other kids of different ages and grades, and brainstorm for problem-solving to make them a thinker and a doer.\n\nManish really enjoyed it and was looking forward to this class every week. To keep it simple, what I liked about the program is bringing kids together and having them brainstorm to develop innovation to solve a problem systematically.",
+  },
+  {
+    id: 19,
+    name: "Shayan Taban",
+    designation: "(DIP2019-20)\nKuala Lumpur-Malaysia",
+    image: "/Images/impact/male-student-final.png",
+    description:
+      "I really liked how I learned to think outside-of-the-box and innovate things. Also, I enjoyed everybody coming together and seeing their different views and opinions about the same idea.",
+  },
+  {
+    id: 20,
+    name: "Dr. Sreemdevi Nayaranan",
+    designation: "Mother of Soorya Narayanan\n(DIP2019-20/ILM2020-24)",
+    image: "/Images/impact/mother-final.png",
+    description:
+      "The program has benefitted Soorya in expressing herself more. She can tune into her true self and be on a positive growth path. It has helped her reasoning, analytical, and brainstorming skills. She is more solution-focused now.",
+  },
+  {
+    id: 21,
+    name: "Marsha DeCay",
+    designation: "Mother of Kenny Joel DeCay Jr.\n(DIP2019-20), Arlington-TX, USA",
+    image: "/Images/impact/mother-final.png",
+    description:
+      "The program fostered a dichotomy shift in the way my son views day-to-day objects, problems, inconveniences, situations. He now views them from the perspective of problem solving and solution.",
+  },
+  {
+    id: 22,
+    name: "Hiba Sheikh",
+    designation: "(DIP2019-20)\nSouthlake-TX-USA",
+    image: "/Images/impact/female-student-final.png",
+    description:
+      "In this program, I liked how the mentors took part in meetings along with my team. Also, having this opportunity here to learn innovation is something truly extraordinary. Going through the innovation process, brainstorming, STAR methodology, and making an innovation is something unique to us.\n\nThis program really helped me in my leadership skills and thinking process. Overall, I think I would do this course again because it is really fun to collaborate with different people and ideas. This program changed my thought process, which enhanced my grades.",
+  },
+  {
+    id: 23,
+    name: "Zayan Tabish",
+    designation: "(DIP2019-20)\nSydney-Australia",
+    image: "/Images/impact/male-student-final.png",
+    description:
+      "The Program was very engaging, and I learned many new things as well as the process of innovation. I looked towards the innovation sessions every week and enjoyed learning how to think like an innovator and work with a global team to solve a real-world problem.",
+  },
+  {
+    id: 24,
+    name: "Abhay Sharma",
+    designation: "Father of Kaushiki & Abhyudaya\n(DIP2019-20), Bristol-UK",
+    image: "/Images/impact/father-final.png",
+    description:
+      "The overall approach of the DiscoverSTEM Innovation Program is very good. It helps children observe the surroundings with certain analytical reasoning and evaluate it from their perspective to measure - 'Is this the right way to do or is there any other simple way or mechanism that can be proposed or invented?'.\n\nThis approach surfaces the curiosity of the young mind and also drives them to propose a solution. Since children are still not exposed to high-end Physics or mathematics, solutions proposed by them are very simple and user-friendly, which is the ultimate objective of any innovation. I am convinced and fully support this program.",
+  },
+  {
+    id: 25,
+    name: "Abdurraheem Sheikh",
+    designation: "(DIP2016-17/DIP2019-20)\nIrving TX-USA",
+    image: "/Images/impact/male-student-final.png",
+    description:
+      "The thing that I liked the most about this program was that it was very interactive, and it forced all the students to collaborate and work together as a solid team. It helped us in sharing our ideas which led to better innovation. I also liked how in this program we tried to fix the problems that really affect many people and that now we have a shot of implementing in the real world.",
+  },
+  {
+    id: 26,
+    name: "Dr. Shams Sheikh",
+    designation: "Father of Hiba Sheikh & Humza Sheikh\n(DIP2019-20)",
+    image: "/Images/impact/father-final.png",
+    description:
+      "I appreciated the process of learning innovations targeted for the kids. From seeing the results presented at the prior DiscoverSTEM demonstration, I think this is a very captivating course. I liked the approach to coming up with a patent and understanding why some ideas could not be patentable. For Hiba, this was a great experience to be in a small group and separately come up with something outside of school.",
+  },
+  {
+    id: 27,
+    name: "Saket Kumar",
+    designation: "Father of Meher Singh (DIP2019-20/ILM2020-24), Southlake-TX-USA",
+    image: "/Images/impact/SaketKumar.jpg",
+    description:
+      "We really liked the way kids started to approach problems after attending this program. They have started to look for sources /scope for innovation in their day-to-day lives. Their curiosity about everything around them has gone up.",
+  },
+  {
+    id: 28,
+    name: "Shreya Nair",
+    designation: "(DIP2019-20)\nFrisco-TX-USA",
+    image: "/Images/impact/female-student-final.png",
+    description:
+      "Being a part of this program has been an amazing experience. I learned so much about innovation and patents. I have opened up my way of thinking, and now I am constantly looking around me and thinking of ways to innovate.",
   },
 ];
 
 
+export const impactCMOData = {
+  image: "/Images/impact/pc3haizam.jpg",
+  name: "Hisham Ahmad - CMO",
+  description:
+    "I am a 14-year-old freshman attending Brighter Horizons Academy in Garland, Texas. I have extensive experience with marketing, as I have been a part of various companies and mentorships. I graduated from the DiscoverStem program, allowing new doors to open up for me, and change the way I see things. The DiscoverStem program has also given me more experience with concepts such as patents, invention, and innovation, as well as inspiration to use these skills to help the world around us.",
+};
+
+export const impactAwardData = {
+  image: "/Images/impact/WhatsApp-Image-2022-02-15-at-1.31.03-AM.jpeg",
+  title:
+    "DiscoverSTEM founders Mirza Rizwan and Mirza Faizan have made history by becoming the first Indian to win the coveted George Washington Honor Medal from the Freedoms Foundation – USA.",
+  description: [
+    "Started in 1949 by former US President Dwight D. Eisenhower, Freedoms Foundation honors exceptional contributions of Americans towards communities in the USA. Generally reserved for the US citizens, the awarding organization made an exception to recognize the stellar research work and its impact of India's Mr. Rizwan in designing and implementing a unique STEM & Innovation program for American children, thereby revolutionizing the education system in the USA.",
+    "Few of the other notable non-US citizens who have received George Washington Honor Medal include Ms. Margaret Thatcher (Former Prime Minister of United Kingdom), Lech Walesa (Former President of Poland and Noble Prize winner) and world-renowned Russian writer Aleksandr Solzhenitsyn. As the latest recipients of this prestigious honor, Mirza brothers join historically acclaimed group of citizens whose work and dedication advance the American ideals, the award letter says.",
+    "Some of the distinguished US citizens who have received this award for their stellar contributions in their field are Walt Disney, Astronauts Sally Ride and John Glenn, Capt. Sully Sullenberger, Athletes like Arthur Ashe, George Foreman and Tiger Woods and famous US educator Jaime Escalante.",
+  ],
+};
+
+export const mentorCardsData = [
+  {
+    image: "/Images/mentors/Zizis-Kozlakidis.jpg",
+    category: "Laboratory Services & Biobanking",
+    name: "Dr. Zizis Kozlakidis",
+    degree: "Head, Laboratory Services and Biobanking",
+    org: "@IARC/WHO",
+    modalData: {
+      title: "Dr. Zisis Kozlakidis",
+      description: [
+        "Dr. Zisis Kozlakidis is the Head of Laboratory Services and Biobanking at the International Agency for Research on Cancer (IARC), part of the World Health Organization (WHO). A highly accomplished senior healthcare professional, he brings decades of experience in biomedical research, innovation strategy, and global health consulting. With a unique blend of scientific expertise and business acumen, he has led international projects focused on the integration of cutting-edge technologies into healthcare systems, fostering collaborations with major global players like Intel and Illumina.",
+        "Dr. Kozlakidis has served as President of the International Society for Biological and Environmental Repositories (ISBER) from 2017 to 2018 and co-founded the Cass Health Innovation Club at Cass Business School, promoting interdisciplinary innovation in life sciences and medicine. His contributions span virology, biobanking, and digital health, earning him numerous international awards. He is a Fellow of the Linnean Society of London and serves on several high-level international boards and committees that shape policy on medical ethics, innovation, and healthcare startup strategy.",
+        "With work experience across the UK, US, China, Vietnam, Indonesia, and Greece, Dr. Kozlakidis continues to drive global impact by advising on the implementation and scalability of healthcare solutions, while mentoring the next generation of scientific leaders.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/Anthony-Gregg.jpg",
+    category: "Genomics, Medical Genetics, and Biotechnology",
+    name: "Dr. Anthony Gregg",
+    degree: "MD, MBA",
+    org: "@American College of Medical Genetics and Genomics",
+    modalData: {
+      title: "Dr. Anthony Gregg, MD, MBA",
+      description: [
+        "Dr. Anthony Gregg is a world-renowned expert in Genomics, Genetics, and Biotechnology. He is a practicing doctor in Obstetrics & Gynecology and has served in various positions from Adjunct Professor to the Chief and Chair of Obstetrics and Gynecology and Human Genetics at some of the top health institutions in the US.",
+        "He is a Past Chair of the American College of Obstetricians and Gynecologists Committee on Genetics and previously served in a liaison capacity to that Committee. He spent the early part of his genetics career exploring hypertension during pregnancy using transgenic and knock-out mice. He co-wrote American College of Medical Genetics and Genomics policy statements on carrier screening and non-invasive prenatal screening for fetal aneuploidy using cell-free fetal DNA. Dr. Gregg received his MBA from the Warrington School of Business at the University of Florida. Dr. Gregg served as the 13th President of the American College of Medical Genetics and Genomics.",
+        "Dr. Gregg is an avid researcher and has served on the review panel with the National Institute of Health, mentored several post-doctoral fellows across the globe, published over 45 research papers, written, edited, or co-edited over 11 textbook chapters, invited speaker at 140+ research events worldwide. More recently he contributes to clinical practice guidelines and national policies that focus on the introduction of genetic and genomic technologies into clinical practice. These contributions led to an invitation to Capitol Hill and an opportunity to speak at a hearing devoted to prenatal carrier screening in the US. Dr. Gregg is committed to nurturing the next generations of Genomics and Genetics experts.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/Peter-Guida.jpg",
+    category: "Molecular Biology and Radiation Research",
+    name: "Dr. Peter Guida",
+    degree: "Ph.D.",
+    org: "@NASA / Brookhaven National Laboratory",
+    modalData: {
+      title: "Dr. Peter Guida",
+      description: [
+        "Dr. Peter Guida is a NASA-based molecular biologist who specializes in the field of radiation biology. He graduated from the Albert Einstein College of Medicine in 1999 with a Ph.D. in developmental and molecular biology. He then completed a 3-year post-doctoral fellowship at Brookhaven National Laboratory (BNL) in New York in the field of accelerator-based radiation biology.",
+        "In 2003 he joined the scientific staff at BNL and is currently a Full Scientist running a laboratory that investigates the effects of radiation on human neuronal cells. In addition, he serves as NASA's Liaison Biologist for the NASA Space Radiation Laboratory Program, which examines the potential health risks to astronauts from exposure to the charged particle radiation that is found in space. He has published many research papers and is a peer-reviewer for numerous journals in the radiation and neuroscience fields. Dr. Guida brings extensive knowledge of molecular signaling pathways and DNA repair to DiscoverSTEM.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/image5dr.baron_.jpg",
+    category: "Transplant Immunology and Histocompatibility",
+    name: "Dr. Medhat Askar",
+    degree: "MD, Ph.D., MSHPE, FRCPath",
+    org: "@Baylor University Medical Center",
+    modalData: {
+      title: "Dr. Medhat Askar",
+      description: [
+        "If there is an individual who commands great respect and admiration in the field of Transplant Immunology, it has to be Dr. Medhat Askar. His academic qualifications, professional experience, and sheer weight of his work in the domain have earned him great laurels in the medical fraternity.",
+        "Dr. Medhat Askar, MD, Ph.D., MSHPE, FRCPath, is a Professor of Pathology and Laboratory Medicine at Texas A&M College of Medicine, the Director of Transplant Immunology, Hematopoietic Cell Processing and COVID-19 laboratories at Baylor University Medical Center, Dallas, TX, USA.",
+        "Dr. Askar is the President of The American Society for Histocompatibility and Immunogenetics (ASHI), Immediate Past President of The American Board for Histocompatibility and Immunogenetics (ABHI), and a member of the Executive Committee of the National Boards of Directors of United Network for Organ Sharing (UNOS) and Organ Procurement and Transplantation Network (OPTN).",
+        "He is also a Councillor to The Transplantation Society (TTS) representing North America, the Co-Chair of the TTS Education Committee, a member of the Laboratory Practice Committee of the International Society of Cell and Gene Therapy, and a Principal Investigator on several study protocols through the Center for International Blood and Marrow Transplant Research (CIBMTR).",
+        "DiscoverSTEM students have this distinguished opportunity to carry out research activities at Dr. Medhat Askar's Transplant Immunology Lab. We have signed a research agreement (MoU) with Dr. Medhat Askar, which allows our students access to world-class research facilities.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/image4dr.bashoo.jpg",
+    category: "Islet Cell Transplantation and Transplant Immunology",
+    name: "Dr. Bashoo Naziruddin",
+    degree: "Ph.D., FAST",
+    org: "@Baylor University Medical Center",
+    modalData: {
+      title: "Dr. Bashoo Naziruddin",
+      description: [
+        "Leading the charge in biotech and healthcare advancements, Dr. Bashoo Naziruddin's work has shaped the course of life-changing research work. He has been the Director of the cGMP Islet Cell Processing Laboratory at Baylor University Medical Center since April 2003. He is also an Adjunct Professor at the Institute of Biomedical Studies at Baylor University, Waco, Texas.",
+        "Dr. Bashoo Naziruddin is a translational research scientist with more than 30 years of experience in academia, the biotech industry, and the healthcare system. His professional experiences include extensive work in life science research, teaching, mentoring, cGMP practice, and clinical and experimental islet transplantation. His current research is focused on immunobiology of human islet cell transplantation. His specific research topics include the assessment of immune response in islet transplant recipients, the development of an optimal immunosuppressive regimen for islet transplantation, strategies to induce tolerance towards donor islets, and the identification of novel drugs to prevent islet rejection.",
+        "Dr. Bashoo Naziruddin has published more than 157 research articles in peer-reviewed journals and has co-authored more than 200 presentations at international/national scientific meetings. He has written chapters in four books on Organ/Cell Transplantation and has been awarded four patents on islet transplantation. He is one of the eminent personalities, who is regularly invited to deliver talks at reputed Institutions and served as a member of several national/institutional committees.",
+        "DiscoverSTEM is proud to have collaborated with Dr. Bashoo Naziruddin's Islet Cell Transplant Lab. Our research partnership agreement (MoU) allows our students to explore and experience research opportunities at the Islet Cell Transplant lab, which has some of the World's most advanced technologies and equipment.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/Aamir-Mirza.jpg",
+    category: "Pharmaceutics and Drug Delivery Systems",
+    name: "Dr. Aamir Mirza",
+    degree: "Ph.D.",
+    org: "@Jamia Hamdard",
+    modalData: {
+      title: "Dr. Aamir Mirza",
+      description: [
+        "Dr. M. Aamir Mirza is working as an Assistant Professor in the Department of Pharmaceutics, Jamia Hamdard, an NIRF Rank 1 institute and a NAAC 'A+' grade deemed to be University. He has a multifaceted career portfolio adorned with both industry and academic accomplishments. During his industry stay he became a seasoned scientist and dealt with challenging NCE/NDA development. He is on advisory boards of some international research-based companies of India, New Zealand and Europe. Academics and Research being close to his heart, he has published more than 110 manuscripts in the journals of international repute and has been granted 02 Indian patent and filed for 04.",
+        "He has contributed several chapters in books published by reputed authors like Elsevier and Bentham. He is amongst the very few scientists globally who has an expertise in Humic substances research. A well-travelled scientist; he has delivered scientific addresses in countries like USA, Austria, Japan, Netherlands, Turkey, Estonia, Spain and Russia. He has been Elite Fellow at University of Malaya (Malaysia) for the last 5 years where he takes classes on the topics related to industrial pharmacy.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/Dr-Asim-Ansari.jpg",
+    category: "Marketing Strategy and Consumer Behavior Analytics",
+    name: "Dr. Asim Ansari",
+    degree: "Ph.D.",
+    org: "@Columbia Business School",
+    modalData: {
+      title: "Dr. Asim Ansari",
+      description: [
+        "Asim Ansari is the William T. Dillard professor of Marketing at Columbia Business School. He received his PhD in marketing from New York university. His current research focuses on personalization and the use of machine learning and AI methods for marketing problem solving. His research has appeared in several leading marketing journals. He has received the Paul Green award from the American Marketing Association for his work on e-customization in 2004.",
+        "His research has also been nominated for the William O'Dell Award, the Paul Green Award, the Long-Term Impact Award from the INFORMS Society for Marketing Science, the Frank M. Bass Outstanding Dissertation Award, and the John D. Little Award on multiple occasions.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/image9dr.nadeem.jpg",
+    category: "Bioengineering and Medical Device Innovation",
+    name: "Dr. Nadeem Vellore",
+    degree: "Ph.D.",
+    org: "@Janssen Pharmaceuticals (Johnson & Johnson)",
+    modalData: {
+      title: "Dr. Nadeem Vellore",
+      description: [
+        "Dr. Nadeem comes with a wealth of knowledge and experience in computations and simulations to understand the behavioral patterns of complex biological reactions. Professionally, Dr. Nadeem Ahmad Vellore is a computational chemist working for Janssen Pharmaceuticals (R&D division of Johnson and Johnson).",
+        "His research interest includes computational simulation of proteins trying to understand how atoms move to coordinate the fascinating biological pathways and in-silico designing of novel inhibitors (drugs) to target various diseases.",
+        "Dr. Vellore obtained his Bachelors from India in Biotechnology and his Ph.D. in Bioengineering from Clemson University, USA. He has published over 25 articles in scientific journals and periodically serves as a reviewer for many journals as well.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/Shreyas-Kumar-DiscoverSTEM-Panel-of-Experts.png",
+    category: "Computer Science, AI Applications, and Systems Engineering",
+    name: "Prof. Shreyas Kumar",
+    degree: "Professor of Practice",
+    org: "@Texas A&M University",
+    modalData: {
+      title: "Dr. Shreyas Kumar",
+      description: [
+        "Dr. Kumar is the AI advisor to DiscoverSTEM. Dr. Shreyas Kumar is a Professor of Practice at the Department of Computer Science and Engineering at Texas A&M University. He researches AI for Government, Grid, Infrastructure, and engineering Security and has designed and taught courses on Cybersecurity. He has previously worked in engineering and cybersecurity leadership positions at Oracle, Adobe, and Uber.",
+        "He has advised various Silicon Valley startups and the U.S. Space Force. He has published research papers in top security and cyber warfare journals and conference proceedings. He holds Master's degrees in Computer Science and Legal Studies from Texas A&M University.",
+      ],
+    },
+  },
+  {
+    image: "/Images/mentors/Shefali-Kakar.jpg",
+    category: "Oncology Therapeutics, Pharmacokinetics, and Clinical Drug Development",
+    name: "Shefali Kakar",
+    degree: "Ph.D.",
+    org: "@Novartis",
+    modalData: {
+      title: "Shefali Kakar",
+      description: [
+        "Shefali Kakar, PhD VP and Global Head, Oncology Therapeutic Area, PK Sciences at Novartis. She is responsible for overseeing all aspects of PK Sciences (ADME, PK, PK/PD and clinical pharmacology) for 100+ projects in the Novartis oncology portfolio spanning early discovery to marketed products.",
+        "Shefali has been passionate about dose for oncology patients throughout her 20+ year career in Pharma. Prior to joining Novartis, Shefali worked at Pfizer and also served as an Adjunct faculty for Clinical Pharmacology at the Brown University. She received her PhD in Pharmacology from U of Michigan.",
+      ],
+    },
+  },
+];
+
 export const AerospacevideoData: VideoData = {
-  youtubeUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+  youtubeUrl: "https://www.youtube.com/embed/5nWVP8-GpII",
+  title: "Program Video",
+};
+
+export const roboticsResearchLabTextData: ResearchMentorTextData = {
+  title: "AI-ML and AutonomousTech Research Lab",
+  content: [
+    {
+      type: "paragraph",
+      text: `Are machines really going to take over the world? How 'smart' can a smart machine become? What is 'Artificial Intelligence and how different it is from 'Real Intelligence'? What are the top challenges in autonomous systems and how to solve them?`,
+    },
+    {
+      type: "paragraph",
+      text: `If your kid is interested in exploring some of these exciting questions, our AI-ML and Autonomous Tech Research Lab may have answers. We have a dedicated space for young innovators to explore domains like Artificial Intelligence, Autonomous Mobility, Automation, and Machine Learning.`,
+    },
+    {
+      type: "heading",
+      text: "At our AI-ML and Autonomous Tech Research Lab, we provide our students:",
+    },
+    {
+      type: "list",
+      items: [
+        "Domain-specific training.",
+        "Activities to understand domain concepts.",
+        "One large project at the end of the module.",
+        "We leave our students by introducing them to some of the most pressing problems in AI, automation & technology domains, encouraging them to find a solution later in their lives.",
+      ],
+    },
+  ],
+};
+
+export const fintechResearchLabTextData: ResearchMentorTextData = {
+  title: "Banking, Finance & Fintech Research Lab",
+  content: [
+    {
+      type: "paragraph",
+      text: `Do our kids understand money the way they should? Do they understand how our banking systems work? Do they have any idea about insurance, digital currency, wealth creation, or income tax?`,
+    },
+    {
+      type: "paragraph",
+      text: `Our Banking, Finance & Fintech Research Lab gives our innovators an understanding of 'Money' – the central driving force behind every human activity on this earth. This lab provides exposure to our young innovators to money, banking system, mobile payments, blockchain technology, and digital currency. The lab provides them with resources to gain knowledge on critical issues like how wealth is created, how economies work, challenges in developed & developing nations, differences between sustainable & non-sustainable economies, and others.`,
+    },
+    {
+      type: "heading",
+      text: "At our Banking, Finance & Fintech Research Lab, we provide our students:",
+    },
+    {
+      type: "list",
+      items: [
+        "Domain-specific training.",
+        "Activities to understand domain concepts.",
+        "One large project at the end of the module.",
+        "We leave our students by introducing them to some of the most pressing problems in banking, finance, and fintech domain, encouraging them to find a solution later in their lives.",
+      ],
+    },
+  ],
+};
+
+export const energyResearchLabTextData: ResearchMentorTextData = {
+  title: "Energy & Environment Research Lab",
+  content: [
+    {
+      type: "paragraph",
+      text: `Preserving the environment and sustainable development is one of the top concerns faced by world leaders today. Our Energy & Environment Research Lab provides exposure to the environmental problems directly related to the production and consumption of energy. It includes air pollution, climate change, water pollution, greenhouse emissions, and its impact. This lab provides the space, technology, and equipment for young innovators to brainstorm and find alternate, sustainable, and renewable energy solutions.`,
+    },
+    {
+      type: "paragraph",
+      text: `Our students are exposed to and challenged to find innovative solutions to some of the most pressing environmental issues, including marine pollution, plastic pollution, deforestation, overfishing, and others.`,
+    },
+    {
+      type: "heading",
+      text: "At our Energy & Environment Research Lab, we provide our students:",
+    },
+    {
+      type: "list",
+      items: [
+        "Domain-specific training.",
+        "Activities to understand domain concepts.",
+        "One large project at the end of the module.",
+        "We leave our students by introducing them to some of the most pressing problems in the energy and environment domain, encouraging them to find a solution later in their lives.",
+      ],
+    },
+  ],
+};
+
+export const biotechResearchLabTextData: ResearchMentorTextData = {
+  title: "Genomics, Biotechnology & Health Sciences Research Lab",
+  content: [
+    {
+      type: "paragraph",
+      text: `Healthcare and biotechnology have emerged as one of the most challenging and in-demand domains in recent times. Advancements in this domain lead to innovations like wearable gadgets, medical devices, robotics surgery, new & effective treatment of diseases, control of an epidemic, and development of life-saving vaccines.`,
+    },
+    {
+      type: "paragraph",
+      text: `Our Genomics, Biotechnology & Health Sciences Research Lab provides children great exposure to Gene Editing and its applications, DNA sequencing technology, CRISPR, Plant biology, and therapeutics. This lab allows our young innovators to explore some of the top challenges in this domain, and brainstorm with fellow students to innovate solutions to meet these challenges.`,
+    },
+    {
+      type: "heading",
+      text: "At our Genomics, Biotechnology & Health Sciences Research Lab, we provide our students:",
+    },
+    {
+      type: "list",
+      items: [
+        "Domain-specific training.",
+        "Activities to understand domain concepts.",
+        "One large project at the end of the module.",
+        "We leave our students by introducing them to some of the most pressing problems in the genomics, biotechnology & health sciences domain, encouraging them to find a solution later in their lives.",
+      ],
+    },
+  ],
+};
+
+export const neuroResearchLabTextData: ResearchMentorTextData = {
+  title: "Neurotechnology & Brain-Computer Interface Research Lab",
+  content: [
+    {
+      type: "paragraph",
+      text: `Our Neurotechnology & Brain-Computer Interface Research Lab is yet another effort to help our innovators research futuristic technologies. In our Brain-Machine Interface Research Lab, we have acquired technology that captures human brain waves and converts them into programmable signals. This center has all the facilities to develop machines of the future that will be controlled by the thoughts of a person.`,
+    },
+    {
+      type: "paragraph",
+      text: `Giving children access to such powerful and futuristic technologies will open a whole new world of possibilities, allowing them to capitalize on their innovative ideas and develop radical inventions.`,
+    },
+    {
+      type: "heading",
+      text: "At our Neurotechnology & Brain-Computer Interface Research Lab, we provide our students:",
+    },
+    {
+      type: "list",
+      items: [
+        "Domain-specific training.",
+        "Activities to understand domain concepts.",
+        "One large project at the end of the module.",
+        "We leave our students by introducing them to some of the most pressing problems in the neurotechnology domain, encouraging them to find a solution later in their lives.",
+      ],
+    },
+  ],
+};
+
+export const fintechModulesData: ResearchModulesSectionData = {
+  title: "Banking, Finance & Fintech Research Lab — 14 Modules",
+  buttonText: "Download Curriculum",
+  curriculumLink: "#",
+  modules: [
+    {
+      id: 1,
+      title: "DSBFF01 :: Money Explained",
+      description:
+        "This curriculum is inspired from FNCE100 Corporate Finance – Wharton Undergraduate Finance. The barter system and double coincidence of wants. Need for money and its characteristics. Understanding money. Money as a store of value and medium of exchange. Development of paper money and origin of bank. Exercise: The barter system poses several challenges. Device a new type of barter system which is slightly easier to implement.",
+    },
+    {
+      id: 2,
+      title: "DSBFF02 :: Introduction to Banking & Other Financial System",
+      description:
+        "This curriculum is inspired from International Banking FNCE232 – Wharton Undergraduate Finance. Section I: Origin of a Bank, Functions of a bank, Credit Union, Crowdfunding, Future of Banking – A fintech revolution. Section II: How do banks make money? Introduction to Fractional Reserve Banking, Federal Reserve and its role in controlling the economy of the USA. Section III: An Introduction to Investment Banking. Exercise: Current banking system is based on interest. Devise different ways to raise the funds for a project.",
+    },
+    {
+      id: 3,
+      title: "DSBFF03 :: Fintech - Reshaping the Banking and Payment Industry",
+      description:
+        "This curriculum is inspired from Harvard Business School Fintech Course. Introduction to Fintech | Fintech Explained. How FinTech is Shaping the Future of Banking. 15 Things You Didn't Know About Fintech Industry. Credit Card & Crowdfunding. Crowdfunding – Success stories in Fintech. Exercise: Brainstorming Future Innovations in Fintech.",
+    },
+    {
+      id: 4,
+      title: "DSBFF04 :: Economy & Its Importance",
+      description:
+        "This curriculum is inspired from FNCE101 Corporate Finance – Wharton Undergraduate Finance. Three forces that drive the economy. How credit creates growth. Economic expansion and recession. Concept of de-leveraging and how to solve it. The Lost Decade. The financial system. Exercise: Brainstorm various parameters which impact the economy of a country and how they can be tweaked during a crisis.",
+    },
+    {
+      id: 5,
+      title: "DSBFF05 :: Capital",
+      description:
+        "This curriculum is inspired from Private Equity & Venture Capital – Harvard Business School. What is the capital and what are the different types of capital. Private Equity & Venture Capital. Capital Market. Exercise: Develop strategies to revive the business of a newly acquired property.",
+    },
+    {
+      id: 6,
+      title: "DSBFF06 :: Corporate Finance",
+      description:
+        "This curriculum is inspired from FNCE100 Corporate Finance – Wharton Undergraduate Finance. Introduction to Capital Budgeting. Present Value and Future Value of Money. Uncertainty and the trade-off between risk & return. Working Capital Management. Optimal capital structure. Exercise: Devise capital budgeting strategies with an aim to keep the Sharpe Ratio as high as possible.",
+    },
+    {
+      id: 7,
+      title: "DSBFF07 :: The Payment Industry",
+      description:
+        "How electronic payment works. Participants involved in the payment processing industry. Real-life example of how transactions work. Payment Gateway. Exercise: Devise a point-of-sale payment system that does NOT need Internet connectivity to work or work through more innovative ways of connectivity.",
+    },
+    {
+      id: 8,
+      title: "DSBFF08 :: Consumer Finance & Its Challenges",
+      description:
+        "This curriculum is inspired from FNCE202 Consumer Finance Decision Making – Wharton Undergraduate Finance. Credit Cards – How Does a Credit Card Work? Student Loan – How Do Student Loans Work? Mortgage & Insurance. Understanding Health Insurance. Challenges in consumer finance. Exercise: Develop the best financial plan which pays for your college tuition in a given situation.",
+    },
+    {
+      id: 9,
+      title: "DSBFF09 :: Investment Management",
+      description:
+        "This curriculum is inspired from FNCE205 Investment Management – Wharton Undergraduate Finance. What is an investment? | Investment Diversification. Asset Allocation | Risk and return. How Stock Exchange Works | Stock Market Explained. Exercise: Analyze how the stock price of the company is affected by fluctuations in external and internal factors.",
+    },
+    {
+      id: 10,
+      title: "DSBFF10 :: Insurance Industry",
+      description:
+        "Introduction to Insurance and how does the insurance industry make money. Emerging tech-trends in the insurance industry. Insurtech Explained. World InsurTech Report 2020: Critical times require a new mindset. The future of insurance claims. The power and potential of AI in insurance claims. Disruptive trends in insurance industry. Exercise: Design an Insurtech system to settle vehicle accident claims in seconds.",
+    },
+    {
+      id: 11,
+      title: "DSBFF11 :: Data Science for Finance",
+      description:
+        "This curriculum is inspired from FNCE100 Corporate Finance – Wharton Undergraduate Finance. Introduction to Data Science. Five ways data Science changed Finance. Fraud Prevention and Data Science | Anomaly Detection | Customer Analytics | Risk Management | Algorithmic Trading. Top 9 Data Science Use Cases in Banking. Big Data and Analytics at Work in Banking. Exercise: Brainstorm data science use cases to make life easier for customers and service providers in the banking and finance industry.",
+    },
+    {
+      id: 12,
+      title: "DSBFF12 :: Introduction to Blockchain & Cryptocurrency",
+      description:
+        "This curriculum is inspired from Harvard Business School Fintech Course. What is a Blockchain and what problem do they solve? What is a smart contract & what problem do they solve? Introduction to Cryptocurrency. How Blockchain enables Cryptocurrency? Could digital currencies put banks out of business? Exercise: Use Blockchain to develop a system to prevent airplane parts overflying their age.",
+    },
+    {
+      id: 13,
+      title: "DSBFF13 :: Introduction to Financial Analysis",
+      description:
+        "This curriculum is inspired from Harvard Business School – Leading with Finance. Introduction and types of Financial Analysis. Reading and understanding the balance sheet. The cash flow statement. Exercise: Performing 12 types of financial analysis on a company's balance sheet.",
+    },
+    {
+      id: 14,
+      title: "DSBFF14 :: Healthy Personal Financial Habits",
+      description:
+        "Using credit cards wisely. Prioritizing your expenses. Investment decision. Path to your first million dollar. Exercise: Develop your personal financial plan to be a millionaire by the time you turn 25 years.",
+    },
+  ],
+};
+
+export const biotechModulesData: ResearchModulesSectionData = {
+  title: "Genomics, Biotechnology & Health Sciences — 13 Modules",
+  buttonText: "Download Curriculum",
+  curriculumLink: "#",
+  modules: [
+    {
+      id: 1,
+      title: "DSGBH01 :: Organization of Life",
+      description:
+        "Cellular Organization. Organismal Organization. Population Organization. Exercise: Hands-on exercise to co-relate Human Cells and World around us.",
+    },
+    {
+      id: 2,
+      title: "DSGBH02 :: Introduction to DNA",
+      description:
+        "This curriculum is inspired from XGEN101 – Fundamentals of Genetics Stanford School of Medicine Genetics and Genomics Program. Fundamentals of human cell. What is DNA? Introduction to DNA. DNA & RNA: DNA vs RNA. mRNA, rRNA, and tRNA: Functions | Types of RNA. Protein Synthesis, DNA Transcription, and DNA Translation. DNA Methylation. Introduction to mRNA Vaccines. Exercise: Understand DNA coding and simulate DNA Code.",
+    },
+    {
+      id: 3,
+      title: "DSGBH03 :: Introduction to Genetics",
+      description:
+        "This curriculum is inspired from XGEN101 – Fundamentals of Genetics Stanford School of Medicine Genetics and Genomics Program. DNA, Gene, and Genome. Alleles, Genotype, and Phenotype. Punnett Square. Epigenetics. Exercise: Understand Epigenetics and the impact of certain genes on the human body.",
+    },
+    {
+      id: 4,
+      title: "DSGBH04 :: Mutation",
+      description:
+        "Gene Mutation. Types of Mutation. Spontaneous Mutation. Induced Mutation. Mutagens. Repair Mechanism of Mutation. Your Probability to get Superpower through some Rarest Mutations. Exercise: Design a protein shape that is capable of providing a shield from the virus mutations.",
+    },
+    {
+      id: 5,
+      title: "DSGBH05 :: Genomics",
+      description:
+        "This curriculum is inspired from XGEN102 – Genomics. Stanford School of Medicine Genetics and Genomics Program. What is Genomics? A Short History of Genomics. Why Genomics? Model Organism for Genomic Study. Major Branches of Genomics. Exercise: Develop Co-relation between Animal Gene and Human Gene.",
+    },
+    {
+      id: 6,
+      title: "DSGBH06 :: Introduction to Genome Sequencing",
+      description:
+        "This curriculum is inspired from XGEN102 – Genomics. Stanford School of Medicine Genetics and Genomics Program. What is Genome Sequencing? Some Early DNA Sequencing Methods. Second Generation Sequencing. Third Generation Sequencing. Genetics vs Genomics. Explaining the DNA Sequencing Method.",
+    },
+    {
+      id: 7,
+      title: "DSGBH07 :: Applications & Limitations of DNA Sequencing",
+      description:
+        "Solving Crime. Personalized Healthcare. Cancer Genomics. Studying eDNA (Environmental DNA) using DNA metabarcoding. Detecting Mutations. Parental Verification. Identifying and developing GMO Plants in agriculture. Microbial Identification and study of new species of bacteria and viruses. Exercise: Perform Gene Sequencing of Unknown DNA.",
+    },
+    {
+      id: 8,
+      title: "DSGBH08 :: The Human Genome Project",
+      description:
+        "Introduction, Principle, and Goals of HGP. A race to sequence the human genome. Phases of HGP. Technical Aspects of HGP. Focus of the HGP. Applications of the HGP. Ethical, Legal, and Social Implications (ELSI). Whole Genome Sequencing and You. Exercise: Brainstorm and Develop Future Use of Human Genome Information.",
+    },
+    {
+      id: 9,
+      title: "DSGBH09 :: The Future of Genomics",
+      description:
+        "Ten Bold Predictions. Exercise: Utilize the bold predictions and develop ways to make life better for human beings.",
+    },
+    {
+      id: 10,
+      title: "DSGBH10 :: Genetic Engineering & Biotechnology",
+      description:
+        "This curriculum is inspired from XGEN203 – Genetics Engineering & Biotechnology Stanford School of Medicine Genetics and Genomics Program. Introduction to Gene Editing. Gene Editing tools (CRISPR/Cas9 Technology). Gene Editing and CRISPR/Cas9 Technology – How far should we go? Complications and Risks of Gene Editing: Ethical Issues in Gene Editing. Exercise: Bioethics Research Project.",
+    },
+    {
+      id: 11,
+      title: "DSGBH11 :: Genetic Engineering - Applications & Bioethics",
+      description:
+        "Genetic Engineering Explained: Why Genetic Engineering? Genetic engineering and its future impact. 15 Things You Didn't Know About the Genomics Industry. 10 Reasons Why Biotech is Booming. Impact of Genetic Engineering in Medicine. Genetic Engineering Application in Agriculture. Gene Drives to Lower Disease Transmission. CRISPR Mediated Biofuels. Genomics in Organ Transplant. Genetically Modified Organism (GMO). Genetically Modified Crops. Exercise: Hands-on Gene Editing using CRISPR/Cas9 Technology.",
+    },
+    {
+      id: 12,
+      title: "DSGBH12 :: Fundamentals of Gene Therapy",
+      description:
+        "This curriculum is inspired from XGEN201 – Principles & Practices of Gene Therapy Stanford School of Medicine Genetics and Genomics Program. Gene Mutation & Genetic Diseases. Introduction to Gene Therapy. Some examples of Gene Therapy. Exercise: Understand and Simulate an Attempt to Develop a Cure for Cancer using TP53 Gene.",
+    },
+    {
+      id: 13,
+      title: "DSGBH13 :: Personalized Medicine through Genomics",
+      description:
+        "This curriculum is inspired from XGEN205 – Personal Genomics & Your Health Stanford School of Medicine Genetics and Genomics Program. How Personal Genomics impacts Healthcare. Diagnosing and Treating Diseases with the help of Genomics (Example: Diabetes, Heart Diseases, Allergies, etc.). Exercise: Research and Report Writing on Gene Therapy of a Genetic Disease.",
+    },
+  ],
+};
+
+export const neuroModulesData: ResearchModulesSectionData = {
+  title: "Neurotechnology & Brain-Computer Interface — 11 Modules",
+  buttonText: "Download Curriculum",
+  curriculumLink: "#",
+  modules: [
+    {
+      id: 1,
+      title: "DSNTBCI01 :: The Nervous System",
+      description:
+        "This curriculum is inspired from PSYCH242 Theoretical Neuroscience Stanford University. Central Nervous System (CNS). The Blood Brain Barrier. Peripheral Nervous System (PNS). Somatic Nervous System | Autonomic Nervous System. Sympathetic Nervous System | Parasympathetic Nervous System. Sensory Division. Motor Division. Exercise: Design a Nervous System of a Building.",
+    },
+    {
+      id: 2,
+      title: "DSNTBCI02 :: The Brain at Cellular Level",
+      description:
+        "This curriculum is inspired from PSYCH242 Theoretical Neuroscience Stanford University. Neurons. Dendrites | Axons | Synapse. Neuronal Communication: Anatomy & Physiology. Neural Communication, Synaptic Transmission. How Neurons Communicate. Neural Networks: From The Brain To AI (What Are Neural Networks). Neural Network 3D Simulation. Glial Cells: Neurosciences. Neurochemistry. Neurotransmitters. Receptors. Exercise: Design the Central Nervous System of Future Cars.",
+    },
+    {
+      id: 3,
+      title: "DSNTBCI03 :: Neuroanatomy & Brain Organization",
+      description:
+        "This curriculum is inspired from PSYCH242 Theoretical Neuroscience Stanford University. Brain Anatomy. Grey and White Matter. Brain Development. Embryonic Brain Development. Brain Divisions. Forebrain | Midbrain | Hindbrain. Exercise: Take EEG signals from specific parts of brain performing specific functions.",
+    },
+    {
+      id: 4,
+      title: "DSNTBCI04 :: Brain Diseases and Disorders",
+      description:
+        "This curriculum is inspired from PSYCH242 Theoretical Neuroscience Stanford University. Brain and Mental Health. What Can Go Wrong? Neurodevelopmental Disorders | Neurodegenerative disorders | Psychiatric disorders. Neurogenerative Disease: The Coming Epidemic. Parkinson's Disease: How it might be stopped. Neurogenerative Disease: A Potential gene therapy for ALS. Exercise: Brainstorming on Ways to Generate Handwritten Text from Brain Activity.",
+    },
+    {
+      id: 5,
+      title: "DSNTBCI05 :: Introduction to Brain Computer Interface (BCI)",
+      description:
+        "What is the definition? What are the types of BCI's? Invasive. Semi-Invasive (ECoG) | Non Invasive | MEG | PET | fMRI | fNIRS | EEG. Components. Brain activity | Signal acquisition | Preprocessing | Feature Extraction | Classification | Translation | Feedback device. Applications, Examples & Limitations. Ethics & Safety. Future of the field. Exercise: Designing Futuristic Applications of Brain Computer Interface.",
+    },
+    {
+      id: 6,
+      title: "DSNTBCI06 :: BCI Applications",
+      description:
+        "NeuroEntertainment. Neurogaming | NeuroToys | Art | Virtual Reality. Security. Brain based authentication. Biofeedback Therapy: Anxiety | Sleep Improvement | ADHD | PTSD. Cognitive Training. Performance Optimization | Brain Ageing | Early Development | Mindfulness | Accelerated Learning | Enhanced creativity. Rehabilitation. Stroke Recovery | Addiction | Rett Syndrome. Diagnostics. Concussion | Alzheimer's | Epilepsy. Exercise: Designing Bi-directional Communication through Brain Computer Interface.",
+    },
+    {
+      id: 7,
+      title: "DSNTBCI07 :: Introduction to Unicorn BCI Headsets",
+      description:
+        "What to look for in a headset. Number and Placement of Electrodes | Sampling Rate | ADC Bits. Using BCI Device. Unicorn BCI Headset | Charging & Usage. Putting on a Headset. Positioning. Using Gel. Starting the software. Connecting a headset with software. Reading the EEG Data. Using Unicorn Suite. Unicorn Speller to spell a word using P300. Unicorn Blondy Check. Moving a Sphero robot using the Unicorn Speller suite. Motor Imagery Exercise. Exercise: Use BCI Application to Spell Words, Move Robots, and Perform Blondy Check.",
+    },
+    {
+      id: 8,
+      title: "DSNTBCI08 :: BCI Signal Processing",
+      description:
+        "What is Preprocessing? | Why is preprocessing needed? Importing Data. FIF | EDF / EDF+ | Other standard formats | Other non-standard formats (CSV / .mat). Removing Bad Channels and Interpolation. What is a 'bad' channel? | How to spot a bad channel | How to remove a bad channel from the data | Interpolation | Filtering. Downsampling. Re-referencing. Artifact rejection and correction. Types of artifacts | Rejection based on visualization. Preprocessing for High Density (Research EEG) vs Low Density (Consumer EEG). Channel Removal | Using Event-Markers | Data Quality | Referencing and ERP Shape. Introduction to EEG & Generation of EEG. Origin, significance, and interpretation of EEG. Exercise: Use Unicorn BCI to Generate EEG Artifacts and Identify them on the Chart.",
+    },
+    {
+      id: 9,
+      title: "DSNTBCI09 :: Extracting Neural Oscillations from EEG data",
+      description:
+        "What are Neural Oscillations? Why do we produce neural oscillations? So why do neural oscillations matter? How do we extract neural oscillations as a feature of our EEG data? Importing, reading, and formatting data | Preprocessing | Epoching data. Exercise: Collect EEG Data of Your Team Member and Identify Alpha, Beta, Theta, and Gamma Oscillations on the Chart. Read their Frequency and Amplitude.",
+    },
+    {
+      id: 10,
+      title: "DSNTBCI10 :: Event Related Potential (ERP)",
+      description:
+        "Goals. Feature Extraction. What is feature extraction | Which features to extract. Event-Related Potential. What is an event-related potential | How to record an ERP with EEG | How to use ERP's | How to generate an ERP | The P3 family of ERP's | History of P3-based BCIs. Types of ERP (P300 | SSVEP | Motor Imagery). Exercise: Using the Instructions as attached, through a UDP connection, turn a LED ON and OFF.",
+    },
+    {
+      id: 11,
+      title: "DSNTBCI11 :: Future of BCI",
+      description:
+        "New Emerging Technologies. Introduction | Reading | Writing | Read/Write. Applications and Public Perception. Healthcare Applications | Wellness Applications | Outlooks. Exercise: Develop a system to use your thoughts and BCI technology, and generate materials for a PowerPoint presentation.",
+    },
+  ],
+};
+
+export const fintechVideoData: VideoData = {
+  youtubeUrl: "https://www.youtube.com/embed/5nWVP8-GpII",
+  title: "Program Video",
+};
+
+export const biotechVideoData: VideoData = {
+  youtubeUrl: "https://www.youtube.com/embed/5nWVP8-GpII",
+  title: "Program Video",
+};
+
+export const neuroVideoData: VideoData = {
+  youtubeUrl: "https://www.youtube.com/embed/5nWVP8-GpII",
   title: "Program Video",
 };

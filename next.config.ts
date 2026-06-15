@@ -4,12 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "discoverstem.info",
-      },
-    ],
+    remotePatterns: [],
   },
 };
 

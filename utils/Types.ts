@@ -115,7 +115,6 @@ export interface PatentCardData {
   certificateLink?: string;
 }
 
-
 export interface StatItem {
   value: string;
   color: string;
@@ -374,13 +373,12 @@ export interface ResearchModule {
   id: number;
   title: string;
   description: string;
-  duration: string; 
-  level: "Beginner" | "Intermediate" | "Advanced"; 
 }
 
 export interface ResearchModulesSectionData {
   title: string;
   buttonText: string;
+  curriculumLink?: string;
   modules: ResearchModule[];
 }
 
@@ -513,12 +511,11 @@ export interface OutcomesSectionData {
 export interface ResearchModulesSectionData {
   title: string;
   buttonText: string;
+  curriculumLink?: string;
   modules: {
     id: number;
     title: string;
     description: string;
-    duration: string;
-    level: "Beginner" | "Intermediate" | "Advanced";
   }[];
 }
 

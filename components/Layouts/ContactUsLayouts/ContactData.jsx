@@ -1,6 +1,6 @@
 "use client";
 
-import { contactData } from "@/assets/Generic-data";
+import { contactData, contactInfoSessionNote } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Typography } from "@mui/material";
 
@@ -88,6 +88,21 @@ const ContactData = () => {
           </Typography>
         </Box>
       ))}
+
+      <Typography
+        sx={{
+          whiteSpace: "pre-line",
+          fontFamily: FONT_FAMILY.body,
+          fontWeight: 400,
+          fontSize: { xs: "14px", md: "22px" },
+          lineHeight: { xs: "22px", md: "43px" },
+          letterSpacing:"-0.03em",
+          color: "#777777",
+          mt: { xs: 2, md: 3 },
+        }}
+      >
+        {contactInfoSessionNote}
+      </Typography>
     </Box>
   );
 };
