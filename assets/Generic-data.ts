@@ -61,6 +61,7 @@ import type {
   InfoCardItem,
   InnovationCardItem,
   InnovationFilter,
+  
   Logo,
   mediaCenter,
   MediaSectionData,
@@ -304,30 +305,36 @@ export const contactInfoSessionNote =
 
 
 export const researchLabs: ResearchLab[] = [
-  {
-    title: "Aerospace Research Lab",
-    image: "/Images/ContactUs/image2aerospacellab.jpg",
-  },
-  {
-    title: "AI-ML and Autonomous Tech Research Lab",
-    image: "/Images/ContactUs/image3ailab.jpg",
-  },
-  {
-    title: "Banking, Finance & Fintech Research Lab",
-    image: "/Images/ContactUs/image7bankinglab.jpg",
-  },
-  {
-    title: "Energy & Environment Research Lab",
-    image: "/Images/ContactUs/image5energylab.jpg",
-  },
-  {
-    title: "Genomics, Biotechnology & Health Sciences Research Lab",
-    image: "/Images/ContactUs/image4geolab.jpg",
-  },
-  {
-    title: "Neurotechnology & Brain-Computer Interface Research Lab",
-    image: "/Images/ContactUs/image1lab.jpg",
-  },
+   {
+        title: "Aerospace Research Lab",
+        image: "/Images/ContactUs/image2aerospacellab.jpg",
+        href: "/opportunities/aerospace_research_lab",
+    },
+    {
+        title: "AI-ML and Autonomous Tech Research Lab",
+        image: "/Images/ContactUs/image3ailab.jpg",
+        href: "/opportunities/ai-autonomous-tech-and-robotics-research-lab",
+    },
+    {
+        title: "Banking, Finance & Fintech Research Lab",
+        image: "/Images/ContactUs/image7bankinglab.jpg",
+        href: "/opportunities/banking-finance-fintech-research-lab",
+    },
+    {
+        title: "Energy & Environment Research Lab",
+        image: "/Images/ContactUs/image5energylab.jpg",
+        href: "/opportunities/energy-environment-research-lab",
+    },
+    {
+        title: "Genomics, Biotechnology & Health Sciences Research Lab",
+        image: "/Images/ContactUs/image4geolab.jpg",
+        href: "/opportunities/genomics-biotechnology-health-sciences-research-lab",
+    },
+    {
+        title: "Neurotech & Brain-Computer Interface",
+        image: "/Images/ContactUs/image1lab.jpg",
+        href: "/opportunities/neurotech-brain-computer-interface",
+    },
 ];
 
 
@@ -2189,7 +2196,7 @@ export const StudentInnovationData= {
 
 
 export const innovationFilters: InnovationFilter[] = [
-  "All Statuses",
+  "All Status",
   "Granted",
   "Pending",
 ];

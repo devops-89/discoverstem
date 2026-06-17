@@ -13,13 +13,13 @@ const ROWS_PER_PAGE = 6;
 
 
 export default function InnovationCardGrid() {
-  const [filter, setFilter] = useState<InnovationFilter>("All Statuses");
+  const [filter, setFilter] = useState<InnovationFilter>("All Status");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
   const filteredItems = innovationCardsData.filter((item) => {
     const matchFilter =
-      filter === "All Statuses" || item.filterType === filter;
+      filter === "All Status"|| item.filterType === filter;
 
     const matchSearch =
       item.title.toLowerCase().includes(search.toLowerCase()) ||

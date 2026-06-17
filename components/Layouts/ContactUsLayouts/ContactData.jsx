@@ -1,87 +1,89 @@
 "use client";
 
 import { contactData, contactInfoSessionNote } from "@/assets/Generic-data";
-import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Typography } from "@mui/material";
+
+// Font configurations: Poppins for body, Work Sans for titles
+const titleStyle = {
+    fontFamily: "'Work Sans', sans-serif",
+    fontWeight: 500,
+    fontSize: { xs: "22px", md: "28px" },
+    lineHeight: { xs: "32px", md: "43px" },
+    letterSpacing: "-0.03em",
+    color: "#111827",
+};
+
+const descStyle = {
+    fontFamily: "'Poppins', sans-serif",
+    fontWeight: 400,
+    fontSize: { xs: "16px", md: "22px" },
+    lineHeight: { xs: "30px", md: "43px" },
+    letterSpacing: "-0.03em",
+    color: "#777777",
+};
 
 const ContactData = () => {
   return (
     <Box
       sx={{
         width: "100%",
-        maxWidth: { xs: "100%", md: "600px" },
-
+        maxWidth: { xs: "100%", md: "526px" }, // Group width: 526px
         mx: { xs: "auto", md: 0 },
+        display: "flex",
+        flexDirection: "column",
       }}
     >
+     
       <Typography
         sx={{
+          ...titleStyle,
           width: { xs: "100%", md: "484px" },
           height: { xs: "auto", md: "61px" },
-          fontFamily: FONT_FAMILY.heading,
-          fontWeight: 500,
-          fontSize: { xs: "20px", sm: "24px", md: "28px" },
-          lineHeight: { xs: "30px", sm: "34px", md: "43px" },
-          letterSpacing: "-0.03em",
-          color: "#111827",
-          mb: { xs: 2, md: 6 },
+          mb: "45px", // Figma spacing between title and desc
           textAlign: { xs: "center", md: "left" },
         }}
       >
         {contactData.title}
       </Typography>
 
+    
       <Typography
         sx={{
+          ...descStyle,
           width: { xs: "100%", md: "526px" },
           height: { xs: "auto", md: "187px" },
           whiteSpace: "pre-line",
-          fontFamily: FONT_FAMILY.body,
-          fontWeight: 400,
-          fontSize: { xs: "14px", md: "22px" },
-          lineHeight: { xs: "22px", md: "43px" },
-          letterSpacing: "-0.03em",
-          color: "#777777",
-          mb: { xs: 3, md: 8 },
+          mb: "70px", // Figma spacing between desc and next title
           textAlign: { xs: "center", md: "left" },
         }}
       >
         {contactData.description}
       </Typography>
 
-      {/* SECTIONS */}
+    
       {contactData.sections.map((item, i) => (
         <Box
           key={i}
           sx={{
-            mb: { xs: 2.5, md: 3.5 },
+            mb: "45px", 
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          {/* SECTION TITLE */}
+        
           <Typography
             sx={{
-              fontFamily: FONT_FAMILY.body,
-              fontWeight: 500,
-              fontSize: { xs: "20px", sm: "24px", md: "28px" },
-              lineHeight: { xs: "30px", sm: "34px", md: "43px" },
-              letterSpacing:"-0.03em",
-              color: "#111827",
-              mb: 3,
+              ...titleStyle,
+              mb: "45px", 
             }}
           >
             {item.title}
           </Typography>
 
+        
           <Typography
             sx={{
+              ...descStyle,
               whiteSpace: "pre-line",
-              fontFamily: FONT_FAMILY.body,
-              fontWeight: 400,
-              fontSize: { xs: "14px", md: "22px" },
-              lineHeight: { xs: "22px", md: "43px" },
-              letterSpacing:"-0.03em",
-              color: "#777777",
             }}
           >
             {item.text}
@@ -89,16 +91,12 @@ const ContactData = () => {
         </Box>
       ))}
 
+    
       <Typography
         sx={{
+          ...descStyle,
           whiteSpace: "pre-line",
-          fontFamily: FONT_FAMILY.body,
-          fontWeight: 400,
-          fontSize: { xs: "14px", md: "22px" },
-          lineHeight: { xs: "22px", md: "43px" },
-          letterSpacing:"-0.03em",
-          color: "#777777",
-          mt: { xs: 2, md: 3 },
+          textAlign: { xs: "center", md: "left" },
         }}
       >
         {contactInfoSessionNote}

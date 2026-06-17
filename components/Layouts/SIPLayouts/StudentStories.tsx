@@ -15,7 +15,7 @@ export default function StudentStories() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        pb: { xs: 5, md: 8 },
+        py: { xs: 5, md: 8 },
         px: { xs: 3, md: 4 },
       }}
     >
@@ -147,10 +147,13 @@ export default function StudentStories() {
       <Dialog
         open={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}
+         disableScrollLock
         maxWidth="md"
         fullWidth
-        PaperProps={{
+        slotProps={{ 
+          paper:{
           sx: { borderRadius: "20px", position: "relative", bgcolor: "#000" },
+          }
         }}
       >
         <IconButton

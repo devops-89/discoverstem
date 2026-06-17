@@ -105,8 +105,8 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
         </Box>
       )}
 
-      <Dialog open={modalOpen} onClose={() => setModalOpen(false)} maxWidth="md" fullWidth
-        PaperProps={{ sx: { borderRadius: "20px", p: "24px", position: "relative" } }}>
+      <Dialog open={modalOpen}  disableScrollLock onClose={() => setModalOpen(false)} maxWidth="md" fullWidth
+        slotProps={{ paper: {sx: { borderRadius: "20px", p: "24px", position: "relative" }} }}>
         <IconButton onClick={() => setModalOpen(false)}
           sx={{ position: "absolute", top: 12, right: 12, zIndex: 1, bgcolor: "#fff", boxShadow: "0px 2px 8px rgba(0,0,0,0.1)", "&:hover": { bgcolor: "#f5f5f5" } }}>
           <CloseIcon />

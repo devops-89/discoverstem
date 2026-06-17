@@ -1,58 +1,54 @@
 "use client";
 
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import BiotechIcon from "@mui/icons-material/Biotech";
-import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import SmartToyIcon from "@mui/icons-material/SmartToy";
 import { Box, Container, Typography } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const labsData = [
   {
     title: "Aerospace Research Lab",
-    icon: RocketLaunchIcon,
+    icon: "/Images/aerospace-lab/aerospace.png",
     slug: "aerospace_research_lab",
     color: "#7B53A1",
   },
   {
     title: "AI-ML and Autonomous Tech Lab",
-    icon: SmartToyIcon,
+    icon: "/Images/aerospace-lab/ai-ml.png",
     slug: "ai-autonomous-tech-and-robotics-research-lab",
     color: "#7B53A1",
   },
   {
     title: "Banking, Finance & Fintech Lab",
-    icon: AccountBalanceIcon,
+    icon: "/Images/aerospace-lab/banking.png",
     slug: "banking-finance-fintech-research-lab",
-    color: "#EE4823",
+     color: "#7B53A1",
   },
   {
     title: "Energy & Environment Lab",
-    icon: EnergySavingsLeafIcon,
+    icon: "/Images/aerospace-lab/energy.png",
     slug: "energy-environment-research-lab",
-    color: "#5B8C3A",
+     color: "#7B53A1",
   },
   {
     title: "Genomics, Biotechnology & Health Sciences Lab",
-    icon: BiotechIcon,
+    icon: "/Images/aerospace-lab/genomics.png",
     slug: "genomics-biotechnology-health-sciences-research-lab",
-    color: "#F9A51E",
+     color: "#7B53A1",
   },
   {
     title: "Neurotechnology & Brain-Computer Interface Lab",
-    icon: PsychologyIcon,
+    icon: "/Images/aerospace-lab/brain.png",
     slug: "neurotech-brain-computer-interface",
-    color: "#2F80ED",
+     color: "#7B53A1",
   },
 ];
 
 export default function ExploreLabsSection() {
   const pathname = usePathname();
   const currentSlug = pathname.split("/").pop();
+
   return (
     <Box
       sx={{
@@ -97,7 +93,6 @@ export default function ExploreLabsSection() {
           }}
         >
           {labsData.map((item) => {
-            const Icon = item.icon;
             const isActive = currentSlug === item.slug;
 
             return (
@@ -122,7 +117,7 @@ export default function ExploreLabsSection() {
 
                   "&:hover": {
                     transform: isActive ? "none" : "translateY(-2px)",
-                    backgroundColor: isActive ? item.color : item.color,
+                    backgroundColor: item.color,
                   },
 
                   "&:hover .lab-title": {
@@ -139,10 +134,6 @@ export default function ExploreLabsSection() {
 
                   "&:hover .lab-icon-box": {
                     backgroundColor: "rgba(255,255,255,0.15)",
-                  },
-
-                  "&:hover .lab-icon": {
-                    color: "#FFFFFF",
                   },
                 }}
               >
@@ -163,12 +154,13 @@ export default function ExploreLabsSection() {
                       transition: "all .2s ease",
                     }}
                   >
-                    <Icon
-                      className="lab-icon"
-                      sx={{
-                        fontSize: 22,
-                        color: isActive ? "#FFFFFF" : item.color,
-                        transition: "all .2s ease",
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={22}
+                      height={22}
+                      style={{
+                        objectFit: "contain",
                       }}
                     />
                   </Box>

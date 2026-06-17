@@ -37,6 +37,7 @@ export type AwardCard = {
 export type ResearchLab= {
   title: string;
   image: string;
+  href:  string;
 };
 
 export type Contact= {
@@ -176,7 +177,7 @@ export interface AwardImageItem {
   alt: string;
 }
 
-export type InnovationFilter = "All Statuses" | "Granted" | "Pending";
+export type InnovationFilter = "All Status" | "Granted" | "Pending";
 
 export interface InnovationCardItem {
   id: number;

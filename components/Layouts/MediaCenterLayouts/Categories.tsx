@@ -1,89 +1,104 @@
 "use client";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 
 const categories = [
-  "Technology",
-  "Apps Development",
-  "Business",
-  "Social Marketing",
-  "Business Intelligence",
-  "Marketing",
+  "Home",
+  "Latest News",
+  "College Acceptence",
+  "Patents",
+  "Awards",
+  "Young Innovators",
+  "In The Press",
+  "Blog",
+  "Contact Us",
 ];
 
 const Categories = () => {
-  const [active, setActive] = useState("Technology");
+  const [active, setActive] = useState("Home");
 
   return (
     <Box
       sx={{
-        width:{xs:"100%",md:"420px"},
-        height:{xs:"auto",md:"491px"},
-        p: 3,
+        width: { xs: "100%", md: "420px" },
+        height: { xs: "auto", md: "auto" },
         background: "#FAF5FF",
-        borderRadius: "16px",
+        borderRadius: "10px",
+        p: { xs: "24px", md: "40px 36px" },
         mb: 6,
       }}
     >
-      {/* TITLE */}
       <Typography
         sx={{
-          width:"auto",
-          maxWidth:"123px",
-          height:"16px",
+          fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
           fontSize: "24px",
-          lineHeight:"34px",
-          letterSpacing:"-0.01em",
-          mb: 6,
+          lineHeight: "34px",
+          letterSpacing: "-0.01em",
           color: "#1C2539",
+          mb: "25px",
         }}
       >
         Categories
       </Typography>
 
-      {/* CHIPS */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "14px",
+        }}
+      >
         {categories.map((item) => {
           const isActive = active === item;
 
           return (
-            <Chip
+            <Box
               key={item}
-              label={item}
               onClick={() => setActive(item)}
-              deleteIcon={<ArrowForwardIcon sx={{ fontSize: 16 }} />}
-              onDelete={() => {}}
               sx={{
-                justifyContent: "space-between",
-                px: 2,
-                width:"auto",
-                maxWidth:"348px",
+                width: "100%",
+                maxWidth: "348px",
                 height: "50px",
-                borderRadius: "10px",
-                fontSize: "18px",
-                lineHeight:"32px",
-                transition: "all 0.2s ease",
-
+                borderRadius: "8px",
                 backgroundColor: isActive ? "#7B53A1" : "#FFFFFF",
-                color: isActive ? "#FFFFFF" : "#374151",
-
-                "& .MuiChip-label": {
-                  width: "100%",
-                  textAlign: "left",
-                },
-
-                "& .MuiChip-deleteIcon": {
-                  color: isActive ? "#fff" : "#6B7280",
-                },
+                color: isActive ? "#FFFFFF" : "#474A55",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                px: "20px",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                boxSizing: "border-box",
 
                 "&:hover": {
-                  backgroundColor: isActive ? "#68458c" : "#F3F4F6",
+                  backgroundColor: isActive ? "#7B53A1" : "#FFFFFF",
                 },
               }}
-            />
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "18px",
+                  lineHeight: "32px",
+                  color: "inherit",
+                }}
+              >
+                {item}
+              </Typography>
+
+              {isActive && (
+                <ArrowForwardIcon
+                  sx={{
+                    fontSize: "24px",
+                    color: "#FFFFFF",
+                  }}
+                />
+              )}
+            </Box>
           );
         })}
       </Box>

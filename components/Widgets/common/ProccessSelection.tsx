@@ -3,29 +3,37 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
-    Box,
-    Container,
-    Divider,
-    Grid,
-    Stack,
-    Typography
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
 } from "@mui/material";
 import React from "react";
 
 import { FONT_FAMILY } from "@/utils/Fonts";
 import VerticalStepper from "./VerticalSteppers";
 
-
+const TOTAL_STEPS = 5;
 
 export default function ProcessSection() {
-    const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handlePrev = () => {
+    setActiveStep((prev) => (prev === 0 ? TOTAL_STEPS - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveStep((prev) => (prev === TOTAL_STEPS - 1 ? 0 : prev + 1));
+  };
 
   return (
     <Container
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 5, md: 14 },
+        py: { xs: 4, md: 8 },
         px: { xs: 3, md: 4 },
       }}
     >
@@ -63,7 +71,6 @@ export default function ProcessSection() {
       </Typography>
 
       <Grid container spacing={6}>
-        {/* LEFT */}
         <Grid size={{ xs: 12, md: 5 }}>
           <Typography
             sx={{
@@ -77,46 +84,44 @@ export default function ProcessSection() {
             this journey helps you build confidence, gain mentorship, and move
             closer to becoming America’s Top Young Innovator.
           </Typography>
-        <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
-  
-  {/* LEFT ARROW */}
-  <Box
-    sx={{
-      width: 40,
-      height: 40,
-      borderRadius: "50%",
-      background: "#FF4D2E",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      cursor: "pointer",
-    }}
-  >
-    <ArrowBackIcon sx={{ color: "#fff", fontSize: 20 }} />
-  </Box>
 
-  {/* RIGHT ARROW */}
-  <Box
-    sx={{
-      width: 40,
-      height: 40,
-      borderRadius: "50%",
-      background: "#6C4AB6",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      cursor: "pointer",
-    }}
-  >
-    <ArrowForwardIcon sx={{ color: "#fff", fontSize: 20 }} />
-  </Box>
+          <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
+            <Box
+              onClick={handlePrev}
+              sx={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                background: "#FF4D2E",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
+            >
+              <ArrowBackIcon sx={{ color: "#fff", fontSize: 20 }} />
+            </Box>
 
-</Box>
+            <Box
+              onClick={handleNext}
+              sx={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                background: "#6C4AB6",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
+            >
+              <ArrowForwardIcon sx={{ color: "#fff", fontSize: 20 }} />
+            </Box>
+          </Box>
         </Grid>
 
-        {/* RIGHT */}
-         <Grid size={{ xs: 12, md: 7 }} sx={{ mt: { md: "-160px" } }}>
-          <VerticalStepper/>
+        <Grid size={{ xs: 12, md: 7 }} sx={{ mt: { md: "-160px" } }}>
+         <VerticalStepper activeStep={activeStep} setActiveStep={setActiveStep} />
         </Grid>
       </Grid>
     </Container>

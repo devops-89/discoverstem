@@ -4,14 +4,15 @@ import { Box, Chip, Typography } from "@mui/material";
 import { useState } from "react";
 
 const tags = [
-  "Agency",
-  "Business",
-  "Design",
-  "Marketing",
-  "Planting",
-  "Trend",
-  "Mobile",
-  "All Project",
+  
+  "Latest News",
+  "Acceptence",
+  "Patents",
+  "Awards",
+  "Young Innovators",
+  "Press",
+  "Blog",
+  "Contact Us",
 ];
 
 const Tags = () => {
@@ -21,7 +22,7 @@ const Tags = () => {
     <Box
       sx={{
         width: { xs: "100%", md: "420px" },
-        height: { xs: "auto", md: "269px" },
+        height: { xs: "auto", md: "350px" },
         p: 4,
         background: "#FAF5FF",
         borderRadius: "16px",

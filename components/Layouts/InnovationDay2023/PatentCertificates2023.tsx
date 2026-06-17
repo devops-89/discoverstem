@@ -7,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+
 
 export default function PatentCertificates2023Section() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -208,15 +208,18 @@ export default function PatentCertificates2023Section() {
       <Dialog
         open={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}
+         disableScrollLock
         maxWidth="md"
         fullWidth
-        PaperProps={{
-          sx: {
-            bgcolor: "transparent",
-            boxShadow: "none",
-            position: "relative",
-          },
-        }}
+        slotProps={{
+    paper: {
+      sx: {
+        bgcolor: "transparent",
+        boxShadow: "none",
+        position: "relative",
+      },
+    },
+  }}
       >
         {selectedVideo && (
           <Box sx={{ position: "relative", pt: "56.25%" }}>

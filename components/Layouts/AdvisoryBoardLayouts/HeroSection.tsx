@@ -54,7 +54,7 @@ export default function HeroSection() {
               }}
             >
 
-              {/* ✅ TEXT CONTENT (added only) */}
+          
               <Box
                 sx={{
                   position: "absolute",

@@ -20,7 +20,7 @@ export default function MentorModal({ open, onClose, data }: Props) {
   if (!data) return null;
   const descriptions = data.modalData?.description ?? [];
   return (
-    <Dialog open={open} onClose={onClose} maxWidth={false} PaperProps={{ sx: { width: "1160px", maxWidth: "95vw", maxHeight: "90vh", borderRadius: "29px", backgroundColor: "#F7F7F7", overflowY: "auto", position: "relative" } }}>
+    <Dialog open={open} onClose={onClose}  disableScrollLock maxWidth={false} slotProps={{  paper:{sx: { width: "1160px", maxWidth: "95vw", maxHeight: "90vh", borderRadius: "29px", backgroundColor: "#F7F7F7", overflowY: "auto", position: "relative" }} }}>
       <IconButton onClick={onClose} sx={{ position: "absolute", top: 24, right: 24, zIndex: 20, width: 48, height: 48, bgcolor: "#fff", boxShadow: "0px 4px 12px rgba(0,0,0,0.08)", "&:hover": { bgcolor: "#f5f5f5" } }}>
         <CloseIcon />
       </IconButton>

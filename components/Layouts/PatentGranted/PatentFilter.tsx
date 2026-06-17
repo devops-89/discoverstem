@@ -141,7 +141,7 @@ export default function PatentFilterSection() {
       </Box>
 
       <Typography sx={{ fontSize: "12px", color: "#777", mb: 6 }}>
-        Showing {filteredPatents.length} of {patentsData.length} patents
+        Showing {filteredPatents.length} of {patentsData.length} patents · 221+ named inventors
       </Typography>
 
       <Box

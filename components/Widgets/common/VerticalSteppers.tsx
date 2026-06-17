@@ -4,22 +4,34 @@ import { stepsData } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Step } from "@/utils/Types";
 import { Box, Typography } from "@mui/material";
-import { useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-export default function VerticalStepper() {
-  const [activeStep, setActiveStep] = useState(0);
+interface VerticalStepperProps {
+  activeStep: number;
+  setActiveStep?: (index: number) => void;
+}
+
+export default function VerticalStepper({
+  activeStep,
+  setActiveStep,
+}: VerticalStepperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const handleClick = (index: number) => {
-    setActiveStep(index);
-    const el = stepRefs.current[index];
+  useEffect(() => {
+    const el = stepRefs.current[activeStep];
 
     if (el && containerRef.current) {
       containerRef.current.scrollTo({
         top: el.offsetTop - 40,
         behavior: "smooth",
       });
+    }
+  }, [activeStep]);
+
+  const handleClick = (index: number) => {
+    if (setActiveStep) {
+      setActiveStep(index);
     }
   };
 
@@ -29,7 +41,7 @@ export default function VerticalStepper() {
         display: "flex",
         position: "relative",
         minHeight: "600px",
-        mb: 10,
+        mb: 4,
       }}
     >
       <Box

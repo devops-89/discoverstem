@@ -233,15 +233,18 @@ export default function SuccessStoriesCards() {
 
       <Dialog
         open={Boolean(selectedStory)}
+         disableScrollLock
         onClose={() => setSelectedStory(null)}
         maxWidth="lg"
         fullWidth
-        PaperProps={{
+        slotProps={{
+          paper:{
           sx: {
             borderRadius: "29px",
             backgroundColor: "#F5F5F5",
             overflow: "hidden",
           },
+        }
         }}
       >
         <DialogContent

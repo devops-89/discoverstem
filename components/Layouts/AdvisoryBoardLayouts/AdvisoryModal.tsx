@@ -29,10 +29,12 @@ export default function AdvisoryModal({
 
   return (
     <Dialog
+     disableScrollLock
       open={open}
       onClose={onClose}
       maxWidth={false}
-      PaperProps={{
+      slotProps={{
+        paper:{
         sx: {
           width: "1160px",
           maxWidth: "95vw",
@@ -41,6 +43,7 @@ export default function AdvisoryModal({
           overflow: "hidden",
           position: "relative",
         },
+      }
       }}
     >
       {/* Close Button */}

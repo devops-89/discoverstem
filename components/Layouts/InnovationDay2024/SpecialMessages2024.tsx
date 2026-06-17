@@ -105,15 +105,18 @@ export default function SpecialMessages2024() {
       <Dialog
         open={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}
+         disableScrollLock
         maxWidth="md"
         fullWidth
-        PaperProps={{
-          sx: {
-            bgcolor: "transparent",
-            boxShadow: "none",
-            position: "relative",
-          },
-        }}
+        slotProps={{
+    paper: {
+      sx: {
+        bgcolor: "transparent",
+        boxShadow: "none",
+        position: "relative",
+      },
+    },
+  }}
       >
         {selectedVideo && (
           <Box sx={{ position: "relative", pt: "56.25%" }}>
