@@ -42,7 +42,7 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
         <Image
           src={data.image}
           alt={data.name}
-          fill
+          fill sizes="100vw"
           style={{
             objectFit: "cover",
           }}

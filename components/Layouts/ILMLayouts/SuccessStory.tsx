@@ -122,7 +122,7 @@ export default function IlmSuccessStorySection() {
                 <Image
                   src={data.image}
                   alt={data.title}
-                  fill
+                  fill sizes="100vw"
                   style={{
                     objectFit: "cover",
                   }}

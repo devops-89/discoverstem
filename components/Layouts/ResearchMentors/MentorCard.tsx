@@ -7,7 +7,7 @@ export default function MentorCard({ data, onClick }: any) {
   return (
     <Box onClick={onClick} sx={{ width: { xs: "100%", md: "471px" }, height: { xs: "auto", md: "150px" }, display: "flex", gap: 2, alignItems: "flex-start", cursor: "pointer" }}>
       <Box sx={{ width: { xs: "100%", md: "150px" }, height: { xs: "auto", md: "150px" }, position: "relative", borderRadius: "12px", overflow: "hidden", flexShrink: 0 }}>
-        <Image src={data.image} alt={data.name} fill style={{ objectFit: "cover" }} />
+        <Image src={data.image} alt={data.name} fill sizes="100vw" style={{ objectFit: "cover" }} />
       </Box>
       <Box>
         <Typography sx={{ width: { xs: "100%", md: "340px" }, height: { xs: "auto", md: "12px" }, fontSize: "16px", textDecoration: "underline", color: "#000", fontFamily: FONT_FAMILY.heading, fontWeight: 300, lineHeight: "20px", mb: 1 }}>

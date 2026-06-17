@@ -127,7 +127,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
               <Image
                 src={section.image}
                 alt={section.title}
-                fill
+                fill sizes="100vw"
                 style={{ objectFit: "cover" }}
               />
             </Box>

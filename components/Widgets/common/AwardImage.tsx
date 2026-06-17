@@ -34,7 +34,7 @@ export default function AwardImageGrid({ data }: AwardImageGridProps) {
             <Image
               src={first.image}
               alt={first.alt}
-              fill
+              fill sizes="100vw"
               style={{ objectFit: "contain" }}
             />
           </Box>
@@ -70,7 +70,7 @@ export default function AwardImageGrid({ data }: AwardImageGridProps) {
             <Image
               src={item.image}
               alt={item.alt}
-              fill
+              fill sizes="100vw"
               style={{
                 objectFit: "contain",
               }}

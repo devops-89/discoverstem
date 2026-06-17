@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   images: {
     remotePatterns: [],
+    qualities: [75, 100],
   },
 };
 

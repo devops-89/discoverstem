@@ -113,7 +113,7 @@ return (
             
             src={sipData.image}
             alt="SIP Program"
-            fill
+            fill sizes="100vw"
             style={{ objectFit: "cover" }}
             />
         </Box>

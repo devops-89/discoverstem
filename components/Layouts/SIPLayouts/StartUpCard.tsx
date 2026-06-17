@@ -55,7 +55,7 @@ return (
                 <Image
                     src={item.logo}
                     alt={item.title}
-                    fill
+                    fill sizes="100vw"
                     style={{ objectFit: "contain" }}
                 />
                 </Box>

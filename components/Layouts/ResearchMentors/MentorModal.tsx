@@ -26,7 +26,7 @@ export default function MentorModal({ open, onClose, data }: Props) {
       </IconButton>
       <Box sx={{ p: { xs: 3, md: "30px" } }}>
         <Box sx={{ position: "relative", float: { xs: "none", md: "left" }, width: { xs: "100%", md: "250px" }, height: { xs: "280px", md: "280px" }, borderRadius: "11px", overflow: "hidden", mr: { xs: 0, md: "30px" }, mb: "20px", bgcolor: "#D9D9D9" }}>
-          <Image src={data.image} alt={data.name} fill style={{ objectFit: "cover" }} />
+          <Image src={data.image} alt={data.name} fill sizes="100vw" style={{ objectFit: "cover" }} />
         </Box>
         <Typography sx={{ fontFamily: "Poppins", fontWeight: 400, fontSize: "16px", lineHeight: "16px", letterSpacing: "2.4px", textTransform: "uppercase", color: "#F9A51E", mb: 2 }}>
           {data.category}

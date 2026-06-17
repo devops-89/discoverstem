@@ -72,7 +72,7 @@ export default function ProgramDetails() {
                   <Image
                     src={card.image}
                     alt={card.title}
-                    fill
+                    fill sizes="100vw"
                     style={{ objectFit: "cover" }}
                   />
                 </Box>

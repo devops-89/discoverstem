@@ -231,7 +231,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               <Image
                 src={data.logo}
                 alt={data.title}
-                fill
+                fill sizes="100vw"
                 style={{ objectFit: "contain", borderRadius: 0 }}
               />
             </Box>

@@ -45,7 +45,7 @@ export default function ChiefGuestSection() {
             <Image
               src="/Images/finale/chiefguest.png"
               alt="Gurvinder Singh Ahluwalia"
-              fill
+              fill sizes="100vw"
               style={{
                 objectFit: "cover",
               }}

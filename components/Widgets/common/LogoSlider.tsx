@@ -100,7 +100,7 @@ export default function LogoSlider({
                     <Image
                       src={logo.image}
                       alt={logo.alt || "logo"}
-                      fill
+                      fill sizes="100vw"
                       style={{
                         objectFit: "contain",
                       }}

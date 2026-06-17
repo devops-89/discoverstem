@@ -82,7 +82,7 @@ export default function PatentCertificates2023Section() {
                   <Image
                     src={item.image}
                     alt={item.label}
-                    fill
+                    fill sizes="100vw"
                     style={{ objectFit: "cover" }}
                   />
 

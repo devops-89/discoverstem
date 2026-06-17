@@ -1,10 +1,10 @@
 "use client";
 
-import { programDetailsData } from "@/assets/Generic-data";
+import { ProgramDetailsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 
 export default function ProgramDetailsSection() {
-  const data = programDetailsData;
+  const data = ProgramDetailsData;
 
   return (
     <Container

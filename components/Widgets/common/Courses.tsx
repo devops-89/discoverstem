@@ -13,6 +13,8 @@ import { Box, Container, Typography } from "@mui/material";
 
 interface CoursesSectionProps {
   data: FoundationCoursesData;
+  showLevel?: boolean;
+  showDuration?: boolean;
 }
 
 const iconMap = {
@@ -26,7 +28,7 @@ const iconMap = {
   science: ScienceOutlinedIcon,
 };
 
-export default function CoursesSection({ data }: CoursesSectionProps) {
+export default function CoursesSection({ data, showLevel = true, showDuration = true }: CoursesSectionProps) {
   return (
     <Container
       maxWidth={false}
@@ -161,29 +163,31 @@ export default function CoursesSection({ data }: CoursesSectionProps) {
                     <Icon sx={{ fontSize: "28px", color: "#FFFFFF" }} />
                   </Box>
 
-                  <Box
-                    sx={{
-                      height: "26px",
-                      borderRadius: "999px",
-                      bgcolor: "#FFEBE6",
-                      px: "12px",
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography
+                  {showLevel && (
+                    <Box
                       sx={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: 400,
-                        fontSize: "12px",
-                        lineHeight: "18px",
-                        letterSpacing: "0.48px",
-                        color: "#EE4823",
+                        height: "26px",
+                        borderRadius: "999px",
+                        bgcolor: "#FFEBE6",
+                        px: "12px",
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
-                      {item.level}
-                    </Typography>
-                  </Box>
+                      <Typography
+                        sx={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: 400,
+                          fontSize: "12px",
+                          lineHeight: "18px",
+                          letterSpacing: "0.48px",
+                          color: "#EE4823",
+                        }}
+                      >
+                        {item.level}
+                      </Typography>
+                    </Box>
+                  )}
                 </Box>
 
                 <Box
@@ -224,26 +228,28 @@ export default function CoursesSection({ data }: CoursesSectionProps) {
                   </Typography>
                 </Box>
 
-                <Box
-                  sx={{
-                    mt: "auto",
-                    pt: "16px",
-                    width: "226px",
-                    borderTop: "1px solid rgba(0,0,0,0.08)",
-                  }}
-                >
-                  <Typography
+                {showDuration && (
+                  <Box
                     sx={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 400,
-                      fontSize: "13px",
-                      lineHeight: "20px",
-                      color: "#6E6E6E",
+                      mt: "auto",
+                      pt: "16px",
+                      width: "226px",
+                      borderTop: "1px solid rgba(0,0,0,0.08)",
                     }}
                   >
-                    {item.duration}
-                  </Typography>
-                </Box>
+                    <Typography
+                      sx={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: 400,
+                        fontSize: "13px",
+                        lineHeight: "20px",
+                        color: "#6E6E6E",
+                      }}
+                    >
+                      {item.duration}
+                    </Typography>
+                  </Box>
+                )}
               </Box>
             );
           })}

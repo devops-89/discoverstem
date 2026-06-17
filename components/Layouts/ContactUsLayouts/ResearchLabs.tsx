@@ -59,7 +59,7 @@ const ResearchLabs = () => {
                                         <Image
                                             src={lab.image}
                                             alt={lab.title}
-                                            fill
+                                            fill sizes="100vw"
                                             style={{ objectFit: "cover" }}
                                         />
                                     </Box>

@@ -61,7 +61,7 @@ import type {
   InfoCardItem,
   InnovationCardItem,
   InnovationFilter,
-  
+
   Logo,
   mediaCenter,
   MediaSectionData,
@@ -536,25 +536,43 @@ export const researchData: Research[] = [
     image: "/Images/Programs/sip/research-thought-controlled-wheelchair.jpg",
     title: "Converting an Electric Wheelchair into a Thought-Controlled Wheelchair for Paraplegics Using Brain-Computer Interface Technology",
     link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/4/2024/89/505304/Converting-an-Electric-Wheelchair-into-a-Thought",
-    video: "https://www.youtube.com/embed/wc-8P8oZAlk",
+    video: "https://www.youtube.com/embed/2YFnjXF9snI",
   },
   {
     image: "/Images/Programs/sip/research-eeg-wheelchair.jpg",
     title: "Affordable EEG-Controlled Wheelchair Attachment for Fully Immobilized Individuals",
     link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/2/2022/73/488269/Abstracts-Presented-at-the-2nd-Annual-Advancing#14834798",
-    video: "https://www.youtube.com/embed/NdObJRA7sYg",
+    video: "https://www.youtube.com/embed/YLf1MrbSFNY",
   },
   {
     image: "/Images/Programs/sip/research-mental-behavioral.jpg",
     title: "Mental, Emotional and Behavioral Reporting System",
     link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/2/2022/73/488269/Abstracts-Presented-at-the-2nd-Annual-Advancing#14834806",
-    video: "https://www.youtube.com/embed/3u8l95qT5Hc",
+    video: "https://www.youtube.com/embed/f1xk1R2sueE",
   },
   {
     image: "/Images/Programs/sip/research-uvset-safetouch.jpg",
     title: "Reopen the Doors of the World with UVSET Safetouch",
     link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/2/2022/73/488269/Abstracts-Presented-at-the-2nd-Annual-Advancing#14834790",
-    video: "https://www.youtube.com/embed/LVDJbXqqtBI",
+    video: "https://www.youtube.com/embed/bfq_tO4JpS0",
+  },
+  {
+    image: "/Images/Programs/sip/research-brain-waves.jpg",
+    title: "Using Brain Waves and Computer Interface Technology as a Communication System",
+    link: "",
+    video: "",
+  },
+  {
+    image: "/Images/Programs/sip/research-discrete-communication.jpg",
+    title: "Discrete Communication by translating Thoughts to Commands for Medical Emergencies",
+    link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/4/2024/89/505304/Converting-an-Electric-Wheelchair-into-a-Thought",
+    video: "https://www.youtube.com/embed/uDOXIEIty4s",
+  },
+  {
+    image: "/Images/Programs/sip/research-parkinson-fog.jpg",
+    title: "Parkinson FOG Prevention",
+    link: "https://meridian.allenpress.com/innovationsjournals-IDDB/article/4/2024/89/505304/Converting-an-Electric-Wheelchair-into-a-Thought",
+    video: "https://www.youtube.com/embed/sKNi1fckr-8",
   },
 ];
 
@@ -562,7 +580,7 @@ export const studentsData: Student[] = [
   {
     image: "/Images/Programs/sip/madhalasa-thumb.webp",
     name: "Madhalasa Iyer",
-    video: "https://www.youtube.com/embed/wc-8P8oZAlk",
+    video: "https://www.youtube.com/embed/uIwx4_InMhg",
   },
   {
     image: "/Images/Programs/sip/wafiqah-thumb.webp",
@@ -3698,35 +3716,35 @@ export const DIPData =[
   {
     title: "DiscoverSTEM Innovation Program (DIP)",
  description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    image:"/Images/ContactUs/HeroSection.jpg",
   },
   {
     title: "DiscoverSTEM Innovation Program (DIP)",
     description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    image:"/Images/ContactUs/HeroSection.jpg",
   },
   {
     title: "DiscoverSTEM Innovation Program (DIP)",
   description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    image:"/Images/ContactUs/HeroSection.jpg",
   },
 ];
 
 export const ILMData =[
   {
-    title: "DiscoverSTEM Innovation Program (ILM)",
- description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    title: "Ivy League Mentorship (ILM)",
+ description: "4-Year Long-term Program to Transform Your Child into a Seasoned Innovator, Researcher, Leader & Entrepreneur",
+    image:"/Images/Programs/ilm/ilm-banner.jpg",
   },
   {
-    title: "DiscoverSTEM Innovation Program (ILM)",
-    description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    title: "Ivy League Mentorship (ILM)",
+    description: "4-Year Long-term Program to Transform Your Child into a Seasoned Innovator, Researcher, Leader & Entrepreneur",
+   image:"/Images/Programs/ilm/ilm-banner.jpg",
   },
   {
-    title: "DiscoverSTEM Innovation Program (ILM)",
-  description: "6–8 month midterm course to mentor students to think like an innovator and develop novel & patentable solutions.",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    title: "Ivy League Mentorship (ILM)",
+  description: "4-Year Long-term Program to Transform Your Child into a Seasoned Innovator, Researcher, Leader & Entrepreneur",
+   image:"/Images/Programs/ilm/ilm-banner.jpg",
   },
 ];
 export const ilmSuccessStoryData: IlmSuccessStoryData = {
@@ -3745,7 +3763,7 @@ export const ilmSuccessStoryData: IlmSuccessStoryData = {
 
   buttonLink: "/contact",
 
-  image: "/Images/ilm/image-23.png",
+  image: "/Images/Programs/ilm/ilm_success.png",
 };
 
 
@@ -3773,7 +3791,7 @@ export const ilmLearningTracksData: IlmLearningTracksData = {
       description:
         "Identify a real-world problem and develop a patentable solution through hands-on problem-solving and expert-guided mentorship.",
       outcome: "Patent-pending Innovation.",
-      icon: "/Images/ilm/innovation.png",
+      icon: "/Images/Programs/ilm/bulb.png",
       color: "#7B53A1",
     },
     {
@@ -3782,7 +3800,7 @@ export const ilmLearningTracksData: IlmLearningTracksData = {
       description:
         "Master soft skills, strategic thinking, and entrepreneurial leadership, preparing you for success in professional and startup ecosystems.",
       outcome: "Soft Skills, Entrepreneurial & Professional Readiness.",
-      icon: "/Images/ilm/leadership.png",
+      icon: "/Images/Programs/ilm/arrow.png",
       color: "#EE4823",
     },
     {
@@ -3791,7 +3809,7 @@ export const ilmLearningTracksData: IlmLearningTracksData = {
       description:
         "Gain deep domain knowledge, engage in hands-on research activities, and write a research paper that drives real-world advancements.",
       outcome: "Writing and submitting research papers.",
-      icon: "/Images/ilm/research.png",
+      icon: "/Images/Programs/ilm/research.png",
       color: "#F9A51E",
     },
     {
@@ -3801,7 +3819,7 @@ export const ilmLearningTracksData: IlmLearningTracksData = {
         "Turn your ideas into reality by learning to develop, market, and scale an innovative business—guided by expert mentorship and real-world case studies.",
       outcome:
         "Startup launched and product prototype developed for crowdfunding.",
-      icon: "/Images/ilm/entrepreneurship.png",
+      icon: "/Images/Programs/ilm/rocket.png",
       color: "#619040",
     },
   ],
@@ -3811,7 +3829,7 @@ export const ilmInfoCardsData: InfoCardItem[] = [
   {
     id: 1,
     label: "Eligibility",
-    value: "10–16 years",
+    value: "10–17 years",
     description:
       "Students in 10th grade may get accepted for the Accelerated ILM program.",
     color: "#7B53A1",
@@ -3835,6 +3853,37 @@ export const ilmInfoCardsData: InfoCardItem[] = [
     label: "Enrollment Deadline",
     value: "Sep 30, 2026",
     description: "Rolling admission for ILM 2025–26.",
+    color: "#619040",
+  },
+];
+
+export const dipInfoCardsData: InfoCardItem[] = [
+  {
+    id: 1,
+    label: "Eligibility",
+    value: "10–17 years",
+    description: "Kids between 10-17 years are accepted.",
+    color: "#7B53A1",
+  },
+  {
+    id: 2,
+    label: "Duration",
+    value: "6 to 8 months",
+    description: "6–8 month midterm course.",
+    color: "#EE4823",
+  },
+  {
+    id: 3,
+    label: "Time Commitment",
+    value: "3 hrs / week",
+    description: "Could be attended in-person or online.",
+    color: "#F9A51E",
+  },
+  {
+    id: 4,
+    label: "Enrollment Deadline",
+    value: "Sep 30, 2026",
+    description: "Rolling admission for DIP2025–26 closes on September 30, 2026.",
     color: "#619040",
   },
 ];
@@ -4059,48 +4108,29 @@ export const faqData: FaqCategory[] = [
     label: "Program and Teams",
     faqs: [
       {
-        question: "How are teams formed?",
+        question: "What is this program all about?",
         answer:
-          "Students are grouped based on interests, skills, and program requirements.",
+          "In this program, we are mentoring our students to 'THINK', 'ANALYZE', 'EVALUATE', 'CREATE' and 'INNOVATE'. They learn to identify real-world problems and innovate patentable STEM solutions to these problems. Different programs are designed with different philosophies in mind, ranging from introduction to Innovative thought processes to nurturing expert innovators who can mentor others to innovate. Our entrepreneurship program is designed to nurture the 'Steve Jobs' and 'Bill Gates' of the future, wherein we mentor them to take an idea and launch it into the market as a product.",
       },
       {
-        question: "Can students switch teams later?",
+        question: "How long does the program run?",
         answer:
-          "Yes, depending on mentor approval and project availability.",
+          "We offer a range of programs with different duration. While DiscoverSTEM SIP lasts for four weeks, our other program ILM runs for four years. For more information, please check our program pages.",
       },
       {
-        question: "How many students are in a team?",
+        question: "Do parents have a role to play in this program?",
         answer:
-          "Typically 3–5 students work together on a project.",
-      },
-    ],
-  },
-
-  {
-    id: "innovation",
-    label: "Innovation and Patents",
-    faqs: [
-      {
-        question:
-          "Will my child be automatically listed as a co-inventor if a patent application is filed?",
-        answer:
-          "Yes. Anyone who contributes to the inventive concept may be listed as an inventor.",
+          "Absolutely! This program is designed to create innovators and problem solvers. Every week, kids spend merely 2 hours with us and the rest 166 hours with their parents. We depend a lot on parents and guide them from time to time to assist their children in thinking and ideating and creating an innovation culture at home. We have observed kids whose parents are involved do better than those who aren't, and therefore parent involvement is encouraged. To enable parents to develop an 'innovation culture' at home, we regularly conduct training sessions, guiding them on how to challenge their child's intellectual capabilities.",
       },
       {
-        question:
-          "What is the cost of filing a patent and who pays for it?",
+        question: "At which locations are you currently offering DiscoverSTEM courses?",
         answer:
-          "Patent filing costs vary depending on jurisdiction and filing strategy.",
+          "As of now, we offer In-Person courses from our state-of-the-art Innovation Lab located in Plano, Texas (USA). We also offer online courses without any geographical limitations. We've successfully mentored kids from Australia, Malaysia, the United Kingdom, the Middle East, India, Canada, and several states in the USA.",
       },
       {
-        question: "Is the grant of a patent guaranteed?",
+        question: "I want to make my own team of friends and family. Is that possible?",
         answer:
-          "The patent is granted by respective patent offices of different countries and DiscoverSTEM has no control in the grant of the patent. The grant, therefore, is not guaranteed by DiscoverSTEM. Our responsibility ceases once we apply for a patent.",
-      },
-      {
-        question: "Who owns the patent?",
-        answer:
-          "Ownership depends on inventor agreements and applicable laws.",
+          "We encourage you to recommend your friends and families to apply. However, admission to the program (except Summer Innovation Program) is by selection only. If your friends are also selected, you may form a team. This is on the condition that the requirement of a minimum size of 8 and a maximum size of 12 students per team is met.",
       },
     ],
   },
@@ -4110,31 +4140,115 @@ export const faqData: FaqCategory[] = [
     label: "Application",
     faqs: [
       {
-        question: "How do I apply?",
+        question: "What is the application process?",
         answer:
-          "Complete the online application form and submit the required information.",
+          "Step 1: Send us your interest to join the program by clicking Contact Us page. Step 2: We'll schedule information and a Q&A session where we will give more details about the program and answer your questions. The information session is followed by a tour of our Innovation Lab. The kid and parent must attend to proceed. Step 3: If you meet our eligibility criteria and are also interested to join this program, we'll send the Application Form and schedule the selection test. Step 4: Please fill out the application form and attend our very interesting selection test along with your parents and siblings. The selection test comprises of: i. Left and Right brain coordination test (3-minutes) ii. Learning curve test (3-minutes) iii. Creativity & family innovation culture test (10-minutes) iv. Abstract, Forward & Backward Thinking test (10 minutes) v. Interview (10-minutes) Step 5: If you make it to our merit list, we'll inform you via email and text message to allot you a seat! You may now start your journey to be our next young inventor!",
       },
       {
-        question: "Is there an interview?",
+        question: "How old does my child have to be to apply?",
         answer:
-          "Some applicants may be invited for a short interview.",
+          "We normally accept kids between 10-18 years for SIP, DIP, and ILM. For DEP, we only accept high school and college students. Sometimes, we may make exemptions to accept younger kids based on their performance.",
+      },
+    ],
+  },
+
+  {
+    id: "after",
+    label: "After DiscoverSTEM",
+    faqs: [
+      {
+        question: "Will DiscoverSTEM help with getting into Universities?",
+        answer:
+          "The selection rate at some of the best universities in the world is approximately 5 percent. Every applicant is competing to be in that slot. Now consider the fact that only 0.2 percent of the world population has patents/innovations to their name. This stellar achievement speaks for an applicant and adds a significant differentiator to their profile. No wonder, approximately 85 percent of our students get some sort of scholarship for their college and many of them are accepted into top universities, including IVY league schools.",
+      },
+      {
+        question: "Can you write a recommendation letter for my college application?",
+        answer:
+          "Yes. Since we work with our students for months and observe various aspects of their personalities while they're going through their innovation course, we're in a good position to write a recommendation letter if requested.",
+      },
+      {
+        question: "Can I commercialize my innovation after the program is over?",
+        answer:
+          "Of course! Every innovation is evaluated for its commercial potential by our business experts. If innovation is found to be commercially viable, you may join our DiscoverSTEM Entrepreneurship Program (DEP) to learn the nitty-gritty of product launch and launch your start-up along with the assigned team.",
+      },
+    ],
+  },
+
+  {
+    id: "innovation",
+    label: "Innovation and Patents",
+    faqs: [
+      {
+        question: "Does this program guarantee innovation by students? If they do not come up with an innovation or need to file patents, are the fees returnable?",
+        answer:
+          "This program teaches our students to innovate. Approximately 90% of our students end up innovating something patentable, however, we do NOT guarantee an innovation in this program. The fee is not paid for filing 'patents' either. We offer COMPLIMENTARY filing of patent applications if we so choose at our discretion (through our internal or third-party resources) with the United States Patent and Trademark Office. Therefore, the fee is not returnable.",
+      },
+      {
+        question: "Will my child be automatically listed as a co-inventor if a patent application is filed?",
+        answer:
+          "Yes. Your child will be automatically listed and named as a co-inventor provided he/she meets the following conditions. 1. They have contributed to at least one claim of the innovation. 2. They have attended a minimum of 85% of the sessions. 3. Their program fees are paid up to date when filing a patent application.",
+      },
+      {
+        question: "What is the cost of filing a patent and who pays for it?",
+        answer:
+          "An attorney might charge between $15,000 – $20,000 for filing a patent application, depending on the system's complexity to be patented. One patent application per team (of 8-12 members) might be offered COMPLIMENTARY by DiscoverSTEM after evaluating that team came up with a patentable innovation. We use the internal or third-party resources we choose at our discretion to file patents, and our responsibility ceases once we apply for a patent with USPTO. Filing a complimentary patent application is solely at our discretion.",
+      },
+      {
+        question: "Is the grant of a patent guaranteed?",
+        answer:
+          "The patent is granted by respective patent offices of different countries and DiscoverSTEM has no control in the grant of the patent. The grant, therefore, is not guaranteed by DiscoverSTEM. Our responsibility ceases once we apply for a patent.",
+      },
+      {
+        question: "Who owns the patent?",
+        answer:
+          "While team members will be listed as co-inventor, the patent is 'assigned to' and owned by Innowaytors LLC, its partners, its subsidiaries, or any other entity we decide. Parents must sign a separate 'Intellectual Property Assignment Agreement' on behalf of their child while applying to DiscoverSTEM programs.",
+      },
+      {
+        question: "Will mentor(s) be listed as inventors on the patent application? If so, why?",
+        answer:
+          "Yes. Mentor(s) are a part of the team guiding students towards innovation and in generating the 'Intellectual Property'.",
+      },
+      {
+        question: "Will you file individual patents in my child's name?",
+        answer:
+          "We will file ONE complimentary patent application with USPTO per team of 8-12 students. Each team member and mentor/s are named as co-inventors in this application, based on their contribution. As per the US patent laws, if a child does not contribute to innovation/patent claims satisfactorily, his/her name will not be added to the patent application as a co-inventor. We take team members' input and our observations to make this decision. Participation in the program does NOT guarantee a name in the patent application as a co-inventor.",
+      },
+      {
+        question: "What if a team comes up with more than one innovation?",
+        answer:
+          "We file only ONE complimentary patent application at our discretion. If the team comes up with more than one innovation, parents may file it at their own cost. DiscoverSTEM or Innowaytors LLC may file another patent application if requested, and parents will have to reimburse the cost as agreed before filing.",
+      },
+      {
+        question: "What role do students and their parents play in filing a patent?",
+        answer:
+          "Students and parents must work with a mentor and assigned patent attorneys to present their ideas/innovations with rough drawings, illustrations, explanations, etc., within four weeks of completion of the program, without which the patent application may not be filed.",
+      },
+      {
+        question: "What if my child's innovation is commercialized?",
+        answer:
+          "All patents are to be assigned to Innowaytors LLC or its partners or its subsidiaries or any other entity we decide. In case any innovation is commercialized, team members may be offered a 2% royalty on revenue (earned through direct commercialization, royalty, or any other means), to be equally distributed by the entire team. This royalty lasts for a lifetime of innovation in the market (as long as it is generating revenue for us). In case of any contradictions, the terms agreed on in the 'Intellectual Property Assignment Agreement' shall prevail.",
       },
     ],
   },
 
   {
     id: "tuition",
-    label: "Tution, fee, Scholarship",
+    label: "Tuition, Fees, and Scholarship",
     faqs: [
       {
-        question: "Are scholarships available?",
+        question: "How much does the program cost?",
         answer:
-          "Yes. Merit-based and need-based scholarships may be available.",
+          "We've different programs ranging from $1,000/- to $7,500/year.",
       },
       {
-        question: "Can fees be paid in installments?",
+        question: "What if I can't afford it? Are there scholarships available?",
         answer:
-          "Yes. Flexible payment plans are available.",
+          "Our non-profit arm DiscoverSTEM Foundation normally sponsors 10% – 100% fees for kids whose parents' combined income is less than $65,000/year or who have any other special circumstances. Kids of serving or ex-Police and US Armed Forces officers are ALWAYS offered 100% scholarship, irrespective of parent's family income, with a cap of 3% of our total intake in each program.",
+      },
+      {
+        question: "Is patent application cost included in the program fee?",
+        answer:
+          "The program fees cover only the program cost. If your child's team comes up with a patentable innovation, at our discretion, we may file a COMPLIMENTARY patent application.",
       },
     ],
   },
@@ -4212,19 +4326,19 @@ export const DesignPartnersData: ImageTextPartnerSectionData = {
 
 export const FAQData =[
   {
-    title: "Frequently Asked question",
- description: "Have Question? You’re in the right place",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    title: "Have Question?",
+    description: "You're in the right place",
+    image:"/Images/ContactUs/HeroSection.jpg",
   },
   {
-     title: "Frequently Asked question",
- description: "Have Question? You’re in the right place",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    title: "Have Question?",
+    description: "You're in the right place",
+    image:"/Images/ContactUs/HeroSection.jpg",
   },
   {
-     title: "Frequently Asked question",
- description: "Have Question? You’re in the right place",
-   image:"/Images/ContactUs/HeroSection.jpg",
+    title: "Have Question?",
+    description: "You're in the right place",
+    image:"/Images/ContactUs/HeroSection.jpg",
   },
 ];
 

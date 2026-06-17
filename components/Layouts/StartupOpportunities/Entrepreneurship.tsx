@@ -131,7 +131,7 @@ export default function EntrepreneurshipFunding() {
             <Image
               src={data.image}
               alt={data.imageAlt}
-              fill
+              fill sizes="100vw"
               style={{ objectFit: "cover" }}
             />
           )}

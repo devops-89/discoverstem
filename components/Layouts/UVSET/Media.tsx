@@ -93,7 +93,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
               <Image
                 src={item.image}
                 alt={item.title}
-                fill
+                fill sizes="100vw"
                 style={{ objectFit: "cover" }}
               />
 

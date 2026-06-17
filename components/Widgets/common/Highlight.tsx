@@ -66,7 +66,7 @@ export default function ImageContentSplitSection({
           <Image
             src={data.topSection.image}
             alt="Top Section"
-            fill
+            fill sizes="100vw"
             style={{ objectFit: "cover" }}
           />
         </Box>
@@ -94,7 +94,7 @@ export default function ImageContentSplitSection({
           <Image
             src={data.bottomSection.image}
             alt="Bottom Section"
-            fill
+            fill sizes="100vw"
             style={{ objectFit: "cover" }}
           />
         </Box>

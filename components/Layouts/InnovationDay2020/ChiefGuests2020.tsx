@@ -74,7 +74,7 @@ export default function ChiefGuests2020() {
                 <Image
                   src={guest.image}
                   alt={guest.name}
-                  fill
+                  fill sizes="100vw"
                   style={{ objectFit: "cover" }}
                 />
               </Box>

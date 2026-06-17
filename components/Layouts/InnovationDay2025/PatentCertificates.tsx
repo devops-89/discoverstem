@@ -82,7 +82,7 @@ export default function PatentCertificatesSection() {
                   <Image
                     src={item.image}
                     alt={item.label}
-                    fill
+                    fill sizes="100vw"
                     style={{ objectFit: "cover" }}
                   />
 

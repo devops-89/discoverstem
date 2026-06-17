@@ -47,7 +47,7 @@ const FounderSection = () => {
           <Image
             src={mirzaFaizan.image}
             alt={mirzaFaizan.name}
-            fill
+            fill sizes="100vw"
             style={{
               objectFit: "cover",
             }}

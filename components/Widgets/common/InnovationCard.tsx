@@ -328,7 +328,7 @@ export default function InnovationCardsGrid({
             <Image
               src={certModal.src}
               alt={certModal.title}
-              fill
+              fill sizes="100vw"
               unoptimized
               style={{ objectFit: "contain" }}
             />

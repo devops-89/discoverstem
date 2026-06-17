@@ -87,7 +87,7 @@ export default function SuccessStoriesCards() {
                   <Image
                     src={item.image}
                     alt={item.name}
-                    fill
+                    fill sizes="100vw"
                     style={{ objectFit: "cover" }}
                   />
                 </Box>
@@ -291,7 +291,7 @@ export default function SuccessStoriesCards() {
                 <Image
                   src={selectedStory.image}
                   alt={selectedStory.name}
-                  fill
+                  fill sizes="100vw"
                   style={{ objectFit: "cover" }}
                 />
               </Box>

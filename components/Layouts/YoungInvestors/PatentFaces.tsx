@@ -117,7 +117,7 @@ export default function PatentFacesSection() {
                   <Image
                     src={student.image}
                     alt={student.name}
-                    fill
+                    fill sizes="100vw"
                     style={{ objectFit: "cover" }}
                   />
                 )}

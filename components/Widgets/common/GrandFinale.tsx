@@ -56,7 +56,7 @@ export default function GrandFinaleSection({
         <Image
           src={data.image}
           alt={data.imageAlt}
-          fill
+          fill sizes="100vw"
           priority
           style={{
             objectFit: "cover",

@@ -51,7 +51,7 @@ const RecentPosts = () => {
             <Image
               src={post.image}
               alt={post.title}
-              fill
+              fill sizes="100vw"
               style={{ objectFit: "cover" }}
             />
           </Box>

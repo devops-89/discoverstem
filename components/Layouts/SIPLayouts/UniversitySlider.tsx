@@ -95,7 +95,7 @@ return (
                     <Image
                     src={logo.image}
                     alt="logo"
-                    fill
+                    fill sizes="100vw"
                     style={{
                         objectFit: "contain",
                         opacity: "100%",

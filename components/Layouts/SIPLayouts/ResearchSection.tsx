@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { researchData } from "@/assets/Generic-data";
 
 import { Research } from "@/utils/Types";
@@ -18,43 +18,13 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+
 export default function ResearchSection() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
-
-  // Monitor viewport size for carousel layout calculations
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 900);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  
-  const maxIndex = isMobile ? researchData.length - 1 : researchData.length - 2;
-
-  
-  useEffect(() => {
-    if (isHovered) return;
-
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    }, 2500); 
-
-    return () => clearInterval(timer);
-  }, [activeIndex, isHovered, maxIndex]);
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
 
   return (
     <Container
@@ -67,9 +37,7 @@ export default function ResearchSection() {
         position: "relative",
       }}
     >
-     
       <Box sx={{ mb: 4 }}>
-        
         <Typography
           sx={{
             fontFamily: "'Work Sans', sans-serif",
@@ -84,7 +52,6 @@ export default function ResearchSection() {
           Research Papers And Abstracts Published By Our Students
         </Typography>
 
-     
         <Typography
           sx={{
             fontFamily: "'Poppins', sans-serif",
@@ -102,7 +69,6 @@ export default function ResearchSection() {
           representatives from the World Health Organization (WHO).
         </Typography>
 
-      
         <Box
           sx={{
             display: "flex",
@@ -111,9 +77,8 @@ export default function ResearchSection() {
             mb: 4,
           }}
         >
-         
           <IconButton
-            onClick={handlePrev}
+            className="research-prev"
             sx={{
               width: "48px",
               height: "48px",
@@ -128,17 +93,11 @@ export default function ResearchSection() {
               },
             }}
           >
-           <ArrowBackIosNewIcon
-  sx={{
-    fontSize: 18,
-    color: "#0A0A0A",
-  }}
-/>
+            <ArrowBackIosNewIcon sx={{ fontSize: 18, color: "#0A0A0A" }} />
           </IconButton>
 
-        
           <IconButton
-            onClick={handleNext}
+            className="research-next"
             sx={{
               width: "48px",
               height: "48px",
@@ -153,143 +112,115 @@ export default function ResearchSection() {
               },
             }}
           >
-    <ArrowForwardIosIcon
-  sx={{
-    fontSize: 18,
-    color: "#0A0A0A",
-  }}
-/>
+            <ArrowForwardIosIcon sx={{ fontSize: 18, color: "#0A0A0A" }} />
           </IconButton>
         </Box>
       </Box>
 
-     
-      <Box
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        sx={{
-          overflow: "hidden",
-          width: "100%",
-          mx: "-10px",
-          px: "10px",
+      <Box sx={{ px: "10px" }}>
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation={{ prevEl: ".research-prev", nextEl: ".research-next" }}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        loop
+        slidesPerView={1}
+        breakpoints={{
+          900: { slidesPerView: 2 },
         }}
+        spaceBetween={21}
       >
-        <Box
-          sx={{
-            display: "flex",
-            transition: "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-            transform: `translateX(-${activeIndex * (100 / researchData.length)}%)`, // Shift by exactly one card's percentage of the track width
-            width: `${researchData.length * (isMobile ? 100 : 50)}%`,
-          }}
-        >
-          {researchData.map((item: Research, i: number) => (
+        {researchData.map((item: Research, i: number) => (
+          <SwiperSlide key={i}>
             <Box
-              key={i}
               sx={{
-                width: `${100 / researchData.length}%`, // Set card width relative to total track width
-                px: "10.5px", // Gaps matching calculated Figma spacing (21px total between cards)
+                width: "100%",
+                height: "395px",
+                bgcolor: "#F4F4F4",
+                borderRadius: "8.97473px",
+                p: "15px",
                 boxSizing: "border-box",
-                flexShrink: 0,
+                display: "flex",
+                flexDirection: "column",
               }}
             >
-            
               <Box
+                onClick={() => item.video && setSelectedVideo(item.video)}
                 sx={{
+                  position: "relative",
                   width: "100%",
-                  height: "395px",
-                  bgcolor: "#F4F4F4",
-                  borderRadius: "8.97473px",
-                  p: "15px",
-                  boxSizing: "border-box",
-                  display: "flex",
-                  flexDirection: "column",
+                  height: "228px",
+                  borderRadius: "4.07942px",
+                  overflow: "hidden",
+                  cursor: item.video ? "pointer" : "default",
+                  flexShrink: 0,
+                  backgroundColor: "#C4C4C4",
+                  transition: "opacity 0.2s ease-in-out",
+                  "&:hover": {
+                    opacity: item.video ? 0.95 : 1,
+                  },
                 }}
               >
-              
-                <Box
-                  onClick={() => item.video && setSelectedVideo(item.video)}
-                  sx={{
-                    position: "relative",
-                    width: "100%",
-                    height: "228px",
-                    borderRadius: "4.07942px",
-                    overflow: "hidden",
-                    cursor: item.video ? "pointer" : "default",
-                    flexShrink: 0,
-                    backgroundColor: "#C4C4C4", // Base placeholder color
-                    transition: "opacity 0.2s ease-in-out",
-                    "&:hover": {
-                      opacity: item.video ? 0.95 : 1,
-                    },
-                  }}
-                >
-                  {item.image && (
-                    <Box
-                      component="img"
-                      src={item.image}
-                      sx={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  )}
+                {item.image && (
+                  <Box
+                    component="img"
+                    src={item.image}
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
 
-                
-                  {item.video && (
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        width: "81.59px",
-                        height: "81.59px",
-                        borderRadius: "50%",
-                        border: "4.07942px solid #D9D9D9",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        backgroundColor: "rgba(255, 255, 255, 0.15)", // Translucent white overlay
-                        transition: "all 0.2s ease",
-                        "&:hover": {
-                          transform: "translate(-50%, -50%) scale(1.05)",
-                          backgroundColor: "rgba(255, 255, 255, 0.25)",
-                        },
-                      }}
-                    >
-                    
+                {item.video && (
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "81.59px",
+                      height: "81.59px",
+                      borderRadius: "50%",
+                      border: "4.07942px solid #D9D9D9",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      transition: "all 0.2s ease",
+                      "&:hover": {
+                        transform: "translate(-50%, -50%) scale(1.05)",
+                        backgroundColor: "rgba(255, 255, 255, 0.25)",
+                      },
+                    }}
+                  >
                     <PlayArrowIcon
-                       sx={{
-                       fontSize: 36,
-                        color: "#D9D9D9",
-                           }}
-                              />
-                    </Box>
-                  )}
-                </Box>
+                      sx={{ fontSize: 36, color: "#D9D9D9" }}
+                    />
+                  </Box>
+                )}
+              </Box>
 
-          
-                <Typography
-                  sx={{
-                    mt: "21px", // Figma spacing from image bottom to title top
-                    fontFamily: "'Work Sans', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "20.3971px",
-                    lineHeight: "21px",
-                    letterSpacing: "-0.326354px",
-                    color: "#000000",
-                    display: "-webkit-box",
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textAlign: "left",
-                  }}
-                >
-                  {item.title}
-                </Typography>
+              <Typography
+                sx={{
+                  mt: "21px",
+                  fontFamily: "'Work Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "20.3971px",
+                  lineHeight: "21px",
+                  letterSpacing: "-0.326354px",
+                  color: "#000000",
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  textAlign: "left",
+                }}
+              >
+                {item.title}
+              </Typography>
 
-               
+              {item.link && (
                 <Box
                   sx={{
                     mt: "auto",
@@ -299,12 +230,9 @@ export default function ResearchSection() {
                 >
                   <Button
                     component="a"
-                    href={item.link || "#"}
+                    href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                      e.stopPropagation()
-                    }
                     sx={{
                       width: "149.31px",
                       height: "45.69px",
@@ -342,23 +270,19 @@ export default function ResearchSection() {
                         flexShrink: 0,
                       }}
                     >
-                      
                       <NorthEastIcon
-                         sx={{
-                       fontSize: 16,
-                    color: "#111827",
-                             }}/>
- 
+                        sx={{ fontSize: 16, color: "#111827" }}
+                      />
                     </Box>
                   </Button>
                 </Box>
-              </Box>
+              )}
             </Box>
-          ))}
-        </Box>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       </Box>
 
-    
       <Dialog
         open={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}

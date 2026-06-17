@@ -140,7 +140,7 @@ export default function GallerySection({
               <Image
                 src={item.image}
                 alt={item.alt}
-                fill
+                fill sizes="100vw"
                 style={{
                   objectFit: "cover",
                 }}
