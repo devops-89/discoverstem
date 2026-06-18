@@ -557,5 +557,6 @@ export interface MediaNewsItem {
   publishedDate: string;
   description: string;
   content: string;
+  videoUrl?: string;
 }
 

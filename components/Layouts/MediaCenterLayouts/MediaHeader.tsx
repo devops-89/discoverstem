@@ -1,27 +1,17 @@
 "use client";
 
-import { mediaCategories, mediaNewsData } from "@/assets/Generic-data";
+import { mediaCategories, mediaCenterNewsData as mediaNewsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
 import MediaCategoryNav from "./MediaCategoryNav";
-import MediaNewsSection from "./MediaNews";
 import FeaturedMediaCard from "./PressCard";
-
-const sectionTitles = [
-  "Latest News",
-  "College Acceptance",
-  "Patents",
-  "Awards",
-  "Young Inventors",
-  "In The Press",
-  "Blog",
-];
-
-const getSectionId = (title: string) =>
-  title.toLowerCase().replaceAll(" ", "-");
+import MediaNewsSection from "./MediaNews";
+import { useRouter } from "next/navigation";
+import MediaNewsCard from "./MediaNewsCard";
 
 export default function MediaCenterPage() {
   const [search, setSearch] = useState("");
+  const router = useRouter();
 
   const handleCategoryClick = (sectionId: string) => {
     if (sectionId === "home") {
@@ -30,18 +20,11 @@ export default function MediaCenterPage() {
     }
 
     if (sectionId === "contact-us") {
-      window.location.href = "/contact";
+      router.push("/contact");
       return;
     }
 
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    router.push(`/media/category/${sectionId}`);
   };
 
   const filteredMediaData = mediaNewsData.filter((item) => {
@@ -54,8 +37,25 @@ export default function MediaCenterPage() {
   });
 
   const featuredArticle = filteredMediaData.find(
-    (item) => item.category === "In The Press"
+    (item) => item.category === "In the Press"
   );
+
+  const topFeaturedSlugs = [
+    "young-minds-big-innovations-discoverstem-marks-innovation-day-2025-with-breakthrough-patentable-ideas",
+    "discoverstem-students-learn-research-methodology-from-top-who-scientist-dr-zisis-kozlakidis",
+    "nobel-laureates-meet-discoverstem-innovators"
+  ];
+
+  const topFeaturedItems = topFeaturedSlugs
+    .map(slug => mediaNewsData.find(item => item.slug === slug))
+    .filter(Boolean)
+    .map(item => {
+      // The user wants the exact text from the image for the first post
+      if (item && item.slug === "young-minds-big-innovations-discoverstem-marks-innovation-day-2025-with-breakthrough-patentable-ideas") {
+        return { ...item, title: "DiscoverSTEM Celebrates Innovation Day 2025" };
+      }
+      return item;
+    });
 
   return (
     <Box>
@@ -65,18 +65,38 @@ export default function MediaCenterPage() {
         search={search}
         setSearch={setSearch}
       />
-
-      {featuredArticle && (
+      
+      {/* Top Section */}
+      {!search && topFeaturedItems.length > 0 && (
         <Container
           maxWidth={false}
           sx={{
             maxWidth: "1159px",
             mx: "auto",
             px: { xs: 2, md: 0 },
-            py: { xs: 4, md: 6 },
+            pt: { xs: 4, md: 6 },
+            pb: { xs: 4, md: 6 },
           }}
         >
-          <FeaturedMediaCard item={featuredArticle} />
+          {/* Top Large Card */}
+          {topFeaturedItems[0] && (
+            <FeaturedMediaCard item={topFeaturedItems[0] as any} />
+          )}
+
+          {/* Bottom 2 Cards */}
+          {topFeaturedItems.length > 1 && (
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
+                gap: "23px",
+              }}
+            >
+              {topFeaturedItems.slice(1, 3).map((item: any) => (
+                <MediaNewsCard key={item.id} item={item} />
+              ))}
+            </Box>
+          )}
         </Container>
       )}
 
@@ -90,20 +110,45 @@ export default function MediaCenterPage() {
           pb: { xs: 6, md: 0 },
         }}
       >
-        {sectionTitles.map((title) => {
-          const items = filteredMediaData.filter(
-            (item) => item.category === title
-          );
+        {/* 1. Latest News */}
+        <MediaNewsSection
+          id="latest-news"
+          title="Latest News"
+          items={filteredMediaData.filter(i => i.category === "Latest News")}
+          layoutType="featured"
+        />
 
-          return (
-            <MediaNewsSection
-              key={title}
-              id={getSectionId(title)}
-              title={title}
-              items={items}
-            />
-          );
-        })}
+        {/* 2. College Acceptances */}
+        <MediaNewsSection
+          id="college-acceptances"
+          title="College Acceptances"
+          items={filteredMediaData.filter(i => i.category === "College Acceptances")}
+          layoutType="featured"
+        />
+
+        {/* 3. Patents (since Videos uses Patent posts on live site) */}
+        <MediaNewsSection
+          id="patents"
+          title="Patents"
+          items={filteredMediaData.filter(i => i.category === "Patents")}
+          layoutType="featured"
+        />
+
+        {/* 4. Awards */}
+        <MediaNewsSection
+          id="awards"
+          title="Awards"
+          items={filteredMediaData.filter(i => i.category === "Awards")}
+          layoutType="featured"
+        />
+
+        {/* 5. Blog */}
+        <MediaNewsSection
+          id="blog"
+          title="Blog"
+          items={filteredMediaData.filter(i => i.category === "Blog")}
+          layoutType="featured"
+        />
 
         {search && filteredMediaData.length === 0 && (
           <Typography

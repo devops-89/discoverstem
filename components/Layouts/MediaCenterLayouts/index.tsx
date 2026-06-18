@@ -132,7 +132,7 @@ import HeroSection from "./HeroSection";
 import MediaCenterPage from "./MediaHeader";
 import CtaBanner from "../HomeLayouts/CtaBanner";
 import NewsSection from "@/components/Widgets/common/NewsSection";
-import { mediaNewsData } from "@/assets/Generic-data";
+import { mediaCenterNewsData } from "@/assets/Generic-data";
 
 
 export default function MediaCenterLayout() {
@@ -143,8 +143,8 @@ export default function MediaCenterLayout() {
       <MediaCenterPage />
       <NewsSection
   title="More News"
-  items={mediaNewsData.filter(
-    (item) => item.category === "In The Press"
+  items={mediaCenterNewsData.filter(
+    (item) => item.category === "In the Press" || item.category === "Latest News" || item.category === "News"
   )}
 />
         <CtaBanner />

@@ -2,17 +2,22 @@
 
 import { MediaNewsItem } from "@/utils/Types";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Modal, IconButton } from "@mui/material";
 import Link from "next/link";
+import { useState } from "react";
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface FeaturedMediaCardProps {
   item: MediaNewsItem;
 }
 
 export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
+  const [openVideo, setOpenVideo] = useState(false);
+
+  const videoMatch = item.content.match(/src=["'](https:\/\/www\.youtube\.com\/embed\/[^"']+)["']/);
+  const videoUrl = item.videoUrl || (videoMatch ? videoMatch[1] : null);
+
   return (
     <Box
       sx={{
@@ -21,7 +26,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         mx: "auto",
         display: "grid",
         mt: { xs: 4, md: "30px" },
-          mb: { xs: 6, md: "80px" },
+        mb: { xs: 6, md: "80px" },
         gridTemplateColumns: { xs: "1fr", md: "532px 1fr" },
         gap: { xs: 3, md: "18px" },
         alignItems: "start",
@@ -31,6 +36,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         component={Link}
         href={`/media/${item.slug}`}
         sx={{
+          position: "relative",
           width: "100%",
           height: { xs: "260px", md: "385px" },
           bgcolor: "#D9D9D9",
@@ -51,6 +57,33 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             display: "block",
           }}
         />
+        {videoUrl && (
+          <Box
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setOpenVideo(true);
+            }}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              bgcolor: "rgba(0,0,0,0.5)",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "80px",
+              height: "80px",
+              "&:hover": {
+                bgcolor: "rgba(0,0,0,0.7)",
+              },
+            }}
+          >
+            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: "60px" }} />
+          </Box>
+        )}
       </Box>
 
       <Box sx={{ pt: { xs: 0, md: "10px" } }}>
@@ -84,7 +117,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
               color: "rgba(0,0,0,0.5)",
             }}
           >
-            {item.time}
+            {item.publishedDate}
           </Typography>
         </Box>
 
@@ -96,8 +129,8 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             width: "100%",
             maxWidth: "600px",
             fontFamily: "Work Sans, sans-serif",
-            fontWeight: 600,
-            fontSize: { xs: "26px", md: "31.3953px" },
+            fontWeight: 700,
+            fontSize: { xs: "26px", md: "31px" },
             lineHeight: { xs: "34px", md: "40px" },
             letterSpacing: "-0.02em",
             color: "#111827",
@@ -109,25 +142,25 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         </Typography>
 
        <Typography
-  sx={{
-    width: "100%",
-    maxWidth: "600px",
-    fontFamily: "Poppins, sans-serif",
-    fontWeight: 400,
-    fontSize: "15.6977px",
-    lineHeight: "28px",
-    color: "#474A55",
-    mb: "25px",
+          sx={{
+            width: "100%",
+            maxWidth: "600px",
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: 400,
+            fontSize: "15px",
+            lineHeight: "28px",
+            color: "#474A55",
+            mb: "25px",
 
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    display: "-webkit-box",
-    WebkitLineClamp: 3,
-    WebkitBoxOrient: "vertical",
-  }}
->
-  {item.description}
-</Typography>
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+          }}
+        >
+          {item.description}
+        </Typography>
 
         <Box
           component={Link}
@@ -136,22 +169,21 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             width: "143.9px",
             height: "48.84px",
             bgcolor: "#7B53A1",
-            borderRadius: "26.1628px",
+            borderRadius: "26px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             gap: "8.72px",
-            pl: "20.9302px",
-            pr: "5.23256px",
+            pl: "20.93px",
+            pr: "5.23px",
             textDecoration: "none",
-            mb: "51px",
           }}
         >
           <Typography
             sx={{
               fontFamily: "JUST Sans, Poppins, sans-serif",
               fontWeight: 600,
-              fontSize: "13.9535px",
+              fontSize: "13.95px",
               lineHeight: "21px",
               letterSpacing: "-0.01em",
               color: "#FFFFFF",
@@ -175,37 +207,60 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             <ArrowOutwardIcon sx={{ fontSize: "17.44px", color: "#111827" }} />
           </Box>
         </Box>
+      </Box>
 
+      {/* Video Modal */}
+      <Modal
+        open={openVideo}
+        onClose={() => setOpenVideo(false)}
+        aria-labelledby="video-modal-title"
+      >
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "40px",
-            flexWrap: "wrap",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: { xs: "90%", md: "800px" },
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 1,
+            borderRadius: "8px",
+            outline: "none",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <PersonOutlineIcon sx={{ fontSize: 20, color: "#474A55" }} />
-            <Typography sx={{ fontSize: "16px", lineHeight: "30px", color: "#474A55" }}>
-              {item.author}
-            </Typography>
+          <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 1 }}>
+            <IconButton onClick={() => setOpenVideo(false)}>
+              <CloseIcon />
+            </IconButton>
           </Box>
-
-          <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <ChatBubbleOutlineIcon sx={{ fontSize: 20, color: "#474A55" }} />
-            <Typography sx={{ fontSize: "16px", lineHeight: "30px", color: "#474A55" }}>
-              {item.comments}
-            </Typography>
-          </Box>
-
-          <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <VisibilityOutlinedIcon sx={{ fontSize: 20, color: "#474A55" }} />
-            <Typography sx={{ fontSize: "16px", lineHeight: "30px", color: "#474A55" }}>
-              {item.views}
-            </Typography>
+          <Box
+            sx={{
+              position: "relative",
+              paddingBottom: "56.25%", // 16:9 aspect ratio
+              height: 0,
+              overflow: "hidden",
+            }}
+          >
+            {videoUrl && (
+              <iframe
+                src={videoUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            )}
           </Box>
         </Box>
-      </Box>
+      </Modal>
     </Box>
   );
 }

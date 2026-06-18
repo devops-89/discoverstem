@@ -1,6 +1,6 @@
 "use client";
 
-import { mediaNewsData } from "@/assets/Generic-data";
+import { mediaCenterNewsData as mediaNewsData } from "@/assets/Generic-data";
 
 import { notFound } from "next/navigation";
 import ArticleContent from "./DetailPage";
@@ -42,7 +42,7 @@ export default function MediaCenterDetailLayout({
   title="More News"
   items={mediaNewsData.filter(
      (item) =>
-    item.category === "Latest News" &&
+    (item.category === "Latest News" || item.category === "News") &&
     item.slug !== slug
   )}
 />

@@ -1,7 +1,8 @@
 "use client";
 
 import { MediaNewsItem } from "@/utils/Types";
-import { Box, Container, Typography } from "@mui/material";
+import { Avatar, Box, Container, Typography } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
 import Image from "next/image";
 import RecentPost from "./RecentPost";
 
@@ -14,6 +15,9 @@ export default function ArticleContent({
   article,
   recentPosts,
 }: ArticleContentProps) {
+  const videoMatch = article.content.match(/src=["'](https:\/\/www\.youtube\.com\/embed\/[^"']+)["']/);
+  const videoUrl = article.videoUrl || (videoMatch ? videoMatch[1] : null);
+
   return (
     <Container
       maxWidth={false}
@@ -61,15 +65,17 @@ export default function ArticleContent({
           </Typography>
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 5 }}>
-            <Box
+            <Avatar
               sx={{
                 width: 40,
                 height: 40,
-                borderRadius: "50%",
                 bgcolor: "#D9D9D9",
+                color: "#7B53A1",
                 flexShrink: 0,
               }}
-            />
+            >
+              <PersonIcon />
+            </Avatar>
 
             <Typography
               sx={{
@@ -97,42 +103,61 @@ export default function ArticleContent({
           >
             {article.description}
           </Typography>
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              height: { xs: "260px", md: "380px" },
+              borderRadius: "12px",
+              overflow: "hidden",
+              mb: 5,
+            }}
+          >
+            {videoUrl ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={videoUrl}
+                title={article.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "12px" }}
+              />
+            ) : (
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            )}
+          </Box>
+
         </Box>
 
         <RecentPost recentPosts={recentPosts} />
       </Box>
 
-      <Box
-        sx={{
-          position: "relative",
-          width: { xs: "100%", md: "1022px" },
-          height: { xs: "260px", md: "515px" },
-          mx: "auto",
-          mt: { xs: 6, md: "75px" },
-          mb: { xs: 6, md: "60px" },
-          overflow: "hidden",
-        }}
-      >
-        <Image
-          src={article.image}
-          alt={article.title}
-          fill
-          style={{ objectFit: "cover" }}
-        />
-      </Box>
-
       <Typography
+        component="div"
         sx={{
           fontFamily: "Poppins, sans-serif",
           fontSize: "20px",
           lineHeight: "32px",
           letterSpacing: "-0.03em",
           color: "rgba(0,0,0,0.6)",
-          whiteSpace: "pre-line",
+          "& p": { mb: 3 },
+          "& figure": { my: 4, mx: 0 },
+          "& img": { maxWidth: "100%", height: "auto", borderRadius: "12px" },
+          "& h1, & h2, & h3, & h4, & h5, & h6": { color: "#000", fontWeight: 600, mt: 4, mb: 2 },
+          "& ul, & ol": { pl: 3, mb: 3 },
+          "& li": { mb: 1 },
+          "& a": { color: "#7B53A1", textDecoration: "none" },
+          "& a:hover": { textDecoration: "underline" }
         }}
-      >
-        {article.content}
-      </Typography>
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      />
     </Container>
   );
 }

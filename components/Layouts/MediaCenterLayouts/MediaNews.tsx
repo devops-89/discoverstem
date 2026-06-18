@@ -2,27 +2,34 @@
 
 import { MediaNewsItem } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Link from "next/link";
-import { useState } from "react";
 import MediaNewsCard from "./MediaNewsCard";
+import FeaturedMediaCard from "./PressCard";
+import { useRouter } from "next/navigation";
 
 interface MediaNewsSectionProps {
   id: string;
   title: string;
   items: MediaNewsItem[];
+  layoutType?: "featured" | "grid";
 }
 
 export default function MediaNewsSection({
   id,
   title,
   items,
+  layoutType = "featured",
 }: MediaNewsSectionProps) {
-  const [showAll, setShowAll] = useState(false);
-
-  const visibleItems = showAll ? items : items.slice(0, 5);
-  const featured = visibleItems[0];
-  const cards = visibleItems.slice(1);
+  const router = useRouter();
+  
+  // For 'featured' layout we show 1 large + 4 small (total 5)
+  // For 'grid' layout we can show 4 or 8 items directly
+  const displayLimit = layoutType === "featured" ? 5 : 8;
+  const visibleItems = items.slice(0, displayLimit);
+  
+  const featured = layoutType === "featured" ? visibleItems[0] : null;
+  const cards = layoutType === "featured" ? visibleItems.slice(1) : visibleItems;
 
   if (!items.length) return null;
 
@@ -67,9 +74,9 @@ export default function MediaNewsSection({
           }}
         />
 
-        {!showAll && items.length > 5 && (
+        {items.length > 5 && (
           <Box
-            onClick={() => setShowAll(true)}
+            onClick={() => router.push(`/media/category/${id}`)}
             sx={{
               ml: "18px",
               display: "flex",
@@ -87,7 +94,7 @@ export default function MediaNewsSection({
                 lineHeight: "24px",
               }}
             >
-              See All
+              View More
             </Typography>
 
             <KeyboardArrowRightIcon sx={{ fontSize: 18 }} />
@@ -96,38 +103,13 @@ export default function MediaNewsSection({
       </Box>
 
       {featured && (
-        <Box
-          component={Link}
-          href={`/media/${featured.slug}`}
-          sx={{
-            display: "block",
-            width: "100%",
-            height: "385px",
-            borderRadius: "12px",
-            bgcolor: "#D9D9D9",
-            overflow: "hidden",
-            mb: "27px",
-            textDecoration: "none",
-          }}
-        >
-          <Box
-            component="img"
-            src={featured.image}
-            alt={featured.title}
-            sx={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
-        </Box>
+        <FeaturedMediaCard item={featured} />
       )}
 
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" },
           gap: "23px",
         }}
       >
@@ -135,30 +117,6 @@ export default function MediaNewsSection({
           <MediaNewsCard key={item.id} item={item} />
         ))}
       </Box>
-
-      {showAll && items.length > 5 && (
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
-          <Button
-            onClick={() => setShowAll(false)}
-            sx={{
-              height: "44px",
-              px: "24px",
-              borderRadius: "999px",
-              bgcolor: "#7B53A1",
-              color: "#FFFFFF",
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 600,
-              fontSize: "14px",
-              textTransform: "none",
-              "&:hover": {
-                bgcolor: "#7B53A1",
-              },
-            }}
-          >
-            See Less
-          </Button>
-        </Box>
-      )}
     </Box>
   );
 }
