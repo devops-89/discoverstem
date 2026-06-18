@@ -5080,3 +5080,422 @@ export const DipOtherProgramsData: OtherProgramsData = {
     },
   ],
 };
+
+
+
+import { MediaCategoryItem, MediaNewsItem } from "@/utils/Types";
+
+export const mediaCategories: MediaCategoryItem[] = [
+  { label: "Home", sectionId: "home" },
+  { label: "Latest News", sectionId: "latest-news" },
+  { label: "College Acceptance", sectionId: "college-acceptance" },
+  { label: "Patents", sectionId: "patents" },
+  { label: "Awards", sectionId: "awards" },
+  { label: "Young Inventors", sectionId: "young-inventors" },
+  { label: "In The Press", sectionId: "in-the-press" },
+  { label: "Blog", sectionId: "blog" },
+  { label: "Contact Us", sectionId: "contact-us" },
+];
+
+
+
+export const mediaNewsData: MediaNewsItem[] = [
+  {
+    id: 1,
+    slug: "driving-business-growth",
+    category: "Latest News",
+    title: "Driving Business Growth with Custom Software Solutions in 2025",
+    image: "/Images/media/news1.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "10 Hour Ago",
+    readTime: "5 Min Read",
+
+    description:
+      "As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth. As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth. As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth. As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.As technology continues to evolve, custom software solutions are helping businesses streamline operations, improve customer experiences, and drive long-term growth.",
+
+    content: `
+DiscoverSTEM students continue to demonstrate remarkable innovation through research, entrepreneurship, and technology development.
+
+This project explores how custom software solutions are transforming businesses in 2025. Companies are increasingly investing in digital transformation to improve efficiency, reduce costs, and enhance customer engagement.
+
+Students participating in the DiscoverSTEM Innovation Program researched real-world business challenges and proposed scalable software solutions that address operational bottlenecks.
+
+The project highlighted key areas including artificial intelligence, automation, data analytics, and cloud computing.
+
+Through mentorship and hands-on experience, students gained valuable insights into product development and entrepreneurship.
+
+The findings demonstrate that innovation and technology can create meaningful impact across industries while preparing students for future careers in STEM.
+    `,
+  },
+
+  {
+    id: 2,
+    slug: "stem-research-projects",
+    category: "Latest News",
+    title: "STEM Students Present Groundbreaking Research Projects",
+    image: "/Images/media/news2.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "9 Hour Ago",
+    readTime: "4 Min Read",
+
+    description:
+      "Students showcased innovative research projects covering artificial intelligence, healthcare, sustainability, and robotics.",
+
+    content: `
+The annual DiscoverSTEM Research Showcase featured groundbreaking student-led projects from across the country.
+
+Participants presented innovative solutions addressing real-world problems through scientific research and engineering design.
+
+Projects focused on healthcare innovation, environmental sustainability, machine learning, and space technology.
+
+Industry experts and academic mentors provided feedback and guidance to students throughout the event.
+
+Many projects demonstrated publication-level research quality and strong commercialization potential.
+
+The showcase highlighted the next generation of innovators committed to solving global challenges through STEM.
+    `,
+  },
+
+  {
+    id: 3,
+    slug: "innovation-program7",
+    category: "Latest News",
+    title: "DiscoverSTEM Launches New Innovation Program",
+    image: "/Images/media/news3.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "8 Hour Ago",
+    readTime: "6 Min Read",
+
+    description:
+      "The newly launched innovation program provides mentorship, research opportunities, and startup support for students.",
+
+    content: `
+DiscoverSTEM has officially launched its newest innovation initiative aimed at empowering young researchers and entrepreneurs.
+
+The program connects students with industry experts, university researchers, and startup founders.
+
+Participants gain access to advanced resources, mentorship sessions, innovation labs, and project funding opportunities.
+
+Students are encouraged to develop solutions addressing challenges in healthcare, climate, education, and technology.
+
+The initiative is expected to support hundreds of students annually and expand opportunities for innovation nationwide.
+
+This program reinforces DiscoverSTEM's mission to inspire future leaders and innovators.
+    `,
+  },
+
+  {
+    id: 4,
+    slug: "national-recognition6",
+    category: "Latest News",
+    title: "Young Innovators Receive National Recognition",
+    image: "/Images/media/news4.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "7 Hour Ago",
+    readTime: "5 Min Read",
+
+    description:
+      "Several DiscoverSTEM students were recognized nationally for their contributions to science, technology, and innovation.",
+
+    content: `
+Young innovators from DiscoverSTEM received prestigious national recognition for their outstanding achievements.
+
+The awards celebrate creativity, leadership, and dedication to solving real-world problems through STEM.
+
+Winning projects included medical technologies, sustainability initiatives, robotics systems, and AI-powered solutions.
+
+Students credited mentorship, collaboration, and hands-on learning opportunities as key contributors to their success.
+
+The recognition demonstrates the impact of empowering students through research and innovation.
+
+DiscoverSTEM remains committed to supporting future generations of scientists, engineers, and entrepreneurs.
+    `,
+  },
+
+
+  {
+    id: 12,
+    slug: "stem-research-projects4",
+    category: "Latest News",
+    title: "STEM Students Present Groundbreaking Research Projects",
+    image: "/Images/media/news2.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "9 Hour Ago",
+    readTime: "4 Min Read",
+
+    description:
+      "Students showcased innovative research projects covering artificial intelligence, healthcare, sustainability, and robotics.",
+
+    content: `
+The annual DiscoverSTEM Research Showcase featured groundbreaking student-led projects from across the country.
+
+Participants presented innovative solutions addressing real-world problems through scientific research and engineering design.
+
+Projects focused on healthcare innovation, environmental sustainability, machine learning, and space technology.
+
+Industry experts and academic mentors provided feedback and guidance to students throughout the event.
+
+Many projects demonstrated publication-level research quality and strong commercialization potential.
+
+The showcase highlighted the next generation of innovators committed to solving global challenges through STEM.
+    `,
+  },
+{
+    id: 17,
+    slug: "stem-research-projects8",
+    category: "Latest News",
+    title: "STEM Students Present Groundbreaking Research Projects",
+    image: "/Images/media/news2.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "9 Hour Ago",
+    readTime: "4 Min Read",
+
+    description:
+      "Students showcased innovative research projects covering artificial intelligence, healthcare, sustainability, and robotics.",
+
+    content: `
+The annual DiscoverSTEM Research Showcase featured groundbreaking student-led projects from across the country.
+
+Participants presented innovative solutions addressing real-world problems through scientific research and engineering design.
+
+Projects focused on healthcare innovation, environmental sustainability, machine learning, and space technology.
+
+Industry experts and academic mentors provided feedback and guidance to students throughout the event.
+
+Many projects demonstrated publication-level research quality and strong commercialization potential.
+
+The showcase highlighted the next generation of innovators committed to solving global challenges through STEM.
+    `,
+  },
+  {
+    id: 13,
+    slug: "innovation-program2",
+    category: "Latest News",
+    title: "DiscoverSTEM Launches New Innovation Program",
+    image: "/Images/media/news3.png",
+     author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "8 Hour Ago",
+    readTime: "6 Min Read",
+
+    description:
+      "The newly launched innovation program provides mentorship, research opportunities, and startup support for students.",
+
+    content: `
+DiscoverSTEM has officially launched its newest innovation initiative aimed at empowering young researchers and entrepreneurs.
+
+The program connects students with industry experts, university researchers, and startup founders.
+
+Participants gain access to advanced resources, mentorship sessions, innovation labs, and project funding opportunities.
+
+Students are encouraged to develop solutions addressing challenges in healthcare, climate, education, and technology.
+
+The initiative is expected to support hundreds of students annually and expand opportunities for innovation nationwide.
+
+This program reinforces DiscoverSTEM's mission to inspire future leaders and innovators.
+    `,
+  },
+
+  {
+    id: 14,
+    slug: "national-recognition3",
+    category: "Latest News",
+    title: "Young Innovators Receive National Recognition",
+    image: "/Images/media/news4.png",
+    
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+    time: "7 Hour Ago",
+    readTime: "5 Min Read",
+
+    description:
+      "Several DiscoverSTEM students were recognized nationally for their contributions to science, technology, and innovation.",
+
+    content: `
+Young innovators from DiscoverSTEM received prestigious national recognition for their outstanding achievements.
+
+The awards celebrate creativity, leadership, and dedication to solving real-world problems through STEM.
+
+Winning projects included medical technologies, sustainability initiatives, robotics systems, and AI-powered solutions.
+
+Students credited mentorship, collaboration, and hands-on learning opportunities as key contributors to their success.
+
+The recognition demonstrates the impact of empowering students through research and innovation.
+
+DiscoverSTEM remains committed to supporting future generations of scientists, engineers, and entrepreneurs.
+    `,
+  },
+
+   {
+  id: 6,
+  slug: "college-acceptance",
+  category: "College Acceptance",
+  title: "Students Accepted Into Top Universities",
+  image: "/Images/media/news6.png",
+  time: "10 Hour Ago",
+  readTime: "5 Min Read",
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+  description:
+    "DiscoverSTEM students continue to achieve remarkable college admissions success across leading universities worldwide.",
+  content: `
+Students from DiscoverSTEM have received admission offers from top universities around the world.
+
+Through research, innovation projects, leadership initiatives, and mentorship programs, students build strong academic portfolios.
+
+Many students have been accepted into prestigious institutions with scholarships and recognition for their achievements.
+
+These accomplishments reflect the dedication, creativity, and hard work demonstrated throughout their DiscoverSTEM journey.
+  `,
+},
+
+{
+  id: 7,
+  slug: "patents",
+  category: "Patents",
+  title: "Young Researchers Secure Patent Approvals",
+  image: "/Images/media/news7.png",
+  time: "10 Hour Ago",
+  readTime: "5 Min Read",
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+  description:
+    "Student innovators continue to transform ideas into intellectual property through patent filings and approvals.",
+  content: `
+DiscoverSTEM students are actively developing innovative solutions and securing patent approvals.
+
+These patents cover a wide range of fields including healthcare, sustainability, robotics, and artificial intelligence.
+
+Students work alongside mentors to transform concepts into real-world innovations with commercial potential.
+
+Patent approvals demonstrate the impact of student-led research and innovation.
+  `,
+},
+
+{
+  id: 8,
+  slug: "awards",
+  category: "Awards",
+  title: "DiscoverSTEM Students Win Global Awards",
+  image: "/Images/media/news8.png",
+  time: "10 Hour Ago",
+  readTime: "5 Min Read",
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+  description:
+    "Students have received recognition at national and international competitions for excellence in STEM and innovation.",
+  content: `
+DiscoverSTEM participants continue to receive prestigious awards around the world.
+
+Recognition spans science fairs, innovation competitions, entrepreneurship challenges, and academic events.
+
+Students are honored for their creativity, leadership, and ability to solve meaningful problems.
+
+These achievements inspire future innovators to pursue ambitious goals.
+  `,
+},
+
+{
+  id: 9,
+  slug: "young-inventors",
+  category: "Young Inventors",
+  title: "Young Inventors Showcase New Technologies",
+  image: "/Images/media/news9.png",
+  time: "10 Hour Ago",
+  readTime: "5 Min Read",
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+  description:
+    "Young inventors are presenting groundbreaking technologies that address challenges in healthcare, education, and sustainability.",
+  content: `
+Students showcased innovative technologies during the annual Young Inventors Exhibition.
+
+Projects included AI-powered tools, healthcare innovations, environmental solutions, and smart devices.
+
+The event provided students with an opportunity to present their work to industry professionals and researchers.
+
+These inventions demonstrate the power of youth-driven innovation.
+  `,
+},
+
+{
+  id: 10,
+  slug: "in-the-press",
+  category: "In The Press",
+  title: "Media Highlights DiscoverSTEM Success Stories",
+  image: "/Images/media/news10.png",
+  time: "10 Hour Ago",
+  readTime: "5 Min Read",
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+  description:
+    "Major media outlets continue to feature DiscoverSTEM students and their innovative accomplishments.",
+  content: `
+DiscoverSTEM has been featured in numerous media publications highlighting student success stories.
+
+Coverage focuses on breakthrough research, startup ventures, award-winning innovations, and community impact.
+
+These stories help inspire other students to explore STEM and innovation opportunities.
+
+Media recognition further validates the achievements of DiscoverSTEM participants.
+  `,
+},
+
+{
+  id: 11,
+  slug: "blog",
+  category: "Blog",
+  title: "How Innovation Shapes Future Careers",
+  image: "/Images/media/news11.png",
+  time: "10 Hour Ago",
+  readTime: "5 Min Read",
+  author: "Alam Khan",
+  comments: 3,
+  views: "5 Min",
+  publishedDate: "09 May, 2024",
+  description:
+    "Innovation, creativity, and entrepreneurship are becoming essential skills for future career success.",
+  content: `
+The future workforce will increasingly depend on innovation and problem-solving abilities.
+
+Students who engage in research and entrepreneurship gain valuable skills that prepare them for emerging industries.
+
+Innovation encourages critical thinking, leadership, collaboration, and adaptability.
+
+These experiences help students build successful careers while creating meaningful impact.
+  `,
+},
+];
+

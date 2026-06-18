@@ -537,3 +537,25 @@ export interface VideoData {
   youtubeUrl: string;
   title: string;
 }
+
+export interface MediaCategoryItem {
+  label: string;
+  sectionId: string;
+}
+
+export interface MediaNewsItem {
+  id: number;
+  slug: string;
+  category: string;
+  title: string;
+  image: string;
+  time: string;
+  readTime: string;
+  author: string;
+  comments: number;
+  views: string;
+  publishedDate: string;
+  description: string;
+  content: string;
+}
+
