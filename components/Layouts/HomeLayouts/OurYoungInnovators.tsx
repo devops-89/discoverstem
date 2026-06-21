@@ -1,15 +1,17 @@
 "use client";
-import React from "react";
+
+import { FONT_FAMILY } from "@/utils/Fonts";
+import NorthEastIcon from "@mui/icons-material/NorthEast";
 import {
+  Box,
+  Button,
   Container,
   Grid,
-  Typography,
-  Button,
-  Box,
   IconButton,
+  Typography,
 } from "@mui/material";
-import { FONT_FAMILY } from "@/utils/Fonts";
 import Link from "next/link";
+import React from "react";
 
 const PlayIcon = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
@@ -23,26 +25,38 @@ export default function OurYoungInnovators() {
     <Container
       maxWidth={false}
       sx={{
-        maxWidth: "min(1196px, 100%)",
-        py: { xs: 5, md: 7 },
-        px: { xs: 3, md: 4 },
+        maxWidth: "1196px",
+        mx: "auto",
+        py: { xs: 5, sm: 6, md: 7 },
+        px: { xs: 2, sm: 3, md: 4 },
       }}
     >
-      {/* Top row: Title left + Description + CTA right */}
       <Grid
         container
-        spacing={{ xs: 4, md: 6 }}
+        spacing={{ xs: 2, md: 4, lg: 6 }}
         justifyContent="space-between"
-        alignItems="flex-start"
-        sx={{ mb: { xs: 5, md: 8 } }}
+        alignItems="center"
+        sx={{ mb: { xs: 5, md: 7, lg: 8 } }}
       >
         <Grid size={{ xs: 12, md: 5 }}>
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.heading,
-              fontSize: { xs: 30, md: 44 },
-              lineHeight: 1.18,
+              fontSize: {
+                xs: "24px",
+                sm: "34px",
+                md: "38px",
+                lg: "44px",
+              },
+              lineHeight: {
+                xs: "36px",
+                sm: "42px",
+                md: "48px",
+                lg: "52px",
+              },
               fontWeight: 500,
+              textAlign: { xs: "center", md: "left" },
+              wordBreak: "break-word",
             }}
           >
             Texas State Capitol Honors{" "}
@@ -60,32 +74,49 @@ export default function OurYoungInnovators() {
             and Our Young Innovators
           </Typography>
         </Grid>
-        <Grid size={{ xs: 12, md: 5.5 }}>
+
+        <Grid
+          size={{ xs: 12, md: 5.5 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", md: "flex-start" },
+            textAlign: { xs: "center", md: "left" },
+          }}
+        >
           <Typography
             sx={{
               color: "#555",
               lineHeight: 1.7,
-              fontSize: { xs: 15, md: 17 },
+              fontSize: { xs: "15px", sm: "16px", md: "17px" },
+              maxWidth: "100%",
             }}
           >
-            The Texas House of Representatives passed a House Resolution #403, commemorating DiscoverSTEM&apos;s profound impact on shaping the next generation of innovators & leaders.
-            
+            The Texas House of Representatives passed a House Resolution #403,
+            commemorating DiscoverSTEM&apos;s profound impact on shaping the next
+            generation of innovators & leaders.
           </Typography>
+
           <Button
             component={Link}
-    href="/success-stories/college-acceptance"
+            href="/success-stories/college-acceptance"
             variant="outlined"
-            endIcon={<span style={{ fontSize: 18 }}>↗</span>}
+            endIcon={<NorthEastIcon sx={{ fontSize: 18 }} />}
             sx={{
               mt: 3,
-              borderRadius: 999,
+              mx: { xs: "auto", md: 0 },
+              borderRadius: "999px",
               borderColor: "#ee4823",
               color: "#ee4823",
               px: 3,
               py: 1,
               fontWeight: 500,
               textTransform: "none",
-              "&:hover": { bgcolor: "#fff5f2", borderColor: "#ee4823" },
+              minWidth: "160px",
+              "&:hover": {
+                bgcolor: "#fff5f2",
+                borderColor: "#ee4823",
+              },
             }}
           >
             Learn More
@@ -93,13 +124,12 @@ export default function OurYoungInnovators() {
         </Grid>
       </Grid>
 
-      {/* Video section */}
       <Box
         sx={{
-          borderRadius: "20px",
+          borderRadius: { xs: "16px", md: "20px" },
           overflow: "hidden",
           position: "relative",
-          height: { xs: 260, md: 476 },
+          height: { xs: 260, sm: 340, md: 420, lg: 476 },
           background: "#111",
         }}
       >
@@ -110,13 +140,13 @@ export default function OurYoungInnovators() {
           sx={{
             position: "absolute",
             inset: 0,
-            width: 1,
-            height: 1,
+            width: "100%",
+            height: "100%",
             objectFit: "cover",
             opacity: 0.75,
           }}
         />
-        {/* Overlay */}
+
         <Box
           sx={{
             position: "absolute",
@@ -125,22 +155,29 @@ export default function OurYoungInnovators() {
               "linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15))",
           }}
         />
-        {/* Play button + text */}
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "row",
-            gap: 3,
-          }}
-        >
+
+       <Box
+  sx={{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+
+    flexDirection: { xs: "column", sm: "row" },
+    gap: { xs: 2, md: 3 },
+
+    width: "100%",
+    maxWidth: "500px",
+  }}
+>
           <IconButton
             sx={{
-              width: 72,
-              height: 72,
+              width: { xs: 50, md: 72 },
+              height: { xs: 50, md: 72 },
               bgcolor: "rgba(255,255,255,0.18)",
               border: "2px solid rgba(255,255,255,0.7)",
               color: "#fff",
@@ -149,26 +186,28 @@ export default function OurYoungInnovators() {
           >
             <PlayIcon />
           </IconButton>
+
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-start",
+              alignItems: { xs: "center", sm: "flex-start" },
             }}
           >
             <Typography
               sx={{
                 color: "#fff",
                 fontWeight: 600,
-                fontSize: { xs: 18, md: 24 },
+                fontSize: { xs: "18px", md: "24px" },
               }}
             >
               Watch
             </Typography>
+
             <Typography
               sx={{
                 color: "rgba(255,255,255,0.85)",
-                fontSize: { xs: 14, md: 16 },
+                fontSize: { xs: "14px", md: "16px" },
               }}
             >
               That&apos;s how we make it work?

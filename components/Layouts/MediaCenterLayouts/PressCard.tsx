@@ -25,10 +25,10 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         maxWidth: "1150px",
         mx: "auto",
         display: "grid",
-        mt: { xs: 4, md: "30px" },
-        mb: { xs: 6, md: "80px" },
-        gridTemplateColumns: { xs: "1fr", md: "532px 1fr" },
-        gap: { xs: 3, md: "18px" },
+        mt: { xs: 4, lg: "30px" },
+        mb: { xs: 6, lg: "80px" },
+        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr", lg: "532px 1fr" },
+        gap: { xs: 3, md: 4, lg: "18px" },
         alignItems: "start",
       }}
     >
@@ -38,7 +38,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         sx={{
           position: "relative",
           width: "100%",
-          height: { xs: "260px", md: "385px" },
+          height: { xs: "220px", md: "300px", lg: "385px" },
           bgcolor: "#D9D9D9",
           borderRadius: "12px",
           overflow: "hidden",
@@ -74,32 +74,32 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "80px",
-              height: "80px",
+              width: { xs: "60px", lg: "80px" },
+              height: { xs: "60px", lg: "80px" },
               "&:hover": {
                 bgcolor: "rgba(0,0,0,0.7)",
               },
             }}
           >
-            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: "60px" }} />
+            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: { xs: "40px", lg: "60px" } }} />
           </Box>
         )}
       </Box>
 
-      <Box sx={{ pt: { xs: 0, md: "10px" } }}>
+      <Box sx={{ pt: { xs: 0, lg: "10px" } }}>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             gap: "20px",
-            mb: "39px",
+            mb: { xs: 3, lg: "39px" },
           }}
         >
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: 600,
-              fontSize: "16px",
+              fontSize: { xs: "13px", md: "14px", lg: "16px" },
               lineHeight: "24px",
               color: "#7B53A1",
               textTransform: "uppercase",
@@ -130,12 +130,12 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             maxWidth: "600px",
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "26px", md: "31px" },
-            lineHeight: { xs: "34px", md: "40px" },
+            fontSize: { xs: "18px", md: "26px", lg: "31px" },
+            lineHeight: { xs: "24px", md: "34px", lg: "40px" },
             letterSpacing: "-0.02em",
             color: "#111827",
             textDecoration: "none",
-            mb: "18px",
+            mb: { xs: 2, lg: "18px" },
           }}
         >
           {item.title}
@@ -147,10 +147,10 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             maxWidth: "600px",
             fontFamily: "Poppins, sans-serif",
             fontWeight: 400,
-            fontSize: "15px",
-            lineHeight: "28px",
+            fontSize: { xs: "14px", lg: "15px" },
+            lineHeight: { xs: "24px", lg: "28px" },
             color: "#474A55",
-            mb: "25px",
+            mb: { xs: 3, lg: "25px" },
 
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -166,16 +166,17 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
           component={Link}
           href={`/media/${item.slug}`}
           sx={{
-            width: "143.9px",
-            height: "48.84px",
+            // 🔥 FIX: Decreased button sizes only on mobile (xs). Locked exactly to your original sizes for tablets & desktop!
+            width: { xs: "120px", sm: "143.9px" },
+            height: { xs: "40px", sm: "48.84px" },
             bgcolor: "#7B53A1",
             borderRadius: "26px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "8.72px",
-            pl: "20.93px",
-            pr: "5.23px",
+            gap: { xs: "6px", sm: "8.72px" },
+            pl: { xs: "16px", sm: "20.93px" },
+            pr: { xs: "4px", sm: "5.23px" },
             textDecoration: "none",
           }}
         >
@@ -183,8 +184,9 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             sx={{
               fontFamily: "JUST Sans, Poppins, sans-serif",
               fontWeight: 600,
-              fontSize: "13.95px",
-              lineHeight: "21px",
+              // 🔥 FIX: Scaled text down slightly for mobile!
+              fontSize: { xs: "12px", sm: "13.95px" },
+              lineHeight: { xs: "18px", sm: "21px" },
               letterSpacing: "-0.01em",
               color: "#FFFFFF",
             }}
@@ -194,8 +196,9 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
 
           <Box
             sx={{
-              width: "38.37px",
-              height: "38.37px",
+              // 🔥 FIX: Scaled the circle down slightly for mobile!
+              width: { xs: "32px", sm: "38.37px" },
+              height: { xs: "32px", sm: "38.37px" },
               borderRadius: "50%",
               bgcolor: "#FFFFFF",
               display: "flex",
@@ -204,7 +207,8 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
               flexShrink: 0,
             }}
           >
-            <ArrowOutwardIcon sx={{ fontSize: "17.44px", color: "#111827" }} />
+            {/* 🔥 FIX: Scaled the icon inside the circle down slightly for mobile! */}
+            <ArrowOutwardIcon sx={{ fontSize: { xs: "14px", sm: "17.44px" }, color: "#111827" }} />
           </Box>
         </Box>
       </Box>

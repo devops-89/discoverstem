@@ -35,9 +35,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
       sx={{
         maxWidth: "1280px",
         mx: "auto",
-        px: { xs: 3, md: "40px" },
-        pt: { xs: 6, md: "96px" },
-        pb: { xs: 6, md: 0 },
+        px: { xs: 3, sm: 5, lg: "40px" },
+        pt: { xs: 5, sm: 6, lg: "96px" },
+        pb: { xs: 5, sm: 6, lg: 0 },
       }}
     >
       <Box
@@ -45,7 +45,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: { xs: 4, md: "56px" },
+          gap: { xs: 3, sm: 4, lg: "56px" },
         }}
       >
         <Box sx={{ maxWidth: "1200px", textAlign: "center" }}>
@@ -58,14 +58,14 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               mb: "16px",
             }}
           >
-            <Box sx={{ width: "48px", height: "1px", bgcolor: "#6E6E6E" }} />
+            <Box sx={{ width: { xs: "32px", md: "48px" }, height: "1px", bgcolor: "#6E6E6E" }} />
 
             <Typography
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "18px", md: "22px" },
-                lineHeight: "30px",
+                fontSize: { xs: "16px", sm: "18px", lg: "22px" },
+                lineHeight: { xs: "24px", sm: "30px", lg: "30px" },
                 letterSpacing: "-0.4px",
                 color: "#EE4823",
               }}
@@ -73,15 +73,15 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               {data.eyebrow}
             </Typography>
 
-            <Box sx={{ width: "48px", height: "1px", bgcolor: "#6E6E6E" }} />
+            <Box sx={{ width: { xs: "32px", md: "48px" }, height: "1px", bgcolor: "#6E6E6E" }} />
           </Box>
 
           <Typography
             sx={{
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
-              fontSize: { xs: "34px", md: "48px" },
-              lineHeight: { xs: "42px", md: "48px" },
+              fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+              lineHeight: { xs: "38px", sm: "46px", lg: "48px" },
               letterSpacing: "-0.8px",
               color: "#1A1A1A",
               mb: "16px",
@@ -96,8 +96,8 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               mx: "auto",
               fontFamily: "Poppins, sans-serif",
               fontWeight: 400,
-              fontSize: { xs: "16px", md: "18px" },
-              lineHeight: { xs: "26px", md: "27px" },
+              fontSize: { xs: "15px", sm: "16px", lg: "18px" },
+              lineHeight: { xs: "25px", sm: "26px", lg: "27px" },
               color: "#676767",
             }}
           >
@@ -116,7 +116,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               lg: "repeat(4, 282px)",
             },
             justifyContent: "center",
-            gap: "24px",
+            gap: { xs: 3, lg: "24px" },
           }}
         >
           {data.cards.map((item) => {
@@ -129,10 +129,11 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                 sx={{
                   width: "100%",
                   maxWidth: "282px",
-                  height: "330.7px",
+                  height: { xs: "auto", lg: "330.7px" },
+                  minHeight: "330.7px",
                   bgcolor: "#F3F4F6",
                   borderRadius: "16px",
-                  p: "28px",
+                  p: { xs: "20px", lg: "28px" }, // Scaled down padding on mobile to prevent overflow
                   display: "flex",
                   flexDirection: "column",
                   mx: "auto",
@@ -140,7 +141,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               >
                 <Box
                   sx={{
-                    width: "226px",
+                    width: { xs: "100%", lg: "226px" }, // Prevent overflow on very narrow phones
                     height: "56px",
                     display: "flex",
                     justifyContent: "space-between",
@@ -192,7 +193,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
 
                 <Box
                   sx={{
-                    width: "226px",
+                    width: { xs: "100%", lg: "226px" }, // Prevent overflow
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -201,8 +202,8 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 600,
-                      fontSize: "18px",
-                      lineHeight: "25px",
+                      fontSize: { xs: "16px", lg: "18px" },
+                      lineHeight: { xs: "22px", lg: "25px" },
                       letterSpacing: "-0.18px",
                       color: "#1A1A1A",
                       minHeight: "50px",
@@ -218,8 +219,8 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                       mt: "8px",
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "22px",
+                      fontSize: { xs: "13px", lg: "14px" },
+                      lineHeight: { xs: "20px", lg: "22px" },
                       color: "#676767",
                       minHeight: "88px",
                     }}
@@ -233,7 +234,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                     sx={{
                       mt: "auto",
                       pt: "16px",
-                      width: "226px",
+                      width: { xs: "100%", lg: "226px" }, // Prevent overflow
                       borderTop: "1px solid rgba(0,0,0,0.08)",
                     }}
                   >

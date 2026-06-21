@@ -5,10 +5,12 @@ import Link from "next/link";
 import PrimaryButton from "@/components/Widgets/PrimaryButton";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 export default function HeroSection() {
   const slides = [
     {
@@ -28,94 +30,106 @@ export default function HeroSection() {
     },
   ];
 
-    return (
-        <Box
-          id="home"
-          sx={{
-            mt: 2,
-            mx: "auto",
-            width: "1403px",
-            maxWidth: "calc(100% - 40px)",
-            borderRadius: "20px",
-            overflow: "hidden",
-            "& .swiper": { width: "100%", height: { xs: 540, md: 929 } },
-            "& .swiper-pagination": { bottom: "24px !important" },
-            "& .swiper-pagination-bullet": {
-              width: 28,
-              height: 6,
-              borderRadius: 3,
-              background: "rgba(255,255,255,0.55)",
-              opacity: 1,
-            },
-            "& .swiper-pagination-bullet-active": {
-              background: "#fff",
-              width: 48,
-            },
-          }}
-        >
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 4500, disableOnInteraction: false }}
-            loop
-          >
-            {slides.map((slide, i) => (
-              <SwiperSlide key={i}>
-                <Box sx={{ position: "relative", width: "100%", height: "100%" }}>
-                  <Box
-                    component="img"
-                    src={slide.image}
-                    alt={slide.title}
-                    sx={{
-                      position: "absolute",
-                      inset: 0,
-                      width: 1,
-                      zIndex:1,
-                      height: 1,
-                      objectFit: "cover",
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      inset: 0,
-                      background:
-                        "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.7) 100%)",
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: { xs: 40, md: 190 },
-                      left: 0,
-                      right: 0,
-                      px: { xs: 3, md: 16 },
-                      zIndex: 2,
-                  
-                      maxWidth: "727px",
-                    }}
-                  >
+  return (
+    <Box
+      id="home"
+      sx={{
+        position: 'relative',
+        mt: { xs: 1.5, lg: 2 },
+        mx: "auto",
+        width: "100%",
+        maxWidth: {
+          xs: "calc(100% - 24px)",
+          lg: "calc(100% - 40px)",
+          xl: "1403px",
+        },
+        height: {
+          xs: "600px", 
+          sm: "700px",
+          md: "800px",
+          lg: "929px",
+        },
+        borderRadius: { xs: "14px", lg: "20px" },
+        overflow: "hidden",
+        "& .swiper-pagination": { bottom: { xs: "18px !important", lg: "24px !important" } },
+        "& .swiper-pagination-bullet": {
+          width: { xs: 18, lg: 28 },
+          height: 6,
+          borderRadius: 3,
+          background: "rgba(255,255,255,0.55)",
+          opacity: 1,
+          transition: "all 0.3s ease",
+        },
+        "& .swiper-pagination-bullet-active": {
+          background: "#fff",
+          width: { xs: 34, lg: 48 },
+        },
+      }}
+    >
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        loop
+        style={{ width: "100%", height: "100%" }}
+      >
+        {slides.map((slide, i) => (
+          <SwiperSlide key={i}>
+            <Box sx={{ position: "relative", width: "100%", height: "100%" }}>
+              <Box
+                component="img"
+                src={slide.image}
+                alt={slide.title}
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  width: 1,
+                  zIndex: 1,
+                  height: 1,
+                  objectFit: "cover",
+                }}
+              />
+              <Box
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 1,
+                  background:
+                    "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.7) 100%)",
+                }}
+              />
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: { xs: 130, sm: 150, md: 170, lg: 190 }, 
+                  left: 0,
+                  right: 0,
+                  px: { xs: 3, sm: 5, lg: 16 },
+                  zIndex: 2,
+                  maxWidth: "727px", 
+                }}
+              >
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.heading,
                     fontWeight: 600,
-                    fontSize: { xs: "32px", md: "64px" },
-                    lineHeight: { xs: "40px", md: "62px" },
+                    fontSize: { xs: "32px", sm: "44px", lg: "64px" },
+                    lineHeight: { xs: "40px", sm: "50px", lg: "62px" },
                     letterSpacing: "-0.03em",
                     color: "#FFFFFF",
-                    maxWidth: "441px",
+                    maxWidth: { xs: "100%", lg: "441px" }, 
                   }}
                 >
                   {slide.title}
                 </Typography>
-              
+
                 <Typography
                   sx={{
-                    mt: { xs: 2, md: 3 },
+                    mt: { xs: 2, lg: 3 },
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: { xs: "16px", md: "28px" },
-                    lineHeight: { xs: "24px", md: "34px" },
+                    fontSize: { xs: "16px", sm: "20px", lg: "28px" },
+                    lineHeight: { xs: "24px", sm: "30px", lg: "34px" },
                     letterSpacing: "-0.01em",
                     color: "rgba(255,255,255,0.85)",
                     maxWidth: "727px",
@@ -123,32 +137,89 @@ export default function HeroSection() {
                 >
                   {slide.description}
                 </Typography>
+
                 <Box
-  sx={{
-    position: "absolute",
-    bottom: 0,
-    right: 0,
-    transform: {
-      xs: "translate(0, 0)",
-      md: "translate(110%, 130%)",
-    },
-    zIndex: 2,
-  }}
->
- <Link href="/contact" style={{ textDecoration: "none" }}>
-  <PrimaryButton>
-    Request a
-    <Box component="span" sx={{ fontWeight: 700, ml: 0.5 }}>
-      Free Information Session
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    transform: {
+                      xs: "translate(0, 130%)", 
+                      lg: "translate(110%, 130%)", 
+                    },
+                    zIndex: 2,
+                  }}
+                >
+                  <Link href="/contact" style={{ textDecoration: "none" }}>
+                    
+                    {/* 🔥 NATIVELY RESPONSIVE FIGMA BUTTON 🔥 */}
+                    <PrimaryButton
+                      showIcon={false} 
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        // Scaled gap & padding down for xs and md
+                        gap: { xs: "6px", md: "8px", lg: "10px" },
+                        padding: { 
+                          xs: "4px 4px 4px 16px !important", 
+                          md: "5px 5px 5px 20px !important", 
+                          lg: "6px 6px 6px 24px !important" 
+                        }, 
+                        
+                        width: "max-content",
+                        minWidth: { xs: "180px", md: "200px", lg: "231px" },
+                        // Scaled overall button height down for xs and md
+                        height: { xs: "40px", md: "48px", lg: "56px" },
+                        
+                        borderRadius: "30px",
+                        textTransform: "none", 
+                      }}
+                    >
+                      <Typography
+                        component="span"
+                        sx={{
+                          fontFamily: "'JUST Sans', sans-serif",
+                          // Scaled font size down for xs and md
+                          fontSize: { xs: "12px", md: "14px", lg: "16px" },
+                          lineHeight: { xs: "18px", md: "20px", lg: "24px" },
+                          letterSpacing: "-0.01em",
+                          whiteSpace: "nowrap", 
+                        }}
+                      >
+                        Request a <Box component="span" sx={{ fontWeight: 700 }}>Free Information Session</Box>
+                      </Typography>
+
+                      <Box
+                        sx={{
+                          // Scaled circle container down for xs and md
+                          width: { xs: "32px", md: "38px", lg: "44px" },
+                          height: { xs: "32px", md: "38px", lg: "44px" },
+                          borderRadius: "50%",
+                          backgroundColor: "#FFFFFF",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0, 
+                        }}
+                      >
+                        <ArrowOutwardIcon
+                          sx={{
+                            // Scaled arrow icon down for xs and md
+                            fontSize: { xs: "14px", md: "16px", lg: "20px" },
+                            color: "#111827", 
+                          }}
+                        />
+                      </Box>
+                    </PrimaryButton>
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Box>
-  </PrimaryButton>
-</Link>
-</Box>
-                </Box>
-                </Box>
-              </SwiperSlide>
-              ))}
-          </Swiper>
-        </Box>
   );
 }

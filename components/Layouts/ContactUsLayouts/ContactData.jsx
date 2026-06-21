@@ -3,12 +3,11 @@
 import { contactData, contactInfoSessionNote } from "@/assets/Generic-data";
 import { Box, Typography } from "@mui/material";
 
-// Font configurations: Poppins for body, Work Sans for titles
 const titleStyle = {
     fontFamily: "'Work Sans', sans-serif",
     fontWeight: 500,
-    fontSize: { xs: "22px", md: "28px" },
-    lineHeight: { xs: "32px", md: "43px" },
+    fontSize: { xs: "22px", sm: "24px", lg: "28px" },
+    lineHeight: { xs: "32px", sm: "36px", lg: "43px" },
     letterSpacing: "-0.03em",
     color: "#111827",
 };
@@ -16,8 +15,8 @@ const titleStyle = {
 const descStyle = {
     fontFamily: "'Poppins', sans-serif",
     fontWeight: 400,
-    fontSize: { xs: "16px", md: "22px" },
-    lineHeight: { xs: "30px", md: "43px" },
+    fontSize: { xs: "15px", sm: "18px", lg: "22px" },
+    lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
     letterSpacing: "-0.03em",
     color: "#777777",
 };
@@ -27,59 +26,56 @@ const ContactData = () => {
     <Box
       sx={{
         width: "100%",
-        maxWidth: { xs: "100%", md: "526px" }, // Group width: 526px
-        mx: { xs: "auto", md: 0 },
+        // 🔥 FIX: Alignment maps strictly to lg. This means 1024px AND 768px will be perfectly centered!
+        maxWidth: { xs: "100%", lg: "526px" }, 
+        mx: { xs: "auto", lg: 0 },
         display: "flex",
         flexDirection: "column",
       }}
     >
-     
       <Typography
         sx={{
           ...titleStyle,
-          width: { xs: "100%", md: "484px" },
-          height: { xs: "auto", md: "61px" },
-          mb: "45px", // Figma spacing between title and desc
-          textAlign: { xs: "center", md: "left" },
+          width: { xs: "100%", lg: "484px" },
+          height: "auto",
+          mb: { xs: 4, lg: "45px" }, 
+          // 🔥 FIX: Centered strictly for 1024px and 768px stacked views.
+          textAlign: { xs: "center", lg: "left" },
         }}
       >
         {contactData.title}
       </Typography>
 
-    
       <Typography
         sx={{
           ...descStyle,
-          width: { xs: "100%", md: "526px" },
-          height: { xs: "auto", md: "187px" },
+          width: { xs: "100%", lg: "526px" },
+          height: "auto",
           whiteSpace: "pre-line",
-          mb: "70px", // Figma spacing between desc and next title
-          textAlign: { xs: "center", md: "left" },
+          mb: { xs: 5, lg: "70px" }, 
+          textAlign: { xs: "center", lg: "left" },
         }}
       >
         {contactData.description}
       </Typography>
 
-    
       {contactData.sections.map((item, i) => (
         <Box
           key={i}
           sx={{
-            mb: "45px", 
-            textAlign: { xs: "center", md: "left" },
+            mb: { xs: 5, lg: "45px" }, 
+            textAlign: { xs: "center", lg: "left" },
           }}
         >
-        
           <Typography
             sx={{
               ...titleStyle,
-              mb: "45px", 
+              mb: { xs: 2, lg: "45px" }, 
             }}
           >
             {item.title}
           </Typography>
 
-        
           <Typography
             sx={{
               ...descStyle,
@@ -91,12 +87,11 @@ const ContactData = () => {
         </Box>
       ))}
 
-    
       <Typography
         sx={{
           ...descStyle,
           whiteSpace: "pre-line",
-          textAlign: { xs: "center", md: "left" },
+          textAlign: { xs: "center", lg: "left" },
         }}
       >
         {contactInfoSessionNote}

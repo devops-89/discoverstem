@@ -19,11 +19,16 @@ export default function SectionHeading({
         <Divider sx={{ width: 36, borderColor: "#9e9e9e", borderWidth: "1.5px" }} />
         <Typography sx={{ color: "#6e6e6e", fontSize: 14 }}>{label}</Typography>
       </Stack>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mt: 1 }}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        alignItems={{ xs: "flex-start", sm: "center" }}
+        justifyContent="space-between"
+        sx={{ mt: 1, gap: { xs: 2, sm: 0 } }}
+      >
         <Typography
           sx={{
             fontFamily: "var(--font-geist-sans), sans-serif",
-            fontSize: { xs: 28, md: 44, lg: 48 },
+            fontSize: { xs: 22, sm: 32, md: 44, lg: 48 }, // Decreased size on mobile (22px) and tablet (32px)
             fontWeight: 500,
             color: "#000",
             lineHeight: 1.15,
@@ -31,23 +36,36 @@ export default function SectionHeading({
         >
           {title}
         </Typography>
-        <Stack direction="row" spacing={1.5} alignItems="center">
+        <Stack
+          direction="row"
+          spacing={{ xs: 1, sm: 1.5 }}
+          alignItems="center"
+          sx={{
+            width: { xs: "100%", sm: "auto" },
+            justifyContent: { xs: "space-between", sm: "flex-start" },
+          }}
+        >
           <Button
             variant="outlined"
             disableElevation
             href={viewAllHref}
-            endIcon={<span style={{ fontSize: 18, marginLeft: 4 }}>↗</span>}
+            endIcon={
+              <Box component="span" sx={{ fontSize: { xs: 11, md: 18 }, ml: 0.5 }}>
+                ↗
+              </Box>
+            }
             sx={{
               borderRadius: "100px",
-              borderColor: "#FF7043", // Salmon/Orange color
+              borderColor: "#FF7043",
               color: "#FF7043",
               bgcolor: "transparent",
               textTransform: "none",
-              fontSize: { xs: 14, md: 16 },
+              fontSize: { xs: 11, md: 16 },
               fontWeight: 500,
-              px: { xs: 2.5, md: 3.5 },
-              py: 1,
+              px: { xs: 1.5, md: 3.5 },
+              py: { xs: 0.4, md: 1 },
               fontFamily: "var(--font-geist-sans), sans-serif",
+              minWidth: "auto",
               "&:hover": {
                 bgcolor: "#FFF5F2",
                 borderColor: "#FF7043",
@@ -57,12 +75,12 @@ export default function SectionHeading({
             View All
           </Button>
           {swiperRef && (
-            <Stack direction="row" spacing={1.2}>
+            <Stack direction="row" spacing={{ xs: 0.8, md: 1.2 }}>
               <Box
                 onClick={() => swiperRef.current?.slidePrev()}
                 sx={{
-                  width: { xs: 36, md: 44 },
-                  height: { xs: 36, md: 44 },
+                  width: { xs: 32, md: 44 },
+                  height: { xs: 32, md: 44 },
                   borderRadius: "50%",
                   border: "1px solid #E0E0E0",
                   display: "flex",
@@ -70,7 +88,7 @@ export default function SectionHeading({
                   justifyContent: "center",
                   cursor: "pointer",
                   color: "#666",
-                  fontSize: 20,
+                  fontSize: { xs: 16, md: 20 },
                   transition: "all 0.2s",
                   "&:hover": { bgcolor: "#f5f5f5", borderColor: "#ccc" },
                 }}
@@ -80,8 +98,8 @@ export default function SectionHeading({
               <Box
                 onClick={() => swiperRef.current?.slideNext()}
                 sx={{
-                  width: { xs: 36, md: 44 },
-                  height: { xs: 36, md: 44 },
+                  width: { xs: 32, md: 44 },
+                  height: { xs: 32, md: 44 },
                   borderRadius: "50%",
                   border: "1px solid #E0E0E0",
                   display: "flex",
@@ -89,7 +107,7 @@ export default function SectionHeading({
                   justifyContent: "center",
                   cursor: "pointer",
                   color: "#666",
-                  fontSize: 20,
+                  fontSize: { xs: 16, md: 20 },
                   transition: "all 0.2s",
                   "&:hover": { bgcolor: "#f5f5f5", borderColor: "#ccc" },
                 }}

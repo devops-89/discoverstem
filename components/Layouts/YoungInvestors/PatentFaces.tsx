@@ -32,8 +32,8 @@ export default function PatentFacesSection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 5, md: 8 },
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 5, md: 6, lg: 8 },
       }}
     >
       <Box
@@ -44,14 +44,14 @@ export default function PatentFacesSection() {
         {/* Heading */}
         <Typography
           sx={{
-            width: { xs: "100%", md: "671px" },
+            width: { xs: "100%", lg: "671px" },
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "32px", md: "48px" },
-            lineHeight: { xs: "40px", md: "36.8px" },
+            fontSize: { xs: "32px", md: "40px", lg: "48px" },
+            lineHeight: { xs: "40px", md: "44px", lg: "36.8px" },
             letterSpacing: "-0.8px",
             color: "#171717",
-            mb: { xs: 4, md: "35px" },
+            mb: { xs: 4, lg: "35px" },
           }}
         >
           {patentFacesData.title}
@@ -63,7 +63,7 @@ export default function PatentFacesSection() {
             width: "100%",
             display: "flex",
             justifyContent: { xs: "stretch", sm: "flex-end" },
-            mb: { xs: 4, md: "70px" },
+            mb: { xs: 4, md: 6, lg: "70px" },
           }}
         >
           <PatentFacesFilter
@@ -81,12 +81,14 @@ export default function PatentFacesSection() {
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(5, 1fr)",
+              // 🔥 FIX: 768px (sm) gets 3 cards, 1024px (md) gets 4 cards! 1440px gets 5!
+              sm: "repeat(3, 1fr)",
+              md: "repeat(4, 1fr)",
+              lg: "repeat(5, 1fr)",
             },
             gap: {
               xs: "20px",
-              md: "23px",
+              lg: "23px",
             },
             mb: "40px",
           }}
@@ -96,8 +98,9 @@ export default function PatentFacesSection() {
               key={student.id}
               sx={{
                 width: "100%",
-                maxWidth: "213.86px",
-                height: "309.43px",
+                // 🔥 FIX: Increased max-width and height on small screens! 1440px is strictly locked to 213.86px.
+                maxWidth: { xs: "280px", sm: "100%", lg: "213.86px" },
+                height: { xs: "380px", sm: "340px", lg: "309.43px" },
                 borderRadius: "16px",
                 border: "0.8px solid #0000000D",
                 backgroundColor: "#FAFAFA",
@@ -109,7 +112,8 @@ export default function PatentFacesSection() {
                 sx={{
                   position: "relative",
                   width: "100%",
-                  height: "234px",
+                  // 🔥 FIX: Proportionately increased image height on small screens so the cards look bigger!
+                  height: { xs: "306px", sm: "266px", lg: "234px" },
                   backgroundColor: "#C4C4C4",
                 }}
               >
@@ -202,12 +206,19 @@ export default function PatentFacesSection() {
               onChange={(_, value) => setPage(value)}
               renderItem={(item) => <PaginationItem {...item} />}
               sx={{
-                "& .MuiPagination-ul": { gap: "8px" },
+                "& .MuiPagination-ul": { 
+                  gap: { xs: "0px", sm: "8px" },
+                  flexWrap: "nowrap",
+                  justifyContent: "center",
+                },
                 "& .MuiPaginationItem-root": {
-                  width: "40px",
-                  height: "40px",
+                  width: { xs: "24px", sm: "40px" },
+                  height: { xs: "24px", sm: "40px" },
+                  minWidth: { xs: "24px", sm: "40px" },
+                  fontSize: { xs: "11px", sm: "14px" },
+                  padding: 0,
+                  margin: { xs: "0 2px", sm: "0 4px" },
                   borderRadius: "50%",
-                  fontSize: "14px",
                   fontWeight: 500,
                   display: "inline-flex",
                   alignItems: "center",
@@ -215,9 +226,12 @@ export default function PatentFacesSection() {
                   backgroundColor: "#E5E7EB",
                   color: "#374151",
                 },
+                "& .MuiPaginationItem-icon": {
+                  fontSize: { xs: "16px", sm: "20px" },
+                },
                 "& .MuiPaginationItem-ellipsis": {
                   backgroundColor: "transparent",
-                  lineHeight: "40px",
+                  lineHeight: { xs: "24px", sm: "40px" },
                 },
                 "& .Mui-selected": {
                   backgroundColor: "#7B53A1 !important",

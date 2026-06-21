@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { patentCertificatesData2023 } from "@/assets/Generic-data";
 import { Box, Container, Typography, Dialog, IconButton } from "@mui/material";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
@@ -8,8 +7,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 
+export type PatentItem = {
+  id: string | number;
+  videoUrl: string;
+  image: string;
+  label: string;
+};
 
-export default function PatentCertificates2023Section() {
+export type PatentData = {
+  title: string;
+  items: PatentItem[];
+};
+
+interface PatentCertificatesSharedProps {
+  data: PatentData;
+  uniqueId: string; // Prevents Swiper arrow collisions if multiple exist on the same page
+}
+
+export default function PatentCertificatesShared({
+  data,
+  uniqueId,
+}: PatentCertificatesSharedProps) {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
@@ -18,14 +36,14 @@ export default function PatentCertificates2023Section() {
       sx={{
         maxWidth: "1232px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 3, md: 5, lg: 10 },
       }}
     >
       <Box
         sx={{
           width: "100%",
-          minHeight: { xs: "auto", md: "398px" },
+          minHeight: { xs: "auto", lg: "398px" },
         }}
       >
         <Typography
@@ -33,17 +51,17 @@ export default function PatentCertificates2023Section() {
             textAlign: "center",
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "30px", md: "48px" },
-            lineHeight: { xs: "40px", md: "62px" },
+            fontSize: { xs: "24px", sm: "35px", lg: "48px" },
+            lineHeight: { xs: "40px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#171717",
-            mb: { xs: 4, md: "46px" },
+            mb: { xs: 4, md: 5, lg: "46px" },
           }}
         >
-          {patentCertificatesData2023.title}
+          {data.title}
         </Typography>
 
-        <Box sx={{ position: "relative", px: { md: 5 } }}>
+        <Box sx={{ position: "relative", px: { xs: 6, md: 5 } }}>
           <Swiper
             modules={[Autoplay, Navigation]}
             slidesPerView={5}
@@ -51,17 +69,18 @@ export default function PatentCertificates2023Section() {
             loop
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             navigation={{
-              prevEl: ".patent-prev-2023",
-              nextEl: ".patent-next-2023",
+              prevEl: `.patent-prev-${uniqueId}`,
+              nextEl: `.patent-next-${uniqueId}`,
             }}
             breakpoints={{
               0: { slidesPerView: 1 },
-              600: { slidesPerView: 2 },
-              900: { slidesPerView: 3 },
+              500: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
               1200: { slidesPerView: 5 },
             }}
           >
-            {patentCertificatesData2023.items.map((item) => (
+            {data.items.map((item) => (
               <SwiperSlide key={item.id}>
                 <Box
                   onClick={() => setSelectedVideo(item.videoUrl)}
@@ -98,10 +117,12 @@ export default function PatentCertificates2023Section() {
                   <Box
                     sx={{
                       position: "absolute",
-                      top: "118px",
-                      left: "88.8px",
-                      width: "56px",
-                      height: "56px",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      // 🔥 FIX: Decreased Play Button outer circle size for mobile, locked to 56px for 1440px
+                      width: { xs: "40px", lg: "56px" },
+                      height: { xs: "40px", lg: "56px" },
                       borderRadius: "999px",
                       bgcolor: "#FFFFFFF2",
                       display: "flex",
@@ -115,10 +136,11 @@ export default function PatentCertificates2023Section() {
                       sx={{
                         width: 0,
                         height: 0,
-                        borderTop: "8px solid transparent",
-                        borderBottom: "8px solid transparent",
-                        borderLeft: "12px solid #7B53A1",
-                        ml: "4px",
+                        // 🔥 FIX: Decreased inner purple triangle for mobile proportionately!
+                        borderTop: { xs: "6px solid transparent", lg: "8px solid transparent" },
+                        borderBottom: { xs: "6px solid transparent", lg: "8px solid transparent" },
+                        borderLeft: { xs: "9px solid #7B53A1", lg: "12px solid #7B53A1" },
+                        ml: { xs: "3px", lg: "4px" },
                       }}
                     />
                   </Box>
@@ -151,15 +173,15 @@ export default function PatentCertificates2023Section() {
           </Swiper>
 
           <Box
-            className="patent-prev-2023"
+            className={`patent-prev-${uniqueId}`}
             sx={{
               position: "absolute",
-              left: { xs: -8, md: -12 },
+              left: { xs: 0, md: -16, lg: -12 },
               top: "50%",
               transform: "translateY(-50%)",
               zIndex: 10,
-              width: 44,
-              height: 44,
+              width: { xs: 36, lg: 44 },
+              height: { xs: 36, lg: 44 },
               borderRadius: "50%",
               border: "1px solid #E0E0E0",
               display: "flex",
@@ -168,7 +190,7 @@ export default function PatentCertificates2023Section() {
               cursor: "pointer",
               bgcolor: "#fff",
               color: "#666",
-              fontSize: 22,
+              fontSize: { xs: 18, lg: 22 },
               transition: "all 0.2s",
               "&:hover": { bgcolor: "#f5f5f5", borderColor: "#ccc" },
               "&.swiper-button-disabled": { opacity: 0.4, cursor: "default" },
@@ -177,15 +199,15 @@ export default function PatentCertificates2023Section() {
             ‹
           </Box>
           <Box
-            className="patent-next-2023"
+            className={`patent-next-${uniqueId}`}
             sx={{
               position: "absolute",
-              right: { xs: -8, md: -12 },
+              right: { xs: 0, md: -16, lg: -12 },
               top: "50%",
               transform: "translateY(-50%)",
               zIndex: 10,
-              width: 44,
-              height: 44,
+              width: { xs: 36, lg: 44 },
+              height: { xs: 36, lg: 44 },
               borderRadius: "50%",
               border: "1px solid #E0E0E0",
               display: "flex",
@@ -194,7 +216,7 @@ export default function PatentCertificates2023Section() {
               cursor: "pointer",
               bgcolor: "#fff",
               color: "#666",
-              fontSize: 22,
+              fontSize: { xs: 18, lg: 22 },
               transition: "all 0.2s",
               "&:hover": { bgcolor: "#f5f5f5", borderColor: "#ccc" },
               "&.swiper-button-disabled": { opacity: 0.4, cursor: "default" },
@@ -208,18 +230,21 @@ export default function PatentCertificates2023Section() {
       <Dialog
         open={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}
-         disableScrollLock
+        disableScrollLock
         maxWidth="md"
         fullWidth
         slotProps={{
-    paper: {
-      sx: {
-        bgcolor: "transparent",
-        boxShadow: "none",
-        position: "relative",
-      },
-    },
-  }}
+          paper: {
+            sx: {
+              bgcolor: "transparent",
+              boxShadow: "none",
+              position: "relative",
+              m: { xs: 1, md: 4 },
+              width: { xs: "calc(100% - 16px)", md: "100%" },
+              maxWidth: { xs: "calc(100% - 16px) !important", md: "900px !important" },
+            },
+          },
+        }}
       >
         {selectedVideo && (
           <Box sx={{ position: "relative", pt: "56.25%" }}>

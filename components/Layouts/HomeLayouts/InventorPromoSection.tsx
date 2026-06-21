@@ -22,8 +22,7 @@ export default function InventorPromoSection() {
       description:
         "DiscoverSTEM students are regularly accepted in top universities like Harvard, Stanford, Princeton, Duke,UC Berkeley,Rice University, Cornell & MIT among several others.\n\nImagine your child being in the elite list of the top 0.2% of the world population by innovating patentable solutions",
       image: "/Images/Home/StemPrograms.png",
-      cta:
-        "See our student success stories...",
+      cta: "See our student success stories...",
     },
     {
       title: "Are you ready to turn your child into\na prodigy?",
@@ -49,15 +48,25 @@ export default function InventorPromoSection() {
       sx={{
         maxWidth: "min(1196px, 100%)",
         mx: "auto",
-        py: { xs: 5, md: 12 },
-        px: { xs: 3, md: 4 },
+        py: { xs: 2, sm: 4, md: 12 },
+        px: { xs: 2, sm: 3, md: 4 },
+        // Force Swiper wrapper and slides to align stretch natively
+        "& .swiper-wrapper": {
+          display: "flex",
+          alignItems: "stretch",
+        },
+        "& .swiper-slide": {
+          height: "auto",
+          display: "flex",
+          alignItems: "stretch",
+        },
         "& .swiper": {
           width: "100%",
           overflow: "hidden",
-          pb: "60px",
+          pb: { xs: "35px", md: "60px" },
         },
         "& .swiper-pagination": {
-          bottom: "10px !important",
+          bottom: { xs: "0px !important", md: "10px !important" },
           left: "50%",
           transform: "translateX(-50%)",
         },
@@ -80,7 +89,7 @@ export default function InventorPromoSection() {
         loop
       >
         {slides.map((slide, i) => (
-          <SwiperSlide key={i} style={{ height: "auto" }}>
+          <SwiperSlide key={i}>
             <Box
               sx={{
                 backgroundColor: "#F5F5F7",
@@ -89,7 +98,8 @@ export default function InventorPromoSection() {
                 overflow: "hidden",
                 position: "relative",
                 minHeight: { xs: "auto", md: "620px" },
-                height: "auto",
+                height: "100%", // Inherits stretched height
+                width: "100%",
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
                 alignItems: "stretch",
@@ -98,8 +108,7 @@ export default function InventorPromoSection() {
               {/* Left Content */}
               <Box
                 sx={{
-                  p: { xs: 4, md: 7 },
-                  pt: { xs: 4, md: 7 },
+                  p: { xs: 2.5, sm: 4, md: 7 },
                   width: { xs: "100%", md: "65%" },
                   zIndex: 2,
                   display: "flex",
@@ -107,6 +116,7 @@ export default function InventorPromoSection() {
                   justifyContent: "flex-start",
                   minHeight: { xs: "auto", md: "620px" },
                   boxSizing: "border-box",
+                  flexGrow: 1,
                 }}
               >
                 {/* Text Area */}
@@ -123,11 +133,11 @@ export default function InventorPromoSection() {
                     sx={{
                       fontFamily: "var(--font-geist-sans), sans-serif",
                       fontWeight: 500,
-                      fontSize: { xs: 26, md: 40, lg: 48 },
+                      fontSize: { xs: 22, sm: 30, md: 40, lg: 48 },
                       color: "#000",
                       lineHeight: 1.15,
-                      mb: { xs: 3, md: 4 },
-                      whiteSpace: "pre-line",
+                      mb: { xs: 2, sm: 3, md: 4 },
+                      whiteSpace: { xs: "normal", md: "pre-line" },
                     }}
                   >
                     {slide.title}
@@ -137,7 +147,7 @@ export default function InventorPromoSection() {
                     variant="body1"
                     sx={{
                       fontFamily: "var(--font-geist-sans), sans-serif",
-                      fontSize: { xs: 16, md: 18, lg: 20 },
+                      fontSize: { xs: 14, sm: 16, md: 18, lg: 20 },
                       color: "#333",
                       lineHeight: 1.6,
                       maxWidth: 580,
@@ -148,31 +158,38 @@ export default function InventorPromoSection() {
                   </Typography>
                 </Box>
 
-                {/* Button */}
+                {/* Button Container */}
                 <Box
                   sx={{
                     mt: "auto",
-                    pt: 4,
+                    pt: { xs: 2, md: 4 },
+                    display: "flex",
+                    justifyContent: { xs: "center", md: "flex-start" }, // Centers button block on mobile/768px
                   }}
                 >
                   <Box
                     component="button"
                     sx={{
-                      whiteSpace: "pre-line",
+                      whiteSpace: { xs: "normal", md: "pre-line" },
                       backgroundColor: "#814D9F",
                       color: "#fff",
                       borderRadius: "100px",
                       border: "none",
-                      px: { xs: 3, md: 4 },
-                      py: { xs: 1.6, md: 1.8 },
-                      fontSize: { xs: 14, md: 16 },
+                      px: { xs: 2.5, sm: 3, md: 4 },
+                      py: { xs: 1.2, sm: 1.5, md: 1.8 },
+                      fontSize: { xs: 13, sm: 14, md: 16 },
                       fontWeight: 500,
                       fontFamily: "var(--font-geist-sans), sans-serif",
                       cursor: "pointer",
-                      textAlign: "left",
+                      textAlign: { xs: "center", md: "left" },
                       transition: "all 0.2s",
-                      display: "inline-block",
-                      maxWidth: "fit-content",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: { xs: "center", md: "flex-start" }, // Centers text inside button on mobile
+                      width: { xs: "100%", sm: "420px", md: "fit-content" }, // Aligned widths at 768px (sm)
+                      minHeight: { xs: "68px", sm: "60px", md: "auto" }, // Aligned heights
+                      boxSizing: "border-box",
+                      lineHeight: 1.3,
                       "&:hover": {
                         backgroundColor: "#6a3e82",
                       },
@@ -188,7 +205,7 @@ export default function InventorPromoSection() {
                 sx={{
                   width: { xs: "100%", md: "35%" },
                   position: "relative",
-                  minHeight: { xs: 300, md: "auto" },
+                  minHeight: { xs: 220, sm: 300, md: "auto" },
                 }}
               >
                 <Box
@@ -199,7 +216,7 @@ export default function InventorPromoSection() {
                     position: { xs: "relative", md: "absolute" },
                     bottom: 0,
                     right: { xs: 0, md: -20 },
-                    height: { xs: 300, md: "100%" },
+                    height: { xs: 220, sm: 300, md: "100%" },
                     width: { xs: "100%", md: "auto" },
                     maxWidth: { xs: "100%", md: "130%" },
                     objectFit: "contain",

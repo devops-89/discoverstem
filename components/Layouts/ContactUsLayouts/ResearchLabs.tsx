@@ -3,8 +3,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-
-
 import { researchLabs } from "@/assets/Generic-data";
 
 const ResearchLabs = () => {
@@ -13,13 +11,13 @@ const ResearchLabs = () => {
             maxWidth="lg"
             sx={{
                 maxWidth: "min(1196px, 100%)",
-                py: { xs: 5, md: 7 },
-                px: { xs: 3, md: 4 },
+                py: { xs: 5, lg: 7 },
+                px: { xs: 3, lg: 4 },
             }}
         >
-            <Grid container spacing={{ xs: "20px", md: "24px", lg: "32px" }}>
+            <Grid container spacing={{ xs: "20px", lg: "32px" }}>
                 {researchLabs.map((lab, index) => (
-                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                    <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
                         <Link href={lab.href} style={{ textDecoration: "none" }}>
                             <Box
                                 sx={{
@@ -32,17 +30,17 @@ const ResearchLabs = () => {
                                             transform: "scale(1.05)",
                                         },
                                         "& .lab-title": {
-                                            color: "#7B53A1", // Purple hover transition
+                                            color: "#7B53A1", 
                                         },
                                     },
                                 }}
                             >
-                              
                                 <Box
                                     sx={{
                                         position: "relative",
                                         width: "100%",
-                                        height: { xs: "200px", md: "179px" },
+                                        // 🔥 FIX: Height expands slightly for mobile scaling, locks to 179px exactly at Desktop.
+                                        height: { xs: "200px", sm: "240px", lg: "179px" },
                                         borderRadius: "13px",
                                         overflow: "hidden",
                                     }}
@@ -64,15 +62,14 @@ const ResearchLabs = () => {
                                         />
                                     </Box>
                                 </Box>
-
                                 
                                 <Typography
                                     className="lab-title"
                                     sx={{
-                                        mt: "19px", 
+                                        mt: { xs: "12px", lg: "19px" }, 
                                         fontFamily: "'Poppins', sans-serif",
                                         fontWeight: 400,
-                                        fontSize: { xs: "15px", md: "18px" },
+                                        fontSize: { xs: "15px", lg: "18px" },
                                         lineHeight: "25px",
                                         letterSpacing: "-0.03em",
                                         color: "#111827",

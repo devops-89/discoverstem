@@ -1,11 +1,11 @@
 "use client";
 
-import { chiefGuestsData2020 } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LanguageIcon from "@mui/icons-material/Language";
+import React from "react";
 
 const socialIcons: Record<string, React.ReactNode> = {
   linkedin: <LinkedInIcon sx={{ fontSize: 18 }} />,
@@ -13,12 +13,35 @@ const socialIcons: Record<string, React.ReactNode> = {
   web: <LanguageIcon sx={{ fontSize: 18 }} />,
 };
 
-export default function ChiefGuests2020() {
+export type SocialData = {
+  icon: string;
+  url: string;
+};
+
+export type ChiefGuestData = {
+  name: string;
+  title: string;
+  role?: string;
+  image: string;
+  socials: SocialData[];
+};
+
+interface ChiefGuestsSectionProps {
+  title?: string;
+  year: string; 
+  data: ChiefGuestData[];
+}
+
+export default function ChiefGuestsSection({
+  title = "Chief Guests",
+  year,
+  data,
+}: ChiefGuestsSectionProps) {
   return (
     <Box
       sx={{
         backgroundColor: "#FAF5FF",
-        py: { xs: 6, md: "107px" },
+        py: { xs: 6, sm: 8, lg: "107px" },
       }}
     >
       <Container
@@ -26,48 +49,50 @@ export default function ChiefGuests2020() {
         sx={{
           maxWidth: "1160px",
           mx: "auto",
-          px: { xs: 3, md: 0 },
+          px: { xs: 3, sm: 4, lg: 0 },
         }}
       >
-        <Typography
-          sx={{
-            fontFamily: "Work Sans, sans-serif",
-            fontWeight: 600,
-            fontSize: { xs: "32px", md: "48px" },
-            lineHeight: { xs: "44px", md: "65px" },
-            textAlign: "center",
-            color: "#101010",
-            mb: { xs: 4, md: "70px" },
-          }}
-        >
-          Chief Guests
-        </Typography>
+        {title && (
+          <Typography
+            sx={{
+              fontFamily: "Work Sans, sans-serif",
+              fontWeight: 600,
+              fontSize: { xs: "32px", sm: "40px", lg: "48px" },
+              lineHeight: { xs: "44px", sm: "52px", lg: "65px" },
+              textAlign: "center",
+              color: "#101010",
+              mb: { xs: 4, sm: 6, lg: "70px" },
+            }}
+          >
+            {title}
+          </Typography>
+        )}
 
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-            gap: { xs: 6, md: "60px" },
+            gridTemplateColumns: { xs: "1fr", lg: "1fr 1fr" },
+            gap: { xs: 6, sm: "60px" },
           }}
         >
-          {chiefGuestsData2020.map((guest, index) => (
+          {data.map((guest, index) => (
             <Box
               key={index}
               sx={{
                 display: "grid",
-                gridTemplateColumns: { xs: "1fr", md: "180px 1fr" },
-                gap: { xs: 3, md: "28px" },
+                gridTemplateColumns: { xs: "1fr", sm: "180px 1fr" },
+                gap: { xs: 3, sm: "28px" },
                 alignItems: "start",
               }}
             >
               <Box
                 sx={{
                   position: "relative",
-                  width: { xs: "160px", md: "180px" },
-                  height: { xs: "160px", md: "180px" },
+                  width: { xs: "240px", sm: "180px" },
+                  height: { xs: "240px", sm: "180px" },
                   borderRadius: "16px",
                   overflow: "hidden",
-                  mx: { xs: "auto", md: 0 },
+                  mx: { xs: "auto", sm: 0 },
                   flexShrink: 0,
                 }}
               >
@@ -79,12 +104,21 @@ export default function ChiefGuests2020() {
                 />
               </Box>
 
-              <Box sx={{ width: "100%", minWidth: 0 }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  minWidth: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: { xs: "center", sm: "flex-start" },
+                  textAlign: { xs: "center", sm: "left" },
+                }}
+              >
                 <Typography
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 300,
-                    fontSize: "12px",
+                    fontSize: { xs: "12px", md: "11px", lg: "12px" },
                     lineHeight: "16px",
                     letterSpacing: "2.4px",
                     textTransform: "uppercase",
@@ -92,15 +126,15 @@ export default function ChiefGuests2020() {
                     mb: "8px",
                   }}
                 >
-                  Chief Guest · Innovation Day 2020
+                  Chief Guest · Innovation Day {year}
                 </Typography>
 
                 <Typography
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    fontSize: { xs: "24px", md: "28px" },
-                    lineHeight: { xs: "32px", md: "36px" },
+                    fontSize: { xs: "24px", sm: "28px", md: "22px", lg: "28px" },
+                    lineHeight: { xs: "32px", sm: "36px", md: "30px", lg: "36px" },
                     letterSpacing: "-0.8px",
                     color: "#000000",
                     mb: "4px",
@@ -113,7 +147,7 @@ export default function ChiefGuests2020() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: "15px",
+                    fontSize: { xs: "15px", md: "14px", lg: "15px" },
                     lineHeight: "22px",
                     color: "#000000",
                     mb: "16px",
@@ -127,7 +161,7 @@ export default function ChiefGuests2020() {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      fontSize: "13px",
+                      fontSize: { xs: "13px", md: "12px", lg: "13px" },
                       lineHeight: "20px",
                       color: "#777",
                       mb: "16px",
@@ -137,7 +171,17 @@ export default function ChiefGuests2020() {
                   </Typography>
                 )}
 
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
+                    flexWrap: "wrap",
+                    gap: { xs: 2, sm: 1 },
+                    justifyContent: { xs: "center", sm: "flex-start" },
+                    alignItems: { xs: "center", sm: "flex-start" },
+                    width: "100%",
+                  }}
+                >
                   {guest.socials.map((social, sIndex) => (
                     <Box
                       key={sIndex}
@@ -149,8 +193,9 @@ export default function ChiefGuests2020() {
                         display: "inline-flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        height: "34px",
+                        height: { xs: "36px", sm: "34px" },
                         px: "16px",
+                        width: "auto",
                         borderRadius: "999px",
                         backgroundColor: "#0A66C2",
                         color: "#FFFFFF",
@@ -160,11 +205,16 @@ export default function ChiefGuests2020() {
                         lineHeight: "16px",
                         textDecoration: "none",
                         gap: "5px",
+                        transition: "all 0.2s",
                         "&:hover": { opacity: 0.85 },
                       }}
                     >
                       {socialIcons[social.icon]}
-                      {social.icon === "linkedin" ? "LinkedIn" : social.icon === "instagram" ? "Instagram" : "Website"}
+                      {social.icon === "linkedin"
+                        ? "LinkedIn"
+                        : social.icon === "instagram"
+                        ? "Instagram"
+                        : "Website"}
                     </Box>
                   ))}
                 </Box>

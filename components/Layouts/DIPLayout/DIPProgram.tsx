@@ -12,23 +12,24 @@ export default function DipProgramDetailsSection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        py: { xs: 5, sm: 6, lg: 10 },
+        // 🔥 FIX: Prevented 'px: 0' from squishing text on iPads by shifting it to 'lg'
+        px: { xs: 3, sm: 5, lg: 0 },
       }}
     >
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: { xs: 4, md: "75px" },
+          gap: { xs: 3, sm: 4, lg: "75px" }, // Scaled down gap on mobile
         }}
       >
         <Typography
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "32px", md: "48px" },
-            lineHeight: { xs: "42px", md: "62px" },
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled for mobile
+            lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // Scaled for mobile
             textAlign: "center",
             letterSpacing: "-0.03em",
             color: "#111827",
@@ -45,12 +46,12 @@ export default function DipProgramDetailsSection() {
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 400,
-                fontSize: { xs: "16px", md: "22px" },
-                lineHeight: { xs: "30px", md: "43px" },
+                fontSize: { xs: "15px", sm: "18px", lg: "22px" }, // Scaled for mobile
+                lineHeight: { xs: "26px", sm: "32px", lg: "43px" }, // Scaled for mobile
                 textAlign: "center",
                 letterSpacing: "-0.03em",
                 color: "#777777",
-                mb: index === data.content.length - 1 ? 0 : { xs: 4, md: "43px" },
+                mb: index === data.content.length - 1 ? 0 : { xs: 3, sm: 4, lg: "43px" }, // Scaled margin
 
                 "& strong": {
                   fontWeight: 700,

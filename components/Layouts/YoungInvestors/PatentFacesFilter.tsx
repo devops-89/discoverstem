@@ -25,7 +25,8 @@ export default function PatentFacesFilter({
           sm: "384px",
         },
         "& .MuiOutlinedInput-root": {
-          height: "45.6px",
+          // 🔥 FIX: Slightly shrunk the height of the search bar specifically for mobile phones. 1440px keeps 45.6px!
+          height: { xs: "40px", sm: "45.6px" },
           borderRadius: "999px",
           backgroundColor: "#FAFAFA",
           fontFamily: "Inter, sans-serif",

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { stepsData } from "@/assets/Generic-data";
@@ -40,7 +41,7 @@ export default function VerticalStepper({
       sx={{
         display: "flex",
         position: "relative",
-        minHeight: "600px",
+        minHeight: { xs: "400px", md: "500px", lg: "600px" }, // 🔥 FIX: Scaled down heights so it fits on a phone screen
         mb: 4,
       }}
     >
@@ -58,7 +59,7 @@ export default function VerticalStepper({
       <Box
         ref={containerRef}
         sx={{
-          height: "600px",
+          height: { xs: "400px", md: "500px", lg: "600px" }, // Matches minHeight above
           overflowY: "auto",
           pl: 5,
           width: "100%",
@@ -93,7 +94,7 @@ export default function VerticalStepper({
               sx={{
                 position: "absolute",
                 left: "-36px",
-                top: 0,
+                top: 0, 
                 width: 10,
                 height: 10,
                 borderRadius: "50%",
@@ -104,17 +105,19 @@ export default function VerticalStepper({
 
             <Box
               sx={{
-                width: { xs: "100%", md: "131px" },
-                height: { xs: "auto", md: "60px" },
+                width: { xs: "fit-content", lg: "131px" }, // 🔥 FIX: Prevent pill from stretching 100% on xs
+                minWidth: { xs: "100px", lg: "131px" },
+                height: { xs: "auto", lg: "60px" },
                 display: "inline-block",
-                px: 3,
-                py: "4px",
+                px: { xs: 2, lg: 3 },
+                py: { xs: "4px", lg: "4px" },
                 borderRadius: "55px",
                 border: "1px solid #6BAF6E",
                 color: "#7E57C2",
-                fontSize: 20,
-                lineHeight: "50px",
-                mb: 1,
+                fontSize: { xs: "14px", lg: "20px" }, // Scaled down for mobile
+                lineHeight: { xs: "30px", lg: "50px" }, // Scaled down for mobile
+                textAlign: "center", // Ensures text is centered perfectly in the pill
+                mb: { xs: 2, lg: 1 },
                 background: "#F9F9F9",
               }}
             >
@@ -123,14 +126,14 @@ export default function VerticalStepper({
 
             <Typography
               sx={{
-                width: { xs: "100%", md: "587px" },
-                height: { xs: "auto", md: "28px" },
+                width: { xs: "100%", lg: "587px" }, // Protected desktop width
+                height: { xs: "auto", lg: "28px" },
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
-                lineHeight: "28px",
-                fontSize: "28px",
+                lineHeight: { xs: "32px", lg: "28px" }, // Extra line-height on mobile for wrapped text
+                fontSize: { xs: "22px", lg: "28px" }, // Scaled down for mobile
                 mt: 1,
-                mb: 1,
+                mb: { xs: 2, lg: 1 },
               }}
             >
               {item.title}
@@ -138,12 +141,12 @@ export default function VerticalStepper({
 
             <Typography
               sx={{
-                width: { xs: "100%", md: "587px" },
+                width: { xs: "100%", lg: "587px" }, // Protected desktop width
                 height: "auto",
                 fontFamily: FONT_FAMILY.body,
-                fontSize: "20px",
+                fontSize: { xs: "16px", lg: "20px" }, // Scaled down for mobile
                 color: "#777",
-                lineHeight: "28px",
+                lineHeight: { xs: "26px", lg: "28px" }, // Scaled down for mobile
                 fontWeight: 400,
                 whiteSpace: "pre-line",
               }}

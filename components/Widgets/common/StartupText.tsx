@@ -15,8 +15,9 @@ export default function SimpleTextSection({ data }: SimpleTextSectionProps) {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        // 🔥 FIX: Shifted '0' padding to 'lg' so iPads don't have text touching the edges!
+        px: { xs: 3, lg: 0 },
+        py: { xs: 6, lg: 10 },
       }}
     >
       <Box
@@ -24,24 +25,25 @@ export default function SimpleTextSection({ data }: SimpleTextSectionProps) {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: { xs: 3, md: "20px" },
+          gap: { xs: 3, lg: "20px" },
         }}
       >
         {data.paragraphs.map((paragraph, index) => (
-         <Typography
-  key={index}
-  sx={{
-    fontFamily: FONT_FAMILY.body,
-    fontWeight: 400,
-    fontSize: { xs: "16px", md: "22px" },
-    lineHeight: { xs: "30px", md: "43px" },
-    letterSpacing: "-0.03em",
-    color: "#777777",
-    whiteSpace: "pre-line",
-  }}
->
-  {paragraph}
-</Typography>
+          <Typography
+            key={index}
+            sx={{
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: 400,
+              // 🔥 FIX: Smoothly scaled text down for mobile and tablets, but perfectly preserved 'lg' at 22px!
+              fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
+              lineHeight: { xs: "26px", sm: "28px", md: "34px", lg: "43px" },
+              letterSpacing: "-0.03em",
+              color: "#777777",
+              whiteSpace: "pre-line",
+            }}
+          >
+            {paragraph}
+          </Typography>
         ))}
       </Box>
     </Container>

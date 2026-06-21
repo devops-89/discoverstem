@@ -21,8 +21,9 @@ export default function CommonTextSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        // 🔥 FIX: Added padding on 'md' to prevent text touching the screen corner on 1024px iPads, preserved 0 on 1440px!
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 6, lg: 10 },
       }}
     >
       <Box
@@ -36,7 +37,7 @@ export default function CommonTextSection({
               (data.description || data.points?.length)
                 ? 4
                 : 0,
-            md:
+            lg:
               data.title &&
               (data.description || data.points?.length)
                 ? "70px"
@@ -50,15 +51,18 @@ export default function CommonTextSection({
             sx={{
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
+              // 🔥 FIX: Shrunk heading for mobile/tablets, exactly 48px on 1440px
               fontSize: {
-                xs: "30px",
-                sm: "38px",
-                md: "48px",
+                xs: "28px",
+                sm: "32px",
+                md: "36px",
+                lg: "48px",
               },
               lineHeight: {
-                xs: "38px",
-                sm: "48px",
-                md: "62px",
+                xs: "36px",
+                sm: "40px",
+                md: "44px",
+                lg: "62px",
               },
               letterSpacing: "-0.03em",
               color: "#111827",
@@ -77,15 +81,18 @@ export default function CommonTextSection({
                   width: "100%",
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 400,
+                  // 🔥 FIX: Shrunk description for mobile/tablets, exactly 22px on 1440px
                   fontSize: {
-                    xs: "16px",
-                    sm: "18px",
-                    md: "22px",
+                    xs: "15px",
+                    sm: "16px",
+                    md: "18px",
+                    lg: "22px",
                   },
                   lineHeight: {
-                    xs: "30px",
-                    sm: "34px",
-                    md: "43px",
+                    xs: "26px",
+                    sm: "28px",
+                    md: "32px",
+                    lg: "43px",
                   },
                   letterSpacing: "-0.03em",
                   color: "#777777",
@@ -113,13 +120,16 @@ export default function CommonTextSection({
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 600,
+                      // 🔥 FIX: Shrunk list items for mobile, exactly 18px on 1440px
                       fontSize: {
-                        xs: "15px",
-                        md: "18px",
+                        xs: "14px",
+                        md: "16px",
+                        lg: "18px",
                       },
                       lineHeight: {
-                        xs: "28px",
-                        md: "34px",
+                        xs: "26px",
+                        md: "30px",
+                        lg: "34px",
                       },
                       color: "#111827",
                       mb: 1,

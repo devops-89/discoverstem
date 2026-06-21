@@ -8,26 +8,28 @@ const RecentPosts = () => {
   return (
     <Box
       sx={{
-        width: { xs: "100%", md: "420px" },
-        height: { xs: "auto", md: "860px" },
+        // 🔥 FIX: Locked exact constraints to lg. iPads/phones safely get 100% width and auto height!
+        width: { xs: "100%", lg: "420px" },
+        height: { xs: "auto", lg: "860px" },
         p: 3,
         background: "#FAF5FF",
         borderRadius: 3,
         mb: 6,
-        overflowY:"auto",
+        overflowY: "auto",
       }}
     >
       {/* TITLE */}
       <Typography
         sx={{
-          width:{xs:"100%",md:"137px"},
-          height:{xs:"auto",md:"17px"},
-          lineHeight:"34px",
-          letterSpacing:"-0.8px",
+          // 🔥 FIX: Shifted exact pixel widths to lg.
+          width: { xs: "100%", lg: "137px" },
+          height: { xs: "auto", lg: "17px" },
+          lineHeight: "34px",
+          letterSpacing: "-0.8px",
           fontWeight: 600,
           fontSize: "24px",
           mb: 3,
-          color:"#1C2539"
+          color: "#1C2539"
         }}
       >
         Recent Post
@@ -40,8 +42,9 @@ const RecentPosts = () => {
           {/* IMAGE */}
           <Box
             sx={{
-              width:{xs:"100%",md:"348px"},
-              height:{xs:"auto",md:"160px"},
+              width: { xs: "100%", lg: "348px" },
+              // 🔥 FIX: Next.js 'fill' requires a defined height! 'auto' collapses to 0. Added safe responsive heights!
+              height: { xs: "200px", md: "240px", lg: "160px" },
               borderRadius: "10px",
               overflow: "hidden",
               mb: 1.5,
@@ -59,8 +62,8 @@ const RecentPosts = () => {
           {/* DATE */}
           <Typography
             sx={{
-              width:{xs:"100%",md:"101px"},
-              height:{xs:"auto",md:"11px"},
+              width: { xs: "100%", lg: "101px" },
+              height: { xs: "auto", lg: "11px" },
               fontSize: "12px",
               color: "#7B53A1",
               mb: 0.5,
@@ -72,13 +75,13 @@ const RecentPosts = () => {
           {/* TITLE */}
           <Typography
             sx={{
-              width:{xs:"100%",md:"348px"},
-              height:{xs:"auto",md:"44px"},
+              width: { xs: "100%", lg: "348px" },
+              height: { xs: "auto", lg: "44px" },
               fontSize: "14px",
               fontWeight: 600,
               color: "#111827",
               lineHeight: "30px",
-              letterSpacing:"-0.01em"
+              letterSpacing: "-0.01em"
             }}
           >
             {post.title}

@@ -33,8 +33,9 @@ export default async function CategoryPage({
         sx={{
           maxWidth: "1159px",
           mx: "auto",
-          px: { xs: 2, md: 0 },
-          py: { xs: 6, md: 8 },
+          // 🔥 FIX: iPad edge padding & smooth vertical scaling
+          px: { xs: 3, md: 4, lg: 0 },
+          py: { xs: 6, md: 7, lg: 8 },
         }}
       >
         <Typography
@@ -42,9 +43,10 @@ export default async function CategoryPage({
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "32px", md: "48px" },
+            // 🔥 FIX: Shifted large title mapping to lg.
+            fontSize: { xs: "32px", md: "40px", lg: "48px" },
             color: "#111827",
-            mb: 6,
+            mb: { xs: 4, lg: 6 },
             textTransform: "capitalize",
           }}
         >
@@ -61,6 +63,7 @@ export default async function CategoryPage({
               <Box
                 sx={{
                   display: "grid",
+                  // 🔥 FIX: Responsive grid! 4 cards on lg, 3 on iPad, 2 on small tablet.
                   gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
                   gap: "23px",
                 }}

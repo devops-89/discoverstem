@@ -7,31 +7,33 @@ import { Box, Container, Grid, IconButton, Typography, } from "@mui/material";
 const ContactMapSection = () => {
 return (
     <Container
-            maxWidth="lg"
-            sx={{
-                maxWidth: "min(1196px, 100%)",
-                py: { xs: 5, md: 7 },
-                px: { xs: 3, md: 4 },
-            }}
-        >
+        maxWidth="lg"
+        sx={{
+            maxWidth: "min(1196px, 100%)",
+            py: { xs: 5, lg: 7 },
+            px: { xs: 3, lg: 4 },
+        }}
+    >
         <Grid
         container
-        spacing={{ xs: 4, md: 6 }}
+        spacing={{ xs: 4, lg: 6 }}
         alignItems="center"
         >
-        <Grid size={{xs:12,md:4}}>
-            <Box>
+        <Grid size={{ xs: 12, lg: 4 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", alignItems: { xs: "center", lg: "flex-start" } }}>
             <Typography
                 sx={{
-                width:{xs:"100%",md:"330px"},
-                height:{xs:"auto",md:"94px"},
+                width: { xs: "100%", lg: "330px" },
+                height: "auto",
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
-                fontSize: { xs: "28px", md: "48px" },
-                lineHeight: { xs: "36px", md: "62px" },
+                // 🔥 FIX: Scaled text strictly for mobile. 1440px gets 48px!
+                fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+                lineHeight: { xs: "36px", sm: "44px", lg: "62px" },
                 letterSpacing:"-0.03em",
                 color: "#111827",
-                mb:6,
+                mb: { xs: 4, lg: 6 },
+                textAlign: { xs: "center", lg: "left" },
                 }}
             >
                 DiscoverSTEM <br /> Innovation Lab
@@ -39,15 +41,16 @@ return (
 
             <Typography
                 sx={{
-                width:{xs:"100%",md:"335px"},
-                height:{xs:"auto",md:"58px"},
+                width: { xs: "100%", lg: "335px" },
+                height: "auto",
                 mt: 2,
                 fontFamily: FONT_FAMILY.body,
-                fontSize: { xs: "14px", md: "22px" },
-                lineHeight: "43px",
+                fontSize: { xs: "15px", sm: "18px", lg: "22px" },
+                lineHeight: { xs: "24px", sm: "32px", lg: "43px" },
                 letterSpacing:"-0.03em",
                 color: "#777777",
-                mb:6,
+                mb: { xs: 4, lg: 6 },
+                textAlign: { xs: "center", lg: "left" },
                 }}
             >
                 555 Republic Drive, Suite 201 <br />
@@ -56,10 +59,12 @@ return (
 
             <Box
                 sx={{
-                mt: 3,
+                mt: { xs: 1, lg: 3 },
                 display: "flex",
                 gap: 1.5,
                 flexWrap: "wrap",
+                // 🔥 FIX: Icons dynamically center on mobile!
+                justifyContent: { xs: "center", lg: "flex-start" },
                 }}
             >
                 {[
@@ -82,7 +87,6 @@ return (
                         backgroundColor: "#111",
                         color: "#fff",
                         transition: "0.3s",
-
                         "&:hover": {
                         backgroundColor: "#7B53A1",
                         transform: "scale(1.05)",
@@ -91,17 +95,16 @@ return (
                     >
                     <Icon sx={{ fontSize: 18 }} />
                     </IconButton>
-                )
-                )}
+                ))}
             </Box>
             </Box>
         </Grid>
 
-        <Grid size={{xs:12,md:7.7}} sx={{display:"flex",justifyContent:"flex-end"}}>
+        <Grid size={{ xs: 12, lg: 7.7 }} sx={{ display: "flex", justifyContent: { xs: "center", lg: "flex-end" } }}>
             <Box
             sx={{
                 width: "100%",
-                height: { xs: "250px", sm: "300px", md: "358px" },
+                height: { xs: "250px", sm: "300px", lg: "358px" },
                 borderRadius: "25px",
                 overflow: "hidden",
                 boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",

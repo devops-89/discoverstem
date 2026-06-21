@@ -1,12 +1,7 @@
 "use client";
 
 import CloseIcon from "@mui/icons-material/Close";
-import {
-  Box,
-  Dialog,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Box, Dialog, IconButton, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 
 interface Props {
@@ -25,33 +20,31 @@ interface Props {
   } | null;
 }
 
-export default function ExpertsModal({
-  open,
-  onClose,
-  data,
-}: Props) {
+export default function ExpertsModal({ open, onClose, data }: Props) {
   if (!data) return null;
 
   const descriptions = data.modalData?.description ?? [];
 
   return (
     <Dialog
-     disableScrollLock
+      disableScrollLock
       open={open}
       onClose={onClose}
       maxWidth={false}
       slotProps={{
         paper: {
-        sx: {
-          width: "1160px",
-          maxWidth: "95vw",
-          maxHeight: "90vh",
-          borderRadius: "29px",
-          backgroundColor: "#F7F7F7",
-          overflowY: "auto",
-          position: "relative",
+          sx: {
+            width: "1160px",
+            // FIXED: Prevented the modal from completely touching the left/right edges of a mobile screen
+            maxWidth: { xs: "calc(100vw - 32px)", lg: "95vw" }, 
+            maxHeight: "90vh",
+            borderRadius: { xs: "20px", lg: "29px" },
+            backgroundColor: "#F7F7F7",
+            overflowY: "auto",
+            position: "relative",
+            m: { xs: 2, lg: 4 }, 
+          },
         },
-      }
       }}
     >
       {/* Close Button */}
@@ -59,11 +52,12 @@ export default function ExpertsModal({
         onClick={onClose}
         sx={{
           position: "absolute",
-          top: 24,
-          right: 24,
+          top: { xs: 16, lg: 24 },
+          right: { xs: 16, lg: 24 },
           zIndex: 20,
-          width: 48,
-          height: 48,
+          // Scaled down slightly on mobile so it doesn't block the expert's face!
+          width: { xs: 40, lg: 48 }, 
+          height: { xs: 40, lg: 48 },
           bgcolor: "#fff",
           boxShadow: "0px 4px 12px rgba(0,0,0,0.08)",
           "&:hover": {
@@ -71,14 +65,14 @@ export default function ExpertsModal({
           },
         }}
       >
-        <CloseIcon />
+        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" } }} />
       </IconButton>
 
       <Box
         sx={{
           p: {
             xs: 3,
-            md: "30px",
+            lg: "30px", // Pushed strict rigid values to 1440px
           },
         }}
       >
@@ -86,32 +80,35 @@ export default function ExpertsModal({
         <Box
           sx={{
             position: "relative",
+            // Un-floated on mobile so it centers nicely at the top
             float: {
               xs: "none",
-              md: "left",
+              lg: "left", 
             },
             width: {
               xs: "100%",
-              md: "250px",
+              lg: "250px",
             },
             height: {
-              xs: "280px",
-              md: "280px",
+              xs: "250px", // Mobile portrait
+              sm: "350px", // iPad portrait
+              lg: "280px", // Original 1440px height
             },
             borderRadius: "11px",
             overflow: "hidden",
             mr: {
               xs: 0,
-              md: "30px",
+              lg: "30px",
             },
-            mb: "20px",
+            mb: { xs: 3, lg: "20px" }, // More breathing room below image before text on mobile
             bgcolor: "#D9D9D9",
           }}
         >
           <Image
             src={data.image}
             alt={data.name}
-            fill sizes="100vw"
+            fill
+            sizes="100vw"
             style={{
               objectFit: "cover",
             }}
@@ -141,7 +138,7 @@ export default function ExpertsModal({
             fontWeight: 600,
             fontSize: {
               xs: "22px",
-              md: "25.6px",
+              lg: "25.6px",
             },
             lineHeight: "29.4px",
             letterSpacing: "-0.64px",
@@ -178,10 +175,7 @@ export default function ExpertsModal({
               lineHeight: "20px",
               letterSpacing: "-0.03em",
               color: "#777777",
-              mb:
-                index === descriptions.length - 1
-                  ? 0
-                  : 1.2,
+              mb: index === descriptions.length - 1 ? 0 : 1.2,
             }}
           >
             {paragraph}

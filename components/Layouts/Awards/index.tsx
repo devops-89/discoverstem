@@ -18,7 +18,7 @@ export default function Awards() {
   return (
     <>
       <HeroSlider slides={AwardsData}/>
-      <StatsCard stats={awardsStatsData} />;
+      <StatsCard stats={awardsStatsData} />
       <AwardImageGrid data={awardsImagesData}/>
       <CtaBanner data={ctaBannerData} />
     </>

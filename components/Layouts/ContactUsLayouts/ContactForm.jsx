@@ -14,29 +14,16 @@ import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const gradeOptions = [
-  { label: "K" },
-  { label: "1" },
-  { label: "2" },
-  { label: "3" },
-  { label: "4" },
-  { label: "5" },
-  { label: "6" },
-  { label: "7" },
-  { label: "8" },
-  { label: "9" },
-  { label: "10" },
-  { label: "11" },
-  { label: "12" },
-  { label: "Undergraduate" },
+  { label: "K" }, { label: "1" }, { label: "2" }, { label: "3" },
+  { label: "4" }, { label: "5" }, { label: "6" }, { label: "7" },
+  { label: "8" }, { label: "9" }, { label: "10" }, { label: "11" },
+  { label: "12" }, { label: "Undergraduate" },
 ];
 
 const hearOptions = [
-  { label: "Google Search" },
-  { label: "Social Media" },
-  { label: "Friend/Family" },
-  { label: "School/Teacher" },
-  { label: "Advertisement" },
-  { label: "Other" },
+  { label: "Google Search" }, { label: "Social Media" },
+  { label: "Friend/Family" }, { label: "School/Teacher" },
+  { label: "Advertisement" }, { label: "Other" },
 ];
 
 const validationSchema = Yup.object({
@@ -57,8 +44,8 @@ const validationSchema = Yup.object({
 const labelStyle = {
   fontFamily: "'Poppins', sans-serif",
   fontWeight: 500,
-  fontSize: "16px",
-  lineHeight: "30px",
+  fontSize: { xs: "14px", lg: "16px" },
+  lineHeight: { xs: "24px", lg: "30px" },
   color: "#000000",
   opacity: 0.7,
   mb: "8px",
@@ -75,17 +62,17 @@ const helperTextStyle = {
 const figmaInputStyle = {
   ...helperTextStyle,
   "& .MuiOutlinedInput-root": {
-    height: "64px",
+    height: { xs: "50px", lg: "64px" },
     backgroundColor: "#FFFFFF",
     borderRadius: "0px",
-    padding: "0 24px",
+    padding: { xs: "0 16px", lg: "0 24px" },
     "& fieldset": { border: "none" },
     "& input": {
       padding: 0,
       height: "100%",
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 400,
-      fontSize: "16px",
+      fontSize: { xs: "14px", lg: "16px" },
       color: "#474A55",
       "&::placeholder": {
         color: "#474A55",
@@ -98,16 +85,16 @@ const figmaInputStyle = {
 const figmaAutocompleteStyle = {
   ...helperTextStyle,
   "& .MuiOutlinedInput-root": {
-    height: "64px",
+    height: { xs: "50px", lg: "64px" },
     backgroundColor: "#FFFFFF",
     borderRadius: "0px",
-    padding: "0 24px !important",
+    padding: { xs: "0 16px !important", lg: "0 24px !important" },
     "& fieldset": { border: "none" },
     "& input": {
       padding: "0 !important",
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 400,
-      fontSize: "16px",
+      fontSize: { xs: "14px", lg: "16px" },
       color: "#474A55",
       "&::placeholder": {
         color: "#474A55",
@@ -115,7 +102,7 @@ const figmaAutocompleteStyle = {
       },
     },
     "& .MuiAutocomplete-endAdornment": {
-      right: "24px",
+      right: { xs: "16px", lg: "24px" },
     },
   },
 };
@@ -123,18 +110,18 @@ const figmaAutocompleteStyle = {
 const figmaMultilineStyle = {
   ...helperTextStyle,
   "& .MuiOutlinedInput-root": {
-    height: "135px",
+    height: { xs: "100px", lg: "135px" },
     backgroundColor: "#FFFFFF",
     borderRadius: "0px",
-    padding: "24px",
+    padding: { xs: "16px", lg: "24px" },
     alignItems: "flex-start",
     "& fieldset": { border: "none" },
     "& textarea": {
       padding: 0,
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 400,
-      fontSize: "16px",
-      lineHeight: "30px",
+      fontSize: { xs: "14px", lg: "16px" },
+      lineHeight: { xs: "24px", lg: "30px" },
       color: "#474A55",
       "&::placeholder": {
         color: "#474A55",
@@ -147,21 +134,12 @@ const figmaMultilineStyle = {
 const ContactForm = () => {
   const formik = useFormik({
     initialValues: {
-      studentName: "",
-      grade: null,
-      city: "",
-      state: "",
-      country: "",
-      parentName: "",
-      email: "",
-      phone: "",
-      hear: null,
-      message: "",
+      studentName: "", grade: null, city: "", state: "", country: "",
+      parentName: "", email: "", phone: "", hear: null, message: "",
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       const toastId = toast.loading("Sending...");
-
       try {
         await new Promise((res) => setTimeout(res, 1000));
         toast.success("Message sent!", { id: toastId });
@@ -176,9 +154,10 @@ const ContactForm = () => {
     <Box
       sx={{
         width: "100%",
-        maxWidth: { xs: "100%", md: "585px" },
-        ml: "auto",
-        mr: "auto",
+        // 🔥 FIX: Locked width to 585px universally so it doesn't float to the left edge of iPads!
+        maxWidth: "585px",
+        // 🔥 FIX: Centers horizontally inside the Grid column
+        mx: "auto", 
       }}
     >
       <Box
@@ -187,13 +166,15 @@ const ContactForm = () => {
         noValidate
         sx={{
           width: "100%",
+          // 🔥 FIX: Double-enforcing the centering directly on the form box
           maxWidth: "585px",
-          minHeight: { xs: "auto", md: "1476px" },
+          mx: "auto", 
+          minHeight: { xs: "auto", lg: "1476px" },
           backgroundColor: "#FAF5FF",
           borderRadius: "18px",
-          px: { xs: "20px", md: "28.5px" },
-          pt: { xs: "30px", md: "45px" },
-          pb: { xs: "30px", md: "26px" },
+          px: { xs: "20px", sm: "30px", lg: "28.5px" },
+          pt: { xs: "30px", sm: "40px", lg: "45px" },
+          pb: { xs: "30px", lg: "26px" },
           boxSizing: "border-box",
           display: "flex",
           flexDirection: "column",
@@ -205,11 +186,11 @@ const ContactForm = () => {
             textAlign: "center",
             fontFamily: "'Work Sans', sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "24px", md: "28px" },
+            fontSize: { xs: "24px", lg: "28px" },
             lineHeight: "46px",
             letterSpacing: "-0.02em",
             color: "#111827",
-            mb: "30px",
+            mb: { xs: "20px", lg: "30px" },
           }}
         >
           Send Your Message To Us
@@ -225,15 +206,8 @@ const ContactForm = () => {
               value={formik.values.studentName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.studentName &&
-                Boolean(formik.errors.studentName)
-              }
-              helperText={
-                formik.touched.studentName
-                  ? formik.errors.studentName || " "
-                  : " "
-              }
+              error={formik.touched.studentName && Boolean(formik.errors.studentName)}
+              helperText={formik.touched.studentName ? formik.errors.studentName || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
@@ -250,23 +224,13 @@ const ContactForm = () => {
               }}
               onBlur={() => formik.setFieldTouched("grade", true)}
               disableClearable
-              popupIcon={
-                <KeyboardArrowDownIcon
-                  sx={{ color: "#474A55", fontSize: "24px" }}
-                />
-              }
+              popupIcon={<KeyboardArrowDownIcon sx={{ color: "#474A55", fontSize: "24px" }} />}
               renderInput={(params) => (
                 <TextField
                   {...params}
                   placeholder="Select Grade"
-                  error={
-                    formik.touched.grade && Boolean(formik.errors.grade)
-                  }
-                  helperText={
-                    formik.touched.grade
-                      ? (formik.errors.grade ) || " "
-                      : " "
-                  }
+                  error={formik.touched.grade && Boolean(formik.errors.grade)}
+                  helperText={formik.touched.grade ? (formik.errors.grade) || " " : " "}
                   sx={figmaAutocompleteStyle}
                 />
               )}
@@ -283,9 +247,7 @@ const ContactForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.city && Boolean(formik.errors.city)}
-              helperText={
-                formik.touched.city ? formik.errors.city || " " : " "
-              }
+              helperText={formik.touched.city ? formik.errors.city || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
@@ -300,17 +262,13 @@ const ContactForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.state && Boolean(formik.errors.state)}
-              helperText={
-                formik.touched.state ? formik.errors.state || " " : " "
-              }
+              helperText={formik.touched.state ? formik.errors.state || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
-            <Typography sx={labelStyle}>
-              Which Country do you live in?
-            </Typography>
+            <Typography sx={labelStyle}>Which Country do you live in?</Typography>
             <TextField
               name="country"
               placeholder="Country"
@@ -319,17 +277,13 @@ const ContactForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.country && Boolean(formik.errors.country)}
-              helperText={
-                formik.touched.country ? formik.errors.country || " " : " "
-              }
+              helperText={formik.touched.country ? formik.errors.country || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
-            <Typography sx={labelStyle}>
-              Parent&apos;s/Guardian&apos;s Name
-            </Typography>
+            <Typography sx={labelStyle}>Parent&apos;s/Guardian&apos;s Name</Typography>
             <TextField
               name="parentName"
               placeholder="Enter Parent's/Guardian's Name"
@@ -337,15 +291,8 @@ const ContactForm = () => {
               value={formik.values.parentName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.parentName &&
-                Boolean(formik.errors.parentName)
-              }
-              helperText={
-                formik.touched.parentName
-                  ? formik.errors.parentName || " "
-                  : " "
-              }
+              error={formik.touched.parentName && Boolean(formik.errors.parentName)}
+              helperText={formik.touched.parentName ? formik.errors.parentName || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
@@ -360,9 +307,7 @@ const ContactForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.email && Boolean(formik.errors.email)}
-              helperText={
-                formik.touched.email ? formik.errors.email || " " : " "
-              }
+              helperText={formik.touched.email ? formik.errors.email || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
@@ -377,9 +322,7 @@ const ContactForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.phone && Boolean(formik.errors.phone)}
-              helperText={
-                formik.touched.phone ? formik.errors.phone || " " : " "
-              }
+              helperText={formik.touched.phone ? formik.errors.phone || " " : " "}
               sx={figmaInputStyle}
             />
           </Grid>
@@ -396,21 +339,13 @@ const ContactForm = () => {
               }}
               onBlur={() => formik.setFieldTouched("hear", true)}
               disableClearable
-              popupIcon={
-                <KeyboardArrowDownIcon
-                  sx={{ color: "#474A55", fontSize: "24px" }}
-                />
-              }
+              popupIcon={<KeyboardArrowDownIcon sx={{ color: "#474A55", fontSize: "24px" }} />}
               renderInput={(params) => (
                 <TextField
                   {...params}
                   placeholder="Select the source"
                   error={formik.touched.hear && Boolean(formik.errors.hear)}
-                  helperText={
-                    formik.touched.hear
-                      ? (formik.errors.hear) || " "
-                      : " "
-                  }
+                  helperText={formik.touched.hear ? (formik.errors.hear) || " " : " "}
                   sx={figmaAutocompleteStyle}
                 />
               )}
@@ -428,15 +363,13 @@ const ContactForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.message && Boolean(formik.errors.message)}
-              helperText={
-                formik.touched.message ? formik.errors.message || " " : " "
-              }
+              helperText={formik.touched.message ? formik.errors.message || " " : " "}
               sx={figmaMultilineStyle}
             />
           </Grid>
         </Grid>
 
-        <Box>
+        <Box sx={{ display: "flex", justifyContent: { xs: "center", lg: "flex-start" } }}>
           <Box
             component="button"
             type="submit"
@@ -446,9 +379,9 @@ const ContactForm = () => {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              padding: "6px 6px 6px 24px",
-              width: "234px",
-              height: "56px",
+              padding: { xs: "4px 4px 4px 20px", lg: "6px 6px 6px 24px" },
+              width: { xs: "210px", lg: "234px" },
+              height: { xs: "48px", lg: "56px" },
               background: "#7B53A1",
               borderRadius: "30px",
               border: "none",
@@ -467,7 +400,7 @@ const ContactForm = () => {
               sx={{
                 fontFamily: "'JUST Sans', 'Poppins', sans-serif",
                 fontWeight: 600,
-                fontSize: "16px",
+                fontSize: { xs: "14px", lg: "16px" },
                 lineHeight: "24px",
                 letterSpacing: "-0.01em",
                 color: "#FFFFFF",
@@ -479,8 +412,8 @@ const ContactForm = () => {
 
             <Box
               sx={{
-                width: "44px",
-                height: "44px",
+                width: { xs: "38px", lg: "44px" },
+                height: { xs: "38px", lg: "44px" },
                 borderRadius: "50%",
                 backgroundColor: "#FFFFFF",
                 display: "flex",
@@ -491,7 +424,7 @@ const ContactForm = () => {
             >
               <NorthEastIcon
                 sx={{
-                  fontSize: "20px",
+                  fontSize: { xs: "16px", lg: "20px" },
                   color: "#111827",
                 }}
               />
@@ -504,12 +437,15 @@ const ContactForm = () => {
         sx={{
           width: "100%",
           maxWidth: "556px",
+          // 🔥 FIX: Guarantees Privacy string centers properly with the form 
+          mx: "auto", 
           letterSpacing: "-0.03em",
           lineHeight: "22px",
           mt: "30px",
+          textAlign: { xs: "center", lg: "left" },
           fontFamily: "'Poppins', sans-serif",
           fontWeight: 400,
-          fontSize: "18px",
+          fontSize: { xs: "14px", lg: "18px" },
           color: "#111827",
         }}
       >

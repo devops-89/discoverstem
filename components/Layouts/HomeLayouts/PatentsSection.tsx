@@ -20,7 +20,22 @@ export default function PatentsSection() {
   const swiperRef = useRef<import("swiper").Swiper | null>(null);
 
   return (
-    <Container id="patents" sx={{ py: 6 }}>
+    <Container
+      id="patents"
+      sx={{
+        py: { xs: 4, md: 6 },
+        // Native Swiper slide height stretch
+        "& .swiper-wrapper": {
+          display: "flex",
+          alignItems: "stretch",
+        },
+        "& .swiper-slide": {
+          height: "auto",
+          display: "flex",
+          alignItems: "stretch",
+        },
+      }}
+    >
       <SectionHeading
         label="Our Young Innovators'"
         title="Patents"
@@ -31,16 +46,15 @@ export default function PatentsSection() {
       <Box sx={{ "& .swiper": { width: "100%" } }}>
         <Swiper
           modules={[Autoplay]}
-          slidesPerView={2}
-          spaceBetween={24}
           loop
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            0: { slidesPerView: 1 },
-            900: { slidesPerView: 2 },
+            0: { slidesPerView: 1, spaceBetween: 16 }, // Exactly 1 card on mobile
+            600: { slidesPerView: 1.5, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 24 }, // Resolves to original 2 slides on desktop / 1440
           }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -53,9 +67,14 @@ export default function PatentsSection() {
                 sx={{
                   bgcolor: "#f4f4f4",
                   borderRadius: "16px",
-                  p: 2,
+                  p: { xs: 1.5, md: 2 },
                   textAlign: "center",
                   border: "1px solid #eee",
+                  height: "100%", // Fills the stretched slide container
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxSizing: "border-box",
                 }}
               >
                 <Box
@@ -64,27 +83,27 @@ export default function PatentsSection() {
                   alt={patent.title}
                   sx={{
                     width: 1,
-                    height: 350,
+                    height: { xs: 220, sm: 280, md: 350 }, // Scaling image height (350px on desktop)
                     objectFit: "cover",
                     borderRadius: "10px",
                   }}
                 />
 
-              
                 <Box
                   sx={{
                     mt: 2,
-                    minHeight: "72px",
+                    minHeight: { xs: "60px", md: "72px" }, // Adjusted height alignment
                     display: "flex",
                     alignItems: "flex-start",
                     justifyContent: "center",
+                    flexGrow: 1, // Pushes title box to occupy empty flex space
                   }}
                 >
                   <Typography
                     sx={{
-                      fontSize: 20,
+                      fontSize: { xs: 16, sm: 18, md: 20 }, // Scaling title font size
                       fontWeight: 600,
-                      lineHeight: "24px",
+                      lineHeight: { xs: "20px", md: "24px" },
                       display: "-webkit-box",
                       WebkitLineClamp: 3,
                       WebkitBoxOrient: "vertical",
@@ -93,11 +112,14 @@ export default function PatentsSection() {
                   >
                     {patent.title}
                   </Typography>
-                </Box>               
-                <Typography sx={{
+                </Box>
+                
+                <Typography
+                  sx={{
                     color: "#ee4823",
-                    mt: 0.5,
+                    mt: 1,
                     fontWeight: 500,
+                    fontSize: { xs: 13, md: 14 },
                   }}
                 >
                   {patent.patentNumber}

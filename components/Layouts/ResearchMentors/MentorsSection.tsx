@@ -9,10 +9,21 @@ export default function MentorsSection() {
   const [selectedMentor, setSelectedMentor] = useState<typeof mentorCardsData[number] | null>(null);
 
   return (
-    <Container maxWidth={false} sx={{ maxWidth: "min(1196px, 100%)", py: { xs: 5, md: 7 }, px: { xs: 3, md: 4 } }}>
-      <Grid container rowSpacing={6} columnSpacing={20}>
+    <Container 
+      maxWidth={false} 
+      sx={{ 
+        maxWidth: "min(1196px, 100%)", 
+        py: { xs: 5, sm: 6, lg: 7 }, 
+        px: { xs: 3, sm: 5, lg: 4 } 
+      }}
+    >
+      <Grid 
+        container 
+        rowSpacing={{ xs: 4, sm: 5, lg: 6 }} 
+        columnSpacing={{ xs: 0, sm: 4, lg: 20 }} 
+      >
         {mentorCardsData.map((item, index) => (
-          <Grid key={index} size={{ xs: 12, md: 6 }}>
+          <Grid key={index} size={{ xs: 12, sm: 6 }}>
             <MentorCard data={item} onClick={() => setSelectedMentor(item)} />
           </Grid>
         ))}

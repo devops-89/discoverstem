@@ -35,7 +35,8 @@ export default function PatentStats() {
       sx={{
         maxWidth: "1232px",
         mx: "auto",
-        px: { xs: 2, md: 0 },
+        // 🔥 FIX: Added 32px padding on 'md' (1024px) so the white background shrinks and doesn't rub against the screen edges!
+        px: { xs: 2, md: "32px", lg: 0 },
         py: { xs: 3, md: 5 },
       }}
     >
@@ -60,10 +61,11 @@ export default function PatentStats() {
             <Box
               key={index}
               sx={{
-                minHeight: "127.25px",
-                px: { xs: "20px", md: "32px" },
-                pt: "32px",
-                pb: { xs: "24px", md: 0 },
+                // 🔥 FIX: Decreased height and padding on 'md' (1024px) to make the background smaller and fit perfectly
+                minHeight: { xs: "127.25px", md: "100px", lg: "127.25px" },
+                px: { xs: "20px", md: "16px", lg: "32px" },
+                pt: { xs: "32px", md: "24px", lg: "32px" },
+                pb: { xs: "24px", md: "24px", lg: 0 },
                 borderLeft: {
                   xs: index % 2 === 1 ? "0.8px solid rgba(0,0,0,0.05)" : "none",
                   md: index !== 0 ? "0.8px solid rgba(0,0,0,0.05)" : "none",
@@ -78,8 +80,8 @@ export default function PatentStats() {
                 sx={{
                   fontFamily: "Inter, sans-serif",
                   fontWeight: 700,
-                  fontSize: "36px",
-                  lineHeight: "36px",
+                  fontSize: { xs: "28px", sm: "32px", md: "28px", lg: "36px" },
+                  lineHeight: { xs: "28px", sm: "32px", md: "28px", lg: "36px" },
                   color: item.color,
                   mb: "8px",
                 }}
@@ -116,8 +118,8 @@ export default function PatentStats() {
                   sx={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "19px",
+                    fontSize: { xs: "12px", sm: "13px", md: "12px", lg: "14px" },
+                    lineHeight: { xs: "16px", sm: "17px", md: "16px", lg: "19px" },
                     color: "#525252",
                   }}
                 >

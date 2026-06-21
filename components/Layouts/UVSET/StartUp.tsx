@@ -17,8 +17,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 5, md: 8 },
+        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is locked to 0!
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 5, md: 6, lg: 8 },
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -27,14 +28,15 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           sx={{
             width: "100%",
             maxWidth: "1160px",
-            minHeight: { xs: "auto", md: "155px" },
+            // 🔥 FIX: Shifted large heights/margins to lg. Scaled down for mobile/tablets!
+            minHeight: { xs: "auto", lg: "155px" },
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "32px", sm: "40px", md: "48px" },
-            lineHeight: { xs: "40px", sm: "52px", md: "62px" },
+            fontSize: { xs: "24px", md: "35px", lg: "48px" },
+            lineHeight: { xs: "40px", md: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 6, md: "160px" },
+            mb: { xs: 6, md: 10, lg: "160px" },
           }}
         >
           {data.title}
@@ -45,15 +47,15 @@ export default function StartupDetail({ data }: StartupDetailProps) {
         {/* Team Title */}
         <Typography
           sx={{
-            width: { xs: "100%", md: "330px" },
-            height: { xs: "auto", md: "37px" },
+            width: { xs: "100%", lg: "330px" },
+            height: { xs: "auto", lg: "37px" },
             fontFamily: "Inter, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "28px", md: "36px" },
-            lineHeight: { xs: "34px", md: "36.8px" },
+            fontSize: { xs: "24px", md: "28px", lg: "36px" },
+            lineHeight: { xs: "30px", md: "34px", lg: "36.8px" },
             letterSpacing: "-0.8px",
             color: "#171717",
-            mb: { xs: 3, md: "35px" },
+            mb: { xs: 3, lg: "35px" },
           }}
         >
           {data.teamTitle}
@@ -66,10 +68,11 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             gridTemplateColumns: {
               xs: "1fr",
               sm: "repeat(2, 1fr)",
-              md: "repeat(5, 1fr)",
+              md: "repeat(3, 1fr)",
+              lg: "repeat(5, 1fr)", // 🔥 FIX: Locked 5 columns to lg!
             },
-            gap: { xs: 2, md: "20px" },
-            mb: { xs: 6, md: "95px" },
+            gap: { xs: 2, lg: "20px" },
+            mb: { xs: 6, md: 8, lg: "95px" },
           }}
         >
           {data.team.map((member, index) => (
@@ -77,7 +80,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               key={index}
               sx={{
                 width: "100%",
-                height: { xs: "auto", md: "101px" },
+                height: { xs: "auto", lg: "101px" },
                 borderRadius: "16px",
                 border: "0.8px solid #0000000D",
                 backgroundColor: "#FAFAFA",
@@ -122,8 +125,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    fontSize: "16px",
-                    lineHeight: "24px",
+                    // 🔥 FIX: Scaled text down slightly for mobile!
+                    fontSize: { xs: "14px", lg: "16px" },
+                    lineHeight: { xs: "20px", lg: "24px" },
                     color: "#171717",
                   }}
                 >
@@ -150,10 +154,12 @@ export default function StartupDetail({ data }: StartupDetailProps) {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1fr 516px" },
-            gap: { xs: 5, md: "128px" },
+            // 🔥 FIX: Scaled the right side to 400px on iPad so the left side text doesn't get squeezed too tight!
+            gridTemplateColumns: { xs: "1fr", md: "1fr 400px", lg: "1fr 516px" },
+            // 🔥 FIX: Shrunk the massive 128px gap for iPads.
+            gap: { xs: 5, md: "40px", lg: "128px" },
             alignItems: "start",
-            mb: { xs: 6, md: "106px" },
+            mb: { xs: 6, md: 8, lg: "106px" },
           }}
         >
           {/* Left Content */}
@@ -162,8 +168,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "20px", md: "22px" },
-                lineHeight: { xs: "34px", md: "43px" },
+                // 🔥 FIX: Shifted large text to lg!
+                fontSize: { xs: "18px", md: "20px", lg: "22px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#111827",
               }}
@@ -175,11 +182,11 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 400,
-                fontSize: { xs: "18px", md: "20px" },
-                lineHeight: { xs: "34px", md: "43px" },
+                fontSize: { xs: "16px", md: "18px", lg: "20px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#777777",
-                mb: { xs: 2, md: 0 },
+                mb: { xs: 2, lg: 0 },
               }}
             >
               {data.problem}
@@ -189,8 +196,8 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "20px", md: "22px" },
-                lineHeight: { xs: "34px", md: "43px" },
+                fontSize: { xs: "18px", md: "20px", lg: "22px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#111827",
               }}
@@ -204,11 +211,11 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 400,
-                  fontSize: { xs: "18px", md: "20px" },
-                  lineHeight: { xs: "34px", md: "43px" },
+                  fontSize: { xs: "16px", md: "18px", lg: "20px" },
+                  lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                   letterSpacing: "-0.03em",
                   color: "#777777",
-                  mb: index === data.innovation.length - 1 ? 0 : "22px",
+                  mb: index === data.innovation.length - 1 ? 0 : { xs: "16px", lg: "22px" },
                 }}
               >
                 {paragraph}
@@ -223,9 +230,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 position: "relative",
                 width: "100%",
                 maxWidth: "264px",
-                height: { xs: "100px", md: "124px" },
+                height: { xs: "80px", md: "100px", lg: "124px" },
                 mx: "auto",
-                mb: { xs: 3, md: "30px" },
+                mb: { xs: 3, lg: "30px" },
               }}
             >
               <Image
@@ -240,8 +247,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: "516px",
-                  height: { xs: "auto", md: "290px" },
+                  // 🔥 FIX: Kept max width at lg, allows scaling down cleanly on small screens!
+                  maxWidth: { xs: "100%", lg: "516px" },
+                  height: { xs: "auto", lg: "290px" },
                   mx: "auto",
                   borderRadius: "16px",
                   overflow: "hidden",
@@ -270,13 +278,13 @@ export default function StartupDetail({ data }: StartupDetailProps) {
         <Box
           sx={{
             width: "100%",
-            minHeight: { xs: "auto", md: "189px" },
+            minHeight: { xs: "auto", lg: "189px" },
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
               md: "repeat(3, 1fr)",
             },
-            gap: { xs: 2, md: "16px" },
+            gap: { xs: 2, lg: "16px" },
           }}
         >
           {bottomCards.map((item, index) => {
@@ -288,7 +296,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 key={index}
                 sx={{
                   width: "100%",
-                  minHeight: { xs: "170px", md: "189px" },
+                  minHeight: { xs: "auto", md: "170px", lg: "189px" },
                   borderRadius: "24px",
                   border: `0.8px solid ${
                     isStatus
@@ -297,9 +305,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                       ? "#EF412333"
                       : "#F9A51E33"
                   }`,
-                  px: { xs: 3, md: "32.8px" },
+                  px: { xs: 3, lg: "32.8px" },
                   pt: "26px",
-                  pb: "0.8px",
+                  pb: "10px",
                   display: "flex",
                   flexDirection: "column",
                   gap: "12px",
@@ -332,8 +340,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    fontSize: "22.4px",
-                    lineHeight: "26.88px",
+                    // 🔥 FIX: Shifted large text up to lg!
+                    fontSize: { xs: "16px", md: "20px", lg: "22.4px" },
+                    lineHeight: { xs: "24px", md: "26px", lg: "26.88px" },
                     letterSpacing: "-0.56px",
                     color: "#171717",
                   }}
@@ -346,8 +355,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "22.75px",
+                      // 🔥 FIX: Scaled text down slightly on mobile!
+                      fontSize: { xs: "13px", lg: "14px" },
+                      lineHeight: { xs: "20px", lg: "22.75px" },
                       color: "#555555",
                     }}
                   >

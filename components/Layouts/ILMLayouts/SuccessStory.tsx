@@ -15,39 +15,39 @@ export default function IlmSuccessStorySection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: "80px" },
+        py: { xs: 5, md: 6, lg: "80px" },
+        px: { xs: 3, md: 4, lg: 0 },
       }}
     >
       <Box
         sx={{
           width: "100%",
-          minHeight: { xs: "auto", md: "608px" },
+          minHeight: { xs: "auto", lg: "608px" },
         }}
       >
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: { xs: 4, md: "28px" },
+            gap: { xs: 4, lg: "28px" },
           }}
         >
           {/* Top Title + Description */}
           <Box
             sx={{
               width: "100%",
-              minHeight: { xs: "auto", md: "221px" },
+              minHeight: { xs: "auto", lg: "221px" },
             }}
           >
             <Typography
               sx={{
                 fontFamily: "Work Sans, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "32px", md: "48px" },
-                lineHeight: { xs: "42px", md: "62px" },
+                fontSize: { xs: "28px", md: "36px", lg: "48px" },
+                lineHeight: { xs: "38px", md: "46px", lg: "62px" },
                 letterSpacing: "-0.03em",
                 color: "#111827",
-                mb: { xs: 3, md: "70px" },
+                mb: { xs: 3, md: "40px", lg: "70px" },
               }}
             >
               {data.title}
@@ -57,8 +57,8 @@ export default function IlmSuccessStorySection() {
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 400,
-                fontSize: { xs: "16px", md: "22px" },
-                lineHeight: { xs: "30px", md: "43px" },
+                fontSize: { xs: "15px", md: "18px", lg: "22px" },
+                lineHeight: { xs: "26px", md: "32px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#777777",
               }}
@@ -72,20 +72,22 @@ export default function IlmSuccessStorySection() {
             sx={{
               position: "relative",
               width: "100%",
-              minHeight: { xs: "auto", md: "283px" },
+              minHeight: { xs: "auto", lg: "283px" },
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "594px 397px" },
+              // 🔥 FIX: To give 768px/1024px the 1440px layout without overflowing the screen,
+              // we use a 1.5:1 fractional ratio for md, and exact rigid pixels for lg.
+              gridTemplateColumns: { xs: "1fr", md: "1.5fr 1fr", lg: "594px 397px" },
               justifyContent: "space-between",
               alignItems: "center",
-              gap: { xs: 4, md: 0 },
+              gap: { xs: 4, md: 4, lg: 0 },
             }}
           >
             <Box
               component="ul"
               sx={{
-                pl: { xs: "22px", md: "24px" },
+                pl: { xs: "22px", md: "24px", lg: "24px" },
                 m: 0,
-                maxWidth: "594px",
+                maxWidth: { xs: "100%", lg: "594px" },
               }}
             >
               {data.points.map((point) => (
@@ -95,10 +97,12 @@ export default function IlmSuccessStorySection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    fontSize: { xs: "16px", md: "22px" },
-                    lineHeight: { xs: "30px", md: "43px" },
+                    // Slightly smaller text on tablet to fit side-by-side nicely
+                    fontSize: { xs: "14px", md: "15px", lg: "22px" }, 
+                    lineHeight: { xs: "24px", md: "26px", lg: "43px" }, 
                     letterSpacing: "-0.03em",
                     color: "#000000",
+                    mb: { xs: 1.5, md: 2, lg: 0 },
                   }}
                 >
                   {point}
@@ -110,8 +114,8 @@ export default function IlmSuccessStorySection() {
               sx={{
                 position: "relative",
                 width: "100%",
-                maxWidth: "397px",
-                height: { xs: "280px", md: "307px" },
+                maxWidth: { xs: "100%", lg: "397px" },
+                height: { xs: "240px", md: "280px", lg: "307px" },
                 borderRadius: "13px",
                 overflow: "hidden",
                 backgroundColor: "#C4C4C4",
@@ -134,64 +138,71 @@ export default function IlmSuccessStorySection() {
 
         {/* Button */}
        <Button
-  component={Link}
-  href={data.buttonLink}
-  sx={{
-    mt: { xs: 4, md: "10px" },
-    width: { xs: "100%", sm: "368px" },
-    height: "56px",
-    borderRadius: "30px",
-    backgroundColor: "#7B53A1",
-    color: "#FFFFFF",
-    textTransform: "none",
-    justifyContent: "space-between",
-    pl: "24px",
-    pr: "6px",
+        component={Link}
+        href={data.buttonLink}
+        sx={{
+          mt: { xs: 5, lg: "10px" },
+          // 🔥 FIX: Locked width to 272px on mobile (which is exactly 100% of a 320px screen)
+          width: { xs: "272px", sm: "368px" }, 
+          maxWidth: "368px",
+          height: { xs: "46px", sm: "56px" }, 
+          borderRadius: "30px",
+          backgroundColor: "#7B53A1",
+          color: "#FFFFFF",
+          textTransform: "none",
+          justifyContent: "space-between", 
+          pl: { xs: "14px", sm: "24px" }, 
+          pr: "6px",
+          display: "flex",
 
-    "&:hover": {
-      backgroundColor: "#6A448F",
-    },
-  }}
->
-  <Typography
-    component="span"
-    dangerouslySetInnerHTML={{
-      __html: data.buttonText,
-    }}
-    sx={{
-      fontFamily: "Poppins, sans-serif",
-      fontWeight: 400,
-      fontSize: "16px",
-      lineHeight: "24px",
-      letterSpacing: "-0.01em",
-      color: "#FFFFFF",
+          "&:hover": {
+            backgroundColor: "#6A448F",
+          },
+        }}
+      >
+        <Typography
+          component="span"
+          dangerouslySetInnerHTML={{
+            __html: data.buttonText,
+          }}
+          sx={{
+            fontFamily: "Poppins, sans-serif",
+            fontWeight: 400,
+            fontSize: { xs: "11px", sm: "16px" }, 
+            lineHeight: { xs: "16px", sm: "24px" },
+            letterSpacing: "-0.01em",
+            color: "#FFFFFF",
+            whiteSpace: "nowrap", 
+            overflow: "hidden",
+            textOverflow: "ellipsis", 
 
-      "& strong": {
-        fontWeight: 700,
-      },
-    }}
-  />
+            "& strong": {
+              fontWeight: 700,
+            },
+          }}
+        />
 
-  <Box
-    sx={{
-      width: "44px",
-      height: "44px",
-      borderRadius: "50%",
-      backgroundColor: "#FFFFFF",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-    }}
-  >
-    <NorthEastIcon
-      sx={{
-        fontSize: "20px",
-        color: "#111827",
-      }}
-    />
-  </Box>
-</Button>
+        <Box
+          sx={{
+            width: { xs: "34px", sm: "44px" }, 
+            height: { xs: "34px", sm: "44px" },
+            borderRadius: "50%",
+            backgroundColor: "#FFFFFF",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            ml: 1,
+          }}
+        >
+          <NorthEastIcon
+            sx={{
+              fontSize: { xs: "14px", sm: "20px" }, 
+              color: "#111827",
+            }}
+          />
+        </Box>
+      </Button>
       </Box>
     </Container>
   );

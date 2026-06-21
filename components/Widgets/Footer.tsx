@@ -9,69 +9,80 @@ export default function Footer() {
       sx={{
         bgcolor: "#111",
         color: "rgba(255,255,255,0.7)",
-        pt: 10,
-        pb: 4,
-        px: 2,
+        pt: { xs: 8, lg: 10 },
+        pb: { xs: 4, lg: 4 },
+        px: { xs: 2, lg: 2 },
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={{ xs: 6, md: 4 }}>
+        <Grid container spacing={{ xs: 6, lg: 4 }}>
           {/* Column 1: Logo, Text, Socials */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          {/* On 768/1024 (sm/md), this naturally inherits xs: 12 and sits beautifully centered on top */}
+          <Grid size={{ xs: 12, lg: 4 }}>
             <Box
-              component="img"
-              src="/logo-footer.png"
-              alt="DiscoverSTEM Logo"
-              sx={{ height: 60, mb: 3 }}
-            />
-            <Typography sx={{ lineHeight: 1.7, maxWidth: 320, mb: 4, fontSize: 15 }}>
-              Empowering young minds to innovate, create patents, and shape the
-              future through world-class STEM education.
-            </Typography>
-            <Stack direction="row" spacing={1.5}>
-              {[
-                "https://www.facebook.com/discoverstem",
-                "https://www.instagram.com/discoverstem",
-                "https://www.linkedin.com/company/discoverstem",
-                "https://www.youtube.com/discoverstem",
-                "https://twitter.com/discoverstem",
-              ].map((link, idx) => (
-                <Box
-                  key={idx}
-                  component="a"
-                  href={link}
-                  target="_blank"
-                  sx={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: "50%",
-                    bgcolor: "rgba(255,255,255,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#fff",
-                    transition: "all 0.2s",
-                    "&:hover": { bgcolor: "#f8a51e", color: "#111" },
-                  }}
-                >
-                  <Box component="span" sx={{ fontSize: 18, fontWeight: idx === 0 ? 800 : 500 }}>
-                    {idx === 0 && "f"}
-                    {idx === 1 && "📸"}
-                    {idx === 2 && "in"}
-                    {idx === 3 && "▶"}
-                    {idx === 4 && "𝕏"}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", lg: "flex-start" },
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
+              <Box
+                component="img"
+                src="/logo-footer.png"
+                alt="DiscoverSTEM Logo"
+                sx={{ height: { xs: 50, lg: 60 }, mb: 3 }}
+              />
+              <Typography sx={{ lineHeight: 1.7, maxWidth: 320, mb: 4, fontSize: { xs: 14, lg: 15 } }}>
+                Empowering young minds to innovate, create patents, and shape the
+                future through world-class STEM education.
+              </Typography>
+              <Stack direction="row" spacing={1.5} sx={{ justifyContent: { xs: "center", lg: "flex-start" } }}>
+                {[
+                  "https://www.facebook.com/discoverstem",
+                  "https://www.instagram.com/discoverstem",
+                  "https://www.linkedin.com/company/discoverstem",
+                  "https://www.youtube.com/discoverstem",
+                  "https://twitter.com/discoverstem",
+                ].map((link, idx) => (
+                  <Box
+                    key={idx}
+                    component="a"
+                    href={link}
+                    target="_blank"
+                    sx={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: "50%",
+                      bgcolor: "rgba(255,255,255,0.08)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#fff",
+                      transition: "all 0.2s",
+                      "&:hover": { bgcolor: "#f8a51e", color: "#111" },
+                    }}
+                  >
+                    <Box component="span" sx={{ fontSize: 18, fontWeight: idx === 0 ? 800 : 500 }}>
+                      {idx === 0 && "f"}
+                      {idx === 1 && "📸"}
+                      {idx === 2 && "in"}
+                      {idx === 3 && "▶"}
+                      {idx === 4 && "𝕏"}
+                    </Box>
                   </Box>
-                </Box>
-              ))}
-            </Stack>
+                ))}
+              </Stack>
+            </Box>
           </Grid>
 
           {/* Column 2: Programs */}
-          <Grid size={{ xs: 6, md: 2.5 }}>
-            <Typography sx={{ color: "#fff", fontWeight: 700, mb: 3, fontSize: 17 }}>
+          {/* 🔥 FIX: Uses sm: 4 to lock it to 1/3 width for 768px and 1024px! */}
+          <Grid size={{ xs: 6, sm: 4, lg: 2.5 }}>
+            <Typography sx={{ color: "#fff", fontWeight: 700, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
               Programs
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={{ xs: 1.5, lg: 2 }}>
               {[
                 "Summer Impact Program",
                 "Innovation Program",
@@ -84,7 +95,7 @@ export default function Footer() {
                   underline="none"
                   sx={{
                     color: "inherit",
-                    fontSize: 15,
+                    fontSize: { xs: 14, lg: 15 },
                     "&:hover": { color: "#f8a51e" },
                   }}
                 >
@@ -95,11 +106,12 @@ export default function Footer() {
           </Grid>
 
           {/* Column 3: Quick Links */}
-          <Grid size={{ xs: 6, md: 2.5 }}>
-            <Typography sx={{ color: "#fff", fontWeight: 700, mb: 3, fontSize: 17 }}>
+          {/* 🔥 FIX: Uses sm: 4 to lock it to 1/3 width for 768px and 1024px! */}
+          <Grid size={{ xs: 6, sm: 4, lg: 2.5 }}>
+            <Typography sx={{ color: "#fff", fontWeight: 700, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
               Quick Links
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={{ xs: 1.5, lg: 2 }}>
               {["Patents", "Awards", "News", "Innovation Day"].map((item) => (
                 <Link
                   key={item}
@@ -107,7 +119,7 @@ export default function Footer() {
                   underline="none"
                   sx={{
                     color: "inherit",
-                    fontSize: 15,
+                    fontSize: { xs: 14, lg: 15 },
                     "&:hover": { color: "#f8a51e" },
                   }}
                 >
@@ -118,42 +130,56 @@ export default function Footer() {
           </Grid>
 
           {/* Column 4: Contact */}
-          <Grid size={{ xs: 12, md: 3 }}>
-            <Typography sx={{ color: "#fff", fontWeight: 700, mb: 2.5, fontSize: 17 }}>
-              Contact
-            </Typography>
-            <Typography sx={{ mb: 3, fontSize: 15 }}>
-              Ready to start your innovation journey?
-            </Typography>
+          {/* 🔥 FIX: Uses sm: 4 to lock it to 1/3 width for 768px and 1024px! */}
+          <Grid size={{ xs: 12, sm: 4, lg: 3 }}>
             <Box
-              component="button"
               sx={{
-                bgcolor: "#f8a51e",
-                color: "#111",
-                fontWeight: 700,
-                border: "none",
-                cursor: "pointer",
-                borderRadius: 2,
-                px: 4,
-                py: 1.5,
-                "&:hover": { bgcolor: "#e6951a" },
+                display: "flex",
+                flexDirection: "column",
+                // 🔥 FIX: Ensures it perfectly aligns with the other two columns on 768/1024
+                alignItems: { xs: "center", sm: "flex-start" },
+                textAlign: { xs: "center", sm: "left" },
+                mt: { xs: 2, sm: 0 },
               }}
             >
-              Get in Touch
+              <Typography sx={{ color: "#fff", fontWeight: 700, mb: 2.5, fontSize: { xs: 16, lg: 17 } }}>
+                Contact
+              </Typography>
+              <Typography sx={{ mb: 3, fontSize: { xs: 14, lg: 15 } }}>
+                Ready to start your innovation journey?
+              </Typography>
+              <Box
+                component="button"
+                sx={{
+                  bgcolor: "#f8a51e",
+                  color: "#111",
+                  fontWeight: 700,
+                  border: "none",
+                  cursor: "pointer",
+                  borderRadius: 2,
+                  px: 4,
+                  py: 1.5,
+                  transition: "background-color 0.2s",
+                  "&:hover": { bgcolor: "#e6951a" },
+                }}
+              >
+                Get in Touch
+              </Box>
             </Box>
           </Grid>
         </Grid>
 
-        <Divider sx={{ mt: 8, mb: 4, borderColor: "rgba(255,255,255,0.1)" }} />
+        <Divider sx={{ mt: { xs: 6, lg: 8 }, mb: { xs: 3, lg: 4 }, borderColor: "rgba(255,255,255,0.1)" }} />
 
         <Stack
-          direction={{ xs: "column", md: "row" }}
+          direction={{ xs: "column", lg: "row" }}
           justifyContent="space-between"
-          alignItems={{ xs: "flex-start", md: "center" }}
+          alignItems="center"
           spacing={2}
+          sx={{ textAlign: "center" }}
         >
           <Typography sx={{ fontSize: 14 }}>© 2026 DiscoverSTEM. All rights reserved.</Typography>
-          <Stack direction="row" spacing={3}>
+          <Stack direction="row" spacing={3} justifyContent="center">
             <Link
               href="#"
               underline="none"

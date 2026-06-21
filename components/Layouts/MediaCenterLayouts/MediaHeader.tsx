@@ -73,9 +73,10 @@ export default function MediaCenterPage() {
           sx={{
             maxWidth: "1159px",
             mx: "auto",
-            px: { xs: 2, md: 0 },
-            pt: { xs: 4, md: 6 },
-            pb: { xs: 4, md: 6 },
+            // 🔥 FIX: iPad edge padding & smooth vertical scaling
+            px: { xs: 3, md: 4, lg: 0 },
+            pt: { xs: 4, md: 5, lg: 6 },
+            pb: { xs: 4, md: 5, lg: 6 },
           }}
         >
           {/* Top Large Card */}
@@ -105,9 +106,10 @@ export default function MediaCenterPage() {
         sx={{
           maxWidth: "1159px",
           mx: "auto",
-          px: { xs: 2, md: 0 },
-          pt: { xs: 4, md: 0 },
-          pb: { xs: 6, md: 0 },
+          // 🔥 FIX: iPad edge padding
+          px: { xs: 3, md: 4, lg: 0 },
+          pt: { xs: 4, lg: 0 },
+          pb: { xs: 6, lg: 0 },
         }}
       >
         {/* 1. Latest News */}

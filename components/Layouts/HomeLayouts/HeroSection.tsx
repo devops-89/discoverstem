@@ -1,11 +1,12 @@
 "use client";
-import { Box, Typography, Grid } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+
 import { heroImage } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
+import { Box, Grid, Typography } from "@mui/material";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const heroSlides = [
   {
@@ -33,24 +34,43 @@ export default function HeroSection() {
     <Box
       id="home"
       sx={{
-        mt: 2,
+        mt: { xs: 1.5, md: 2 },
         mx: "auto",
-        width: "1403px",
-        maxWidth: "calc(100% - 40px)",
-        borderRadius: "20px",
+        width: "100%",
+        maxWidth: {
+          xs: "calc(100% - 24px)",
+          md: "calc(100% - 40px)",
+          xl: "1403px",
+        },
+        borderRadius: { xs: "14px", md: "20px" },
         overflow: "hidden",
-        "& .swiper": { width: "100%", height: { xs: 540, md: 929 } },
-        "& .swiper-pagination": { bottom: "24px !important" },
+
+        "& .swiper": {
+          width: "100%",
+          height: {
+            xs: 520,
+            sm: 560,
+            md: 620,
+            lg: 720,
+            xl: 929,
+          },
+        },
+
+        "& .swiper-pagination": {
+          bottom: { xs: "18px !important", md: "24px !important" },
+        },
+
         "& .swiper-pagination-bullet": {
-          width: 28,
+          width: { xs: 18, md: 28 },
           height: 6,
           borderRadius: 3,
           background: "rgba(255,255,255,0.55)",
           opacity: 1,
         },
+
         "& .swiper-pagination-bullet-active": {
           background: "#fff",
-          width: 48,
+          width: { xs: 34, md: 48 },
         },
       }}
     >
@@ -63,7 +83,6 @@ export default function HeroSection() {
         {heroSlides.map((slide, i) => (
           <SwiperSlide key={i}>
             <Box sx={{ position: "relative", width: "100%", height: "100%" }}>
-              {/* Background Image */}
               <Box
                 component="img"
                 src={slide.image}
@@ -71,56 +90,113 @@ export default function HeroSection() {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  width: 1,
-                  height: 1,
+                  width: "100%",
+                  height: "100%",
                   objectFit: "cover",
                 }}
               />
-              {/* Gradient overlay */}
+
               <Box
                 sx={{
                   position: "absolute",
                   inset: 0,
                   background:
-                    "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.7) 100%)",
+                    "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.18) 35%, rgba(0,0,0,0.78) 100%)",
                 }}
               />
-              {/* Content at bottom */}
+
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: 0,
                   left: 0,
                   right: 0,
-                  px: { xs: 3, md: 8 },
-                  pb: { xs: 7, md: 10 },
+                  bottom: {
+                    xs: 64,
+                    sm: 72,
+                    md: 85,
+                    lg: 95,
+                    xl: 120,
+                  },
+                  px: {
+                    xs: 2.5,
+                    sm: 4,
+                    md: 5,
+                    lg: 7,
+                    xl: 10,
+                  },
+                  zIndex: 2,
+                  boxSizing: "border-box",
                 }}
               >
-                <Grid container spacing={3} alignItems="flex-end">
+                <Grid
+                  container
+                  spacing={{
+                    xs: 2,
+                    md: 3,
+                    lg: 5,
+                  }}
+                  alignItems="flex-end"
+                >
                   <Grid size={{ xs: 12, md: 6 }}>
                     <Typography
                       sx={{
                         fontFamily: FONT_FAMILY.heading,
                         color: "#fff",
-                        fontSize: { xs: 28, md: 48 },
-                        lineHeight: 1.18,
+                        fontSize: {
+                          xs: "28px",
+                          sm: "34px",
+                          md: "34px",
+                          lg: "42px",
+                          xl: "48px",
+                        },
+                        lineHeight: {
+                          xs: "36px",
+                          sm: "42px",
+                          md: "42px",
+                          lg: "50px",
+                          xl: "57px",
+                        },
                         fontWeight: 500,
+                        letterSpacing: "-0.03em",
+                        wordBreak: "normal",
+                        overflowWrap: "break-word",
                       }}
                     >
                       {slide.title}
                     </Typography>
                   </Grid>
+
                   <Grid size={{ xs: 12, md: 6 }}>
                     <Typography
-  sx={{
-    color: "#f0f0f0",
-    fontSize: { xs: 15, md: 18 },
-    lineHeight: 1.6,
-    whiteSpace: "pre-line", // Fixed here
-  }}
->
-  {slide.description}
-</Typography>
+                      sx={{
+                        color: "#f0f0f0",
+                        fontFamily: FONT_FAMILY.body,
+                        fontSize: {
+                          xs: "15px",
+                          sm: "16px",
+                          md: "16px",
+                          lg: "17px",
+                          xl: "18px",
+                        },
+                        lineHeight: {
+                          xs: "24px",
+                          sm: "25px",
+                          md: "26px",
+                          lg: "28px",
+                          xl: "30px",
+                        },
+                        whiteSpace: "pre-line",
+                        maxWidth: {
+                          xs: "100%",
+                          md: "470px",
+                          lg: "540px",
+                        },
+                        wordBreak: "normal",
+                        overflowWrap: "break-word",
+                      }}
+                    >
+                      {slide.description}
+                    </Typography>
                   </Grid>
                 </Grid>
               </Box>

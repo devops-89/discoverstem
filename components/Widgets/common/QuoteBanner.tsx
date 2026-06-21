@@ -12,10 +12,12 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
     <Box
       sx={{
         width: "100%",
-        minHeight: { xs: "260px", md: "329.1px" },
+        // 🔥 FIX: Shifted large fixed height to lg! Let md and xs gracefully scale.
+        minHeight: { xs: "auto", md: "260px", lg: "329.1px" },
         backgroundColor: "#FAF5FF",
-        px: { xs: 3, md: "247.6px" },
-        py: { xs: 6, md: "84px" },
+        // 🔥 FIX: Shrunk the massive desktop padding for iPads so the text actually fits cleanly!
+        px: { xs: 3, md: 8, lg: "247.6px" },
+        py: { xs: 6, md: 8, lg: "84px" },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -27,8 +29,9 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "28px", md: "36px" },
-            lineHeight: { xs: "34px", md: "42px" },
+            // 🔥 FIX: Scaled the quote icon down smoothly across devices!
+            fontSize: { xs: "28px", md: "32px", lg: "36px" },
+            lineHeight: { xs: "34px", md: "38px", lg: "42px" },
             color: "#F9A51E",
             mb: 2,
           }}
@@ -40,8 +43,9 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 500,
-            fontSize: { xs: "18px", md: "25.6px" },
-            lineHeight: { xs: "28px", md: "34.56px" },
+            // 🔥 FIX: Shifted large exact font sizes up to lg to protect 1440px. Safely scaled down for iPads and phones!
+            fontSize: { xs: "16px", md: "20px", lg: "25.6px" },
+            lineHeight: { xs: "26px", md: "30px", lg: "34.56px" },
             letterSpacing: "-0.64px",
             color: "#000000",
             textAlign: "center",
@@ -53,7 +57,7 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
 
         <Box
           sx={{
-            mt: { xs: 3, md: "24px" },
+            mt: { xs: 3, lg: "24px" },
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

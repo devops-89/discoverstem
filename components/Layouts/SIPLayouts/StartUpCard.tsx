@@ -7,49 +7,52 @@ import Image from "next/image";
 
 export default function StartupCard() {
 return (
-    <Box sx={{ px: { xs: 3, md: 14 }, py: { xs: 6, md: 10 } }}>
+    <Box sx={{ px: { xs: 3, sm: 5, lg: 14 }, py: { xs: 6, lg: 10 } }}>
     
     <Box
         sx={{
-        width: { xs: "100%", md: "1255px" },
-        height: { xs: "auto", md: "607px" },
+        width: { xs: "100%", lg: "1255px" }, // Protected desktop width
+        height: { xs: "auto", lg: "607px" }, // Protected desktop height
         mx: "auto",
         background: "#F4F4F4",
-        borderRadius: "57px",
+        borderRadius: { xs: "24px", lg: "57px" }, // 🔥 FIX: Scaled down huge border radius for mobile
 
-        px: { xs: 3, md: 8 },
-        py: { xs: 5, md: 8 },
+        px: { xs: 3, sm: 5, lg: 8 },
+        py: { xs: 5, lg: 8 },
         }}
     >
         <Typography
         sx={{
-            width: { xs: "100%", md: "573px" },
-            height: { xs: "auto", md: "32px" },
+            width: { xs: "100%", lg: "573px" },
+            height: { xs: "auto", lg: "32px" },
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: "22px", md: "48px" },
-            lineHeight:"62px",
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+            lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // 🔥 FIX: Prevent massive line height spacing
             letterSpacing:"-0.03em",
             fontWeight: 600,
-            mb: 10,
-            mt:2,
+            mb: { xs: 4, lg: 10 }, // Shrunk the massive 80px gap to 32px on mobile
+            mt: 2,
             color: "#111827",
+            textAlign: { xs: "center", md:"left", lg: "left" }, // Centered beautifully on mobile, left on desktop
         }}
         >
         Startups By Our Students
         </Typography>
 
-        <Box sx={{ pl: { xs: 0, md: 8 } }}>
-        <Grid container spacing={6}>
+        <Box sx={{ pl: { xs: 0, lg: 8 } }}>
+        <Grid container spacing={{ xs: 6, lg: 6 }}>
         {startupsData.map((item: Startup, i: number) => (
             <Grid size={{ xs: 12, md: 4 }} key={i}>
-            <Box>
+            {/* Centered card content on mobile, left on desktop */}
+            <Box sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <Box
                 sx={{
-                    width: { xs: "100%", md: "239px" },
-                    height: { xs: "120px", md: "159px" },
+                    width: { xs: "100%", lg: "239px" },
+                    height: { xs: "120px", lg: "159px" },
                     position: "relative",
                     opacity:"100%",
-                    mt: 3,
+                    mt: { xs: 0, lg: 3 },
+                    mx: { xs: "auto", lg: 0 },
                 }}
                 >
                 <Image
@@ -62,16 +65,17 @@ return (
 
                 <Typography
                 sx={{
-                    width: { xs: "100%", md: "263px" },
-                    height: { xs: "auto", md: "85px" },
+                    width: { xs: "100%", lg: "263px" },
+                    height: { xs: "auto", lg: "85px" },
                     fontFamily: FONT_FAMILY.body,
                     fontWeight:400,
                     letterSpacing:"-0.03em",
-                    mt:4,
-                    fontSize: "18px",
-                    lineHeight: "36px",
+                    mt: { xs: 2, lg: 4 },
+                    fontSize: { xs: "16px", lg: "18px" },
+                    lineHeight: { xs: "28px", lg: "36px" },
                     color: "#000",
                     maxWidth: "300px",
+                    mx: { xs: "auto", lg: 0 },
                 }}
                 >
                 {item.description}

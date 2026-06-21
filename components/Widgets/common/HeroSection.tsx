@@ -21,29 +21,43 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
     <Box
       id="home"
       sx={{
-        mt: 2,
+        mt: { xs: 1.5, md: 2 },
         mx: "auto",
-        width: "1403px",
-        maxWidth: "calc(100% - 40px)",
-        borderRadius: "20px",
+        width: "100%",
+        maxWidth: {
+          xs: "calc(100% - 24px)",
+          md: "calc(100% - 40px)",
+          xl: "1403px",
+        },
+        borderRadius: { xs: "14px", md: "20px" },
         overflow: "hidden",
+
         "& .swiper": {
           width: "100%",
-          height: { xs: 540, md: 929 },
+          height: {
+            xs: 520,
+            sm: 560,
+            md: 620,
+            lg: 720,
+            xl: 929,
+          },
         },
+
         "& .swiper-pagination": {
-          bottom: "24px !important",
+          bottom: { xs: "18px !important", md: "24px !important" },
         },
+
         "& .swiper-pagination-bullet": {
-          width: 28,
+          width: { xs: 18, md: 28 },
           height: 6,
           borderRadius: 3,
           background: "rgba(255,255,255,0.55)",
           opacity: 1,
         },
+
         "& .swiper-pagination-bullet-active": {
           background: "#fff",
-          width: 48,
+          width: { xs: 34, md: 48 },
         },
       }}
     >
@@ -76,16 +90,17 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
                   inset: 0,
                   background:
                     "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.7) 100%)",
+                  zIndex: 1,
                 }}
               />
 
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: { xs: 40, md: 190 },
+                  bottom: { xs: 60, sm: 100, lg: 190 }, 
                   left: 0,
                   right: 0,
-                  px: { xs: 3, md: 16 },
+                  px: { xs: 3, sm: 8, lg: 16 }, 
                   zIndex: 2,
                   maxWidth: "900px",
                 }}
@@ -94,11 +109,11 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
                   sx={{
                     fontFamily: "Work Sans, sans-serif",
                     fontWeight: 600,
-                    fontSize: { xs: "32px", md: "64px" },
-                    lineHeight: { xs: "40px", md: "62px" },
+                    fontSize: { xs: "24px", sm: "40px", lg: "64px" }, 
+                    // 🔥 FIX: Adjusted line-height to 76px so multiline headings don't clip/overlap!
+                    lineHeight: { xs: "38px", sm: "50px", lg: "76px" }, 
                     letterSpacing: "-0.03em",
                     color: "#FFFFFF",
-                    
                   }}
                 >
                   {slide.title}
@@ -106,11 +121,11 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
 
                 <Typography
                   sx={{
-                    mt: { xs: 2, md: 3 },
+                    mt: { xs: 2, lg: 3 },
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: { xs: "16px", md: "28px" },
-                    lineHeight: { xs: "24px", md: "34px" },
+                    fontSize: { xs: "14px", sm: "18px", lg: "28px" }, 
+                    lineHeight: { xs: "22px", sm: "28px", lg: "34px" }, 
                     letterSpacing: "-0.01em",
                     color: "rgba(255,255,255,0.85)",
                     maxWidth: "727px",

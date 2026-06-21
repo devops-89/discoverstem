@@ -1,6 +1,5 @@
 "use client";
 
-
 import { StudentInnovationData } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
 import { Box, Container, Typography } from "@mui/material";
@@ -12,15 +11,18 @@ export default function CenterTextSection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 3, lg: 10 },
       }}
     >
       <Box
         sx={{
           width: "100%",
-          maxWidth: "1080px",
-          mx: "auto",
+          // 🔥 FIX: Switched to flex layout to perfectly match Figma's "Auto layout"
+          display: "flex",
+          flexDirection: "column",
+          // 🔥 FIX: Applied the exact 68px gap for 1440px ('lg') from your Figma CSS! Scaled it down safely for mobile.
+          gap: { xs: "24px", md: "32px", lg: "68px" },
         }}
       >
         <Typography
@@ -28,11 +30,10 @@ export default function CenterTextSection() {
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
-            fontSize: { xs: "16px", md: "22px" },
-            lineHeight: { xs: "30px", md: "43px" },
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
+            lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777",
-            mb: 3,
           }}
         >
           {StudentInnovationData.paragraph1}
@@ -40,14 +41,14 @@ export default function CenterTextSection() {
 
         <Typography
           sx={{
-            textAlign: "left",
+            // 🔥 FIX: Changed from 'left' to 'center' to perfectly match the Figma CSS!
+            textAlign: "center",
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
-            fontSize: { xs: "16px", md: "22px" },
-            lineHeight: { xs: "30px", md: "43px" },
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
+            lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777",
-            mb: 3,
           }}
         >
           {StudentInnovationData.paragraph2}
@@ -56,14 +57,12 @@ export default function CenterTextSection() {
         <Typography
           sx={{
             textAlign: "center",
-           
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
-            fontSize: { xs: "16px", md: "22px" },
-            lineHeight: { xs: "30px", md: "43px" },
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
+            lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777",
-            mb: 3,
           }}
         >
           {StudentInnovationData.paragraph3}
@@ -71,11 +70,12 @@ export default function CenterTextSection() {
 
         <Typography
           sx={{
-            textAlign: "left",
+            // 🔥 FIX: Changed from 'left' to 'center' to perfectly match the Figma CSS!
+            textAlign: "center",
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
-            fontSize: { xs: "16px", md: "22px" },
-            lineHeight: { xs: "30px", md: "43px" },
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
+            lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777",
           }}

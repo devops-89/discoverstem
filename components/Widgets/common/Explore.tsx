@@ -63,19 +63,21 @@ export default function ExploreLabsSection() {
         sx={{
           maxWidth: "1232px",
           mx: "auto",
-          px: { xs: 3, md: 0 },
-          py: { xs: 6, md: "80px" },
+          // 🔥 FIX: Shifted '0' padding to 'lg' to prevent cards from touching iPad screen edges
+          px: { xs: 3, lg: 0 },
+          py: { xs: 6, lg: "80px" },
         }}
       >
         <Typography
           sx={{
             fontFamily: "Inter, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "28px", md: "32px" },
-            lineHeight: { xs: "36px", md: "37px" },
+            // 🔥 FIX: Scaled down heading slightly on mobile and tablet
+            fontSize: { xs: "24px", sm: "28px", lg: "32px" },
+            lineHeight: { xs: "32px", sm: "36px", lg: "37px" },
             letterSpacing: "-0.8px",
             color: "#171717",
-            mb: { xs: 4, md: "70px" },
+            mb: { xs: 4, lg: "70px" },
           }}
         >
           Explore other DiscoverSTEM labs
@@ -87,9 +89,10 @@ export default function ExploreLabsSection() {
             gridTemplateColumns: {
               xs: "1fr",
               sm: "repeat(2, 1fr)",
-              md: "repeat(3, 1fr)",
+              // 🔥 FIX: Shifted 3-columns to 'lg' so iPads get a spacious 2-column layout instead!
+              lg: "repeat(3, 1fr)",
             },
-            gap: { xs: 3, md: "24px" },
+            gap: { xs: 3, lg: "24px" },
           }}
         >
           {labsData.map((item) => {
@@ -101,13 +104,15 @@ export default function ExploreLabsSection() {
                 component={isActive ? "div" : Link}
                 href={!isActive ? `/opportunities/${item.slug}` : undefined}
                 sx={{
-                  minHeight: { xs: "174.2px", md: "174.2px" },
+                  // 🔥 FIX: Allowed cards to organically size themselves on mobile
+                  minHeight: { xs: "auto", lg: "174.2px" },
                   borderRadius: "16px",
                   backgroundColor: isActive ? item.color : "#FFFFFF",
                   border: isActive
                     ? "0.8px solid rgba(255,255,255,0.1)"
                     : "0.8px solid rgba(0,0,0,0.05)",
-                  p: "24.8px",
+                  // 🔥 FIX: Slightly scaled down padding on mobile
+                  p: { xs: "20px", lg: "24.8px" },
                   textDecoration: "none",
                   display: "flex",
                   flexDirection: "column",
@@ -170,8 +175,9 @@ export default function ExploreLabsSection() {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 600,
-                      fontSize: "18px",
-                      lineHeight: "27px",
+                      // 🔥 FIX: Scaled down card titles slightly on mobile
+                      fontSize: { xs: "16px", lg: "18px" },
+                      lineHeight: { xs: "24px", lg: "27px" },
                       letterSpacing: "-0.45px",
                       color: isActive ? "#FFFFFF" : "#171717",
                       transition: "all .2s ease",

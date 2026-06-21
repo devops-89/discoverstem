@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import CtaBanner from "../HomeLayouts/CtaBanner";
+
 import PatentsSection from "../HomeLayouts/PatentsSection";
 import SpotlightSection from "../HomeLayouts/SpotlightSection";
 import HeroSection from "./HeroSection";
@@ -12,7 +12,8 @@ import StudentStories from "./StudentStories";
 import UniversitySlider from "./UniversitySlider";
 import ProcessSection from "@/components/Widgets/common/ProccessSelection";
 import OtherProgramsSection from "@/components/Widgets/common/OtherProgram";
-import { SipOtherProgramsData } from "@/assets/Generic-data";
+import { ctaBannerData, SipOtherProgramsData } from "@/assets/Generic-data";
+import CtaBanner from "@/components/Widgets/common/CommonCta";
 
 export default function SIPLayouts(){
     return(
@@ -28,7 +29,7 @@ export default function SIPLayouts(){
             <StudentStories/>
             <ProcessSection/>
             <OtherProgramsSection data={SipOtherProgramsData} />
-            <CtaBanner/>
+            <CtaBanner data={ctaBannerData}/>
         </Box>
         
     )

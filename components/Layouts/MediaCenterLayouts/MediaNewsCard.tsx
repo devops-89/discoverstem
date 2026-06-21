@@ -26,11 +26,12 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           position: "relative",
           display: "block",
           width: "100%",
-          height: "258px",
+          // 🔥 FIX: Smoothly scaled the image height to prevent clipping on small screens. Locked 258 to lg!
+          height: { xs: "200px", md: "220px", lg: "258px" },
           borderRadius: "12px",
           bgcolor: "#D9D9D9",
           overflow: "hidden",
-          mb: "35px",
+          mb: { xs: 3, lg: "35px" },
           textDecoration: "none",
         }}
       >
@@ -80,19 +81,21 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           display: "block",
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: "16px",
-          lineHeight: "22px",
+          // 🔥 FIX: Shifted exact fonts up to lg.
+          fontSize: { xs: "14px", lg: "16px" },
+          lineHeight: { xs: "20px", lg: "22px" },
           letterSpacing: "-0.02em",
           color: "#111827",
           textDecoration: "none",
-          mb: "14px",
+          mb: { xs: 1, lg: "14px" },
         }}
       >
         {item.title}
       </Typography>
 
       <Box sx={{ display: "flex", alignItems: "center", gap: "9px" }}>
-        <Typography sx={{ fontSize: "16px", color: "#474A55" }}>
+        {/* 🔥 FIX: Text scaled for small screens */}
+        <Typography sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#474A55" }}>
           {item.publishedDate}
         </Typography>
       </Box>

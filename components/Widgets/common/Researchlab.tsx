@@ -23,29 +23,31 @@ export default function InnovationShowcaseSection({
     <Container
       maxWidth={false}
       sx={{
-        maxWidth: "1220px",
+        maxWidth: "1267px", // Container wide enough to fit 4x 290px cards + gaps
         mx: "auto",
-        px: { xs: 2, md: 0 },
-        py: { xs: 6, md: 10 },
+        px: { xs: 2, sm: 4, lg: 0 },
+        py: { xs: 6, lg: 10 },
       }}
     >
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: { xs: "flex-start", md: "center" },
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 3, md: 2 },
-          mb: { xs: 4, md: "50px" },
+          alignItems: "center",
+          flexDirection: { xs: "column", lg: "row" },
+          gap: { xs: 2, lg: 2 },
+          mb: { xs: 4, lg: "50px" },
         }}
       >
         <Typography
           sx={{
-            maxWidth: "720px",
+            alignSelf: "flex-start",
+            maxWidth: { xs: "100%", md: "1160px" }, 
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "32px", md: "48px" },
-            lineHeight: { xs: "42px", md: "62px" },
+            // 🔥 FIX: Decreased size for 'md' (1024px) down to 36px, while perfectly restoring 'lg' (1440px) to exactly 48px!
+            fontSize: { xs: "24px", sm: "28px", md: "36px", lg: "48px" },
+            lineHeight: { xs: "32px", sm: "36px", md: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
           }}
@@ -57,18 +59,24 @@ export default function InnovationShowcaseSection({
           <Button
             component={Link}
             href={buttonLink}
-            endIcon={<NorthEastIcon sx={{ fontSize: 16 }} />}
+            endIcon={<NorthEastIcon sx={{ fontSize: { xs: 14, lg: 16 } }} />}
             sx={{
-              minWidth: "108px",
-              height: "48px",
-              px: "18px",
-              borderRadius: "999px",
+              alignSelf: { xs: "flex-end", lg: "center" },
+              minWidth: { xs: "90px", lg: "150px" },
+              height: { xs: "36px", lg: "48px" },
+              px: { xs: "14px", lg: "16px" },
+              backgroundColor: "#FFEBE6",
+              fontFamily: "Work Sans, sans-serif",
+              fontWeight: 400,
+              fontSize: { xs: "13px", lg: "18px" },
+              lineHeight: "20px",
+              borderRadius: "50px",
               border: "1px solid #EE4823",
               color: "#EE4823",
               textTransform: "none",
 
               "&:hover": {
-                backgroundColor: "transparent",
+                backgroundColor: "#FFD9CE",
                 borderColor: "#EE4823",
               },
             }}

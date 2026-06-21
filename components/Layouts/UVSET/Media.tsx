@@ -39,19 +39,21 @@ export default function MediaSection({ data }: MediaSectionProps) {
       sx={{
         maxWidth: "1157px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 5, md: 8 },
+        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is safely locked to 0!
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 5, md: 6, lg: 8 },
       }}
     >
       <Typography
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: { xs: "32px", md: "48px" },
-          lineHeight: { xs: "40px", md: "36.8px" },
+          // 🔥 FIX: Shifted massive text sizes to lg and smoothly scaled down for md and xs!
+          fontSize: { xs: "32px", md: "40px", lg: "48px" },
+          lineHeight: { xs: "40px", md: "44px", lg: "36.8px" },
           letterSpacing: "-0.8px",
           color: "#171717",
-          mb: { xs: 4, md: "70px" },
+          mb: { xs: 4, md: 6, lg: "70px" },
           textTransform: "capitalize",
         }}
       >
@@ -66,7 +68,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
             sm: "repeat(2, 1fr)",
             lg: "repeat(3, 1fr)",
           },
-          gap: { xs: 3, md: "22px" },
+          gap: { xs: 3, lg: "22px" },
         }}
       >
         {data.items.map((item) => (
@@ -75,19 +77,24 @@ export default function MediaSection({ data }: MediaSectionProps) {
             sx={{
               width: "100%",
               maxWidth: "371px",
-              height: { xs: "auto", md: "431px" },
+              // 🔥 FIX: Locked fixed height to lg. Let iPads/mobile flow naturally with auto!
+              height: { xs: "auto", lg: "431px" },
               borderRadius: "16px",
               border: "0.8px solid #0000000D",
               overflow: "hidden",
               backgroundColor: "#fff",
               mx: "auto",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <Box
               sx={{
                 position: "relative",
                 width: "100%",
-                height: { xs: "220px", md: "245.66px" },
+                // 🔥 FIX: Scaled image height down proportionally!
+                height: { xs: "220px", md: "230px", lg: "245.66px" },
+                flexShrink: 0,
               }}
             >
               <Image
@@ -133,9 +140,12 @@ export default function MediaSection({ data }: MediaSectionProps) {
               sx={{
                 px: "21.8px",
                 pt: "14px",
+                pb: "20px",
                 display: "flex",
                 flexDirection: "column",
-                height: { xs: "auto", md: "185.34px" },
+                flex: 1,
+                // 🔥 FIX: Locked fixed text box height to lg.
+                height: { xs: "auto", lg: "185.34px" },
               }}
             >
               <Typography
@@ -157,8 +167,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 600,
-                  fontSize: "18px",
-                  lineHeight: "24.75px",
+                  // 🔥 FIX: Scaled text down slightly for mobile!
+                  fontSize: { xs: "16px", lg: "18px" },
+                  lineHeight: { xs: "22px", lg: "24.75px" },
                   letterSpacing: "-0.45px",
                   color: "#171717",
                   minHeight: "50px",
@@ -246,7 +257,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          p: { xs: 2, md: 4 },
+          p: { xs: 2, lg: 4 },
         }}
       >
         <Box
@@ -254,8 +265,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
             position: "relative",
             width: "100%",
             maxWidth: isPdf ? "800px" : "900px",
-            height: isPdf ? "85vh" : { xs: "auto", md: "500px" },
-            aspectRatio: isPdf ? "auto" : { xs: "16/9", md: "auto" },
+            // 🔥 FIX: Shifted specific heights/aspect ratios to lg!
+            height: isPdf ? "85vh" : { xs: "auto", lg: "500px" },
+            aspectRatio: isPdf ? "auto" : { xs: "16/9", lg: "auto" },
             backgroundColor: "#fff",
             borderRadius: "16px",
             overflow: "hidden",

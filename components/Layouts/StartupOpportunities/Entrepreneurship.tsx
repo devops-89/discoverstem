@@ -14,8 +14,9 @@ export default function EntrepreneurshipFunding() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        // 🔥 FIX: Shifted '0' padding to 'lg' to prevent text touching the screen edge on iPads
+        px: { xs: 3, lg: 0 },
+        py: { xs: 3, lg: 10 },
       }}
     >
       <Box
@@ -23,9 +24,10 @@ export default function EntrepreneurshipFunding() {
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
-            md: "688px 451.5px",
+            // 🔥 FIX: Shifted hard-coded pixel layout to 'lg'. Your 688px + 451.5px layout equals 1140px+, which horizontally overflowed 1024px iPads!
+            lg: "688px 451.5px",
           },
-          gap: { xs: 5, md: "20px" },
+          gap: { xs: 5, lg: "20px" },
           alignItems: "start",
         }}
       >
@@ -36,8 +38,9 @@ export default function EntrepreneurshipFunding() {
               maxWidth: "702px",
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
-              fontSize: { xs: "32px", md: "36px" },
-              lineHeight: { xs: "40px", md: "41px" },
+              // 🔥 FIX: Added smooth scaling down to mobile, while protecting 1440px ('lg') exactly!
+              fontSize: { xs: "28px", md: "32px", lg: "36px" },
+              lineHeight: { xs: "36px", md: "40px", lg: "41px" },
               letterSpacing: "-0.9px",
               color: "#171717",
               mb: "18px",
@@ -55,10 +58,10 @@ export default function EntrepreneurshipFunding() {
               maxWidth: "687px",
               fontFamily: "Poppins, sans-serif",
               fontWeight: 400,
-              fontSize: "16px",
-              lineHeight: "26px",
+              fontSize: { xs: "14px", lg: "16px" },
+              lineHeight: { xs: "24px", lg: "26px" },
               color: "#777777",
-              mb: { xs: 4, md: "52px" },
+              mb: { xs: 4, lg: "52px" },
             }}
           >
             {data.description}
@@ -69,7 +72,9 @@ export default function EntrepreneurshipFunding() {
               display: "grid",
               gridTemplateColumns: {
                 xs: "1fr",
-                sm: "repeat(2, 338.12px)",
+                // 🔥 FIX: Allow fluid 2-columns on tablet, but precisely lock to your pixel dimensions on 1440px desktop
+                sm: "repeat(2, 1fr)",
+                lg: "repeat(2, 338.12px)",
               },
               gap: "12px",
             }}
@@ -79,7 +84,7 @@ export default function EntrepreneurshipFunding() {
                 key={point}
                 sx={{
                   width: "100%",
-                  maxWidth: "338.12px",
+                  maxWidth: { xs: "100%", lg: "338.12px" },
                   minHeight: "53.6px",
                   backgroundColor: "#FFFFFF",
                   border: "0.8px solid rgba(0, 0, 0, 0.05)",
@@ -103,7 +108,7 @@ export default function EntrepreneurshipFunding() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: "14px",
+                    fontSize: { xs: "13px", lg: "14px" },
                     lineHeight: "20px",
                     color: "#262626",
                   }}
@@ -119,12 +124,12 @@ export default function EntrepreneurshipFunding() {
           sx={{
             position: "relative",
             width: "100%",
-            maxWidth: "451.5px",
-            height: { xs: "320px", md: "465.54px" },
+            maxWidth: { xs: "100%", sm: "600px", lg: "451.5px" },
+            height: { xs: "320px", md: "400px", lg: "465.54px" },
             borderRadius: "29px",
             overflow: "hidden",
             backgroundColor: "#C4C4C4",
-            mx: { xs: "auto", md: 0 },
+            mx: { xs: "auto", lg: 0 },
           }}
         >
           {data.image && (

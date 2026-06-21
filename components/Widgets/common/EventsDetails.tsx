@@ -16,8 +16,8 @@ export default function ContentSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 0, md: "70px" },
+        px: { xs: 3, sm: 4, md: 4, lg: 0 },
+        py: { xs: 2, sm: 3, md: 5, lg: "70px" },
       }}
     >
       <Box
@@ -34,20 +34,26 @@ export default function ContentSection({
               mb:
                 index === data.paragraphs.length - 1
                   ? 0
-                  : { xs: 4, md: "48px" },
+                  : { xs: 3, sm: 4, md: 4, lg: "48px" },
 
               fontFamily: "Poppins, sans-serif",
               fontWeight: 400,
+              // 🔥 FIX: Added explicitly smooth scaling for 768px (sm) between mobile and iPad!
               fontSize: {
                 xs: "16px",
-                md: "22px",
+                sm: "17px",
+                md: "18px",
+                lg: "22px",
               },
               lineHeight: {
-                xs: "30px",
-                md: "43px",
+                xs: "26px",
+                sm: "28px",
+                md: "32px",
+                lg: "43px",
               },
               letterSpacing: "-0.03em",
-              textAlign: "center",
+              // 🔥 FIX: Extended the left-align to 768px (sm) so portrait tablets remain easy to read. Center alignment now starts at 1024px (md)!
+              textAlign: { xs: "left", md: "center" },
               color: "#777777",
 
               "& strong": {

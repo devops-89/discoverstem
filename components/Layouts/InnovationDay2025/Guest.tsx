@@ -8,7 +8,7 @@ export default function ChiefGuestSection() {
     <Box
       sx={{
         backgroundColor: "#FAF5FF",
-        py: { xs: 6, md: "107px" },
+        py: { xs: 6, md: 8, lg: "107px" },
       }}
     >
       <Container
@@ -16,27 +16,29 @@ export default function ChiefGuestSection() {
         sx={{
           maxWidth: "944.23px",
           mx: "auto",
-          px: { xs: 3, md: 0 },
+          px: { xs: 3, md: 4, lg: 0 },
         }}
       >
         <Box
           sx={{
             width: "100%",
-            minHeight: { xs: "auto", md: "395.6px" },
+            minHeight: { xs: "auto", lg: "395.6px" },
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
-              md: "380px 414.23px",
+              md: "1fr 1fr",
+              lg: "380px 414.23px",
             },
-            gap: { xs: 5, md: "150px" },
+            gap: { xs: 5, md: 8, lg: "150px" },
             alignItems: "start",
           }}
         >
           <Box
             sx={{
               position: "relative",
-              width: { xs: "100%", sm: "380px" },
-              height: { xs: "360px", sm: "380px" },
+              width: "100%",
+              maxWidth: "380px",
+              height: { xs: "320px", sm: "380px" },
               borderRadius: "16px",
               overflow: "hidden",
               mx: { xs: "auto", md: 0 },
@@ -55,7 +57,12 @@ export default function ChiefGuestSection() {
           <Box
             sx={{
               width: "100%",
-              maxWidth: "414.23px",
+              maxWidth: { xs: "100%", lg: "414.23px" },
+              // 🔥 FIX: Added Flexbox to perfectly center everything on stacked screens! Returns to standard left-alignment at 1024px.
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "center", md: "flex-start" },
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             <Typography
@@ -63,7 +70,7 @@ export default function ChiefGuestSection() {
                 width: "100%",
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 300,
-                fontSize: "14px",
+                fontSize: { xs: "12px", md: "14px" },
                 lineHeight: "16px",
                 letterSpacing: "2.4px",
                 textTransform: "uppercase",
@@ -79,8 +86,8 @@ export default function ChiefGuestSection() {
                 width: "100%",
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "30px", md: "32px" },
-                lineHeight: { xs: "38px", md: "36.8px" },
+                fontSize: { xs: "28px", sm: "30px", lg: "32px" },
+                lineHeight: { xs: "36px", sm: "38px", lg: "36.8px" },
                 letterSpacing: "-0.8px",
                 color: "#000000",
                 mb: "4px",
@@ -91,7 +98,8 @@ export default function ChiefGuestSection() {
 
             <Typography
               sx={{
-                width: "205px",
+                width: "100%",
+                maxWidth: "205px",
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 400,
                 fontSize: "16px",
@@ -120,17 +128,20 @@ export default function ChiefGuestSection() {
               <Box
                 key={item.label}
                 sx={{
-                  width: "371px",
-                  maxWidth: "100%",
-                  height: "68px",
+                  width: "100%",
+                  maxWidth: "371px",
+                  height: "auto",
+                  minHeight: "68px",
                   borderRadius: "14px",
                   border: "0.8px solid #0000000D",
                   backgroundColor: "#E9E3ED",
                   pt: "16.8px",
                   px: "16.8px",
-                  pb: "0.8px",
+                  pb: { xs: "16px", lg: "0.8px" },
                   mb: "8px",
                   boxSizing: "border-box",
+                  // 🔥 FIX: Forces the text inside the grey boxes to stay cleanly left-aligned, even while the box itself gets centered on mobile!
+                  textAlign: "left",
                 }}
               >
                 <Typography
@@ -180,6 +191,10 @@ export default function ChiefGuestSection() {
                 fontSize: "13px",
                 lineHeight: "18px",
                 textDecoration: "none",
+                transition: "all 0.2s",
+                "&:hover": {
+                  backgroundColor: "#084e96",
+                }
               }}
             >
               LinkedIn

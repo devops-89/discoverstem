@@ -29,19 +29,21 @@ export default function AccordionSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 6 },
+        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is safely locked to 0!
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 3, md: 4, lg: 6 },
       }}
     >
       <Typography
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: { xs: "32px", md: "48px" },
-          lineHeight: { xs: "44px", md: "65px" },
+          // 🔥 FIX: Shifted large exact font sizes up to lg to strictly protect 1440px. Safely scaled down for iPads and phones!
+          fontSize: { xs: "32px", sm: "38px", md: "44px", lg: "48px" },
+          lineHeight: { xs: "44px", sm: "52px", md: "60px", lg: "65px" },
           textAlign: "center",
           color: "#101010",
-          mb: { xs: 4, md: "70px" },
+          mb: { xs: 4, md: 6, lg: "70px" },
         }}
       >
         {data.title}
@@ -52,8 +54,8 @@ export default function AccordionSection({
           width: "100%",
           border: "1px solid #D9D9D9",
           borderRadius: "29px",
-          px: { xs: 2.5, md: "30px" },
-          py: { xs: 2.5, md: "20px" },
+          px: { xs: 2.5, md: 3, lg: "30px" },
+          py: { xs: 2.5, md: 3, lg: "20px" },
         }}
       >
         {data.items.map((item, index) => {
@@ -67,7 +69,7 @@ export default function AccordionSection({
                   index === data.items.length - 1
                     ? "none"
                     : "1px solid #E5E5E5",
-                py: { xs: 2, md: "18px" },
+                py: { xs: 2, lg: "18px" },
               }}
             >
               <Box
@@ -111,7 +113,8 @@ export default function AccordionSection({
                     flex: 1,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: { xs: "15px", md: "18px" },
+                    // 🔥 FIX: Scaled question font size safely down for iPads.
+                    fontSize: { xs: "15px", md: "16px", lg: "18px" },
                     lineHeight: "26px",
                     letterSpacing: "-0.03em",
                     color: "#000000",
@@ -125,7 +128,8 @@ export default function AccordionSection({
                 <Box
                   sx={{
                     mt: 2,
-                    pl: "34px",
+                    // 🔥 FIX: Shrunk left indent slightly on mobile so answers aren't awkwardly squished. Desktop stays strictly at 34px!
+                    pl: { xs: "24px", md: "34px" },
                   }}
                 >
                   {item.answer.map((answer, answerIndex) => (
@@ -135,7 +139,8 @@ export default function AccordionSection({
                       sx={{
                         fontFamily: "Poppins, sans-serif",
                         fontWeight: 400,
-                        fontSize: { xs: "14px", md: "16px" },
+                        // 🔥 FIX: Scaled answer font size safely down for iPads.
+                        fontSize: { xs: "14px", md: "15px", lg: "16px" },
                         lineHeight: "26px",
                         letterSpacing: "-0.03em",
                         color: "#777777",

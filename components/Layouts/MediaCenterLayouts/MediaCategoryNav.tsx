@@ -24,12 +24,14 @@ export default function MediaCategoryNav({
         width: "100%",
         maxWidth: "1233px",
         mx: "auto",
-        px: { xs: 2, md: 0 },
-        py: { xs: 3, md: 4 },
+        // 🔥 FIX: Added md: 4 for iPad edges. 1440px locked to 0!
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 3, md: 3, lg: 4 },
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        gap: { xs: 2, md: "32px" },
+        // 🔥 FIX: Shifted gap to lg.
+        gap: { xs: 2, lg: "32px" },
         flexWrap: { xs: "wrap", lg: "nowrap" },
       }}
     >

@@ -11,22 +11,23 @@ export default function ProgramDetails() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 5, md: 7 },
-        px: { xs: 3, md: 4 },
+        py: { xs: 5, lg: 7 },
+        px: { xs: 3, lg: 4 },
       }}
     >
         
         {/* Heading */}
         <Typography
           sx={{
-            width: { xs: "100%", md: "358px" },
-            height: { xs: "auto", md: "32px" },
+            width: { xs: "100%", lg: "358px" },
+            height: { xs: "auto", lg: "32px" },
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: "28px", md: "48px" },
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled down for mobile
+            lineHeight: { xs: "36px", sm: "46px", lg: "normal" }, // Added to prevent clipping
             fontWeight: 600,
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: 4,
+            mb: { xs: 2, lg: 4 },
           }}
         >
           {programDetailsData.title}
@@ -34,24 +35,24 @@ export default function ProgramDetails() {
 
         <Typography
           sx={{
-            width: { xs: "100%", md: "fit-content" },
-            height: { xs: "auto", md: "144px" },
+            width: { xs: "100%", lg: "fit-content" },
+            height: { xs: "auto", lg: "144px" },
             fontFamily: FONT_FAMILY.body,
-            mt: 8,
+            mt: { xs: 4, lg: 8 },
             fontWeight: 400,
             maxWidth: "1161px",
-            fontSize: "22px",
-            lineHeight: "43px",
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, // Scaled down
+            lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, // Scaled down
             letterSpacing: "-0.03em",
             color: "#777777",
             whiteSpace: "pre-line",
-            mb: 10,
+            mb: { xs: 6, lg: 10 },
           }}
         >
           {programDetailsData.description}
         </Typography>
 
-        <Grid container spacing={4} sx={{ mt: 4 }}>
+        <Grid container spacing={{ xs: 4, lg: 4 }} sx={{ mt: { xs: 2, lg: 4 } }}>
           {programDetailsData.cards.map((card, index) => (
             <Grid size={{ xs: 12, md: 4 }} key={index}>
               
@@ -61,12 +62,12 @@ export default function ProgramDetails() {
                 {/* Image */}
                 <Box
                   sx={{
-                    width: { xs: "100%", md: "364px" },
-                    height: { xs: "220px", md: "283px" },
+                    width: { xs: "100%", lg: "364px" }, // Rigid widths pushed to Desktop
+                    height: { xs: "240px", sm: "300px", lg: "283px" },
                     position: "relative",
                     borderRadius: "13px",
                     overflow: "hidden",
-                    mx: "auto", // ✅ center image
+                    mx: "auto", 
                   }}
                 >
                   <Image
@@ -80,14 +81,14 @@ export default function ProgramDetails() {
                 {/* Title */}
                 <Typography
                   sx={{
-                    width: { xs: "100%", md: "151px" },
-                    height: { xs: "auto", md: "15px" },
+                    width: { xs: "100%", lg: "151px" }, // Rigid widths pushed to Desktop
+                    height: { xs: "auto", lg: "15px" },
                     fontFamily: FONT_FAMILY.body,
-                    lineHeight: "22px",
+                    lineHeight: { xs: "28px", lg: "22px" },
                     letterSpacing: "-0.03em",
-                    mt: 2,
+                    mt: { xs: 3, lg: 2 },
                     fontWeight: 600,
-                    fontSize: "22px",
+                    fontSize: { xs: "20px", lg: "22px" },
                     textAlign: "center",
                     color: "#111827",
                     mx: "auto",
@@ -99,14 +100,14 @@ export default function ProgramDetails() {
                 {/* Description */}
                 <Typography
                   sx={{
-                    width: { xs: "100%", md: "364px" },
-                    height: { xs: "auto", md: "157px" },
+                    width: { xs: "100%", lg: "364px" },
+                    height: { xs: "auto", lg: "157px" },
                     fontFamily:FONT_FAMILY.body,
                     fontWeight:400,
-                    lineHeight:"36px",
+                    lineHeight: { xs: "28px", lg: "36px" }, // Scaled down line-height
                     letterSpacing:"-0.03em",
-                    mt: 4,
-                    fontSize: "18px",
+                    mt: { xs: 2, lg: 4 },
+                    fontSize: { xs: "16px", lg: "18px" },
                     color: "#777777",
                     textAlign: "left",
                   }}
@@ -116,14 +117,14 @@ export default function ProgramDetails() {
 
                 <Typography
                   sx={{
-                    width: { xs: "100%", md: "364px" },
-                    height: { xs: "auto", md: "157px" },
+                    width: { xs: "100%", lg: "364px" },
+                    height: { xs: "auto", lg: "157px" },
                     fontFamily:FONT_FAMILY.body,
                     fontWeight:400,
-                    lineHeight:"36px",
+                    lineHeight: { xs: "28px", lg: "36px" },
                     letterSpacing:"-0.03em",
                     mt: 1,
-                    fontSize: "18px",
+                    fontSize: { xs: "16px", lg: "18px" },
                     color: "#777777",
                     textAlign: "left",
                   }}
@@ -137,14 +138,14 @@ export default function ProgramDetails() {
                 {/* Footer */}
                 <Typography
                   sx={{
-                    width: { xs: "100%", md: "363px" },
-                    height: { xs: "auto", md: "44px" },
+                    width: { xs: "100%", lg: "363px" },
+                    height: { xs: "auto", lg: "44px" },
                     fontFamily:FONT_FAMILY.body,
                     fontWeight:700,
-                    lineHeight:"31px",
+                    lineHeight: { xs: "26px", lg: "31px" },
                     letterSpacing:"-0.03em",
-                    mt: 4,
-                    fontSize: "18px",
+                    mt: { xs: 2, lg: 4 },
+                    fontSize: { xs: "16px", lg: "18px" },
                     color: "#7B53A1",
                     textAlign: "left",
                   }}

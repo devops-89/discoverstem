@@ -39,48 +39,59 @@ export default function LogoSlider({
   return (
     <Box
       sx={{
-        pl: { xs: 3, md: 14 },
-        pr: { xs: 3, md: 6 },
-        py: { xs: 6, md: 10 },
+        pl: { xs: 3, md: 4, lg: 14 },
+        pr: { xs: 3, md: 4, lg: 6 },
+        py: { xs: 0, md: 8, lg: 10 },
       }}
     >
-      <Box sx={{ maxWidth: "1200px", mx: "auto", pr: { md: 4 } }}>
-       {title && (
-  <Typography
-    sx={{
-      height: { xs: "auto", md: "32px" },
-      fontFamily: FONT_FAMILY.heading,
-      fontSize: { xs: "20px", md: "48px" },
-      lineHeight: { xs: "30px", md: "62px" },
-      letterSpacing: "-0.03em",
-      fontWeight: 600,
-      mb: { xs: 8, md: 24 },
-    }}
-  >
-    {title}
-  </Typography>
-)}
+      <Box 
+        sx={{ 
+          maxWidth: "1200px", 
+          mx: "auto", 
+          pr: { lg: 4 },
+          // 🔥 FIX: Removed inline style from Swiper and placed it here to responsively shrink the bottom padding!
+          "& .swiper": { 
+            paddingBottom: { xs: "12px", md: "40px" } 
+          }
+        }}
+      >
+        {title && (
+          <Typography
+            sx={{
+              height: { xs: "auto", lg: "32px" },
+              fontFamily: FONT_FAMILY.heading,
+              fontSize: { xs: "24px", sm: "32px", md: "36px", lg: "48px" },
+              lineHeight: { xs: "34px", sm: "40px", md: "46px", lg: "62px" },
+              letterSpacing: "-0.03em",
+              fontWeight: 600,
+              mb: { xs: 6, sm: 8, md: 12, lg: 24 },
+            }}
+          >
+            {title}
+          </Typography>
+        )}
 
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 3000 }}
           loop={slides.length > 1}
           slidesPerView={1}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % slides.length)}
-          style={{ paddingBottom: "40px" }}
+          onSlideChange={(swiper) =>
+            setActiveIndex(swiper.realIndex % slides.length)
+          }
         >
           {slides.map((group, index) => (
             <SwiperSlide key={index}>
               <Box
                 sx={{
-                  width: { xs: "100%", md: "1162px" },
-                  height: { xs: "auto", md: "162px" },
+                  width: { xs: "100%", lg: "1162px" },
+                  height: { xs: "auto", lg: "162px" },
                   mx: "auto",
                   display: "grid",
                   gridTemplateColumns: {
                     xs: "repeat(2, 1fr)",
                     sm: "repeat(4, 1fr)",
-                    md: "repeat(7, 1fr)",
+                    lg: "repeat(7, 1fr)",
                   },
                   columnGap: "7px",
                   rowGap: "12px",
@@ -92,8 +103,8 @@ export default function LogoSlider({
                   <Box
                     key={`${logo.image}-${i}`}
                     sx={{
-                      width: { xs: "100%", md: "160px" },
-                      height: { xs: "120px", md: "80px" },
+                      width: { xs: "100%", lg: "160px" },
+                      height: { xs: "120px", sm: "100px", lg: "80px" },
                       position: "relative",
                     }}
                   >
@@ -117,7 +128,8 @@ export default function LogoSlider({
             display: "flex",
             justifyContent: "center",
             gap: "6px",
-            mt: 3,
+            // 🔥 FIX: Decreased margin top for the slider dots specifically on small screens
+            mt: { xs: 0, md: 3 },
           }}
         >
           {slides.map((_, i) => (

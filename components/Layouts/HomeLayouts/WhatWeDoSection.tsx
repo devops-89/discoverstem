@@ -1,16 +1,21 @@
 "use client";
-import React from "react";
-import { Container, Stack, Divider, Typography, Grid, Card, Box } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+
 import { featureCards } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+import {
+  Box,
+  Card,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
+import React from "react";
 
 const featureIconColors: Record<string, string> = {
   "Nurturing Prodigies": "rgba(123,83,161,0.18)",
@@ -20,10 +25,18 @@ const featureIconColors: Record<string, string> = {
 };
 
 const featureIcons: Record<string, React.ReactNode> = {
-  "Nurturing Prodigies": <AutoAwesomeIcon sx={{ color: "#7b53a1", fontSize: 26 }} />,
-  "Inspiring Innovation": <EmojiObjectsIcon sx={{ color: "#ee4823", fontSize: 26 }} />,
-  "Launching Startups": <RocketLaunchIcon sx={{ color: "#f9a51e", fontSize: 26 }} />,
-  "Expert Mentors": <PeopleAltIcon sx={{ color: "#619040", fontSize: 26 }} />,
+  "Nurturing Prodigies": (
+    <AutoAwesomeIcon sx={{ color: "#7b53a1", fontSize: { xs: 22, md: 26 } }} />
+  ),
+  "Inspiring Innovation": (
+    <EmojiObjectsIcon sx={{ color: "#ee4823", fontSize: { xs: 22, md: 26 } }} />
+  ),
+  "Launching Startups": (
+    <RocketLaunchIcon sx={{ color: "#f9a51e", fontSize: { xs: 22, md: 26 } }} />
+  ),
+  "Expert Mentors": (
+    <PeopleAltIcon sx={{ color: "#619040", fontSize: { xs: 22, md: 26 } }} />
+  ),
 };
 
 export default function WhatWeDoSection() {
@@ -31,72 +44,129 @@ export default function WhatWeDoSection() {
     <Container
       maxWidth={false}
       sx={{
-        maxWidth: "min(1196px, 100%)",
-        pb: { xs: 5, md: 7 },
-        px: { xs: 3, md: 4 },
+        maxWidth: "1196px",
+        mx: "auto",
+        pb: { xs: 5, sm: 6, md: 7 },
+        px: { xs: 2, sm: 3, md: 4 },
       }}
     >
-      <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1 }}>
-        <Divider sx={{ width: 36, borderColor: "#9e9e9e", borderWidth: "1.5px" }} />
-        <Typography sx={{ color: "#6e6e6e", fontSize: 14, letterSpacing: "0.02em" }}>
+      <Stack
+        direction="row"
+        spacing={1.5}
+        alignItems="center"
+        justifyContent={{ xs: "center", md: "flex-start" }}
+        sx={{ mb: { xs: 1.5, md: 1 } }}
+      >
+        <Divider
+          sx={{
+            width: { xs: 28, md: 36 },
+            borderColor: "#9e9e9e",
+            borderWidth: "1.5px",
+          }}
+        />
+
+        <Typography
+          sx={{
+            color: "#6e6e6e",
+            fontSize: { xs: "13px", md: "14px" },
+            letterSpacing: "0.02em",
+          }}
+        >
           What we do
         </Typography>
       </Stack>
+
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontSize: { xs: 32, md: 50 },
-          lineHeight: 1.15,
-          mb: 4,
+          fontSize: {
+            xs: "24px",
+            sm: "34px",
+            md: "42px",
+            lg: "50px",
+          },
+          lineHeight: {
+            xs: "30px",
+            sm: "42px",
+            md: "50px",
+            lg: "58px",
+          },
+          mb: { xs: 3, md: 4 },
+          textAlign: { xs: "center", md: "left" },
+          wordBreak: "break-word",
         }}
       >
         Welcome to DiscoverStem
       </Typography>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={{ xs: 2.5, sm: 3, md: 3 }}>
         {featureCards.map((card) => (
-          <Grid size={{ xs: 12, md: 6 }} key={card.title}>
-            <Card
-              elevation={0}
-              sx={{
-                border: `3px solid ${card.borderColor}`,
-                borderRadius: "24px",
-                p: 3,
-                minHeight: 322,
-                bgcolor: "#fff",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Box
-                sx={{
-                  width: 56,
-                  height: 56,
-                  borderRadius: 2,
-                  bgcolor: featureIconColors[card.title] ?? "rgba(0,0,0,0.08)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 22,
-                  mb: 2.5,
-                }}
-              >
-                {featureIcons[card.title]}
-              </Box>
-              <Typography
-                sx={{
-                  fontFamily: FONT_FAMILY.heading,
-                  fontSize: { xs: 22, md: 28 },
-                  mb: 1.5,
-                  lineHeight: 1.2,
-                }}
-              >
-                {card.title}
-              </Typography>
-              <Typography sx={{ color: "#4a5565", lineHeight: 1.7, fontSize: 15, flex: 1 }}>
-                {card.description}
-              </Typography>
-            </Card>
+          <Grid size={{ xs: 12, sm: 6, md: 6 }} key={card.title}>
+           <Card
+  elevation={0}
+  sx={{
+    border: `3px solid ${card.borderColor}`,
+    borderRadius: { xs: "18px", md: "24px" },
+    p: { xs: 2.5, sm: 3, md: 3 },
+    minHeight: { xs: "auto", sm: 310, md: 322 },
+    bgcolor: "#fff",
+    display: "flex",
+    flexDirection: "column",
+
+    alignItems: "flex-start",
+    textAlign: "left",
+  }}
+>
+  <Box
+    sx={{
+      width: { xs: 50, md: 56 },
+      height: { xs: 50, md: 56 },
+      borderRadius: 2,
+      bgcolor:
+        featureIconColors[card.title] ?? "rgba(0,0,0,0.08)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      mb: { xs: 2, md: 2.5 },
+      flexShrink: 0,
+      alignSelf: "flex-start",
+    }}
+  >
+    {featureIcons[card.title]}
+  </Box>
+
+  <Typography
+    sx={{
+      fontFamily: FONT_FAMILY.heading,
+      fontSize: {
+        xs: "21px",
+        sm: "22px",
+        md: "26px",
+        lg: "28px",
+      },
+      mb: 1.5,
+      lineHeight: 1.2,
+      wordBreak: "break-word",
+      width: "100%",
+      textAlign: "left",
+    }}
+  >
+    {card.title}
+  </Typography>
+
+  <Typography
+    sx={{
+      color: "#4a5565",
+      lineHeight: { xs: 1.6, md: 1.7 },
+      fontSize: { xs: "14px", md: "15px" },
+      width: "100%",
+      textAlign: "left",
+      flex: 1,
+    }}
+  >
+    {card.description}
+  </Typography>
+</Card>
           </Grid>
         ))}
       </Grid>

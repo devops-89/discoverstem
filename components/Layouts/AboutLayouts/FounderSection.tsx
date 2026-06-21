@@ -20,25 +20,28 @@ const FounderSection = () => {
         maxWidth: "1155px",
         width: "100%",
         mx: "auto",
-        pt: { xs: 5, md: 15 },
-        px: { xs: 3, md: 0 },
+        pt: { xs: 5, md: 8, lg: 15 }, // Smoother padding scaling
+        px: { xs: 3, lg: 0 }, 
       }}
     >
       <Box
         sx={{
           width: "100%",
-          minHeight: { xs: "auto", md: "650px" },
+          minHeight: { xs: "auto", lg: "650px" },
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 4, md: "56px" },
+          // Stack vertically on Mobile/768px, Side-by-Side on 1024px/1440px
+          flexDirection: { xs: "column", md: "row" }, 
+          alignItems: { xs: "center", md: "flex-start" },
+          gap: { xs: 4, md: "4%", lg: "56px" },
         }}
       >
         {/* Image */}
         <Box
           sx={{
             position: "relative",
-            width: { xs: "100%", md: "537.986px" },
-            height: { xs: "420px", md: "650px" },
+            // 100% on Mobile/768px, 48% fluid on 1024px, rigid 537px on 1440px
+            width: { xs: "100%", md: "48%", lg: "537.986px" },
+            height: { xs: "380px", sm: "550px", md: "550px", lg: "650px" }, 
             borderRadius: "18px",
             overflow: "hidden",
             flexShrink: 0,
@@ -47,9 +50,11 @@ const FounderSection = () => {
           <Image
             src={mirzaFaizan.image}
             alt={mirzaFaizan.name}
-            fill sizes="100vw"
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
             style={{
               objectFit: "cover",
+              objectPosition: "top center", 
             }}
             priority
           />
@@ -58,27 +63,30 @@ const FounderSection = () => {
         {/* Right Content */}
         <Box
           sx={{
-            width: { xs: "100%", md: "561px" },
-            minHeight: { xs: "auto", md: "650px" },
-            pt: { xs: 0, md: "42px" },
+            // 100% on Mobile/768px, 48% fluid on 1024px, rigid 561px on 1440px
+            width: { xs: "100%", md: "48%", lg: "561px" },
+            minHeight: { xs: "auto", lg: "650px" },
+            pt: { xs: 0, md: 3, lg: "42px" },
             display: "flex",
             flexDirection: "column",
-            textAlign: { xs: "center", md: "left" },
+            // Left alignment is much cleaner and more readable for large blocks of text on mobile!
+            textAlign: "left", 
           }}
         >
           {/* Heading + Subheading */}
           <Box
             sx={{
-              width: { xs: "100%", md: "431px" },
-              mb: { xs: 4, md: 6 },
+              width: "100%",
+              mb: { xs: 3, md: 4, lg: 6 },
             }}
           >
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
-                fontSize: { xs: "32px", md: "42px", lg: "48px" },
-                lineHeight: { xs: "42px", md: "54px", lg: "62px" },
+                // Scaled down font sizes for tablets so it doesn't overflow
+                fontSize: { xs: "28px", sm: "32px", md: "36px", lg: "48px" },
+                lineHeight: { xs: "36px", sm: "42px", md: "46px", lg: "62px" },
                 letterSpacing: "-0.03em",
                 color: "#111827",
                 mb: 1,
@@ -91,8 +99,8 @@ const FounderSection = () => {
               sx={{
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 600,
-                fontSize: { xs: "18px", md: "20px", lg: "22px" },
-                lineHeight: "30px",
+                fontSize: { xs: "16px", sm: "18px", md: "18px", lg: "22px" },
+                lineHeight: { xs: "24px", md: "26px", lg: "30px" },
                 letterSpacing: "-0.01em",
                 color: "#111827",
               }}
@@ -104,12 +112,13 @@ const FounderSection = () => {
           {/* Description */}
           <Typography
             sx={{
-              width: { xs: "100%", md: "561px" },
+              width: "100%",
               whiteSpace: "pre-line",
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
-              fontSize: { xs: "15px", md: "17px", lg: "18px" },
-              lineHeight: "32px",
+              // Scaled font size slightly for 1024px so it fits the percentage width
+              fontSize: { xs: "15px", md: "15px", lg: "18px" },
+              lineHeight: { xs: "26px", md: "28px", lg: "32px" },
               color: "#474A55",
               opacity: 0.9,
             }}
@@ -120,15 +129,16 @@ const FounderSection = () => {
           {/* Email + Social */}
           <Box
             sx={{
-              mt: "auto",
-              pt: { xs: 4, md: 5 },
-              width: { xs: "100%", md: "316px" },
+              mt: { xs: 4, md: "auto" }, 
+              pt: { xs: 0, md: 3, lg: 5 },
+              width: "100%",
+              mx: 0, 
             }}
           >
             <Box
               sx={{
                 display: "flex",
-                justifyContent: { xs: "center", md: "flex-start" },
+                justifyContent: "flex-start", // Left align on all screens
                 alignItems: "center",
                 gap: "10px",
                 mb: 4,
@@ -147,7 +157,7 @@ const FounderSection = () => {
                   height: "auto",
                   fontFamily: FONT_FAMILY.body,
                   fontWeight: 400,
-                  fontSize: "16px",
+                  fontSize: { xs: "14px", md: "16px" },
                   color: "#111827",
                 }}
               >
@@ -158,7 +168,7 @@ const FounderSection = () => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: { xs: "center", md: "flex-start" },
+                justifyContent: "flex-start", // Left align on all screens
                 gap: "8px",
               }}
             >

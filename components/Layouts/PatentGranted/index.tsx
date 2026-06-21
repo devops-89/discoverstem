@@ -14,7 +14,7 @@ export default function PatentGranted() {
   return (
     <>
       <HeroSlider slides={PatentsGrantedSlider}/>
-       <PatentStats />;
+       <PatentStats />
       <PatentIntroSection/>
       <PatentFilterSection/>
       <CtaBanner data={ctaBannerData} />

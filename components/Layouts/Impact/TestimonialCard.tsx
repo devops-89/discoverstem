@@ -35,14 +35,14 @@ export default function SuccessStoriesCards() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: "20px", md: 0 },
-        py: { xs: "50px", md: "80px" },
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: "50px", md: "60px", lg: "80px" },
       }}
     >
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", lg: "repeat(2, 1fr)" },
+          gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
           gap: "30px",
           alignItems: "stretch",
         }}
@@ -54,7 +54,8 @@ export default function SuccessStoriesCards() {
             <Box
               key={item.id}
               sx={{
-                height: { xs: "auto", lg: "315px" },
+                // 🔥 FIX: Changed 'lg' to 'md'. Now the fixed 315px card height applies identically to 1024px iPads!
+                height: { xs: "auto", md: "315px" },
                 backgroundColor: "#F5F5F5",
                 borderRadius: "29px",
                 overflow: "hidden",
@@ -102,13 +103,14 @@ export default function SuccessStoriesCards() {
                   flexDirection: "column",
                 }}
               >
-                <Box sx={{ height: { lg: "210px" }, overflow: "hidden" }}>
+                {/* 🔥 FIX: Changed 'lg' to 'md'. This forces the text box to be exactly 210px tall at 1024px, ensuring the button underneath it is ALWAYS perfectly aligned from the top! */}
+                <Box sx={{ height: { md: "200px" }, overflow: "hidden" }}>
                   <Typography
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 600,
-                      fontSize: "22.4px",
-                      lineHeight: "26.88px",
+                      fontSize: { xs: "18px", md: "20px", lg: "22.4px" },
+                      lineHeight: { xs: "24px", md: "26px", lg: "26.88px" },
                       letterSpacing: "-0.56px",
                       color: "#171717",
                       mb: "8px",
@@ -121,8 +123,8 @@ export default function SuccessStoriesCards() {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "18px",
+                      fontSize: { xs: "13px", lg: "14px" },
+                      lineHeight: { xs: "16px", lg: "18px" },
                       letterSpacing: "0px",
                       whiteSpace: "pre-line",
                       color: "#525252",
@@ -136,8 +138,8 @@ export default function SuccessStoriesCards() {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      fontSize: "16px",
-                      lineHeight: "32px",
+                      fontSize: { xs: "14px", md: "15px", lg: "16px" },
+                      lineHeight: { xs: "24px", md: "28px", lg: "32px" },
                       letterSpacing: "-0.03em",
                       color: "#777777",
                       display: "-webkit-box",
@@ -154,8 +156,8 @@ export default function SuccessStoriesCards() {
                   <Button
                     onClick={() => setSelectedStory(item)}
                     sx={{
-                      width: "150px",
-                      height: "46px",
+                      width: { xs: "130px", lg: "150px" },
+                      height: { xs: "40px", lg: "46px" },
                       backgroundColor: "#7B53A1",
                       borderRadius: "30px",
                       color: "#FFFFFF",
@@ -177,8 +179,8 @@ export default function SuccessStoriesCards() {
 
                     <Box
                       sx={{
-                        width: "34px",
-                        height: "34px",
+                        width: { xs: "28px", lg: "34px" },
+                        height: { xs: "28px", lg: "34px" },
                         borderRadius: "50%",
                         backgroundColor: "#FFFFFF",
                         display: "flex",
@@ -205,12 +207,19 @@ export default function SuccessStoriesCards() {
             onChange={(_, value) => setPage(value)}
             renderItem={(item) => <PaginationItem {...item} />}
             sx={{
-              "& .MuiPagination-ul": { gap: "8px" },
+              "& .MuiPagination-ul": { 
+                gap: { xs: "0px", sm: "8px" },
+                flexWrap: "nowrap",
+                justifyContent: "center",
+              },
               "& .MuiPaginationItem-root": {
-                width: "40px",
-                height: "40px",
+                width: { xs: "24px", sm: "40px" },
+                height: { xs: "24px", sm: "40px" },
+                minWidth: { xs: "24px", sm: "40px" },
+                fontSize: { xs: "11px", sm: "14px" },
+                padding: 0,
+                margin: { xs: "0 2px", sm: "0 4px" },
                 borderRadius: "50%",
-                fontSize: "14px",
                 fontWeight: 500,
                 display: "inline-flex",
                 alignItems: "center",
@@ -218,9 +227,12 @@ export default function SuccessStoriesCards() {
                 backgroundColor: "#E5E7EB",
                 color: "#374151",
               },
+              "& .MuiPaginationItem-icon": {
+                fontSize: { xs: "16px", sm: "20px" },
+              },
               "& .MuiPaginationItem-ellipsis": {
                 backgroundColor: "transparent",
-                lineHeight: "40px",
+                lineHeight: { xs: "24px", sm: "40px" },
               },
               "& .Mui-selected": {
                 backgroundColor: "#7B53A1 !important",
@@ -233,23 +245,23 @@ export default function SuccessStoriesCards() {
 
       <Dialog
         open={Boolean(selectedStory)}
-         disableScrollLock
+        disableScrollLock
         onClose={() => setSelectedStory(null)}
         maxWidth="lg"
         fullWidth
         slotProps={{
           paper:{
-          sx: {
-            borderRadius: "29px",
-            backgroundColor: "#F5F5F5",
-            overflow: "hidden",
-          },
-        }
+            sx: {
+              borderRadius: "29px",
+              backgroundColor: "#F5F5F5",
+              overflow: "hidden",
+            },
+          }
         }}
       >
         <DialogContent
           sx={{
-            p: { xs: "24px", md: "36px" },
+            p: { xs: "24px", sm: "36px" },
             position: "relative",
           }}
         >
@@ -273,7 +285,7 @@ export default function SuccessStoriesCards() {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { xs: "column", md: "row" },
+                flexDirection: { xs: "column", sm: "row" },
                 gap: "30px",
                 alignItems: "flex-start",
               }}
@@ -281,8 +293,8 @@ export default function SuccessStoriesCards() {
               <Box
                 sx={{
                   position: "relative",
-                  width: { xs: "100%", md: "190px" },
-                  height: { xs: "210px", md: "210px" },
+                  width: { xs: "100%", sm: "190px" },
+                  height: { xs: "210px", sm: "210px" },
                   borderRadius: "20px",
                   overflow: "hidden",
                   flexShrink: 0,
@@ -296,13 +308,13 @@ export default function SuccessStoriesCards() {
                 />
               </Box>
 
-              <Box sx={{ flex: 1, pr: { xs: 0, md: "45px" } }}>
+              <Box sx={{ flex: 1, pr: { xs: 0, sm: "45px" } }}>
                 <Typography
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    fontSize: "22.4px",
-                    lineHeight: "26.88px",
+                    fontSize: { xs: "18px", sm: "20px", lg: "22.4px" },
+                    lineHeight: { xs: "24px", sm: "26px", lg: "26.88px" },
                     letterSpacing: "-0.56px",
                     color: "#171717",
                     mb: "12px",
@@ -315,8 +327,8 @@ export default function SuccessStoriesCards() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "18px",
+                    fontSize: { xs: "13px", lg: "14px" },
+                    lineHeight: { xs: "16px", lg: "18px" },
                     letterSpacing: "0px",
                     whiteSpace: "pre-line",
                     color: "#525252",
@@ -330,8 +342,8 @@ export default function SuccessStoriesCards() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: "16px",
-                    lineHeight: "32px",
+                    fontSize: { xs: "14px", sm: "15px", lg: "16px" },
+                    lineHeight: { xs: "24px", sm: "28px", lg: "32px" },
                     letterSpacing: "-0.03em",
                     whiteSpace: "pre-line",
                     color: "#777777",

@@ -11,14 +11,20 @@ interface GallerySectionProps {
 export default function GallerySection({
   data,
 }: GallerySectionProps) {
+  
+  // 🔥 FIX: The original formula `Math.ceil(length/3) + 1` was incorrectly generating an EXTRA empty row of whitespace at the bottom if you had 8, 7, or 5 images!
+  // This new line calculates the EXACT number of rows needed so there is absolutely 0 empty gap below the gallery.
+  const count = data.images.length;
+  const numRows = count === 0 ? 0 : count <= 5 ? 2 : Math.floor((count - 6) / 3) + 3;
+
   return (
     <Container
       maxWidth={false}
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 5, md: 8 },
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 5, md: 6, lg: 16 },
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -43,7 +49,7 @@ export default function GallerySection({
             sx={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: 400,
-              fontSize: "18px",
+              fontSize: { xs: "14px", md: "16px", lg: "18px" },
               lineHeight: "26px",
               textTransform: "uppercase",
               color: "#737373",
@@ -57,11 +63,11 @@ export default function GallerySection({
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "34px", md: "48px" },
-            lineHeight: { xs: "42px", md: "56px" },
+            fontSize: { xs: "22px", md: "34px", lg: "48px" },
+            lineHeight: { xs: "36px", md: "46px", lg: "56px" },
             letterSpacing: "-0.03em",
             color: "#171717",
-            mb: { xs: 4, md: "64px" },
+            mb: { xs: 4, md: 6, lg: "64px" },
           }}
         >
           {data.title}
@@ -73,11 +79,15 @@ export default function GallerySection({
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
-              md: "572px 278px 278px",
+              sm: "2fr 1fr 1fr",
+              lg: "572px 278px 278px",
             },
+            // 🔥 FIX: We now use the exact `numRows` calculated above. No more massive empty gaps!
             gridTemplateRows: {
               xs: "auto",
-              md: Array.from({ length: Math.ceil(data.images.length / 3) + 1 }, () => "170px").join(" "),
+              sm: Array.from({ length: numRows }, () => "110px").join(" "),
+              md: Array.from({ length: numRows }, () => "140px").join(" "),
+              lg: Array.from({ length: numRows }, () => "170px").join(" "),
             },
             gap: "16px",
           }}
@@ -113,25 +123,18 @@ export default function GallerySection({
                 border: "0.8px solid #0000000D",
 
                 height: {
-                  xs:
-                    item.variant === "large"
-                      ? "260px"
-                      : item.variant === "wide"
-                      ? "190px"
-                      : item.variant === "last"
-                      ? "160px"
-                      : "180px",
-                  md: "auto",
+                  xs: item.variant === "large" ? "220px" : "180px",
+                  sm: "auto",
                 },
 
                 gridColumn: {
                   xs: "auto",
-                  md: col,
+                  sm: col,
                 },
 
                 gridRow: {
                   xs: "auto",
-                  md: row,
+                  sm: row,
                 },
 
                 maxWidth: "100%",

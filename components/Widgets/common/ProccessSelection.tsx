@@ -33,8 +33,8 @@ export default function ProcessSection() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 4, md: 8 },
-        px: { xs: 3, md: 4 },
+        py: { xs: 4, sm: 6, lg: 8 },
+        px: { xs: 3, sm: 5, lg: 4 },
       }}
     >
       <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1 }}>
@@ -43,13 +43,13 @@ export default function ProcessSection() {
         />
         <Typography
           sx={{
-            width: { xs: "100%", md: "160px" },
+            width: { xs: "100%", lg: "160px" }, // Protected desktop width
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             color: "#777777",
-            fontSize: "22px",
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, // Scaled down for mobile
             letterSpacing: "0.03em",
-            lineHeight: "43px",
+            lineHeight: { xs: "28px", sm: "32px", lg: "43px" }, // Scaled down for mobile
           }}
         >
           Selection Flow
@@ -59,25 +59,25 @@ export default function ProcessSection() {
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          width: { xs: "100%", md: "374px" },
-          fontSize: { xs: 32, md: 48 },
+          width: { xs: "100%", lg: "374px" }, // Protected desktop width
+          fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled down for mobile
           fontWeight: 600,
           letterSpacing: "-0.03em",
-          lineHeight: "62px",
-          mb: 5,
+          lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // Scaled down for mobile
+          mb: { xs: 4, lg: 5 },
         }}
       >
         A Simple 5-step process
       </Typography>
 
-      <Grid container spacing={6}>
+      <Grid container spacing={{ xs: 4, lg: 6 }}>
         <Grid size={{ xs: 12, md: 5 }}>
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontSize: 20,
+              fontSize: { xs: "15px", sm: "18px", lg: "20px" }, // Scaled down for mobile
               color: "#5C5C5C",
-              lineHeight: "37px",
+              lineHeight: { xs: "26px", sm: "32px", lg: "37px" }, // Scaled down for mobile
             }}
           >
             From signing up to presenting your breakthrough idea at the finale,
@@ -85,7 +85,8 @@ export default function ProcessSection() {
             closer to becoming America’s Top Young Innovator.
           </Typography>
 
-          <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
+          {/* 🔥 FIX: Added bottom margin on mobile so the buttons don't crash into the stepper below them */}
+          <Box sx={{ display: "flex", gap: 2, mt: { xs: 4, lg: 3 }, mb: { xs: 5, md: 0 } }}>
             <Box
               onClick={handlePrev}
               sx={{
@@ -120,7 +121,7 @@ export default function ProcessSection() {
           </Box>
         </Grid>
 
-        <Grid size={{ xs: 12, md: 7 }} sx={{ mt: { md: "-160px" } }}>
+        <Grid size={{ xs: 12, md: 7 }} sx={{ mt: { xs: 0, md: "-100px", lg: "-160px" } }}>
          <VerticalStepper activeStep={activeStep} setActiveStep={setActiveStep} />
         </Grid>
       </Grid>

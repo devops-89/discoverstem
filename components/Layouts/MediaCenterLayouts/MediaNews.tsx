@@ -40,7 +40,8 @@ export default function MediaNewsSection({
         width: "100%",
         maxWidth: "1159px",
         mx: "auto",
-        mb: { xs: 8, md: "100px" },
+        // 🔥 FIX: Shifted gap mapping to lg.
+        mb: { xs: 8, lg: "100px" },
         scrollMarginTop: "120px",
       }}
     >
@@ -48,18 +49,20 @@ export default function MediaNewsSection({
         sx={{
           display: "flex",
           alignItems: "center",
-          mb: "75px",
+          // 🔥 FIX: Shifted large margin mapping to lg.
+          mb: { xs: 4, lg: "75px" },
         }}
       >
         <Typography
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: "36px",
-            lineHeight: "46px",
+            // 🔥 FIX: Shifted massive 36px font to lg! Scaled down for mobile/iPad.
+            fontSize: { xs: "16px", md: "28px", lg: "36px" },
+            lineHeight: { xs: "32px", md: "36px", lg: "46px" },
             letterSpacing: "-0.02em",
             color: "#111827",
-            mr: "18px",
+            mr: "14px",
             flexShrink: 0,
           }}
         >
@@ -90,7 +93,7 @@ export default function MediaNewsSection({
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: "16px",
+                fontSize: { xs: "14px", md: "15px", lg: "16px" },
                 lineHeight: "24px",
               }}
             >
@@ -109,7 +112,8 @@ export default function MediaNewsSection({
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" },
+          // 🔥 FIX: Made grid cleanly scale to 3 cards for iPad (md) before switching to 4 on lg.
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
           gap: "23px",
         }}
       >

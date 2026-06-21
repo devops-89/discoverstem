@@ -66,18 +66,18 @@ export default function AdmissionSuccessSection() {
       sx={{
         maxWidth: "1205px",
         mx: "auto",
-        px: { xs: 2, md: 0 },
-        py: { xs: 6, md: 10 },
+        px: { xs: 3, md: 4, lg: 0 },
+        py: { xs: 4, md: 10 },
       }}
     >
       <Typography
         sx={{
           fontFamily: "Inter, sans-serif",
           fontWeight: 700,
-          fontSize: { xs: "32px", md: "48px" },
-          lineHeight: { xs: "40px", md: "58px" },
+          fontSize: { xs: "28px", sm: "32px", md: "36px", lg: "48px" },
+          lineHeight: { xs: "36px", sm: "40px", md: "44px", lg: "58px" },
           color: "#171717",
-          mb: 6,
+          mb: { xs: 4, md: 6 },
         }}
       >
         The 2025 admissions cycle
@@ -85,56 +85,96 @@ export default function AdmissionSuccessSection() {
 
       <Box
         sx={{
-          border: "1px solid #E5E5E5",
-          borderRadius: { xs: "24px", md: "999px" },
-          p: "12px",
+          // 🔥 FIX: Layout adapts to 3 completely different states now:
+          // xs: 'row' with wrap (Original Mobile)
+          // sm/md: 'column' (2 Lines for Tablets)
+          // lg: 'row' (Original Desktop)
           display: "flex",
-          alignItems: "center",
-          gap: 2,
-          flexWrap: "wrap",
+          flexDirection: { xs: "row", sm: "column", lg: "row" },
+          flexWrap: { xs: "wrap", sm: "nowrap" },
+          alignItems: { xs: "center", sm: "stretch", lg: "center" },
+          gap: { xs: 2, lg: 2 },
           mb: 3,
+          
+          // 🔥 FIX: Outer border only exists for the Original Mobile (xs) and Original Desktop (lg)
+          border: { xs: "1px solid #E5E5E5", sm: "none", lg: "1px solid #E5E5E5" },
+          borderRadius: { xs: "24px", sm: 0, lg: "999px" },
+          p: { xs: "12px", sm: "12px 0", lg: "12px" },
+          
+          // 🔥 FIX: Sticky for tablets and mobile
+          position: { xs: "sticky", lg: "static" },
+          top: { xs: "10px", lg: "auto" },
+          zIndex: { xs: 10, lg: "auto" },
+          backgroundColor: { xs: "#fff", lg: "transparent" },
         }}
       >
-        {admissionFilters.batchFilters.map((item) => (
-          <Chip
-            key={item}
-            label={item}
-            onClick={() => {
-              setBatchFilter(item);
-              setPage(1);
-            }}
-            sx={{
-              background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
-              color: batchFilter === item ? "#fff" : "#171717",
-              fontWeight: 600,
-            }}
-          />
-        ))}
-
         <Box
           sx={{
-            width: "1px",
-            height: "24px",
-            bgcolor: "#E5E5E5",
-            display: { xs: "none", md: "block" },
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
+            
+            // 🔥 FIX: Chips wrap normally on 'xs', but swipe horizontally on 'sm' and 'md'
+            flexWrap: { xs: "wrap", sm: "nowrap" },
+            overflowX: { xs: "visible", sm: "auto" },
+            "&::-webkit-scrollbar": { display: "none" },
+            scrollbarWidth: "none",
+            
+            // 🔥 FIX: The separate pill border ONLY appears for the 2-line layout on 'sm' and 'md'
+            border: { xs: "none", sm: "1px solid #E5E5E5", lg: "none" },
+            borderRadius: { xs: 0, sm: "999px", lg: 0 },
+            p: { xs: 0, sm: "12px", lg: 0 },
+            width: { xs: "100%", lg: "auto" },
           }}
-        />
+        >
+          {admissionFilters.batchFilters.map((item) => (
+            <Chip
+              key={item}
+              label={item}
+              onClick={() => {
+                setBatchFilter(item);
+                setPage(1);
+              }}
+              sx={{
+                background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
+                color: batchFilter === item ? "#fff" : "#171717",
+                fontWeight: 600,
+                fontSize: { xs: "12px", md: "14px" },
+                height: { xs: "28px", md: "32px" },
+                flexShrink: 0,
+              }}
+            />
+          ))}
 
-        {admissionFilters.programFilters.map((item) => (
-          <Chip
-            key={item}
-            label={item}
-            onClick={() => {
-              setProgramFilter(item);
-              setPage(1);
-            }}
+          <Box
             sx={{
-              background: programFilter === item ? "#000" : "#F5F5F5",
-              color: programFilter === item ? "#fff" : "#171717",
-              fontWeight: 600,
+              width: "1px",
+              height: "24px",
+              bgcolor: "#E5E5E5",
+              display: { xs: "none", md: "block" },
+              flexShrink: 0,
             }}
           />
-        ))}
+
+          {admissionFilters.programFilters.map((item) => (
+            <Chip
+              key={item}
+              label={item}
+              onClick={() => {
+                setProgramFilter(item);
+                setPage(1);
+              }}
+              sx={{
+                background: programFilter === item ? "#000" : "#F5F5F5",
+                color: programFilter === item ? "#fff" : "#171717",
+                fontWeight: 600,
+                fontSize: { xs: "12px", md: "14px" },
+                height: { xs: "28px", md: "32px" },
+                flexShrink: 0,
+              }}
+            />
+          ))}
+        </Box>
 
         <TextField
           size="small"
@@ -145,10 +185,15 @@ export default function AdmissionSuccessSection() {
             setPage(1);
           }}
           sx={{
-            ml: { xs: 0, md: "auto" },
-            width: { xs: "100%", md: "280px" },
+            ml: { xs: 0, lg: "auto" },
+            width: { xs: "100%", lg: "280px" },
+            flexShrink: 0,
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
+              fontSize: { xs: "13px", md: "16px" },
+            },
+            "& .MuiInputBase-input::placeholder": {
+              fontSize: { xs: "13px", md: "16px" },
             },
           }}
         />
@@ -165,6 +210,7 @@ export default function AdmissionSuccessSection() {
           gridTemplateColumns: {
             xs: "1fr",
             sm: "repeat(2,1fr)",
+            md: "repeat(3,1fr)",
             lg: "repeat(4,1fr)",
           },
           gap: 3,
@@ -178,7 +224,7 @@ export default function AdmissionSuccessSection() {
               key={student.id}
               sx={{
                 width: "100%",
-                maxWidth: "290px",
+                maxWidth: { xs: "100%", sm: "290px" },
                 height: "390px",
                 mx: "auto",
                 background: "#FFFFFF",
@@ -256,8 +302,8 @@ export default function AdmissionSuccessSection() {
                   sx={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 600,
-                    fontSize: "18px",
-                    lineHeight: "27px",
+                    fontSize: { xs: "16px", md: "18px" },
+                    lineHeight: { xs: "22px", md: "27px" },
                     letterSpacing: "-0.45px",
                     color: "#171717",
                   }}
@@ -269,7 +315,7 @@ export default function AdmissionSuccessSection() {
                   sx={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: "12px",
+                    fontSize: { xs: "11px", md: "12px" },
                     lineHeight: "16px",
                     letterSpacing: "0.6px",
                     textTransform: "uppercase",
@@ -294,7 +340,7 @@ export default function AdmissionSuccessSection() {
                     sx={{
                       fontFamily: "Inter, sans-serif",
                       fontWeight: 400,
-                      fontSize: "12px",
+                      fontSize: { xs: "11px", md: "12px" },
                       lineHeight: "16px",
                       letterSpacing: "0.6px",
                       textTransform: "uppercase",
@@ -327,7 +373,7 @@ export default function AdmissionSuccessSection() {
                       sx={{
                         fontFamily: "Inter, sans-serif",
                         fontWeight: 400,
-                        fontSize: "14px",
+                        fontSize: { xs: "13px", md: "14px" },
                         lineHeight: "20px",
                         color: "#262626",
                       }}
@@ -350,12 +396,17 @@ export default function AdmissionSuccessSection() {
             onChange={(_, value) => setPage(value)}
             renderItem={(item) => <PaginationItem {...item} />}
             sx={{
-              "& .MuiPagination-ul": { gap: "8px" },
+              "& .MuiPagination-ul": {
+                gap: { xs: "4px", md: "8px" },
+                flexWrap: "nowrap",
+                justifyContent: "center",
+              },
               "& .MuiPaginationItem-root": {
-                width: "40px",
-                height: "40px",
+                width: { xs: "28px", sm: "40px" },
+                height: { xs: "28px", sm: "40px" },
+                minWidth: { xs: "28px", sm: "40px" },
+                fontSize: { xs: "12px", sm: "14px" },
                 borderRadius: "50%",
-                fontSize: "14px",
                 fontWeight: 500,
                 display: "inline-flex",
                 alignItems: "center",
@@ -365,7 +416,7 @@ export default function AdmissionSuccessSection() {
               },
               "& .MuiPaginationItem-ellipsis": {
                 backgroundColor: "transparent",
-                lineHeight: "40px",
+                lineHeight: { xs: "28px", sm: "40px" },
               },
               "& .Mui-selected": {
                 backgroundColor: "#7B53A1 !important",

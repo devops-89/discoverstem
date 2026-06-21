@@ -18,8 +18,8 @@ export default function OutcomesSection() {
         sx={{
           maxWidth: "1256px",
           mx: "auto",
-          px: { xs: 3, md: 0 },
-          py: { xs: 6, md: "56px" },
+          px: { xs: 3, lg: 0 },
+          py: { xs: 6, lg: "56px" },
         }}
       >
         <Box
@@ -27,9 +27,9 @@ export default function OutcomesSection() {
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
-              md: "443.33px 636.67px",
+              lg: "443.33px 636.67px",
             },
-            gap: { xs: 5, md: "40px" },
+            gap: { xs: 5, lg: "40px" },
             alignItems: "start",
             justifyContent: "center",
           }}
@@ -55,7 +55,7 @@ export default function OutcomesSection() {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 400,
-                  fontSize: "16px",
+                  fontSize: { xs: "14px", lg: "16px" }, 
                   lineHeight: "16px",
                   letterSpacing: "2.4px",
                   textTransform: "uppercase",
@@ -71,11 +71,11 @@ export default function OutcomesSection() {
                 whiteSpace: "pre-line",
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "30px", md: "36px" },
-                lineHeight: { xs: "36px", md: "36.8px" },
+                fontSize: { xs: "26px", sm: "30px", lg: "36px" },
+                lineHeight: { xs: "34px", sm: "36px", lg: "36.8px" },
                 letterSpacing: "-0.8px",
                 color: "#000000",
-                mb: { xs: 3, md: "30px" },
+                mb: { xs: 3, lg: "30px" },
               }}
             >
               {data.title}
@@ -83,11 +83,11 @@ export default function OutcomesSection() {
 
             <Typography
               sx={{
-                maxWidth: "444px",
+                maxWidth: { xs: "100%", lg: "444px" },
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 400,
-                fontSize: "16px",
-                lineHeight: "24px",
+                fontSize: { xs: "15px", lg: "16px" },
+                lineHeight: { xs: "24px", lg: "24px" },
                 color: "#777777",
               }}
             >
@@ -99,7 +99,7 @@ export default function OutcomesSection() {
             sx={{
               display: "flex",
               flexDirection: "column",
-              gap: "16px",
+              gap: { xs: "12px", lg: "16px" }, 
             }}
           >
             {data.items.map((item) => (
@@ -107,20 +107,22 @@ export default function OutcomesSection() {
                 key={item.number}
                 sx={{
                   width: "100%",
-                  minHeight: "93.6px",
+                  minHeight: { xs: "auto", lg: "93.6px" }, 
                   borderRadius: "14px",
                   border: "0.8px solid #0000001A",
                   backgroundColor: "#0000000D",
-                  p: "20px",
+                  p: { xs: "16px", lg: "20px" }, 
                   display: "flex",
-                  alignItems: "center",
+                  // 🔥 FIX: 'flex-start' pushes the number circle to the top left on mobile!
+                  // 1440px stays perfectly centered.
+                  alignItems: { xs: "flex-start", lg: "center" },
                   gap: "16px",
                 }}
               >
                 <Box
                   sx={{
-                    width: "36px",
-                    height: "36px",
+                    width: { xs: "32px", lg: "36px" },
+                    height: { xs: "32px", lg: "36px" },
                     borderRadius: "999px",
                     backgroundColor: "#F9A51E",
                     display: "flex",
@@ -133,7 +135,7 @@ export default function OutcomesSection() {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 700,
-                      fontSize: "16px",
+                      fontSize: { xs: "14px", lg: "16px" },
                       lineHeight: "24px",
                       color: "#1B0F2A",
                     }}
@@ -146,8 +148,8 @@ export default function OutcomesSection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: "16px",
-                    lineHeight: "26px",
+                    fontSize: { xs: "14px", lg: "16px" }, 
+                    lineHeight: { xs: "22px", lg: "26px" },
                     color: "#000000E5",
                   }}
                 >

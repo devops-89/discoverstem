@@ -16,25 +16,26 @@ export default function InfoSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        // 🔥 FIX: Shifted 'md: 0' to 'lg: 0' to prevent text from sticking to the edges on iPads (1024px)
+        px: { xs: 3, sm: 5, lg: 0 },
+        py: { xs: 6, sm: 8, lg: 10 },
       }}
     >
       <Box
         sx={{
           width: "100%",
-          minHeight: { xs: "auto", md: "674px" },
+          minHeight: { xs: "auto", lg: "674px" },
         }}
       >
         <Typography
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "32px", md: "48px" },
-            lineHeight: { xs: "42px", md: "62px" },
+            fontSize: { xs: "24px", sm: "40px", lg: "48px" },
+            lineHeight: { xs: "42px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 4, md: "30px" },
+            mb: { xs: 2, sm: 3, lg: "30px" },
           }}
         >
           {data.title}
@@ -50,11 +51,11 @@ export default function InfoSection({
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
-                    fontSize: { xs: "16px", md: "22px" },
-                    lineHeight: { xs: "30px", md: "43px" },
+                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
+                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, // Scaled gracefully for smaller screens
                     letterSpacing: "-0.03em",
                     color: "#777777",
-                    mb: { xs: 2.5, md: "26px" },
+                    mb: { xs: 2.5, sm: 3, lg: "26px" },
 
                     "& strong": {
                       fontWeight: 600,
@@ -73,12 +74,12 @@ export default function InfoSection({
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    fontSize: { xs: "16px", md: "22px" },
-                    lineHeight: { xs: "30px", md: "43px" },
+                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
+                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",
                     color: "#111827",
-                    mt: { xs: 3, md: "42px" },
-                    mb: 1,
+                    mt: { xs: 3, sm: 4, lg: "42px" },
+                    mb: { xs: 1.5, lg: 1 },
                   }}
                 >
                   {item.text}
@@ -87,7 +88,7 @@ export default function InfoSection({
             }
 
             return (
-              <Box key={index} component="ul" sx={{ m: 0, pl: "24px" }}>
+              <Box key={index} component="ul" sx={{ m: 0, pl: { xs: "18px", lg: "24px" } }}>
                 {item.items.map((point, pointIndex) => (
                   <Typography
                     key={pointIndex}
@@ -95,10 +96,11 @@ export default function InfoSection({
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      fontSize: { xs: "16px", md: "22px" },
-                      lineHeight: { xs: "30px", md: "43px" },
+                      fontSize: { xs: "16px", sm: "18px", lg: "22px" },
+                      lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                       letterSpacing: "-0.03em",
                       color: "#777777",
+                      mb: { xs: 1, lg: 0 }, // Added subtle spacing between list items on mobile
                     }}
                   >
                     {point}

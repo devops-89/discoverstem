@@ -13,20 +13,20 @@ export default function IlmLearningTracksSection() {
       sx={{
         maxWidth: "1280px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 16 },
+        py: { xs: 6, sm: 8, lg: 16 },
+        px: { xs: 3, sm: 5, lg: 0 },
       }}
     >
       <Typography
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: { xs: "32px", md: "48px" },
-          lineHeight: { xs: "42px", md: "62px" },
+          fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+          lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
           letterSpacing: "-0.03em",
           textAlign: "center",
           color: "#111827",
-          mb: { xs: 5, md: "75px" },
+          mb: { xs: 4, sm: 5, lg: "75px" },
         }}
       >
         {data.title}
@@ -36,12 +36,12 @@ export default function IlmLearningTracksSection() {
         sx={{
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr",
-            sm: "repeat(2, 1fr)",
-            lg: "repeat(4, 290px)",
+            xs: "1fr", // Stacks on phones
+            sm: "repeat(2, 1fr)", // 🔥 FIX: 2 side-by-side on 768px iPads and up
+            lg: "repeat(4, 290px)", // 4 side-by-side exactly 290px wide on 1440px desktop
           },
           justifyContent: "center",
-          gap: { xs: 3, md: "24px" },
+          gap: { xs: 3, lg: "24px" },
         }}
       >
         {data.tracks.map((track) => (

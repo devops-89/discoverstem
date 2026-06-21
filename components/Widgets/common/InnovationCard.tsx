@@ -75,7 +75,8 @@ export default function InnovationCardsGrid({
                       position: "absolute",
                       top: 16,
                       left: 24,
-                      fontSize: "13px",
+                      // 🔥 FIX: Scaled font down for mobile
+                      fontSize: { xs: "11px", lg: "13px" },
                       fontWeight: 700,
                       color: "#7B53A1",
                       backgroundColor: "#FFFFFFF2",
@@ -138,8 +139,9 @@ export default function InnovationCardsGrid({
                     <Typography
                       sx={{
                         fontWeight: 600,
-                        fontSize: "18px",
-                        lineHeight: "23.4px",
+                        // 🔥 FIX: Scaled title font size down for mobile
+                        fontSize: { xs: "16px", lg: "18px" },
+                        lineHeight: { xs: "22px", lg: "23.4px" },
                         letterSpacing: "-0.45px",
                         color: "#171717",
                         display: "-webkit-box",
@@ -153,58 +155,59 @@ export default function InnovationCardsGrid({
                   </Box>
 
                   {item.award && (
-  <Box
-    sx={{
-      height: "132px",
-      backgroundColor: "#FFF5E6",
-      border: "0.8px solid #F9A51E4D",
-      borderRadius: "14px",
-      px: "12.8px",
-      py: "12.8px",
-      boxSizing: "border-box",
-      overflow: "hidden",
-      display: "flex",
-      flexDirection: "column",
-      flexShrink: 0,
-    }}
-  >
-    <Box
-      sx={{
-        height: "22px",
-        mb: "8px",
-        display: "flex",
-        alignItems: "center",
-        flexShrink: 0,
-      }}
-    >
-      {item.awardIcon && (
-        <Image
-          src={item.awardIcon}
-          alt="Award"
-          width={80}
-          height={18}
-          style={{
-            objectFit: "contain",
-          }}
-        />
-      )}
-    </Box>
+                    <Box
+                      sx={{
+                        height: "132px",
+                        backgroundColor: "#FFF5E6",
+                        border: "0.8px solid #F9A51E4D",
+                        borderRadius: "14px",
+                        px: "12.8px",
+                        py: "12.8px",
+                        boxSizing: "border-box",
+                        overflow: "hidden",
+                        display: "flex",
+                        flexDirection: "column",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          height: "22px",
+                          mb: "8px",
+                          display: "flex",
+                          alignItems: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {item.awardIcon && (
+                          <Image
+                            src={item.awardIcon}
+                            alt="Award"
+                            width={80}
+                            height={18}
+                            style={{
+                              objectFit: "contain",
+                            }}
+                          />
+                        )}
+                      </Box>
 
-    <Typography
-      sx={{
-        fontSize: "13.5px",
-        lineHeight: "19.25px",
-        color: "#262626",
-        display: "-webkit-box",
-        WebkitLineClamp: 4,
-        WebkitBoxOrient: "vertical",
-        overflow: "hidden",
-      }}
-    >
-      {item.award}
-    </Typography>
-  </Box>
-)}
+                      <Typography
+                        sx={{
+                          // 🔥 FIX: Scaled award description font size down for mobile
+                          fontSize: { xs: "12px", lg: "13.5px" },
+                          lineHeight: { xs: "18px", lg: "19.25px" },
+                          color: "#262626",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 4,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {item.award}
+                      </Typography>
+                    </Box>
+                  )}
 
                   <Stack direction="row" justifyContent="space-between" mt="auto">
                     <Box
@@ -221,8 +224,9 @@ export default function InnovationCardsGrid({
                     >
                       <Typography
                         sx={{
-                          fontSize: "14px",
-                          lineHeight: "20px",
+                          // 🔥 FIX: Scaled link font size down for mobile
+                          fontSize: { xs: "12px", lg: "14px" },
+                          lineHeight: { xs: "16px", lg: "20px" },
                           color: "#7B53A1",
                         }}
                       >
@@ -233,7 +237,7 @@ export default function InnovationCardsGrid({
 
                       <NorthEastIcon
                         sx={{
-                          fontSize: 16,
+                          fontSize: { xs: 14, lg: 16 },
                           color: "#7B53A1",
                           mb: "2px",
                         }}
@@ -261,8 +265,9 @@ export default function InnovationCardsGrid({
                     >
                       <Typography
                         sx={{
-                          fontSize: "14px",
-                          lineHeight: "20px",
+                          // 🔥 FIX: Scaled link font size down for mobile
+                          fontSize: { xs: "12px", lg: "14px" },
+                          lineHeight: { xs: "16px", lg: "20px" },
                           color: "#7B53A1",
                         }}
                       >
@@ -273,7 +278,7 @@ export default function InnovationCardsGrid({
 
                       <NorthEastIcon
                         sx={{
-                          fontSize: 16,
+                          fontSize: { xs: 14, lg: 16 },
                           color: "#7B53A1",
                           mb: "2px",
                         }}
@@ -289,19 +294,19 @@ export default function InnovationCardsGrid({
 
       <Dialog
         open={certModal.open}
-         disableScrollLock
+        disableScrollLock
         onClose={() => setCertModal({ open: false, src: "", title: "" })}
         maxWidth="md"
         fullWidth
         slotProps={{
-          paper:{
-          sx: {
-            borderRadius: "16px",
-            position: "relative",
-            overflow: "visible",
-            p: 2,
+          paper: {
+            sx: {
+              borderRadius: "16px",
+              position: "relative",
+              overflow: "visible",
+              p: 2,
+            },
           },
-        }
         }}
       >
         <IconButton

@@ -17,8 +17,9 @@ export default function ImageTextPartnerSection({
       sx={{
         maxWidth: "1158px",
         mx: "auto",
-        px: { xs: 3, md: 0 },
-        py: { xs: 6, md: 10 },
+        // 🔥 FIX: Shifted '0' padding to 'lg' to prevent text touching the screen edge on iPads
+        px: { xs: 3, md:8, lg: 0 },
+        py: { xs: 4,  md:8, lg: 10 },
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -26,11 +27,12 @@ export default function ImageTextPartnerSection({
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "28px", md: "36px" },
-            lineHeight: { xs: "38px", md: "62px" },
+            // 🔥 FIX: Scaled text down for mobile and tablets, while preserving exactly 36px on 1440px
+            fontSize: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
+            lineHeight: { xs: "34px", sm: "38px", md: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#000000",
-            mb: { xs: 4, md: "76px" },
+            mb: { xs: 4, lg: "76px" },
           }}
         >
           {data.title}
@@ -39,8 +41,9 @@ export default function ImageTextPartnerSection({
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "687px 401px" },
-            gap: { xs: 4, md: "70px" },
+            // 🔥 FIX: Your 687px + 401px + gap equals 1158px! That overflows a 1024px iPad horizontally. I shifted it to 'lg' so iPads naturally stack into a single column.
+            gridTemplateColumns: { xs: "1fr", lg: "687px 401px" },
+            gap: { xs: 4, lg: "70px" },
             alignItems: "start",
           }}
         >
@@ -51,14 +54,14 @@ export default function ImageTextPartnerSection({
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 400,
-                  fontSize: { xs: "16px", md: "20px" },
-                  lineHeight: { xs: "30px", md: "36px" },
+                  fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "20px" },
+                  lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "36px" },
                   letterSpacing: "-0.03em",
                   color: "#777777",
                   mb:
                     index === data.description.length - 1
                       ? 0
-                      : { xs: 2, md: 0 },
+                      : { xs: 2, lg: 0 },
                 }}
               >
                 {text}
@@ -70,12 +73,12 @@ export default function ImageTextPartnerSection({
             sx={{
               position: "relative",
               width: "100%",
-              maxWidth: "401px",
-              height: { xs: "300px", md: "401px" },
+              maxWidth: { xs: "100%", sm: "600px", lg: "401px" },
+              height: { xs: "300px", md: "350px", lg: "401px" },
               borderRadius: "16px",
               overflow: "hidden",
               backgroundColor: "#C4C4C4",
-              mx: { xs: "auto", md: 0 },
+              mx: { xs: "auto", lg: 0 },
             }}
           >
             {data.image && (
