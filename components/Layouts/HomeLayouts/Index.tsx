@@ -13,7 +13,9 @@ import PatentsSection from "./PatentsSection";
 import InnovationsSection from "./InnovationsSection";
 import AwardsSection from "./AwardsSection";
 import TestimonialsSection from "./TestimonialsSection";
-import CtaBanner from "./CtaBanner";
+import CtaBanner from "@/components/Widgets/common/CommonCta";
+import { ctaBannerData } from "@/assets/Generic-data";
+
 
 
 export default function HomeLayout() {
@@ -29,7 +31,7 @@ export default function HomeLayout() {
       <InnovationsSection />
       <AwardsSection />
       <TestimonialsSection />
-      <CtaBanner />
+       <CtaBanner data={ctaBannerData} />
     </>
   );
 }

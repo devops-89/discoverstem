@@ -11,7 +11,7 @@ export default function SpotlightSection() {
   const swiperRef = useRef<import("swiper").Swiper | null>(null);
   
   return (
-    <Container id="spotlight" sx={{ py: { xs: 4, md: 6 } }}>
+    <Container id="spotlight" sx={{ py: { xs: 2, md: 6 } }}>
       <SectionHeading
         label="Celebrating excellence and innovation"
         title="Student Spotlight"
@@ -28,7 +28,7 @@ export default function SpotlightSection() {
           loop
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 12 }, // Displays exactly 1 card on mobile
+            0: { slidesPerView: 1, spaceBetween: 12 }, 
             480: { slidesPerView: 2, spaceBetween: 16 },
             768: { slidesPerView: 3, spaceBetween: 20 },
             900: { slidesPerView: 4, spaceBetween: 20 },

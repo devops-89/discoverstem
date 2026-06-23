@@ -11,8 +11,8 @@ export default function AwardsSection() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 4, sm: 6, md: 10 }, // Preserves 10 on desktop / 1440
-        px: { xs: 2, sm: 3, md: 4 }, // Preserves 4 on desktop / 1440
+        py: { xs: 4, sm: 6, md: 10 }, 
+        px: { xs: 2, sm: 3, md: 4 }, 
       }}
     >
       <SectionHeading 
@@ -22,13 +22,13 @@ export default function AwardsSection() {
       />
       <Grid 
         container 
-        columnSpacing={{ xs: 2, sm: 3, md: 4 }} // Tighter column spacing on mobile
-        rowSpacing={{ xs: 2.5, sm: 3, md: 4 }} // Tighter row spacing on mobile
-        sx={{ mt: { xs: 3, md: 6 } }} // Reduced top margin on mobile
+        columnSpacing={{ xs: 2, sm: 3, md: 4 }} 
+        rowSpacing={{ xs: 2.5, sm: 3, md: 4 }} 
+        sx={{ mt: { xs: 3, md: 6 } }} 
       >
         {[...awardCards, ...awardCards].map((item, index) => (
           <Grid 
-            size={{ xs: 6, sm: 4, md: 3 }} // 2 cols on mobile, 3 cols on tablet, 4 cols on desktop/1440
+            size={{ xs: 6, sm: 4, md: 3 }} 
             key={`${item.image}-${index}`}
           >
             <Box

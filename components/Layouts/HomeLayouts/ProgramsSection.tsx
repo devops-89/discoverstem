@@ -41,7 +41,7 @@ export default function ProgramsSection() {
         direction="row"
         spacing={1.5}
         alignItems="center"
-        justifyContent={{ xs: "center", md: "flex-start" }}
+        justifyContent={{ xs: "flex-start", md: "flex-start" }}
         sx={{ mb: { xs: 1.5, md: 1 } }}
       >
         <Divider
@@ -79,7 +79,7 @@ export default function ProgramsSection() {
             lg: "58px",
           },
           mb: { xs: 3, md: 4 },
-          textAlign: { xs: "center", md: "left" },
+          textAlign: { xs: "left", md: "left" },
         }}
       >
         Our Program
@@ -93,8 +93,8 @@ export default function ProgramsSection() {
               overflow: "hidden",
               position: "relative",
               height: {
-                xs: 300, // Height is 300px on mobile
-                sm: 380, // Height is 380px on tablet
+                xs: 300, 
+                sm: 380, 
                 md: "100%",
               },
               minHeight: {
@@ -183,8 +183,8 @@ export default function ProgramsSection() {
                   position: "relative",
                   flex: 1,
                   minHeight: {
-                    xs: 300, // Changed from 240 to match first card height
-                    sm: 380, // Changed from 300 to match first card height
+                    xs: 300, 
+                    sm: 380, 
                     md: 270,
                     lg: 326,
                   },

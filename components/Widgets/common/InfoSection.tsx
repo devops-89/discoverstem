@@ -16,9 +16,8 @@ export default function InfoSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Shifted 'md: 0' to 'lg: 0' to prevent text from sticking to the edges on iPads (1024px)
         px: { xs: 3, sm: 5, lg: 0 },
-        py: { xs: 6, sm: 8, lg: 10 },
+        py: { xs: 4, sm: 6, lg: 10 },
       }}
     >
       <Box
@@ -32,10 +31,10 @@ export default function InfoSection({
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
             fontSize: { xs: "24px", sm: "40px", lg: "48px" },
-            lineHeight: { xs: "42px", sm: "52px", lg: "62px" },
+            lineHeight: { xs: "30px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 2, sm: 3, lg: "30px" },
+            mb: { xs: 1, sm: 3, lg: "30px" },
           }}
         >
           {data.title}
@@ -52,7 +51,7 @@ export default function InfoSection({
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 400,
                     fontSize: { xs: "16px", sm: "18px", lg: "22px" },
-                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, // Scaled gracefully for smaller screens
+                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, 
                     letterSpacing: "-0.03em",
                     color: "#777777",
                     mb: { xs: 2.5, sm: 3, lg: "26px" },
@@ -100,7 +99,7 @@ export default function InfoSection({
                       lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                       letterSpacing: "-0.03em",
                       color: "#777777",
-                      mb: { xs: 1, lg: 0 }, // Added subtle spacing between list items on mobile
+                      mb: { xs: 1, lg: 0 }, 
                     }}
                   >
                     {point}

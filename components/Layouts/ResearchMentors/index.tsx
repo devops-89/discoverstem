@@ -1,4 +1,4 @@
-import { ctaBannerData, NobelLaureatesData, researchMentorsTextData } from "@/assets/Generic-data";
+import { ctaBannerData, researchMentorsData, researchMentorsTextData } from "@/assets/Generic-data";
 
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 import InfoSection from "@/components/Widgets/common/InfoSection";
@@ -9,7 +9,7 @@ import HeroSlider from "@/components/Widgets/common/HeroSection";
 export default function ResearchMentors() {
   return (
     <>
-      <HeroSlider slides={NobelLaureatesData}/>
+      <HeroSlider slides={researchMentorsData}/>
       <InfoSection data={researchMentorsTextData}/>
       <ImpactQuoteSection/>
       <MentorsSection/>

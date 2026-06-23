@@ -61,7 +61,7 @@ const AboutForm = () => {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 4, md: 7 },
+        py: { xs: 2, md: 7 },
         px: { xs: 2, md: 4 },
       }}
     >
@@ -82,7 +82,7 @@ const AboutForm = () => {
             textAlign: "center",
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
-            fontSize: { xs: "28px", md: "36px" }, // Updated from Figma
+            fontSize: { xs: "20px", sm:24, md: "36px" }, 
             lineHeight: { xs: "38px", md: "46px" },
             letterSpacing: "-0.02em",
             color: "#111827",
@@ -172,7 +172,7 @@ const AboutForm = () => {
           <PrimaryButton
             type="submit"
             disabled={formik.isSubmitting}
-            showIcon={false} // Manually override to use Figma Layout
+            showIcon={false} 
             sx={{
               // EXACT Figma Auto Layout
               display: "flex",
@@ -181,8 +181,6 @@ const AboutForm = () => {
               alignItems: "center",
               gap: "10px",
               padding: "6px 6px 6px 24px !important", 
-              
-              // Width organically wraps text + icon while never being smaller than Figma's 231px
               width: "max-content",
               minWidth: "231px",
               height: "56px",
@@ -191,7 +189,7 @@ const AboutForm = () => {
               textTransform: "none", 
             }}
           >
-            {/* The Text Container */}
+          
             <Typography
               component="span"
               sx={{
@@ -205,8 +203,6 @@ const AboutForm = () => {
             >
               {formik.isSubmitting ? "Sending..." : "Send Message Here"}
             </Typography>
-
-            {/* The Circle Container */}
             <Box
               sx={{
                 width: "44px",

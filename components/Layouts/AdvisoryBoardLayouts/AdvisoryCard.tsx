@@ -29,30 +29,38 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
         backgroundColor: "#F4EFFA",
       }}
     >
-      {/* Image Section */}
+   
       <Box
         sx={{
           position: "relative",
           width: { xs: "100%", md: "452px" },
-          // Allows the image to cover the full width of the card on mobile and tablets
-          height: { xs: "360px", sm: "480px", md: "597px" },
+          height: { xs: "280px", sm: "400px", md: "480px", lg: "597px" },
           backgroundColor: "#C4C4C4",
           flexShrink: 0,
+          "& img": {
+            objectFit: { xs:"cover !important",
+
+              sm: "cover !important",
+               md: "cover !important",
+               lg:"cover !important",
+              },
+            objectPosition: { 
+              xs: "top center !important", 
+              sm: "top center !important", 
+              md: "center center !important",
+              lg: "top center !important", 
+            },
+          }
         }}
       >
         <Image
           src={data.image}
           alt={data.name}
           fill
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-            objectPosition: "top center", // Ensures top of image isn't cut off when cropping
-          }}
-        />
+          sizes="100vw"/>
       </Box>
 
-      {/* Content Section */}
+   
       <Box
         sx={{
           minWidth: 0,
@@ -64,7 +72,7 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
           justifyContent: "flex-start",
         }}
       >
-        {/* Title */}
+        
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -80,7 +88,6 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
           {data.title}
         </Typography>
 
-        {/* Name */}
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -97,7 +104,7 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
           {data.name}
         </Typography>
 
-        {/* Role */}
+        
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -106,14 +113,14 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
             lineHeight: { xs: "22px", sm: "26px", md: "28px" },
             letterSpacing: "-0.03em",
             color: "#777777",
-            mb: { xs: 1.5, md: 4 }, // Significantly reduced gap on mobile screens
+            mb: { xs: 1.5, md: 4 },
             maxWidth: "686px",
           }}
         >
           {data.role}
         </Typography>
 
-        {/* Description */}
+       
         <Typography
           sx={{
             width: "100%",
@@ -129,7 +136,6 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
             wordBreak: "break-word",
             mb: { xs: 4, md: 6 },
             
-            // Limit text lines on mobile so the card isn't excessively tall
             display: "-webkit-box",
             WebkitLineClamp: { xs: 4, sm: 5, md: "unset" },
             WebkitBoxOrient: "vertical",
@@ -139,13 +145,13 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
           {data.desc}
         </Typography>
 
-        {/* Button */}
+      
         <PrimaryButton
           showIcon={false}
           onClick={onReadMore}
           sx={{
-            width: { xs: "150px", md: "183px" }, // Decreased button width on mobile
-            height: { xs: "44px", md: "56px" }, // Smaller height on mobile
+            width: { xs: "150px", md: "183px" },
+            height: { xs: "44px", md: "56px" },
             borderRadius: "30px",
             px: { xs: "16px", md: "24px" },
             pr: { xs: "44px", md: "56px" },

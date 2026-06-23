@@ -11,9 +11,6 @@ interface GallerySectionProps {
 export default function GallerySection({
   data,
 }: GallerySectionProps) {
-  
-  // 🔥 FIX: The original formula `Math.ceil(length/3) + 1` was incorrectly generating an EXTRA empty row of whitespace at the bottom if you had 8, 7, or 5 images!
-  // This new line calculates the EXACT number of rows needed so there is absolutely 0 empty gap below the gallery.
   const count = data.images.length;
   const numRows = count === 0 ? 0 : count <= 5 ? 2 : Math.floor((count - 6) / 3) + 3;
 
@@ -28,7 +25,7 @@ export default function GallerySection({
       }}
     >
       <Box sx={{ width: "100%" }}>
-        {/* Heading */}
+      
         <Box
           sx={{
             display: "flex",
@@ -73,7 +70,7 @@ export default function GallerySection({
           {data.title}
         </Typography>
 
-        {/* Gallery Grid */}
+     
         <Box
           sx={{
             display: "grid",

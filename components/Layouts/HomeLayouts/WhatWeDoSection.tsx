@@ -54,7 +54,7 @@ export default function WhatWeDoSection() {
         direction="row"
         spacing={1.5}
         alignItems="center"
-        justifyContent={{ xs: "center", md: "flex-start" }}
+        justifyContent={{ xs: "flex-start", md: "flex-start" }}
         sx={{ mb: { xs: 1.5, md: 1 } }}
       >
         <Divider
@@ -92,7 +92,7 @@ export default function WhatWeDoSection() {
             lg: "58px",
           },
           mb: { xs: 3, md: 4 },
-          textAlign: { xs: "center", md: "left" },
+          textAlign: { xs: "left", md: "left" },
           wordBreak: "break-word",
         }}
       >

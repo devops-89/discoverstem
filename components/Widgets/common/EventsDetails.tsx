@@ -38,7 +38,6 @@ export default function ContentSection({
 
               fontFamily: "Poppins, sans-serif",
               fontWeight: 400,
-              // 🔥 FIX: Added explicitly smooth scaling for 768px (sm) between mobile and iPad!
               fontSize: {
                 xs: "16px",
                 sm: "17px",
@@ -52,7 +51,6 @@ export default function ContentSection({
                 lg: "43px",
               },
               letterSpacing: "-0.03em",
-              // 🔥 FIX: Extended the left-align to 768px (sm) so portrait tablets remain easy to read. Center alignment now starts at 1024px (md)!
               textAlign: { xs: "left", md: "center" },
               color: "#777777",
 

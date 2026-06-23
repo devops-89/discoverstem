@@ -154,9 +154,7 @@ const ContactForm = () => {
     <Box
       sx={{
         width: "100%",
-        // 🔥 FIX: Locked width to 585px universally so it doesn't float to the left edge of iPads!
         maxWidth: "585px",
-        // 🔥 FIX: Centers horizontally inside the Grid column
         mx: "auto", 
       }}
     >
@@ -166,7 +164,6 @@ const ContactForm = () => {
         noValidate
         sx={{
           width: "100%",
-          // 🔥 FIX: Double-enforcing the centering directly on the form box
           maxWidth: "585px",
           mx: "auto", 
           minHeight: { xs: "auto", lg: "1476px" },
@@ -437,7 +434,6 @@ const ContactForm = () => {
         sx={{
           width: "100%",
           maxWidth: "556px",
-          // 🔥 FIX: Guarantees Privacy string centers properly with the form 
           mx: "auto", 
           letterSpacing: "-0.03em",
           lineHeight: "22px",

@@ -31,7 +31,7 @@ return (
     sx={{
         pl: { xs: 3, sm: 5, lg: 14 },
         pr: { xs: 3, sm: 5, lg: 6 },
-        py: { xs: 5, sm: 8, lg: 10 },
+        py: { xs: 3, sm: 8, lg: 10 },
     }}
     >
     <Box sx={{ maxWidth: "1200px", mx: "auto", pr: { lg: 4 } }}>
@@ -40,7 +40,7 @@ return (
             
             height: { xs: "auto", lg: "32px" }, 
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: "24px", sm: "32px", lg: "48px" }, 
+            fontSize: { xs: "22px", sm: "32px", lg: "48px" }, 
             lineHeight: { xs: "34px", sm: "42px", lg: "62px" }, 
             letterSpacing: "-0.03em",
             fontWeight: 600,
@@ -50,7 +50,7 @@ return (
        Our Students Have Been Accepted To The World's Best Universities
         </Typography>
 
-        {/* SWIPER */}
+        
         <Swiper
             modules={[Autoplay]}
             autoplay={{ delay: 3000 }}
@@ -59,8 +59,7 @@ return (
             onSlideChange={(swiper) =>
             setActiveIndex(swiper.realIndex % 3)
             }
-            // 🔥 FIX: Removed the rigid `style={{ paddingBottom: "40px" }}` here!
-            // This allows the gap to physically shrink on mobile.
+           
         >
         {slides.map((group, index) => (
             <SwiperSlide key={index}>
@@ -116,8 +115,6 @@ return (
             display: "flex",
             justifyContent: "center",
             gap: "6px",
-            // 🔥 FIX: Replaced the old 40px + 24px gap with `lg: 8` (64px) for desktop to perfectly preserve 1440px.
-            // On mobile, it shrinks all the way down to `xs: 2` (16px), massively reducing the distance!
             mt: { xs: 2, md: 4, lg: 8 }, 
         }}
         >

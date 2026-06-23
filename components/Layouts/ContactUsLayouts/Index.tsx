@@ -1,9 +1,11 @@
 import { Box } from "@mui/material";
-import CtaBanner from "../HomeLayouts/CtaBanner";
+
 import ContactMapSection from "./ContactMapSection";
 import ContactSection from "./ContactSection";
 import HeroSection from "./HeroSection";
 import ResearchLabs from "./ResearchLabs";
+import CtaBanner from "@/components/Widgets/common/CommonCta";
+import { ctaBannerData } from "@/assets/Generic-data";
 
 export default function ContactUsLayout(){
     return(
@@ -12,7 +14,7 @@ export default function ContactUsLayout(){
             <ContactSection/>
             <ResearchLabs/>
             <ContactMapSection/>
-            <CtaBanner/>
+            <CtaBanner data={ctaBannerData} />
         </Box>
     )
 }

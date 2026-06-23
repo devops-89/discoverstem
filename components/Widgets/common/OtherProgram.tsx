@@ -19,8 +19,7 @@ export default function OtherProgramsSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        py: { xs: 5, sm: 6, lg: 6 },
-        // 🔥 FIX: Prevented 'px: 0' from squishing text on iPads by shifting it to 'lg'
+        py: { xs: 3, sm: 6, lg: 6 },
         px: { xs: 3, sm: 5, lg: 0 },
       }}
     >
@@ -54,8 +53,8 @@ export default function OtherProgramsSection({
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "26px", sm: "36px", lg: "48px" }, // Scaled for mobile
-            lineHeight: { xs: "36px", sm: "46px", lg: "62px" }, // Scaled for mobile
+            fontSize: { xs: "22px", sm: "36px", lg: "48px" }, 
+            lineHeight: { xs: "30px", sm: "46px", lg: "62px" }, 
             letterSpacing: "-0.03em",
             color: "#111827",
           }}
@@ -67,8 +66,6 @@ export default function OtherProgramsSection({
       <Box
         sx={{
           display: "grid",
-          // 🔥 FIX: A tablet (900px wide) cannot fit two 570px columns.
-          // Changed md to fluid '1fr 1fr', and restricted rigid '570px' to lg (desktop).
           gridTemplateColumns: { xs: "1fr", md: "1fr 1fr", lg: "repeat(2, 570px)" },
           gap: { xs: 3, lg: "20px" },
           alignItems: "stretch",
@@ -165,7 +162,7 @@ export default function OtherProgramsSection({
               />
             }
             sx={{
-              minWidth: { xs: "110px", lg: "126px" }, // Slightly smaller button on mobile
+              minWidth: { xs: "110px", lg: "126px" }, 
               height: { xs: "32px", lg: "36px" },
               borderRadius: "999px",
               bgcolor: "#171717",

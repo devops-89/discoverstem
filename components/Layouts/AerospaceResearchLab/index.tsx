@@ -1,5 +1,5 @@
 
-import { aerospaceModulesData, aerospaceResearchLabTextData, AerospacevideoData, ctaBannerData, innovationCardsData, NobelLaureatesData } from "@/assets/Generic-data";
+import { aerospaceModulesData, aerospaceResearchData, aerospaceResearchLabTextData, AerospacevideoData, ctaBannerData, innovationCardsData, } from "@/assets/Generic-data";
 
 import HeroSlider from "@/components/Widgets/common/HeroSection";
 import CtaBanner from "@/components/Widgets/common/CommonCta";
@@ -15,7 +15,7 @@ const featuredInnovations = innovationCardsData.slice(0, 6);
 export default function AerospaceResearchLab() {
   return (
     <>
-      <HeroSlider slides={NobelLaureatesData}/>
+      <HeroSlider slides={aerospaceResearchData}/>
       <InfoSection data={aerospaceResearchLabTextData} />
       <AerospaceVideoSection {...AerospacevideoData}/>
       <OutcomesSection/>

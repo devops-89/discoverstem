@@ -49,7 +49,6 @@ export default function LogoSlider({
           maxWidth: "1200px", 
           mx: "auto", 
           pr: { lg: 4 },
-          // 🔥 FIX: Removed inline style from Swiper and placed it here to responsively shrink the bottom padding!
           "& .swiper": { 
             paddingBottom: { xs: "12px", md: "40px" } 
           }
@@ -128,7 +127,6 @@ export default function LogoSlider({
             display: "flex",
             justifyContent: "center",
             gap: "6px",
-            // 🔥 FIX: Decreased margin top for the slider dots specifically on small screens
             mt: { xs: 0, md: 3 },
           }}
         >

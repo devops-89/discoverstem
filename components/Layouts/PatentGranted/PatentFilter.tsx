@@ -65,6 +65,7 @@ export default function PatentFilterSection() {
 
   return (
     <Container
+      id="patent-filter-section"
       maxWidth={false}
       sx={{
         maxWidth: "1155px",
@@ -84,9 +85,7 @@ export default function PatentFilterSection() {
           justifyContent: "space-between",
           gap: 2,
           mb: 2,
-          position: { xs: "sticky", md: "static" },
-          top: { xs: "10px", md: "auto" },
-          zIndex: { xs: 10, md: "auto" },
+          
           backgroundColor: "#fff",
         }}
       >
@@ -139,11 +138,9 @@ export default function PatentFilterSection() {
             "& .MuiOutlinedInput-root": {
               borderRadius: "24px",
               backgroundColor: "#F9FAFB",
-              // 🔥 FIX: Decreased input text size heavily for small screens
               fontSize: { xs: "11px", md: "16px" },
             },
             "& .MuiInputBase-input::placeholder": {
-              // 🔥 FIX: Decreased placeholder size for small screens
               fontSize: { xs: "11px", md: "16px" },
               opacity: 1,
             },
@@ -267,7 +264,6 @@ export default function PatentFilterSection() {
                     width: "100%",
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    // 🔥 FIX: Decreased title size specifically for 'md' (1024px), preserved 18px for 'lg'
                     fontSize: { xs: "15px", sm: "16px", md: "15px", lg: "18px" },
                     lineHeight: { xs: "20px", sm: "22px", md: "20px", lg: "23.4px" },
                     letterSpacing: "-0.45px",
@@ -300,7 +296,6 @@ export default function PatentFilterSection() {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 400,
-                  // 🔥 FIX: Decreased description size specifically for 'md', preserved 14px for 'lg'
                   fontSize: { xs: "12px", sm: "13px", md: "12px", lg: "14px" },
                   lineHeight: { xs: "18px", sm: "20px", md: "18px", lg: "22.75px" },
                   color: "#374151",
@@ -337,8 +332,7 @@ export default function PatentFilterSection() {
                   <Typography
                     sx={{
                       fontFamily: "Inter, sans-serif",
-                      // 🔥 FIX: Decreased button size specifically for 'md', preserved 14px for 'lg'
-                      fontSize: { xs: "10px", sm: "11px", md: "11px", lg: "14px" },
+                      fontSize: { xs: "12px", sm: "11px", md: "11px", lg: "14px" },
                       lineHeight: "20px",
                       color: "#7B53A1",
                       whiteSpace: "nowrap",
@@ -367,8 +361,7 @@ export default function PatentFilterSection() {
                   <Typography
                     sx={{
                       fontFamily: "Inter, sans-serif",
-                      // 🔥 FIX: Decreased button size specifically for 'md', preserved 14px for 'lg'
-                      fontSize: { xs: "10px", sm: "11px", md: "11px", lg: "14px" },
+                      fontSize: { xs: "12px", sm: "11px", md: "11px", lg: "14px" },
                       lineHeight: "20px",
                       color: "#7B53A1",
                       whiteSpace: "nowrap",
@@ -390,9 +383,17 @@ export default function PatentFilterSection() {
           <Pagination
             count={pageCount}
             page={page}
-            onChange={(_, value) => setPage(value)}
+            onChange={(_, value) => {
+              setPage(value);
+              const section = document.getElementById("patent-filter-section");
+              if (section) {
+                const y = section.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             sx={{
-              // 🔥 FIX: Shrunk the circles and text on mobile so they easily fit in a single row without wrapping!
               "& .MuiPaginationItem-root": {
                 fontWeight: 600,
                 minWidth: { xs: "26px", sm: "32px" },
@@ -405,7 +406,6 @@ export default function PatentFilterSection() {
                 color: "#fff",
               },
               "& ul": {
-                // 🔥 FIX: Forced 'nowrap' so it is guaranteed to stay on one row!
                 flexWrap: "nowrap",
                 justifyContent: "center",
               },

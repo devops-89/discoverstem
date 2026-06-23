@@ -10,9 +10,8 @@ export default function PatentIntroSection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added padding on 'md' to prevent text from touching the screen corner on 1024px iPads
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 4, md: 10 },
+        py: { xs: 2, md: 10 },
       }}
     >
       <Typography
@@ -20,7 +19,7 @@ export default function PatentIntroSection() {
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 700,
           fontSize: { xs: "28px", sm: "32px", md: "48px" },
-          lineHeight: { xs: "36px", sm: "40px", md: "62px" },
+          lineHeight: { xs: "30px", sm: "40px", md: "62px" },
           color: "#111827",
           mb: 4,
         }}

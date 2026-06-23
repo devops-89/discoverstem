@@ -22,7 +22,7 @@ export default function StudentInnovations() {
   return (
     <>
       <HeroSlider slides={InnovationData}/>
-      <StatsCard stats={innovationStatsData} />;
+      <StatsCard stats={innovationStatsData} />
      <CenterTextSection/>
      <InnovationCardGrid/>
       <CtaBanner data={ctaBannerData} />

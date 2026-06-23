@@ -54,18 +54,19 @@ export default function ExpertsSection({ activeTab }: Props) {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 5, lg: 7 },
+        pb: { xs: 6, lg: 7 },
+        pt: { xs: 1, lg: 7 },
         px: { xs: 3, lg: 4 },
       }}
     >
       <Grid 
         container 
         rowSpacing={{ xs: 4, lg: 6 }} 
-        // Smoothed the gap so 768px gets a clean 16px gap, and 1024 gets 32px gap
+     
         columnSpacing={{ xs: 0, sm: 2, md: 4, lg: 20 }} 
       >
         {filtered.map((item, index) => (
-          // FIXED: Changed from md: 6 to sm: 6 so 768px tablets get the beautiful 2-card layout!
+         
           <Grid key={index} size={{ xs: 12, sm: 6 }}>
             <ExpertCard data={item} onClick={() => setSelectedExpert(item)} />
           </Grid>

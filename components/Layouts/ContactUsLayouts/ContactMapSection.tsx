@@ -27,7 +27,6 @@ return (
                 height: "auto",
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
-                // 🔥 FIX: Scaled text strictly for mobile. 1440px gets 48px!
                 fontSize: { xs: "28px", sm: "36px", lg: "48px" },
                 lineHeight: { xs: "36px", sm: "44px", lg: "62px" },
                 letterSpacing:"-0.03em",

@@ -10,13 +10,12 @@ const FounderAwards = () => {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 5, md: 7 },
+        py: { xs: 2, md: 7 },
         px: { xs: 3, md: 4 },
       }}
     >
       <Typography
         sx={{
-          // Moved strict desktop width/height to 'lg' to prevent squishing on tablets
           width: { xs: "100%", lg: "292px" },
           height: { xs: "auto", lg: "24px" },
           fontFamily: FONT_FAMILY.heading,
@@ -30,16 +29,12 @@ const FounderAwards = () => {
       >
         Awards & Honors
       </Typography>
-
-      {/* Keeps side-by-side layout at md (1024px), but removes fixed widths inside */}
       <Grid container spacing={{ xs: 4, md: 6 }}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Box sx={{ maxWidth: { xs: "100%", lg: "560px" } }}>
             <Typography
               sx={{
-                // 100% on tablet to fit column without merging, 533px on desktop
                 width: { xs: "100%", lg: "533px" },
-                // auto on tablet so text doesn't get chopped off vertically
                 height: { xs: "auto", lg: "77px" },
                 fontFamily: FONT_FAMILY.body,
                 fontSize: { xs: "15px", md: "17px", lg: "18px" },
@@ -91,15 +86,13 @@ const FounderAwards = () => {
           <Box sx={{ maxWidth: { xs: "100%", lg: "560px" } }}>
             <Typography
               sx={{
-                // 100% on tablet to fit column without merging, 533px on desktop
                 width: { xs: "100%", lg: "533px" },
-                // auto on tablet so text doesn't get chopped off vertically
                 height: { xs: "auto", lg: "77px" },
                 fontFamily: FONT_FAMILY.body,
                 fontSize: { xs: "15px", md: "17px", lg: "18px" },
                 lineHeight: "32px",
                 color: "#474A55",
-                mb: { xs: 3, lg: "38px" }, // Push hardcoded bottom margin to lg
+                mb: { xs: 3, lg: "38px" }, 
               }}
             >
               {mirzaFaizan.awards.rightTitle}

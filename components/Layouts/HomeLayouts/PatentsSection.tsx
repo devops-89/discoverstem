@@ -23,8 +23,8 @@ export default function PatentsSection() {
     <Container
       id="patents"
       sx={{
-        py: { xs: 4, md: 6 },
-        // Native Swiper slide height stretch
+        py: { xs: 2, md: 6 },
+       
         "& .swiper-wrapper": {
           display: "flex",
           alignItems: "stretch",
@@ -52,9 +52,9 @@ export default function PatentsSection() {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 16 }, // Exactly 1 card on mobile
+            0: { slidesPerView: 1, spaceBetween: 16 }, 
             600: { slidesPerView: 1.5, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 24 }, // Resolves to original 2 slides on desktop / 1440
+            768: { slidesPerView: 2, spaceBetween: 24 }, 
           }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -83,7 +83,7 @@ export default function PatentsSection() {
                   alt={patent.title}
                   sx={{
                     width: 1,
-                    height: { xs: 220, sm: 280, md: 350 }, // Scaling image height (350px on desktop)
+                    height: { xs: 220, sm: 280, md: 350 }, 
                     objectFit: "cover",
                     borderRadius: "10px",
                   }}
@@ -92,16 +92,16 @@ export default function PatentsSection() {
                 <Box
                   sx={{
                     mt: 2,
-                    minHeight: { xs: "60px", md: "72px" }, // Adjusted height alignment
+                    minHeight: { xs: "60px", md: "72px" }, 
                     display: "flex",
                     alignItems: "flex-start",
                     justifyContent: "center",
-                    flexGrow: 1, // Pushes title box to occupy empty flex space
+                    flexGrow: 1, 
                   }}
                 >
                   <Typography
                     sx={{
-                      fontSize: { xs: 16, sm: 18, md: 20 }, // Scaling title font size
+                      fontSize: { xs: 16, sm: 18, md: 20 }, 
                       fontWeight: 600,
                       lineHeight: { xs: "20px", md: "24px" },
                       display: "-webkit-box",

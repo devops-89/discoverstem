@@ -12,8 +12,7 @@ export default function ProgramDetailsSection() {
       sx={{
         maxWidth: "1161px",
         mx: "auto",
-        py: { xs: 3, sm: 6, lg: 10 },
-        // 🔥 FIX: Prevented 'px: 0' from squishing text on iPads by shifting it to 'lg'
+        py: { xs: 1, sm: 4, lg: 10 },
         px: { xs: 3, sm: 5, lg: 0 },
       }}
     >
@@ -21,15 +20,15 @@ export default function ProgramDetailsSection() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: { xs: 3, sm: 4, lg: "70px" }, // Scaled down gap on mobile
+          gap: { xs: 2, sm: 4, lg: "70px" }, 
         }}
       >
         <Typography
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled for mobile
-            lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // Scaled for mobile
+            fontSize: { xs: "24px", sm: "36px", lg: "48px" }, 
+            lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
           }}
@@ -42,8 +41,8 @@ export default function ProgramDetailsSection() {
             whiteSpace: "pre-line",
             fontFamily: "Poppins, sans-serif",
             fontWeight: 400,
-            fontSize: { xs: "15px", sm: "18px", lg: "22px" }, // Scaled for mobile
-            lineHeight: { xs: "26px", sm: "32px", lg: "43px" }, // Scaled for mobile
+            fontSize: { xs: "15px", sm: "18px", lg: "22px" }, 
+            lineHeight: { xs: "26px", sm: "32px", lg: "43px" }, 
             letterSpacing: "-0.03em",
             color: "#777777",
           }}

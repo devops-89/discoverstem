@@ -44,8 +44,8 @@ export default function HeroSection() {
           xl: "1403px",
         },
         height: {
-          xs: "600px", 
-          sm: "700px",
+          xs: "500px", 
+          sm: "600px",
           md: "800px",
           lg: "929px",
         },
@@ -101,7 +101,7 @@ export default function HeroSection() {
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: { xs: 130, sm: 150, md: 170, lg: 190 }, 
+                  bottom: { xs: 170, sm: 170, md: 190, lg: 190 }, 
                   left: 0,
                   right: 0,
                   px: { xs: 3, sm: 5, lg: 16 },
@@ -142,17 +142,19 @@ export default function HeroSection() {
                   sx={{
                     position: "absolute",
                     bottom: 0,
-                    right: 0,
+               
+                    right: { xs: "8px", lg: 0 },
                     transform: {
-                      xs: "translate(0, 130%)", 
-                      lg: "translate(110%, 130%)", 
+                    
+                      xs: "translate(0, 180%)", 
+                      lg: "translate(110%, 180%)", 
                     },
                     zIndex: 2,
                   }}
                 >
                   <Link href="/contact" style={{ textDecoration: "none" }}>
                     
-                    {/* 🔥 NATIVELY RESPONSIVE FIGMA BUTTON 🔥 */}
+                  
                     <PrimaryButton
                       showIcon={false} 
                       sx={{
@@ -160,17 +162,15 @@ export default function HeroSection() {
                         flexDirection: "row",
                         justifyContent: "center",
                         alignItems: "center",
-                        // Scaled gap & padding down for xs and md
-                        gap: { xs: "6px", md: "8px", lg: "10px" },
+                        gap: { xs: "19px", md: "8px", lg: "10px" },
                         padding: { 
-                          xs: "4px 4px 4px 16px !important", 
+                          xs: "4px 5px 4px 16px !important", 
                           md: "5px 5px 5px 20px !important", 
                           lg: "6px 6px 6px 24px !important" 
                         }, 
                         
                         width: "max-content",
                         minWidth: { xs: "180px", md: "200px", lg: "231px" },
-                        // Scaled overall button height down for xs and md
                         height: { xs: "40px", md: "48px", lg: "56px" },
                         
                         borderRadius: "30px",
@@ -181,7 +181,6 @@ export default function HeroSection() {
                         component="span"
                         sx={{
                           fontFamily: "'JUST Sans', sans-serif",
-                          // Scaled font size down for xs and md
                           fontSize: { xs: "12px", md: "14px", lg: "16px" },
                           lineHeight: { xs: "18px", md: "20px", lg: "24px" },
                           letterSpacing: "-0.01em",
@@ -193,7 +192,6 @@ export default function HeroSection() {
 
                       <Box
                         sx={{
-                          // Scaled circle container down for xs and md
                           width: { xs: "32px", md: "38px", lg: "44px" },
                           height: { xs: "32px", md: "38px", lg: "44px" },
                           borderRadius: "50%",
@@ -206,7 +204,6 @@ export default function HeroSection() {
                       >
                         <ArrowOutwardIcon
                           sx={{
-                            // Scaled arrow icon down for xs and md
                             fontSize: { xs: "14px", md: "16px", lg: "20px" },
                             color: "#111827", 
                           }}

@@ -11,9 +11,9 @@ export default function CenterDescriptionSection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is safely locked to 0!
+        
         px: { xs: 3, md: 4, lg: 0 },
-        // 🔥 FIX: Shifted your exact 8 spacing to lg, and scaled down for md and xs!
+        
         py: { xs: 5, md: 6, lg: 8 },
       }}
     >
@@ -23,7 +23,7 @@ export default function CenterDescriptionSection() {
           maxWidth: "1160px",
           fontFamily: FONT_FAMILY.body,
           fontWeight: 400,
-          // 🔥 FIX: Shifted large font sizes up to lg to strictly protect 1440px. Safely scaled down for iPads and phones!
+          
           fontSize: {
             xs: "16px",
             md: "18px",

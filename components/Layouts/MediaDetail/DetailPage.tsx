@@ -24,20 +24,18 @@ export default function ArticleContent({
       sx={{
         maxWidth: "1140px",
         mx: "auto",
-        // 🔥 FIX: Shifted large padding exclusively to lg.
+      
         pt: { xs: "70px", lg: "120px" },
         pb: { xs: "70px", lg: "100px" },
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px locked to 0!
+   
         px: { xs: 3, md: 4, lg: 0 },
       }}
     >
       <Box
         sx={{
           display: "flex",
-          // 🔥 FIX: Shifted massive gap mapping to lg.
           gap: { xs: 5, lg: "44px" },
           alignItems: "flex-start",
-          // 🔥 FIX: iPads (md) now safely stack vertically to prevent massive horizontal overflow. Desktop (lg) gets the side-by-side row!
           flexDirection: { xs: "column", lg: "row" },
         }}
       >
@@ -58,7 +56,6 @@ export default function ArticleContent({
             sx={{
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
-              // 🔥 FIX: Shifted exact large title fonts up to lg. Safely scaled down for iPads and phones!
               fontSize: { xs: "24px", md: "30px", lg: "36px" },
               lineHeight: { xs: "34px", md: "40px", lg: "46px" },
               letterSpacing: "-0.02em",
@@ -98,7 +95,6 @@ export default function ArticleContent({
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
-              // 🔥 FIX: Scaled massive body text slightly down for mobile readability.
               fontSize: { xs: "16px", md: "18px", lg: "20px" },
               lineHeight: { xs: "28px", md: "30px", lg: "32px" },
               letterSpacing: "-0.03em",
@@ -113,7 +109,6 @@ export default function ArticleContent({
             sx={{
               position: "relative",
               width: "100%",
-              // 🔥 FIX: Image heights properly scaled down for mobile!
               height: { xs: "220px", md: "400px", lg: "380px" },
               borderRadius: "12px",
               overflow: "hidden",
@@ -145,7 +140,6 @@ export default function ArticleContent({
             component="div"
             sx={{
               fontFamily: "Poppins, sans-serif",
-              // 🔥 FIX: Scaled the HTML content body text down slightly for mobile as well.
               fontSize: { xs: "16px", md: "18px", lg: "20px" },
               lineHeight: { xs: "28px", md: "30px", lg: "32px" },
               letterSpacing: "-0.03em",

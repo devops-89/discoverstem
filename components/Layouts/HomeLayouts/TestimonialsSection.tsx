@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
       sx={{ 
         maxWidth: "1160px",
         mx: "auto",
-        py: { xs: 2, lg: 6 },
+        py: { xs: 1, sm: 2, lg: 6 },
         px: { xs: 2, sm: 3, lg: 0 },
       }}
     >
@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
                   flexDirection: "row" 
                 }}
               >
-                {/* Card Content Container */}
+                
                 <Box
                   sx={{
                     bgcolor: "#FFFFFF",
@@ -123,7 +123,7 @@ export default function TestimonialsSection() {
                     zIndex: 2,
                   }}
                 >
-                  {/* Left Content Area (Quote & Author info) */}
+                  
                   <Box
                     sx={{
                       position: { xs: "relative", lg: "static" }, 
@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
                       width: { xs: "100%", md: "55%", lg: "auto" },
                     }}
                   >
-                    {/* Purple Bracket Accent (Left) */}
+                   
                     <Box
                       sx={{
                         position: "absolute",
@@ -150,7 +150,7 @@ export default function TestimonialsSection() {
                       }}
                     />
 
-                    {/* Name */}
+                    
                     <Typography
                       sx={{
                         position: { xs: "relative", lg: "absolute" },
@@ -187,8 +187,6 @@ export default function TestimonialsSection() {
                     >
                       {t.role}
                     </Typography>
-
-                    {/* Quote */}
                     <Typography
                       sx={{
                         position: { xs: "relative", lg: "absolute" },
@@ -207,8 +205,6 @@ export default function TestimonialsSection() {
                       &quot;{t.quote}&quot;
                     </Typography>
                   </Box>
-
-                  {/* Right Content Area (Image & Orange Bracket) */}
                   <Box
                     sx={{
                       position: { xs: "relative", lg: "static" },
@@ -221,7 +217,6 @@ export default function TestimonialsSection() {
                       pb: { xs: 4, md: 0 },
                     }}
                   >
-                    {/* Mobile & Tablet Image Container - Only shown on xs/sm/md */}
                     <Box sx={{ display: { xs: "inline-block", lg: "none" }, position: "relative", width: "80%", maxWidth: "320px" }}>
                        <Box
                           sx={{
@@ -250,8 +245,6 @@ export default function TestimonialsSection() {
                           }}
                         />
                     </Box>
-
-                    {/* Desktop Orange Bracket Accent - Only shown on lg+ */}
                     <Box
                       sx={{
                         display: { xs: "none", lg: "block" },
@@ -265,8 +258,6 @@ export default function TestimonialsSection() {
                         zIndex: 1,
                       }}
                     />
-
-                    {/* Desktop Photo - Only shown on lg+ */}
                     <Box
                       component="img"
                       src={t.image}

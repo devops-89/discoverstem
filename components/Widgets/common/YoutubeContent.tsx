@@ -14,10 +14,10 @@ export default function VideoSection({ data }: VideoSectionProps) {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is safely locked to 0!
+        
         px: { xs: 3, md: 4, lg: 0 },
-        // 🔥 FIX: Shifted large padding to lg and scaled down gracefully!
-        py: { xs: 6, md: 8, lg: 10 },
+       
+        py: { xs: 5, md: 8, lg: 10 },
       }}
     >
       <Typography
@@ -25,7 +25,7 @@ export default function VideoSection({ data }: VideoSectionProps) {
           textAlign: "center",
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          // 🔥 FIX: Shifted massive text sizes up to lg. Safely scaled down for iPads and phones!
+         
           fontSize: { xs: "24px", md: "40px", lg: "48px" },
           lineHeight: { xs: "30px", md: "50px", lg: "62px" },
           letterSpacing: "-0.03em",
@@ -54,7 +54,7 @@ export default function VideoSection({ data }: VideoSectionProps) {
       <Box
         sx={{
           width: "100%",
-          // 🔥 FIX: iPads (md) now smoothly scale to 540px height to maintain 16:9 ratio. 1440px strictly stays at 658px!
+          
           height: { xs: "220px", sm: "350px", md: "540px", lg: "658px" },
           borderRadius: "20px",
           overflow: "hidden",

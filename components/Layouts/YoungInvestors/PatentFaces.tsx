@@ -11,7 +11,7 @@ export default function PatentFacesSection() {
   const [page, setPage] = useState(1);
   const itemsPerPage = 10;
 
-  // Reset to first page when search changes
+  
   useEffect(() => {
     setPage(1);
   }, [search]);
@@ -28,6 +28,8 @@ export default function PatentFacesSection() {
 
   return (
     <Container
+   
+      id="patent-faces-section"
       maxWidth={false}
       sx={{
         maxWidth: "1160px",
@@ -81,7 +83,7 @@ export default function PatentFacesSection() {
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
-              // 🔥 FIX: 768px (sm) gets 3 cards, 1024px (md) gets 4 cards! 1440px gets 5!
+              
               sm: "repeat(3, 1fr)",
               md: "repeat(4, 1fr)",
               lg: "repeat(5, 1fr)",
@@ -98,7 +100,7 @@ export default function PatentFacesSection() {
               key={student.id}
               sx={{
                 width: "100%",
-                // 🔥 FIX: Increased max-width and height on small screens! 1440px is strictly locked to 213.86px.
+              
                 maxWidth: { xs: "280px", sm: "100%", lg: "213.86px" },
                 height: { xs: "380px", sm: "340px", lg: "309.43px" },
                 borderRadius: "16px",
@@ -112,7 +114,7 @@ export default function PatentFacesSection() {
                 sx={{
                   position: "relative",
                   width: "100%",
-                  // 🔥 FIX: Proportionately increased image height on small screens so the cards look bigger!
+                  
                   height: { xs: "306px", sm: "266px", lg: "234px" },
                   backgroundColor: "#C4C4C4",
                 }}
@@ -203,7 +205,18 @@ export default function PatentFacesSection() {
             <Pagination
               count={totalPages}
               page={page}
-              onChange={(_, value) => setPage(value)}
+              onChange={(_, value) => {
+                
+                setPage(value);
+                const section = document.getElementById("patent-faces-section");
+                if (section) {
+                
+                  const y = section.getBoundingClientRect().top + window.scrollY - 100;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                } else {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               renderItem={(item) => <PaginationItem {...item} />}
               sx={{
                 "& .MuiPagination-ul": { 

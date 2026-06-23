@@ -11,19 +11,19 @@ export default function ProgramDetails() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 5, lg: 7 },
+        py: { xs: 3, lg: 7 },
         px: { xs: 3, lg: 4 },
       }}
     >
         
-        {/* Heading */}
+     
         <Typography
           sx={{
             width: { xs: "100%", lg: "358px" },
             height: { xs: "auto", lg: "32px" },
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled down for mobile
-            lineHeight: { xs: "36px", sm: "46px", lg: "normal" }, // Added to prevent clipping
+            fontSize: { xs: "26px", sm: "36px", lg: "48px" }, 
+            lineHeight: { xs: "36px", sm: "46px", lg: "normal" }, 
             fontWeight: 600,
             letterSpacing: "-0.03em",
             color: "#111827",
@@ -38,11 +38,11 @@ export default function ProgramDetails() {
             width: { xs: "100%", lg: "fit-content" },
             height: { xs: "auto", lg: "144px" },
             fontFamily: FONT_FAMILY.body,
-            mt: { xs: 4, lg: 8 },
+            mt: { xs: 2, lg: 8 },
             fontWeight: 400,
             maxWidth: "1161px",
-            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, // Scaled down
-            lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, // Scaled down
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, 
+            lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, 
             letterSpacing: "-0.03em",
             color: "#777777",
             whiteSpace: "pre-line",
@@ -62,7 +62,7 @@ export default function ProgramDetails() {
                 {/* Image */}
                 <Box
                   sx={{
-                    width: { xs: "100%", lg: "364px" }, // Rigid widths pushed to Desktop
+                    width: { xs: "100%", lg: "364px" }, 
                     height: { xs: "240px", sm: "300px", lg: "283px" },
                     position: "relative",
                     borderRadius: "13px",
@@ -81,7 +81,7 @@ export default function ProgramDetails() {
                 {/* Title */}
                 <Typography
                   sx={{
-                    width: { xs: "100%", lg: "151px" }, // Rigid widths pushed to Desktop
+                    width: { xs: "100%", lg: "151px" }, 
                     height: { xs: "auto", lg: "15px" },
                     fontFamily: FONT_FAMILY.body,
                     lineHeight: { xs: "28px", lg: "22px" },
@@ -104,7 +104,7 @@ export default function ProgramDetails() {
                     height: { xs: "auto", lg: "157px" },
                     fontFamily:FONT_FAMILY.body,
                     fontWeight:400,
-                    lineHeight: { xs: "28px", lg: "36px" }, // Scaled down line-height
+                    lineHeight: { xs: "28px", lg: "36px" }, 
                     letterSpacing:"-0.03em",
                     mt: { xs: 2, lg: 4 },
                     fontSize: { xs: "16px", lg: "18px" },

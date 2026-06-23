@@ -1,7 +1,6 @@
 "use client";
 
 import { AccordionSectionData } from "@/utils/Types";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
@@ -29,18 +28,16 @@ export default function AccordionSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is safely locked to 0!
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 3, md: 4, lg: 6 },
+        py: { xs: 2, md: 4, lg: 6 },
       }}
     >
       <Typography
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          // 🔥 FIX: Shifted large exact font sizes up to lg to strictly protect 1440px. Safely scaled down for iPads and phones!
-          fontSize: { xs: "32px", sm: "38px", md: "44px", lg: "48px" },
-          lineHeight: { xs: "44px", sm: "52px", md: "60px", lg: "65px" },
+          fontSize: { xs: "28px", sm: "38px", md: "44px", lg: "48px" },
+          lineHeight: { xs: "35px", sm: "52px", md: "60px", lg: "65px" },
           textAlign: "center",
           color: "#101010",
           mb: { xs: 4, md: 6, lg: "70px" },
@@ -80,6 +77,7 @@ export default function AccordionSection({
                   gap: "10px",
                   cursor: "pointer",
                   userSelect: "none",
+                  WebkitTapHighlightColor: "transparent",
                 }}
               >
                 <Box
@@ -91,21 +89,15 @@ export default function AccordionSection({
                     flexShrink: 0,
                   }}
                 >
-                  {isOpen ? (
-                    <KeyboardArrowDownIcon
-                      sx={{
-                        fontSize: "24px",
-                        color: "#000000",
-                      }}
-                    />
-                  ) : (
-                    <KeyboardArrowRightIcon
-                      sx={{
-                        fontSize: "24px",
-                        color: "#000000",
-                      }}
-                    />
-                  )}
+                  {/* 🔥 FIX: Render a single persistent icon and smoothly rotate it instead of unmounting it! */}
+                  <KeyboardArrowRightIcon
+                    sx={{
+                      fontSize: "24px",
+                      color: "#000000",
+                      transition: "transform 0.3s ease",
+                      transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
+                    }}
+                  />
                 </Box>
 
                 <Typography
@@ -128,7 +120,7 @@ export default function AccordionSection({
                 <Box
                   sx={{
                     mt: 2,
-                    // 🔥 FIX: Shrunk left indent slightly on mobile so answers aren't awkwardly squished. Desktop stays strictly at 34px!
+                  
                     pl: { xs: "24px", md: "34px" },
                   }}
                 >

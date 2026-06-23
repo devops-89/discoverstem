@@ -12,26 +12,28 @@ export default function HeroSection() {
   return (
     <Box
       sx={{
-        mt: { xs: 1.5, md: 2 },
+     
+        mt: { xs: 1.5, md: 2, lg: "18px" },
         mx: "auto",
         width: "100%",
+       
         maxWidth: {
           xs: "calc(100% - 24px)",
           md: "calc(100% - 40px)",
-          xl: "1403px",
+          lg: "1403px",
         },
         borderRadius: { xs: "14px", md: "20px" },
         overflow: "hidden",
 
         "& .swiper": {
           width: "100%",
-          // Massively decreased the height for mobile screens!
+          
           height: {
-            xs: 500, 
-            sm: 550,
-            md: 620,
-            lg: 720,
-            xl: 929, // Keeps 1440px desktop completely untouched
+             xs: 520,
+            sm: 560,
+            md: "800px",
+             lg: "929px",
+            
           },
         },
 
@@ -76,8 +78,11 @@ export default function HeroSection() {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  background:
-                    "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.7) 100%)",
+                 
+                  background: {
+                    xs: "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.7) 100%)",
+                    lg: "linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65))"
+                  },
                   zIndex: 1,
                 }}
               />
@@ -85,22 +90,22 @@ export default function HeroSection() {
               <Box
                 sx={{
                   position: "absolute",
-                  left: 0,
-                  right: 0,
-                  // Tightly anchors the text box safely above the pagination bullets
+                  
+                  left: { xs: 0, lg: "118px" },
+                  right: { xs: 0, lg: "auto" },
+                 
+                  top: { xs: "auto", lg: "474px" },
                   bottom: {
-                    xs: 50,
-                    sm: 60,
+                    xs: 70,
+                    sm: 90,
                     md: 70,
-                    lg: 95,
-                    xl: 120,
+                    lg: "auto",
                   },
                   px: {
                     xs: 2.5,
                     sm: 4,
                     md: 5,
-                    lg: 7,
-                    xl: 15,
+                    lg: 0,
                   },
                   zIndex: 2,
                   boxSizing: "border-box",
@@ -109,12 +114,17 @@ export default function HeroSection() {
                 <Typography
                   sx={{
                     width: { xs: "100%", lg: "498px" },
-                    fontSize: { xs: "32px", sm: "48px", lg: "64px" }, // Prevents word-wrapping on tiny phones
+                    fontFamily: "'Work Sans', sans-serif",
+                   
+                    fontSize: { xs: "32px", sm: "48px", lg: "64px" }, 
+                    
                     lineHeight: { xs: "40px", sm: "56px", lg: "62px" },
                     letterSpacing: "-0.03em",
+                    
                     fontWeight: 600,
-                    color: "#ffffff", // Pure white!
-                    mb: { xs: 2, lg: 4 },
+                    textTransform: "capitalize",
+                    color: "#ffffff",
+                    mb: { xs: 2, lg: 0 },
                   }}
                 >
                   Panel Of Experts
@@ -122,12 +132,18 @@ export default function HeroSection() {
 
                 <Typography
                   sx={{
+                    
                     width: { xs: "100%", lg: "762px" },
+                    fontFamily: "'Work Sans', sans-serif",
+                    
                     fontSize: { xs: "15px", sm: "18px", lg: "22px" },
-                    color: "#ffffff", // Pure white! (Removed the 0.85 opacity fade)
+                    color: "#ffffff", 
+                    
                     lineHeight: { xs: "24px", sm: "28px", lg: "38px" },
                     letterSpacing: "-0.03em",
-                    mt: { xs: 1, lg: 2 },
+                    fontWeight: 400,
+                    
+                    mt: { xs: 1, lg: "14px" }, 
                     whiteSpace: "pre-line",
                   }}
                 >
@@ -136,14 +152,18 @@ export default function HeroSection() {
 
                 <Box
                   sx={{
+                   
                     width: { xs: "100%", lg: "983px" },
-                    mt: { xs: 3, lg: 4 },
+                   
+                    ml: { lg: "105px" },
+                    
+                    mt: { xs: 3, lg: "79px" },
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: { xs: "space-between", sm: "center", lg: "flex-start" }, // Spaced perfectly across the whole width on mobile!
-                    px: { xs: 0, lg: 15 },
-                    gap: { xs: 1, sm: 6, lg: 30 },
-                    flexWrap: "nowrap", // FORCES the stats to stay on a single line so the box doesn't grow downward!
+                    justifyContent: { xs: "space-between", sm: "space-around", md:"space-around",  lg: "space-between" }, 
+                    px: 0,
+                    gap: { xs: 1, sm: 6, lg: 0 },
+                    flexWrap: "nowrap", 
                   }}
                 >
                   {[
@@ -156,15 +176,18 @@ export default function HeroSection() {
                       sx={{
                         display: "flex",
                         flexDirection: "column",
-                        alignItems: "center", // Centers the text block perfectly
+                        alignItems: "center", 
                         textAlign: "center",
                       }}
                     >
                       <Typography
                         sx={{
-                          fontSize: { xs: "22px", sm: "36px", lg: "48px" }, // Scaled down for mobile row
+                          fontFamily: "'Work Sans', sans-serif",
+                         
+                          fontSize: { xs: "22px", sm: "36px", lg: "48px" }, 
                           fontWeight: 600,
-                          color: "#ffffff", // Pure white!
+                          color: "#ffffff", 
+                          
                           lineHeight: { xs: "28px", lg: "62px" },
                           letterSpacing: "-0.03em",
                         }}
@@ -174,12 +197,15 @@ export default function HeroSection() {
 
                       <Typography
                         sx={{
-                          fontSize: { xs: "13px", sm: "20px", lg: "35px" },
-                          lineHeight: { xs: "18px", sm: "28px", lg: "40px" },
+                          fontFamily: "'Work Sans', sans-serif",
+                          
+                          fontSize: { xs: "13px", sm: "20px", lg: "40px" },
+                         
+                          lineHeight: { xs: "18px", sm: "28px", lg: "62px" },
                           letterSpacing: "-0.03em",
-                          color: "#ffffff", // Pure white!
+                          color: "#ffffff", 
                           fontWeight: 600,
-                          mt: { xs: 0.5, lg: 1 },
+                          mt: { xs: 0.5, lg: 0 }, 
                         }}
                       >
                         {item.label}

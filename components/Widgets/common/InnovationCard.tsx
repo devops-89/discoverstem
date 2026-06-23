@@ -1,6 +1,7 @@
 "use client";
 
 import { InnovationCardItem } from "@/utils/Types";
+import { Close } from "@mui/icons-material";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import {
   Box,
@@ -33,7 +34,8 @@ export default function InnovationCardsGrid({
           const isGranted = item.filterType === "Granted";
 
           return (
-            <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4 }}>
+           
+            <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4, lg: 4 }}>
               <Box
                 sx={{
                   width: "100%",
@@ -63,7 +65,7 @@ export default function InnovationCardsGrid({
                     alt={item.title}
                     fill
                     unoptimized
-                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     style={{
                       objectFit: "cover",
                       objectPosition: "center center",
@@ -139,7 +141,7 @@ export default function InnovationCardsGrid({
                     <Typography
                       sx={{
                         fontWeight: 600,
-                        // 🔥 FIX: Scaled title font size down for mobile
+                     
                         fontSize: { xs: "16px", lg: "18px" },
                         lineHeight: { xs: "22px", lg: "23.4px" },
                         letterSpacing: "-0.45px",
@@ -194,7 +196,6 @@ export default function InnovationCardsGrid({
 
                       <Typography
                         sx={{
-                          // 🔥 FIX: Scaled award description font size down for mobile
                           fontSize: { xs: "12px", lg: "13.5px" },
                           lineHeight: { xs: "18px", lg: "19.25px" },
                           color: "#262626",
@@ -224,8 +225,8 @@ export default function InnovationCardsGrid({
                     >
                       <Typography
                         sx={{
-                          // 🔥 FIX: Scaled link font size down for mobile
-                          fontSize: { xs: "12px", lg: "14px" },
+                          
+                          fontSize: { xs: "13px", lg: "14px" },
                           lineHeight: { xs: "16px", lg: "20px" },
                           color: "#7B53A1",
                         }}
@@ -265,8 +266,8 @@ export default function InnovationCardsGrid({
                     >
                       <Typography
                         sx={{
-                          // 🔥 FIX: Scaled link font size down for mobile
-                          fontSize: { xs: "12px", lg: "14px" },
+                        
+                          fontSize: { xs: "13px", lg: "14px" },
                           lineHeight: { xs: "16px", lg: "20px" },
                           color: "#7B53A1",
                         }}
@@ -323,9 +324,7 @@ export default function InnovationCardsGrid({
             "&:hover": { backgroundColor: "#f5f5f5" },
           }}
         >
-          <Typography sx={{ fontSize: "18px", fontWeight: 700, lineHeight: 1 }}>
-            ✕
-          </Typography>
+          <Close sx={{ fontSize: "20px", color: "#000" }} />
         </IconButton>
 
         <Box sx={{ position: "relative", width: "100%", minHeight: "60vh" }}>

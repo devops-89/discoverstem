@@ -26,7 +26,6 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           position: "relative",
           display: "block",
           width: "100%",
-          // 🔥 FIX: Smoothly scaled the image height to prevent clipping on small screens. Locked 258 to lg!
           height: { xs: "200px", md: "220px", lg: "258px" },
           borderRadius: "12px",
           bgcolor: "#D9D9D9",
@@ -81,7 +80,7 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           display: "block",
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          // 🔥 FIX: Shifted exact fonts up to lg.
+         
           fontSize: { xs: "14px", lg: "16px" },
           lineHeight: { xs: "20px", lg: "22px" },
           letterSpacing: "-0.02em",
@@ -94,13 +93,13 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
       </Typography>
 
       <Box sx={{ display: "flex", alignItems: "center", gap: "9px" }}>
-        {/* 🔥 FIX: Text scaled for small screens */}
+      
         <Typography sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#474A55" }}>
           {item.publishedDate}
         </Typography>
       </Box>
 
-      {/* Video Modal */}
+     
       <Modal
         open={openVideo}
         onClose={() => setOpenVideo(false)}
@@ -128,7 +127,7 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           <Box
             sx={{
               position: "relative",
-              paddingBottom: "56.25%", // 16:9 aspect ratio
+              paddingBottom: "56.25%", 
               height: 0,
               overflow: "hidden",
             }}

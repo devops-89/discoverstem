@@ -90,7 +90,6 @@ export default function SpecialMessagesShared({ data }: SpecialMessagesSharedPro
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                // 🔥 FIX: Scaled down the outer circle size specifically for mobile!
                 width: { xs: 40, md: 72 },
                 height: { xs: 40, md: 72 },
                 borderRadius: "999px",
@@ -106,7 +105,6 @@ export default function SpecialMessagesShared({ data }: SpecialMessagesSharedPro
                 sx={{
                   width: 0,
                   height: 0,
-                  // 🔥 FIX: Scaled the inner purple triangle down proportionately for mobile!
                   borderTop: { xs: "6px solid transparent", md: "10px solid transparent" },
                   borderBottom: { xs: "6px solid transparent", md: "10px solid transparent" },
                   borderLeft: { xs: "9px solid #7B53A1", md: "16px solid #7B53A1" },

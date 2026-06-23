@@ -29,10 +29,10 @@ export default function IlmSuccessStorySection() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: { xs: 4, lg: "28px" },
+            gap: { xs: 2, lg: "28px" },
           }}
         >
-          {/* Top Title + Description */}
+          
           <Box
             sx={{
               width: "100%",
@@ -66,16 +66,12 @@ export default function IlmSuccessStorySection() {
               {data.description}
             </Typography>
           </Box>
-
-          {/* Bottom Points + Image */}
           <Box
             sx={{
               position: "relative",
               width: "100%",
               minHeight: { xs: "auto", lg: "283px" },
               display: "grid",
-              // 🔥 FIX: To give 768px/1024px the 1440px layout without overflowing the screen,
-              // we use a 1.5:1 fractional ratio for md, and exact rigid pixels for lg.
               gridTemplateColumns: { xs: "1fr", md: "1.5fr 1fr", lg: "594px 397px" },
               justifyContent: "space-between",
               alignItems: "center",
@@ -97,7 +93,6 @@ export default function IlmSuccessStorySection() {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    // Slightly smaller text on tablet to fit side-by-side nicely
                     fontSize: { xs: "14px", md: "15px", lg: "22px" }, 
                     lineHeight: { xs: "24px", md: "26px", lg: "43px" }, 
                     letterSpacing: "-0.03em",
@@ -142,7 +137,6 @@ export default function IlmSuccessStorySection() {
         href={data.buttonLink}
         sx={{
           mt: { xs: 5, lg: "10px" },
-          // 🔥 FIX: Locked width to 272px on mobile (which is exactly 100% of a 320px screen)
           width: { xs: "272px", sm: "368px" }, 
           maxWidth: "368px",
           height: { xs: "46px", sm: "56px" }, 

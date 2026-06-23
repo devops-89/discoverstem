@@ -18,22 +18,23 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
         maxWidth={false}
         sx={{
           maxWidth: "min(1196px, 100%)",
-          py: { xs: 2, md: 7 },
-          px: { xs: 3, md: 4 },
+          py: { xs: 4, md: 7 },
+          px: { xs: 2, md: 4 },
         }}
       >
         <Typography
           sx={{
-            width: { xs: "100%", md: "613px" }, // 1440px layout starts exactly at md (900px+)
-            maxWidth: "100%", // Prevents bleeding off the side of 1024px screens
+            width: { xs: "100%", md: "613px" },
+            maxWidth: "100%", 
             height: { xs: "auto", md: "25px" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
             fontSize: { xs: "24px", sm: "28px", md: "36px" },
             lineHeight: { xs: "32px", sm: "40px", md: "62px" },
+           
             letterSpacing: "-0.03em",
             color: "#000",
-            mb: { xs: 4, md: 8 },
+            mb: { xs: 3, md: 8 },
           }}
         >
           {data.about.heading}
@@ -111,7 +112,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            gap: { xs: 4, sm: 6, md: 10 }, // Uses full 80px gap at 1024px!
+            gap: { xs: 4, sm: 6, md: 10 }, 
             alignItems: "flex-start",
           }}
         >

@@ -14,7 +14,7 @@ export default function CtaBanner({ data }: CtaBannerProps) {
     <Box
       sx={{
         mt: { xs: 0, sm: 6, lg: 8 },
-        py: { xs: 2, sm: 6, md:6,lg: 8 },
+        py: { xs: 5, sm: 6, md:6,lg: 8 },
         px: { xs: 3, sm: 4, lg: 2 },
         bgcolor: "#7b53a1",
         color: "#fff",

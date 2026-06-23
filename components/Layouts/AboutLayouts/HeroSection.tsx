@@ -13,13 +13,11 @@ export default function HeroSection() {
       sx={{ 
         position: 'relative', 
         width: '100%',
-        // Fluid width on mobile, locks exactly to 1403px on large desktops
         maxWidth: {
           xs: "calc(100% - 24px)",
           md: "calc(100% - 40px)",
           lg: "1403px"
         }, 
-        // Smoothly scales down height for smaller screens so it doesn't take up the whole phone screen
         height: { xs: '450px', sm: '550px', md: '80vh', lg: '100vh' },
         mt: { xs: 1.5, md: 2 },
         mx: "auto",
@@ -47,28 +45,26 @@ export default function HeroSection() {
                   content: '""',
                   position: 'absolute',
                   inset: 0,
-                  bgcolor: 'rgba(0,0,0,0.1)' // optional subtle overlay if needed to make Header pop
+                  bgcolor: 'rgba(0,0,0,0.1)'
                 }
               }}
             />
           </SwiperSlide>
         ))}
       </Swiper>
-      
-      {/* Custom pagination container */}
       <Box 
         className="custom-pagination"
         sx={{
           position: 'absolute',
-          bottom: { xs: '16px', md: '40px' }, // Closer to the bottom on mobile
+          bottom: { xs: '16px', md: '40px' }, 
           left: '0',
           right: '0',
           display: 'flex',
           justifyContent: 'center',
-          gap: { xs: '8px', md: '16px' }, // Tighter gap on mobile
+          gap: { xs: '8px', md: '16px' }, 
           zIndex: 10,
           '& .swiper-pagination-bullet': {
-            width: { xs: '16px', md: '40px' }, // Shorter bullets on mobile
+            width: { xs: '16px', md: '40px' }, 
             height: '4px',
             borderRadius: '4px',
             bgcolor: 'rgba(255,255,255,0.4)',
@@ -79,7 +75,6 @@ export default function HeroSection() {
           },
           '& .swiper-pagination-bullet-active': {
             bgcolor: '#ffffff',
-            // Active bullet expands dynamically on mobile, stays 40px on desktop
             width: { xs: '32px', md: '40px' }, 
             boxShadow: { xs: 'none', md: '0 0 5px rgba(0,0,0,0.3)' }
           }

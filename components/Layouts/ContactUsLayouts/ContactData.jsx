@@ -26,7 +26,6 @@ const ContactData = () => {
     <Box
       sx={{
         width: "100%",
-        // 🔥 FIX: Alignment maps strictly to lg. This means 1024px AND 768px will be perfectly centered!
         maxWidth: { xs: "100%", lg: "526px" }, 
         mx: { xs: "auto", lg: 0 },
         display: "flex",
@@ -39,7 +38,6 @@ const ContactData = () => {
           width: { xs: "100%", lg: "484px" },
           height: "auto",
           mb: { xs: 4, lg: "45px" }, 
-          // 🔥 FIX: Centered strictly for 1024px and 768px stacked views.
           textAlign: { xs: "center", lg: "left" },
         }}
       >

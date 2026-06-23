@@ -17,7 +17,6 @@ export default function GrandFinaleSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added padding for iPads. Desktop (lg) is safely locked to 0!
         px: { xs: "20px", md: "32px", lg: 0 },
         pt: { xs: "30px", md: "50px", lg: "0px" },
         pb: { xs: "30px", md: "60px", lg: "0px" },
@@ -30,9 +29,8 @@ export default function GrandFinaleSection({
           whiteSpace: "pre-line",
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          // 🔥 FIX: Smoothly scaled fonts down for iPads. 1440px stays strictly at 48px!
-          fontSize: { xs: "28px", sm: "36px", md: "40px", lg: "48px" },
-          lineHeight: { xs: "38px", sm: "48px", md: "52px", lg: "65px" },
+          fontSize: { xs: "24px", sm: "36px", md: "40px", lg: "48px" },
+          lineHeight: { xs: "30px", sm: "48px", md: "52px", lg: "65px" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -49,7 +47,6 @@ export default function GrandFinaleSection({
           position: "relative",
           width: "100%",
           maxWidth: "1022.73px",
-          // 🔥 FIX: Shrunk the image height slightly on iPads so it doesn't take up the whole screen!
           height: { xs: "230px", sm: "360px", md: "400px", lg: "515px" },
           mx: "auto",
           mb: { xs: "42px", md: "56px", lg: "70px" },
@@ -63,7 +60,7 @@ export default function GrandFinaleSection({
           priority
           style={{
             objectFit: "cover",
-            borderRadius: "16px", // Added optional slight border radius if you want it (you can remove this line if it's supposed to be sharp!)
+            borderRadius: "16px", 
           }}
         />
       </Box>
@@ -77,7 +74,6 @@ export default function GrandFinaleSection({
           fontFamily: "Poppins, sans-serif",
           fontStyle: "normal",
           fontWeight: 400,
-          // 🔥 FIX: Smoothly scaled fonts down for iPads. 1440px stays strictly at 22px!
           fontSize: { xs: "15px", sm: "18px", md: "20px", lg: "22px" },
           lineHeight: { xs: "28px", sm: "34px", md: "38px", lg: "43px" },
           letterSpacing: "-0.03em",

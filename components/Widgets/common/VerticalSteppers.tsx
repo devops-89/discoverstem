@@ -41,8 +41,7 @@ export default function VerticalStepper({
       sx={{
         display: "flex",
         position: "relative",
-        minHeight: { xs: "400px", md: "500px", lg: "600px" }, // 🔥 FIX: Scaled down heights so it fits on a phone screen
-        mb: 4,
+        minHeight: { xs: "400px", md: "500px", lg: "600px" }, 
       }}
     >
       <Box
@@ -59,7 +58,7 @@ export default function VerticalStepper({
       <Box
         ref={containerRef}
         sx={{
-          height: { xs: "400px", md: "500px", lg: "600px" }, // Matches minHeight above
+          height: { xs: "400px", md: "500px", lg: "600px" }, 
           overflowY: "auto",
           pl: 5,
           width: "100%",
@@ -105,7 +104,7 @@ export default function VerticalStepper({
 
             <Box
               sx={{
-                width: { xs: "fit-content", lg: "131px" }, // 🔥 FIX: Prevent pill from stretching 100% on xs
+                width: { xs: "fit-content", lg: "131px" }, 
                 minWidth: { xs: "100px", lg: "131px" },
                 height: { xs: "auto", lg: "60px" },
                 display: "inline-block",
@@ -114,9 +113,9 @@ export default function VerticalStepper({
                 borderRadius: "55px",
                 border: "1px solid #6BAF6E",
                 color: "#7E57C2",
-                fontSize: { xs: "14px", lg: "20px" }, // Scaled down for mobile
-                lineHeight: { xs: "30px", lg: "50px" }, // Scaled down for mobile
-                textAlign: "center", // Ensures text is centered perfectly in the pill
+                fontSize: { xs: "14px", lg: "20px" }, 
+                lineHeight: { xs: "30px", lg: "50px" }, 
+                textAlign: "center", 
                 mb: { xs: 2, lg: 1 },
                 background: "#F9F9F9",
               }}
@@ -126,12 +125,12 @@ export default function VerticalStepper({
 
             <Typography
               sx={{
-                width: { xs: "100%", lg: "587px" }, // Protected desktop width
+                width: { xs: "100%", lg: "587px" }, 
                 height: { xs: "auto", lg: "28px" },
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
-                lineHeight: { xs: "32px", lg: "28px" }, // Extra line-height on mobile for wrapped text
-                fontSize: { xs: "22px", lg: "28px" }, // Scaled down for mobile
+                lineHeight: { xs: "32px", lg: "28px" }, 
+                fontSize: { xs: "22px", lg: "28px" }, 
                 mt: 1,
                 mb: { xs: 2, lg: 1 },
               }}
@@ -141,12 +140,12 @@ export default function VerticalStepper({
 
             <Typography
               sx={{
-                width: { xs: "100%", lg: "587px" }, // Protected desktop width
+                width: { xs: "100%", lg: "587px" }, 
                 height: "auto",
                 fontFamily: FONT_FAMILY.body,
-                fontSize: { xs: "16px", lg: "20px" }, // Scaled down for mobile
+                fontSize: { xs: "16px", lg: "20px" }, 
                 color: "#777",
-                lineHeight: { xs: "26px", lg: "28px" }, // Scaled down for mobile
+                lineHeight: { xs: "26px", lg: "28px" }, 
                 fontWeight: 400,
                 whiteSpace: "pre-line",
               }}

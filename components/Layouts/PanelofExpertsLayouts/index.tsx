@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { Box } from "@mui/material";
-import CtaBanner from "../HomeLayouts/CtaBanner";
+
 import ExpertsNavbar from "./ExpertsNavbar";
 import ExpertsSection from "./ExpertsSection";
 import HeroSection from "./HeroSection";
+import CtaBanner from "@/components/Widgets/common/CommonCta";
+import { ctaBannerData } from "@/assets/Generic-data";
 
 export default function PanelofExpertsLayouts(){
     const [activeTab, setActiveTab] = useState("All experts");
@@ -15,7 +17,7 @@ export default function PanelofExpertsLayouts(){
         <HeroSection/>
         <ExpertsNavbar active={activeTab} onChange={setActiveTab}/>
         <ExpertsSection activeTab={activeTab}/>
-        <CtaBanner/>
+        <CtaBanner data={ctaBannerData} />
         </Box>
     )
 }

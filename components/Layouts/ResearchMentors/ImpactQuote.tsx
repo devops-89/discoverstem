@@ -11,7 +11,7 @@ export default function ImpactQuoteSection() {
       sx={{
         width: "100%",
         background: "#FAF5FF",
-        py: { xs: 6, sm: 8, lg: "80px" }, // Scaled down slightly for phones
+        py: { xs: 6, sm: 8, lg: "80px" }, 
       }}
     >
       <Container
@@ -19,7 +19,6 @@ export default function ImpactQuoteSection() {
         sx={{
           maxWidth: "1160px",
           mx: "auto",
-          // 🔥 FIX: Added 'sm: 5' and moved '0' to 'lg' so iPads/tablets don't have zero padding!
           px: { xs: 3, sm: 5, lg: 0 },
         }}
       >
@@ -28,7 +27,6 @@ export default function ImpactQuoteSection() {
             fontFamily: "Poppins, sans-serif",
             fontWeight: 400,
             fontSize: { xs: "14px", sm: "16px", lg: "22px" },
-            // Added safe line-height for mobile to prevent overlapping if the tag wraps
             lineHeight: { xs: "20px", sm: "24px", lg: "16px" }, 
             letterSpacing: "2.4px",
             textAlign: "center",
@@ -66,7 +64,7 @@ export default function ImpactQuoteSection() {
             mt: { xs: 4, sm: 5, lg: "32px" },
             fontFamily: "Poppins, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled smoothly for tablets
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" }, 
             lineHeight: "1.2",
             textAlign: "center",
             color: "#000",
@@ -82,7 +80,7 @@ export default function ImpactQuoteSection() {
             mt: { xs: 3, sm: 4, lg: "28px" },
             fontFamily: "Poppins, sans-serif",
             fontWeight: 400,
-            fontSize: { xs: "14px", sm: "15px", lg: "16px" }, // Scaled slightly for mobile readability
+            fontSize: { xs: "14px", sm: "15px", lg: "16px" }, 
             lineHeight: { xs: "22px", sm: "24px", lg: "24px" },
             textAlign: "center",
             color: "rgba(0,0,0,0.7)",

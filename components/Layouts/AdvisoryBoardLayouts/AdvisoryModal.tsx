@@ -38,7 +38,7 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         },
       }}
     >
-      {/* Close Button */}
+      
       <IconButton
         onClick={onClose}
         sx={{
@@ -62,8 +62,6 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
           }}
         />
       </IconButton>
-
-      {/* Internal scrollable container allows full data to be viewed on mobile */}
       <Box
         sx={{
           p: { xs: 3, md: "30px" },
@@ -72,13 +70,11 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
           overflowY: "auto", 
         }}
       >
-        {/* Floating Image */}
         <Box
           sx={{
             position: "relative",
             float: { xs: "none", md: "left" },
             width: { xs: "100%", md: "250px" },
-            // Allows the image to cover the full width of the modal on mobile
             height: { xs: "280px", sm: "400px", md: "280px" }, 
             borderRadius: "11px",
             overflow: "hidden",
@@ -98,8 +94,6 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
             }}
           />
         </Box>
-
-        {/* Title */}
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -114,8 +108,6 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         >
           {data.title}
         </Typography>
-
-        {/* Name */}
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -130,8 +122,6 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         >
           {data.name}
         </Typography>
-
-        {/* Role */}
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -139,13 +129,11 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
             fontSize: { xs: "14px", md: "14px" },
             lineHeight: "20px",
             color: "#777777",
-            mb: { xs: 1.5, md: 4 }, // Significantly reduced gap on mobile
+            mb: { xs: 1.5, md: 4 }, 
           }}
         >
           {data.role}
         </Typography>
-
-        {/* Description */}
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -159,8 +147,6 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         >
           {fullDescription}
         </Typography>
-
-        {/* Clear float */}
         <Box sx={{ clear: "both" }} />
       </Box>
     </Dialog>

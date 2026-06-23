@@ -43,13 +43,13 @@ export default function ProcessSection() {
         />
         <Typography
           sx={{
-            width: { xs: "100%", lg: "160px" }, // Protected desktop width
+            width: { xs: "100%", lg: "160px" }, 
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             color: "#777777",
-            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, // Scaled down for mobile
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, 
             letterSpacing: "0.03em",
-            lineHeight: { xs: "28px", sm: "32px", lg: "43px" }, // Scaled down for mobile
+            lineHeight: { xs: "28px", sm: "32px", lg: "43px" }, 
           }}
         >
           Selection Flow
@@ -59,11 +59,11 @@ export default function ProcessSection() {
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          width: { xs: "100%", lg: "374px" }, // Protected desktop width
-          fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled down for mobile
+          width: { xs: "100%", lg: "374px" }, 
+          fontSize: { xs: "26px", sm: "36px", lg: "48px" }, 
           fontWeight: 600,
           letterSpacing: "-0.03em",
-          lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // Scaled down for mobile
+          lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, 
           mb: { xs: 4, lg: 5 },
         }}
       >
@@ -75,17 +75,15 @@ export default function ProcessSection() {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontSize: { xs: "15px", sm: "18px", lg: "20px" }, // Scaled down for mobile
+              fontSize: { xs: "15px", sm: "18px", lg: "20px" }, 
               color: "#5C5C5C",
-              lineHeight: { xs: "26px", sm: "32px", lg: "37px" }, // Scaled down for mobile
+              lineHeight: { xs: "26px", sm: "32px", lg: "37px" }, 
             }}
           >
             From signing up to presenting your breakthrough idea at the finale,
             this journey helps you build confidence, gain mentorship, and move
             closer to becoming America’s Top Young Innovator.
           </Typography>
-
-          {/* 🔥 FIX: Added bottom margin on mobile so the buttons don't crash into the stepper below them */}
           <Box sx={{ display: "flex", gap: 2, mt: { xs: 4, lg: 3 }, mb: { xs: 5, md: 0 } }}>
             <Box
               onClick={handlePrev}

@@ -1,6 +1,7 @@
 "use client";
 import { Box, Stack, Divider, Typography, Button } from "@mui/material";
 import { FONT_FAMILY } from "@/utils/Fonts";
+import NorthEastIcon from "@mui/icons-material/NorthEast"; // 🔥 Added Icon import
 
 export default function SectionHeading({
   label,
@@ -14,7 +15,7 @@ export default function SectionHeading({
   viewAllHref?: string;
 }) {
   return (
-    <Box sx={{ mb: 3 }}>
+    <Box sx={{ mb:{xs:4, lg:7 }}}>
       <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 0.5 }}>
         <Divider sx={{ width: 36, borderColor: "#9e9e9e", borderWidth: "1.5px" }} />
         <Typography sx={{ color: "#6e6e6e", fontSize: 14 }}>{label}</Typography>
@@ -28,7 +29,7 @@ export default function SectionHeading({
         <Typography
           sx={{
             fontFamily: "var(--font-geist-sans), sans-serif",
-            fontSize: { xs: 22, sm: 32, md: 44, lg: 48 }, // Decreased size on mobile (22px) and tablet (32px)
+            fontSize: { xs: 24, sm: 32, md: 44, lg: 48 }, // Decreased size on mobile (22px) and tablet (32px)
             fontWeight: 500,
             color: "#000",
             lineHeight: 1.15,
@@ -49,11 +50,8 @@ export default function SectionHeading({
             variant="outlined"
             disableElevation
             href={viewAllHref}
-            endIcon={
-              <Box component="span" sx={{ fontSize: { xs: 11, md: 18 }, ml: 0.5 }}>
-                ↗
-              </Box>
-            }
+           
+            endIcon={<NorthEastIcon sx={{ fontSize: { xs: "14px !important", md: "20px !important" } }} />}
             sx={{
               borderRadius: "100px",
               borderColor: "#FF7043",
@@ -63,7 +61,10 @@ export default function SectionHeading({
               fontSize: { xs: 11, md: 16 },
               fontWeight: 500,
               px: { xs: 1.5, md: 3.5 },
-              py: { xs: 0.4, md: 1 },
+              // 🔥 FIX: Decreased height specifically on small screens by removing padding and overriding minHeight
+              py: { xs: 0, md: 1 },
+              height: { xs: "28px", md: "auto" },
+              minHeight: 0,
               fontFamily: "var(--font-geist-sans), sans-serif",
               minWidth: "auto",
               "&:hover": {
@@ -79,8 +80,8 @@ export default function SectionHeading({
               <Box
                 onClick={() => swiperRef.current?.slidePrev()}
                 sx={{
-                  width: { xs: 32, md: 44 },
-                  height: { xs: 32, md: 44 },
+                  width: { xs: 30, md: 44 },
+                  height: { xs: 30, md: 44 },
                   borderRadius: "50%",
                   border: "1px solid #E0E0E0",
                   display: "flex",
@@ -98,8 +99,8 @@ export default function SectionHeading({
               <Box
                 onClick={() => swiperRef.current?.slideNext()}
                 sx={{
-                  width: { xs: 32, md: 44 },
-                  height: { xs: 32, md: 44 },
+                  width: { xs: 30, md: 44 },
+                  height: { xs: 30, md: 44 },
                   borderRadius: "50%",
                   border: "1px solid #E0E0E0",
                   display: "flex",

@@ -39,16 +39,17 @@ export default function MediaSection({ data }: MediaSectionProps) {
       sx={{
         maxWidth: "1157px",
         mx: "auto",
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is safely locked to 0!
+       
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 5, md: 6, lg: 8 },
+        pt: { xs: 1, md: 6, lg: 8 },
+         pb: { xs: 5, md: 6, lg: 8 },
       }}
     >
       <Typography
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          // 🔥 FIX: Shifted massive text sizes to lg and smoothly scaled down for md and xs!
+         
           fontSize: { xs: "32px", md: "40px", lg: "48px" },
           lineHeight: { xs: "40px", md: "44px", lg: "36.8px" },
           letterSpacing: "-0.8px",
@@ -77,7 +78,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
             sx={{
               width: "100%",
               maxWidth: "371px",
-              // 🔥 FIX: Locked fixed height to lg. Let iPads/mobile flow naturally with auto!
+              
               height: { xs: "auto", lg: "431px" },
               borderRadius: "16px",
               border: "0.8px solid #0000000D",
@@ -92,7 +93,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
               sx={{
                 position: "relative",
                 width: "100%",
-                // 🔥 FIX: Scaled image height down proportionally!
+               
                 height: { xs: "220px", md: "230px", lg: "245.66px" },
                 flexShrink: 0,
               }}
@@ -144,7 +145,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
                 display: "flex",
                 flexDirection: "column",
                 flex: 1,
-                // 🔥 FIX: Locked fixed text box height to lg.
+              
                 height: { xs: "auto", lg: "185.34px" },
               }}
             >
@@ -167,7 +168,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
                 sx={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 600,
-                  // 🔥 FIX: Scaled text down slightly for mobile!
+                  
                   fontSize: { xs: "16px", lg: "18px" },
                   lineHeight: { xs: "22px", lg: "24.75px" },
                   letterSpacing: "-0.45px",
@@ -265,7 +266,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
             position: "relative",
             width: "100%",
             maxWidth: isPdf ? "800px" : "900px",
-            // 🔥 FIX: Shifted specific heights/aspect ratios to lg!
+           
             height: isPdf ? "85vh" : { xs: "auto", lg: "500px" },
             aspectRatio: isPdf ? "auto" : { xs: "16/9", lg: "auto" },
             backgroundColor: "#fff",

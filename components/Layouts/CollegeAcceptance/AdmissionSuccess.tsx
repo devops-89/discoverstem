@@ -62,12 +62,14 @@ export default function AdmissionSuccessSection() {
 
   return (
     <Container
+      id="admission-success-section"
       maxWidth={false}
       sx={{
         maxWidth: "1205px",
         mx: "auto",
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 4, md: 10 },
+        pt: { xs: 2, md: 10 },
+        pb: { xs: 6, md: 10 },
       }}
     >
       <Typography
@@ -85,27 +87,17 @@ export default function AdmissionSuccessSection() {
 
       <Box
         sx={{
-          // 🔥 FIX: Layout adapts to 3 completely different states now:
-          // xs: 'row' with wrap (Original Mobile)
-          // sm/md: 'column' (2 Lines for Tablets)
-          // lg: 'row' (Original Desktop)
           display: "flex",
           flexDirection: { xs: "row", sm: "column", lg: "row" },
           flexWrap: { xs: "wrap", sm: "nowrap" },
           alignItems: { xs: "center", sm: "stretch", lg: "center" },
           gap: { xs: 2, lg: 2 },
           mb: 3,
+          border: "1px solid #E5E5E5",
+          borderRadius: { xs: "24px", sm: "24px", lg: "999px" },
+          p: "12px",
           
-          // 🔥 FIX: Outer border only exists for the Original Mobile (xs) and Original Desktop (lg)
-          border: { xs: "1px solid #E5E5E5", sm: "none", lg: "1px solid #E5E5E5" },
-          borderRadius: { xs: "24px", sm: 0, lg: "999px" },
-          p: { xs: "12px", sm: "12px 0", lg: "12px" },
-          
-          // 🔥 FIX: Sticky for tablets and mobile
-          position: { xs: "sticky", lg: "static" },
-          top: { xs: "10px", lg: "auto" },
-          zIndex: { xs: 10, lg: "auto" },
-          backgroundColor: { xs: "#fff", lg: "transparent" },
+          backgroundColor:  "transparent"
         }}
       >
         <Box
@@ -114,16 +106,13 @@ export default function AdmissionSuccessSection() {
             alignItems: "center",
             gap: 2,
             
-            // 🔥 FIX: Chips wrap normally on 'xs', but swipe horizontally on 'sm' and 'md'
             flexWrap: { xs: "wrap", sm: "nowrap" },
             overflowX: { xs: "visible", sm: "auto" },
             "&::-webkit-scrollbar": { display: "none" },
             scrollbarWidth: "none",
-            
-            // 🔥 FIX: The separate pill border ONLY appears for the 2-line layout on 'sm' and 'md'
-            border: { xs: "none", sm: "1px solid #E5E5E5", lg: "none" },
-            borderRadius: { xs: 0, sm: "999px", lg: 0 },
-            p: { xs: 0, sm: "12px", lg: 0 },
+            border: "none",
+            borderRadius: 0,
+            p: 0,
             width: { xs: "100%", lg: "auto" },
           }}
         >
@@ -139,7 +128,7 @@ export default function AdmissionSuccessSection() {
                 background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
                 color: batchFilter === item ? "#fff" : "#171717",
                 fontWeight: 600,
-                fontSize: { xs: "12px", md: "14px" },
+                fontSize: { xs: "12px", sm: "11px" , md: "14px" },
                 height: { xs: "28px", md: "32px" },
                 flexShrink: 0,
               }}
@@ -175,7 +164,6 @@ export default function AdmissionSuccessSection() {
             />
           ))}
         </Box>
-
         <TextField
           size="small"
           placeholder="Search by student or school..."
@@ -393,7 +381,16 @@ export default function AdmissionSuccessSection() {
           <Pagination
             count={pageCount}
             page={page}
-            onChange={(_, value) => setPage(value)}
+            onChange={(_, value) => {
+              setPage(value);
+              const section = document.getElementById("admission-success-section");
+              if (section) {
+                const y = section.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             renderItem={(item) => <PaginationItem {...item} />}
             sx={{
               "& .MuiPagination-ul": {

@@ -23,9 +23,7 @@ export default function NewsSection({
       sx={{
         maxWidth: "1146px",
         mx: "auto",
-        // 🔥 FIX: Shifted massive bottom margins to lg.
         mb: { xs: 8, md: 10, lg: "100px" },
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px locked to 0!
         px: { xs: 3, md: 4, lg: 0 },
       }}
     >
@@ -35,7 +33,6 @@ export default function NewsSection({
           sx={{
             fontFamily: "Work Sans",
             fontWeight: 600,
-            // 🔥 FIX: Shifted large font to lg and scaled down gracefully!
             fontSize: { xs: "24px", md: "28px", lg: "36px" },
             lineHeight: { xs: "32px", md: "36px", lg: "46px" },
             letterSpacing: "-0.02em",
@@ -82,7 +79,6 @@ export default function NewsSection({
       <Box
         sx={{
           display: "grid",
-          // 🔥 FIX: Smooth responsive grid! 4 cards on lg, 3 on iPad, 2 on sm, 1 on phone!
           gridTemplateColumns: {
             xs: "1fr",
             sm: "repeat(2,1fr)",
@@ -100,7 +96,6 @@ export default function NewsSection({
               target="_blank"
               sx={{
                 display: "block",
-                // 🔥 FIX: Smoothly scaled image height for smaller screens so it doesn't get clipped.
                 height: { xs: "200px", md: "220px", lg: "258px" },
                 borderRadius: "12px",
                 overflow: "hidden",
@@ -127,7 +122,6 @@ export default function NewsSection({
                 display: "block",
                 fontFamily: "Work Sans",
                 fontWeight: 600,
-                // 🔥 FIX: Slightly scaled down card text for phones.
                 fontSize: { xs: "14px", lg: "16px" },
                 lineHeight: { xs: "20px", lg: "22px" },
                 color: "#111827",

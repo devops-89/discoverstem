@@ -58,7 +58,6 @@ export default function ChiefGuestSection() {
             sx={{
               width: "100%",
               maxWidth: { xs: "100%", lg: "414.23px" },
-              // 🔥 FIX: Added Flexbox to perfectly center everything on stacked screens! Returns to standard left-alignment at 1024px.
               display: "flex",
               flexDirection: "column",
               alignItems: { xs: "center", md: "flex-start" },
@@ -86,8 +85,8 @@ export default function ChiefGuestSection() {
                 width: "100%",
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                fontSize: { xs: "28px", sm: "30px", lg: "32px" },
-                lineHeight: { xs: "36px", sm: "38px", lg: "36.8px" },
+                fontSize: { xs: "24px", sm: "30px", lg: "32px" },
+                lineHeight: { xs: "30px", sm: "38px", lg: "36.8px" },
                 letterSpacing: "-0.8px",
                 color: "#000000",
                 mb: "4px",
@@ -140,7 +139,6 @@ export default function ChiefGuestSection() {
                   pb: { xs: "16px", lg: "0.8px" },
                   mb: "8px",
                   boxSizing: "border-box",
-                  // 🔥 FIX: Forces the text inside the grey boxes to stay cleanly left-aligned, even while the box itself gets centered on mobile!
                   textAlign: "left",
                 }}
               >

@@ -9,7 +9,6 @@ export default function CollegeAcceptanceSection() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added padding on 'md' to prevent text touching the screen corner on 1024px iPads, preserved 0 on 1440px ('lg')!
         px: { xs: 3, md: 4, lg: 0 },
         py: { xs: 4, lg: 10 },
       }}
@@ -19,7 +18,6 @@ export default function CollegeAcceptanceSection() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          // 🔥 FIX: Shrunk the gap for smaller screens, locked 70px to 1440px ('lg')
           gap: { xs: 4, lg: "70px" },
         }}
       >
@@ -27,7 +25,6 @@ export default function CollegeAcceptanceSection() {
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
-            // 🔥 FIX: Scaled down heading for mobile/tablets, exactly 48px on 1440px ('lg')
             fontSize: { xs: "24px", sm: "32px", md: "36px", lg: "48px" },
             lineHeight: { xs: "36px", sm: "40px", md: "44px", lg: "62px" },
             letterSpacing: "-0.03em",
@@ -42,7 +39,6 @@ export default function CollegeAcceptanceSection() {
             width: "100%",
             fontFamily: "Poppins, sans-serif",
             fontWeight: 400,
-            // 🔥 FIX: Scaled down description for mobile/tablets, exactly 22px on 1440px ('lg')
             fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",

@@ -1,10 +1,11 @@
-import { mediaCenterNewsData } from "@/assets/Generic-data";
+import { ctaBannerData, mediaCenterNewsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import MediaNewsCard from "@/components/Layouts/MediaCenterLayouts/MediaNewsCard";
 import FeaturedMediaCard from "@/components/Layouts/MediaCenterLayouts/PressCard";
 import HeroSection from "@/components/Layouts/MediaCenterLayouts/HeroSection";
-import CtaBanner from "@/components/Layouts/HomeLayouts/CtaBanner";
+
 import CategoryNavWrapper from "../category/[categorySlug]/CategoryNavWrapper";
+import CtaBanner from "@/components/Widgets/common/CommonCta";
 
 export default function MoreNewsPage() {
   const items = mediaCenterNewsData.filter(
@@ -67,7 +68,8 @@ export default function MoreNewsPage() {
         )}
       </Container>
       
-      <CtaBanner />
+     
+           <CtaBanner data={ctaBannerData} />
     </Box>
   );
 }

@@ -14,7 +14,7 @@ export default function EntrepreneurshipFunding() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Shifted '0' padding to 'lg' to prevent text touching the screen edge on iPads
+       
         px: { xs: 3, lg: 0 },
         py: { xs: 3, lg: 10 },
       }}
@@ -24,7 +24,7 @@ export default function EntrepreneurshipFunding() {
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
-            // 🔥 FIX: Shifted hard-coded pixel layout to 'lg'. Your 688px + 451.5px layout equals 1140px+, which horizontally overflowed 1024px iPads!
+          
             lg: "688px 451.5px",
           },
           gap: { xs: 5, lg: "20px" },
@@ -38,7 +38,7 @@ export default function EntrepreneurshipFunding() {
               maxWidth: "702px",
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
-              // 🔥 FIX: Added smooth scaling down to mobile, while protecting 1440px ('lg') exactly!
+            
               fontSize: { xs: "28px", md: "32px", lg: "36px" },
               lineHeight: { xs: "36px", md: "40px", lg: "41px" },
               letterSpacing: "-0.9px",
@@ -72,7 +72,7 @@ export default function EntrepreneurshipFunding() {
               display: "grid",
               gridTemplateColumns: {
                 xs: "1fr",
-                // 🔥 FIX: Allow fluid 2-columns on tablet, but precisely lock to your pixel dimensions on 1440px desktop
+               
                 sm: "repeat(2, 1fr)",
                 lg: "repeat(2, 338.12px)",
               },

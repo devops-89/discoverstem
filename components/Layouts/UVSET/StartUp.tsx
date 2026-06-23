@@ -17,9 +17,10 @@ export default function StartupDetail({ data }: StartupDetailProps) {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added md: 4 to protect iPad edges. 1440px is locked to 0!
+       
         px: { xs: 3, md: 4, lg: 0 },
         py: { xs: 5, md: 6, lg: 8 },
+        
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -28,15 +29,15 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           sx={{
             width: "100%",
             maxWidth: "1160px",
-            // 🔥 FIX: Shifted large heights/margins to lg. Scaled down for mobile/tablets!
+           
             minHeight: { xs: "auto", lg: "155px" },
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
             fontSize: { xs: "24px", md: "35px", lg: "48px" },
-            lineHeight: { xs: "40px", md: "52px", lg: "62px" },
+            lineHeight: { xs: "30px", md: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 6, md: 10, lg: "160px" },
+            mb: { xs: 4, md: 10, lg: "160px" },
           }}
         >
           {data.title}
@@ -44,7 +45,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           {data.subtitle}
         </Typography>
 
-        {/* Team Title */}
+       
         <Typography
           sx={{
             width: { xs: "100%", lg: "330px" },
@@ -61,7 +62,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           {data.teamTitle}
         </Typography>
 
-        {/* Team Cards */}
+      
         <Box
           sx={{
             display: "grid",
@@ -69,7 +70,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               xs: "1fr",
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
-              lg: "repeat(5, 1fr)", // 🔥 FIX: Locked 5 columns to lg!
+              lg: "repeat(5, 1fr)", 
             },
             gap: { xs: 2, lg: "20px" },
             mb: { xs: 6, md: 8, lg: "95px" },
@@ -125,7 +126,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                   sx={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: 600,
-                    // 🔥 FIX: Scaled text down slightly for mobile!
+                    
                     fontSize: { xs: "14px", lg: "16px" },
                     lineHeight: { xs: "20px", lg: "24px" },
                     color: "#171717",
@@ -150,13 +151,13 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           ))}
         </Box>
 
-        {/* Content + Images */}
+       
         <Box
           sx={{
             display: "grid",
-            // 🔥 FIX: Scaled the right side to 400px on iPad so the left side text doesn't get squeezed too tight!
+           
             gridTemplateColumns: { xs: "1fr", md: "1fr 400px", lg: "1fr 516px" },
-            // 🔥 FIX: Shrunk the massive 128px gap for iPads.
+            
             gap: { xs: 5, md: "40px", lg: "128px" },
             alignItems: "start",
             mb: { xs: 6, md: 8, lg: "106px" },
@@ -168,7 +169,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               sx={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 600,
-                // 🔥 FIX: Shifted large text to lg!
+                
                 fontSize: { xs: "18px", md: "20px", lg: "22px" },
                 lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
@@ -223,7 +224,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             ))}
           </Box>
 
-          {/* Right Images + Video */}
+         
           <Box>
             <Box
               sx={{
@@ -247,7 +248,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               <Box
                 sx={{
                   width: "100%",
-                  // 🔥 FIX: Kept max width at lg, allows scaling down cleanly on small screens!
+                  
                   maxWidth: { xs: "100%", lg: "516px" },
                   height: { xs: "auto", lg: "290px" },
                   mx: "auto",
@@ -274,7 +275,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           </Box>
         </Box>
 
-        {/* Bottom Cards */}
+       
         <Box
           sx={{
             width: "100%",
@@ -355,7 +356,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 400,
-                      // 🔥 FIX: Scaled text down slightly on mobile!
+                      
                       fontSize: { xs: "13px", lg: "14px" },
                       lineHeight: { xs: "20px", lg: "22.75px" },
                       color: "#555555",

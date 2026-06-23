@@ -2,9 +2,8 @@
 
 import { faqData } from "@/assets/Generic-data";
 import { FONT_FAMILY } from "@/utils/Fonts";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -15,33 +14,32 @@ export default function FaqSection() {
   const currentFaqs =
     faqData.find((item) => item.id === activeTab)?.faqs || [];
 
-  // 1. Find the index of the active tab
+
   const currentIndex = faqData.findIndex((item) => item.id === activeTab);
 
   const handlePrev = () => {
-    // 🔥 FIX: Loop to the end if at the beginning
+   
     const newIndex = currentIndex === 0 ? faqData.length - 1 : currentIndex - 1;
     setActiveTab(faqData[newIndex].id);
     setOpenFaq(0);
   };
 
   const handleNext = () => {
-    // 🔥 FIX: Loop back to the start if at the end
+ 
     const newIndex = currentIndex === faqData.length - 1 ? 0 : currentIndex + 1;
     setActiveTab(faqData[newIndex].id);
     setOpenFaq(0);
   };
 
-  // 🧮 CALCULATING SLIDING WINDOWS:
-  // 1. Mobile (xs, <600px): Shows 1
+  
   const start1 = currentIndex;
 
-  // 2. Tablet (sm, covers 768px): Shows 3
+
   let start3 = currentIndex - 1;
   if (start3 < 0) start3 = 0;
   if (start3 > Math.max(0, faqData.length - 3)) start3 = Math.max(0, faqData.length - 3);
 
-  // 3. Small Desktop (md, covers 1024px): Shows 4
+ 
   let start4 = currentIndex - 1; 
   if (start4 < 0) start4 = 0;
   if (start4 > Math.max(0, faqData.length - 4)) start4 = Math.max(0, faqData.length - 4);
@@ -53,30 +51,44 @@ export default function FaqSection() {
         maxWidth: "1160px",
         mx: "auto",
         px: { xs: 2, lg: 0 }, 
-        py: { xs: 6, md: 10 },
+        py: { xs: 5, md: 10 },
       }}
     >
-      {/* Tabs */}
+      
       <Box
         sx={{
-          width: { xs: "100%", sm: "fit-content" },
+         
+          width: { xs: "100%" },
+          "@media (min-width: 768px)": {
+            width: "736px",
+          },
+          "@media (min-width: 1024px)": {
+            width: "980px",
+          },
+          "@media (min-width: 1440px)": {
+            width: "fit-content",
+          },
           mx: "auto",
           display: "flex",
           alignItems: "center",
-          justifyContent: { xs: "space-between", sm: "center" },
-          p: "6px",
+         
+          justifyContent: "space-between",
+          p: { xs: "4px", md: "6px" },
           borderRadius: "40px",
           bgcolor: "#FAF5FF",
-          mb: "70px",
+          mb: {xs:"40px",sm:"50px",md:"70px",lg:"70px",}
         }}
       >
         <IconButton
           onClick={handlePrev}
-          // Disabled state removed so it loops infinitely
+          disableRipple 
           sx={{
-            display: { xs: "flex", lg: "none" }, // Hidden on 1440px
-            color: "#111827", // Always solid color
+            display: { xs: "flex", lg: "none" }, 
+            color: "#111827", 
             mr: { sm: 1 },
+            p: { xs: "4px", md: "8px" }, 
+            "&:hover": { backgroundColor: "transparent" }, 
+            "&:active": { backgroundColor: "transparent" } 
           }}
         >
           <KeyboardArrowLeftIcon />
@@ -87,8 +99,8 @@ export default function FaqSection() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 1, // Restores your original gap on 1440px
-            flexWrap: { xs: "nowrap", lg: "wrap" }, // Restores your original wrapping on 1440px
+            gap: 1, 
+            flexWrap: { xs: "nowrap", lg: "wrap" }, 
             flexGrow: { xs: 1, sm: 0 },
           }}
         >
@@ -101,14 +113,14 @@ export default function FaqSection() {
               }}
               sx={{
                 display: {
-                  xs: index === start1 ? "flex" : "none", // < 600px: Show 1
-                  sm: index >= start3 && index < start3 + 3 ? "flex" : "none", // 600-899px (768px): Show 3
-                  md: index >= start4 && index < start4 + 4 ? "flex" : "none", // 900-1199px (1024px): Show 4
-                  lg: "flex", // 1200px+ (1440px): Show all
+                  xs: index === start1 ? "flex" : "none", 
+                  sm: index >= start3 && index < start3 + 3 ? "flex" : "none", 
+                  md: index >= start4 && index < start4 + 4 ? "flex" : "none", 
+                  lg: "flex", 
                 },
                 cursor: "pointer",
                 px: { xs: 2, md: 2, lg: 3 }, 
-                height: { xs: "44px", md: "46px", lg: "52px" }, 
+                height: { xs: "36px", md: "46px", lg: "52px" }, 
                 borderRadius: "30px",
                 alignItems: "center",
                 justifyContent: "center",
@@ -116,6 +128,7 @@ export default function FaqSection() {
                 color: activeTab === tab.id ? "#fff" : "#000",
                 transition: ".3s",
                 flexShrink: 0,
+                WebkitTapHighlightColor: "transparent", 
               }}
             >
               <Typography
@@ -134,18 +147,19 @@ export default function FaqSection() {
 
         <IconButton
           onClick={handleNext}
-          // Disabled state removed so it loops infinitely
+          disableRipple 
           sx={{
-            display: { xs: "flex", lg: "none" }, // Hidden on 1440px
-            color: "#111827", // Always solid color
+            display: { xs: "flex", lg: "none" }, 
+            color: "#111827", 
             ml: { sm: 1 }, 
+            p: { xs: "4px", md: "8px" }, 
+            "&:hover": { backgroundColor: "transparent" }, 
+            "&:active": { backgroundColor: "transparent" } 
           }}
         >
           <KeyboardArrowRightIcon />
         </IconButton>
       </Box>
-
-      {/* FAQ Box */}
       <Box
         sx={{
           border: "1px solid #C3C3C3",
@@ -161,9 +175,11 @@ export default function FaqSection() {
                 cursor: "pointer",
                 py: "20px",
                 px: { xs: 2, md: "30px" },
+            
+                WebkitTapHighlightColor: "transparent", 
               }}
             >
-              {/* Question + Arrow */}
+           
               <Box
                 sx={{
                   display: "flex",
@@ -171,25 +187,16 @@ export default function FaqSection() {
                   gap: "10px",
                 }}
               >
-                {openFaq === index ? (
-                  <KeyboardArrowDownIcon
-                    sx={{
-                      fontSize: "26px",
-                      color: "#7B53A1", 
-                      flexShrink: 0,
-                      transition: "color 0.3s ease",
-                    }}
-                  />
-                ) : (
-                  <KeyboardArrowRightIcon
-                    sx={{
-                      fontSize: "26px",
-                      color: "#000",
-                      flexShrink: 0,
-                      transition: "color 0.3s ease",
-                    }}
-                  />
-                )}
+               
+                <KeyboardArrowRightIcon
+                  sx={{
+                    fontSize: "26px",
+                    color: openFaq === index ? "#7B53A1" : "#000", 
+                    flexShrink: 0,
+                    transition: "all 0.3s ease",
+                    transform: openFaq === index ? "rotate(90deg)" : "rotate(0deg)",
+                  }}
+                />
 
                 <Typography
                   sx={{
@@ -206,8 +213,6 @@ export default function FaqSection() {
                   {faq.question}
                 </Typography>
               </Box>
-
-              {/* Answer */}
               {openFaq === index && (
                 <Typography
                   sx={{

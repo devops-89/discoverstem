@@ -31,6 +31,7 @@ export default function SuccessStoriesCards() {
 
   return (
     <Container
+      id="success-stories-cards"
       maxWidth={false}
       sx={{
         maxWidth: "1160px",
@@ -54,7 +55,6 @@ export default function SuccessStoriesCards() {
             <Box
               key={item.id}
               sx={{
-                // 🔥 FIX: Changed 'lg' to 'md'. Now the fixed 315px card height applies identically to 1024px iPads!
                 height: { xs: "auto", md: "315px" },
                 backgroundColor: "#F5F5F5",
                 borderRadius: "29px",
@@ -103,7 +103,6 @@ export default function SuccessStoriesCards() {
                   flexDirection: "column",
                 }}
               >
-                {/* 🔥 FIX: Changed 'lg' to 'md'. This forces the text box to be exactly 210px tall at 1024px, ensuring the button underneath it is ALWAYS perfectly aligned from the top! */}
                 <Box sx={{ height: { md: "200px" }, overflow: "hidden" }}>
                   <Typography
                     sx={{
@@ -204,7 +203,16 @@ export default function SuccessStoriesCards() {
           <Pagination
             count={pageCount}
             page={page}
-            onChange={(_, value) => setPage(value)}
+            onChange={(_, value) => {
+              setPage(value);
+              const section = document.getElementById("success-stories-cards");
+              if (section) {
+                const y = section.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             renderItem={(item) => <PaginationItem {...item} />}
             sx={{
               "& .MuiPagination-ul": { 

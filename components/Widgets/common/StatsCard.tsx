@@ -19,7 +19,7 @@ export default function StatsCard({
       sx={{
         maxWidth,
         mx: "auto",
-        // 🔥 FIX: Added padding on 'md' to prevent the card from touching iPad edges. 1440px is safely locked to 0!
+      
         px: { xs: 3, md: 4, lg: 0 },
         py: { xs: 3, md: 5 },
       }}
@@ -29,7 +29,7 @@ export default function StatsCard({
           width: "100%",
           minHeight: { xs: "auto", md: "128.85px" },
           display: "grid",
-          // 🔥 FIX: Kept this at 'md' so 1024px identically matches the 1-row layout of 1440px
+    
           gridTemplateColumns: {
             xs: "1fr",
             sm: "1fr 1fr",
@@ -82,7 +82,7 @@ export default function StatsCard({
               sx={{
                 fontFamily: "Inter, sans-serif",
                 fontWeight: 700,
-                // 🔥 FIX: Shrunk the massive numbers for 1024px ('md'). 1440px ('lg') is rigidly locked at 36px!
+               
                 fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "36px" },
                 lineHeight: { xs: "28px", sm: "32px", md: "32px", lg: "36px" },
                 color: item.color,
@@ -116,7 +116,7 @@ export default function StatsCard({
                   sx={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    // 🔥 FIX: Shrunk the labels slightly for smaller screens to match the smaller numbers above them
+                   
                     fontSize: { xs: "12px", md: "12px", lg: "14px" },
                     lineHeight: "19.25px",
                     color: "#525252",

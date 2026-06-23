@@ -35,7 +35,7 @@ export default function MentorModal({ open, onClose, data }: Props) {
             backgroundColor: "#F7F7F7", 
             overflowY: "auto", 
             position: "relative",
-            m: { xs: 2, lg: 4 } // Keeps dialog slightly away from phone edges
+            m: { xs: 2, lg: 4 } 
           } 
         } 
       }}

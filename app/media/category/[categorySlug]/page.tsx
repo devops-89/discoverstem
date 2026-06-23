@@ -1,11 +1,12 @@
-import { mediaCenterNewsData, mediaCategories } from "@/assets/Generic-data";
+import { mediaCenterNewsData, mediaCategories, ctaBannerData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import MediaNewsCard from "@/components/Layouts/MediaCenterLayouts/MediaNewsCard";
 import FeaturedMediaCard from "@/components/Layouts/MediaCenterLayouts/PressCard";
-import MediaCategoryNav from "@/components/Layouts/MediaCenterLayouts/MediaCategoryNav";
+
 import HeroSection from "@/components/Layouts/MediaCenterLayouts/HeroSection";
-import CtaBanner from "@/components/Layouts/HomeLayouts/CtaBanner";
+
 import CategoryNavWrapper from "./CategoryNavWrapper"; // We will create this client component
+import CtaBanner from "@/components/Widgets/common/CommonCta";
 
 export default async function CategoryPage({
   params,
@@ -35,7 +36,7 @@ export default async function CategoryPage({
           mx: "auto",
           // 🔥 FIX: iPad edge padding & smooth vertical scaling
           px: { xs: 3, md: 4, lg: 0 },
-          py: { xs: 6, md: 7, lg: 8 },
+          py: { xs: 2, md: 7, lg: 8 },
         }}
       >
         <Typography
@@ -81,7 +82,7 @@ export default async function CategoryPage({
         )}
       </Container>
       
-      <CtaBanner />
+      <CtaBanner data={ctaBannerData} />
     </Box>
   );
 }

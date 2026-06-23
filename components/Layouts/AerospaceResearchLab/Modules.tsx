@@ -51,7 +51,7 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
         maxWidth: "1200px", 
         mx: "auto", 
         px: { xs: 3, sm: 5, lg: 0 }, 
-        py: { xs: 6, sm: 8, lg: 10 } 
+        py: { xs: 5, sm: 8, lg: 10 } 
       }}
     >
       <Box 
@@ -102,14 +102,12 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
             <Box 
               key={item.id} 
               sx={{ 
-                // 🔥 FIX: Replaced strict minHeight with "auto" on mobile so cards shrink to fit their content perfectly without gaps!
                 minHeight: { xs: "auto", lg: "330.7px" }, 
                 bgcolor: "#F3F4F6", 
                 borderRadius: "16px", 
                 p: { xs: "20px", lg: "28px" }, 
                 display: "flex", 
                 flexDirection: "column", 
-                // 🔥 FIX: Slightly reduced inner spacing on mobile to bring the button closer to text
                 gap: { xs: "12px", lg: "20px" } 
               }}
             >

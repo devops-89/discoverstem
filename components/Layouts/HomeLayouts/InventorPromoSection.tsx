@@ -50,7 +50,7 @@ export default function InventorPromoSection() {
         mx: "auto",
         py: { xs: 2, sm: 4, md: 12 },
         px: { xs: 2, sm: 3, md: 4 },
-        // Force Swiper wrapper and slides to align stretch natively
+        
         "& .swiper-wrapper": {
           display: "flex",
           alignItems: "stretch",
@@ -98,7 +98,7 @@ export default function InventorPromoSection() {
                 overflow: "hidden",
                 position: "relative",
                 minHeight: { xs: "auto", md: "620px" },
-                height: "100%", // Inherits stretched height
+                height: "100%", 
                 width: "100%",
                 display: "flex",
                 flexDirection: { xs: "column", md: "row" },
@@ -119,7 +119,7 @@ export default function InventorPromoSection() {
                   flexGrow: 1,
                 }}
               >
-                {/* Text Area */}
+                
                 <Box
                   sx={{
                     minHeight: {
@@ -158,7 +158,7 @@ export default function InventorPromoSection() {
                   </Typography>
                 </Box>
 
-                {/* Button Container */}
+             
                 <Box
                   sx={{
                     mt: "auto",
@@ -185,9 +185,9 @@ export default function InventorPromoSection() {
                       transition: "all 0.2s",
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: { xs: "center", md: "flex-start" }, // Centers text inside button on mobile
-                      width: { xs: "100%", sm: "420px", md: "fit-content" }, // Aligned widths at 768px (sm)
-                      minHeight: { xs: "68px", sm: "60px", md: "auto" }, // Aligned heights
+                      justifyContent: { xs: "center", md: "flex-start" }, 
+                      width: { xs: "100%", sm: "420px", md: "fit-content" }, 
+                      minHeight: { xs: "68px", sm: "60px", md: "auto" }, 
                       boxSizing: "border-box",
                       lineHeight: 1.3,
                       "&:hover": {
@@ -200,7 +200,7 @@ export default function InventorPromoSection() {
                 </Box>
               </Box>
 
-              {/* Right Content */}
+             
               <Box
                 sx={{
                   width: { xs: "100%", md: "35%" },

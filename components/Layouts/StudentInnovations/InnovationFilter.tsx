@@ -25,7 +25,7 @@ export default function InnovationFilterSection({
     <>
       <Box
         sx={{
-          // 🔥 FIX: Reverted all layout properties to 'sm'. Now 768px and 1024px will be 100% identical to 1440px Desktop!
+        
           display: "flex",
           flexDirection: { xs: "row", sm: "row" },
           flexWrap: { xs: "wrap", sm: "nowrap" },
@@ -38,10 +38,8 @@ export default function InnovationFilterSection({
           p: "12px",
           boxShadow: "0px 2px 6px rgba(0,0,0,0.08)",
           
-          position: { xs: "sticky", sm: "static" },
-          top: { xs: "10px", sm: "auto" },
-          zIndex: { xs: 10, sm: "auto" },
-          backgroundColor: { xs: "#fff", sm: "transparent" },
+          
+          backgroundColor: "transparent",
         }}
       >
         <Box

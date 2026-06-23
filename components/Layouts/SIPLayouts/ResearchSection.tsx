@@ -30,7 +30,7 @@ export default function ResearchSection() {
       maxWidth={false}
       sx={{
         maxWidth: "1160px",
-        py: { xs: 5, sm: 6, lg: 8 },
+        py: { xs: 1, sm: 6, lg: 8 },
         px: { xs: 3, sm: 5, lg: 0 }, 
         mx: "auto",
         position: "relative",
@@ -40,9 +40,9 @@ export default function ResearchSection() {
         <Typography
           sx={{
             fontFamily: "'Work Sans', sans-serif",
-            fontSize: { xs: "22px", sm: "28px", lg: "48px" }, // 🔥 FIX: Main heading font heavily shrunk for xs/sm
+            fontSize: { xs: "22px", sm: "28px", lg: "48px" }, 
             fontWeight: 600,
-            lineHeight: { xs: "32px", sm: "38px", lg: "62px" }, // Adjusted line height
+            lineHeight: { xs: "32px", sm: "38px", lg: "62px" }, 
             letterSpacing: "-0.03em",
             color: "#111827",
             mb: { xs: 2, lg: 4 },
@@ -79,8 +79,9 @@ export default function ResearchSection() {
           <IconButton
             className="research-prev"
             sx={{
-              width: { xs: "36px", sm: "40px", lg: "48px" }, // 🔥 FIX: Slider arrows physically shrunk
-              height: { xs: "36px", sm: "40px", lg: "48px" },
+             
+              width: { xs: "30px", sm: "34px", lg: "48px" }, 
+              height: { xs: "30px", sm: "34px", lg: "48px" },
               backgroundColor: "#FAF5FF",
               border: "1px solid #E5E7EB",
               borderRadius: "50%",
@@ -92,14 +93,16 @@ export default function ResearchSection() {
               },
             }}
           >
-            <ArrowBackIosNewIcon sx={{ fontSize: { xs: 14, sm: 16, lg: 18 }, color: "#0A0A0A" }} />
+          
+            <ArrowBackIosNewIcon sx={{ fontSize: { xs: 10, sm: 12, lg: 18 }, color: "#0A0A0A" }} />
           </IconButton>
 
           <IconButton
             className="research-next"
             sx={{
-              width: { xs: "36px", sm: "40px", lg: "48px" }, // 🔥 FIX: Slider arrows physically shrunk
-              height: { xs: "36px", sm: "40px", lg: "48px" },
+            
+              width: { xs: "30px", sm: "34px", lg: "48px" }, 
+              height: { xs: "30px", sm: "34px", lg: "48px" },
               backgroundColor: "#FAF5FF",
               border: "1px solid #E5E7EB",
               borderRadius: "50%",
@@ -111,7 +114,8 @@ export default function ResearchSection() {
               },
             }}
           >
-            <ArrowForwardIosIcon sx={{ fontSize: { xs: 14, sm: 16, lg: 18 }, color: "#0A0A0A" }} />
+            
+            <ArrowForwardIosIcon sx={{ fontSize: { xs: 10, sm: 12, lg: 18 }, color: "#0A0A0A" }} />
           </IconButton>
         </Box>
       </Box>
@@ -206,7 +210,7 @@ export default function ResearchSection() {
                   mt: { xs: "12px", sm: "16px", lg: "21px" },
                   fontFamily: "'Work Sans', sans-serif",
                   fontWeight: 600,
-                  fontSize: { xs: "15px", sm: "16px", lg: "20.3971px" }, // 🔥 FIX: Shrunk image title font
+                  fontSize: { xs: "15px", sm: "16px", lg: "20.3971px" }, 
                   lineHeight: { xs: "22px", sm: "24px", lg: "21px" }, 
                   letterSpacing: "-0.326354px",
                   color: "#000000",
@@ -234,8 +238,8 @@ export default function ResearchSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
-                      width: { xs: "120px", sm: "130px", lg: "149.31px" }, // 🔥 FIX: Shrunk Button Width
-                      height: { xs: "36px", sm: "40px", lg: "45.69px" }, // 🔥 FIX: Shrunk Button Height
+                      width: { xs: "120px", sm: "130px", lg: "149.31px" }, 
+                      height: { xs: "36px", sm: "40px", lg: "45.69px" }, 
                       bgcolor: "#7B53A1",
                       borderRadius: "24.4765px",
                       color: "#FFFFFF",
@@ -244,13 +248,13 @@ export default function ResearchSection() {
                         xs: "4px 4px 4px 12px", 
                         sm: "6px 6px 6px 14px", 
                         lg: "8.15884px 8.15884px 8.15884px 19.5812px" 
-                      }, // 🔥 FIX: Shrunk padding proportionally
+                      }, 
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
                       fontFamily: "'Poppins', sans-serif",
                       fontWeight: 400,
-                      fontSize: { xs: "11px", sm: "12px", lg: "13.0542px" }, // 🔥 FIX: Shrunk button text font
+                      fontSize: { xs: "11px", sm: "12px", lg: "13.0542px" }, 
                       lineHeight: "20px",
                       letterSpacing: "-0.01em",
                       transition: "all 0.2s ease",
@@ -263,8 +267,8 @@ export default function ResearchSection() {
 
                     <Box
                       sx={{
-                        width: { xs: "28px", sm: "30px", lg: "35.9px" }, // Shrunk circle arrow width inside button
-                        height: { xs: "28px", sm: "30px", lg: "35.9px" }, // Shrunk circle arrow height inside button
+                        width: { xs: "28px", sm: "30px", lg: "35.9px" }, 
+                        height: { xs: "28px", sm: "30px", lg: "35.9px" }, 
                         borderRadius: "50%",
                         bgcolor: "#FFFFFF",
                         display: "flex",
@@ -274,8 +278,9 @@ export default function ResearchSection() {
                         flexShrink: 0,
                       }}
                     >
+                     
                       <NorthEastIcon
-                        sx={{ fontSize: { xs: 12, sm: 14, lg: 16 }, color: "#111827" }} 
+                        sx={{ fontSize: { xs: 10, sm: 12, lg: 16 }, color: "#111827" }} 
                       />
                     </Box>
                   </Button>

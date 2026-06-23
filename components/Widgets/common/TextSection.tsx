@@ -21,9 +21,10 @@ export default function CommonTextSection({
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        // 🔥 FIX: Added padding on 'md' to prevent text touching the screen corner on 1024px iPads, preserved 0 on 1440px!
+       
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 6, lg: 10 },
+        pt: { xs: 6, lg: 10 },
+          pb: { xs: 3, lg: 10 },
       }}
     >
       <Box
@@ -51,15 +52,15 @@ export default function CommonTextSection({
             sx={{
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
-              // 🔥 FIX: Shrunk heading for mobile/tablets, exactly 48px on 1440px
+             
               fontSize: {
-                xs: "28px",
+                xs: "24px",
                 sm: "32px",
                 md: "36px",
                 lg: "48px",
               },
               lineHeight: {
-                xs: "36px",
+                xs: "30px",
                 sm: "40px",
                 md: "44px",
                 lg: "62px",
@@ -72,7 +73,7 @@ export default function CommonTextSection({
           </Typography>
         )}
 
-        {/* Description + Points */}
+       
         {(data.description || data.points?.length) && (
           <Box>
             {data.description && (
@@ -81,7 +82,7 @@ export default function CommonTextSection({
                   width: "100%",
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: 400,
-                  // 🔥 FIX: Shrunk description for mobile/tablets, exactly 22px on 1440px
+                  
                   fontSize: {
                     xs: "15px",
                     sm: "16px",
@@ -120,7 +121,7 @@ export default function CommonTextSection({
                     sx={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 600,
-                      // 🔥 FIX: Shrunk list items for mobile, exactly 18px on 1440px
+                    
                       fontSize: {
                         xs: "14px",
                         md: "16px",

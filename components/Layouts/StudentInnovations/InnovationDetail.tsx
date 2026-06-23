@@ -18,10 +18,10 @@ export default function CenterTextSection() {
       <Box
         sx={{
           width: "100%",
-          // 🔥 FIX: Switched to flex layout to perfectly match Figma's "Auto layout"
+       
           display: "flex",
           flexDirection: "column",
-          // 🔥 FIX: Applied the exact 68px gap for 1440px ('lg') from your Figma CSS! Scaled it down safely for mobile.
+       
           gap: { xs: "24px", md: "32px", lg: "68px" },
         }}
       >
@@ -41,7 +41,7 @@ export default function CenterTextSection() {
 
         <Typography
           sx={{
-            // 🔥 FIX: Changed from 'left' to 'center' to perfectly match the Figma CSS!
+            
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
@@ -70,7 +70,7 @@ export default function CenterTextSection() {
 
         <Typography
           sx={{
-            // 🔥 FIX: Changed from 'left' to 'center' to perfectly match the Figma CSS!
+            
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,

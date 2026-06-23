@@ -35,9 +35,8 @@ export default function PatentStats() {
       sx={{
         maxWidth: "1232px",
         mx: "auto",
-        // 🔥 FIX: Added 32px padding on 'md' (1024px) so the white background shrinks and doesn't rub against the screen edges!
         px: { xs: 2, md: "32px", lg: 0 },
-        py: { xs: 3, md: 5 },
+        py: { xs: 4, md: 5 },
       }}
     >
       <Box
@@ -61,7 +60,6 @@ export default function PatentStats() {
             <Box
               key={index}
               sx={{
-                // 🔥 FIX: Decreased height and padding on 'md' (1024px) to make the background smaller and fit perfectly
                 minHeight: { xs: "127.25px", md: "100px", lg: "127.25px" },
                 px: { xs: "20px", md: "16px", lg: "32px" },
                 pt: { xs: "32px", md: "24px", lg: "32px" },

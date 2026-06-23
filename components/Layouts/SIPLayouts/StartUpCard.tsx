@@ -7,15 +7,15 @@ import Image from "next/image";
 
 export default function StartupCard() {
 return (
-    <Box sx={{ px: { xs: 3, sm: 5, lg: 14 }, py: { xs: 6, lg: 10 } }}>
+    <Box sx={{ px: { xs: 3, sm: 5, lg: 14 }, py: { xs: 4, lg: 10 } }}>
     
     <Box
         sx={{
-        width: { xs: "100%", lg: "1255px" }, // Protected desktop width
-        height: { xs: "auto", lg: "607px" }, // Protected desktop height
+        width: { xs: "100%", lg: "1255px" }, 
+        height: { xs: "auto", lg: "607px" }, 
         mx: "auto",
         background: "#F4F4F4",
-        borderRadius: { xs: "24px", lg: "57px" }, // 🔥 FIX: Scaled down huge border radius for mobile
+        borderRadius: { xs: "24px", lg: "57px" }, 
 
         px: { xs: 3, sm: 5, lg: 8 },
         py: { xs: 5, lg: 8 },
@@ -27,13 +27,13 @@ return (
             height: { xs: "auto", lg: "32px" },
             fontFamily: FONT_FAMILY.heading,
             fontSize: { xs: "28px", sm: "36px", lg: "48px" },
-            lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // 🔥 FIX: Prevent massive line height spacing
+            lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, 
             letterSpacing:"-0.03em",
             fontWeight: 600,
-            mb: { xs: 4, lg: 10 }, // Shrunk the massive 80px gap to 32px on mobile
+            mb: { xs: 4, lg: 10 }, 
             mt: 2,
             color: "#111827",
-            textAlign: { xs: "center", md:"left", lg: "left" }, // Centered beautifully on mobile, left on desktop
+            textAlign: { xs: "center", md:"left", lg: "left" }, 
         }}
         >
         Startups By Our Students
@@ -43,7 +43,7 @@ return (
         <Grid container spacing={{ xs: 6, lg: 6 }}>
         {startupsData.map((item: Startup, i: number) => (
             <Grid size={{ xs: 12, md: 4 }} key={i}>
-            {/* Centered card content on mobile, left on desktop */}
+            
             <Box sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <Box
                 sx={{

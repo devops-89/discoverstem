@@ -17,9 +17,8 @@ export default function InnovationsSection() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 4, sm: 6, md: 10 }, // Preserves 10 on desktop / 1440
-        px: { xs: 2, sm: 3, md: 4 }, // Preserves 4 on desktop / 1440
-        // Stretch Swiper slides to equal height
+        py: { xs: 4, sm: 6, md: 10 }, 
+        px: { xs: 2, sm: 3, md: 4 }, 
         "& .swiper-wrapper": {
           display: "flex",
           alignItems: "stretch",
@@ -43,9 +42,9 @@ export default function InnovationsSection() {
           loop
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           breakpoints={{ 
-            0: { slidesPerView: 1, spaceBetween: 16 }, // Exactly 1 slide on mobile
+            0: { slidesPerView: 1, spaceBetween: 16 }, 
             600: { slidesPerView: 1.5, spaceBetween: 24 },
-            768: { slidesPerView: 2, spaceBetween: 30 }, // Preserves original 2 slides and 30px gap on desktop / 1440
+            768: { slidesPerView: 2, spaceBetween: 30 }, 
           }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -60,7 +59,7 @@ export default function InnovationsSection() {
                   borderRadius: "24px",
                   overflow: "hidden",
                   transition: "transform 0.2s ease-in-out",
-                  height: "100%", // Fills the stretched slide container
+                  height: "100%", 
                   width: "100%",
                   display: "flex",
                   flexDirection: "column",
@@ -80,7 +79,7 @@ export default function InnovationsSection() {
                     alt={item.title}
                     sx={{
                       width: 1,
-                      height: { xs: 200, sm: 260, md: 300, lg: 350 }, // Scaling image height (350px at 1440)
+                      height: { xs: 200, sm: 260, md: 300, lg: 350 }, 
                       objectFit: "cover",
                       borderRadius: "16px",
                       display: "block",
@@ -89,9 +88,9 @@ export default function InnovationsSection() {
                 </Box>
                 <Box
                   sx={{
-                    p: { xs: 2.5, sm: 3, md: 4 }, // Scaled padding inside card
+                    p: { xs: 2.5, sm: 3, md: 4 }, 
                     textAlign: "center",
-                    flexGrow: 1, // Stretches title wrapper to fill empty space
+                    flexGrow: 1, 
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -100,7 +99,7 @@ export default function InnovationsSection() {
                   <Typography
                     sx={{
                       fontFamily: "var(--font-geist-sans), sans-serif",
-                      fontSize: { xs: 16, sm: 18, md: 22 }, // Scaling font size (22px at 1440)
+                      fontSize: { xs: 16, sm: 18, md: 22 }, 
                       fontWeight: 600,
                       color: "#000",
                       lineHeight: 1.3,

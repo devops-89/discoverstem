@@ -42,12 +42,14 @@ export default function InnovationCardGrid() {
 
   return (
     <Container
+      
+      id="innovation-card-grid"
       maxWidth={false}
       sx={{
         maxWidth: "1220px",
         mx: "auto",
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 5, md: 8 },
+        py: { xs: 3, md: 8 },
       }}
     >
       <InnovationFilterSection
@@ -66,17 +68,28 @@ export default function InnovationCardGrid() {
           <Pagination
             count={pageCount}
             page={page}
-            onChange={(_, value) => setPage(value)}
+            onChange={(_, value) => {
+              
+              setPage(value);
+              const section = document.getElementById("innovation-card-grid");
+              if (section) {
+                
+                const y = section.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             renderItem={(item) => <PaginationItem {...item} />}
             sx={{
               "& .MuiPagination-ul": { 
-                // 🔥 FIX: Removed gap on mobile so all items fit cleanly on one line
+                
                 gap: { xs: "0px", sm: "8px" },
                 flexWrap: "nowrap",
                 justifyContent: "center",
               },
               "& .MuiPaginationItem-root": {
-                // 🔥 FIX: Shrunk the buttons further down to 24px specifically for mobile screens to ensure the arrows never get cut off
+                
                 width: { xs: "24px", sm: "40px" },
                 height: { xs: "24px", sm: "40px" },
                 minWidth: { xs: "24px", sm: "40px" },
@@ -92,7 +105,7 @@ export default function InnovationCardGrid() {
                 color: "#374151",
               },
               "& .MuiPaginationItem-icon": {
-                // 🔥 FIX: Shrunk the inner SVG arrows so they fit inside the smaller 24px mobile buttons
+              
                 fontSize: { xs: "16px", sm: "20px" },
               },
               "& .MuiPaginationItem-ellipsis": {

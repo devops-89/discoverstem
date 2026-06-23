@@ -27,9 +27,9 @@ export default function StudentStories() {
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             color: "#777777",
-            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, // Scaled for mobile
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" }, 
             letterSpacing: "0.03em",
-            lineHeight: { xs: "28px", sm: "32px", lg: "43px" }, // Scaled for mobile
+            lineHeight: { xs: "28px", sm: "32px", lg: "43px" }, 
           }}
         >
           From Ambition to Admission!
@@ -40,10 +40,10 @@ export default function StudentStories() {
           fontFamily: FONT_FAMILY.heading,
           width: { xs: "100%", lg: "546px" },
           height: { xs: "auto", lg: "62px" },
-          fontSize: { xs: "28px", sm: "36px", lg: "48px" }, // Scaled for mobile
+          fontSize: { xs: "28px", sm: "36px", lg: "48px" }, 
           fontWeight: 600,
           letterSpacing: "-0.03em",
-          lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, // Scaled for mobile
+          lineHeight: { xs: "38px", sm: "46px", lg: "62px" }, 
           mb: { xs: 4, lg: 6 },
         }}
       >
@@ -56,8 +56,6 @@ export default function StudentStories() {
             <Box
               sx={{
                 width: { xs: "100%", lg: "570px" },
-                // 🔥 FIX: Height auto on a box with a 100% height image causes the image to disappear on mobile.
-                // Replaced with a responsive height to ensure it maintains a beautiful 16:9 ratio.
                 height: { xs: "220px", sm: "280px", lg: "321px" }, 
                 borderRadius: "14px",
                 overflow: "hidden",
@@ -106,7 +104,7 @@ export default function StudentStories() {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontSize: { xs: "14px", lg: "20px" }, // Shrunk pill text on mobile
+                    fontSize: { xs: "14px", lg: "20px" }, 
                     fontWeight: 400,
                     lineHeight: { xs: "22px", lg: "28px" },
                     letterSpacing: "-0.02em",
@@ -119,7 +117,7 @@ export default function StudentStories() {
                 <Box
                   sx={{
                     ml: "auto",
-                    width: { xs: "28px", lg: "36px" }, // Shrunk icon container
+                    width: { xs: "28px", lg: "36px" }, 
                     height: { xs: "28px", lg: "36px" },
                     borderRadius: "50%",
                     bgcolor: "#fff",

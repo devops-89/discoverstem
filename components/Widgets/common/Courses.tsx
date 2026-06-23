@@ -36,8 +36,8 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
         maxWidth: "1280px",
         mx: "auto",
         px: { xs: 3, sm: 5, lg: "40px" },
-        pt: { xs: 5, sm: 6, lg: "96px" },
-        pb: { xs: 5, sm: 6, lg: 0 },
+        pt: { xs: 5, sm: 4, lg: "96px" },
+        pb: { xs: 1, sm: 4, lg: 0 },
       }}
     >
       <Box
@@ -80,8 +80,8 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
             sx={{
               fontFamily: "Work Sans, sans-serif",
               fontWeight: 600,
-              fontSize: { xs: "28px", sm: "36px", lg: "48px" },
-              lineHeight: { xs: "38px", sm: "46px", lg: "48px" },
+              fontSize: { xs: "24px", sm: "36px", lg: "48px" },
+              lineHeight: { xs: "30px", sm: "46px", lg: "48px" },
               letterSpacing: "-0.8px",
               color: "#1A1A1A",
               mb: "16px",
@@ -110,13 +110,22 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
             width: "100%",
             maxWidth: "1200px",
             display: "grid",
+            justifyContent: "center",
+            gap: { xs: 3, lg: "24px" },
+            
             gridTemplateColumns: {
               xs: "1fr",
               sm: "repeat(2, 1fr)",
-              lg: "repeat(4, 282px)",
             },
-            justifyContent: "center",
-            gap: { xs: 3, lg: "24px" },
+            "@media (min-width: 768px)": {
+              gridTemplateColumns: "repeat(3, 1fr)",
+            },
+            "@media (min-width: 1024px)": {
+              gridTemplateColumns: "repeat(4, 1fr)",
+            },
+            "@media (min-width: 1440px)": {
+              gridTemplateColumns: "repeat(4, 282px)",
+            },
           }}
         >
           {data.cards.map((item) => {
@@ -130,10 +139,10 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                   width: "100%",
                   maxWidth: "282px",
                   height: { xs: "auto", lg: "330.7px" },
-                  minHeight: "330.7px",
+                  minHeight: { xs: "auto", lg: "330.7px" },
                   bgcolor: "#F3F4F6",
                   borderRadius: "16px",
-                  p: { xs: "20px", lg: "28px" }, // Scaled down padding on mobile to prevent overflow
+                  p: { xs: "20px", lg: "28px" }, 
                   display: "flex",
                   flexDirection: "column",
                   mx: "auto",
@@ -141,7 +150,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               >
                 <Box
                   sx={{
-                    width: { xs: "100%", lg: "226px" }, // Prevent overflow on very narrow phones
+                    width: { xs: "100%", lg: "226px" }, 
                     height: "56px",
                     display: "flex",
                     justifyContent: "space-between",
@@ -151,9 +160,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                 >
                   <Box
                     sx={{
-                      width: "56px",
-                      height: "56px",
-                      borderRadius: "14px",
+                      width: { xs: "40px", md: "56px" },
+                      height: { xs: "40px", md: "56px" },
+                      borderRadius: { xs: "10px", md: "14px" },
                       bgcolor: "#7B53A1",
                       display: "flex",
                       alignItems: "center",
@@ -161,7 +170,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                       flexShrink: 0,
                     }}
                   >
-                    <Icon sx={{ fontSize: "28px", color: "#FFFFFF" }} />
+                    <Icon sx={{ fontSize: { xs: "20px", md: "28px" }, color: "#FFFFFF" }} />
                   </Box>
 
                   {showLevel && (
@@ -193,7 +202,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
 
                 <Box
                   sx={{
-                    width: { xs: "100%", lg: "226px" }, // Prevent overflow
+                    width: { xs: "100%", lg: "226px" }, 
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -234,7 +243,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                     sx={{
                       mt: "auto",
                       pt: "16px",
-                      width: { xs: "100%", lg: "226px" }, // Prevent overflow
+                      width: { xs: "100%", lg: "226px" }, 
                       borderTop: "1px solid rgba(0,0,0,0.08)",
                     }}
                   >

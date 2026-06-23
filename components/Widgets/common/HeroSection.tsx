@@ -1,63 +1,72 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { FONT_FAMILY } from "@/utils/Fonts";
+import { Box, Grid, Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-interface HeroSlide {
+export interface HeroSlideItem {
+  image: string;
   title: string;
   description?: string;
-  image: string;
 }
 
-interface HeroSliderProps {
-  slides: HeroSlide[];
+interface HeroSectionProps {
+  slides: HeroSlideItem[];
 }
 
-export default function HeroSlider({ slides }: HeroSliderProps) {
+export default function HeroSection({ slides }: HeroSectionProps) {
   return (
     <Box
       id="home"
       sx={{
-        mt: { xs: 1.5, md: 2 },
+      
+        mt: { xs: 1.5, md: "19px" },
         mx: "auto",
         width: "100%",
+     
         maxWidth: {
           xs: "calc(100% - 24px)",
-          md: "calc(100% - 40px)",
-          xl: "1403px",
+          md: "1403px",
         },
         borderRadius: { xs: "14px", md: "20px" },
         overflow: "hidden",
 
         "& .swiper": {
           width: "100%",
+         
           height: {
             xs: 520,
             sm: 560,
-            md: 620,
-            lg: 720,
-            xl: 929,
+            md: "800px",
+             lg: "929px",
+            
           },
         },
 
         "& .swiper-pagination": {
-          bottom: { xs: "18px !important", md: "24px !important" },
+          bottom: { xs: "18px !important", md: "25px !important" },
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "4px",
         },
 
         "& .swiper-pagination-bullet": {
-          width: { xs: 18, md: 28 },
-          height: 6,
-          borderRadius: 3,
-          background: "rgba(255,255,255,0.55)",
+          width: { xs: 18, md: 30 },
+          height: { xs: 6, md: 5 },
+          borderRadius: { xs: 3, md: 0 },
+          background: { xs: "rgba(255,255,255,0.55)", md: "#919191" },
           opacity: 1,
+          margin: "0 !important",
+          transition: "all 0.3s ease",
         },
 
         "& .swiper-pagination-bullet-active": {
-          background: "#fff",
-          width: { xs: 34, md: 48 },
+          background: "#FFFFFF !important",
+          width: { xs: 34, md: 59 },
         },
       }}
     >
@@ -77,10 +86,9 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
                 sx={{
                   position: "absolute",
                   inset: 0,
-                  width: 1,
-                  height: 1,
+                  width: "100%",
+                  height: "100%",
                   objectFit: "cover",
-                  zIndex: 1,
                 }}
               />
 
@@ -89,50 +97,99 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
                   position: "absolute",
                   inset: 0,
                   background:
-                    "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.7) 100%)",
-                  zIndex: 1,
+                    "linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%)",
                 }}
               />
 
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: { xs: 60, sm: 100, lg: 190 }, 
-                  left: 0,
-                  right: 0,
-                  px: { xs: 3, sm: 8, lg: 16 }, 
+                  
+                  left: { xs: 0, md: "100px" ,lg: "140px" },
+                  right: { xs: 0, md: "auto" },
+                 
+                  top: { xs: "250px", sm: "350px", md: "450px", lg: "606px"},
+                  bottom: {
+                    xs: 64,
+                    sm: 72,
+                    md: "auto",
+                  },
+                  px: {
+                    xs: 2.5,
+                    sm: 4,
+                    md: 0, 
+                  },
                   zIndex: 2,
-                  maxWidth: "900px",
+                  boxSizing: "border-box",
                 }}
               >
-                <Typography
+                <Grid
+                  container
+                  spacing={{ xs: 2, md: 0 }}
+                  alignItems="flex-end"
                   sx={{
-                    fontFamily: "Work Sans, sans-serif",
-                    fontWeight: 600,
-                    fontSize: { xs: "24px", sm: "40px", lg: "64px" }, 
-                    // 🔥 FIX: Adjusted line-height to 76px so multiline headings don't clip/overlap!
-                    lineHeight: { xs: "38px", sm: "50px", lg: "76px" }, 
-                    letterSpacing: "-0.03em",
-                    color: "#FFFFFF",
+                    display: { md: "flex" },
+                    flexDirection: { md: "column" },
+                    alignItems: { md: "flex-start" },
                   }}
                 >
-                  {slide.title}
-                </Typography>
+                
+                  <Grid size={{ xs: 12, md: 12 }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "'Inter', sans-serif",
+                        color: "#FFFFFF",
+                        fontSize: {
+                          xs: "28px",
+                          sm: "34px",
+                          md: "52px",
+                        },
+                        lineHeight: {
+                          xs: "36px",
+                          sm: "42px",
+                          md: "55px", 
+                        },
+                        fontWeight: { xs: 550, md: 600 },
+                        letterSpacing: { md: "-1.3px" },
+                        wordBreak: "normal",
+                        overflowWrap: "break-word",
+                        maxWidth: { md: "700px" },
+                      }}
+                    >
+                      {slide.title}
+                    </Typography>
+                  </Grid>
 
-                <Typography
-                  sx={{
-                    mt: { xs: 2, lg: 3 },
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 400,
-                    fontSize: { xs: "14px", sm: "18px", lg: "28px" }, 
-                    lineHeight: { xs: "22px", sm: "28px", lg: "34px" }, 
-                    letterSpacing: "-0.01em",
-                    color: "rgba(255,255,255,0.85)",
-                    maxWidth: "727px",
-                  }}
-                >
-                  {slide.description}
-                </Typography>
+                  <Grid size={{ xs: 12, md: 12 }}>
+                    <Typography
+                      sx={{
+                        color: { xs: "#f0f0f0", md: "rgba(255, 255, 255, 0.85)" },
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: {
+                          xs: "15px",
+                          sm: "16px",
+                          md: "18px",
+                        },
+                        lineHeight: {
+                          xs: "24px",
+                          sm: "25px",
+                          md: "28px",
+                        },
+                        fontWeight: { md: 400 },
+                        whiteSpace: "pre-line",
+                        maxWidth: {
+                          xs: "100%",
+                          md: "672px",
+                        },
+                        wordBreak: "normal",
+                        overflowWrap: "break-word",
+                        mt: { md: "17.4px" }, 
+                      }}
+                    >
+                      {slide.description}
+                    </Typography>
+                  </Grid>
+                </Grid>
               </Box>
             </Box>
           </SwiperSlide>

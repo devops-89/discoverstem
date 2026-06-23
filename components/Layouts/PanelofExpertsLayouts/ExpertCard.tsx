@@ -8,7 +8,7 @@ export default function ExpertCard({ data, onClick }: any) {
     <Box
       onClick={onClick}
       sx={{
-        width: { xs: "100%", lg: "471px" }, // Pushed rigid 471px to desktop
+        width: { xs: "100%", lg: "471px" }, 
         height: { xs: "auto", lg: "150px" },
         display: "flex",
         gap: { xs: 2, lg: 2 },
@@ -18,9 +18,8 @@ export default function ExpertCard({ data, onClick }: any) {
     >
       <Box
         sx={{
-          // FIXED: Gave the image a crisp, fixed square size on mobile so it doesn't collapse to 0 height!
           width: { xs: "110px", sm: "130px", lg: "150px" },
-          height: { xs: "110px", sm: "130px", lg: "150px" },
+          height: { xs: "125px", sm: "130px", lg: "150px" },
           position: "relative",
           borderRadius: "12px",
           overflow: "hidden",
@@ -40,8 +39,8 @@ export default function ExpertCard({ data, onClick }: any) {
         <Typography
           sx={{
             width: { xs: "100%", lg: "327px" },
-            height: { xs: "auto", lg: "12px" }, // Pushed rigid clipping height to desktop
-            fontSize: { xs: "14px", lg: "18px" }, // Scaled down for mobile text-wrapping
+            height: { xs: "auto", lg: "12px" }, 
+            fontSize: { xs: "14px", lg: "18px" }, 
             textDecoration: "underline",
             color: "#000",
             fontFamily: FONT_FAMILY.heading,
@@ -55,10 +54,9 @@ export default function ExpertCard({ data, onClick }: any) {
 
         <Typography
           sx={{
-            fontSize: { xs: "18px", lg: "22px" },
+            fontSize: { xs: "16px", lg: "22px" },
             fontWeight: 600,
             fontFamily: FONT_FAMILY.body,
-            // FIXED: Removed the massive 60px line-height on mobile so it doesn't push text down!
             lineHeight: { xs: "24px", lg: "60px" },
             letterSpacing: "-0.03em",
             color: "#000",
@@ -74,7 +72,6 @@ export default function ExpertCard({ data, onClick }: any) {
             fontFamily: FONT_FAMILY.body,
             fontWeight: 300,
             lineHeight: { xs: "20px", lg: "32px" },
-            // FIXED: The -2 margin was a hack to fix the 60px line height above. Only applied to desktop now!
             mt: { xs: 0, lg: -2 },
           }}
         >
@@ -84,8 +81,8 @@ export default function ExpertCard({ data, onClick }: any) {
         <Typography
           sx={{
             width: { xs: "100%", lg: "288px" },
-            height: { xs: "auto", lg: "11px" }, // Pushed rigid clipping height to desktop
-            fontSize: { xs: "14px", lg: "16px" },
+            height: { xs: "auto", lg: "11px" }, 
+            fontSize: { xs: "13px", lg: "16px" },
             color: "#646464",
             lineHeight: { xs: "20px", lg: "32px" },
           }}

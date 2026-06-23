@@ -113,8 +113,6 @@ export default function OutcomesSection() {
                   backgroundColor: "#0000000D",
                   p: { xs: "16px", lg: "20px" }, 
                   display: "flex",
-                  // 🔥 FIX: 'flex-start' pushes the number circle to the top left on mobile!
-                  // 1440px stays perfectly centered.
                   alignItems: { xs: "flex-start", lg: "center" },
                   gap: "16px",
                 }}

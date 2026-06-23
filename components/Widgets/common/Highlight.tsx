@@ -18,17 +18,17 @@ export default function ImageContentSplitSection({
         maxWidth: "1160px",
         mx: "auto",
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 5, md: 6, lg: 8 },
+        py: { xs: 1, md: 6, lg: 8 },
       }}
     >
-      {/* Top Section */}
+    
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "1fr 1fr", lg: "563px 510px" },
           gap: { xs: 4, md: 6, lg: "87px" },
           alignItems: "start",
-          mb: { xs: 6, md: 8, lg: "100px" },
+          mb: { xs: 3, md: 8, lg: "100px" },
         }}
       >
         <Box>
@@ -55,7 +55,6 @@ export default function ImageContentSplitSection({
 
         <Box
           sx={{
-            // 🔥 FIX: Automatically centers the image on 768px (sm) and mobile when stacked! Left-aligns on 1024px (md).
             mx: { xs: "auto", md: 0 },
             position: "relative",
             width: "100%",
@@ -85,10 +84,8 @@ export default function ImageContentSplitSection({
       >
         <Box
           sx={{
-            // 🔥 FIX: Visually swaps the order on mobile so it renders Content THEN Image! Returns to standard order on iPads.
             order: { xs: 2, md: 1 },
-            // 🔥 FIX: Automatically centers the image on 768px (sm) and mobile when stacked!
-            mx: { xs: "auto", md: 0 },
+             mx: { xs: "auto", md: 0 },
             position: "relative",
             width: "100%",
             maxWidth: "510px",
@@ -107,7 +104,6 @@ export default function ImageContentSplitSection({
 
         <Box
           sx={{
-            // 🔥 FIX: Visually swaps the order on mobile so the Content renders FIRST!
             order: { xs: 1, md: 2 },
           }}
         >

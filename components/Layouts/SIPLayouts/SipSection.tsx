@@ -18,18 +18,18 @@ return (
         px: { xs: 3, lg: 4 },
       }}
     >
-      {/* Top Section */}
+    
     <Grid container spacing={{ xs: 4, lg: 4 }}>
-        {/* Left Content */}
+       
         <Grid size={{xs:12, md:7}}>
         <Typography
             sx={{
                 fontFamily:FONT_FAMILY.heading,
                 width:{xs:"100%",lg:"680px"},
                 height:{xs:"auto",lg:"32px"},
-                fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+                fontSize: { xs: "22px", sm: "36px", lg: "48px" },
                 fontWeight: 600,
-                lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
+                lineHeight: { xs: "30px", sm: "46px", lg: "62px" },
                 letterSpacing:"-0.03em",
                 color: "#111827",
                 mb: { xs: 3, lg: 5 }
@@ -48,7 +48,7 @@ return (
             lineHeight: { xs: "26px", sm: "28px", lg: "30px" }, 
             letterSpacing: "-0.01em",
             color: "#111827",
-            // 🔥 FIX: Removed `nowrap` on mobile so it doesn't break the screen width!
+           
             whiteSpace: { xs: "normal", lg: "nowrap" },
             }}>
         A{" "}
@@ -107,8 +107,8 @@ return (
             position: "relative",
             borderRadius: "18px",
             overflow: "hidden",
-            mt: { xs: 3, lg: 16 },
-            // Moved severe negative margin safely to Desktop only
+            mt: { xs: 2, lg: 16 },
+            
             ml:{lg:-8}
             }}
         >
@@ -122,14 +122,14 @@ return (
         </Grid>
     </Grid>
 
-      {/* Bottom Section */}
-    <Box sx={{ mt: { xs: 6, lg: 8 } }}>
+    
+    <Box sx={{ mt: { xs: 5, lg: 8 } }}>
         <Typography
         sx={{
             fontFamily:FONT_FAMILY.heading,
             width: { xs: "100%", lg: "1056px" },
             height: { xs: "auto", lg: "32px" },
-            fontSize: { xs: "24px", sm: "32px", lg: "48px" }, 
+            fontSize: { xs: "22px", sm: "32px", lg: "48px" }, 
             fontWeight: 600,
             lineHeight: { xs: "34px", sm: "42px", lg: "62px" }, 
             letterSpacing:"-0.03em",
@@ -177,7 +177,7 @@ return (
         {/* Button */}
         <Box sx={{ mt: { xs: 4, lg: 4 } }}>
            <Link href="/contact" style={{ textDecoration: "none", display: "inline-block" }}>
-            {/* 🔥 EXACT Figma Manual Layout reused from HeroSection to ensure identical UX everywhere! */}
+            
             <PrimaryButton
               showIcon={false} 
               sx={{

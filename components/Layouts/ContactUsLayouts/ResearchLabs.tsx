@@ -39,7 +39,6 @@ const ResearchLabs = () => {
                                     sx={{
                                         position: "relative",
                                         width: "100%",
-                                        // 🔥 FIX: Height expands slightly for mobile scaling, locks to 179px exactly at Desktop.
                                         height: { xs: "200px", sm: "240px", lg: "179px" },
                                         borderRadius: "13px",
                                         overflow: "hidden",

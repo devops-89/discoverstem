@@ -166,7 +166,6 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
           component={Link}
           href={`/media/${item.slug}`}
           sx={{
-            // 🔥 FIX: Decreased button sizes only on mobile (xs). Locked exactly to your original sizes for tablets & desktop!
             width: { xs: "120px", sm: "143.9px" },
             height: { xs: "40px", sm: "48.84px" },
             bgcolor: "#7B53A1",
@@ -196,7 +195,6 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
 
           <Box
             sx={{
-              // 🔥 FIX: Scaled the circle down slightly for mobile!
               width: { xs: "32px", sm: "38.37px" },
               height: { xs: "32px", sm: "38.37px" },
               borderRadius: "50%",
@@ -207,13 +205,12 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
               flexShrink: 0,
             }}
           >
-            {/* 🔥 FIX: Scaled the icon inside the circle down slightly for mobile! */}
             <ArrowOutwardIcon sx={{ fontSize: { xs: "14px", sm: "17.44px" }, color: "#111827" }} />
           </Box>
         </Box>
       </Box>
 
-      {/* Video Modal */}
+    
       <Modal
         open={openVideo}
         onClose={() => setOpenVideo(false)}

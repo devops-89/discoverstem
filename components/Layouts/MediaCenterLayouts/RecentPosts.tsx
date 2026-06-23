@@ -8,7 +8,7 @@ const RecentPosts = () => {
   return (
     <Box
       sx={{
-        // 🔥 FIX: Locked exact constraints to lg. iPads/phones safely get 100% width and auto height!
+        
         width: { xs: "100%", lg: "420px" },
         height: { xs: "auto", lg: "860px" },
         p: 3,
@@ -18,7 +18,7 @@ const RecentPosts = () => {
         overflowY: "auto",
       }}
     >
-      {/* TITLE */}
+     
       <Typography
         sx={{
           // 🔥 FIX: Shifted exact pixel widths to lg.
@@ -35,7 +35,7 @@ const RecentPosts = () => {
         Recent Post
       </Typography>
 
-      {/* POSTS */}
+     
       {recentPosts.map((post) => (
         <Box key={post.id} sx={{ mb: 3, cursor: "pointer" }}>
           
@@ -43,7 +43,7 @@ const RecentPosts = () => {
           <Box
             sx={{
               width: { xs: "100%", lg: "348px" },
-              // 🔥 FIX: Next.js 'fill' requires a defined height! 'auto' collapses to 0. Added safe responsive heights!
+             
               height: { xs: "200px", md: "240px", lg: "160px" },
               borderRadius: "10px",
               overflow: "hidden",
@@ -59,7 +59,7 @@ const RecentPosts = () => {
             />
           </Box>
 
-          {/* DATE */}
+         
           <Typography
             sx={{
               width: { xs: "100%", lg: "101px" },
@@ -72,7 +72,7 @@ const RecentPosts = () => {
             {post.date}
           </Typography>
 
-          {/* TITLE */}
+        
           <Typography
             sx={{
               width: { xs: "100%", lg: "348px" },

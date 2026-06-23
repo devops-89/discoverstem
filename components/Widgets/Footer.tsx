@@ -16,8 +16,7 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={{ xs: 6, lg: 4 }}>
-          {/* Column 1: Logo, Text, Socials */}
-          {/* On 768/1024 (sm/md), this naturally inherits xs: 12 and sits beautifully centered on top */}
+          
           <Grid size={{ xs: 12, lg: 4 }}>
             <Box
               sx={{
@@ -76,22 +75,22 @@ export default function Footer() {
             </Box>
           </Grid>
 
-          {/* Column 2: Programs */}
-          {/* 🔥 FIX: Uses sm: 4 to lock it to 1/3 width for 768px and 1024px! */}
+          
           <Grid size={{ xs: 6, sm: 4, lg: 2.5 }}>
             <Typography sx={{ color: "#fff", fontWeight: 700, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
               Programs
             </Typography>
             <Stack spacing={{ xs: 1.5, lg: 2 }}>
+              
               {[
-                "Summer Impact Program",
-                "Innovation Program",
-                "Ivy League Mentorship",
-                "Entrepreneurship Program",
+                { label: "Summer Impact Program", href: "/programs/sip" },
+                { label: "Ivy League Mentorship Program", href: "/programs/ilm" },
+                { label: "DiscoverSTEM Innovation Program", href: "/programs/dip"},
+                { label: "FAQ", href: "/programs/faq" },
               ].map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.label}
+                  href={item.href} // 🔥 Linked here
                   underline="none"
                   sx={{
                     color: "inherit",
@@ -99,23 +98,28 @@ export default function Footer() {
                     "&:hover": { color: "#f8a51e" },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </Stack>
           </Grid>
 
-          {/* Column 3: Quick Links */}
-          {/* 🔥 FIX: Uses sm: 4 to lock it to 1/3 width for 768px and 1024px! */}
+         
           <Grid size={{ xs: 6, sm: 4, lg: 2.5 }}>
             <Typography sx={{ color: "#fff", fontWeight: 700, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
               Quick Links
             </Typography>
             <Stack spacing={{ xs: 1.5, lg: 2 }}>
-              {["Patents", "Awards", "News", "Innovation Day"].map((item) => (
+              {/* 🔥 Updated to object array so links can have specific URLs */}
+              {[
+                { label: "Patents", href: "/patents-granted" },
+                { label: "Awards", href: "/awards-recognition" },
+                { label: "News", href: "/media/category/more-news" },
+                { label: "Innovation Day", href: "/events/innovation_day_2025" }
+              ].map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.label}
+                  href={item.href} // 🔥 Linked here
                   underline="none"
                   sx={{
                     color: "inherit",
@@ -123,20 +127,20 @@ export default function Footer() {
                     "&:hover": { color: "#f8a51e" },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </Stack>
           </Grid>
 
-          {/* Column 4: Contact */}
-          {/* 🔥 FIX: Uses sm: 4 to lock it to 1/3 width for 768px and 1024px! */}
+         
+      
           <Grid size={{ xs: 12, sm: 4, lg: 3 }}>
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                // 🔥 FIX: Ensures it perfectly aligns with the other two columns on 768/1024
+               
                 alignItems: { xs: "center", sm: "flex-start" },
                 textAlign: { xs: "center", sm: "left" },
                 mt: { xs: 2, sm: 0 },
@@ -149,7 +153,8 @@ export default function Footer() {
                 Ready to start your innovation journey?
               </Typography>
               <Box
-                component="button"
+                component="a"
+                href="/contact" // 🔥 Added a link to the contact button here
                 sx={{
                   bgcolor: "#f8a51e",
                   color: "#111",
@@ -159,8 +164,10 @@ export default function Footer() {
                   borderRadius: 2,
                   px: 4,
                   py: 1.5,
+                  textDecoration: "none", // Prevent underline on the button text
                   transition: "background-color 0.2s",
                   "&:hover": { bgcolor: "#e6951a" },
+                  display: "inline-block", // Helps behave correctly as a link
                 }}
               >
                 Get in Touch
@@ -180,15 +187,16 @@ export default function Footer() {
         >
           <Typography sx={{ fontSize: 14 }}>© 2026 DiscoverSTEM. All rights reserved.</Typography>
           <Stack direction="row" spacing={3} justifyContent="center">
+          
             <Link
-              href="#"
+              href="/privacy-policy"
               underline="none"
               sx={{ color: "inherit", fontSize: 14, "&:hover": { color: "#fff" } }}
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms-of-service"
               underline="none"
               sx={{ color: "inherit", fontSize: 14, "&:hover": { color: "#fff" } }}
             >

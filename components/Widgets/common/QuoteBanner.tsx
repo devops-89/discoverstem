@@ -12,10 +12,8 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
     <Box
       sx={{
         width: "100%",
-        // 🔥 FIX: Shifted large fixed height to lg! Let md and xs gracefully scale.
         minHeight: { xs: "auto", md: "260px", lg: "329.1px" },
         backgroundColor: "#FAF5FF",
-        // 🔥 FIX: Shrunk the massive desktop padding for iPads so the text actually fits cleanly!
         px: { xs: 3, md: 8, lg: "247.6px" },
         py: { xs: 6, md: 8, lg: "84px" },
         display: "flex",
@@ -29,7 +27,6 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 600,
-            // 🔥 FIX: Scaled the quote icon down smoothly across devices!
             fontSize: { xs: "28px", md: "32px", lg: "36px" },
             lineHeight: { xs: "34px", md: "38px", lg: "42px" },
             color: "#F9A51E",
@@ -43,7 +40,6 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 500,
-            // 🔥 FIX: Shifted large exact font sizes up to lg to protect 1440px. Safely scaled down for iPads and phones!
             fontSize: { xs: "16px", md: "20px", lg: "25.6px" },
             lineHeight: { xs: "26px", md: "30px", lg: "34.56px" },
             letterSpacing: "-0.64px",

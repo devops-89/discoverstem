@@ -19,7 +19,6 @@ const ContactSection = () => {
         spacing={{ xs: 4, lg: 6 }}
         alignItems="flex-start"
       >
-        {/* 🔥 FIX: Uses lg: 6 so BOTH 768px AND 1024px are forced into the stacked layout (xs: 12). Only 1440px gets the 2-column split! */}
         <Grid size={{ xs: 12, lg: 6 }}>
           <ContactData />
         </Grid>
@@ -28,7 +27,7 @@ const ContactSection = () => {
           size={{ xs: 12, lg: 6 }}
           sx={{
             display: "flex",
-            justifyContent: "center", // 🔥 FIX: Guarantees the form is perfectly horizontally centered when stacked!
+            justifyContent: "center", 
           }}
         >
           <ContactForm />

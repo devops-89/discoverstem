@@ -50,7 +50,6 @@ export default function MediaCenterPage() {
     .map(slug => mediaNewsData.find(item => item.slug === slug))
     .filter(Boolean)
     .map(item => {
-      // The user wants the exact text from the image for the first post
       if (item && item.slug === "young-minds-big-innovations-discoverstem-marks-innovation-day-2025-with-breakthrough-patentable-ideas") {
         return { ...item, title: "DiscoverSTEM Celebrates Innovation Day 2025" };
       }
@@ -66,25 +65,25 @@ export default function MediaCenterPage() {
         setSearch={setSearch}
       />
       
-      {/* Top Section */}
+    
       {!search && topFeaturedItems.length > 0 && (
         <Container
           maxWidth={false}
           sx={{
             maxWidth: "1159px",
             mx: "auto",
-            // 🔥 FIX: iPad edge padding & smooth vertical scaling
+   
             px: { xs: 3, md: 4, lg: 0 },
             pt: { xs: 4, md: 5, lg: 6 },
             pb: { xs: 4, md: 5, lg: 6 },
           }}
         >
-          {/* Top Large Card */}
+         
           {topFeaturedItems[0] && (
             <FeaturedMediaCard item={topFeaturedItems[0] as any} />
           )}
 
-          {/* Bottom 2 Cards */}
+        
           {topFeaturedItems.length > 1 && (
             <Box
               sx={{
@@ -106,13 +105,12 @@ export default function MediaCenterPage() {
         sx={{
           maxWidth: "1159px",
           mx: "auto",
-          // 🔥 FIX: iPad edge padding
           px: { xs: 3, md: 4, lg: 0 },
           pt: { xs: 4, lg: 0 },
           pb: { xs: 6, lg: 0 },
         }}
       >
-        {/* 1. Latest News */}
+        
         <MediaNewsSection
           id="latest-news"
           title="Latest News"
@@ -120,7 +118,7 @@ export default function MediaCenterPage() {
           layoutType="featured"
         />
 
-        {/* 2. College Acceptances */}
+     
         <MediaNewsSection
           id="college-acceptances"
           title="College Acceptances"
@@ -128,7 +126,7 @@ export default function MediaCenterPage() {
           layoutType="featured"
         />
 
-        {/* 3. Patents (since Videos uses Patent posts on live site) */}
+       
         <MediaNewsSection
           id="patents"
           title="Patents"
@@ -136,7 +134,7 @@ export default function MediaCenterPage() {
           layoutType="featured"
         />
 
-        {/* 4. Awards */}
+       
         <MediaNewsSection
           id="awards"
           title="Awards"
@@ -144,7 +142,7 @@ export default function MediaCenterPage() {
           layoutType="featured"
         />
 
-        {/* 5. Blog */}
+       
         <MediaNewsSection
           id="blog"
           title="Blog"

@@ -17,7 +17,6 @@ export default function ImageTextPartnerSection({
       sx={{
         maxWidth: "1158px",
         mx: "auto",
-        // 🔥 FIX: Shifted '0' padding to 'lg' to prevent text touching the screen edge on iPads
         px: { xs: 3, md:8, lg: 0 },
         py: { xs: 4,  md:8, lg: 10 },
       }}
@@ -27,7 +26,6 @@ export default function ImageTextPartnerSection({
           sx={{
             fontFamily: "Poppins, sans-serif",
             fontWeight: 600,
-            // 🔥 FIX: Scaled text down for mobile and tablets, while preserving exactly 36px on 1440px
             fontSize: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
             lineHeight: { xs: "34px", sm: "38px", md: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
@@ -41,7 +39,6 @@ export default function ImageTextPartnerSection({
         <Box
           sx={{
             display: "grid",
-            // 🔥 FIX: Your 687px + 401px + gap equals 1158px! That overflows a 1024px iPad horizontally. I shifted it to 'lg' so iPads naturally stack into a single column.
             gridTemplateColumns: { xs: "1fr", lg: "687px 401px" },
             gap: { xs: 4, lg: "70px" },
             alignItems: "start",

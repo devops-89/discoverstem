@@ -2649,18 +2649,53 @@ export const patentFacesData: PatentFacesData = {
 
 export const NobelLaureatesData=[
   {
-    title: "Meeting_with_Nobel_Laureates",
+    title: "Meeting with Nobel Laureates",
  
    image:"/Images/ContactUs/HeroSection.jpg",
   },
   {
-    title: "Meeting_with_Nobel_Laureates",
+    title: "Meeting with Nobel Laureates",
  
    image:"/Images/ContactUs/HeroSection.jpg",
   },
   {
-   title: "Meeting_with_Nobel_Laureates",
+   title: "Meeting with Nobel Laureates",
  
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+];
+
+export const researchMentorsData=[
+   {
+    title: "Research Mentors",
+ description: "At DiscoverSTEM, research mentorship is not delegated — it is delivered by the best.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "Research Mentors",
+ description: "At DiscoverSTEM, research mentorship is not delegated — it is delivered by the best.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "Research Mentors",
+ description: "At DiscoverSTEM, research mentorship is not delegated — it is delivered by the best.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+];
+export const aerospaceResearchData=[
+   {
+    title: "Research Opportunities",
+ description: "Space is the next big destination of humanity. Train where the second space race is being won — design, engineer, and innovate the future of flight.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+    title: "Research Opportunities",
+ description: "Space is the next big destination of humanity. Train where the second space race is being won — design, engineer, and innovate the future of flight.",
+   image:"/Images/ContactUs/HeroSection.jpg",
+  },
+  {
+     title: "Research Opportunities",
+ description: "Space is the next big destination of humanity. Train where the second space race is being won — design, engineer, and innovate the future of flight.",
    image:"/Images/ContactUs/HeroSection.jpg",
   },
 ];
@@ -3398,19 +3433,19 @@ export const HEADER_DATA: NavItem[] = [
       {
         label: "DIP",
         href: "/programs/dip",
-        
       },
-          {
+      {
         label: "FAQ",
         href: "/programs/faq",
-        
       },
     ],
   },
 
   {
     label: "Opportunities",
-   
+    items: [
+      {
+        label: "Research Opportunities", 
         items: [
           {
             label: "Research Mentors",
@@ -3424,7 +3459,7 @@ export const HEADER_DATA: NavItem[] = [
             label: "AI-ML and Autonomous Tech Research Lab",
             href: "/opportunities/ai-autonomous-tech-and-robotics-research-lab",
           },
-           {
+          {
             label: "Banking, Finance & Fintech Research Lab",
             href: "/opportunities/banking-finance-fintech-research-lab",
           },
@@ -3440,6 +3475,8 @@ export const HEADER_DATA: NavItem[] = [
             label: "Neurotechnology & Brain-Computer Interface Research Lab",
             href: "/opportunities/neurotech-brain-computer-interface",
           },
+        ],
+      },
       {
         label: "Startup Opportunities",
         href: "/opportunities/startup-opportunities",
@@ -3525,7 +3562,6 @@ export const HEADER_DATA: NavItem[] = [
     href: "/contact",
   },
 ];
-
 
 
 export const impactQuoteSectionData: ImpactQuoteSectionData = {

@@ -13,7 +13,7 @@ export default function IlmLearningTracksSection() {
       sx={{
         maxWidth: "1280px",
         mx: "auto",
-        py: { xs: 6, sm: 8, lg: 16 },
+        py: { xs: 4, sm: 8, lg: 16 },
         px: { xs: 3, sm: 5, lg: 0 },
       }}
     >
@@ -21,7 +21,7 @@ export default function IlmLearningTracksSection() {
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+          fontSize: { xs: "24px", sm: "36px", lg: "48px" },
           lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
           letterSpacing: "-0.03em",
           textAlign: "center",
@@ -36,9 +36,9 @@ export default function IlmLearningTracksSection() {
         sx={{
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr", // Stacks on phones
-            sm: "repeat(2, 1fr)", // 🔥 FIX: 2 side-by-side on 768px iPads and up
-            lg: "repeat(4, 290px)", // 4 side-by-side exactly 290px wide on 1440px desktop
+            xs: "1fr", 
+            sm: "repeat(2, 1fr)", 
+            lg: "repeat(4, 290px)", 
           },
           justifyContent: "center",
           gap: { xs: 3, lg: "24px" },
@@ -100,8 +100,6 @@ export default function IlmLearningTracksSection() {
                 }}
               />
             </Box>
-
-            {/* Title */}
             <Typography
               sx={{
                 position: "absolute",
@@ -118,8 +116,6 @@ export default function IlmLearningTracksSection() {
             >
               {track.title}
             </Typography>
-
-            {/* Description */}
             <Typography
               sx={{
                 position: "absolute",
@@ -135,8 +131,6 @@ export default function IlmLearningTracksSection() {
             >
               {track.description}
             </Typography>
-
-            {/* Outcome */}
             <Box
               sx={{
                 position: "absolute",

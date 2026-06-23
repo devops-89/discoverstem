@@ -52,7 +52,7 @@ export default function PatentCertificatesShared({
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
             fontSize: { xs: "24px", sm: "35px", lg: "48px" },
-            lineHeight: { xs: "40px", sm: "52px", lg: "62px" },
+            lineHeight: { xs: "30px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#171717",
             mb: { xs: 4, md: 5, lg: "46px" },
@@ -120,7 +120,6 @@ export default function PatentCertificatesShared({
                       top: "50%",
                       left: "50%",
                       transform: "translate(-50%, -50%)",
-                      // 🔥 FIX: Decreased Play Button outer circle size for mobile, locked to 56px for 1440px
                       width: { xs: "40px", lg: "56px" },
                       height: { xs: "40px", lg: "56px" },
                       borderRadius: "999px",
@@ -136,7 +135,6 @@ export default function PatentCertificatesShared({
                       sx={{
                         width: 0,
                         height: 0,
-                        // 🔥 FIX: Decreased inner purple triangle for mobile proportionately!
                         borderTop: { xs: "6px solid transparent", lg: "8px solid transparent" },
                         borderBottom: { xs: "6px solid transparent", lg: "8px solid transparent" },
                         borderLeft: { xs: "9px solid #7B53A1", lg: "12px solid #7B53A1" },

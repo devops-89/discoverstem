@@ -35,7 +35,6 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         paper: {
           sx: {
             width: "1160px",
-            // FIXED: Prevented the modal from completely touching the left/right edges of a mobile screen
             maxWidth: { xs: "calc(100vw - 32px)", lg: "95vw" }, 
             maxHeight: "90vh",
             borderRadius: { xs: "20px", lg: "29px" },
@@ -47,7 +46,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         },
       }}
     >
-      {/* Close Button */}
+    
       <IconButton
         onClick={onClose}
         sx={{
@@ -55,7 +54,6 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           top: { xs: 16, lg: 24 },
           right: { xs: 16, lg: 24 },
           zIndex: 20,
-          // Scaled down slightly on mobile so it doesn't block the expert's face!
           width: { xs: 40, lg: 48 }, 
           height: { xs: 40, lg: 48 },
           bgcolor: "#fff",
@@ -72,7 +70,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         sx={{
           p: {
             xs: 3,
-            lg: "30px", // Pushed strict rigid values to 1440px
+            lg: "30px", 
           },
         }}
       >
@@ -80,7 +78,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         <Box
           sx={{
             position: "relative",
-            // Un-floated on mobile so it centers nicely at the top
+          
             float: {
               xs: "none",
               lg: "left", 
@@ -90,9 +88,9 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
               lg: "250px",
             },
             height: {
-              xs: "250px", // Mobile portrait
-              sm: "350px", // iPad portrait
-              lg: "280px", // Original 1440px height
+              xs: "250px", 
+              sm: "350px", 
+              lg: "280px", 
             },
             borderRadius: "11px",
             overflow: "hidden",
@@ -100,7 +98,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
               xs: 0,
               lg: "30px",
             },
-            mb: { xs: 3, lg: "20px" }, // More breathing room below image before text on mobile
+            mb: { xs: 3, lg: "20px" }, 
             bgcolor: "#D9D9D9",
           }}
         >
@@ -115,7 +113,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           />
         </Box>
 
-        {/* Category */}
+       
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -131,7 +129,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           {data.category}
         </Typography>
 
-        {/* Name */}
+    
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -149,7 +147,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           {data.name}
         </Typography>
 
-        {/* Degree */}
+        
         <Typography
           sx={{
             fontFamily: "Poppins",
@@ -164,7 +162,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           {data.org ? ` · ${data.org}` : ""}
         </Typography>
 
-        {/* Description */}
+        
         {descriptions.map((paragraph, index) => (
           <Typography
             key={index}
@@ -182,7 +180,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           </Typography>
         ))}
 
-        {/* Clear Float */}
+        
         <Box sx={{ clear: "both" }} />
       </Box>
     </Dialog>
