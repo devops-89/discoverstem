@@ -74,8 +74,6 @@ export default function NewsSection({
           </Box>
         )}
       </Box>
-
-      {/* Cards */}
       <Box
         sx={{
           display: "grid",

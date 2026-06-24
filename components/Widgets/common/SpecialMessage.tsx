@@ -37,8 +37,8 @@ export default function SpecialMessagesShared({ data }: SpecialMessagesSharedPro
         sx={{
           fontFamily: "Work Sans, sans-serif",
           fontWeight: 600,
-          fontSize: { xs: "32px", sm: "40px", lg: "48px" },
-          lineHeight: { xs: "44px", sm: "52px", lg: "65px" },
+          fontSize: { xs: "28px", sm: "40px", lg: "48px" },
+          lineHeight: { xs: "35px", sm: "52px", lg: "65px" },
           textAlign: "center",
           color: "#101010",
           mb: { xs: 4, md: 6, lg: "70px" },
@@ -149,7 +149,7 @@ export default function SpecialMessagesShared({ data }: SpecialMessagesSharedPro
                 "&:hover": { bgcolor: "rgba(0,0,0,0.7)" },
               }}
             >
-              <CloseIcon />
+               <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
             </IconButton>
             <iframe
               src={selectedVideo}

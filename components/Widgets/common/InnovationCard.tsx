@@ -3,6 +3,8 @@
 import { InnovationCardItem } from "@/utils/Types";
 import { Close } from "@mui/icons-material";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
+import CheckIcon from "@mui/icons-material/Check";
+import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import {
   Box,
   Dialog,
@@ -75,10 +77,10 @@ export default function InnovationCardsGrid({
                   <Typography
                     sx={{
                       position: "absolute",
-                      top: 16,
-                      left: 24,
-                      // 🔥 FIX: Scaled font down for mobile
-                      fontSize: { xs: "11px", lg: "13px" },
+                      top: 12,
+                      left: 12,
+                      
+                      fontSize: { xs: "10px", lg: "12px" },
                       fontWeight: 700,
                       color: "#7B53A1",
                       backgroundColor: "#FFFFFFF2",
@@ -95,29 +97,37 @@ export default function InnovationCardsGrid({
                       position: "absolute",
                       top: isGranted ? "12px" : "8.15px",
                       right: isGranted ? "13.6px" : "9px",
-                      width: isGranted ? "81.875px" : "97px",
-                      height: isGranted ? "23.9875px" : "28px",
+                      width: isGranted ? "82.88px" : "97px",
+                      height: isGranted ? "23.99px" : "28px",
                       borderRadius: "26843500px",
                       backgroundColor: "#1B0F2A",
-                      px: "12px",
+                      px: "8px",
                       py: "4px",
                       display: "flex",
+                      flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center",
+                      justifyContent: isGranted ? "flex-start" : "center",
+                      gap: "4px",
                       boxSizing: "border-box",
                     }}
                   >
-                    <Image
-                      src={item.statusIcon}
-                      alt={item.filterType}
-                      width={isGranted ? 58 : 73}
-                      height={isGranted ? 16 : 20}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
+                    {isGranted ? (
+                      <CheckIcon sx={{ color: "#F9A51E", fontSize: "14px", fontWeight: "bold" }} />
+                    ) : (
+                      <HourglassEmptyIcon sx={{ color: "#FFFFFF", fontSize: "16px" }} />
+                    )}
+                    <Typography
+                      sx={{
+                        fontFamily: "'Inter', sans-serif",
+                        color: isGranted ? "#F9A51E" : "#FFFFFF",
+                        fontSize: isGranted ? "12px" : "14px",
+                        fontWeight: isGranted ? 700 : 500,
+                        lineHeight: isGranted ? "16px" : "20px",
+                        whiteSpace: "nowrap",
                       }}
-                    />
+                    >
+                      {item.filterType}
+                    </Typography>
                   </Box>
                 </Box>
 
@@ -142,7 +152,7 @@ export default function InnovationCardsGrid({
                       sx={{
                         fontWeight: 600,
                      
-                        fontSize: { xs: "16px", lg: "18px" },
+                        fontSize: { xs: "15px", lg: "18px" },
                         lineHeight: { xs: "22px", lg: "23.4px" },
                         letterSpacing: "-0.45px",
                         color: "#171717",
@@ -292,20 +302,20 @@ export default function InnovationCardsGrid({
           );
         })}
       </Grid>
-
+      
+     
       <Dialog
         open={certModal.open}
         disableScrollLock
         onClose={() => setCertModal({ open: false, src: "", title: "" })}
-        maxWidth="md"
+        maxWidth="sm" 
         fullWidth
         slotProps={{
           paper: {
             sx: {
               borderRadius: "16px",
               position: "relative",
-              overflow: "visible",
-              p: 2,
+              overflow: "hidden", 
             },
           },
         }}
@@ -314,27 +324,24 @@ export default function InnovationCardsGrid({
           onClick={() => setCertModal({ open: false, src: "", title: "" })}
           sx={{
             position: "absolute",
-            top: -12,
-            right: -12,
+            top: 16, 
+            right: 16, 
             width: 36,
             height: 36,
             backgroundColor: "#fff",
             boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            zIndex: 1,
+            zIndex: 10, 
             "&:hover": { backgroundColor: "#f5f5f5" },
           }}
         >
-          <Close sx={{ fontSize: "20px", color: "#000" }} />
+          <Close sx={{ fontSize: "20px", color: "red" }} /> 
         </IconButton>
-
-        <Box sx={{ position: "relative", width: "100%", minHeight: "60vh" }}>
+        <Box sx={{ position: "relative", width: "100%", display: "flex" }}>
           {certModal.src && (
-            <Image
+            <img
               src={certModal.src}
               alt={certModal.title}
-              fill sizes="100vw"
-              unoptimized
-              style={{ objectFit: "contain" }}
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           )}
         </Box>
@@ -342,3 +349,6 @@ export default function InnovationCardsGrid({
     </>
   );
 }
+
+
+

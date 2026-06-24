@@ -21,7 +21,7 @@ const RecentPosts = () => {
      
       <Typography
         sx={{
-          // 🔥 FIX: Shifted exact pixel widths to lg.
+        
           width: { xs: "100%", lg: "137px" },
           height: { xs: "auto", lg: "17px" },
           lineHeight: "34px",
@@ -39,7 +39,7 @@ const RecentPosts = () => {
       {recentPosts.map((post) => (
         <Box key={post.id} sx={{ mb: 3, cursor: "pointer" }}>
           
-          {/* IMAGE */}
+        
           <Box
             sx={{
               width: { xs: "100%", lg: "348px" },

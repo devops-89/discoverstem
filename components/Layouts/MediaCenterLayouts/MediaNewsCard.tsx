@@ -100,10 +100,11 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
       </Box>
 
      
-      <Modal
+           <Modal
         open={openVideo}
         onClose={() => setOpenVideo(false)}
         aria-labelledby="video-modal-title"
+          disableScrollLock={true} 
       >
         <Box
           sx={{
@@ -112,18 +113,30 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
             left: "50%",
             transform: "translate(-50%, -50%)",
             width: { xs: "90%", md: "800px" },
-            bgcolor: "background.paper",
+            bgcolor: "#000", 
             boxShadow: 24,
-            p: 1,
-            borderRadius: "8px",
+            borderRadius: "16px", 
+            overflow: "hidden", 
             outline: "none",
           }}
         >
-          <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 1 }}>
-            <IconButton onClick={() => setOpenVideo(false)}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
+          <IconButton 
+            onClick={() => setOpenVideo(false)}
+            sx={{
+              position: "absolute",
+              top: 16,
+              right: 16,
+              width: 36,
+              height: 36,
+              backgroundColor: "#fff",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+              zIndex: 10,
+              "&:hover": { backgroundColor: "#f5f5f5" },
+            }}
+          >
+            <CloseIcon sx={{ fontSize: "20px", color: "red" }} />
+          </IconButton>
+
           <Box
             sx={{
               position: "relative",
@@ -132,11 +145,10 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
               overflow: "hidden",
             }}
           >
-            {videoUrl && (
+                       {videoUrl && (
               <iframe
                 src={videoUrl}
                 title="YouTube video player"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 style={{
@@ -145,6 +157,7 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
                   left: 0,
                   width: "100%",
                   height: "100%",
+                  border: 0,
                 }}
               />
             )}

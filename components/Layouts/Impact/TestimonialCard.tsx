@@ -17,6 +17,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CloseIcon from "@mui/icons-material/Close";
 import { SuccessStoryCard } from "@/utils/Types";
 import { successStoriesData } from "@/assets/Generic-data";
+import { Close } from "@mui/icons-material";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -286,7 +287,7 @@ export default function SuccessStoriesCards() {
               },
             }}
           >
-            <CloseIcon />
+           <Close sx={{ fontSize: "20px", color: "red" }} /> 
           </IconButton>
 
           {selectedStory && (

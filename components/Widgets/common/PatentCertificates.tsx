@@ -21,7 +21,7 @@ export type PatentData = {
 
 interface PatentCertificatesSharedProps {
   data: PatentData;
-  uniqueId: string; // Prevents Swiper arrow collisions if multiple exist on the same page
+  uniqueId: string; 
 }
 
 export default function PatentCertificatesShared({
@@ -258,7 +258,7 @@ export default function PatentCertificatesShared({
                 "&:hover": { bgcolor: "rgba(0,0,0,0.7)" },
               }}
             >
-              <CloseIcon />
+              <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
             </IconButton>
             <iframe
               src={selectedVideo}

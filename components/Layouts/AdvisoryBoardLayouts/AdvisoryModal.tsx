@@ -57,7 +57,7 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
       >
         <CloseIcon
           sx={{
-            color: "#7A7A7A",
+            color: "red",
             fontSize: { xs: "20px", md: "24px" },
           }}
         />

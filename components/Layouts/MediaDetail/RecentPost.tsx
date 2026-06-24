@@ -13,10 +13,12 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
   return (
     <Box
       sx={{
-        width: { xs: "100%", md: "420px" },
+        // 🔥 Shifted from 'md' to 'lg'. Now 1024px stays 100% wide exactly like 768px!
+        width: { xs: "100%", lg: "420px" }, 
+        boxSizing: "border-box", 
         bgcolor: "#FAF5FF",
         borderRadius: "18px",
-        p: { xs: 3, md: "36px" },
+        p: { xs: 3, lg: "36px" }, 
         flexShrink: 0,
       }}
     >
@@ -24,26 +26,27 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
         sx={{
           fontFamily: "JUST Sans, Poppins, sans-serif",
           fontWeight: 600,
-          fontSize: "24px",
-          lineHeight: "34px",
+          fontSize: { xs: "20px", lg: "24px" }, 
+          lineHeight: { xs: "28px", lg: "34px" },
           color: "#1C2539",
-          mb: 4,
+          mb: { xs: 3, lg: 4 },
         }}
       >
         Recent Post
       </Typography>
 
       {recentPosts.map((post) => (
-        <Box key={post.id} sx={{ mb: "28px" }}>
+        <Box key={post.id} sx={{ mb: { xs: "20px", lg: "28px" } }}>
           <Box
             component={Link}
             href={`/media/${post.slug}`}
             sx={{
               display: "block",
-              height: "160px",
+              // 🔥 sm: "300px" now applies to 1024px as well, preventing the 100% wide image from squashing!
+              height: { xs: "200px", sm: "300px", lg: "160px" }, 
               borderRadius: "10px",
               overflow: "hidden",
-              mb: "20px",
+              mb: { xs: "16px", lg: "20px" },
               bgcolor: "#D9D9D9",
               textDecoration: "none",
             }}
@@ -64,9 +67,9 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
           <Typography
             sx={{
               color: "#7B53A1",
-              fontSize: "16px",
-              lineHeight: "30px",
-              mb: 1,
+              fontSize: { xs: "14px", lg: "16px" }, 
+              lineHeight: { xs: "24px", lg: "30px" },
+              mb: { xs: 0.5, lg: 1 },
             }}
           >
             {post.publishedDate || "09 May, 2024"}
@@ -79,8 +82,8 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
               display: "block",
               fontFamily: "JUST Sans, Poppins, sans-serif",
               fontWeight: 600,
-              fontSize: "20px",
-              lineHeight: "30px",
+              fontSize: { xs: "14px", lg: "20px" }, 
+              lineHeight: { xs: "26px", lg: "30px" },
               letterSpacing: "-0.01em",
               color: "#111827",
               textDecoration: "none",

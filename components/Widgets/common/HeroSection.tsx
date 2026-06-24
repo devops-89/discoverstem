@@ -25,12 +25,14 @@ export default function HeroSection({ slides }: HeroSectionProps) {
       
         mt: { xs: 1.5, md: "19px" },
         mx: "auto",
-        width: "100%",
-     
-        maxWidth: {
+        
+        /* 🔥 FIX: Ensures there is always a pixel gap on 1024 screens! */
+        width: {
           xs: "calc(100% - 24px)",
-          md: "1403px",
+          md: "calc(100% - 48px)",
         },
+        maxWidth: "1403px",
+        
         borderRadius: { xs: "14px", md: "20px" },
         overflow: "hidden",
 

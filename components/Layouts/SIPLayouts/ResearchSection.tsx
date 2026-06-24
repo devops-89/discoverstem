@@ -320,7 +320,7 @@ export default function ResearchSection() {
             "&:hover": { bgcolor: "rgba(0,0,0,0.7)" },
           }}
         >
-          <CloseIcon />
+           <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
         </IconButton>
 
         {selectedVideo && (

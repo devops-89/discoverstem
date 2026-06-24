@@ -182,12 +182,12 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
               p: { xs: "20px", lg: "24px" }, 
               position: "relative",
               m: { xs: 2, lg: 4 } 
-            } 
+            }   
           } 
         }}>
         <IconButton onClick={() => setModalOpen(false)}
           sx={{ position: "absolute", top: { xs: 8, lg: 12 }, right: { xs: 8, lg: 12 }, zIndex: 1, bgcolor: "#fff", boxShadow: "0px 2px 8px rgba(0,0,0,0.1)", "&:hover": { bgcolor: "#f5f5f5" } }}>
-          <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" } }} />
+          <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" }, color:"red" }} />
         </IconButton>
         {selectedModule && (
           <Box>

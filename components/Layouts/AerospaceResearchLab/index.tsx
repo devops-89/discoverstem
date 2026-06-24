@@ -7,8 +7,9 @@ import InfoSection from "@/components/Widgets/common/InfoSection";
 import OutcomesSection from "./Outcomes";
 import ResearchModulesSection from "./Modules";
 import ExploreLabsSection from "@/components/Widgets/common/Explore";
-import InnovationShowcaseSection from "@/components/Widgets/common/Researchlab";
+
 import AerospaceVideoSection from "./Aerospacevideo";
+import { InnovationShowcaseSection } from "@/components/Widgets/common/Researchlab";
 
 const featuredInnovations = innovationCardsData.slice(0, 6);
 

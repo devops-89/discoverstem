@@ -3,6 +3,9 @@
 import { innovationFilters } from "@/assets/Generic-data";
 import { InnovationFilter } from "@/utils/Types";
 import { Box, Chip, TextField, Typography } from "@mui/material";
+/* 🔥 Imported the identical icons used in the cards! */
+import CheckIcon from "@mui/icons-material/Check";
+import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 
 interface InnovationFilterSectionProps {
   filter: InnovationFilter;
@@ -44,11 +47,12 @@ export default function InnovationFilterSection({
       >
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 1.5,
             
-            flexWrap: { xs: "wrap", sm: "nowrap" },
+            display: { xs: "grid", sm: "flex" },
+            gridTemplateColumns: { xs: "repeat(3, 1fr)", sm: "none" },
+            alignItems: "center",
+            gap: { xs: 1, sm: 1.5 },
+            
             overflowX: { xs: "visible", sm: "auto" },
             "&::-webkit-scrollbar": { display: "none" },
             scrollbarWidth: "none",
@@ -64,15 +68,33 @@ export default function InnovationFilterSection({
             <Chip
               key={item}
               label={item}
+              icon={
+                item === "Granted" ? (
+                  <CheckIcon />
+                ) : item === "Pending" ? (
+                  <HourglassEmptyIcon />
+                ) : undefined
+              }
               onClick={() => setFilter(item)}
               sx={{
+               
+                width: { xs: "100%", sm: "auto" },
                 height: { xs: "32px", sm: "40px" },
-                fontSize: { xs: "12px", sm: "14px" },
+                fontSize: { xs: "10px", sm: "14px" },
                 borderRadius: "999px",
                 fontWeight: 600,
                 backgroundColor: filter === item ? "#7B53A1" : "#F5F5F5",
                 color: filter === item ? "#fff" : "#171717",
-                flexShrink: 0,
+                
+                
+                "& .MuiChip-label": {
+                  px: { xs: "6px", sm: "12px" },
+                },
+                "& .MuiChip-icon": {
+                  color: "inherit",
+                  fontSize: { xs: "14px", sm: "18px" },
+                  ml: { xs: "6px", sm: "10px" },
+                }
               }}
             />
           ))}
@@ -97,7 +119,7 @@ export default function InnovationFilterSection({
         />
       </Box>
 
-      <Typography sx={{ fontSize: "14px", color: "#737373", mb: 8 }}>
+      <Typography sx={{ fontSize: "14px", color: "#737373", mb: 8, mt:4,  ml: { xs: "10px", sm: "50px" }, }}>
         Showing <b>{showingCount}</b> of {totalCount} innovations
       </Typography>
     </>

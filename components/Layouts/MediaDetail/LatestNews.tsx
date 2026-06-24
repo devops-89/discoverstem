@@ -3,6 +3,7 @@
 import { MediaNewsItem } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Button, Typography } from "@mui/material";
+import CircleIcon from '@mui/icons-material/Circle';
 import Link from "next/link";
 import { useState } from "react";
 
@@ -144,9 +145,7 @@ export default function LatestNews({ items }: LatestNewsProps) {
                 {item.time}
               </Typography>
 
-              <Typography sx={{ fontSize: "16px", color: "#474A55" }}>
-                •
-              </Typography>
+              <CircleIcon sx={{ fontSize: "6px", color: "#474A55" }} />
 
               <Typography
                 sx={{

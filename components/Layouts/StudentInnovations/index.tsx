@@ -7,18 +7,7 @@ import StatsCard from "@/components/Widgets/common/StatsCard";
 import CenterTextSection from "./InnovationDetail";
 import InnovationCardGrid from "./InnovationCard";
 
-
-
-
-
-
-
-
-
-
-export default function StudentInnovations() {
-
-    
+export default function StudentInnovations() { 
   return (
     <>
       <HeroSlider slides={InnovationData}/>

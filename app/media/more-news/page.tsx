@@ -43,10 +43,10 @@ export default function MoreNewsPage() {
 
         {items.length > 0 ? (
           <Box>
-            {/* First Item is Large */}
+         
             <FeaturedMediaCard item={items[0]} />
 
-            {/* Rest of the items in a grid */}
+           
             {items.length > 1 && (
               <Box
                 sx={{

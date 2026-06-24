@@ -38,7 +38,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         sx={{
           position: "relative",
           width: "100%",
-          height: { xs: "220px", md: "300px", lg: "385px" },
+          height: { xs: "220px", sm: "300px", md: "500px", lg: "385px" },
           bgcolor: "#D9D9D9",
           borderRadius: "12px",
           overflow: "hidden",
@@ -183,7 +183,6 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             sx={{
               fontFamily: "JUST Sans, Poppins, sans-serif",
               fontWeight: 600,
-              // 🔥 FIX: Scaled text down slightly for mobile!
               fontSize: { xs: "12px", sm: "13.95px" },
               lineHeight: { xs: "18px", sm: "21px" },
               letterSpacing: "-0.01em",
@@ -210,11 +209,11 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
         </Box>
       </Box>
 
-    
       <Modal
         open={openVideo}
         onClose={() => setOpenVideo(false)}
         aria-labelledby="video-modal-title"
+          disableScrollLock={true} 
       >
         <Box
           sx={{
@@ -223,31 +222,25 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             left: "50%",
             transform: "translate(-50%, -50%)",
             width: { xs: "90%", md: "800px" },
-            bgcolor: "background.paper",
-            boxShadow: 24,
-            p: 1,
-            borderRadius: "8px",
+           
             outline: "none",
           }}
         >
-          <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 1 }}>
-            <IconButton onClick={() => setOpenVideo(false)}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
           <Box
             sx={{
               position: "relative",
-              paddingBottom: "56.25%", // 16:9 aspect ratio
+              paddingBottom: "56.25%", 
               height: 0,
               overflow: "hidden",
+              borderRadius: "8px",
+              bgcolor: "#000",
             }}
           >
             {videoUrl && (
               <iframe
                 src={videoUrl}
                 title="YouTube video player"
-                frameBorder="0"
+                
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 style={{
@@ -256,9 +249,25 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
                   left: 0,
                   width: "100%",
                   height: "100%",
+                  border: 0,
                 }}
               />
             )}
+            
+      
+            <IconButton 
+              onClick={() => setOpenVideo(false)}
+              sx={{ 
+                position: "absolute", 
+                top: "8px", 
+                right: "8px", 
+                color: "red",
+                filter: "drop-shadow(0px 2px 4px rgba(0,0,0,0.5))", 
+                zIndex: 10 
+              }}
+            >
+              <CloseIcon sx={{ fontSize: "28px" }} />
+            </IconButton>
           </Box>
         </Box>
       </Modal>

@@ -107,7 +107,7 @@ export default function MediaCenterPage() {
           mx: "auto",
           px: { xs: 3, md: 4, lg: 0 },
           pt: { xs: 4, lg: 0 },
-          pb: { xs: 6, lg: 0 },
+          pb: { xs: 4, lg: 0 },
         }}
       >
         

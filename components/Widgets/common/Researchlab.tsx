@@ -13,12 +13,17 @@ interface InnovationShowcaseSectionProps {
   buttonLink?: string;
 }
 
-export default function InnovationShowcaseSection({
+export function InnovationShowcaseSection({
   title,
   items,
   buttonText = "View All",
   buttonLink = "/success-stories/student-innovations",
-}: InnovationShowcaseSectionProps) {
+}: {
+  title: string;
+  items: InnovationCardItem[];
+  buttonText?: string;
+  buttonLink?: string;
+}) {
   return (
     <Container
       maxWidth={false}

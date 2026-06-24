@@ -63,7 +63,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           },
         }}
       >
-        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" } }} />
+        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" }, color:"red" }} />
       </IconButton>
 
       <Box
@@ -74,7 +74,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           },
         }}
       >
-        {/* FLOAT IMAGE */}
+       
         <Box
           sx={{
             position: "relative",

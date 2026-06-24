@@ -15,7 +15,7 @@ export default async function CategoryPage({
 }) {
   const { categorySlug } = await params;
 
-  // Find category title based on slug
+ 
   const categoryItem = mediaCategories.find(c => c.sectionId === categorySlug);
   const categoryTitle = categoryItem ? categoryItem.label : categorySlug.replace("-", " ");
 
@@ -34,7 +34,6 @@ export default async function CategoryPage({
         sx={{
           maxWidth: "1159px",
           mx: "auto",
-          // 🔥 FIX: iPad edge padding & smooth vertical scaling
           px: { xs: 3, md: 4, lg: 0 },
           py: { xs: 2, md: 7, lg: 8 },
         }}
@@ -44,7 +43,6 @@ export default async function CategoryPage({
           sx={{
             fontFamily: "Work Sans, sans-serif",
             fontWeight: 700,
-            // 🔥 FIX: Shifted large title mapping to lg.
             fontSize: { xs: "32px", md: "40px", lg: "48px" },
             color: "#111827",
             mb: { xs: 4, lg: 6 },
@@ -56,15 +54,11 @@ export default async function CategoryPage({
 
         {items.length > 0 ? (
           <Box>
-            {/* First Item is Large */}
-            <FeaturedMediaCard item={items[0]} />
-
-            {/* Rest of the items in a grid */}
+           <FeaturedMediaCard item={items[0]} />
             {items.length > 1 && (
               <Box
                 sx={{
                   display: "grid",
-                  // 🔥 FIX: Responsive grid! 4 cards on lg, 3 on iPad, 2 on small tablet.
                   gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
                   gap: "23px",
                 }}

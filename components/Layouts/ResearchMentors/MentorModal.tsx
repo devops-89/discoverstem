@@ -54,7 +54,7 @@ export default function MentorModal({ open, onClose, data }: Props) {
           "&:hover": { bgcolor: "#f5f5f5" } 
         }}
       >
-        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" } }} />
+        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px",color: "red" } }} />    
       </IconButton>
       <Box sx={{ p: { xs: 3, lg: "30px" } }}>
         <Box 
