@@ -8,10 +8,36 @@ import "swiper/css/pagination";
 import { testimonial } from "@/assets/Generic-data";
 
 const testimonialSlides = [
-  testimonial,
-  { ...testimonial },
-  { ...testimonial },
-  { ...testimonial },
+  {
+    name: "Dr. Hashima Hasan",
+    role: "Program Scientist, NASA.",
+    quote: "What started as a small mentoring program in 2016 has now evolved to one where students have won NASA innovation awards, patented their innovations, and heading towards commercialization. DiscoverSTEM brings to life the true scientific process. Rather than being a bookish activity, the students are encouraged to be inquisitive about real-life situations and seek answers through research.",
+    image: "/Images/Home/Testimonials/impect1dr.hashima.jpg"
+  },
+  {
+    name: "Dr. Charles A. Rodenberger",
+    role: "(NASA Scientist) -Designer of the Apollo Spacecraft -Inventor of Hypervelocity Gun -Researcher for NASA related to meteoroid protection of spacecraft",
+    quote: "As a scientist and designer of NASA Apollo spacecraft, I’ve seen intensive brainstorming and innovation activities in our team when we were designing systems to land a man on the moon and safely bring them back! The next time I saw such an activity is at DiscoverSTEM… This is the best STEM & Innovation program I’ve ever seen.",
+    image: "/Images/Home/Testimonials/impect2.jpg"
+  },
+  {
+    name: "Shreeya Dasikan",
+    role: "Inventor of – Vehicle Collision Avoidance System (DiscoverSTEM Innovation Program 2018-19)",
+    quote: "My favorite part about the program was when all of us would sit in the meeting room and begin to brainstorm ideas…I deeply enjoyed those moments when we were gathered together, throwing out crazy ideas that only seemed crazy until we made them a reality.",
+    image: "/Images/Home/Testimonials/WhatsApp-Image-2022-01-25-at-11.16.02-AM.jpeg"
+  },
+  {
+    name: "Jim Christensen",
+    role: "Director of Education, NASA Kennedy Space Center",
+    quote: "One thing which is fascinating is 'How kids can be trained to be innovative’?... Mirza has come up with a step-by-step kind of program and approach to help people create innovations, and I just love that… This program absolutely fascinates me!",
+    image: "/Images/Home/Testimonials/impect3.jpg"
+  },
+  {
+    name: "Kayla Goodrich",
+    role: "DiscoverSTEM Innovation Program 2019-20",
+    quote: "My time at Innovation Program has been awesome! It has given me a constructive environment to learn how to think like an innovator and build on other people's ideas. I also love how it challenges me to think outside of the box and innovate. With these skills, my future has no limit!",
+    image: "/Images/Home/Testimonials/WhatsApp-Image-2022-01-25-at-11.16.58-AM.jpeg"
+  }
 ];
 
 export default function TestimonialsSection() {
@@ -149,6 +175,7 @@ export default function TestimonialsSection() {
                       justifyContent: "center",
                       height: { md: "100%", lg: "100%" }, 
                       width: { xs: "100%", md: "auto" },
+                      maxWidth: { xs: "100%", md: "430px", lg: "570px" }, 
                       pl: { md: "55px", lg: "73px" },
                     }}
                   >
@@ -210,12 +237,11 @@ export default function TestimonialsSection() {
                       sx={{
                         fontFamily: "'Work Sans', sans-serif",
                         fontWeight: 500,
-                        fontSize: { xs: "14px", sm: "16px", md: "21px", lg: "28px" },
-                        lineHeight: { xs: "18px", md: "25px", lg: "33px" },
-                        textTransform: "uppercase",
+                        fontSize: { xs: "14px", sm: "16px", md: "14px", lg: "18px" },
+                        lineHeight: { xs: "18px", md: "20px", lg: "26px" },
                         color: "#202020",
                         zIndex: 2,
-                        mb: { xs: 2.5, md: "27px", lg: "36px" },
+                        mb: { xs: 2.5, md: "20px", lg: "24px" },
                       }}
                     >
                       {t.role}
@@ -226,8 +252,8 @@ export default function TestimonialsSection() {
                         width: { xs: "100%", md: "420px", lg: "559px" },
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
-                        fontSize: { xs: "15px", sm: "16px", md: "16px", lg: "22px" },
-                        lineHeight: { xs: "24px", sm: "28px", md: "26px", lg: "34px" },
+                        fontSize: { xs: "14px", sm: "15px", md: "14px", lg: "17px" },
+                        lineHeight: { xs: "22px", sm: "24px", md: "22px", lg: "28px" },
                         color: "#060606",
                         zIndex: 2,
                         mb: 0,
@@ -249,19 +275,6 @@ export default function TestimonialsSection() {
                     }}
                   >
                     <Box sx={{ display: { xs: "inline-block", md: "none" }, position: "relative", width: "80%", maxWidth: "320px" }}>
-                       <Box
-                          sx={{
-                            position: "absolute",
-                            top: "10%",
-                            right: "-15px",
-                            width: "50%",
-                            height: "80%",
-                            borderRight: "8px solid #EE4823",
-                            borderTop: "8px solid #EE4823",
-                            borderBottom: "8px solid #EE4823",
-                            zIndex: 1,
-                          }}
-                        />
                         <Box
                           component="img"
                           src={t.image}
@@ -271,24 +284,12 @@ export default function TestimonialsSection() {
                             width: "100%",
                             height: "auto",
                             objectFit: "cover",
+                            objectPosition: "top center",
                             display: "block",
                             zIndex: 2,
                           }}
                         />
                     </Box>
-                    <Box
-                      sx={{
-                        display: { xs: "none", md: "block" },
-                        position: "absolute",
-                        width: { md: "188px", lg: "250px" },
-                        height: { md: "278px", lg: "370px" },
-                        left: { md: "600px", lg: "800px" },
-                        top: { md: "45px", lg: "60px" },
-                        border: { md: "12px solid #EE4823", lg: "16px solid #EE4823" },
-                        boxSizing: "border-box",
-                        zIndex: 1,
-                      }}
-                    />
                     <Box
                       component="img"
                       src={t.image}
@@ -301,7 +302,9 @@ export default function TestimonialsSection() {
                         left: { md: "515px", lg: "687px" },
                         top: { md: "17px", lg: "22px" },
                         objectFit: "cover",
+                        objectPosition: "top center",
                         borderRadius: "0px",
+                        boxSizing: "border-box",
                         zIndex: 2,
                       }}
                     />

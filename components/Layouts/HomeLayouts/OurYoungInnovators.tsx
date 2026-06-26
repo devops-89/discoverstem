@@ -10,8 +10,8 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
 
 const PlayIcon = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
@@ -21,6 +21,8 @@ const PlayIcon = () => (
 );
 
 export default function OurYoungInnovators() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  
   return (
     <Container
       maxWidth={false}
@@ -133,87 +135,106 @@ export default function OurYoungInnovators() {
           background: "#111",
         }}
       >
-        <Box
-          component="img"
-          src="/Images/Home/YoungInnovators.png"
-          alt="Watch how we make it work"
-          sx={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: 0.75,
-          }}
-        />
+        {!isPlaying ? (
+          <>
+            <Box
+              component="img"
+              src="/Images/Home/YoungInnovators.png"
+              alt="Watch how we make it work"
+              sx={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                opacity: 0.75,
+              }}
+            />
 
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15))",
-          }}
-        />
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15))",
+              }}
+            />
 
-       <Box
-  sx={{
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
 
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
 
-    flexDirection: { xs: "column", sm: "row" },
-    gap: { xs: 2, md: 3 },
+                flexDirection: { xs: "column", sm: "row" },
+                gap: { xs: 2, md: 3 },
 
-    width: "100%",
-    maxWidth: "500px",
-  }}
->
-          <IconButton
-            sx={{
-              width: { xs: 50, md: 72 },
-              height: { xs: 50, md: 72 },
-              bgcolor: "rgba(255,255,255,0.18)",
-              border: "2px solid rgba(255,255,255,0.7)",
-              color: "#fff",
-              "&:hover": { bgcolor: "rgba(255,255,255,0.28)" },
-            }}
-          >
-            <PlayIcon />
-          </IconButton>
+                width: "100%",
+                maxWidth: "500px",
+              }}
+            >
+              <IconButton
+                onClick={() => setIsPlaying(true)}
+                sx={{
+                  width: { xs: 50, md: 72 },
+                  height: { xs: 50, md: 72 },
+                  bgcolor: "rgba(255,255,255,0.18)",
+                  border: "2px solid rgba(255,255,255,0.7)",
+                  color: "#fff",
+                  "&:hover": { bgcolor: "rgba(255,255,255,0.28)" },
+                }}
+              >
+                <PlayIcon />
+              </IconButton>
 
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: { xs: "center", sm: "flex-start" },
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#fff",
+                    fontWeight: 600,
+                    fontSize: { xs: "18px", md: "24px" },
+                  }}
+                >
+                  Watch
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "rgba(255,255,255,0.85)",
+                    fontSize: { xs: "14px", md: "16px" },
+                  }}
+                >
+                  That&apos;s how we make it work?
+                </Typography>
+              </Box>
+            </Box>
+          </>
+        ) : (
           <Box
+            component="video"
+            src="https://discoverstem.info/wp-content/uploads/2025/11/videoplayback.mp4"
+            autoPlay
+            controls
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: { xs: "center", sm: "flex-start" },
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
-          >
-            <Typography
-              sx={{
-                color: "#fff",
-                fontWeight: 600,
-                fontSize: { xs: "18px", md: "24px" },
-              }}
-            >
-              Watch
-            </Typography>
-
-            <Typography
-              sx={{
-                color: "rgba(255,255,255,0.85)",
-                fontSize: { xs: "14px", md: "16px" },
-              }}
-            >
-              That&apos;s how we make it work?
-            </Typography>
-          </Box>
-        </Box>
+          />
+        )}
       </Box>
     </Container>
   );

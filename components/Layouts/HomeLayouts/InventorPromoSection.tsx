@@ -13,31 +13,31 @@ export default function InventorPromoSection() {
         "How many STEM programs have you heard of that can transform your child into\nan inventor?",
       description:
         "600+ Kids aged 6-18 years from DiscoverSTEM have filed patents for their innovations.\n314 kids got their patents granted in the last two years!",
-      image: "/Images/Home/StemPrograms.png",
-      cta: "Imagine your child innovating solutions to\nsome of the world’s biggest problems…",
+      image: "/Images/Home/Image1.jpg",
+      cta: "Imagine your child innovating solutions to\nsome of the world’s biggest problems",
     },
     {
       title:
         "How many STEM programs have you heard of that directly impact selection at top universities?",
       description:
         "DiscoverSTEM students are regularly accepted in top universities like Harvard, Stanford, Princeton, Duke,UC Berkeley,Rice University, Cornell & MIT among several others.\n\nImagine your child being in the elite list of the top 0.2% of the world population by innovating patentable solutions",
-      image: "/Images/Home/StemPrograms.png",
-      cta: "See our student success stories...",
+      image: "/Images/Home/Image3.jpg",
+      cta: "See our student success stories",
     },
     {
       title: "Are you ready to turn your child into\na prodigy?",
       description:
         "90+ Kids from DiscoverSTEM have won International Innovation Competitions, 3 listed among ’25 under 25 Most Innovative Kids’ in their region.\nImagine your child impacting billions by their futuristic innovations.",
-      image: "/Images/Home/StemPrograms.png",
-      cta: "Learn more about our mentorship program…",
+      image: "/Images/Home/Image2.jpg",
+      cta: "Learn more about our mentorship program",
     },
     {
       title:
         "How many STEM programs have you heard of whose students get featured\nin leading media publications?",
       description:
         "100+ DiscoverSTEM Students have featured on National & International Media for their innovations & achievements.\nImagine your child being acknowledged by the entire world for their innovative solutions.",
-      image: "/Images/Home/StemPrograms.png",
-      cta: "Start your innovation journey today…",
+      image: "/Images/Home/Image4.jpg",
+      cta: "Start your innovation journey today",
     },
   ];
 
@@ -213,15 +213,12 @@ export default function InventorPromoSection() {
                   src={slide.image}
                   alt="Student Innovator"
                   sx={{
-                    position: { xs: "relative", md: "absolute" },
-                    bottom: 0,
-                    right: { xs: 0, md: -20 },
-                    height: { xs: 220, sm: 300, md: "100%" },
-                    width: { xs: "100%", md: "auto" },
-                    maxWidth: { xs: "100%", md: "130%" },
-                    objectFit: "contain",
-                    objectPosition: "bottom center",
-                    display: "block",
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
                   }}
                 />
               </Box>
