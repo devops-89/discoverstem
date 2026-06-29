@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { testimonial } from "@/assets/Generic-data";
 
 const testimonialSlides = [
   {
@@ -54,7 +53,7 @@ export default function TestimonialsSection() {
         px: { xs: 2, sm: 3, lg: 0 },
       }}
     >
-      
+     
       <Stack 
         direction="row" 
         spacing={{ xs: 1.5, lg: 2.5 }} 
@@ -96,7 +95,7 @@ export default function TestimonialsSection() {
             width: "100%", 
             overflow: "hidden",
             height: "auto", 
-            pb: { xs: "50px", md: "135px", lg: "135px" } 
+            pb: { xs: "40px", md: "135px", lg: "135px" }
           },
           "& .swiper-pagination": { 
             bottom: { xs: "10px !important", md: "15px !important", lg: "15px !important" } 
@@ -119,13 +118,14 @@ export default function TestimonialsSection() {
           pagination={{ clickable: true }}
           loop
           autoplay={{ delay: 6000, disableOnInteraction: false }}
+          autoHeight={true} 
           onSwiper={(swiper) => { swiperRef.current = swiper; }}
         >
           {testimonialSlides.map((t, i) => (
             <SwiperSlide key={i}>
               <Box 
                 sx={{ 
-                  height: "100%", 
+                  height: { xs: "auto", md: "100%" }, 
                   display: "flex", 
                   position: "relative",
                   flexDirection: "row" 
@@ -167,7 +167,7 @@ export default function TestimonialsSection() {
                   
                   <Box
                     sx={{
-                      position: { xs: "relative", md: "static" }, 
+                      position: { xs: "relative", md: "static" },
                       px: { xs: 3, sm: 5, md: 0 }, 
                       py: { xs: 4, sm: 5, md: 0 }, 
                       display: "flex",
@@ -175,12 +175,11 @@ export default function TestimonialsSection() {
                       justifyContent: "center",
                       height: { md: "100%", lg: "100%" }, 
                       width: { xs: "100%", md: "auto" },
-                      maxWidth: { xs: "100%", md: "430px", lg: "570px" }, 
                       pl: { md: "55px", lg: "73px" },
                     }}
                   >
                    
-                    
+                   
                     <Box
                       sx={{
                         display: { xs: "block", md: "none" },
@@ -227,6 +226,7 @@ export default function TestimonialsSection() {
                         color: "#202020",
                         zIndex: 2,
                         mb: { xs: 0.5, md: "4px", lg: "5px" },
+                        width: { xs: "100%", md: "420px", lg: "559px" },
                       }}
                     >
                       {t.name}
@@ -237,11 +237,13 @@ export default function TestimonialsSection() {
                       sx={{
                         fontFamily: "'Work Sans', sans-serif",
                         fontWeight: 500,
-                        fontSize: { xs: "14px", sm: "16px", md: "14px", lg: "18px" },
-                        lineHeight: { xs: "18px", md: "20px", lg: "26px" },
+                        fontSize: { xs: "14px", sm: "16px", md: "21px", lg: "28px" },
+                        lineHeight: { xs: "18px", md: "25px", lg: "33px" },
+                        textTransform: "uppercase",
                         color: "#202020",
                         zIndex: 2,
-                        mb: { xs: 2.5, md: "20px", lg: "24px" },
+                        mb: { xs: 2.5, md: "27px", lg: "36px" },
+                        width: { xs: "100%", md: "420px", lg: "559px" }, 
                       }}
                     >
                       {t.role}
@@ -252,8 +254,8 @@ export default function TestimonialsSection() {
                         width: { xs: "100%", md: "420px", lg: "559px" },
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 400,
-                        fontSize: { xs: "14px", sm: "15px", md: "14px", lg: "17px" },
-                        lineHeight: { xs: "22px", sm: "24px", md: "22px", lg: "28px" },
+                        fontSize: { xs: "15px", sm: "16px", md: "16px", lg: "22px" },
+                        lineHeight: { xs: "24px", sm: "28px", md: "26px", lg: "34px" },
                         color: "#060606",
                         zIndex: 2,
                         mb: 0,
@@ -264,17 +266,30 @@ export default function TestimonialsSection() {
                   </Box>
                   <Box
                     sx={{
-                      position: { xs: "relative", md: "static" }, // 🔥 FIX: Static anchors the image correctly!
+                      position: { xs: "relative", md: "static" },
                       width: { xs: "100%", md: "auto", lg: "auto" },
                       height: { xs: "auto", lg: "100%" },
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       mt: { xs: 3, sm: 4, md: 0 },
-                      pb: { xs: 4, md: 0 },
+                      pb: { xs: 0, md: 0 }, 
                     }}
                   >
                     <Box sx={{ display: { xs: "inline-block", md: "none" }, position: "relative", width: "80%", maxWidth: "320px" }}>
+                       <Box
+                          sx={{
+                            position: "absolute",
+                            top: "10%",
+                            right: "-15px",
+                            width: "50%",
+                            height: "80%",
+                            borderRight: "8px solid #EE4823",
+                            borderTop: "8px solid #EE4823",
+                            borderBottom: "8px solid #EE4823",
+                            zIndex: 1,
+                          }}
+                        />
                         <Box
                           component="img"
                           src={t.image}
@@ -282,14 +297,26 @@ export default function TestimonialsSection() {
                           sx={{
                             position: "relative",
                             width: "100%",
-                            height: "auto",
+                            aspectRatio: "340 / 446", 
                             objectFit: "cover",
-                            objectPosition: "top center",
                             display: "block",
                             zIndex: 2,
                           }}
                         />
                     </Box>
+                    <Box
+                      sx={{
+                        display: { xs: "none", md: "block" },
+                        position: "absolute",
+                        width: { md: "188px", lg: "250px" },
+                        height: { md: "278px", lg: "370px" },
+                        left: { md: "600px", lg: "800px" },
+                        top: { md: "45px", lg: "60px" },
+                        border: { md: "12px solid #EE4823", lg: "16px solid #EE4823" },
+                        boxSizing: "border-box",
+                        zIndex: 1,
+                      }}
+                    />
                     <Box
                       component="img"
                       src={t.image}
@@ -302,9 +329,7 @@ export default function TestimonialsSection() {
                         left: { md: "515px", lg: "687px" },
                         top: { md: "17px", lg: "22px" },
                         objectFit: "cover",
-                        objectPosition: "top center",
                         borderRadius: "0px",
-                        boxSizing: "border-box",
                         zIndex: 2,
                       }}
                     />
