@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Heromedia } from "@/assets/Generic-data";
 import Link from "next/link";
 import PrimaryButton from "@/components/Widgets/PrimaryButton";
@@ -112,8 +112,8 @@ export default function HeroSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.heading,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.articleHeading, sm: FONT_SIZE.sectionHeadingLarge, lg: FONT_SIZE.mainHeading },
+                  fontWeight: 600,
+                  fontSize: { xs: "32px", sm: "44px", lg: "64px" },
                   lineHeight: { xs: "40px", sm: "50px", lg: "62px" },
                   letterSpacing: "-0.03em",
                   color: "#FFFFFF",
@@ -127,8 +127,8 @@ export default function HeroSection() {
                 sx={{
                   mt: { xs: 2, lg: 3 },
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.leadLarge, lg: FONT_SIZE.cardHeading },
+                  fontWeight: 400,
+                  fontSize: { xs: "16px", sm: "20px", lg: "28px" },
                   lineHeight: { xs: "24px", sm: "30px", lg: "34px" },
                   letterSpacing: "-0.01em",
                   color: "rgba(255,255,255,0.85)",
@@ -181,13 +181,13 @@ export default function HeroSection() {
                       component="span"
                       sx={{
                         fontFamily: "'JUST Sans', sans-serif",
-                        fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+                        fontSize: { xs: "12px", md: "14px", lg: "16px" },
                         lineHeight: { xs: "18px", md: "20px", lg: "24px" },
                         letterSpacing: "-0.01em",
                         whiteSpace: "nowrap"
                       }}>
                       
-                        Request a <Box component="span" sx={{ fontWeight: FONT_WEIGHT.bold }}>Free Information Session</Box>
+                        Request a <Box component="span" sx={{ fontWeight: 700 }}>Free Information Session</Box>
                       </Typography>
 
                       <Box
@@ -204,7 +204,7 @@ export default function HeroSection() {
                       
                         <ArrowOutwardIcon
                         sx={{
-                          fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge, lg: FONT_SIZE.leadLarge },
+                          fontSize: { xs: "14px", md: "16px", lg: "20px" },
                           color: "#111827"
                         }} />
                       

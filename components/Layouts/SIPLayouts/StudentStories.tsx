@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { useState } from "react";
 import { studentsData } from "@/assets/Generic-data";
 
@@ -26,9 +26,9 @@ export default function StudentStories() {
             width: { xs: "100%", lg: "309px" },
             height: { xs: "auto", lg: "43px" },
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
+            fontWeight: 400,
             color: "#777777",
-            fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" },
             letterSpacing: "0.03em",
             lineHeight: { xs: "28px", sm: "32px", lg: "43px" }
           }}>
@@ -42,8 +42,8 @@ export default function StudentStories() {
           fontFamily: FONT_FAMILY.heading,
           width: { xs: "100%", lg: "546px" },
           height: { xs: "auto", lg: "62px" },
-          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+          fontWeight: 600,
           letterSpacing: "-0.03em",
           lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
           mb: { xs: 4, lg: 6 }
@@ -106,8 +106,8 @@ export default function StudentStories() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.leadLarge },
-                  fontWeight: FONT_WEIGHT.regular,
+                  fontSize: { xs: "14px", lg: "20px" },
+                  fontWeight: 400,
                   lineHeight: { xs: "22px", lg: "28px" },
                   letterSpacing: "-0.02em",
                   mr: { xs: 0.5, lg: 1 }
@@ -170,7 +170,7 @@ export default function StudentStories() {
             "&:hover": { bgcolor: "rgba(0,0,0,0.7)" }
           }}>
           
-           <CloseIcon sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} /> 
+           <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
         </IconButton>
         {selectedVideo &&
         <Box

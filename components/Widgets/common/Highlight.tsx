@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ImageContentSplitData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -38,8 +38,8 @@ export default function ImageContentSplitSection({
             sx={{
                textAlign: { xs: "center", md: "left" }, 
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+              fontWeight: 400,
+              fontSize: { xs: "16px", md: "18px", lg: "20px" },
               lineHeight: { xs: "28px", md: "32px", lg: "36px" },
               letterSpacing: "-0.03em",
               color: "#777777",
@@ -74,7 +74,6 @@ export default function ImageContentSplitSection({
         </Box>
       </Box>
 
-      {/* Bottom Section */}
       <Box
         sx={{
           display: "grid",
@@ -114,8 +113,8 @@ export default function ImageContentSplitSection({
             sx={{
                textAlign: { xs: "center", md: "left" }, 
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+              fontWeight: 400,
+              fontSize: { xs: "16px", md: "18px", lg: "20px" },
               lineHeight: { xs: "28px", md: "32px", lg: "36px" },
               letterSpacing: "-0.03em",
               color: "#777777",

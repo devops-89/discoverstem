@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { AccordionSectionData } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Container, Typography } from "@mui/material";
@@ -35,8 +35,8 @@ export default function AccordionSection({
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.subSectionHeadingLarge, md: FONT_SIZE.sectionHeadingLarge, lg: FONT_SIZE.pageHeadingSmall },
+          fontWeight: 600,
+          fontSize: { xs: "28px", sm: "38px", md: "44px", lg: "48px" },
           lineHeight: { xs: "35px", sm: "52px", md: "60px", lg: "65px" },
           textAlign: "center",
           color: "#101010",
@@ -89,10 +89,9 @@ export default function AccordionSection({
                     flexShrink: 0
                   }}>
                   
-                  {/* 🔥 FIX: Render a single persistent icon and smoothly rotate it instead of unmounting it! */}
                   <KeyboardArrowRightIcon
                     sx={{
-                      fontSize: FONT_SIZE.titleLarge,
+                      fontSize: "24px",
                       color: "#000000",
                       transition: "transform 0.3s ease",
                       transform: isOpen ? "rotate(90deg)" : "rotate(0deg)"
@@ -104,10 +103,9 @@ export default function AccordionSection({
                   sx={{
                     flex: 1,
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    // 🔥 FIX: Scaled question font size safely down for iPads.
-                    fontSize: { xs: FONT_SIZE.body, md: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
-                    lineHeight: LINE_HEIGHT.mediumLarge,
+                    fontWeight: 400,
+                    fontSize: { xs: "15px", md: "16px", lg: "18px" },
+                    lineHeight: "26px",
                     letterSpacing: "-0.03em",
                     color: "#000000"
                   }}>
@@ -130,10 +128,9 @@ export default function AccordionSection({
                   component="div"
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    // 🔥 FIX: Scaled answer font size safely down for iPads.
-                    fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
-                    lineHeight: LINE_HEIGHT.mediumLarge,
+                    fontWeight: 400,
+                    fontSize: { xs: "14px", md: "15px", lg: "16px" },
+                    lineHeight: "26px",
                     letterSpacing: "-0.03em",
                     color: "#777777",
                     mb:
@@ -142,7 +139,7 @@ export default function AccordionSection({
                     1,
 
                     "& strong": {
-                      fontWeight: FONT_WEIGHT.semiBold,
+                      fontWeight: 600,
                       color: "#000000"
                     }
                   }}

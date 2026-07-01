@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaNewsItem } from "@/utils/Types";
 import { Box, Typography, Modal, IconButton } from "@mui/material";
 import Link from "next/link";
@@ -68,7 +68,7 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
             }
           }}>
           
-            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: FONT_SIZE.sectionHeadingSmall }} />
+            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: "40px" }} />
           </Box>
         }
       </Box>
@@ -79,9 +79,9 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
         sx={{
           display: "block",
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontWeight: 600,
 
-          fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+          fontSize: { xs: "14px", lg: "16px" },
           lineHeight: { xs: "20px", lg: "22px" },
           letterSpacing: "-0.02em",
           color: "#111827",
@@ -94,7 +94,7 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
 
       <Box sx={{ display: "flex", alignItems: "center", gap: "9px" }}>
       
-        <Typography sx={{ fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#474A55" }}>
+        <Typography sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#474A55" }}>
           {item.publishedDate}
         </Typography>
       </Box>
@@ -134,7 +134,7 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
               "&:hover": { backgroundColor: "#f5f5f5" }
             }}>
             
-            <CloseIcon sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} />
+            <CloseIcon sx={{ fontSize: "20px", color: "red" }} />
           </IconButton>
 
           <Box

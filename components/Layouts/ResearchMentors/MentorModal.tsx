@@ -1,4 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Dialog, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
@@ -54,7 +55,7 @@ export default function MentorModal({ open, onClose, data }: Props) {
           "&:hover": { bgcolor: "#f5f5f5" }
         }}>
         
-        <CloseIcon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.titleLarge, color: "red" } }} />    
+        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px", color: "red" } }} />    
       </IconButton>
       <Box sx={{ p: { xs: 3, lg: "30px" } }}>
         <Box
@@ -72,13 +73,13 @@ export default function MentorModal({ open, onClose, data }: Props) {
           
           <Image src={data.image} alt={data.name} fill sizes="100vw" style={{ objectFit: "cover" }} />
         </Box>
-        <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.regular, fontSize: { xs: FONT_SIZE.caption, lg: FONT_SIZE.bodyLarge }, lineHeight: LINE_HEIGHT.extraSmall, letterSpacing: "2.4px", textTransform: "uppercase", color: "#F9A51E", mb: { xs: 1.5, lg: 2 } }}>
+        <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 400, fontSize: { xs: "12px", lg: "16px" }, lineHeight: "16px", letterSpacing: "2.4px", textTransform: "uppercase", color: "#F9A51E", mb: { xs: 1.5, lg: 2 } }}>
           {data.category}
         </Typography>
-        <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.semiBold, fontSize: { xs: FONT_SIZE.title, lg: "25.6px" }, lineHeight: { xs: "28px", lg: "29.4px" }, letterSpacing: "-0.64px", color: "#000000", mb: 1 }}>
+        <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 600, fontSize: { xs: "22px", lg: "25.6px" }, lineHeight: { xs: "28px", lg: "29.4px" }, letterSpacing: "-0.64px", color: "#000000", mb: 1 }}>
           {data.name}
         </Typography>
-        <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.regular, fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall }, lineHeight: LINE_HEIGHT.small, color: "rgba(0,0,0,0.75)", mb: { xs: 2.5, lg: 3 } }}>
+        <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 400, fontSize: { xs: "13px", lg: "14px" }, lineHeight: "20px", color: "rgba(0,0,0,0.75)", mb: { xs: 2.5, lg: 3 } }}>
           {data.degree}{data.org ? ` · ${data.org}` : ""}
         </Typography>
         {descriptions.map((paragraph, index) =>
@@ -86,9 +87,9 @@ export default function MentorModal({ open, onClose, data }: Props) {
           key={index}
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-            lineHeight: { xs: "22px", lg: LINE_HEIGHT.small },
+            fontWeight: 400,
+            fontSize: { xs: "14px", lg: "16px" },
+            lineHeight: { xs: "22px", lg: "20px" },
             letterSpacing: "-0.03em",
             color: "#777777",
             mb: index === descriptions.length - 1 ? 0 : { xs: 1.5, lg: 1.2 }

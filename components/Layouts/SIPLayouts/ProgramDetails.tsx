@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { programDetailsData } from "@/assets/Generic-data";
 
 import { Box, Container, Grid, Typography } from "@mui/material";
@@ -22,13 +22,12 @@ export default function ProgramDetails() {
           width: { xs: "100%", lg: "358px" },
           height: { xs: "auto", lg: "32px" },
           fontFamily: FONT_FAMILY.heading,
-          fontSize: { xs: FONT_SIZE.cardHeadingSmall, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+          fontSize: { xs: "26px", sm: "36px", lg: "48px" },
           lineHeight: { xs: "36px", sm: "46px", lg: "normal" },
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontWeight: 600,
           letterSpacing: "-0.03em",
           color: "#111827",
           mb: { xs: 2, lg: 4 },
-          // 🔥 FIX: Centered main heading on small screens
           textAlign: { xs: "center", md: "left" }
         }}>
         
@@ -41,15 +40,14 @@ export default function ProgramDetails() {
           height: { xs: "auto", lg: "144px" },
           fontFamily: FONT_FAMILY.body,
           mt: { xs: 2, lg: 8 },
-          fontWeight: FONT_WEIGHT.regular,
+          fontWeight: 400,
           maxWidth: "1161px",
-          fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+          fontSize: { xs: "16px", sm: "18px", lg: "22px" },
           lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
           letterSpacing: "-0.03em",
           color: "#777777",
           whiteSpace: "pre-line",
           mb: { xs: 6, lg: 10 },
-          // 🔥 FIX: Centered main description on small screens
           textAlign: { xs: "center", md: "left" }
         }}>
         
@@ -82,7 +80,7 @@ export default function ProgramDetails() {
               
                 </Box>
 
-                {/* Title */}
+               
                 <Typography
               sx={{
                 width: { xs: "100%", lg: "151px" },
@@ -91,8 +89,8 @@ export default function ProgramDetails() {
                 lineHeight: { xs: "28px", lg: "22px" },
                 letterSpacing: "-0.03em",
                 mt: { xs: 3, lg: 2 },
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.title },
+                fontWeight: 600,
+                fontSize: { xs: "20px", lg: "22px" },
                 textAlign: "center",
                 color: "#111827",
                 mx: "auto"
@@ -101,17 +99,17 @@ export default function ProgramDetails() {
                   {card.title}
                 </Typography>
 
-                {/* Description */}
+               
                 <Typography
               sx={{
                 width: { xs: "100%", lg: "364px" },
                 height: { xs: "auto", lg: "157px" },
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
+                fontWeight: 400,
                 lineHeight: { xs: "28px", lg: "36px" },
                 letterSpacing: "-0.03em",
                 mt: { xs: 2, lg: 4 },
-                fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                fontSize: { xs: "16px", lg: "18px" },
                 color: "#777777",
                 // 🔥 FIX: Centered card description on small screens
                 textAlign: { xs: "center", md: "left" }
@@ -125,17 +123,16 @@ export default function ProgramDetails() {
                 width: { xs: "100%", lg: "364px" },
                 height: { xs: "auto", lg: "157px" },
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
+                fontWeight: 400,
                 lineHeight: { xs: "28px", lg: "36px" },
                 letterSpacing: "-0.03em",
                 mt: 1,
-                fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                fontSize: { xs: "16px", lg: "18px" },
                 color: "#777777",
-                // 🔥 FIX: Centered card text on small screens
                 textAlign: { xs: "center", md: "left" }
               }}>
               
-                  <Box component="span" sx={{ color: "#000", fontWeight: FONT_WEIGHT.semiBold }}>
+                  <Box component="span" sx={{ color: "#000", fontWeight: 600 }}>
                     Outcome:{" "}
                   </Box>
                   {card.outcome}
@@ -147,11 +144,11 @@ export default function ProgramDetails() {
                 width: { xs: "100%", lg: "363px" },
                 height: { xs: "auto", lg: "44px" },
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.bold,
+                fontWeight: 700,
                 lineHeight: { xs: "26px", lg: "31px" },
                 letterSpacing: "-0.03em",
                 mt: { xs: 2, lg: 4 },
-                fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                fontSize: { xs: "16px", lg: "18px" },
                 color: "#7B53A1",
                 // 🔥 FIX: Centered card footer on small screens
                 textAlign: { xs: "center", md: "left" }

@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { heroImage } from "@/assets/Generic-data";
 
 import { Box, Grid, Typography } from "@mui/material";
@@ -143,11 +143,11 @@ export default function HeroSection() {
                       fontFamily: FONT_FAMILY.heading,
                       color: "#fff",
                       fontSize: {
-                        xs: FONT_SIZE.cardHeading,
-                        sm: FONT_SIZE.articleHeadingLarge,
-                        md: FONT_SIZE.articleHeadingLarge,
-                        lg: FONT_SIZE.sectionHeading,
-                        xl: FONT_SIZE.pageHeadingSmall
+                        xs: "28px",
+                        sm: "34px",
+                        md: "34px",
+                        lg: "42px",
+                        xl: "48px"
                       },
                       lineHeight: {
                         xs: "36px",
@@ -156,7 +156,7 @@ export default function HeroSection() {
                         lg: "50px",
                         xl: "57px"
                       },
-                      fontWeight: FONT_WEIGHT.medium,
+                      fontWeight: 500,
                       letterSpacing: "-0.03em",
                       wordBreak: "normal",
                       overflowWrap: "break-word"
@@ -172,11 +172,11 @@ export default function HeroSection() {
                       color: "#f0f0f0",
                       fontFamily: FONT_FAMILY.body,
                       fontSize: {
-                        xs: FONT_SIZE.body,
-                        sm: FONT_SIZE.bodyLarge,
-                        md: FONT_SIZE.bodyLarge,
-                        lg: FONT_SIZE.bodyXLarge,
-                        xl: FONT_SIZE.lead
+                        xs: "15px",
+                        sm: "16px",
+                        md: "16px",
+                        lg: "17px",
+                        xl: "18px"
                       },
                       lineHeight: {
                         xs: "24px",

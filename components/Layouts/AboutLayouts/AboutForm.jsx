@@ -69,7 +69,7 @@ const AboutForm = () => {
         component="form"
         onSubmit={formik.handleSubmit}
         sx={{
-          backgroundColor: "#FAF5FF", // Updated from Figma
+          backgroundColor: "#FAF5FF", 
           borderRadius: { xs: "16px", md: "18px" },
           px: { xs: 2, sm: 4, md: 6, lg: 10 },
           py: { xs: 4, md: 6, lg: "50px" },
@@ -174,7 +174,7 @@ const AboutForm = () => {
             disabled={formik.isSubmitting}
             showIcon={false}
             sx={{
-              // EXACT Figma Auto Layout
+            
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
@@ -198,7 +198,7 @@ const AboutForm = () => {
                 fontSize: FONT_SIZE.bodyLarge,
                 lineHeight: LINE_HEIGHT.medium,
                 letterSpacing: "-0.01em",
-                whiteSpace: "nowrap" // Forces text into exactly one line!
+                whiteSpace: "nowrap" 
               }}>
               
               {formik.isSubmitting ? "Sending..." : "Send Message Here"}
@@ -212,7 +212,7 @@ const AboutForm = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                flexShrink: 0 // Prevents the circle from squishing
+                flexShrink: 0 
               }}>
               
               <ArrowOutwardIcon

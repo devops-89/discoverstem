@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import {
   admissionFilters,
   admissionStudentsData } from
@@ -76,8 +76,8 @@ export default function AdmissionSuccessSection() {
         sx={{
             textAlign: { xs: "center", md: "left" }, 
           fontFamily: FONT_FAMILY.accent,
-          fontWeight: FONT_WEIGHT.bold,
-          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.articleHeading, md: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+          fontWeight: 700,
+          fontSize: { xs: "28px", sm: "32px", md: "36px", lg: "48px" },
           lineHeight: { xs: "36px", sm: "40px", md: "44px", lg: "58px" },
           color: "#171717",
           mb: { xs: 4, md: 6 }
@@ -128,8 +128,8 @@ export default function AdmissionSuccessSection() {
             sx={{
               background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
               color: batchFilter === item ? "#fff" : "#171717",
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.footnote, md: FONT_SIZE.bodySmall },
+              fontWeight: 600,
+              fontSize: { xs: "12px", sm: "11px", md: "14px" },
               height: { xs: "28px", md: "32px" },
               flexShrink: 0
             }} />
@@ -157,8 +157,8 @@ export default function AdmissionSuccessSection() {
             sx={{
               background: programFilter === item ? "#000" : "#F5F5F5",
               color: programFilter === item ? "#fff" : "#171717",
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.bodySmall },
+              fontWeight: 600,
+              fontSize: { xs: "12px", md: "14px" },
               height: { xs: "28px", md: "32px" },
               flexShrink: 0
             }} />
@@ -179,16 +179,16 @@ export default function AdmissionSuccessSection() {
             flexShrink: 0,
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
-              fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge }
+              fontSize: { xs: "13px", md: "16px" }
             },
             "& .MuiInputBase-input::placeholder": {
-              fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge }
+              fontSize: { xs: "13px", md: "16px" }
             }
           }} />
         
       </Box>
 
-      <Typography sx={{ fontSize: FONT_SIZE.bodySmall, color: "#737373", mb: 5 }}>
+      <Typography sx={{ fontSize: "14px", color: "#737373", mb: 5 }}>
         Showing <strong>{filteredStudents.length}</strong> of{" "}
         {admissionStudentsData.length} students
       </Typography>
@@ -247,8 +247,8 @@ export default function AdmissionSuccessSection() {
                     bgcolor: "rgba(255,255,255,0.95)",
                     color: programColor,
                     fontFamily: FONT_FAMILY.accent,
-                    fontWeight: FONT_WEIGHT.bold,
-                    fontSize: FONT_SIZE.caption,
+                    fontWeight: 700,
+                    fontSize: "12px",
                     borderRadius: "999px"
                   }} />
                 
@@ -267,8 +267,8 @@ export default function AdmissionSuccessSection() {
                     alignItems: "center",
                     justifyContent: "center",
                     fontFamily: FONT_FAMILY.accent,
-                    fontWeight: FONT_WEIGHT.bold,
-                    fontSize: FONT_SIZE.titleLarge,
+                    fontWeight: 700,
+                    fontSize: "24px",
                     color: programColor,
                     boxShadow:
                     "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)"
@@ -290,8 +290,8 @@ export default function AdmissionSuccessSection() {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.accent,
-                    fontWeight: FONT_WEIGHT.semiBold,
-                    fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead },
+                    fontWeight: 600,
+                    fontSize: { xs: "16px", md: "18px" },
                     lineHeight: { xs: "22px", md: "27px" },
                     letterSpacing: "-0.45px",
                     color: "#171717"
@@ -303,9 +303,9 @@ export default function AdmissionSuccessSection() {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.accent,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.caption },
-                    lineHeight: LINE_HEIGHT.extraSmall,
+                    fontWeight: 400,
+                    fontSize: { xs: "11px", md: "12px" },
+                    lineHeight: "16px",
                     letterSpacing: "0.6px",
                     textTransform: "uppercase",
                     color: "#737373",
@@ -328,9 +328,9 @@ export default function AdmissionSuccessSection() {
                   <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.accent,
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.caption },
-                      lineHeight: LINE_HEIGHT.extraSmall,
+                      fontWeight: 400,
+                      fontSize: { xs: "11px", md: "12px" },
+                      lineHeight: "16px",
                       letterSpacing: "0.6px",
                       textTransform: "uppercase",
                       color: "#737373",
@@ -361,9 +361,9 @@ export default function AdmissionSuccessSection() {
                     <Typography
                       sx={{
                         fontFamily: FONT_FAMILY.accent,
-                        fontWeight: FONT_WEIGHT.regular,
-                        fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodySmall },
-                        lineHeight: LINE_HEIGHT.small,
+                        fontWeight: 400,
+                        fontSize: { xs: "13px", md: "14px" },
+                        lineHeight: "20px",
                         color: "#262626"
                       }}>
                       
@@ -403,9 +403,9 @@ export default function AdmissionSuccessSection() {
               width: { xs: "28px", sm: "40px" },
               height: { xs: "28px", sm: "40px" },
               minWidth: { xs: "28px", sm: "40px" },
-              fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall },
+              fontSize: { xs: "12px", sm: "14px" },
               borderRadius: "50%",
-              fontWeight: FONT_WEIGHT.medium,
+              fontWeight: 500,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",

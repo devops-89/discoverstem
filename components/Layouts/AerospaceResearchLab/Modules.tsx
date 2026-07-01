@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ResearchModule, ResearchModulesSectionData } from "@/utils/Types";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -68,9 +68,9 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
           sx={{
               textAlign: { xs: "center", sm: "left" },
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.articleHeading, lg: FONT_SIZE.pageHeadingSmall },
-            lineHeight: { xs: LINE_HEIGHT.extraLarge, sm: "40px", lg: LINE_HEIGHT.huge },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "32px", lg: "48px" },
+            lineHeight: { xs: "32px", sm: "40px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
             alignSelf: "flex-start"
@@ -82,7 +82,6 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
           display: "flex", 
           gap: "12px", 
           alignSelf: { xs: "flex-end", sm: "auto" },
-          // 🔥 FIX: Moves the arrows down exactly 40px on 1024px and 1440px screens!
           mt: { sm: "50px" } 
         }}>
           <IconButton onClick={() => setPage((prev) => prev === 0 ? totalPages - 1 : prev - 1)}
@@ -133,10 +132,10 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
                 <Icon sx={{ color: "#fff", fontSize: { xs: 20, lg: 28 } }} />
               </Box>
               <Box sx={{ flex: 1 }}>
-                <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.semiBold, fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead }, lineHeight: { xs: LINE_HEIGHT.medium, lg: "25px" }, letterSpacing: "-0.18px", color: "#1A1A1A", mb: "8px" }}>
+                <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 600, fontSize: { xs: "16px", lg: "18px" }, lineHeight: { xs: "24px", lg: "25px" }, letterSpacing: "-0.18px", color: "#1A1A1A", mb: "8px" }}>
                   {item.title}
                 </Typography>
-                <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.regular, fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall }, lineHeight: { xs: LINE_HEIGHT.small, lg: "22px" }, color: "#676767", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 400, fontSize: { xs: "13px", lg: "14px" }, lineHeight: { xs: "20px", lg: "22px" }, color: "#676767", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                   {item.description}
                 </Typography>
               </Box>
@@ -150,8 +149,8 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
                   borderRadius: "999px",
                   color: "#EE4823",
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.medium,
-                  fontSize: { xs: FONT_SIZE.footnote, lg: FONT_SIZE.small },
+                  fontWeight: 500,
+                  fontSize: { xs: "11px", lg: "13px" },
                   letterSpacing: "0.52px",
                   textTransform: "uppercase",
                   "&:hover": { bgcolor: "#FFEBE6" }
@@ -175,7 +174,7 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
       {data.curriculumLink &&
       <Box sx={{ mt: { xs: "24px", lg: "30px" }, display: "flex", justifyContent: "center" }}>
           <Button href={data.curriculumLink} component="a" target="_blank"
-        sx={{ width: { xs: "100%", sm: "264px" }, height: "48px", bgcolor: "#7B53A1", borderRadius: "50px", color: "#FFFFFF", fontFamily: FONT_FAMILY.heading, fontWeight: FONT_WEIGHT.regular, fontSize: FONT_SIZE.lead, lineHeight: LINE_HEIGHT.small, textTransform: "none", "&:hover": { bgcolor: "#7B53A1" }, display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+        sx={{ width: { xs: "100%", sm: "264px" }, height: "48px", bgcolor: "#7B53A1", borderRadius: "50px", color: "#FFFFFF", fontFamily: FONT_FAMILY.heading, fontWeight: 400, fontSize: "18px", lineHeight: "20px", textTransform: "none", "&:hover": { bgcolor: "#7B53A1" }, display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
             {data.buttonText}
           </Button>
         </Box>
@@ -194,14 +193,14 @@ export default function ResearchModulesSection({ data }: ResearchModulesSectionP
       }}>
         <IconButton onClick={() => setModalOpen(false)}
         sx={{ position: "absolute", top: { xs: 8, lg: 12 }, right: { xs: 8, lg: 12 }, zIndex: 1, bgcolor: "#fff", boxShadow: "0px 2px 8px rgba(0,0,0,0.1)", "&:hover": { bgcolor: "#f5f5f5" } }}>
-          <CloseIcon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.titleLarge }, color: "red" }} />
+          <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" }, color: "red" }} />
         </IconButton>
         {selectedModule &&
         <Box>
-            <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.semiBold, fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.titleLarge }, lineHeight: { xs: "28px", lg: LINE_HEIGHT.extraLarge }, color: "#1A1A1A", mb: "16px", pr: "40px" }}>
+            <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 600, fontSize: { xs: "20px", lg: "24px" }, lineHeight: { xs: "28px", lg: "32px" }, color: "#1A1A1A", mb: "16px", pr: "40px" }}>
               {selectedModule.title}
             </Typography>
-            <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: FONT_WEIGHT.regular, fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, lineHeight: { xs: LINE_HEIGHT.medium, lg: "28px" }, color: "#676767", whiteSpace: "pre-line" }}>
+            <Typography sx={{ fontFamily: FONT_FAMILY.body, fontWeight: 400, fontSize: { xs: "14px", lg: "16px" }, lineHeight: { xs: "24px", lg: "28px" }, color: "#676767", whiteSpace: "pre-line" }}>
               {selectedModule.description}
             </Typography>
           </Box>

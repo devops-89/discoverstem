@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaNewsItem } from "@/utils/Types";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { Box, Typography, Modal, IconButton } from "@mui/material";
@@ -81,7 +81,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             }
           }}>
           
-            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: { xs: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.heroHeading } }} />
+            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: { xs: "40px", lg: "60px" } }} />
           </Box>
         }
       </Box>
@@ -98,9 +98,9 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-              lineHeight: LINE_HEIGHT.medium,
+              fontWeight: 600,
+              fontSize: { xs: "13px", md: "14px", lg: "16px" },
+              lineHeight: "24px",
               color: "#7B53A1",
               textTransform: "uppercase"
             }}>
@@ -111,8 +111,8 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: FONT_SIZE.bodySmall,
+              fontWeight: 400,
+              fontSize: "14px",
               lineHeight: "21px",
               color: "rgba(0,0,0,0.5)"
             }}>
@@ -129,9 +129,9 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             width: "100%",
             maxWidth: "600px",
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.bold,
-            fontSize: { xs: FONT_SIZE.lead, md: FONT_SIZE.cardHeadingSmall, lg: FONT_SIZE.articleHeadingSmall },
-            lineHeight: { xs: LINE_HEIGHT.medium, md: "34px", lg: "40px" },
+            fontWeight: 700,
+            fontSize: { xs: "18px", md: "26px", lg: "31px" },
+            lineHeight: { xs: "24px", md: "34px", lg: "40px" },
             letterSpacing: "-0.02em",
             color: "#111827",
             textDecoration: "none",
@@ -146,9 +146,9 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
             width: "100%",
             maxWidth: "600px",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.body },
-            lineHeight: { xs: LINE_HEIGHT.medium, lg: "28px" },
+            fontWeight: 400,
+            fontSize: { xs: "14px", lg: "15px" },
+            lineHeight: { xs: "24px", lg: "28px" },
             color: "#474A55",
             mb: { xs: 3, lg: "25px" },
 
@@ -166,7 +166,6 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
           component={Link}
           href={`/media/${item.slug}`}
           sx={{
-            // 🔥 FIX: Changed width to fit-content so the button expands naturally
             width: "fit-content", 
             height: { xs: "40px", sm: "48.84px" },
             bgcolor: "#7B53A1",
@@ -183,12 +182,11 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.caption, sm: "13.95px" },
-              lineHeight: { xs: LINE_HEIGHT.lessSmall, sm: "21px" },
+              fontWeight: 600,
+              fontSize: { xs: "12px", sm: "13.95px" },
+              lineHeight: { xs: "18px", sm: "21px" },
               letterSpacing: "-0.01em",
               color: "#FFFFFF",
-              // 🔥 FIX: Forced the text to stay on one single line
               whiteSpace: "nowrap"
             }}>
             
@@ -207,7 +205,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
               flexShrink: 0
             }}>
             
-            <ArrowOutwardIcon sx={{ fontSize: { xs: FONT_SIZE.bodySmall, sm: "17.44px" }, color: "#111827" }} />
+            <ArrowOutwardIcon sx={{ fontSize: { xs: "14px", sm: "17.44px" }, color: "#111827" }} />
           </Box>
         </Box>
       </Box>
@@ -269,7 +267,7 @@ export default function FeaturedMediaCard({ item }: FeaturedMediaCardProps) {
                 zIndex: 10
               }}>
               
-              <CloseIcon sx={{ fontSize: FONT_SIZE.cardHeading }} />
+              <CloseIcon sx={{ fontSize: "28px" }} />
             </IconButton>
           </Box>
         </Box>

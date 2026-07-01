@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -80,7 +80,7 @@ export default function ExpertsNavbar({ active, onChange }: Props) {
             padding: { xs: "6px", md: "8px" }
           }}>
           
-          <KeyboardArrowLeftIcon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, md: FONT_SIZE.titleLarge } }} />
+          <KeyboardArrowLeftIcon sx={{ fontSize: { xs: "20px", md: "24px" } }} />
         </IconButton>
 
         <Box
@@ -107,9 +107,9 @@ export default function ExpertsNavbar({ active, onChange }: Props) {
               px: { xs: "8px", lg: "16px" },
               borderRadius: "30px",
               fontFamily: FONT_FAMILY.heading,
-              fontWeight: FONT_WEIGHT.medium,
-              fontSize: { xs: FONT_SIZE.small, sm: FONT_SIZE.bodySmall, lg: FONT_SIZE.body },
-              lineHeight: LINE_HEIGHT.small,
+              fontWeight: 500,
+              fontSize: { xs: "13px", sm: "14px", lg: "15px" },
+              lineHeight: "20px",
               whiteSpace: "nowrap",
               flexShrink: 0,
 
@@ -133,7 +133,7 @@ export default function ExpertsNavbar({ active, onChange }: Props) {
             padding: { xs: "6px", md: "8px" }
           }}>
           
-          <KeyboardArrowRightIcon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, md: FONT_SIZE.titleLarge } }} />
+          <KeyboardArrowRightIcon sx={{ fontSize: { xs: "20px", md: "24px" } }} />
         </IconButton>
       </Box>
     </Container>);

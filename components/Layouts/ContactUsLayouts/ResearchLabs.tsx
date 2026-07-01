@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,8 +67,8 @@ const ResearchLabs = () => {
                 sx={{
                   mt: { xs: "12px", lg: "19px" },
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.body, lg: FONT_SIZE.lead },
+                  fontWeight: 400,
+                  fontSize: { xs: "15px", lg: "18px" },
                   lineHeight: "25px",
                   letterSpacing: "-0.03em",
                   color: "#111827",

@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaNewsItem } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Button, Typography } from "@mui/material";
@@ -35,9 +35,9 @@ export default function LatestNews({ items }: LatestNewsProps) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: FONT_SIZE.subSectionHeading,
-            lineHeight: LINE_HEIGHT.xl5,
+            fontWeight: 600,
+            fontSize: "36px",
+            lineHeight: "46px",
             letterSpacing: "-0.02em",
             color: "#111827",
             mr: "18px",
@@ -65,9 +65,9 @@ export default function LatestNews({ items }: LatestNewsProps) {
             <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: FONT_SIZE.bodyLarge,
-              lineHeight: LINE_HEIGHT.medium
+              fontWeight: 600,
+              fontSize: "16px",
+              lineHeight: "24px"
             }}>
             
               See All
@@ -121,8 +121,8 @@ export default function LatestNews({ items }: LatestNewsProps) {
             sx={{
               display: "block",
               fontFamily: FONT_FAMILY.heading,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: FONT_SIZE.bodyLarge,
+              fontWeight: 600,
+              fontSize: "16px",
               lineHeight: "22px",
               letterSpacing: "-0.02em",
               color: "#111827",
@@ -137,7 +137,7 @@ export default function LatestNews({ items }: LatestNewsProps) {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontSize: FONT_SIZE.bodyLarge,
+                fontSize: "16px",
                 lineHeight: "30px",
                 color: "#474A55"
               }}>
@@ -145,12 +145,12 @@ export default function LatestNews({ items }: LatestNewsProps) {
                 {item.time}
               </Typography>
 
-              <CircleIcon sx={{ fontSize: FONT_SIZE.micro, color: "#474A55" }} />
+              <CircleIcon sx={{ fontSize: "6px", color: "#474A55" }} />
 
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontSize: FONT_SIZE.bodyLarge,
+                fontSize: "16px",
                 lineHeight: "30px",
                 color: "#474A55"
               }}>
@@ -173,8 +173,8 @@ export default function LatestNews({ items }: LatestNewsProps) {
             bgcolor: "#7B53A1",
             color: "#FFFFFF",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: FONT_SIZE.bodySmall,
+            fontWeight: 600,
+            fontSize: "14px",
             textTransform: "none",
             "&:hover": {
               bgcolor: "#7B53A1"

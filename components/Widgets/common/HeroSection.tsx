@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 
 import { Box, Grid, Typography } from "@mui/material";
 import "swiper/css";
@@ -142,16 +142,16 @@ export default function HeroSection({ slides }: HeroSectionProps) {
                       fontFamily: FONT_FAMILY.accent,
                       color: "#FFFFFF",
                       fontSize: {
-                        xs: FONT_SIZE.cardHeading,
-                        sm: FONT_SIZE.articleHeadingLarge,
-                        md: FONT_SIZE.pageHeadingLarge
+                        xs: "28px",
+                        sm: "34px",
+                        md: "52px"
                       },
                       lineHeight: {
                         xs: "36px",
                         sm: "42px",
                         md: "55px"
                       },
-                      fontWeight: { xs: 550, md: FONT_WEIGHT.semiBold },
+                      fontWeight: { xs: 550, md: 600 },
                       letterSpacing: { md: "-1.3px" },
                       wordBreak: "normal",
                       overflowWrap: "break-word",
@@ -168,16 +168,16 @@ export default function HeroSection({ slides }: HeroSectionProps) {
                       color: { xs: "#f0f0f0", md: "rgba(255, 255, 255, 0.85)" },
                       fontFamily: FONT_FAMILY.accent,
                       fontSize: {
-                        xs: FONT_SIZE.body,
-                        sm: FONT_SIZE.bodyLarge,
-                        md: FONT_SIZE.lead
+                        xs: "15px",
+                        sm: "16px",
+                        md: "18px"
                       },
                       lineHeight: {
                         xs: "24px",
                         sm: "25px",
                         md: "28px"
                       },
-                      fontWeight: { md: FONT_WEIGHT.regular },
+                      fontWeight: { md: 400 },
                       whiteSpace: "pre-line",
                       maxWidth: {
                         xs: "100%",

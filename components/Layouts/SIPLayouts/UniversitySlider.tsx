@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { logosData } from "@/assets/Generic-data";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
@@ -40,10 +40,10 @@ export default function LogoSlider() {
               textAlign: { xs: "center", md: "left" },
             height: { xs: "auto", lg: "32px" },
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.articleHeading, lg: FONT_SIZE.pageHeadingSmall },
+            fontSize: { xs: "22px", sm: "32px", lg: "48px" },
             lineHeight: { xs: "34px", sm: "42px", lg: "62px" },
             letterSpacing: "-0.03em",
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontWeight: 600,
             mb: { xs: 3, sm: 10, lg: 24 }
           }}>
           

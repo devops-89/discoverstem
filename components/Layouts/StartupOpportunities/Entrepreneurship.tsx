@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { entrepreneurshipFundingData } from "@/assets/Generic-data";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Box, Container, Typography } from "@mui/material";
@@ -35,15 +35,13 @@ export default function EntrepreneurshipFunding() {
           <Typography
             component="div"
             sx={{
-              // 🔥 FIX: Changed md to lg so it stays centered on 1024px!
               textAlign: { xs: "center", lg: "left" },
-              // 🔥 FIX: Added mx auto so the block itself sits in the true center of the screen!
               mx: { xs: "auto", lg: 0 },
               maxWidth: "702px",
               fontFamily: FONT_FAMILY.heading,
-              fontWeight: FONT_WEIGHT.semiBold,
+              fontWeight: 600,
 
-              fontSize: { xs: FONT_SIZE.cardHeading, md: FONT_SIZE.articleHeading, lg: FONT_SIZE.subSectionHeading },
+              fontSize: { xs: "28px", md: "32px", lg: "36px" },
               lineHeight: { xs: "36px", md: "40px", lg: "41px" },
               letterSpacing: "-0.9px",
               color: "#171717",
@@ -51,7 +49,7 @@ export default function EntrepreneurshipFunding() {
 
               "& strong": {
                 color: "#7B53A1",
-                fontWeight: FONT_WEIGHT.semiBold
+                fontWeight: 600
               }
             }}
             dangerouslySetInnerHTML={{ __html: data.title }} />
@@ -60,13 +58,12 @@ export default function EntrepreneurshipFunding() {
           <Typography
             sx={{
               maxWidth: "687px",
-              // 🔥 FIX: Changed md to lg here too!
               textAlign: { xs: "center", lg: "left" },
               mx: { xs: "auto", lg: 0 },
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-              lineHeight: { xs: LINE_HEIGHT.medium, lg: LINE_HEIGHT.mediumLarge },
+              fontWeight: 400,
+              fontSize: { xs: "14px", lg: "16px" },
+              lineHeight: { xs: "24px", lg: "26px" },
               color: "#777777",
               mb: { xs: 4, lg: "52px" }
             }}>
@@ -105,7 +102,7 @@ export default function EntrepreneurshipFunding() {
               
                 <CheckCircleIcon
                 sx={{
-                  fontSize: FONT_SIZE.leadLarge,
+                  fontSize: "20px",
                   color: "#7B53A1",
                   flexShrink: 0
                 }} />
@@ -114,9 +111,9 @@ export default function EntrepreneurshipFunding() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
-                  lineHeight: LINE_HEIGHT.small,
+                  fontWeight: 400,
+                  fontSize: { xs: "13px", lg: "14px" },
+                  lineHeight: "20px",
                   color: "#262626"
                 }}>
                 

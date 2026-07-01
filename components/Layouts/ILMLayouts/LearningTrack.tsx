@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ilmLearningTracksData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -20,9 +20,9 @@ export default function IlmLearningTracksSection() {
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-          lineHeight: { xs: "38px", sm: LINE_HEIGHT.xl5, lg: LINE_HEIGHT.huge },
+          fontWeight: 600,
+          fontSize: { xs: "24px", sm: "36px", lg: "48px" },
+          lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
           letterSpacing: "-0.03em",
           textAlign: "center",
           color: "#111827",
@@ -61,7 +61,7 @@ export default function IlmLearningTracksSection() {
             mx: "auto"
           }}>
           
-            {/* Top-right background circle */}
+          
             <Box
             sx={{
               position: "absolute",
@@ -75,7 +75,7 @@ export default function IlmLearningTracksSection() {
             }} />
           
 
-            {/* Icon box */}
+         
             <Box
             sx={{
               position: "absolute",
@@ -107,8 +107,8 @@ export default function IlmLearningTracksSection() {
               left: "24.8px",
               top: "92.8px",
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: FONT_SIZE.lead,
+              fontWeight: 600,
+              fontSize: "18px",
               lineHeight: "27px",
               letterSpacing: "-0.45px",
               color: "#171717"
@@ -123,8 +123,8 @@ export default function IlmLearningTracksSection() {
               left: "24.8px",
               top: "127.8px",
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: FONT_SIZE.bodySmall,
+              fontWeight: 400,
+              fontSize: "14px",
               lineHeight: "23px",
               color: "#525252"
             }}>
@@ -144,9 +144,9 @@ export default function IlmLearningTracksSection() {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: FONT_SIZE.bodySmall,
-                lineHeight: LINE_HEIGHT.extraSmall,
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "16px",
                 letterSpacing: "0.6px",
                 textTransform: "uppercase",
                 color: "#000000",
@@ -159,9 +159,9 @@ export default function IlmLearningTracksSection() {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: FONT_SIZE.bodySmall,
-                lineHeight: LINE_HEIGHT.small,
+                fontWeight: 600,
+                fontSize: "14px",
+                lineHeight: "20px",
                 color: track.color
               }}>
               

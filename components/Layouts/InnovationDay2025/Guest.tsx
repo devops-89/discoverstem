@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 
@@ -68,9 +68,9 @@ export default function ChiefGuestSection() {
               sx={{
                 width: "100%",
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.light,
-                fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.bodySmall },
-                lineHeight: LINE_HEIGHT.extraSmall,
+                fontWeight: 300,
+                fontSize: { xs: "12px", md: "14px" },
+                lineHeight: "16px",
                 letterSpacing: "2.4px",
                 textTransform: "uppercase",
                 color: "#F9A51E",
@@ -84,8 +84,8 @@ export default function ChiefGuestSection() {
               sx={{
                 width: "100%",
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeadingLarge, lg: FONT_SIZE.articleHeading },
+                fontWeight: 600,
+                fontSize: { xs: "24px", sm: "30px", lg: "32px" },
                 lineHeight: { xs: "30px", sm: "38px", lg: "36.8px" },
                 letterSpacing: "-0.8px",
                 color: "#000000",
@@ -100,9 +100,9 @@ export default function ChiefGuestSection() {
                 width: "100%",
                 maxWidth: "205px",
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: FONT_SIZE.bodyLarge,
-                lineHeight: LINE_HEIGHT.medium,
+                fontWeight: 400,
+                fontSize: "16px",
+                lineHeight: "24px",
                 color: "#000000",
                 mb: "23.55px"
               }}>
@@ -145,9 +145,9 @@ export default function ChiefGuestSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   letterSpacing: "0.6px",
                   textTransform: "uppercase",
                   color: "#171717",
@@ -160,9 +160,9 @@ export default function ChiefGuestSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.bodySmall,
-                  lineHeight: LINE_HEIGHT.small,
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: "20px",
                   color: "#171717"
                 }}>
                 
@@ -185,9 +185,9 @@ export default function ChiefGuestSection() {
                 backgroundColor: "#0A66C2",
                 color: "#FFFFFF",
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: FONT_SIZE.small,
-                lineHeight: LINE_HEIGHT.lessSmall,
+                fontWeight: 400,
+                fontSize: "13px",
+                lineHeight: "18px",
                 textDecoration: "none",
                 transition: "all 0.2s",
                 "&:hover": {

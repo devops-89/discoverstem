@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ImageTextHighlightSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -28,8 +28,8 @@ export default function GrandFinaleSection({
           minHeight: { lg: "130px" },
           whiteSpace: "pre-line",
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.subSectionHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+          fontWeight: 600,
+          fontSize: { xs: "24px", sm: "36px", md: "40px", lg: "48px" },
           lineHeight: { xs: "30px", sm: "48px", md: "52px", lg: "65px" },
           display: "flex",
           alignItems: "center",
@@ -73,15 +73,15 @@ export default function GrandFinaleSection({
           mx: "auto",
           fontFamily: FONT_FAMILY.body,
           fontStyle: "normal",
-          fontWeight: FONT_WEIGHT.regular,
-          fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge, lg: FONT_SIZE.title },
+          fontWeight: 400,
+          fontSize: { xs: "15px", sm: "18px", md: "20px", lg: "22px" },
           lineHeight: { xs: "28px", sm: "34px", md: "38px", lg: "43px" },
           letterSpacing: "-0.03em",
           textAlign: "center",
           color: "#777777",
 
           "& strong": {
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontWeight: 600,
             color: "#101010"
           },
 

@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, Typography } from "@mui/material";
 
 export default function CollegeAcceptanceSection() {
@@ -24,8 +24,8 @@ export default function CollegeAcceptanceSection() {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.articleHeading, md: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "32px", md: "36px", lg: "48px" },
             lineHeight: { xs: "36px", sm: "40px", md: "44px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827"
@@ -38,8 +38,8 @@ export default function CollegeAcceptanceSection() {
           sx={{
             width: "100%",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777",

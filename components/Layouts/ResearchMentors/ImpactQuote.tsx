@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { impactQuoteSectionData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -25,9 +25,9 @@ export default function ImpactQuoteSection() {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.bodyLarge, lg: FONT_SIZE.title },
-            lineHeight: { xs: LINE_HEIGHT.small, sm: LINE_HEIGHT.medium, lg: LINE_HEIGHT.extraSmall },
+            fontWeight: 400,
+            fontSize: { xs: "14px", sm: "16px", lg: "22px" },
+            lineHeight: { xs: "20px", sm: "24px", lg: "16px" },
             letterSpacing: "2.4px",
             textAlign: "center",
             textTransform: "uppercase",
@@ -44,9 +44,9 @@ export default function ImpactQuoteSection() {
             maxWidth: "1104px",
             mx: "auto",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.cardHeadingSmall, lg: FONT_SIZE.cardHeadingLarge },
-            lineHeight: { xs: "36px", sm: "42px", lg: LINE_HEIGHT.xl6 },
+            fontWeight: 400,
+            fontSize: { xs: "22px", sm: "26px", lg: "30px" },
+            lineHeight: { xs: "36px", sm: "42px", lg: "48.75px" },
             textAlign: "center",
             color: "#171717",
 
@@ -63,9 +63,9 @@ export default function ImpactQuoteSection() {
           sx={{
             mt: { xs: 4, sm: 5, lg: "32px" },
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.bold,
-            fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-            lineHeight: LINE_HEIGHT.relativeTighter,
+            fontWeight: 700,
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" },
+            lineHeight: "1.2",
             textAlign: "center",
             color: "#000"
           }}>
@@ -79,9 +79,9 @@ export default function ImpactQuoteSection() {
             mx: "auto",
             mt: { xs: 3, sm: 4, lg: "28px" },
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
-            lineHeight: { xs: "22px", sm: LINE_HEIGHT.medium, lg: LINE_HEIGHT.medium },
+            fontWeight: 400,
+            fontSize: { xs: "14px", sm: "15px", lg: "16px" },
+            lineHeight: { xs: "22px", sm: "24px", lg: "24px" },
             textAlign: "center",
             color: "rgba(0,0,0,0.7)"
           }}>

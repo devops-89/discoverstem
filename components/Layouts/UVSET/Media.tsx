@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaSectionData } from "@/utils/Types";
 import { Box, Container, Typography, Modal, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -48,9 +48,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontWeight: 600,
     textAlign: { xs: "center", md: "left" }, 
-          fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+          fontSize: { xs: "32px", md: "40px", lg: "48px" },
           lineHeight: { xs: "40px", md: "44px", lg: "36.8px" },
           letterSpacing: "-0.8px",
           color: "#171717",
@@ -124,9 +124,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.accent,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   letterSpacing: "0.6px",
                   textTransform: "uppercase",
                   color: "#171717"
@@ -152,9 +152,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: FONT_SIZE.caption,
-                lineHeight: LINE_HEIGHT.extraSmall,
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "16px",
                 letterSpacing: "0.6px",
                 textTransform: "uppercase",
                 color: "#7B53A1",
@@ -167,9 +167,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
+                fontWeight: 600,
 
-                fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                fontSize: { xs: "16px", lg: "18px" },
                 lineHeight: { xs: "22px", lg: "24.75px" },
                 letterSpacing: "-0.45px",
                 color: "#171717",
@@ -202,9 +202,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
                   px: "16px",
                   py: "6px",
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   textDecoration: "none",
                   display: "inline-flex"
                 }}>
@@ -224,9 +224,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
                   px: "16px",
                   py: "6px",
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "center",
@@ -236,7 +236,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
                 
                   {item.tag === "Talk" ?
                 <>
-                      <i className="fas fa-play-circle" style={{ fontSize: FONT_SIZE.bodySmall }}></i>
+                      <i className="fas fa-play-circle" style={{ fontSize: "14px" }}></i>
                       Watch Video
                     </> :
 

@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { CtaBannerData } from "@/utils/Types";
 
 import { Box, Typography, Button } from "@mui/material";
@@ -24,12 +24,12 @@ export default function CtaBanner({ data }: CtaBannerProps) {
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontWeight: 600,
           fontSize: {
-            xs: FONT_SIZE.titleLarge,
-            sm: FONT_SIZE.articleHeading,
-            md: FONT_SIZE.sectionHeadingSmall,
-            lg: FONT_SIZE.pageHeadingSmall
+            xs: "24px",
+            sm: "32px",
+            md: "40px",
+            lg: "48px"
           },
           lineHeight: {
             xs: "32px",
@@ -55,7 +55,7 @@ export default function CtaBanner({ data }: CtaBannerProps) {
         sx={{
           mt: { xs: 2, lg: 2 },
           fontFamily: FONT_FAMILY.body,
-          fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, lg: FONT_SIZE.lead },
+          fontSize: { xs: "14px", sm: "15px", lg: "18px" },
           lineHeight: { xs: "22px", sm: "24px", lg: "28px" },
           color: "#fff",
           maxWidth: { xs: "100%", lg: "800px" },
@@ -77,13 +77,12 @@ export default function CtaBanner({ data }: CtaBannerProps) {
           bgcolor: "#f8a51e",
           color: "#1a1a1a",
           borderRadius: "10px",
-          // Shrinks the actual padding of the button to make it a compact mobile button
           px: { xs: 2, sm: 2.5, lg: 3.5 },
           py: { xs: "6px", sm: "8px", lg: "14px" },
           fontFamily: FONT_FAMILY.body,
           // Decreased down to 10px on mobile
-          fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.caption, lg: FONT_SIZE.lead },
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontSize: { xs: "12px", sm: "12px", lg: "18px" },
+          fontWeight: 600,
           textTransform: "none",
           "&:hover": {
             bgcolor: "#f8a51e"

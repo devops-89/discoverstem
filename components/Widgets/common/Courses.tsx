@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { FoundationCoursesData } from "@/utils/Types";
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
@@ -63,9 +63,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
-                lineHeight: { xs: LINE_HEIGHT.medium, sm: "30px", lg: "30px" },
+                fontWeight: 600,
+                fontSize: { xs: "16px", sm: "18px", lg: "22px" },
+                lineHeight: { xs: "24px", sm: "30px", lg: "30px" },
                 letterSpacing: "-0.4px",
                 color: "#EE4823"
               }}>
@@ -79,9 +79,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.heading,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-              lineHeight: { xs: "30px", sm: LINE_HEIGHT.xl5, lg: "48px" },
+              fontWeight: 600,
+              fontSize: { xs: "24px", sm: "36px", lg: "48px" },
+              lineHeight: { xs: "30px", sm: "46px", lg: "48px" },
               letterSpacing: "-0.8px",
               color: "#1A1A1A",
               mb: "16px"
@@ -95,9 +95,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               maxWidth: "672px",
               mx: "auto",
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
-              lineHeight: { xs: "25px", sm: LINE_HEIGHT.mediumLarge, lg: "27px" },
+              fontWeight: 400,
+              fontSize: { xs: "15px", sm: "16px", lg: "18px" },
+              lineHeight: { xs: "25px", sm: "26px", lg: "27px" },
               color: "#676767"
             }}>
             
@@ -170,7 +170,7 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                       flexShrink: 0
                     }}>
                     
-                    <Icon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, md: FONT_SIZE.cardHeading }, color: "#FFFFFF" }} />
+                    <Icon sx={{ fontSize: { xs: "20px", md: "28px" }, color: "#FFFFFF" }} />
                   </Box>
 
                   {showLevel &&
@@ -187,9 +187,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                       <Typography
                       sx={{
                         fontFamily: FONT_FAMILY.body,
-                        fontWeight: FONT_WEIGHT.regular,
-                        fontSize: FONT_SIZE.caption,
-                        lineHeight: LINE_HEIGHT.lessSmall,
+                        fontWeight: 400,
+                        fontSize: "12px",
+                        lineHeight: "18px",
                         letterSpacing: "0.48px",
                         color: "#EE4823"
                       }}>
@@ -210,8 +210,8 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                   <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.semiBold,
-                      fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                      fontWeight: 600,
+                      fontSize: { xs: "16px", lg: "18px" },
                       lineHeight: { xs: "22px", lg: "25px" },
                       letterSpacing: "-0.18px",
                       color: "#1A1A1A",
@@ -227,9 +227,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                     sx={{
                       mt: "8px",
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
-                      lineHeight: { xs: LINE_HEIGHT.small, lg: "22px" },
+                      fontWeight: 400,
+                      fontSize: { xs: "13px", lg: "14px" },
+                      lineHeight: { xs: "20px", lg: "22px" },
                       color: "#676767",
                       minHeight: "88px"
                     }}>
@@ -250,9 +250,9 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                     <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: FONT_SIZE.small,
-                      lineHeight: LINE_HEIGHT.small,
+                      fontWeight: 400,
+                      fontSize: "13px",
+                      lineHeight: "20px",
                       color: "#6E6E6E"
                     }}>
                     

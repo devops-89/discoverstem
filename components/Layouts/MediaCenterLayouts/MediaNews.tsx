@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaNewsItem } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Typography } from "@mui/material";
@@ -52,9 +52,9 @@ export default function MediaNewsSection({
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.cardHeading, lg: FONT_SIZE.subSectionHeading },
-            lineHeight: { xs: LINE_HEIGHT.extraLarge, md: "36px", lg: LINE_HEIGHT.xl5 },
+            fontWeight: 600,
+            fontSize: { xs: "16px", md: "28px", lg: "36px" },
+            lineHeight: { xs: "32px", md: "36px", lg: "46px" },
             letterSpacing: "-0.02em",
             color: "#111827",
             mr: "14px",
@@ -87,9 +87,9 @@ export default function MediaNewsSection({
             <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
-              lineHeight: LINE_HEIGHT.medium
+              fontWeight: 600,
+              fontSize: { xs: "14px", md: "15px", lg: "16px" },
+              lineHeight: "24px"
             }}>
             
               View More

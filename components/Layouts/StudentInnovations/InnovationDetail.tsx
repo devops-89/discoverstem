@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { StudentInnovationData } from "@/assets/Generic-data";
 
 import { Box, Container, Typography } from "@mui/material";
@@ -29,8 +29,8 @@ export default function CenterTextSection() {
           sx={{
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777"
@@ -44,8 +44,8 @@ export default function CenterTextSection() {
 
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777"
@@ -58,8 +58,8 @@ export default function CenterTextSection() {
           sx={{
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777"
@@ -73,8 +73,8 @@ export default function CenterTextSection() {
 
             textAlign: "center",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777"

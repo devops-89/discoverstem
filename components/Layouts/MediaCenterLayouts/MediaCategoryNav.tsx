@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, IconButton, InputBase, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -171,9 +171,9 @@ export default function MediaCategoryNav({
                 sx={{
                   fontFamily: FONT_FAMILY.body,
                   fontStyle: "normal",
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.bodyLarge,
-                  lineHeight: LINE_HEIGHT.medium,
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "24px",
                   color: "#000000",
                   textDecoration: active === item.sectionId ? "underline" : "none",
                   textUnderlineOffset: "4px",
@@ -185,7 +185,7 @@ export default function MediaCategoryNav({
                 
                 {item.label === "Home" &&
               <>
-                    <KeyboardArrowDownIcon sx={{ color: "#000000", fontSize: FONT_SIZE.lead, ml: "4px" }} />
+                    <KeyboardArrowDownIcon sx={{ color: "#000000", fontSize: "18px", ml: "4px" }} />
                     <Box
                   className="home-dropdown"
                   sx={{
@@ -215,7 +215,7 @@ export default function MediaCategoryNav({
                       color: "#000",
                       p: "14px 20px",
                       fontFamily: FONT_FAMILY.body,
-                      fontSize: FONT_SIZE.bodySmall,
+                      fontSize: "14px",
                       borderBottom: "1px solid #eee",
                       "&:hover": { bgcolor: "#F5F5F5", color: "#7B53A1" }
                     }}>
@@ -232,7 +232,7 @@ export default function MediaCategoryNav({
                       color: "#000",
                       p: "14px 20px",
                       fontFamily: FONT_FAMILY.body,
-                      fontSize: FONT_SIZE.bodySmall,
+                      fontSize: "14px",
                       "&:hover": { bgcolor: "#F5F5F5", color: "#7B53A1" }
                     }}>
                     
@@ -249,7 +249,7 @@ export default function MediaCategoryNav({
               disableRipple
               sx={{ p: 0, width: "24px", height: "24px", color: "#000000", "&:hover": { backgroundColor: "transparent" } }}>
               
-              <SearchIcon sx={{ fontSize: FONT_SIZE.titleLarge }} />
+              <SearchIcon sx={{ fontSize: "24px" }} />
             </IconButton>
           </Box>
 
@@ -275,7 +275,7 @@ export default function MediaCategoryNav({
               disableRipple
               sx={{ p: 0, width: "24px", height: "24px", color: "#000000", "&:hover": { backgroundColor: "transparent" } }}>
               
-              <MenuIcon sx={{ fontSize: FONT_SIZE.titleLarge }} />
+              <MenuIcon sx={{ fontSize: "24px" }} />
             </IconButton>
 
             <Box
@@ -300,7 +300,7 @@ export default function MediaCategoryNav({
                     setSearch(e.target.value);
                   }
                 }}
-                sx={{ px: 2, width: "100%", height: "100%", fontFamily: FONT_FAMILY.body, fontSize: FONT_SIZE.bodySmall }} />
+                sx={{ px: 2, width: "100%", height: "100%", fontFamily: FONT_FAMILY.body, fontSize: "14px" }} />
               
             </Box>
           </Box>
@@ -337,8 +337,8 @@ export default function MediaCategoryNav({
               onClick={() => handleNavClick(categories[mobileCatIndex])}
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: FONT_SIZE.bodyLarge,
+                fontWeight: 400,
+                fontSize: "16px",
                 color: "#000",
                 width: "200px",
                 textAlign: "center",
@@ -407,9 +407,9 @@ export default function MediaCategoryNav({
                   sx={{
                     fontFamily: FONT_FAMILY.body,
                     fontStyle: "normal",
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: FONT_SIZE.bodyLarge,
-                    lineHeight: LINE_HEIGHT.medium,
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    lineHeight: "24px",
                     color: "#000000",
                     textDecoration: active === item.sectionId ? "underline" : "none",
                     textUnderlineOffset: "4px",
@@ -421,7 +421,7 @@ export default function MediaCategoryNav({
                   
                   {item.label === "Home" &&
                 <>
-                      <KeyboardArrowDownIcon sx={{ color: "#000000", fontSize: FONT_SIZE.lead, ml: "4px" }} />
+                      <KeyboardArrowDownIcon sx={{ color: "#000000", fontSize: "18px", ml: "4px" }} />
                       <Box
                     className="home-dropdown"
                     sx={{
@@ -451,7 +451,7 @@ export default function MediaCategoryNav({
                         color: "#000",
                         p: "14px 20px",
                         fontFamily: FONT_FAMILY.body,
-                        fontSize: FONT_SIZE.bodySmall,
+                        fontSize: "14px",
                         borderBottom: "1px solid #eee",
                         "&:hover": { bgcolor: "#F5F5F5", color: "#7B53A1" }
                       }}>
@@ -468,7 +468,7 @@ export default function MediaCategoryNav({
                         color: "#000",
                         p: "14px 20px",
                         fontFamily: FONT_FAMILY.body,
-                        fontSize: FONT_SIZE.bodySmall,
+                        fontSize: "14px",
                         "&:hover": { bgcolor: "#F5F5F5", color: "#7B53A1" }
                       }}>
                       
@@ -501,7 +501,7 @@ export default function MediaCategoryNav({
               px: 2
             }}>
             
-            <SearchIcon sx={{ color: "#000", mr: 1, fontSize: FONT_SIZE.leadLarge }} />
+            <SearchIcon sx={{ color: "#000", mr: 1, fontSize: "20px" }} />
             <InputBase
               placeholder="Search news..."
               value={search}
@@ -513,7 +513,7 @@ export default function MediaCategoryNav({
               sx={{
                 flex: 1,
                 fontFamily: FONT_FAMILY.body,
-                fontSize: FONT_SIZE.bodySmall,
+                fontSize: "14px",
                 width: "100%"
               }} />
             

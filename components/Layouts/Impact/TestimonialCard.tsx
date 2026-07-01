@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { useState } from "react";
 import Image from "next/image";
 import {
@@ -108,9 +108,9 @@ export default function SuccessStoriesCards() {
                   <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.semiBold,
-                      fontSize: { xs: FONT_SIZE.lead, md: FONT_SIZE.leadLarge, lg: "22.4px" },
-                      lineHeight: { xs: LINE_HEIGHT.medium, md: LINE_HEIGHT.mediumLarge, lg: LINE_HEIGHT.baseLarge },
+                      fontWeight: 600,
+                      fontSize: { xs: "18px", md: "20px", lg: "22.4px" },
+                      lineHeight: { xs: "24px", md: "26px", lg: "26.88px" },
                       letterSpacing: "-0.56px",
                       color: "#171717",
                       mb: "8px"
@@ -122,9 +122,9 @@ export default function SuccessStoriesCards() {
                   <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
-                      lineHeight: { xs: LINE_HEIGHT.extraSmall, lg: LINE_HEIGHT.lessSmall },
+                      fontWeight: 400,
+                      fontSize: { xs: "13px", lg: "14px" },
+                      lineHeight: { xs: "16px", lg: "18px" },
                       letterSpacing: "0px",
                       whiteSpace: "pre-line",
                       color: "#525252",
@@ -137,9 +137,9 @@ export default function SuccessStoriesCards() {
                   <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
-                      lineHeight: { xs: LINE_HEIGHT.medium, md: "28px", lg: LINE_HEIGHT.extraLarge },
+                      fontWeight: 400,
+                      fontSize: { xs: "14px", md: "15px", lg: "16px" },
+                      lineHeight: { xs: "24px", md: "28px", lg: "32px" },
                       letterSpacing: "-0.03em",
                       color: "#777777",
                       display: "-webkit-box",
@@ -166,9 +166,9 @@ export default function SuccessStoriesCards() {
                       pl: "18px",
                       justifyContent: "space-between",
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: FONT_SIZE.bodySmall,
-                      lineHeight: LINE_HEIGHT.small,
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "20px",
                       letterSpacing: "-0.01em",
                       "&:hover": {
                         backgroundColor: "#7B53A1"
@@ -189,7 +189,7 @@ export default function SuccessStoriesCards() {
                         color: "#111827"
                       }}>
                       
-                      <ArrowOutwardIcon sx={{ fontSize: FONT_SIZE.bodyXLarge }} />
+                      <ArrowOutwardIcon sx={{ fontSize: "17px" }} />
                     </Box>
                   </Button>
                 </Box>
@@ -225,11 +225,11 @@ export default function SuccessStoriesCards() {
               width: { xs: "24px", sm: "40px" },
               height: { xs: "24px", sm: "40px" },
               minWidth: { xs: "24px", sm: "40px" },
-              fontSize: { xs: FONT_SIZE.footnote, sm: FONT_SIZE.bodySmall },
+              fontSize: { xs: "11px", sm: "14px" },
               padding: 0,
               margin: { xs: "0 2px", sm: "0 4px" },
               borderRadius: "50%",
-              fontWeight: FONT_WEIGHT.medium,
+              fontWeight: 500,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -237,11 +237,11 @@ export default function SuccessStoriesCards() {
               color: "#374151"
             },
             "& .MuiPaginationItem-icon": {
-              fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.leadLarge }
+              fontSize: { xs: "16px", sm: "20px" }
             },
             "& .MuiPaginationItem-ellipsis": {
               backgroundColor: "transparent",
-              lineHeight: { xs: LINE_HEIGHT.medium, sm: "40px" }
+              lineHeight: { xs: "24px", sm: "40px" }
             },
             "& .Mui-selected": {
               backgroundColor: "#7B53A1 !important",
@@ -287,7 +287,7 @@ export default function SuccessStoriesCards() {
               }
             }}>
             
-           <Close sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} /> 
+           <Close sx={{ fontSize: "20px", color: "red" }} /> 
           </IconButton>
 
           {selectedStory &&
@@ -321,9 +321,9 @@ export default function SuccessStoriesCards() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.lead, sm: FONT_SIZE.leadLarge, lg: "22.4px" },
-                  lineHeight: { xs: LINE_HEIGHT.medium, sm: LINE_HEIGHT.mediumLarge, lg: LINE_HEIGHT.baseLarge },
+                  fontWeight: 600,
+                  fontSize: { xs: "18px", sm: "20px", lg: "22.4px" },
+                  lineHeight: { xs: "24px", sm: "26px", lg: "26.88px" },
                   letterSpacing: "-0.56px",
                   color: "#171717",
                   mb: "12px"
@@ -335,9 +335,9 @@ export default function SuccessStoriesCards() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
-                  lineHeight: { xs: LINE_HEIGHT.extraSmall, lg: LINE_HEIGHT.lessSmall },
+                  fontWeight: 400,
+                  fontSize: { xs: "13px", lg: "14px" },
+                  lineHeight: { xs: "16px", lg: "18px" },
                   letterSpacing: "0px",
                   whiteSpace: "pre-line",
                   color: "#525252",
@@ -350,9 +350,9 @@ export default function SuccessStoriesCards() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
-                  lineHeight: { xs: LINE_HEIGHT.medium, sm: "28px", lg: LINE_HEIGHT.extraLarge },
+                  fontWeight: 400,
+                  fontSize: { xs: "14px", sm: "15px", lg: "16px" },
+                  lineHeight: { xs: "24px", sm: "28px", lg: "32px" },
                   letterSpacing: "-0.03em",
                   whiteSpace: "pre-line",
                   color: "#777777"

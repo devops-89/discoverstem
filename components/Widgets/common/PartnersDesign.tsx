@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ImageTextPartnerSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -27,8 +27,8 @@ export default function ImageTextPartnerSection({
             // 🔥 FIX: Centers heading on small screens, aligns left on lg screens
             textAlign: { xs: "center", lg: "left" }, 
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeading, md: FONT_SIZE.articleHeading, lg: FONT_SIZE.subSectionHeading },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
             lineHeight: { xs: "34px", sm: "38px", md: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#000000",
@@ -51,11 +51,10 @@ export default function ImageTextPartnerSection({
             <Typography
               key={index}
               sx={{
-                // 🔥 FIX: Centers description on small screens, aligns left on lg screens
                 textAlign: { xs: "center", lg: "left" }, 
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+                fontWeight: 400,
+                fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "20px" },
                 lineHeight: { xs: "26px", sm: "28px", md: "32px", lg: "36px" },
                 letterSpacing: "-0.03em",
                 color: "#777777",

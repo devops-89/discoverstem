@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ContentSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -37,12 +37,12 @@ export default function ContentSection({
             { xs: 3, sm: 4, md: 4, lg: "48px" },
 
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
+            fontWeight: 400,
             fontSize: {
-              xs: FONT_SIZE.bodyLarge,
-              sm: FONT_SIZE.bodyXLarge,
-              md: FONT_SIZE.lead,
-              lg: FONT_SIZE.title
+              xs: "16px",
+              sm: "17px",
+              md: "18px",
+              lg: "22px"
             },
             lineHeight: {
               xs: "26px",
@@ -51,12 +51,11 @@ export default function ContentSection({
               lg: "43px"
             },
             letterSpacing: "-0.03em",
-            // 🔥 FIX: Centers on <= 768 screens, aligns left on larger screens!
             textAlign: { xs: "center", md: "left" }, 
             color: "#777777",
 
             "& strong": {
-              fontWeight: FONT_WEIGHT.bold,
+              fontWeight: 700,
               color: "#111827"
             }
           }}

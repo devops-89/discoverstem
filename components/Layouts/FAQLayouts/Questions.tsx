@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { faqData } from "@/assets/Generic-data";
 
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -134,8 +134,8 @@ export default function FaqSection() {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.heading,
-                fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.body, lg: FONT_SIZE.lead },
-                fontWeight: activeTab === tab.id ? FONT_WEIGHT.medium : FONT_WEIGHT.light,
+                fontSize: { xs: "14px", md: "15px", lg: "18px" },
+                fontWeight: activeTab === tab.id ? 500 : 300,
                 whiteSpace: "nowrap"
               }}>
               
@@ -190,7 +190,7 @@ export default function FaqSection() {
                
                 <KeyboardArrowRightIcon
                 sx={{
-                  fontSize: FONT_SIZE.cardHeadingSmall,
+                  fontSize: "26px",
                   color: openFaq === index ? "#7B53A1" : "#000",
                   flexShrink: 0,
                   transition: "all 0.3s ease",
@@ -202,10 +202,10 @@ export default function FaqSection() {
                 sx={{
                   fontFamily: FONT_FAMILY.body,
                   fontSize: {
-                    xs: FONT_SIZE.bodyLarge,
-                    md: FONT_SIZE.leadLarge
+                    xs: "16px",
+                    md: "20px"
                   },
-                  lineHeight: LINE_HEIGHT.mediumLarge,
+                  lineHeight: "26px",
                   color: openFaq === index ? "#7B53A1" : "#000",
                   transition: "color 0.3s ease"
                 }}>
@@ -220,10 +220,10 @@ export default function FaqSection() {
                 ml: { xs: "36px", md: "36px" },
                 fontFamily: FONT_FAMILY.body,
                 fontSize: {
-                  xs: FONT_SIZE.body,
-                  md: FONT_SIZE.lead
+                  xs: "15px",
+                  md: "18px"
                 },
-                lineHeight: LINE_HEIGHT.extraLarge,
+                lineHeight: "32px",
                 color: "#777777"
               }}>
               

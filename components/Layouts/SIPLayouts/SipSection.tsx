@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { sipData } from "@/assets/Generic-data";
 import PrimaryButton from "@/components/Widgets/PrimaryButton";
 
@@ -27,13 +27,12 @@ export default function SipSection() {
               fontFamily: FONT_FAMILY.heading,
               width: { xs: "100%", lg: "680px" },
               height: { xs: "auto", lg: "32px" },
-              fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-              fontWeight: FONT_WEIGHT.semiBold,
+              fontSize: { xs: "22px", sm: "36px", lg: "48px" },
+              fontWeight: 600,
               lineHeight: { xs: "30px", sm: "46px", lg: "62px" },
               letterSpacing: "-0.03em",
               color: "#111827",
               mb: { xs: 3, lg: 5 },
-              // 🔥 FIX: Centered heading on small screens
               textAlign: { xs: "center", md: "left" }
             }}>
             
@@ -46,24 +45,23 @@ export default function SipSection() {
               width: { xs: "100%", lg: "994px" },
               height: { xs: "auto", lg: "15px" },
               mt: { xs: 2, lg: 1 },
-              fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+              fontSize: { xs: "16px", sm: "18px", lg: "22px" },
               lineHeight: { xs: "26px", sm: "28px", lg: "30px" },
               letterSpacing: "-0.01em",
               color: "#111827",
               whiteSpace: { xs: "normal", lg: "nowrap" },
-              // 🔥 FIX: Centered description text on small screens
               textAlign: { xs: "center", md: "left" }
             }}>
         A{" "}
-        <Box component="span" sx={{ color: "#111827", fontWeight: FONT_WEIGHT.bold }}>
+        <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
         Program
         </Box>{" "}
         that transforms{" "}
-        <Box component="span" sx={{ color: "#111827", fontWeight: FONT_WEIGHT.bold }}>
+        <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
        high school students
         </Box>{" "}
         into{" "}
-        <Box component="span" sx={{ color: "#111827", fontWeight: FONT_WEIGHT.bold }}>
+        <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
         into inventors, researchers, and entrepreneurs!
         </Box>
         !
@@ -72,15 +70,14 @@ export default function SipSection() {
             <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
+              fontWeight: 400,
               width: { xs: "100%", lg: "594px" },
               height: { xs: "auto", lg: "359px" },
               mt: { xs: 3, lg: 5 },
-              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+              fontSize: { xs: "15px", sm: "18px", lg: "22px" },
               letterSpacing: "-0.03em",
               color: "#777777",
               lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
-              // 🔥 FIX: Centered description text on small screens
               textAlign: { xs: "center", md: "left" }
             }}>
             
@@ -90,15 +87,14 @@ export default function SipSection() {
             <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
+              fontWeight: 400,
               width: { xs: "100%", lg: "1161px" },
               height: { xs: "auto", lg: "187px" },
               mt: { xs: 2, lg: 2 },
-              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+              fontSize: { xs: "15px", sm: "18px", lg: "22px" },
               letterSpacing: "-0.03em",
               color: "#777777",
               lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
-              // 🔥 FIX: Centered description text on small screens
               textAlign: { xs: "center", md: "left" }
             }}>
             
@@ -136,13 +132,12 @@ export default function SipSection() {
             fontFamily: FONT_FAMILY.heading,
             width: { xs: "100%", lg: "1056px" },
             height: { xs: "auto", lg: "32px" },
-            fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.articleHeading, lg: FONT_SIZE.pageHeadingSmall },
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: "22px", sm: "32px", lg: "48px" },
+            fontWeight: 600,
             lineHeight: { xs: "34px", sm: "42px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
             mb: { xs: 3, lg: 5 },
-            // 🔥 FIX: Centered heading on small screens
             textAlign: { xs: "center", md: "left" }
           }}>
           
@@ -155,12 +150,11 @@ export default function SipSection() {
             width: { xs: "100%", lg: "1161px" },
             height: { xs: "auto", lg: "144px" },
             mt: { xs: 3, lg: 6 },
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontSize: { xs: "15px", sm: "18px", lg: "22px" },
             color: "#777777",
             lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             mb: { xs: 3, lg: 6 },
-            // 🔥 FIX: Centered description text on small screens
             textAlign: { xs: "center", md: "left" }
           }}>
           
@@ -173,12 +167,12 @@ export default function SipSection() {
             fontFamily: FONT_FAMILY.body,
             width: { xs: "100%", lg: "1196px" },
             height: { xs: "auto", lg: "58px" },
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontSize: { xs: "15px", sm: "18px", lg: "22px" },
             lineHeight: { xs: "24px", sm: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             mt: 1,
             color: "#000",
-            fontWeight: FONT_WEIGHT.medium
+            fontWeight: 500
           }}>
               • {point}
             </Typography>
@@ -188,7 +182,6 @@ export default function SipSection() {
         {/* Button */}
         <Box sx={{ 
           mt: { xs: 4, lg: 4 },
-          // 🔥 FIX: Added flex to center the button on mobile to match the centered text
           display: "flex",
           justifyContent: { xs: "center", md: "flex-start" } 
         }}>
@@ -220,13 +213,13 @@ export default function SipSection() {
                 component="span"
                 sx={{
                   fontFamily: "'JUST Sans', sans-serif",
-                  fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+                  fontSize: { xs: "12px", md: "14px", lg: "16px" },
                   lineHeight: { xs: "18px", md: "20px", lg: "24px" },
                   letterSpacing: "-0.01em",
                   whiteSpace: "nowrap"
                 }}>
                 
-                Request a <Box component="span" sx={{ fontWeight: FONT_WEIGHT.bold }}>Free Information Session</Box>
+                Request a <Box component="span" sx={{ fontWeight: 700 }}>Free Information Session</Box>
               </Typography>
 
               <Box
@@ -243,7 +236,7 @@ export default function SipSection() {
                 
                 <ArrowOutwardIcon
                   sx={{
-                    fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge, lg: FONT_SIZE.leadLarge },
+                    fontSize: { xs: "14px", md: "16px", lg: "20px" },
                     color: "#111827"
                   }} />
                 

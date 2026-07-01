@@ -1,5 +1,4 @@
-"use client";import { FONT_WEIGHT } from "@/utils/theme";
-import React, { useRef } from "react";
+"use client";import React, { useRef } from "react";
 import { Container, Box, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -62,11 +61,11 @@ export default function SpotlightSection() {
                   pt: 5
                 }}>
                 
-                  <Typography sx={{ color: "#fff", fontWeight: FONT_WEIGHT.bold, fontSize: 16 }}>
+                  <Typography sx={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>
                     {student.name}
                   </Typography>
                   {student.college &&
-                <Typography sx={{ color: "#e0e0e0", fontWeight: FONT_WEIGHT.medium, fontSize: 13 }}>
+                <Typography sx={{ color: "#e0e0e0", fontWeight: 500, fontSize: 13 }}>
                       {student.college}
                     </Typography>
                 }

@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -116,12 +116,12 @@ export default function HeroSection() {
                   width: { xs: "100%", lg: "498px" },
                   fontFamily: FONT_FAMILY.heading,
 
-                  fontSize: { xs: FONT_SIZE.articleHeading, sm: FONT_SIZE.pageHeadingSmall, lg: FONT_SIZE.mainHeading },
+                  fontSize: { xs: "32px", sm: "48px", lg: "64px" },
 
                   lineHeight: { xs: "40px", sm: "56px", lg: "62px" },
                   letterSpacing: "-0.03em",
 
-                  fontWeight: FONT_WEIGHT.semiBold,
+                  fontWeight: 600,
                   textTransform: "capitalize",
                   color: "#ffffff",
                   mb: { xs: 2, lg: 0 }
@@ -136,12 +136,12 @@ export default function HeroSection() {
                   width: { xs: "100%", lg: "762px" },
                   fontFamily: FONT_FAMILY.heading,
 
-                  fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                  fontSize: { xs: "15px", sm: "18px", lg: "22px" },
                   color: "#ffffff",
 
                   lineHeight: { xs: "24px", sm: "28px", lg: "38px" },
                   letterSpacing: "-0.03em",
-                  fontWeight: FONT_WEIGHT.regular,
+                  fontWeight: 400,
 
                   mt: { xs: 1, lg: "14px" },
                   whiteSpace: "pre-line"
@@ -184,8 +184,8 @@ export default function HeroSection() {
                     sx={{
                       fontFamily: FONT_FAMILY.heading,
 
-                      fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-                      fontWeight: FONT_WEIGHT.semiBold,
+                      fontSize: { xs: "22px", sm: "36px", lg: "48px" },
+                      fontWeight: 600,
                       color: "#ffffff",
 
                       lineHeight: { xs: "28px", lg: "62px" },
@@ -199,12 +199,12 @@ export default function HeroSection() {
                     sx={{
                       fontFamily: FONT_FAMILY.heading,
 
-                      fontSize: { xs: FONT_SIZE.small, sm: FONT_SIZE.leadLarge, lg: FONT_SIZE.sectionHeadingSmall },
+                      fontSize: { xs: "13px", sm: "20px", lg: "40px" },
 
                       lineHeight: { xs: "18px", sm: "28px", lg: "62px" },
                       letterSpacing: "-0.03em",
                       color: "#ffffff",
-                      fontWeight: FONT_WEIGHT.semiBold,
+                      fontWeight: 600,
                       mt: { xs: 0.5, lg: 0 }
                     }}>
                     

@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { CommonTextSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -50,16 +50,15 @@ export default function CommonTextSection({
         {data.title &&
         <Typography
           sx={{
-            // 🔥 FIX: Centers title on small screens, aligns left on lg screens
             textAlign: { xs: "center", md: "left" }, 
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontWeight: 600,
 
             fontSize: {
-              xs: FONT_SIZE.titleLarge,
-              sm: FONT_SIZE.articleHeading,
-              md: FONT_SIZE.subSectionHeading,
-              lg: FONT_SIZE.pageHeadingSmall
+              xs: "24px",
+              sm: "32px",
+              md: "36px",
+              lg: "48px"
             },
             lineHeight: {
               xs: "30px",
@@ -81,17 +80,16 @@ export default function CommonTextSection({
             {data.description &&
           <Typography
             sx={{
-              // 🔥 FIX: Centers description on small screens, aligns left on lg screens
               textAlign: { xs: "center", md: "left" }, 
               width: "100%",
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
+              fontWeight: 400,
 
               fontSize: {
-                xs: FONT_SIZE.body,
-                sm: FONT_SIZE.bodyLarge,
-                md: FONT_SIZE.lead,
-                lg: FONT_SIZE.title
+                xs: "15px",
+                sm: "16px",
+                md: "18px",
+                lg: "22px"
               },
               lineHeight: {
                 xs: "26px",
@@ -124,12 +122,12 @@ export default function CommonTextSection({
               key={index}
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
+                fontWeight: 600,
 
                 fontSize: {
-                  xs: FONT_SIZE.bodySmall,
-                  md: FONT_SIZE.bodyLarge,
-                  lg: FONT_SIZE.lead
+                  xs: "14px",
+                  md: "16px",
+                  lg: "18px"
                 },
                 lineHeight: {
                   xs: "26px",

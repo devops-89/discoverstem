@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import {
@@ -45,22 +45,21 @@ export default function OurYoungInnovators() {
             sx={{
               fontFamily: FONT_FAMILY.heading,
               fontSize: {
-                xs: FONT_SIZE.titleLarge,
-                sm: FONT_SIZE.articleHeadingLarge,
-                md: FONT_SIZE.subSectionHeadingLarge,
-                lg: "36px" // 🔥 Updated to match Figma exactly
+                xs: "24px",
+                sm: "34px",
+                md: "38px",
+                lg: "36px" 
               },
               lineHeight: {
                 xs: "36px",
                 sm: "42px",
                 md: "48px",
-                lg: "58px" // 🔥 Updated to match Figma exactly
+                lg: "58px" 
               },
-              fontWeight: FONT_WEIGHT.medium,
+              fontWeight: 500,
               textAlign: { xs: "center", md: "left" },
               wordBreak: "break-word",
               color: "#101010",
-              // 🔥 FIX: Added the Figma width to force it into exactly three lines
               maxWidth: { xs: "100%", md: "543px" } 
             }}>
             
@@ -94,7 +93,7 @@ export default function OurYoungInnovators() {
               color: "#000000",
               lineHeight: 1.7,
               fontWeight:400,
-              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.bodyXLarge },
+              fontSize: { xs: "15px", sm: "16px", md: "17px" },
               maxWidth: "100%"
             }}>
             
@@ -116,7 +115,7 @@ export default function OurYoungInnovators() {
               color: "#ee4823",
               px: 3,
               py: 1,
-              fontWeight: FONT_WEIGHT.medium,
+              fontWeight: 500,
               textTransform: "none",
               minWidth: "160px",
               "&:hover": {
@@ -206,8 +205,8 @@ export default function OurYoungInnovators() {
                 <Typography
                 sx={{
                   color: "#fff",
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.lead, md: FONT_SIZE.titleLarge }
+                  fontWeight: 600,
+                  fontSize: { xs: "18px", md: "24px" }
                 }}>
                 
                   Watch
@@ -216,7 +215,7 @@ export default function OurYoungInnovators() {
                 <Typography
                 sx={{
                   color: "rgba(255,255,255,0.85)",
-                  fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge }
+                  fontSize: { xs: "14px", md: "16px" }
                 }}>
                 
                   That&apos;s how we make it work?

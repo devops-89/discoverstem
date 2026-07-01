@@ -25,7 +25,6 @@ const FounderAwards = () => {
           letterSpacing: "-0.02em",
           color: "#111827",
           mb: { xs: 3, md: 8 },
-          // 🔥 FIX: Centered main heading on mobile
           textAlign: { xs: "center", md: "left" } 
         }}>
         
@@ -43,7 +42,6 @@ const FounderAwards = () => {
                 lineHeight: LINE_HEIGHT.extraLarge,
                 color: "#474A55",
                 mb: { xs: 3, md: 5 },
-                // 🔥 FIX: Centered column heading on mobile
                 textAlign: { xs: "center", md: "left" }
               }}>
               
@@ -97,7 +95,7 @@ const FounderAwards = () => {
                 lineHeight: LINE_HEIGHT.extraLarge,
                 color: "#474A55",
                 mb: { xs: 3, lg: "38px" },
-                // 🔥 FIX: Centered column heading on mobile
+              
                 textAlign: { xs: "center", md: "left" }
               }}>
               

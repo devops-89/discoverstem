@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { TextField } from "@mui/material";
 
 interface PatentFacesFilterProps {
@@ -30,7 +30,7 @@ export default function PatentFacesFilter({
           borderRadius: "999px",
           backgroundColor: "#FAFAFA",
           fontFamily: FONT_FAMILY.accent,
-          fontSize: FONT_SIZE.caption,
+          fontSize: "12px",
           color: "#737373",
 
           "& fieldset": {

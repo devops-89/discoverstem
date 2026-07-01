@@ -1,6 +1,6 @@
 
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { stepsData } from "@/assets/Generic-data";
 
 import { Step } from "@/utils/Types";
@@ -113,7 +113,7 @@ export default function VerticalStepper({
               borderRadius: "55px",
               border: "1px solid #6BAF6E",
               color: "#7E57C2",
-              fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.leadLarge },
+              fontSize: { xs: "14px", lg: "20px" },
               lineHeight: { xs: "30px", lg: "50px" },
               textAlign: "center",
               mb: { xs: 2, lg: 1 },
@@ -128,9 +128,9 @@ export default function VerticalStepper({
               width: { xs: "100%", lg: "587px" },
               height: { xs: "auto", lg: "28px" },
               fontFamily: FONT_FAMILY.heading,
-              fontWeight: FONT_WEIGHT.semiBold,
+              fontWeight: 600,
               lineHeight: { xs: "32px", lg: "28px" },
-              fontSize: { xs: FONT_SIZE.title, lg: FONT_SIZE.cardHeading },
+              fontSize: { xs: "22px", lg: "28px" },
               mt: 1,
               mb: { xs: 2, lg: 1 }
             }}>
@@ -143,10 +143,10 @@ export default function VerticalStepper({
               width: { xs: "100%", lg: "587px" },
               height: "auto",
               fontFamily: FONT_FAMILY.body,
-              fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.leadLarge },
+              fontSize: { xs: "16px", lg: "20px" },
               color: "#777",
               lineHeight: { xs: "26px", lg: "28px" },
-              fontWeight: FONT_WEIGHT.regular,
+              fontWeight: 400,
               whiteSpace: "pre-line"
             }}>
             

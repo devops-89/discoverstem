@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { useState } from "react";
 import { Box, Container, Typography, Dialog, IconButton } from "@mui/material";
 import Image from "next/image";
@@ -36,8 +36,8 @@ export default function SpecialMessagesShared({ data }: SpecialMessagesSharedPro
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+          fontWeight: 600,
+          fontSize: { xs: "28px", sm: "40px", lg: "48px" },
           lineHeight: { xs: "35px", sm: "52px", lg: "65px" },
           textAlign: "center",
           color: "#101010",
@@ -149,7 +149,7 @@ export default function SpecialMessagesShared({ data }: SpecialMessagesSharedPro
               "&:hover": { bgcolor: "rgba(0,0,0,0.7)" }
             }}>
             
-               <CloseIcon sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} /> 
+               <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
             </IconButton>
             <iframe
             src={selectedVideo}

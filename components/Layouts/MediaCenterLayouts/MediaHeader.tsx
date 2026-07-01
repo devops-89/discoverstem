@@ -1,5 +1,4 @@
-"use client";import { FONT_SIZE } from "@/utils/theme";
-
+"use client";
 import { mediaCategories, mediaCenterNewsData as mediaNewsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
@@ -155,7 +154,7 @@ export default function MediaCenterPage() {
           sx={{
             textAlign: "center",
             py: 8,
-            fontSize: FONT_SIZE.leadLarge,
+            fontSize: "20px",
             color: "#777"
           }}>
           

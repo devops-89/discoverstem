@@ -1,4 +1,5 @@
-import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";import { ctaBannerData, mediaCenterNewsData } from "@/assets/Generic-data";
+import { FONT_FAMILY } from "@/utils/theme";
+import { ctaBannerData, mediaCenterNewsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import MediaNewsCard from "@/components/Layouts/MediaCenterLayouts/MediaNewsCard";
 import FeaturedMediaCard from "@/components/Layouts/MediaCenterLayouts/PressCard";
@@ -31,8 +32,8 @@ export default function MoreNewsPage() {
           variant="h1"
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.bold,
-            fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 700,
+            fontSize: { xs: "32px", md: "48px" },
             color: "#111827",
             mb: 6,
             textTransform: "capitalize"
@@ -62,7 +63,7 @@ export default function MoreNewsPage() {
           }
           </Box> :
 
-        <Typography sx={{ color: "#777", fontSize: FONT_SIZE.lead }}>
+        <Typography sx={{ color: "#777", fontSize: "18px" }}>
             No articles found.
           </Typography>
         }

@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { InfoCardItem } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -60,9 +60,9 @@ export default function InfoCardsSection({
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: FONT_SIZE.caption,
-                lineHeight: LINE_HEIGHT.extraSmall,
+                fontWeight: 400,
+                fontSize: "12px",
+                lineHeight: "16px",
                 letterSpacing: "0.6px",
                 textTransform: "uppercase",
                 color: "#737373",
@@ -75,9 +75,9 @@ export default function InfoCardsSection({
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.title, lg: FONT_SIZE.titleLarge },
-                lineHeight: { xs: LINE_HEIGHT.medium, lg: LINE_HEIGHT.mediumLarge },
+                fontWeight: 600,
+                fontSize: { xs: "22px", lg: "24px" },
+                lineHeight: { xs: "24px", lg: "26px" },
                 letterSpacing: "-0.6px",
                 color: item.color,
                 mb: "12px"
@@ -89,9 +89,9 @@ export default function InfoCardsSection({
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
-                lineHeight: { xs: LINE_HEIGHT.small, lg: "23px" },
+                fontWeight: 400,
+                fontSize: { xs: "13px", lg: "14px" },
+                lineHeight: { xs: "20px", lg: "23px" },
                 color: "#525252"
               }}>
               

@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { stemEducationData } from "@/assets/Generic-data";
 
 import { Box, Container, Typography } from "@mui/material";
@@ -28,8 +28,8 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
             maxWidth: "100%",
             height: { xs: "auto", md: "25px" },
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeading, md: FONT_SIZE.subSectionHeading },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "28px", md: "36px" },
             lineHeight: { xs: "32px", sm: "40px", md: "62px" },
             letterSpacing: "-0.03em",
             color: "#000",
@@ -48,13 +48,12 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
               width: { xs: "100%", md: "1157px" },
               maxWidth: "100%",
               fontFamily: FONT_FAMILY.body,
-              fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge },
-              fontWeight: FONT_WEIGHT.regular,
+              fontSize: { xs: "16px", sm: "18px", md: "20px" },
+              fontWeight: 400,
               lineHeight: { xs: "28px", sm: "32px", md: "36px" },
               letterSpacing: "-0.03em",
               color: "#777777",
               mb: { xs: 3, md: 4 },
-              // 🔥 FIX: Center description text on screens smaller than md (< 768px)
               textAlign: { xs: "center", md: "left" }
             }}>
             
@@ -81,8 +80,8 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeading, md: FONT_SIZE.subSectionHeading },
+          fontWeight: 600,
+          fontSize: { xs: "24px", sm: "28px", md: "36px" },
           lineHeight: { xs: "32px", sm: "40px", md: "60px" },
           letterSpacing: "-0.03em",
           color: "#000",
@@ -99,13 +98,12 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
           maxWidth: "100%",
           height: { xs: "auto", md: "auto" },
           fontFamily: FONT_FAMILY.body,
-          fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge },
-          fontWeight: FONT_WEIGHT.regular,
+          fontSize: { xs: "16px", sm: "18px", md: "20px" },
+          fontWeight: 400,
           lineHeight: { xs: "28px", sm: "32px", md: "36px" },
           letterSpacing: "-0.03em",
           color: "#777777",
           mb: section.image || section.points.length ? { xs: 3, md: 4 } : 0,
-          // 🔥 FIX: Center description text on screens smaller than md (< 768px)
           textAlign: { xs: "center", md: "left" }
         }}>
         
@@ -149,10 +147,10 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
             key={index}
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge },
+              fontSize: { xs: "16px", sm: "18px", md: "20px" },
               lineHeight: { xs: "28px", sm: "32px", md: "36px" },
               letterSpacing: "-0.03em",
-              fontWeight: FONT_WEIGHT.regular,
+              fontWeight: 400,
               color: "#777777",
               mb: 1.5
             }}>

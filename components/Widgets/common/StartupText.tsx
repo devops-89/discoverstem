@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 
 import { SimpleTextSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
@@ -33,8 +33,8 @@ export default function SimpleTextSection({ data }: SimpleTextSectionProps) {
           sx={{
              textAlign: {xs:"center",sm:"left"},
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
             lineHeight: { xs: "26px", sm: "28px", md: "34px", lg: "43px" },
             letterSpacing: "-0.03em",
             color: "#777777",

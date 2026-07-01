@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { Box, Button, ButtonProps } from "@mui/material";
 
@@ -32,8 +32,8 @@ const PrimaryButton = ({
         textTransform: "none",
 
         fontFamily: FONT_FAMILY.body,
-        fontWeight: FONT_WEIGHT.medium,
-        fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, md: FONT_SIZE.bodyLarge },
+        fontWeight: 500,
+        fontSize: { xs: "14px", sm: "15px", md: "16px" },
 
         display: "inline-flex",
         alignItems: "center",
@@ -73,7 +73,7 @@ const PrimaryButton = ({
           sx={{
             width: { xs: "100%", md: "20px" },
             height: { xs: "auto", md: "20px" },
-            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, md: FONT_SIZE.bodyLarge },
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
             color: "#7B53A1"
           }} />
         

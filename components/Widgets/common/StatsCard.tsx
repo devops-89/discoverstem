@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { StatItem } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -81,9 +81,9 @@ export default function StatsCard({
             <Typography
             sx={{
               fontFamily: FONT_FAMILY.accent,
-              fontWeight: FONT_WEIGHT.bold,
+              fontWeight: 700,
 
-              fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeading, md: FONT_SIZE.cardHeading, lg: FONT_SIZE.subSectionHeading },
+              fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "36px" },
               lineHeight: { xs: "28px", sm: "32px", md: "32px", lg: "36px" },
               color: item.color
             }}>
@@ -115,9 +115,9 @@ export default function StatsCard({
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.accent,
-                fontWeight: FONT_WEIGHT.regular,
+                fontWeight: 400,
 
-                fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.caption, lg: FONT_SIZE.bodySmall },
+                fontSize: { xs: "12px", md: "12px", lg: "14px" },
                 lineHeight: "19.25px",
                 color: "#525252"
               }}>

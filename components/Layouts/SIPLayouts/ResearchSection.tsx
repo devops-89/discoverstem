@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { useState } from "react";
 import { researchData } from "@/assets/Generic-data";
 
@@ -41,9 +41,9 @@ export default function ResearchSection() {
           sx={{
              textAlign: { xs: "center", md: "left" },
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.cardHeading, lg: FONT_SIZE.pageHeadingSmall },
-            fontWeight: FONT_WEIGHT.semiBold,
-            lineHeight: { xs: LINE_HEIGHT.extraLarge, sm: "38px", lg: LINE_HEIGHT.huge },
+            fontSize: { xs: "22px", sm: "28px", lg: "48px" },
+            fontWeight: 600,
+            lineHeight: { xs: "32px", sm: "38px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
             mb: { xs: 2, lg: 4 }
@@ -56,11 +56,11 @@ export default function ResearchSection() {
           sx={{
              textAlign: { xs: "center", md: "left" },
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
+            fontWeight: 400,
             letterSpacing: "-0.03em",
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontSize: { xs: "15px", sm: "18px", lg: "22px" },
             color: "#777",
-            lineHeight: { xs: LINE_HEIGHT.mediumLarge, sm: LINE_HEIGHT.extraLarge, lg: LINE_HEIGHT.xl4 },
+            lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
             mb: 4
           }}>
           
@@ -211,9 +211,9 @@ export default function ResearchSection() {
                 sx={{
                   mt: { xs: "12px", sm: "16px", lg: "21px" },
                   fontFamily: FONT_FAMILY.heading,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, lg: "20.3971px" },
-                  lineHeight: { xs: "22px", sm: LINE_HEIGHT.medium, lg: "21px" },
+                  fontWeight: 600,
+                  fontSize: { xs: "15px", sm: "16px", lg: "20.3971px" },
+                  lineHeight: { xs: "22px", sm: "24px", lg: "21px" },
                   letterSpacing: "-0.326354px",
                   color: "#000000",
                   display: "-webkit-box",
@@ -255,9 +255,9 @@ export default function ResearchSection() {
                     justifyContent: "space-between",
                     alignItems: "center",
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: { xs: FONT_SIZE.footnote, sm: FONT_SIZE.caption, lg: "13.0542px" },
-                    lineHeight: LINE_HEIGHT.small,
+                    fontWeight: 400,
+                    fontSize: { xs: "11px", sm: "12px", lg: "13.0542px" },
+                    lineHeight: "20px",
                     letterSpacing: "-0.01em",
                     transition: "all 0.2s ease",
                     "&:hover": {
@@ -322,7 +322,7 @@ export default function ResearchSection() {
             "&:hover": { bgcolor: "rgba(0,0,0,0.7)" }
           }}>
           
-           <CloseIcon sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} /> 
+           <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
         </IconButton>
 
         {selectedVideo &&

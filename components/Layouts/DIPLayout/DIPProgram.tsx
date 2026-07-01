@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { dipProgramDetailsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -26,8 +26,8 @@ export default function DipProgramDetailsSection() {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 600,
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" },
             lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
             textAlign: "center",
             letterSpacing: "-0.03em",
@@ -44,8 +44,8 @@ export default function DipProgramDetailsSection() {
             component="div"
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+              fontWeight: 400,
+              fontSize: { xs: "15px", sm: "18px", lg: "22px" },
               lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
               textAlign: "center",
               letterSpacing: "-0.03em",
@@ -53,7 +53,7 @@ export default function DipProgramDetailsSection() {
               mb: index === data.content.length - 1 ? 0 : { xs: 3, sm: 4, lg: "43px" },
 
               "& strong": {
-                fontWeight: FONT_WEIGHT.bold,
+                fontWeight: 700,
                 color: "#111827"
               }
             }}

@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaNewsItem } from "@/utils/Types";
 import { Avatar, Box, Container, Typography } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
@@ -49,8 +49,8 @@ export default function ArticleContent({
           sx={{
             textAlign: { xs: "center", md: "left" },
             color: "#7B53A1",
-            fontSize: { xs: FONT_SIZE.title, md: FONT_SIZE.cardHeadingLarge, lg: FONT_SIZE.subSectionHeading },
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: "22px", md: "30px", lg: "36px" },
+            fontWeight: 600,
             mb: 3,
             textTransform: "uppercase"
           }}>
@@ -62,8 +62,8 @@ export default function ArticleContent({
           sx={{
             textAlign: { xs: "center", md: "left" },
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.leadLarge, md: FONT_SIZE.cardHeadingLarge, lg: FONT_SIZE.subSectionHeading },
+            fontWeight: 600,
+            fontSize: { xs: "20px", md: "30px", lg: "36px" },
             lineHeight: { xs: "28px", md: "40px", lg: "46px" },
             letterSpacing: "-0.02em",
             color: "#000",
@@ -90,7 +90,7 @@ export default function ArticleContent({
             sx={{
               textAlign: { xs: "left", md: "left" },
               color: "rgba(0,0,0,0.5)",
-              fontSize: FONT_SIZE.bodySmall,
+              fontSize: "14px",
               lineHeight: "21px"
             }}>
             
@@ -104,7 +104,7 @@ export default function ArticleContent({
           sx={{
             textAlign: { xs: "center", md: "left" },
             fontFamily: FONT_FAMILY.body,
-            fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+            fontSize: { xs: "16px", md: "18px", lg: "20px" },
             lineHeight: { xs: "28px", md: "30px", lg: "32px" },
             letterSpacing: "-0.03em",
             color: "rgba(0,0,0,0.6)",
@@ -153,7 +153,7 @@ export default function ArticleContent({
           sx={{
             textAlign: { xs: "center", md: "left" }, 
             fontFamily: FONT_FAMILY.body,
-            fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+            fontSize: { xs: "16px", md: "18px", lg: "20px" },
             lineHeight: { xs: "28px", md: "30px", lg: "32px" },
             letterSpacing: "-0.03em",
             color: "rgba(0,0,0,0.6)",
@@ -211,9 +211,9 @@ export default function ArticleContent({
               borderRadius: "12px"
             },
 
-            "& h1, & h2, & h3, & h4, & h5, & h6": { color: "#000", fontWeight: FONT_WEIGHT.semiBold, mt: { xs: 3, md: 4 }, mb: { xs: 1, md: 2 } },
+            "& h1, & h2, & h3, & h4, & h5, & h6": { color: "#000", fontWeight: 600, mt: { xs: 3, md: 4 }, mb: { xs: 1, md: 2 } },
             
-            // 🔥 FIX: Added textAlign: "left" here so lists don't inherit the center alignment!
+            
             "& ul, & ol": { textAlign: "left", pl: 3, mb: { xs: 2, md: 3 } },
 
             "& li": {

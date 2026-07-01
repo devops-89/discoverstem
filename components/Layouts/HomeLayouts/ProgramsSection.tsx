@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { programs } from "@/assets/Generic-data";
 
 import {
@@ -55,7 +55,8 @@ export default function ProgramsSection() {
         <Typography
           sx={{
             color: "#6e6e6e",
-            fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodySmall },
+               fontSize: {xs:11, sm:14 , md:20},
+         fontWeight: 500,
             letterSpacing: "0.02em"
           }}>
           
@@ -68,9 +69,9 @@ export default function ProgramsSection() {
           fontFamily: FONT_FAMILY.heading,
           fontSize: {
              xs: "22px",
-            sm: FONT_SIZE.subSectionHeading,
-            md: FONT_SIZE.sectionHeadingLarge,
-            lg: FONT_SIZE.pageHeading
+            sm: "36px",
+            md: "44px",
+            lg: "50px"
           },
           fontWeight:500,
           lineHeight: {
@@ -140,9 +141,9 @@ export default function ProgramsSection() {
               <Typography
                 sx={{
                   color: "#fff",
-                  fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.leadLarge, md: FONT_SIZE.title },
+                  fontSize: { xs: "14px", sm: "20px", md: "22px" },
                   lineHeight: { xs: "24px", md: "30px" },
-                  fontWeight: FONT_WEIGHT.medium,
+                  fontWeight: 500,
                   wordBreak: "break-word"
                 }}>
                 
@@ -227,9 +228,9 @@ export default function ProgramsSection() {
                   <Typography
                   sx={{
                     color: "#fff",
-                    fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge },
+                    fontSize: { xs: "14px", sm: "18px", md: "20px" },
                     lineHeight: { xs: "23px", md: "28px" },
-                    fontWeight: FONT_WEIGHT.medium,
+                    fontWeight: 500,
                     wordBreak: "break-word"
                   }}>
                   

@@ -17,31 +17,24 @@ export const FONT_FAMILY = {
 };
 
 export const FONT_SIZE = {
-  // --- Micro & Small Text ---
   micro: "6px",
   nano: "9px",
   tiny: "10px",
   footnote: "11px",
   caption: "12px",
   small: "13px",
-
-  // --- Body & Content ---
   bodySmall: "14px",
   body: "15px",
   bodyLarge: "16px",
   bodyXLarge: "17px",
   lead: "18px",
   leadLarge: "20px",
-
-  // --- Titles & Cards ---
   titleSmall: "21px",
   title: "22px",
   titleLarge: "24px",
   cardHeadingSmall: "26px",
   cardHeading: "28px",
   cardHeadingLarge: "30px",
-
-  // --- Article & Section Headings ---
   articleHeadingSmall: "31px",
   articleHeading: "32px",
   articleHeadingLarge: "34px",
@@ -51,8 +44,6 @@ export const FONT_SIZE = {
   sectionHeadingSmall: "40px",
   sectionHeading: "42px",
   sectionHeadingLarge: "44px",
-
-  // --- Page & Hero Headings ---
   pageHeadingSmall: "48px",
   pageHeading: "50px",
   pageHeadingLarge: "52px",
@@ -97,14 +88,14 @@ export const FONT_WEIGHT = {
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#EE4823", // DiscoverSTEM Orange
+      main: "#EE4823", 
       light: "#FF7043",
       dark: "#EC532A",
       
       contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#7E57C2", // DiscoverSTEM Purple
+      main: "#7E57C2", 
       light: "#9A73C1",
       dark: "#6C4AB6",
       
@@ -114,7 +105,7 @@ export const theme = createTheme({
       main: "#FF4D2E",
     },
     warning: {
-      main: "#F9A51E", // Accent Yellow
+      main: "#F9A51E", 
       light: "#F5AA33",
       dark: "#E6951A",
     },
@@ -123,7 +114,7 @@ export const theme = createTheme({
       dark: "#084E96",
     },
     success: {
-      main: "#619040", // Accent Green
+      main: "#619040", 
       light: "#6BAF6E",
       dark: "#5C9246",
     },

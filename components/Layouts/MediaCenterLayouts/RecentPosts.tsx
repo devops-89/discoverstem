@@ -1,5 +1,4 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
 import { recentPosts } from "@/assets/Generic-data";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
@@ -26,8 +25,8 @@ const RecentPosts = () => {
           height: { xs: "auto", lg: "17px" },
           lineHeight: "34px",
           letterSpacing: "-0.8px",
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: FONT_SIZE.titleLarge,
+          fontWeight: 600,
+          fontSize: "24px",
           mb: 3,
           color: "#1C2539"
         }}>
@@ -64,7 +63,7 @@ const RecentPosts = () => {
           sx={{
             width: { xs: "100%", lg: "101px" },
             height: { xs: "auto", lg: "11px" },
-            fontSize: FONT_SIZE.caption,
+            fontSize: "12px",
             color: "#7B53A1",
             mb: 0.5
           }}>
@@ -77,8 +76,8 @@ const RecentPosts = () => {
           sx={{
             width: { xs: "100%", lg: "348px" },
             height: { xs: "auto", lg: "44px" },
-            fontSize: FONT_SIZE.bodySmall,
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: "14px",
+            fontWeight: 600,
             color: "#111827",
             lineHeight: "30px",
             letterSpacing: "-0.01em"

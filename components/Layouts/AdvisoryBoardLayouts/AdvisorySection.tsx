@@ -15,8 +15,8 @@ export default function AdvisorySection() {
       maxWidth={false}
       sx={{
         maxWidth: "min(1196px, 100%)",
-        py: { xs: 6, md: 7 }, // Added xs: 6 for proper mobile spacing
-        px: { xs: 2.5, md: 4 }, // Scaled down the edge-padding
+        py: { xs: 6, md: 7 }, 
+        px: { xs: 2.5, md: 4 }, 
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 4 } }}>

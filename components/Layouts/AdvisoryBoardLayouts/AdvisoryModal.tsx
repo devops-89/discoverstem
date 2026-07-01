@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { AdvisoryMember } from "@/utils/Types";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Dialog, IconButton, Typography } from "@mui/material";
@@ -58,7 +58,7 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         <CloseIcon
           sx={{
             color: "red",
-            fontSize: { xs: FONT_SIZE.leadLarge, md: FONT_SIZE.titleLarge }
+            fontSize: { xs: "20px", md: "24px" }
           }} />
         
       </IconButton>
@@ -97,9 +97,9 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge },
-            lineHeight: LINE_HEIGHT.extraSmall,
+            fontWeight: 400,
+            fontSize: { xs: "13px", md: "16px" },
+            lineHeight: "16px",
             letterSpacing: { xs: "1.5px", md: "2.4px" },
             textTransform: "uppercase",
             color: "#7B53A1",
@@ -111,9 +111,9 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.leadLarge, sm: FONT_SIZE.title, md: "25.6px" },
-            lineHeight: { xs: LINE_HEIGHT.mediumLarge, sm: "28px", md: "29.4px" },
+            fontWeight: 600,
+            fontSize: { xs: "20px", sm: "22px", md: "25.6px" },
+            lineHeight: { xs: "26px", sm: "28px", md: "29.4px" },
             letterSpacing: "-0.64px",
             color: "#111827",
             whiteSpace: "pre-line",
@@ -125,9 +125,9 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodySmall },
-            lineHeight: LINE_HEIGHT.small,
+            fontWeight: 400,
+            fontSize: { xs: "14px", md: "14px" },
+            lineHeight: "20px",
             color: "#777777",
             mb: { xs: 1.5, md: 4 }
           }}>
@@ -137,9 +137,9 @@ export default function AdvisoryModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, md: FONT_SIZE.bodyLarge },
-            lineHeight: { xs: LINE_HEIGHT.mediumLarge, md: LINE_HEIGHT.small },
+            fontWeight: 400,
+            fontSize: { xs: "15px", md: "16px" },
+            lineHeight: { xs: "26px", md: "20px" },
             letterSpacing: "-0.03em",
             color: "#777777",
             whiteSpace: "pre-line"

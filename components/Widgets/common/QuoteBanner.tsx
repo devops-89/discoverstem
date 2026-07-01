@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { QuoteBannerData } from "@/utils/Types";
 import { Box, Typography } from "@mui/material";
 
@@ -26,8 +26,8 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.cardHeading, md: FONT_SIZE.articleHeading, lg: FONT_SIZE.subSectionHeading },
+            fontWeight: 600,
+            fontSize: { xs: "28px", md: "32px", lg: "36px" },
             lineHeight: { xs: "34px", md: "38px", lg: "42px" },
             color: "#F9A51E",
             mb: 2
@@ -39,9 +39,9 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.medium,
-            fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.leadLarge, lg: "25.6px" },
-            lineHeight: { xs: LINE_HEIGHT.mediumLarge, md: "30px", lg: LINE_HEIGHT.xl2 },
+            fontWeight: 500,
+            fontSize: { xs: "16px", md: "20px", lg: "25.6px" },
+            lineHeight: { xs: "26px", md: "30px", lg: "34.56px" },
             letterSpacing: "-0.64px",
             color: "#000000",
             textAlign: "center",
@@ -65,9 +65,9 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: FONT_SIZE.bodySmall,
-              lineHeight: LINE_HEIGHT.small,
+              fontWeight: 400,
+              fontSize: "14px",
+              lineHeight: "20px",
               color: "#000000B2"
             }}>
             

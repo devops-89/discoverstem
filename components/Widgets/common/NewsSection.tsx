@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { MediaNewsItem } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Button, Typography } from "@mui/material";
@@ -32,8 +32,8 @@ export default function NewsSection({
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, md: FONT_SIZE.cardHeading, lg: FONT_SIZE.subSectionHeading },
+            fontWeight: 600,
+            fontSize: { xs: "24px", md: "28px", lg: "36px" },
             lineHeight: { xs: "32px", md: "36px", lg: "46px" },
             letterSpacing: "-0.02em",
             color: "#111827",
@@ -63,8 +63,8 @@ export default function NewsSection({
             <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: FONT_SIZE.bodyLarge
+              fontWeight: 600,
+              fontSize: "16px"
             }}>
             
               See All
@@ -119,8 +119,8 @@ export default function NewsSection({
             sx={{
               display: "block",
               fontFamily: FONT_FAMILY.heading,
-              fontWeight: FONT_WEIGHT.semiBold,
-              fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+              fontWeight: 600,
+              fontSize: { xs: "14px", lg: "16px" },
               lineHeight: { xs: "20px", lg: "22px" },
               color: "#111827",
               textDecoration: "none",
@@ -131,7 +131,7 @@ export default function NewsSection({
             </Typography>
 
             <Box sx={{ display: "flex", gap: "9px" }}>
-              <Typography sx={{ fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#474A55" }}>
+              <Typography sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#474A55" }}>
                 {item.publishedDate}
               </Typography>
             </Box>

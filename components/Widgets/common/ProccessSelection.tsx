@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
@@ -45,9 +45,9 @@ export default function ProcessSection() {
           sx={{
             width: { xs: "100%", lg: "160px" },
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
+            fontWeight: 400,
             color: "#777777",
-            fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+            fontSize: { xs: "16px", sm: "18px", lg: "22px" },
             letterSpacing: "0.03em",
             lineHeight: { xs: "28px", sm: "32px", lg: "43px" }
           }}>
@@ -60,8 +60,8 @@ export default function ProcessSection() {
         sx={{
           fontFamily: FONT_FAMILY.heading,
           width: { xs: "100%", lg: "374px" },
-          fontSize: { xs: FONT_SIZE.cardHeadingSmall, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontSize: { xs: "26px", sm: "36px", lg: "48px" },
+          fontWeight: 600,
           letterSpacing: "-0.03em",
           lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
           mb: { xs: 4, lg: 5 }
@@ -75,7 +75,7 @@ export default function ProcessSection() {
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+              fontSize: { xs: "15px", sm: "18px", lg: "20px" },
               color: "#5C5C5C",
               lineHeight: { xs: "26px", sm: "32px", lg: "37px" }
             }}>

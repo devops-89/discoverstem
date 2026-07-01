@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { featureCards } from "@/assets/Generic-data";
 
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
@@ -68,7 +68,8 @@ export default function WhatWeDoSection() {
         <Typography
           sx={{
             color: "#6e6e6e",
-            fontSize: { xs: "13px", md: "14px" },
+             fontSize: {xs:11, sm:14 , md:20},
+         fontWeight: 500,
             letterSpacing: "0.02em"
           }}>
           
@@ -147,7 +148,7 @@ export default function WhatWeDoSection() {
                 },
                 mb: 1.5,
                 fontWeight:500,
-                lineHeight: LINE_HEIGHT.relativeTighter,
+                lineHeight: "1.2",
                 wordBreak: "break-word",
                 width: "100%",
                 textAlign: "left"

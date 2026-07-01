@@ -1,5 +1,4 @@
-"use client";import { LINE_HEIGHT, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -105,7 +104,7 @@ export default function InventorPromoSection() {
               alignItems: "stretch"
             }}>
             
-              {/* Left Content */}
+             
               <Box
               sx={{
                 p: { xs: 2.5, sm: 4, md: 7 },
@@ -132,10 +131,10 @@ export default function InventorPromoSection() {
                   variant="h2"
                   sx={{
                     fontFamily: "var(--font-geist-sans), sans-serif",
-                    fontWeight: FONT_WEIGHT.medium,
+                    fontWeight: 500,
                     fontSize: { xs: 22, sm: 30, md: 40, lg: 48 },
                     color: "#000",
-                    lineHeight: LINE_HEIGHT.relativeTightest,
+                    lineHeight: "1.15",
                     mb: { xs: 2, sm: 3, md: 4 },
                     whiteSpace: { xs: "normal", md: "pre-line" }
                   }}>
@@ -164,7 +163,7 @@ export default function InventorPromoSection() {
                   mt: "auto",
                   pt: { xs: 2, md: 4 },
                   display: "flex",
-                  justifyContent: { xs: "center", md: "flex-start" } // Centers button block on mobile/768px
+                  justifyContent: { xs: "center", md: "flex-start" } 
                 }}>
                 
                   <Box
@@ -178,7 +177,7 @@ export default function InventorPromoSection() {
                     px: { xs: 2.5, sm: 3, md: 4 },
                     py: { xs: 1.2, sm: 1.5, md: 1.8 },
                     fontSize: { xs: 13, sm: 14, md: 16 },
-                    fontWeight: FONT_WEIGHT.medium,
+                    fontWeight: 500,
                     fontFamily: "var(--font-geist-sans), sans-serif",
                     cursor: "pointer",
                     textAlign: { xs: "center", md: "left" },
@@ -189,7 +188,7 @@ export default function InventorPromoSection() {
                     width: { xs: "100%", sm: "420px", md: "fit-content" },
                     minHeight: { xs: "68px", sm: "60px", md: "auto" },
                     boxSizing: "border-box",
-                    lineHeight: LINE_HEIGHT.relativeTight,
+                    lineHeight: "1.3",
                     "&:hover": {
                       backgroundColor: "#6a3e82"
                     }

@@ -1,7 +1,7 @@
 "use client";
 
 // 🔥 Imports the data from your Generic-data file
-import { FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";import { HEADER_DATA } from "@/assets/Generic-data";
+import { HEADER_DATA } from "@/assets/Generic-data";
 
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -140,7 +140,7 @@ export default function Header() {
                       <Typography
                         sx={{
                           color: activeMenu === item.label ? "#000" : "#666",
-                          fontSize: FONT_SIZE.body,
+                          fontSize: "15px",
                           "&:hover": { color: "#000" }
                         }}>
                         
@@ -214,7 +214,6 @@ export default function Header() {
                             py: 1.2,
                             cursor: "pointer",
                             borderRadius: 1,
-                            // 🔥 FIX: Set background hover to match other items
                             "&:hover": { background: "#7B53A1" },
                             "&:hover .menu-text": { color: "#FFFFFF" },
                             "&:hover .menu-icon": { color: "#FFFFFF" },
@@ -225,9 +224,8 @@ export default function Header() {
                               <Typography
                             className="menu-text"
                             sx={{
-                              // 🔥 FIX: Changed color and font weight to match normal items
                               color: openDesktopNestedMenu === sub.label ? "#FFFFFF" : "#666",
-                              fontSize: FONT_SIZE.bodySmall,
+                              fontSize: "14px",
                               transition: "0.2s"
                             }}>
                             
@@ -237,7 +235,6 @@ export default function Header() {
                             className="menu-icon"
                             sx={{
                               fontSize: 18,
-                              // 🔥 FIX: Icon color perfectly matches text
                               color: openDesktopNestedMenu === sub.label ? "#FFFFFF" : "#666",
                               transform: "rotate(-90deg)",
                               transition: "0.2s"
@@ -283,7 +280,7 @@ export default function Header() {
                                 
                                           <Typography
                                   className="menu-text"
-                                  sx={{ color: "#666", fontSize: FONT_SIZE.bodySmall, transition: "0.2s" }}>
+                                  sx={{ color: "#666", fontSize: "14px", transition: "0.2s" }}>
                                   
                                             {nested.label}
                                           </Typography>
@@ -320,7 +317,7 @@ export default function Header() {
                             className="menu-text"
                             sx={{
                               color: "#666",
-                              fontSize: FONT_SIZE.bodySmall,
+                              fontSize: "14px",
                               transition: "0.2s"
                             }}>
                             
@@ -348,7 +345,7 @@ export default function Header() {
                   <Typography
                     sx={{
                       color: isActive ? "#000" : "#666",
-                      fontSize: FONT_SIZE.body,
+                      fontSize: "15px",
                       "&:hover": { color: "#000" }
                     }}>
                     
@@ -359,7 +356,7 @@ export default function Header() {
             })}
           </Stack>
 
-          {/* Mobile Menu Icon */}
+         
           <IconButton
             onClick={() => setMobileOpen(true)}
             sx={{
@@ -420,7 +417,7 @@ export default function Header() {
                   <Typography
                     sx={{
                       py: 1.6,
-                      fontSize: FONT_SIZE.bodyLarge,
+                      fontSize: "16px",
                       color: pathname.startsWith(item.href) ? "#000" : "#555",
                       borderBottom: "1px solid #eee"
                     }}>
@@ -448,7 +445,7 @@ export default function Header() {
                     borderBottom: "1px solid #eee"
                   }}>
                   
-                  <Typography sx={{ fontSize: FONT_SIZE.bodyLarge, color: "#555" }}>
+                  <Typography sx={{ fontSize: "16px", color: "#555" }}>
                     {item.label}
                   </Typography>
 
@@ -481,8 +478,8 @@ export default function Header() {
                         
                             <Typography
                           sx={{
-                            fontSize: FONT_SIZE.body,
-                            fontWeight: FONT_WEIGHT.semiBold,
+                            fontSize: "15px",
+                            fontWeight: 600,
                             color: "#222"
                           }}>
                           
@@ -514,7 +511,7 @@ export default function Header() {
                                     <Typography
                               sx={{
                                 py: 1,
-                                fontSize: FONT_SIZE.bodySmall,
+                                fontSize: "14px",
                                 color: "#666"
                               }}>
                               
@@ -536,7 +533,7 @@ export default function Header() {
                           <Typography
                         sx={{
                           py: 1.2,
-                          fontSize: FONT_SIZE.body,
+                          fontSize: "15px",
                           color: "#666"
                         }}>
                         

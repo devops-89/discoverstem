@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, Typography } from "@mui/material";
 import { US, ZA } from "country-flag-icons/react/3x2";
 
@@ -77,8 +77,8 @@ export default function PatentStats() {
               <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.accent,
-                  fontWeight: FONT_WEIGHT.bold,
-                  fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.articleHeading, md: FONT_SIZE.cardHeading, lg: FONT_SIZE.subSectionHeading },
+                  fontWeight: 700,
+                  fontSize: { xs: "28px", sm: "32px", md: "28px", lg: "36px" },
                   lineHeight: { xs: "28px", sm: "32px", md: "28px", lg: "36px" },
                   color: item.color,
                   mb: "8px"
@@ -115,8 +115,8 @@ export default function PatentStats() {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.accent,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.small, md: FONT_SIZE.caption, lg: FONT_SIZE.bodySmall },
+                    fontWeight: 400,
+                    fontSize: { xs: "12px", sm: "13px", md: "12px", lg: "14px" },
                     lineHeight: { xs: "16px", sm: "17px", md: "16px", lg: "19px" },
                     color: "#525252"
                   }}>

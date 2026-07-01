@@ -1,4 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { startupsData } from "@/assets/Generic-data";
 
 import { Startup } from "@/utils/Types";
@@ -26,10 +27,10 @@ export default function StartupCard() {
             width: { xs: "100%", lg: "573px" },
             height: { xs: "auto", lg: "32px" },
             fontFamily: FONT_FAMILY.heading,
-            fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+            fontSize: { xs: "28px", sm: "36px", lg: "48px" },
             lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontWeight: 600,
             mb: { xs: 4, lg: 10 },
             mt: 2,
             color: "#111827",
@@ -68,10 +69,10 @@ export default function StartupCard() {
                     width: { xs: "100%", lg: "263px" },
                     height: { xs: "auto", lg: "85px" },
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
+                    fontWeight: 400,
                     letterSpacing: "-0.03em",
                     mt: { xs: 2, lg: 4 },
-                    fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                    fontSize: { xs: "16px", lg: "18px" },
                     lineHeight: { xs: "28px", lg: "36px" },
                     color: "#000",
                     maxWidth: "300px",

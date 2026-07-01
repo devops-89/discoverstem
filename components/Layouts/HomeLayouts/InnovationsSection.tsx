@@ -1,5 +1,4 @@
-"use client";import { LINE_HEIGHT, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
 import React, { useRef } from "react";
 import { Container, Box, Card, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -100,9 +99,9 @@ export default function InnovationsSection() {
                   sx={{
                     fontFamily: "var(--font-geist-sans), sans-serif",
                     fontSize: { xs: 16, sm: 18, md: 22 },
-                    fontWeight: FONT_WEIGHT.semiBold,
+                    fontWeight: 600,
                     color: "#000",
-                    lineHeight: LINE_HEIGHT.relativeTight
+                    lineHeight: "1.3"
                   }}>
                   
                     {item.title}

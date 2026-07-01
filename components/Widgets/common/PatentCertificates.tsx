@@ -1,4 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { useState } from "react";
 import { Box, Container, Typography, Dialog, IconButton } from "@mui/material";
 import Image from "next/image";
@@ -50,9 +51,9 @@ export default function PatentCertificatesShared({
           sx={{
             textAlign: "center",
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.subSectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
-            lineHeight: { xs: "30px", sm: "52px", lg: LINE_HEIGHT.huge },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "35px", lg: "48px" },
+            lineHeight: { xs: "30px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#171717",
             mb: { xs: 4, md: 5, lg: "46px" }
@@ -154,9 +155,9 @@ export default function PatentCertificatesShared({
                     borderRadius: "999px",
                     bgcolor: "rgba(0,0,0,0.55)",
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.semiBold,
-                    fontSize: FONT_SIZE.nano,
-                    lineHeight: LINE_HEIGHT.micro,
+                    fontWeight: 600,
+                    fontSize: "9px",
+                    lineHeight: "12px",
                     letterSpacing: "0.6px",
                     textTransform: "uppercase",
                     color: "#FFFFFF",
@@ -258,7 +259,7 @@ export default function PatentCertificatesShared({
               "&:hover": { bgcolor: "rgba(0,0,0,0.7)" }
             }}>
             
-              <CloseIcon sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} /> 
+              <CloseIcon sx={{ fontSize: "20px", color: "red" }} /> 
             </IconButton>
             <iframe
             src={selectedVideo}

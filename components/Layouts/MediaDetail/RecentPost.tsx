@@ -1,5 +1,4 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
 import { MediaNewsItem } from "@/utils/Types";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
@@ -13,7 +12,6 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
   return (
     <Box
       sx={{
-        // 🔥 Shifted from 'md' to 'lg'. Now 1024px stays 100% wide exactly like 768px!
         width: { xs: "100%", lg: "420px" },
         boxSizing: "border-box",
         bgcolor: "#FAF5FF",
@@ -25,8 +23,8 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
       <Typography
         sx={{
           fontFamily: "JUST Sans, Poppins, sans-serif",
-          fontWeight: FONT_WEIGHT.semiBold,
-          fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.titleLarge },
+          fontWeight: 600,
+          fontSize: { xs: "20px", lg: "24px" },
           lineHeight: { xs: "28px", lg: "34px" },
           color: "#1C2539",
           mb: { xs: 3, lg: 4 }
@@ -42,7 +40,6 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
           href={`/media/${post.slug}`}
           sx={{
             display: "block",
-            // 🔥 sm: "300px" now applies to 1024px as well, preventing the 100% wide image from squashing!
             height: { xs: "200px", sm: "300px", lg: "160px" },
             borderRadius: "10px",
             overflow: "hidden",
@@ -67,7 +64,7 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
           <Typography
           sx={{
             color: "#7B53A1",
-            fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+            fontSize: { xs: "14px", lg: "16px" },
             lineHeight: { xs: "24px", lg: "30px" },
             mb: { xs: 0.5, lg: 1 }
           }}>
@@ -81,8 +78,8 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
           sx={{
             display: "block",
             fontFamily: "JUST Sans, Poppins, sans-serif",
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.leadLarge },
+            fontWeight: 600,
+            fontSize: { xs: "14px", lg: "20px" },
             lineHeight: { xs: "26px", lg: "30px" },
             letterSpacing: "-0.01em",
             color: "#111827",

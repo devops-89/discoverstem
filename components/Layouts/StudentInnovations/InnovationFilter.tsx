@@ -1,5 +1,4 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
 import { innovationFilters } from "@/assets/Generic-data";
 import { InnovationFilter } from "@/utils/Types";
 import { Box, Chip, TextField, Typography } from "@mui/material";
@@ -80,9 +79,9 @@ export default function InnovationFilterSection({
 
               width: { xs: "100%", sm: "auto" },
               height: { xs: "32px", sm: "40px" },
-              fontSize: { xs: FONT_SIZE.tiny, sm: FONT_SIZE.bodySmall },
+              fontSize: { xs: "10px", sm: "14px" },
               borderRadius: "999px",
-              fontWeight: FONT_WEIGHT.semiBold,
+              fontWeight: 600,
               backgroundColor: filter === item ? "#7B53A1" : "#F5F5F5",
               color: filter === item ? "#fff" : "#171717",
 
@@ -92,7 +91,7 @@ export default function InnovationFilterSection({
               },
               "& .MuiChip-icon": {
                 color: "inherit",
-                fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.lead },
+                fontSize: { xs: "14px", sm: "18px" },
                 ml: { xs: "6px", sm: "10px" }
               }
             }} />
@@ -113,13 +112,13 @@ export default function InnovationFilterSection({
               height: { xs: "38px", sm: "44px" },
               borderRadius: "999px",
               backgroundColor: "#F5F5F5",
-              fontSize: { xs: FONT_SIZE.small, sm: FONT_SIZE.bodySmall }
+              fontSize: { xs: "13px", sm: "14px" }
             }
           }} />
         
       </Box>
 
-      <Typography sx={{ fontSize: FONT_SIZE.bodySmall, color: "#737373", mb: 8, mt: 4, ml: { xs: "10px", sm: "50px" } }}>
+      <Typography sx={{ fontSize: "14px", color: "#737373", mb: 8, mt: 4, ml: { xs: "10px", sm: "50px" } }}>
         Showing <b>{showingCount}</b> of {totalCount} innovations
       </Typography>
     </>);

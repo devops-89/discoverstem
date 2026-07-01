@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { mirzaFaizan } from "@/assets/Generic-data";
 
 import {
@@ -64,7 +64,6 @@ const FounderSection = () => {
             pt: { xs: 0, md: 3, lg: "42px" },
             display: "flex",
             flexDirection: "column",
-            // 🔥 FIX: Changed from "left" so all text centers on mobile
             textAlign: { xs: "center", md: "left" } 
           }}>
           
@@ -78,8 +77,8 @@ const FounderSection = () => {
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.heading,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.articleHeading, md: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+                fontWeight: 600,
+                fontSize: { xs: "28px", sm: "32px", md: "36px", lg: "48px" },
                 lineHeight: { xs: "36px", sm: "42px", md: "46px", lg: "62px" },
                 letterSpacing: "-0.03em",
                 color: "#111827",
@@ -92,8 +91,8 @@ const FounderSection = () => {
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                fontWeight: 600,
+                fontSize: { xs: "16px", sm: "18px", md: "18px", lg: "22px" },
                 lineHeight: { xs: "24px", md: "26px", lg: "30px" },
                 letterSpacing: "-0.01em",
                 color: "#111827"
@@ -107,8 +106,8 @@ const FounderSection = () => {
               width: "100%",
               whiteSpace: "pre-line",
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.body, md: FONT_SIZE.body, lg: FONT_SIZE.lead },
+              fontWeight: 400,
+              fontSize: { xs: "15px", md: "15px", lg: "18px" },
               lineHeight: { xs: "26px", md: "28px", lg: "32px" },
               color: "#474A55",
               opacity: 0.9
@@ -127,7 +126,6 @@ const FounderSection = () => {
             <Box
               sx={{
                 display: "flex",
-                // 🔥 FIX: Centered email on mobile to match text
                 justifyContent: { xs: "center", md: "flex-start" }, 
                 alignItems: "center",
                 gap: "10px",
@@ -136,7 +134,7 @@ const FounderSection = () => {
               
               <Email
                 sx={{
-                  fontSize: FONT_SIZE.lead,
+                  fontSize: "18px",
                   color: "#111827"
                 }} />
               
@@ -146,8 +144,8 @@ const FounderSection = () => {
                   width: "fit-content",
                   height: "auto",
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge },
+                  fontWeight: 400,
+                  fontSize: { xs: "14px", md: "16px" },
                   color: "#111827"
                 }}>
                 
@@ -158,7 +156,6 @@ const FounderSection = () => {
             <Box
               sx={{
                 display: "flex",
-                // 🔥 FIX: Centered social icons on mobile to match text
                 justifyContent: { xs: "center", md: "flex-start" }, 
                 gap: "8px"
               }}>
@@ -178,7 +175,7 @@ const FounderSection = () => {
                   }
                 }}>
                 
-                  <Icon sx={{ fontSize: FONT_SIZE.lead }} />
+                  <Icon sx={{ fontSize: "18px" }} />
                 </IconButton>
               )}
             </Box>

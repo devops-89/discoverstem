@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { GallerySectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -45,9 +45,9 @@ export default function GallerySection({
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
-              lineHeight: LINE_HEIGHT.mediumLarge,
+              fontWeight: 400,
+              fontSize: { xs: "14px", md: "16px", lg: "18px" },
+              lineHeight: "26px",
               textTransform: "uppercase",
               color: "#737373"
             }}>
@@ -60,9 +60,9 @@ export default function GallerySection({
           sx={{
             
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.title, md: FONT_SIZE.articleHeadingLarge, lg: FONT_SIZE.pageHeadingSmall },
-            lineHeight: { xs: "36px", md: LINE_HEIGHT.xl5, lg: "56px" },
+            fontWeight: 600,
+            fontSize: { xs: "22px", md: "34px", lg: "48px" },
+            lineHeight: { xs: "36px", md: "46px", lg: "56px" },
             letterSpacing: "-0.03em",
             color: "#171717",
             mb: { xs: 4, md: 6, lg: "64px" }
@@ -80,7 +80,6 @@ export default function GallerySection({
               sm: "2fr 1fr 1fr",
               lg: "572px 278px 278px"
             },
-            // 🔥 FIX: We now use the exact `numRows` calculated above. No more massive empty gaps!
             gridTemplateRows: {
               xs: "auto",
               sm: Array.from({ length: numRows }, () => "110px").join(" "),

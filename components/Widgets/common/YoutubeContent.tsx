@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { VideoSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -24,9 +24,9 @@ export default function VideoSection({ data }: VideoSectionProps) {
         sx={{
           textAlign: "center",
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.semiBold,
+          fontWeight: 600,
 
-          fontSize: { xs: FONT_SIZE.titleLarge, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+          fontSize: { xs: "24px", md: "40px", lg: "48px" },
           lineHeight: { xs: "30px", md: "50px", lg: "62px" },
           letterSpacing: "-0.03em",
           color: "#111827",
@@ -41,8 +41,8 @@ export default function VideoSection({ data }: VideoSectionProps) {
         sx={{
           textAlign: "center",
           fontFamily: FONT_FAMILY.body,
-          fontWeight: FONT_WEIGHT.regular,
-          fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
+          fontWeight: 400,
+          fontSize: { xs: "13px", md: "15px", lg: "16px" },
           color: "#777777",
           mb: { xs: 5, lg: "55px" }
         }}>

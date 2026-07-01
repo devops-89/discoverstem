@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { aerospaceOutcomesData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -55,9 +55,9 @@ export default function OutcomesSection() {
                 sx={{
                   
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.footnote, lg: FONT_SIZE.bodyLarge },
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 400,
+                  fontSize: { xs: "11px", lg: "16px" },
+                  lineHeight: "16px",
                   letterSpacing: "2.4px",
                   textTransform: "uppercase",
                   color: "#F9A51E"
@@ -72,8 +72,8 @@ export default function OutcomesSection() {
                 textAlign: { xs: "center", sm: "left" },
                 whiteSpace: "pre-line",
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.cardHeadingSmall, sm: FONT_SIZE.cardHeadingLarge, lg: FONT_SIZE.subSectionHeading },
+                fontWeight: 600,
+                fontSize: { xs: "26px", sm: "30px", lg: "36px" },
                 lineHeight: { xs: "34px", sm: "36px", lg: "36.8px" },
                 letterSpacing: "-0.8px",
                 color: "#000000",
@@ -88,9 +88,9 @@ export default function OutcomesSection() {
                 textAlign: { xs: "center", sm: "left" },
                 maxWidth: { xs: "100%", lg: "444px" },
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-                lineHeight: { xs: LINE_HEIGHT.medium, lg: LINE_HEIGHT.medium },
+                fontWeight: 400,
+                fontSize: { xs: "14px", lg: "16px" },
+                lineHeight: { xs: "24px", lg: "24px" },
                 color: "#777777"
               }}>
               
@@ -135,9 +135,9 @@ export default function OutcomesSection() {
                   <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.bold,
-                    fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-                    lineHeight: LINE_HEIGHT.medium,
+                    fontWeight: 700,
+                    fontSize: { xs: "14px", lg: "16px" },
+                    lineHeight: "24px",
                     color: "#1B0F2A"
                   }}>
                   
@@ -148,9 +148,9 @@ export default function OutcomesSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-                  lineHeight: { xs: "22px", lg: LINE_HEIGHT.mediumLarge },
+                  fontWeight: 400,
+                  fontSize: { xs: "14px", lg: "16px" },
+                  lineHeight: { xs: "22px", lg: "26px" },
                   color: "#000000E5"
                 }}>
                 

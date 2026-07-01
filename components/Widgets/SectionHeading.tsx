@@ -1,5 +1,4 @@
 "use client";
-import { LINE_HEIGHT, FONT_WEIGHT } from "@/utils/theme";
 import { Box, Stack, Divider, Typography, Button } from "@mui/material";
 
 import NorthEastIcon from "@mui/icons-material/NorthEast"; // 🔥 Added Icon import
@@ -19,7 +18,12 @@ export default function SectionHeading({
     <Box sx={{ mb: { xs: 4, lg: 7 } }}>
       <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 0.5 }}>
         <Divider sx={{ width: 36, borderColor: "#9e9e9e", borderWidth: "1.5px" }} />
-        <Typography sx={{ color: "#6e6e6e", fontSize: {xs:12, sm:14} }}>{label}</Typography>
+        <Typography sx={{ 
+          color: "#6e6e6e", 
+          fontSize: {xs:11, sm:14 ,md:20},
+         fontWeight: 500,
+          textTransform: "uppercase" 
+        }}>{label}</Typography>
       </Stack>
       <Stack
         direction={{ xs: "column", sm: "row" }}
@@ -30,11 +34,10 @@ export default function SectionHeading({
         <Typography
           sx={{
             fontFamily: "var(--font-geist-sans), sans-serif",
-            // 🔥 FIX: Decreased size to 20 on 'xs' to prevent breaking into two lines on small screens
             fontSize: { xs: 20, sm: 32, md: 44, lg: 48 }, 
-            fontWeight: FONT_WEIGHT.medium,
+            fontWeight: 500,
             color: "#000",
-            lineHeight: LINE_HEIGHT.relativeTightest
+            lineHeight: "1.15"
           }}>
           
           {title}
@@ -60,9 +63,9 @@ export default function SectionHeading({
               bgcolor: "transparent",
               textTransform: "none",
               fontSize: { xs: 11, md: 16 },
-              fontWeight: FONT_WEIGHT.medium,
+              fontWeight: 500,
               px: { xs: 1.5, md: 3.5 },
-              // 🔥 FIX: Decreased height specifically on small screens by removing padding and overriding minHeight
+              
               py: { xs: 0, md: 1 },
               height: { xs: "28px", md: "auto" },
               minHeight: 0,

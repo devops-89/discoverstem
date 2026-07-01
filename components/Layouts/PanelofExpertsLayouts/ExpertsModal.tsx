@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Dialog, IconButton, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
@@ -63,7 +63,7 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           }
         }}>
         
-        <CloseIcon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.titleLarge }, color: "red" }} />
+        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" }, color: "red" }} />
       </IconButton>
 
       <Box
@@ -117,9 +117,9 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: FONT_SIZE.bodyLarge,
-            lineHeight: LINE_HEIGHT.extraSmall,
+            fontWeight: 400,
+            fontSize: "16px",
+            lineHeight: "16px",
             letterSpacing: "2.4px",
             textTransform: "uppercase",
             color: "#F9A51E",
@@ -133,9 +133,9 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontWeight: 600,
             fontSize: {
-              xs: FONT_SIZE.title,
+              xs: "22px",
               lg: "25.6px"
             },
             lineHeight: "29.4px",
@@ -151,9 +151,9 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: FONT_SIZE.bodySmall,
-            lineHeight: LINE_HEIGHT.small,
+            fontWeight: 400,
+            fontSize: "14px",
+            lineHeight: "20px",
             color: "rgba(0,0,0,0.75)",
             mb: 3
           }}>
@@ -168,9 +168,9 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           key={index}
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: FONT_SIZE.bodyLarge,
-            lineHeight: LINE_HEIGHT.small,
+            fontWeight: 400,
+            fontSize: "16px",
+            lineHeight: "20px",
             letterSpacing: "-0.03em",
             color: "#777777",
             mb: index === descriptions.length - 1 ? 0 : 1.2

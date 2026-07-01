@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
@@ -42,11 +42,11 @@ export default function MentorCard({ data, onClick }: any) {
             width: { xs: "100%", lg: "340px" },
             height: { xs: "auto", lg: "12px" },
 
-            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.caption, lg: FONT_SIZE.bodyLarge },
+            fontSize: { xs: "14px", sm: "12px", lg: "16px" },
             textDecoration: "underline",
             color: "#000",
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.light,
+            fontWeight: 300,
             lineHeight: { xs: "20px", sm: "16px", lg: "20px" },
             mb: { xs: 1, sm: 0.5, lg: 1 }
           }}>
@@ -56,8 +56,8 @@ export default function MentorCard({ data, onClick }: any) {
         <Typography
           sx={{
 
-            fontSize: { xs: FONT_SIZE.leadLarge, sm: FONT_SIZE.bodyLarge, lg: FONT_SIZE.title },
-            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: "20px", sm: "16px", lg: "22px" },
+            fontWeight: 600,
             fontFamily: FONT_FAMILY.body,
 
             lineHeight: { xs: "28px", sm: "22px", lg: "60px" },
@@ -70,10 +70,10 @@ export default function MentorCard({ data, onClick }: any) {
         <Typography
           sx={{
 
-            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.caption, lg: FONT_SIZE.bodyLarge },
+            fontSize: { xs: "14px", sm: "12px", lg: "16px" },
             color: "#646464",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.light,
+            fontWeight: 300,
             lineHeight: { xs: "22px", sm: "18px", lg: "32px" },
             mt: { xs: 0, lg: -2 }
           }}>
@@ -85,7 +85,7 @@ export default function MentorCard({ data, onClick }: any) {
             width: { xs: "100%", lg: "288px" },
             height: { xs: "auto", lg: "11px" },
 
-            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.caption, lg: FONT_SIZE.bodyLarge },
+            fontSize: { xs: "14px", sm: "12px", lg: "16px" },
             color: "#646464",
             lineHeight: { xs: "22px", sm: "18px", lg: "32px" },
             mt: { xs: 0.5, sm: 0, lg: 0 }

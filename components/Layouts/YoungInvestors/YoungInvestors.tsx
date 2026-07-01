@@ -1,5 +1,5 @@
-"use client";import { FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { InvestorsDescriptionData } from "@/assets/Generic-data";
 
 import { Container, Typography } from "@mui/material";
@@ -22,12 +22,12 @@ export default function CenterDescriptionSection() {
           width: "100%",
           maxWidth: "1160px",
           fontFamily: FONT_FAMILY.body,
-          fontWeight: FONT_WEIGHT.regular,
+          fontWeight: 400,
 
           fontSize: {
-            xs: FONT_SIZE.bodyLarge,
-            md: FONT_SIZE.lead,
-            lg: FONT_SIZE.title
+            xs: "16px",
+            md: "18px",
+            lg: "22px"
           },
           lineHeight: {
             xs: "26px",

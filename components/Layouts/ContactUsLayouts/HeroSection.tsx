@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ContactUs } from "@/assets/Generic-data";
 import { Box, Typography } from "@mui/material";
 import "swiper/css";
@@ -95,8 +95,8 @@ export default function HeroSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.heading,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.mainHeading },
+                  fontWeight: 600,
+                  fontSize: { xs: "32px", md: "64px" },
                   lineHeight: { xs: "40px", md: "62px" },
                   letterSpacing: "-0.03em",
                   color: "#FFFFFF",
@@ -110,8 +110,8 @@ export default function HeroSection() {
                 sx={{
                   mt: { xs: 2, md: 3 },
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.cardHeading },
+                  fontWeight: 400,
+                  fontSize: { xs: "16px", md: "28px" },
                   lineHeight: { xs: "24px", md: "34px" },
                   letterSpacing: "-0.01em",
                   color: "rgba(255,255,255,0.85)",

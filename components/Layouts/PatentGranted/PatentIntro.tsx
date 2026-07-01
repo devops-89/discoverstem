@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { PatentIntroData } from "@/assets/Generic-data";
 import { Container, Typography } from "@mui/material";
 
@@ -16,11 +16,10 @@ export default function PatentIntroSection() {
       
       <Typography
         sx={{
-          // 🔥 FIX: Centers title on small screens, aligns left on lg screens
           textAlign: { xs: "center", lg: "left" }, 
           fontFamily: FONT_FAMILY.heading,
-          fontWeight: FONT_WEIGHT.bold,
-          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.articleHeading, md: FONT_SIZE.pageHeadingSmall },
+          fontWeight: 700,
+          fontSize: { xs: "28px", sm: "32px", md: "48px" },
           lineHeight: { xs: "30px", sm: "40px", md: "62px" },
           color: "#111827",
           mb: 4
@@ -31,11 +30,10 @@ export default function PatentIntroSection() {
 
       <Typography
         sx={{
-          // 🔥 FIX: Centers description on small screens, aligns left on lg screens
           textAlign: { xs: "center", lg: "left" }, 
           maxWidth: "1060px",
           fontFamily: FONT_FAMILY.body,
-          fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.title },
+          fontSize: { xs: "15px", sm: "16px", md: "22px" },
           lineHeight: { xs: "26px", sm: "28px", md: "32px" },
           color: "#6B7280"
         }}>

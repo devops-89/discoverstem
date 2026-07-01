@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import PrimaryButton from "@/components/Widgets/PrimaryButton";
 import { AdvisoryMember } from "@/utils/Types";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -76,9 +76,9 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge },
-            fontWeight: FONT_WEIGHT.regular,
-            lineHeight: LINE_HEIGHT.extraSmall,
+            fontSize: { xs: "13px", md: "16px" },
+            fontWeight: 400,
+            lineHeight: "16px",
             letterSpacing: { xs: "1.5px", md: "2.4px" },
             textTransform: "uppercase",
             color: "#7B53A1",
@@ -91,9 +91,9 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.cardHeading, md: FONT_SIZE.pageHeadingSmall },
-            lineHeight: { xs: "28px", sm: "34px", md: LINE_HEIGHT.huge },
+            fontWeight: 600,
+            fontSize: { xs: "22px", sm: "28px", md: "48px" },
+            lineHeight: { xs: "28px", sm: "34px", md: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
             whiteSpace: "pre-line",
@@ -108,9 +108,9 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.body,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge },
-            fontWeight: FONT_WEIGHT.regular,
-            lineHeight: { xs: "22px", sm: LINE_HEIGHT.mediumLarge, md: "28px" },
+            fontSize: { xs: "15px", sm: "18px", md: "20px" },
+            fontWeight: 400,
+            lineHeight: { xs: "22px", sm: "26px", md: "28px" },
             letterSpacing: "-0.03em",
             color: "#777777",
             mb: { xs: 1.5, md: 4 },
@@ -126,9 +126,9 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
             width: "100%",
             maxWidth: "668px",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.regular,
-            fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.lead, md: FONT_SIZE.title },
-            lineHeight: { xs: LINE_HEIGHT.mediumLarge, sm: "30px", md: "36px" },
+            fontWeight: 400,
+            fontSize: { xs: "15px", sm: "18px", md: "22px" },
+            lineHeight: { xs: "26px", sm: "30px", md: "36px" },
             letterSpacing: "-0.03em",
             color: "#000000",
             whiteSpace: "pre-line",
@@ -156,9 +156,9 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
             px: { xs: "16px", md: "24px" },
             pr: { xs: "44px", md: "56px" },
             fontFamily: FONT_FAMILY.body,
-            fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge },
-            fontWeight: FONT_WEIGHT.medium,
-            lineHeight: LINE_HEIGHT.extraSmall,
+            fontSize: { xs: "13px", md: "16px" },
+            fontWeight: 500,
+            lineHeight: "16px",
             letterSpacing: "-0.01em",
             justifyContent: "flex-start",
             position: "relative",
@@ -184,7 +184,7 @@ export default function AdvisoryCard({ data, onReadMore }: Props) {
             
             <ArrowOutwardIcon
               sx={{
-                fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge },
+                fontSize: { xs: "14px", md: "16px" },
                 color: "#7B53A1"
               }} />
             

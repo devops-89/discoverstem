@@ -1,5 +1,5 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { InnovationCardItem } from "@/utils/Types";
 import { Close } from "@mui/icons-material";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
@@ -80,8 +80,8 @@ export default function InnovationCardsGrid({
                       top: 12,
                       left: 12,
 
-                      fontSize: { xs: FONT_SIZE.tiny, lg: FONT_SIZE.caption },
-                      fontWeight: FONT_WEIGHT.bold,
+                      fontSize: { xs: "10px", lg: "12px" },
+                      fontWeight: 700,
                       color: "#7B53A1",
                       backgroundColor: "#FFFFFFF2",
                       px: "8px",
@@ -112,16 +112,16 @@ export default function InnovationCardsGrid({
                     }}>
                     
                     {isGranted ?
-                    <CheckIcon sx={{ color: "#F9A51E", fontSize: FONT_SIZE.bodySmall, fontWeight: "bold" }} /> :
+                    <CheckIcon sx={{ color: "#F9A51E", fontSize: "14px", fontWeight: "bold" }} /> :
 
-                    <HourglassEmptyIcon sx={{ color: "#FFFFFF", fontSize: FONT_SIZE.bodyLarge }} />
+                    <HourglassEmptyIcon sx={{ color: "#FFFFFF", fontSize: "16px" }} />
                     }
                     <Typography
                       sx={{
                         fontFamily: FONT_FAMILY.accent,
                         color: isGranted ? "#F9A51E" : "#FFFFFF",
-                        fontSize: isGranted ? FONT_SIZE.caption : FONT_SIZE.bodySmall,
-                        fontWeight: isGranted ? FONT_WEIGHT.bold : FONT_WEIGHT.medium,
+                        fontSize: isGranted ? "12px" : "14px",
+                        fontWeight: isGranted ? 700 : 500,
                         lineHeight: isGranted ? "16px" : "20px",
                         whiteSpace: "nowrap"
                       }}>
@@ -150,9 +150,9 @@ export default function InnovationCardsGrid({
                     
                     <Typography
                       sx={{
-                        fontWeight: FONT_WEIGHT.semiBold,
+                        fontWeight: 600,
 
-                        fontSize: { xs: FONT_SIZE.body, lg: FONT_SIZE.lead },
+                        fontSize: { xs: "15px", lg: "18px" },
                         lineHeight: { xs: "22px", lg: "23.4px" },
                         letterSpacing: "-0.45px",
                         color: "#171717",
@@ -206,7 +206,7 @@ export default function InnovationCardsGrid({
 
                       <Typography
                       sx={{
-                        fontSize: { xs: FONT_SIZE.caption, lg: "13.5px" },
+                        fontSize: { xs: "12px", lg: "13.5px" },
                         lineHeight: { xs: "18px", lg: "19.25px" },
                         color: "#262626",
                         display: "-webkit-box",
@@ -236,7 +236,7 @@ export default function InnovationCardsGrid({
                       <Typography
                         sx={{
 
-                          fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
+                          fontSize: { xs: "13px", lg: "14px" },
                           lineHeight: { xs: "16px", lg: "20px" },
                           color: "#7B53A1"
                         }}>
@@ -277,7 +277,7 @@ export default function InnovationCardsGrid({
                       <Typography
                         sx={{
 
-                          fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
+                          fontSize: { xs: "13px", lg: "14px" },
                           lineHeight: { xs: "16px", lg: "20px" },
                           color: "#7B53A1"
                         }}>
@@ -334,7 +334,7 @@ export default function InnovationCardsGrid({
             "&:hover": { backgroundColor: "#f5f5f5" }
           }}>
           
-          <Close sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} /> 
+          <Close sx={{ fontSize: "20px", color: "red" }} /> 
         </IconButton>
         <Box sx={{ position: "relative", width: "100%", display: "flex" }}>
           {certModal.src &&

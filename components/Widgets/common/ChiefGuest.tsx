@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -56,8 +56,8 @@ export default function ChiefGuestsSection({
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.articleHeading, sm: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 600,
+            fontSize: { xs: "32px", sm: "40px", lg: "48px" },
             lineHeight: { xs: "44px", sm: "52px", lg: "65px" },
             textAlign: "center",
             color: "#101010",
@@ -117,9 +117,9 @@ export default function ChiefGuestsSection({
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.light,
-                  fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.footnote, lg: FONT_SIZE.caption },
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 300,
+                  fontSize: { xs: "12px", md: "11px", lg: "12px" },
+                  lineHeight: "16px",
                   letterSpacing: "2.4px",
                   textTransform: "uppercase",
                   color: "#F9A51E",
@@ -132,9 +132,9 @@ export default function ChiefGuestsSection({
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeading, md: FONT_SIZE.title, lg: FONT_SIZE.cardHeading },
-                  lineHeight: { xs: LINE_HEIGHT.extraLarge, sm: "36px", md: "30px", lg: "36px" },
+                  fontWeight: 600,
+                  fontSize: { xs: "24px", sm: "28px", md: "22px", lg: "28px" },
+                  lineHeight: { xs: "32px", sm: "36px", md: "30px", lg: "36px" },
                   letterSpacing: "-0.8px",
                   color: "#000000",
                   mb: "4px"
@@ -146,8 +146,8 @@ export default function ChiefGuestsSection({
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.body, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.body },
+                  fontWeight: 400,
+                  fontSize: { xs: "15px", md: "14px", lg: "15px" },
                   lineHeight: "22px",
                   color: "#000000",
                   mb: "16px"
@@ -160,9 +160,9 @@ export default function ChiefGuestsSection({
               <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.caption, lg: FONT_SIZE.small },
-                  lineHeight: LINE_HEIGHT.small,
+                  fontWeight: 400,
+                  fontSize: { xs: "13px", md: "12px", lg: "13px" },
+                  lineHeight: "20px",
                   color: "#777",
                   mb: "16px"
                 }}>
@@ -200,9 +200,9 @@ export default function ChiefGuestsSection({
                     backgroundColor: "#0A66C2",
                     color: "#FFFFFF",
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: FONT_SIZE.caption,
-                    lineHeight: LINE_HEIGHT.extraSmall,
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "16px",
                     textDecoration: "none",
                     gap: "5px",
                     transition: "all 0.2s",

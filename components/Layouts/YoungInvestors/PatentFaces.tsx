@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { patentFacesData } from "@/assets/Generic-data";
 import { Box, Container, Typography, Pagination, PaginationItem } from "@mui/material";
 import Image from "next/image";
@@ -43,14 +43,14 @@ export default function PatentFacesSection() {
           width: "100%"
         }}>
         
-        {/* Heading */}
+       
         <Typography
           sx={{
             width: { xs: "100%", lg: "671px" },
               textAlign: { xs: "center", md: "left" }, 
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 600,
+            fontSize: { xs: "32px", md: "40px", lg: "48px" },
             lineHeight: { xs: "40px", md: "44px", lg: "36.8px" },
             letterSpacing: "-0.8px",
             color: "#171717",
@@ -60,7 +60,7 @@ export default function PatentFacesSection() {
           {patentFacesData.title}
         </Typography>
 
-        {/* Search Bar */}
+      
         <Box
           sx={{
             width: "100%",
@@ -76,7 +76,7 @@ export default function PatentFacesSection() {
           
         </Box>
 
-        {/* Cards Grid */}
+        
         <Box
           sx={{
             width: "100%",
@@ -148,9 +148,9 @@ export default function PatentFacesSection() {
                     <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.accent,
-                    fontWeight: FONT_WEIGHT.semiBold,
-                    fontSize: FONT_SIZE.tiny,
-                    lineHeight: LINE_HEIGHT.nano,
+                    fontWeight: 600,
+                    fontSize: "10px",
+                    lineHeight: "15px",
                     letterSpacing: "0.5px",
                     textTransform: "uppercase",
                     color: "#262626"
@@ -176,8 +176,8 @@ export default function PatentFacesSection() {
                 sx={{
                     textAlign: { xs: "center", sm: "left" }, 
                   fontFamily: FONT_FAMILY.accent,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: FONT_SIZE.bodyLarge,
+                  fontWeight: 600,
+                  fontSize: "16px",
                   lineHeight: "22px",
                   color: "#171717"
                 }}>
@@ -189,9 +189,9 @@ export default function PatentFacesSection() {
                 sx={{
                   textAlign: { xs: "center", sm: "left" }, 
                   fontFamily: FONT_FAMILY.accent,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   color: "#737373"
                 }}>
                 
@@ -231,11 +231,11 @@ export default function PatentFacesSection() {
                 width: { xs: "24px", sm: "40px" },
                 height: { xs: "24px", sm: "40px" },
                 minWidth: { xs: "24px", sm: "40px" },
-                fontSize: { xs: FONT_SIZE.footnote, sm: FONT_SIZE.bodySmall },
+                fontSize: { xs: "11px", sm: "14px" },
                 padding: 0,
                 margin: { xs: "0 2px", sm: "0 4px" },
                 borderRadius: "50%",
-                fontWeight: FONT_WEIGHT.medium,
+                fontWeight: 500,
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -243,11 +243,11 @@ export default function PatentFacesSection() {
                 color: "#374151"
               },
               "& .MuiPaginationItem-icon": {
-                fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.leadLarge }
+                fontSize: { xs: "16px", sm: "20px" }
               },
               "& .MuiPaginationItem-ellipsis": {
                 backgroundColor: "transparent",
-                lineHeight: { xs: LINE_HEIGHT.medium, sm: "40px" }
+                lineHeight: { xs: "24px", sm: "40px" }
               },
               "& .Mui-selected": {
                 backgroundColor: "#7B53A1 !important",

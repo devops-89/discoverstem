@@ -1,4 +1,5 @@
-import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";import { mediaCenterNewsData, mediaCategories, ctaBannerData } from "@/assets/Generic-data";
+import { FONT_FAMILY } from "@/utils/theme";
+import { mediaCenterNewsData, mediaCategories, ctaBannerData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import MediaNewsCard from "@/components/Layouts/MediaCenterLayouts/MediaNewsCard";
 import FeaturedMediaCard from "@/components/Layouts/MediaCenterLayouts/PressCard";
@@ -43,8 +44,8 @@ export default async function CategoryPage({
           sx={{
             textAlign: { xs: "center", sm: "left" }, 
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.bold,
-            fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 700,
+            fontSize: { xs: "32px", md: "40px", lg: "48px" },
             color: "#111827",
             mb: { xs: 4, lg: 6 },
             textTransform: "capitalize"
@@ -71,7 +72,7 @@ export default async function CategoryPage({
           }
           </Box> :
 
-        <Typography sx={{ color: "#777", fontSize: FONT_SIZE.lead }}>
+        <Typography sx={{ color: "#777", fontSize: "18px" }}>
             No articles found in this category.
           </Typography>
         }

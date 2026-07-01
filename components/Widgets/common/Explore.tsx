@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -70,12 +70,11 @@ export default function ExploreLabsSection() {
         <Typography
           sx={{
             fontFamily: FONT_FAMILY.accent,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.cardHeading, lg: FONT_SIZE.articleHeading },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "28px", lg: "32px" },
             lineHeight: { xs: "30px", sm: "36px", lg: "37px" },
             letterSpacing: "-0.8px",
             color: "#171717",
-            // 🔥 FIX: Added textAlign center so the heading is perfectly centered!
             textAlign: {xs:"center",sm:"left"}, 
             mb: { xs: 4, lg: "70px" }
           }}>
@@ -172,9 +171,9 @@ export default function ExploreLabsSection() {
                     className="lab-title"
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.semiBold,
-                      fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
-                      lineHeight: { xs: LINE_HEIGHT.medium, lg: "27px" },
+                      fontWeight: 600,
+                      fontSize: { xs: "16px", lg: "18px" },
+                      lineHeight: { xs: "24px", lg: "27px" },
                       letterSpacing: "-0.45px",
                       color: isActive ? "#FFFFFF" : "#171717",
                       transition: "all .2s ease"
@@ -189,9 +188,9 @@ export default function ExploreLabsSection() {
                   sx={{
                     mt: "16px",
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: FONT_SIZE.bodySmall,
-                    lineHeight: LINE_HEIGHT.small,
+                    fontWeight: 400,
+                    fontSize: "14px",
+                    lineHeight: "20px",
                     color: "rgba(255,255,255,0.7)"
                   }}>
                   
@@ -210,9 +209,9 @@ export default function ExploreLabsSection() {
                     className="lab-explore"
                     sx={{
                       fontFamily: FONT_FAMILY.body,
-                      fontWeight: FONT_WEIGHT.semiBold,
-                      fontSize: FONT_SIZE.bodySmall,
-                      lineHeight: LINE_HEIGHT.small,
+                      fontWeight: 600,
+                      fontSize: "14px",
+                      lineHeight: "20px",
                       color: item.color,
                       transition: "all .2s ease"
                     }}>

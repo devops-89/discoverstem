@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { StartupDetailData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -32,9 +32,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
              textAlign: { xs: "center", md: "left" }, 
             minHeight: { xs: "auto", lg: "155px" },
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, md: FONT_SIZE.subSectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
-            lineHeight: { xs: "30px", md: "52px", lg: LINE_HEIGHT.huge },
+            fontWeight: 600,
+            fontSize: { xs: "24px", md: "35px", lg: "48px" },
+            lineHeight: { xs: "30px", md: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
             mb: { xs: 4, md: 10, lg: "160px" }
@@ -52,8 +52,8 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             width: { xs: "100%", lg: "330px" },
             height: { xs: "auto", lg: "37px" },
             fontFamily: FONT_FAMILY.accent,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, md: FONT_SIZE.cardHeading, lg: FONT_SIZE.subSectionHeading },
+            fontWeight: 600,
+            fontSize: { xs: "24px", md: "28px", lg: "36px" },
             lineHeight: { xs: "30px", md: "34px", lg: "36.8px" },
             letterSpacing: "-0.8px",
             color: "#171717",
@@ -103,8 +103,8 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 alignItems: "center",
                 justifyContent: "center",
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: FONT_SIZE.bodyLarge,
+                fontWeight: 600,
+                fontSize: "16px",
                 flexShrink: 0,
                 overflow: "hidden"
               }}>
@@ -126,10 +126,10 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.semiBold,
+                  fontWeight: 600,
 
-                  fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
-                  lineHeight: { xs: LINE_HEIGHT.small, lg: LINE_HEIGHT.medium },
+                  fontSize: { xs: "14px", lg: "16px" },
+                  lineHeight: { xs: "20px", lg: "24px" },
                   color: "#171717"
                 }}>
                 
@@ -139,9 +139,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   color: "#737373"
                 }}>
                 
@@ -169,10 +169,10 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
+                fontWeight: 600,
 
-                fontSize: { xs: FONT_SIZE.lead, md: FONT_SIZE.leadLarge, lg: FONT_SIZE.title },
-                lineHeight: { xs: "28px", md: "34px", lg: LINE_HEIGHT.xl4 },
+                fontSize: { xs: "18px", md: "20px", lg: "22px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#111827"
               }}>
@@ -183,9 +183,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
-                lineHeight: { xs: "28px", md: "34px", lg: LINE_HEIGHT.xl4 },
+                fontWeight: 400,
+                fontSize: { xs: "16px", md: "18px", lg: "20px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#777777",
                 mb: { xs: 2, lg: 0 }
@@ -197,9 +197,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
             <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.lead, md: FONT_SIZE.leadLarge, lg: FONT_SIZE.title },
-                lineHeight: { xs: "28px", md: "34px", lg: LINE_HEIGHT.xl4 },
+                fontWeight: 600,
+                fontSize: { xs: "18px", md: "20px", lg: "22px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#111827"
               }}>
@@ -212,9 +212,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               key={index}
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
-                lineHeight: { xs: "28px", md: "34px", lg: LINE_HEIGHT.xl4 },
+                fontWeight: 400,
+                fontSize: { xs: "16px", md: "18px", lg: "20px" },
+                lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#777777",
                 mb: index === data.innovation.length - 1 ? 0 : { xs: "16px", lg: "22px" }
@@ -323,9 +323,9 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: FONT_SIZE.caption,
-                    lineHeight: LINE_HEIGHT.extraSmall,
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    lineHeight: "16px",
                     letterSpacing: "2.4px",
                     textTransform: "uppercase",
                     color: isStatus ?
@@ -341,10 +341,10 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.semiBold,
+                    fontWeight: 600,
                     // 🔥 FIX: Shifted large text up to lg!
-                    fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.leadLarge, lg: "22.4px" },
-                    lineHeight: { xs: LINE_HEIGHT.medium, md: LINE_HEIGHT.mediumLarge, lg: LINE_HEIGHT.baseLarge },
+                    fontSize: { xs: "16px", md: "20px", lg: "22.4px" },
+                    lineHeight: { xs: "24px", md: "26px", lg: "26.88px" },
                     letterSpacing: "-0.56px",
                     color: "#171717"
                   }}>
@@ -356,10 +356,10 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                 <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
+                    fontWeight: 400,
 
-                    fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
-                    lineHeight: { xs: LINE_HEIGHT.small, lg: LINE_HEIGHT.mediumSmall },
+                    fontSize: { xs: "13px", lg: "14px" },
+                    lineHeight: { xs: "20px", lg: "22.75px" },
                     color: "#555555"
                   }}>
                   
@@ -389,8 +389,8 @@ export default function StartupDetail({ data }: StartupDetailProps) {
                       px: "10px",
                       py: "5px",
                       fontFamily: FONT_FAMILY.body,
-                      fontSize: FONT_SIZE.footnote,
-                      lineHeight: LINE_HEIGHT.extraSmall,
+                      fontSize: "11px",
+                      lineHeight: "16px",
                       cursor: "pointer",
                       textDecoration: "none",
                       color: "inherit"

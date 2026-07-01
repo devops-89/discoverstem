@@ -1,5 +1,4 @@
-"use client";import { FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
 import React, { useRef } from "react";
 import { Container, Box, Card, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -70,7 +69,7 @@ export default function PatentsSection() {
                 p: { xs: 1.5, md: 2 },
                 textAlign: "center",
                 border: "1px solid #eee",
-                height: "100%", // Fills the stretched slide container
+                height: "100%", 
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
@@ -102,7 +101,7 @@ export default function PatentsSection() {
                   <Typography
                   sx={{
                     fontSize: { xs: 16, sm: 18, md: 20 },
-                    fontWeight: FONT_WEIGHT.semiBold,
+                    fontWeight: 600,
                     lineHeight: { xs: "20px", md: "24px" },
                     display: "-webkit-box",
                     WebkitLineClamp: 3,
@@ -118,7 +117,7 @@ export default function PatentsSection() {
                 sx={{
                   color: "#ee4823",
                   mt: 1,
-                  fontWeight: FONT_WEIGHT.medium,
+                  fontWeight: 500,
                   fontSize: { xs: 13, md: 14 }
                 }}>
                 

@@ -1,5 +1,4 @@
-"use client";import { FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";
-
+"use client";
 import {
   innovationCardsData } from
 "@/assets/Generic-data";
@@ -93,11 +92,11 @@ export default function InnovationCardGrid() {
               width: { xs: "24px", sm: "40px" },
               height: { xs: "24px", sm: "40px" },
               minWidth: { xs: "24px", sm: "40px" },
-              fontSize: { xs: FONT_SIZE.footnote, sm: FONT_SIZE.bodySmall },
+              fontSize: { xs: "11px", sm: "14px" },
               padding: 0,
               margin: { xs: "0 2px", sm: "0 4px" },
               borderRadius: "50%",
-              fontWeight: FONT_WEIGHT.medium,
+              fontWeight: 500,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -106,7 +105,7 @@ export default function InnovationCardGrid() {
             },
             "& .MuiPaginationItem-icon": {
 
-              fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.leadLarge }
+              fontSize: { xs: "16px", sm: "20px" }
             },
             "& .MuiPaginationItem-ellipsis": {
               backgroundColor: "transparent",

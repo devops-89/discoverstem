@@ -1,5 +1,5 @@
-"use client";import { LINE_HEIGHT, FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { patentsData } from "@/assets/Generic-data";
 import { PatentFilterType } from "@/utils/Types";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
@@ -119,7 +119,7 @@ export default function PatentFilterSection() {
             sx={{
               backgroundColor: filter === item ? "#7B53A1" : "#fff",
               color: filter === item ? "#fff" : "#111827",
-              fontWeight: FONT_WEIGHT.semiBold
+              fontWeight: 600
             }} />
 
           )}
@@ -138,17 +138,17 @@ export default function PatentFilterSection() {
             "& .MuiOutlinedInput-root": {
               borderRadius: "24px",
               backgroundColor: "#F9FAFB",
-              fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.bodyLarge }
+              fontSize: { xs: "11px", md: "16px" }
             },
             "& .MuiInputBase-input::placeholder": {
-              fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.bodyLarge },
+              fontSize: { xs: "11px", md: "16px" },
               opacity: 1
             }
           }} />
         
       </Box>
 
-      <Typography sx={{ fontSize: FONT_SIZE.caption, color: "#777", mb: 6 }}>
+      <Typography sx={{ fontSize: "12px", color: "#777", mb: 6 }}>
         Showing {filteredPatents.length} of {patentsData.length} patents · 221+ named inventors
       </Typography>
 
@@ -219,8 +219,8 @@ export default function PatentFilterSection() {
                   item.type === "US" ? "#1B0F2A" : "#F59E0B",
                   color: item.type === "US" ? "#fff" : "#111827",
                   fontFamily: FONT_FAMILY.body,
-                  fontSize: FONT_SIZE.caption,
-                  fontWeight: FONT_WEIGHT.semiBold,
+                  fontSize: "12px",
+                  fontWeight: 600,
                   "& .MuiChip-label": {
                     px: "12px"
                   }
@@ -230,9 +230,9 @@ export default function PatentFilterSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.regular,
-                  fontSize: FONT_SIZE.caption,
-                  lineHeight: LINE_HEIGHT.extraSmall,
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  lineHeight: "16px",
                   color: "#737373"
                 }}>
                 
@@ -263,9 +263,9 @@ export default function PatentFilterSection() {
                 sx={{
                   width: "100%",
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.body, lg: FONT_SIZE.lead },
-                  lineHeight: { xs: LINE_HEIGHT.small, sm: "22px", md: LINE_HEIGHT.small, lg: LINE_HEIGHT.baseSmall },
+                  fontWeight: 600,
+                  fontSize: { xs: "15px", sm: "16px", md: "15px", lg: "18px" },
+                  lineHeight: { xs: "20px", sm: "22px", md: "20px", lg: "23.4px" },
                   letterSpacing: "-0.45px",
                   color: "#111827",
                   mb: "12px",
@@ -282,8 +282,8 @@ export default function PatentFilterSection() {
                 sx={{
                   mt: "auto",
                   fontFamily: FONT_FAMILY.body,
-                  fontSize: { xs: FONT_SIZE.tiny, md: FONT_SIZE.caption },
-                  lineHeight: { xs: "14px", md: LINE_HEIGHT.extraSmall },
+                  fontSize: { xs: "10px", md: "12px" },
+                  lineHeight: { xs: "14px", md: "16px" },
                   color: "#737373",
                   textTransform: "uppercase"
                 }}>
@@ -295,9 +295,9 @@ export default function PatentFilterSection() {
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.small, md: FONT_SIZE.caption, lg: FONT_SIZE.bodySmall },
-                lineHeight: { xs: LINE_HEIGHT.lessSmall, sm: LINE_HEIGHT.small, md: LINE_HEIGHT.lessSmall, lg: LINE_HEIGHT.mediumSmall },
+                fontWeight: 400,
+                fontSize: { xs: "12px", sm: "13px", md: "12px", lg: "14px" },
+                lineHeight: { xs: "18px", sm: "20px", md: "18px", lg: "22.75px" },
                 color: "#374151"
               }}>
               
@@ -332,8 +332,8 @@ export default function PatentFilterSection() {
                   <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.accent,
-                    fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.footnote, md: FONT_SIZE.footnote, lg: FONT_SIZE.bodySmall },
-                    lineHeight: LINE_HEIGHT.small,
+                    fontSize: { xs: "12px", sm: "11px", md: "11px", lg: "14px" },
+                    lineHeight: "20px",
                     color: "#7B53A1",
                     whiteSpace: "nowrap"
                   }}>
@@ -341,7 +341,7 @@ export default function PatentFilterSection() {
                     Google Patents
                   </Typography>
 
-                  <NorthEastIcon sx={{ fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#7B53A1" }} />
+                  <NorthEastIcon sx={{ fontSize: { xs: "12px", sm: "14px", md: "14px", lg: "16px" }, color: "#7B53A1" }} />
                 </Box>
 
                 <Box
@@ -361,8 +361,8 @@ export default function PatentFilterSection() {
                   <Typography
                   sx={{
                     fontFamily: FONT_FAMILY.accent,
-                    fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.footnote, md: FONT_SIZE.footnote, lg: FONT_SIZE.bodySmall },
-                    lineHeight: LINE_HEIGHT.small,
+                    fontSize: { xs: "12px", sm: "11px", md: "11px", lg: "14px" },
+                    lineHeight: "20px",
                     color: "#7B53A1",
                     whiteSpace: "nowrap"
                   }}>
@@ -370,7 +370,7 @@ export default function PatentFilterSection() {
                     Patent Certificate
                   </Typography>
 
-                  <NorthEastIcon sx={{ fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#7B53A1" }} />
+                  <NorthEastIcon sx={{ fontSize: { xs: "12px", sm: "14px", md: "14px", lg: "16px" }, color: "#7B53A1" }} />
                 </Box>
               </Box>
             </CardContent>
@@ -395,10 +395,10 @@ export default function PatentFilterSection() {
           }}
           sx={{
             "& .MuiPaginationItem-root": {
-              fontWeight: FONT_WEIGHT.semiBold,
+              fontWeight: 600,
               minWidth: { xs: "26px", sm: "32px" },
               height: { xs: "26px", sm: "32px" },
-              fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall },
+              fontSize: { xs: "12px", sm: "14px" },
               margin: { xs: "0 2px", sm: "0 3px" }
             },
             "& .Mui-selected": {

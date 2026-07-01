@@ -24,7 +24,6 @@ const FounderBio = () => {
           lineHeight: { xs: "32px", md: "40px", lg: "46px" },
           letterSpacing: "-0.02em",
           color: "#111827",
-          // 🔥 FIX: Changed from "left" to perfectly center on small screens
           textAlign: { xs: "center", md: "left" } 
         }}>
         
@@ -41,7 +40,6 @@ const FounderBio = () => {
           fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.bodyXLarge, lg: FONT_SIZE.lead },
           lineHeight: { xs: "24px", md: "28px", lg: "32px" },
           color: "#474A55",
-          // 🔥 FIX: Changed from "left" to perfectly center on small screens
           textAlign: { xs: "center", md: "left" } 
         }}>
         

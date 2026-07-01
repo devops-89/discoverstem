@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ResearchMentorTextData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
 
@@ -30,8 +30,8 @@ export default function InfoSection({
           sx={{
             textAlign: { xs: "center", sm: "left" },
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
+            fontWeight: 600,
+            fontSize: { xs: "24px", sm: "40px", lg: "48px" },
             lineHeight: { xs: "30px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
@@ -51,15 +51,15 @@ export default function InfoSection({
                   sx={{
                     textAlign: { xs: "center", sm: "left" },
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                    fontWeight: 400,
+                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
                     lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",
                     color: "#777777",
                     mb: { xs: 2.5, sm: 3, lg: "26px" },
 
                     "& strong": {
-                      fontWeight: FONT_WEIGHT.semiBold,
+                      fontWeight: 600,
                       color: "#111827"
                     }
                   }}
@@ -75,8 +75,8 @@ export default function InfoSection({
                   sx={{
                     textAlign: { xs: "center", sm: "left" },
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.semiBold,
-                    fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                    fontWeight: 600,
+                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
                     lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",
                     color: "#111827",
@@ -97,8 +97,8 @@ export default function InfoSection({
                   component="li"
                   sx={{
                     fontFamily: FONT_FAMILY.body,
-                    fontWeight: FONT_WEIGHT.regular,
-                    fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                    fontWeight: 400,
+                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
                     lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",
                     color: "#777777",

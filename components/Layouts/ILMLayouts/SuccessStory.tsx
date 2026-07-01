@@ -1,5 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { ilmSuccessStoryData } from "@/assets/Generic-data";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { Box, Button, Container, Typography } from "@mui/material";
@@ -43,8 +43,8 @@ export default function IlmSuccessStorySection() {
               sx={{
                  textAlign: { xs: "center", sm: "left" },
                 fontFamily: FONT_FAMILY.heading,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.cardHeading, md: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+                fontWeight: 600,
+                fontSize: { xs: "28px", md: "36px", lg: "48px" },
                 lineHeight: { xs: "38px", md: "46px", lg: "62px" },
                 letterSpacing: "-0.03em",
                 color: "#111827",
@@ -58,8 +58,8 @@ export default function IlmSuccessStorySection() {
               sx={{
                  textAlign: { xs: "center", sm: "left" },
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.regular,
-                fontSize: { xs: FONT_SIZE.body, md: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                fontWeight: 400,
+                fontSize: { xs: "15px", md: "18px", lg: "22px" },
                 lineHeight: { xs: "26px", md: "32px", lg: "43px" },
                 letterSpacing: "-0.03em",
                 color: "#777777"
@@ -94,8 +94,8 @@ export default function IlmSuccessStorySection() {
                 component="li"
                 sx={{
                   fontFamily: FONT_FAMILY.body,
-                  fontWeight: FONT_WEIGHT.semiBold,
-                  fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.body, lg: FONT_SIZE.title },
+                  fontWeight: 600,
+                  fontSize: { xs: "14px", md: "15px", lg: "22px" },
                   lineHeight: { xs: "24px", md: "26px", lg: "43px" },
                   letterSpacing: "-0.03em",
                   color: "#000000",
@@ -150,7 +150,6 @@ export default function IlmSuccessStorySection() {
             pl: { xs: "14px", sm: "24px" },
             pr: "6px",
             display: "flex",
-            // 🔥 FIX: Center the button on xs screens only
             mx: { xs: "auto", sm: 0 },
 
             "&:hover": {
@@ -166,8 +165,8 @@ export default function IlmSuccessStorySection() {
             sx={{
               
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.footnote, sm: FONT_SIZE.bodyLarge },
+              fontWeight: 400,
+              fontSize: { xs: "11px", sm: "16px" },
               lineHeight: { xs: "16px", sm: "24px" },
               letterSpacing: "-0.01em",
               color: "#FFFFFF",
@@ -176,7 +175,7 @@ export default function IlmSuccessStorySection() {
               textOverflow: "ellipsis",
 
               "& strong": {
-                fontWeight: FONT_WEIGHT.bold
+                fontWeight: 700
               }
             }} />
           
@@ -197,7 +196,7 @@ export default function IlmSuccessStorySection() {
             
           <NorthEastIcon
               sx={{
-                fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.leadLarge },
+                fontSize: { xs: "14px", sm: "20px" },
                 color: "#111827"
               }} />
             

@@ -1,6 +1,6 @@
 
-"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
-
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import { OtherProgramsData } from "@/utils/Types";
 import { ArrowBackIosNew, ArrowForward, NorthEast } from "@mui/icons-material";
 import { Box, Button, Container, Typography } from "@mui/material";
@@ -37,9 +37,9 @@ export default function OtherProgramsSection({
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.small, sm: FONT_SIZE.bodyLarge, lg: FONT_SIZE.title }, // Scaled for mobile
-              lineHeight: { xs: LINE_HEIGHT.small, sm: "28px", lg: LINE_HEIGHT.xl4 }, // Scaled for mobile
+              fontWeight: 400,
+              fontSize: { xs: "13px", sm: "16px", lg: "22px" }, // Scaled for mobile
+              lineHeight: { xs: "20px", sm: "28px", lg: "43px" }, // Scaled for mobile
               letterSpacing: "-0.03em",
               textTransform: "uppercase",
               color: "#777777"
@@ -53,9 +53,9 @@ export default function OtherProgramsSection({
           sx={{
              textAlign: { xs: "center", sm: "left" },
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: FONT_WEIGHT.semiBold,
-            fontSize: { xs: FONT_SIZE.title, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
-            lineHeight: { xs: "30px", sm: LINE_HEIGHT.xl5, lg: LINE_HEIGHT.huge },
+            fontWeight: 600,
+            fontSize: { xs: "22px", sm: "36px", lg: "48px" },
+            lineHeight: { xs: "30px", sm: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827"
           }}>
@@ -113,9 +113,9 @@ export default function OtherProgramsSection({
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.accent,
-                  fontWeight: FONT_WEIGHT.bold,
-                  fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, // Shrunk for mobile
-                  lineHeight: { xs: LINE_HEIGHT.small, lg: LINE_HEIGHT.medium },
+                  fontWeight: 700,
+                  fontSize: { xs: "14px", lg: "16px" }, // Shrunk for mobile
+                  lineHeight: { xs: "20px", lg: "24px" },
                   color: "#FFFFFF"
                 }}>
                 
@@ -126,9 +126,9 @@ export default function OtherProgramsSection({
               <Typography
               sx={{
                 fontFamily: FONT_FAMILY.body,
-                fontWeight: FONT_WEIGHT.semiBold,
-                fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead }, // Shrunk for mobile
-                lineHeight: { xs: LINE_HEIGHT.medium, lg: "27px" },
+                fontWeight: 600,
+                fontSize: { xs: "16px", lg: "18px" }, // Shrunk for mobile
+                lineHeight: { xs: "24px", lg: "27px" },
                 letterSpacing: "-0.45px",
                 color: "#171717"
               }}>
@@ -141,9 +141,9 @@ export default function OtherProgramsSection({
             sx={{
               maxWidth: "538.4px",
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.regular,
-              fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, // Shrunk for mobile
-              lineHeight: { xs: "22px", lg: LINE_HEIGHT.mediumLarge }, // Shrunk for mobile
+              fontWeight: 400,
+              fontSize: { xs: "14px", lg: "16px" }, // Shrunk for mobile
+              lineHeight: { xs: "22px", lg: "26px" }, // Shrunk for mobile
               color: "#404040",
               flexGrow: 1,
               mb: "24px"
@@ -158,7 +158,7 @@ export default function OtherProgramsSection({
             endIcon={
             <ArrowForward
               sx={{
-                fontSize: FONT_SIZE.bodyLarge
+                fontSize: "16px"
               }} />
 
             }
@@ -170,9 +170,9 @@ export default function OtherProgramsSection({
               color: "#FFFFFF",
               px: { xs: "14px", lg: "17px" },
               fontFamily: FONT_FAMILY.body,
-              fontWeight: FONT_WEIGHT.medium,
-              fontSize: { xs: FONT_SIZE.caption, lg: FONT_SIZE.bodySmall },
-              lineHeight: LINE_HEIGHT.small,
+              fontWeight: 500,
+              fontSize: { xs: "12px", lg: "14px" },
+              lineHeight: "20px",
               textTransform: "none",
               alignSelf: "flex-start",
 

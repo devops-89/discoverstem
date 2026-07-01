@@ -1,4 +1,5 @@
-"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
+"use client";
+import { FONT_FAMILY } from "@/utils/theme";
 import React, { useRef } from "react";
 import { Container, Stack, Divider, Typography, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -58,15 +59,15 @@ export default function TestimonialsSection() {
         direction="row"
         spacing={{ xs: 1.5, lg: 2.5 }}
         alignItems="center"
-        sx={{ mb: 1.5 }}>
+        sx={{ mb: 0.5 }}>
         
         <Divider sx={{ width: { xs: 30, lg: 50 }, borderColor: "#6E6E6E", borderWidth: "0.5px" }} />
         <Typography
           sx={{
             color: "#6E6E6E",
             fontFamily: FONT_FAMILY.body,
-            fontWeight: FONT_WEIGHT.medium,
-            fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.bodyLarge, lg: FONT_SIZE.leadLarge },
+               fontSize: {xs:11, sm:14 , md:20},
+         fontWeight: 500,
             lineHeight: { xs: "16px", md: "20px", lg: "26px" },
             letterSpacing: "-0.4px",
             textTransform: "uppercase"
@@ -78,8 +79,8 @@ export default function TestimonialsSection() {
       <Typography
         sx={{
           fontFamily: FONT_FAMILY.heading,
-          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.subSectionHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
-          fontWeight: FONT_WEIGHT.medium,
+          fontSize: { xs: "28px", sm: "36px", md: "40px", lg: "48px" },
+          fontWeight: 500,
           lineHeight: { xs: "40px", md: "50px", lg: "65px" },
           color: "#101010",
           mb: 4
@@ -219,8 +220,8 @@ export default function TestimonialsSection() {
                     <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.heading,
-                      fontWeight: FONT_WEIGHT.extraBold,
-                      fontSize: { xs: FONT_SIZE.leadLarge, sm: FONT_SIZE.titleLarge, md: FONT_SIZE.titleSmall, lg: FONT_SIZE.cardHeading },
+                      fontWeight: 800,
+                      fontSize: { xs: "20px", sm: "24px", md: "21px", lg: "28px" },
                       lineHeight: { xs: "24px", md: "25px", lg: "33px" },
                       textTransform: "uppercase",
                       color: "#202020",
@@ -236,8 +237,8 @@ export default function TestimonialsSection() {
                     <Typography
                     sx={{
                       fontFamily: FONT_FAMILY.heading,
-                      fontWeight: FONT_WEIGHT.medium,
-                      fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.titleSmall, lg: FONT_SIZE.cardHeading },
+                      fontWeight: 500,
+                      fontSize: { xs: "14px", sm: "16px", md: "21px", lg: "28px" },
                       lineHeight: { xs: "18px", md: "25px", lg: "33px" },
                       textTransform: "uppercase",
                       color: "#202020",
@@ -253,8 +254,8 @@ export default function TestimonialsSection() {
                     sx={{
                       width: { xs: "100%", md: "420px", lg: "559px" },
                       fontFamily: "'Manrope', sans-serif",
-                      fontWeight: FONT_WEIGHT.regular,
-                      fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.bodyLarge, lg: FONT_SIZE.title },
+                      fontWeight: 400,
+                      fontSize: { xs: "15px", sm: "16px", md: "16px", lg: "22px" },
                       lineHeight: { xs: "24px", sm: "28px", md: "26px", lg: "34px" },
                       color: "#060606",
                       zIndex: 2,

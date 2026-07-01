@@ -1,5 +1,4 @@
-"use client";import { FONT_WEIGHT } from "@/utils/theme";
-import React from "react";
+"use client";import React from "react";
 import { Container, Grid, Typography, Stack, Box, Divider, Link } from "@mui/material";
 
 export default function Footer() {
@@ -62,7 +61,7 @@ export default function Footer() {
                     "&:hover": { bgcolor: "#f8a51e", color: "#111" }
                   }}>
                   
-                    <Box component="span" sx={{ fontSize: 18, fontWeight: idx === 0 ? FONT_WEIGHT.extraBold : FONT_WEIGHT.medium }}>
+                    <Box component="span" sx={{ fontSize: 18, fontWeight: idx === 0 ? 800 : 500 }}>
                       {idx === 0 && "f"}
                       {idx === 1 && "📸"}
                       {idx === 2 && "in"}
@@ -77,7 +76,7 @@ export default function Footer() {
 
           
           <Grid size={{ xs: 6, sm: 4, lg: 2.5 }}>
-            <Typography sx={{ color: "#fff", fontWeight: FONT_WEIGHT.bold, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
+            <Typography sx={{ color: "#fff", fontWeight: 700, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
               Programs
             </Typography>
             <Stack spacing={{ xs: 1.5, lg: 2 }}>
@@ -106,11 +105,10 @@ export default function Footer() {
 
          
           <Grid size={{ xs: 6, sm: 4, lg: 2.5 }}>
-            <Typography sx={{ color: "#fff", fontWeight: FONT_WEIGHT.bold, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
+            <Typography sx={{ color: "#fff", fontWeight: 700, mb: { xs: 2, lg: 3 }, fontSize: { xs: 16, lg: 17 } }}>
               Quick Links
             </Typography>
             <Stack spacing={{ xs: 1.5, lg: 2 }}>
-              {/* 🔥 Updated to object array so links can have specific URLs */}
               {[
               { label: "Patents", href: "/patents-granted" },
               { label: "Awards", href: "/awards-recognition" },
@@ -119,7 +117,7 @@ export default function Footer() {
               map((item) =>
               <Link
                 key={item.label}
-                href={item.href} // 🔥 Linked here
+                href={item.href} 
                 underline="none"
                 sx={{
                   color: "inherit",
@@ -146,7 +144,7 @@ export default function Footer() {
                 mt: { xs: 2, sm: 0 }
               }}>
               
-              <Typography sx={{ color: "#fff", fontWeight: FONT_WEIGHT.bold, mb: 2.5, fontSize: { xs: 16, lg: 17 } }}>
+              <Typography sx={{ color: "#fff", fontWeight: 700, mb: 2.5, fontSize: { xs: 16, lg: 17 } }}>
                 Contact
               </Typography>
               <Typography sx={{ mb: 3, fontSize: { xs: 14, lg: 15 } }}>
@@ -154,20 +152,20 @@ export default function Footer() {
               </Typography>
               <Box
                 component="a"
-                href="/contact" // 🔥 Added a link to the contact button here
+                href="/contact" 
                 sx={{
                   bgcolor: "#f8a51e",
                   color: "#111",
-                  fontWeight: FONT_WEIGHT.bold,
+                  fontWeight: 700,
                   border: "none",
                   cursor: "pointer",
                   borderRadius: 2,
                   px: 4,
                   py: 1.5,
-                  textDecoration: "none", // Prevent underline on the button text
+                  textDecoration: "none", 
                   transition: "background-color 0.2s",
                   "&:hover": { bgcolor: "#e6951a" },
-                  display: "inline-block" // Helps behave correctly as a link
+                  display: "inline-block" 
                 }}>
                 
                 Get in Touch
