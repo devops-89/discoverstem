@@ -1,29 +1,29 @@
-"use client";
+"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
 
 import { programs } from "@/assets/Generic-data";
-import { FONT_FAMILY } from "@/utils/Fonts";
+
 import {
   Box,
   Container,
   Divider,
   Grid,
   Stack,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import Link from "next/link";
 
-const ArrowIcon = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.5"
-  >
+const ArrowIcon = () =>
+<svg
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2.5">
+  
     <polyline points="9 18 15 12 9 6" />
-  </svg>
-);
+  </svg>;
+
 
 export default function ProgramsSection() {
   return (
@@ -34,31 +34,31 @@ export default function ProgramsSection() {
         maxWidth: "1196px",
         mx: "auto",
         pb: { xs: 5, sm: 6, md: 8 },
-        px: { xs: 2, sm: 3, md: 4 },
-      }}
-    >
+        px: { xs: 2, sm: 3, md: 4 }
+      }}>
+      
       <Stack
         direction="row"
         spacing={1.5}
         alignItems="center"
         justifyContent={{ xs: "flex-start", md: "flex-start" }}
-        sx={{ mb: { xs: 1.5, md: 1 } }}
-      >
+        sx={{ mb: { xs: 1.5, md: 1 } }}>
+        
         <Divider
           sx={{
             width: { xs: 28, md: 36 },
             borderColor: "#9e9e9e",
-            borderWidth: "1.5px",
-          }}
-        />
+            borderWidth: "1.5px"
+          }} />
+        
 
         <Typography
           sx={{
             color: "#6e6e6e",
-            fontSize: { xs: "13px", md: "14px" },
-            letterSpacing: "0.02em",
-          }}
-        >
+            fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodySmall },
+            letterSpacing: "0.02em"
+          }}>
+          
           What we offer
         </Typography>
       </Stack>
@@ -67,21 +67,22 @@ export default function ProgramsSection() {
         sx={{
           fontFamily: FONT_FAMILY.heading,
           fontSize: {
-            xs: "30px",
-            sm: "36px",
-            md: "44px",
-            lg: "50px",
+             xs: "22px",
+            sm: FONT_SIZE.subSectionHeading,
+            md: FONT_SIZE.sectionHeadingLarge,
+            lg: FONT_SIZE.pageHeading
           },
+          fontWeight:500,
           lineHeight: {
-            xs: "38px",
+            xs: "20px",
             sm: "44px",
             md: "52px",
-            lg: "58px",
+            lg: "58px"
           },
           mb: { xs: 3, md: 4 },
-          textAlign: { xs: "left", md: "left" },
-        }}
-      >
+          textAlign: { xs: "left", md: "left" }
+        }}>
+        
         Our Program
       </Typography>
 
@@ -93,16 +94,16 @@ export default function ProgramsSection() {
               overflow: "hidden",
               position: "relative",
               height: {
-                xs: 300, 
-                sm: 380, 
-                md: "100%",
+                xs: 300,
+                sm: 380,
+                md: "100%"
               },
               minHeight: {
                 md: 560,
-                lg: 670,
-              },
-            }}
-          >
+                lg: 670
+              }
+            }}>
+            
             <Box
               component="img"
               src={programs[0].image}
@@ -111,18 +112,18 @@ export default function ProgramsSection() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                display: "block",
-              }}
-            />
+                display: "block"
+              }} />
+            
 
             <Box
               sx={{
                 position: "absolute",
                 inset: 0,
                 background:
-                  "linear-gradient(0deg, rgba(4,4,4,0.62) 0%, rgba(4,4,4,0.25) 45%, transparent 75%)",
-              }}
-            />
+                "linear-gradient(0deg, rgba(4,4,4,0.62) 0%, rgba(4,4,4,0.25) 45%, transparent 75%)"
+              }} />
+            
 
             <Box
               sx={{
@@ -133,18 +134,18 @@ export default function ProgramsSection() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 2,
-              }}
-            >
+                gap: 2
+              }}>
+              
               <Typography
                 sx={{
                   color: "#fff",
-                  fontSize: { xs: "14px", sm: "20px", md: "22px" },
+                  fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.leadLarge, md: FONT_SIZE.title },
                   lineHeight: { xs: "24px", md: "30px" },
-                  fontWeight: 500,
-                  wordBreak: "break-word",
-                }}
-              >
+                  fontWeight: FONT_WEIGHT.medium,
+                  wordBreak: "break-word"
+                }}>
+                
                 {programs[0].title}
               </Typography>
 
@@ -163,9 +164,9 @@ export default function ProgramsSection() {
                   color: "#fff",
                   cursor: "pointer",
                   flexShrink: 0,
-                  textDecoration: "none",
-                }}
-              >
+                  textDecoration: "none"
+                }}>
+                
                 <ArrowIcon />
               </Box>
             </Box>
@@ -174,93 +175,93 @@ export default function ProgramsSection() {
 
         <Grid size={{ xs: 12, md: 6 }}>
           <Stack spacing={{ xs: 2.5, md: 2 }} sx={{ height: "100%" }}>
-            {programs.slice(1).map((program) => (
-              <Box
-                key={program.title}
+            {programs.slice(1).map((program) =>
+            <Box
+              key={program.title}
+              sx={{
+                borderRadius: { xs: "14px", md: "16px" },
+                overflow: "hidden",
+                position: "relative",
+                flex: 1,
+                minHeight: {
+                  xs: 300,
+                  sm: 380,
+                  md: 270,
+                  lg: 326
+                }
+              }}>
+              
+                <Box
+                component="img"
+                src={program.image}
+                alt={program.title}
                 sx={{
-                  borderRadius: { xs: "14px", md: "16px" },
-                  overflow: "hidden",
-                  position: "relative",
-                  flex: 1,
-                  minHeight: {
-                    xs: 300, 
-                    sm: 380, 
-                    md: 270,
-                    lg: 326,
-                  },
-                }}
-              >
-                <Box
-                  component="img"
-                  src={program.image}
-                  alt={program.title}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block"
+                }} />
+              
 
                 <Box
-                  sx={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(0deg, rgba(4,4,4,0.62) 0%, rgba(4,4,4,0.25) 45%, transparent 75%)",
-                  }}
-                />
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                  "linear-gradient(0deg, rgba(4,4,4,0.62) 0%, rgba(4,4,4,0.25) 45%, transparent 75%)"
+                }} />
+              
 
                 <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: { xs: 16, md: 18 },
-                    left: { xs: 16, md: 18 },
-                    right: { xs: 16, md: 18 },
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: 2,
-                  }}
-                >
+                sx={{
+                  position: "absolute",
+                  bottom: { xs: 16, md: 18 },
+                  left: { xs: 16, md: 18 },
+                  right: { xs: 16, md: 18 },
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 2
+                }}>
+                
                   <Typography
-                    sx={{
-                      color: "#fff",
-                      fontSize: { xs: "14px", sm: "18px", md: "20px" },
-                      lineHeight: { xs: "23px", md: "28px" },
-                      fontWeight: 500,
-                      wordBreak: "break-word",
-                    }}
-                  >
+                  sx={{
+                    color: "#fff",
+                    fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.lead, md: FONT_SIZE.leadLarge },
+                    lineHeight: { xs: "23px", md: "28px" },
+                    fontWeight: FONT_WEIGHT.medium,
+                    wordBreak: "break-word"
+                  }}>
+                  
                     {program.title}
                   </Typography>
 
                   <Box
-                    component={Link}
-                    href={program.link}
-                    sx={{
-                      width: { xs: 36, md: 38 },
-                      height: { xs: 36, md: 38 },
-                      borderRadius: "50%",
-                      bgcolor: "rgba(255,255,255,0.18)",
-                      border: "1.5px solid rgba(255,255,255,0.6)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#fff",
-                      cursor: "pointer",
-                      flexShrink: 0,
-                      textDecoration: "none",
-                    }}
-                  >
+                  component={Link}
+                  href={program.link}
+                  sx={{
+                    width: { xs: 36, md: 38 },
+                    height: { xs: 36, md: 38 },
+                    borderRadius: "50%",
+                    bgcolor: "rgba(255,255,255,0.18)",
+                    border: "1.5px solid rgba(255,255,255,0.6)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#fff",
+                    cursor: "pointer",
+                    flexShrink: 0,
+                    textDecoration: "none"
+                  }}>
+                  
                     <ArrowIcon />
                   </Box>
                 </Box>
               </Box>
-            ))}
+            )}
           </Stack>
         </Grid>
       </Grid>
-    </Container>
-  );
+    </Container>);
+
 }

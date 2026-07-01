@@ -1,9 +1,9 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import {
   admissionFilters,
-  admissionStudentsData,
-} from "@/assets/Generic-data";
+  admissionStudentsData } from
+"@/assets/Generic-data";
 import {
   Box,
   Chip,
@@ -11,8 +11,8 @@ import {
   Pagination,
   PaginationItem,
   TextField,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import { useState } from "react";
 
 const ROWS_PER_PAGE = 8;
@@ -40,15 +40,15 @@ export default function AdmissionSuccessSection() {
 
   const filteredStudents = admissionStudentsData.filter((student) => {
     const batchMatch =
-      batchFilter === "All Batches" || student.batch === batchFilter;
+    batchFilter === "All Batches" || student.batch === batchFilter;
 
     const programMatch =
-      programFilter === "All" || student.program === programFilter;
+    programFilter === "All" || student.program === programFilter;
 
     const searchMatch =
-      student.name.toLowerCase().includes(search.toLowerCase()) ||
-      student.school.toLowerCase().includes(search.toLowerCase()) ||
-      student.acceptedTo.toLowerCase().includes(search.toLowerCase());
+    student.name.toLowerCase().includes(search.toLowerCase()) ||
+    student.school.toLowerCase().includes(search.toLowerCase()) ||
+    student.acceptedTo.toLowerCase().includes(search.toLowerCase());
 
     return batchMatch && programMatch && searchMatch;
   });
@@ -69,19 +69,20 @@ export default function AdmissionSuccessSection() {
         mx: "auto",
         px: { xs: 3, md: 4, lg: 0 },
         pt: { xs: 2, md: 10 },
-        pb: { xs: 6, md: 10 },
-      }}
-    >
+        pb: { xs: 6, md: 10 }
+      }}>
+      
       <Typography
         sx={{
-          fontFamily: "Inter, sans-serif",
-          fontWeight: 700,
-          fontSize: { xs: "28px", sm: "32px", md: "36px", lg: "48px" },
+            textAlign: { xs: "center", md: "left" }, 
+          fontFamily: FONT_FAMILY.accent,
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: { xs: FONT_SIZE.cardHeading, sm: FONT_SIZE.articleHeading, md: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
           lineHeight: { xs: "36px", sm: "40px", md: "44px", lg: "58px" },
           color: "#171717",
-          mb: { xs: 4, md: 6 },
-        }}
-      >
+          mb: { xs: 4, md: 6 }
+        }}>
+        
         The 2025 admissions cycle
       </Typography>
 
@@ -96,16 +97,16 @@ export default function AdmissionSuccessSection() {
           border: "1px solid #E5E5E5",
           borderRadius: { xs: "24px", sm: "24px", lg: "999px" },
           p: "12px",
-          
-          backgroundColor:  "transparent"
-        }}
-      >
+
+          backgroundColor: "transparent"
+        }}>
+        
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             gap: 2,
-            
+
             flexWrap: { xs: "wrap", sm: "nowrap" },
             overflowX: { xs: "visible", sm: "auto" },
             "&::-webkit-scrollbar": { display: "none" },
@@ -113,27 +114,27 @@ export default function AdmissionSuccessSection() {
             border: "none",
             borderRadius: 0,
             p: 0,
-            width: { xs: "100%", lg: "auto" },
-          }}
-        >
-          {admissionFilters.batchFilters.map((item) => (
-            <Chip
-              key={item}
-              label={item}
-              onClick={() => {
-                setBatchFilter(item);
-                setPage(1);
-              }}
-              sx={{
-                background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
-                color: batchFilter === item ? "#fff" : "#171717",
-                fontWeight: 600,
-                fontSize: { xs: "12px", sm: "11px" , md: "14px" },
-                height: { xs: "28px", md: "32px" },
-                flexShrink: 0,
-              }}
-            />
-          ))}
+            width: { xs: "100%", lg: "auto" }
+          }}>
+          
+          {admissionFilters.batchFilters.map((item) =>
+          <Chip
+            key={item}
+            label={item}
+            onClick={() => {
+              setBatchFilter(item);
+              setPage(1);
+            }}
+            sx={{
+              background: batchFilter === item ? "#7B53A1" : "#F5F5F5",
+              color: batchFilter === item ? "#fff" : "#171717",
+              fontWeight: FONT_WEIGHT.semiBold,
+              fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.footnote, md: FONT_SIZE.bodySmall },
+              height: { xs: "28px", md: "32px" },
+              flexShrink: 0
+            }} />
+
+          )}
 
           <Box
             sx={{
@@ -141,28 +142,28 @@ export default function AdmissionSuccessSection() {
               height: "24px",
               bgcolor: "#E5E5E5",
               display: { xs: "none", md: "block" },
-              flexShrink: 0,
-            }}
-          />
+              flexShrink: 0
+            }} />
+          
 
-          {admissionFilters.programFilters.map((item) => (
-            <Chip
-              key={item}
-              label={item}
-              onClick={() => {
-                setProgramFilter(item);
-                setPage(1);
-              }}
-              sx={{
-                background: programFilter === item ? "#000" : "#F5F5F5",
-                color: programFilter === item ? "#fff" : "#171717",
-                fontWeight: 600,
-                fontSize: { xs: "12px", md: "14px" },
-                height: { xs: "28px", md: "32px" },
-                flexShrink: 0,
-              }}
-            />
-          ))}
+          {admissionFilters.programFilters.map((item) =>
+          <Chip
+            key={item}
+            label={item}
+            onClick={() => {
+              setProgramFilter(item);
+              setPage(1);
+            }}
+            sx={{
+              background: programFilter === item ? "#000" : "#F5F5F5",
+              color: programFilter === item ? "#fff" : "#171717",
+              fontWeight: FONT_WEIGHT.semiBold,
+              fontSize: { xs: FONT_SIZE.caption, md: FONT_SIZE.bodySmall },
+              height: { xs: "28px", md: "32px" },
+              flexShrink: 0
+            }} />
+
+          )}
         </Box>
         <TextField
           size="small"
@@ -178,16 +179,16 @@ export default function AdmissionSuccessSection() {
             flexShrink: 0,
             "& .MuiOutlinedInput-root": {
               borderRadius: "999px",
-              fontSize: { xs: "13px", md: "16px" },
+              fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge }
             },
             "& .MuiInputBase-input::placeholder": {
-              fontSize: { xs: "13px", md: "16px" },
-            },
-          }}
-        />
+              fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodyLarge }
+            }
+          }} />
+        
       </Box>
 
-      <Typography sx={{ fontSize: "14px", color: "#737373", mb: 5 }}>
+      <Typography sx={{ fontSize: FONT_SIZE.bodySmall, color: "#737373", mb: 5 }}>
         Showing <strong>{filteredStudents.length}</strong> of{" "}
         {admissionStudentsData.length} students
       </Typography>
@@ -199,11 +200,11 @@ export default function AdmissionSuccessSection() {
             xs: "1fr",
             sm: "repeat(2,1fr)",
             md: "repeat(3,1fr)",
-            lg: "repeat(4,1fr)",
+            lg: "repeat(4,1fr)"
           },
-          gap: 3,
-        }}
-      >
+          gap: 3
+        }}>
+        
         {paginatedStudents.map((student) => {
           const programColor = getProgramColor(student.program);
 
@@ -218,23 +219,23 @@ export default function AdmissionSuccessSection() {
                 background: "#FFFFFF",
                 border: "0.8px solid rgba(0, 0, 0, 0.05)",
                 boxShadow:
-                  "0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1)",
+                "0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1)",
                 borderRadius: "16px",
-                overflow: "hidden",
-              }}
-            >
+                overflow: "hidden"
+              }}>
+              
               <Box
                 sx={{
                   height: "128px",
                   bgcolor: "#C4C4C4",
                   position: "relative",
-                  backgroundImage: student.image
-                    ? `url(${student.image})`
-                    : "none",
+                  backgroundImage: student.image ?
+                  `url(${student.image})` :
+                  "none",
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+                  backgroundPosition: "center"
+                }}>
+                
                 <Chip
                   label={student.program}
                   size="small"
@@ -245,12 +246,12 @@ export default function AdmissionSuccessSection() {
                     height: "24px",
                     bgcolor: "rgba(255,255,255,0.95)",
                     color: programColor,
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 700,
-                    fontSize: "12px",
-                    borderRadius: "999px",
-                  }}
-                />
+                    fontFamily: FONT_FAMILY.accent,
+                    fontWeight: FONT_WEIGHT.bold,
+                    fontSize: FONT_SIZE.caption,
+                    borderRadius: "999px"
+                  }} />
+                
 
                 <Box
                   sx={{
@@ -265,14 +266,14 @@ export default function AdmissionSuccessSection() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 700,
-                    fontSize: "24px",
+                    fontFamily: FONT_FAMILY.accent,
+                    fontWeight: FONT_WEIGHT.bold,
+                    fontSize: FONT_SIZE.titleLarge,
                     color: programColor,
                     boxShadow:
-                      "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)",
-                  }}
-                >
+                    "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)"
+                  }}>
+                  
                   {student.initials}
                 </Box>
               </Box>
@@ -283,34 +284,34 @@ export default function AdmissionSuccessSection() {
                   height: "262px",
                   px: "24.8px",
                   pt: "48px",
-                  pb: "20px",
-                }}
-              >
+                  pb: "20px"
+                }}>
+                
                 <Typography
                   sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 600,
-                    fontSize: { xs: "16px", md: "18px" },
+                    fontFamily: FONT_FAMILY.accent,
+                    fontWeight: FONT_WEIGHT.semiBold,
+                    fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead },
                     lineHeight: { xs: "22px", md: "27px" },
                     letterSpacing: "-0.45px",
-                    color: "#171717",
-                  }}
-                >
+                    color: "#171717"
+                  }}>
+                  
                   {student.name}
                 </Typography>
 
                 <Typography
                   sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 400,
-                    fontSize: { xs: "11px", md: "12px" },
-                    lineHeight: "16px",
+                    fontFamily: FONT_FAMILY.accent,
+                    fontWeight: FONT_WEIGHT.regular,
+                    fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.caption },
+                    lineHeight: LINE_HEIGHT.extraSmall,
                     letterSpacing: "0.6px",
                     textTransform: "uppercase",
                     color: "#737373",
-                    mt: "4px",
-                  }}
-                >
+                    mt: "4px"
+                  }}>
+                  
                   {student.school}
                 </Typography>
 
@@ -321,21 +322,21 @@ export default function AdmissionSuccessSection() {
                     right: "24.8px",
                     top: "145px",
                     pt: "16.8px",
-                    borderTop: "0.8px solid rgba(0, 0, 0, 0.05)",
-                  }}
-                >
+                    borderTop: "0.8px solid rgba(0, 0, 0, 0.05)"
+                  }}>
+                  
                   <Typography
                     sx={{
-                      fontFamily: "Inter, sans-serif",
-                      fontWeight: 400,
-                      fontSize: { xs: "11px", md: "12px" },
-                      lineHeight: "16px",
+                      fontFamily: FONT_FAMILY.accent,
+                      fontWeight: FONT_WEIGHT.regular,
+                      fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.caption },
+                      lineHeight: LINE_HEIGHT.extraSmall,
                       letterSpacing: "0.6px",
                       textTransform: "uppercase",
                       color: "#737373",
-                      mb: "8px",
-                    }}
-                  >
+                      mb: "8px"
+                    }}>
+                    
                     Accepted To
                   </Typography>
 
@@ -343,9 +344,9 @@ export default function AdmissionSuccessSection() {
                     sx={{
                       display: "flex",
                       alignItems: "flex-start",
-                      gap: "8px",
-                    }}
-                  >
+                      gap: "8px"
+                    }}>
+                    
                     <Box
                       sx={{
                         width: "6px",
@@ -353,76 +354,76 @@ export default function AdmissionSuccessSection() {
                         borderRadius: "999px",
                         bgcolor: programColor,
                         mt: "7px",
-                        flexShrink: 0,
-                      }}
-                    />
+                        flexShrink: 0
+                      }} />
+                    
 
                     <Typography
                       sx={{
-                        fontFamily: "Inter, sans-serif",
-                        fontWeight: 400,
-                        fontSize: { xs: "13px", md: "14px" },
-                        lineHeight: "20px",
-                        color: "#262626",
-                      }}
-                    >
+                        fontFamily: FONT_FAMILY.accent,
+                        fontWeight: FONT_WEIGHT.regular,
+                        fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.bodySmall },
+                        lineHeight: LINE_HEIGHT.small,
+                        color: "#262626"
+                      }}>
+                      
                       {student.acceptedTo}
                     </Typography>
                   </Box>
                 </Box>
               </Box>
-            </Box>
-          );
+            </Box>);
+
         })}
       </Box>
 
-      {pageCount > 1 && (
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+      {pageCount > 1 &&
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
           <Pagination
-            count={pageCount}
-            page={page}
-            onChange={(_, value) => {
-              setPage(value);
-              const section = document.getElementById("admission-success-section");
-              if (section) {
-                const y = section.getBoundingClientRect().top + window.scrollY - 100;
-                window.scrollTo({ top: y, behavior: "smooth" });
-              } else {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-            renderItem={(item) => <PaginationItem {...item} />}
-            sx={{
-              "& .MuiPagination-ul": {
-                gap: { xs: "4px", md: "8px" },
-                flexWrap: "nowrap",
-                justifyContent: "center",
-              },
-              "& .MuiPaginationItem-root": {
-                width: { xs: "28px", sm: "40px" },
-                height: { xs: "28px", sm: "40px" },
-                minWidth: { xs: "28px", sm: "40px" },
-                fontSize: { xs: "12px", sm: "14px" },
-                borderRadius: "50%",
-                fontWeight: 500,
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "#E5E7EB",
-                color: "#374151",
-              },
-              "& .MuiPaginationItem-ellipsis": {
-                backgroundColor: "transparent",
-                lineHeight: { xs: "28px", sm: "40px" },
-              },
-              "& .Mui-selected": {
-                backgroundColor: "#7B53A1 !important",
-                color: "#fff",
-              },
-            }}
-          />
+          count={pageCount}
+          page={page}
+          onChange={(_, value) => {
+            setPage(value);
+            const section = document.getElementById("admission-success-section");
+            if (section) {
+              const y = section.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            } else {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          renderItem={(item) => <PaginationItem {...item} />}
+          sx={{
+            "& .MuiPagination-ul": {
+              gap: { xs: "4px", md: "8px" },
+              flexWrap: "nowrap",
+              justifyContent: "center"
+            },
+            "& .MuiPaginationItem-root": {
+              width: { xs: "28px", sm: "40px" },
+              height: { xs: "28px", sm: "40px" },
+              minWidth: { xs: "28px", sm: "40px" },
+              fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall },
+              borderRadius: "50%",
+              fontWeight: FONT_WEIGHT.medium,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#E5E7EB",
+              color: "#374151"
+            },
+            "& .MuiPaginationItem-ellipsis": {
+              backgroundColor: "transparent",
+              lineHeight: { xs: "28px", sm: "40px" }
+            },
+            "& .Mui-selected": {
+              backgroundColor: "#7B53A1 !important",
+              color: "#fff"
+            }
+          }} />
+        
         </Box>
-      )}
-    </Container>
-  );
+      }
+    </Container>);
+
 }

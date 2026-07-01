@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { FoundationCoursesData } from "@/utils/Types";
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
@@ -25,7 +25,7 @@ const iconMap = {
   file: DescriptionOutlinedIcon,
   puzzle: ExtensionOutlinedIcon,
   clipboard: AssignmentOutlinedIcon,
-  science: ScienceOutlinedIcon,
+  science: ScienceOutlinedIcon
 };
 
 export default function CoursesSection({ data, showLevel = true, showDuration = true }: CoursesSectionProps) {
@@ -37,17 +37,17 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
         mx: "auto",
         px: { xs: 3, sm: 5, lg: "40px" },
         pt: { xs: 5, sm: 4, lg: "96px" },
-        pb: { xs: 1, sm: 4, lg: 0 },
-      }}
-    >
+        pb: { xs: 1, sm: 4, lg: 0 }
+      }}>
+      
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: { xs: 3, sm: 4, lg: "56px" },
-        }}
-      >
+          gap: { xs: 3, sm: 4, lg: "56px" }
+        }}>
+        
         <Box sx={{ maxWidth: "1200px", textAlign: "center" }}>
           <Box
             sx={{
@@ -55,21 +55,21 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
               justifyContent: "center",
               alignItems: "center",
               gap: "12px",
-              mb: "16px",
-            }}
-          >
+              mb: "16px"
+            }}>
+            
             <Box sx={{ width: { xs: "32px", md: "48px" }, height: "1px", bgcolor: "#6E6E6E" }} />
 
             <Typography
               sx={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 600,
-                fontSize: { xs: "16px", sm: "18px", lg: "22px" },
-                lineHeight: { xs: "24px", sm: "30px", lg: "30px" },
+                fontFamily: FONT_FAMILY.body,
+                fontWeight: FONT_WEIGHT.semiBold,
+                fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                lineHeight: { xs: LINE_HEIGHT.medium, sm: "30px", lg: "30px" },
                 letterSpacing: "-0.4px",
-                color: "#EE4823",
-              }}
-            >
+                color: "#EE4823"
+              }}>
+              
               {data.eyebrow}
             </Typography>
 
@@ -78,15 +78,15 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
 
           <Typography
             sx={{
-              fontFamily: "Work Sans, sans-serif",
-              fontWeight: 600,
-              fontSize: { xs: "24px", sm: "36px", lg: "48px" },
-              lineHeight: { xs: "30px", sm: "46px", lg: "48px" },
+              fontFamily: FONT_FAMILY.heading,
+              fontWeight: FONT_WEIGHT.semiBold,
+              fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.subSectionHeading, lg: FONT_SIZE.pageHeadingSmall },
+              lineHeight: { xs: "30px", sm: LINE_HEIGHT.xl5, lg: "48px" },
               letterSpacing: "-0.8px",
               color: "#1A1A1A",
-              mb: "16px",
-            }}
-          >
+              mb: "16px"
+            }}>
+            
             {data.title}
           </Typography>
 
@@ -94,13 +94,13 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
             sx={{
               maxWidth: "672px",
               mx: "auto",
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 400,
-              fontSize: { xs: "15px", sm: "16px", lg: "18px" },
-              lineHeight: { xs: "25px", sm: "26px", lg: "27px" },
-              color: "#676767",
-            }}
-          >
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: FONT_WEIGHT.regular,
+              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+              lineHeight: { xs: "25px", sm: LINE_HEIGHT.mediumLarge, lg: "27px" },
+              color: "#676767"
+            }}>
+            
             {data.description}
           </Typography>
         </Box>
@@ -112,25 +112,25 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
             display: "grid",
             justifyContent: "center",
             gap: { xs: 3, lg: "24px" },
-            
+
             gridTemplateColumns: {
               xs: "1fr",
-              sm: "repeat(2, 1fr)",
+              sm: "repeat(2, 1fr)"
             },
             "@media (min-width: 768px)": {
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(3, 1fr)"
             },
             "@media (min-width: 1024px)": {
-              gridTemplateColumns: "repeat(4, 1fr)",
+              gridTemplateColumns: "repeat(4, 1fr)"
             },
             "@media (min-width: 1440px)": {
-              gridTemplateColumns: "repeat(4, 282px)",
-            },
-          }}
-        >
+              gridTemplateColumns: "repeat(4, 282px)"
+            }
+          }}>
+          
           {data.cards.map((item) => {
             const Icon =
-              iconMap[item.icon as keyof typeof iconMap] || GroupsOutlinedIcon;
+            iconMap[item.icon as keyof typeof iconMap] || GroupsOutlinedIcon;
 
             return (
               <Box
@@ -142,22 +142,22 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                   minHeight: { xs: "auto", lg: "330.7px" },
                   bgcolor: "#F3F4F6",
                   borderRadius: "16px",
-                  p: { xs: "20px", lg: "28px" }, 
+                  p: { xs: "20px", lg: "28px" },
                   display: "flex",
                   flexDirection: "column",
-                  mx: "auto",
-                }}
-              >
+                  mx: "auto"
+                }}>
+                
                 <Box
                   sx={{
-                    width: { xs: "100%", lg: "226px" }, 
+                    width: { xs: "100%", lg: "226px" },
                     height: "56px",
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "flex-start",
-                    mb: "20px",
-                  }}
-                >
+                    mb: "20px"
+                  }}>
+                  
                   <Box
                     sx={{
                       width: { xs: "40px", md: "56px" },
@@ -167,104 +167,104 @@ export default function CoursesSection({ data, showLevel = true, showDuration = 
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Icon sx={{ fontSize: { xs: "20px", md: "28px" }, color: "#FFFFFF" }} />
+                      flexShrink: 0
+                    }}>
+                    
+                    <Icon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, md: FONT_SIZE.cardHeading }, color: "#FFFFFF" }} />
                   </Box>
 
-                  {showLevel && (
-                    <Box
-                      sx={{
-                        height: "26px",
-                        borderRadius: "999px",
-                        bgcolor: "#FFEBE6",
-                        px: "12px",
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
+                  {showLevel &&
+                  <Box
+                    sx={{
+                      height: "26px",
+                      borderRadius: "999px",
+                      bgcolor: "#FFEBE6",
+                      px: "12px",
+                      display: "flex",
+                      alignItems: "center"
+                    }}>
+                    
                       <Typography
-                        sx={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 400,
-                          fontSize: "12px",
-                          lineHeight: "18px",
-                          letterSpacing: "0.48px",
-                          color: "#EE4823",
-                        }}
-                      >
+                      sx={{
+                        fontFamily: FONT_FAMILY.body,
+                        fontWeight: FONT_WEIGHT.regular,
+                        fontSize: FONT_SIZE.caption,
+                        lineHeight: LINE_HEIGHT.lessSmall,
+                        letterSpacing: "0.48px",
+                        color: "#EE4823"
+                      }}>
+                      
                         {item.level}
                       </Typography>
                     </Box>
-                  )}
+                  }
                 </Box>
 
                 <Box
                   sx={{
-                    width: { xs: "100%", lg: "226px" }, 
+                    width: { xs: "100%", lg: "226px" },
                     display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
+                    flexDirection: "column"
+                  }}>
+                  
                   <Typography
                     sx={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 600,
-                      fontSize: { xs: "16px", lg: "18px" },
+                      fontFamily: FONT_FAMILY.body,
+                      fontWeight: FONT_WEIGHT.semiBold,
+                      fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
                       lineHeight: { xs: "22px", lg: "25px" },
                       letterSpacing: "-0.18px",
                       color: "#1A1A1A",
                       minHeight: "50px",
                       display: "flex",
-                      alignItems: "flex-start",
-                    }}
-                  >
+                      alignItems: "flex-start"
+                    }}>
+                    
                     {item.title}
                   </Typography>
 
                   <Typography
                     sx={{
                       mt: "8px",
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 400,
-                      fontSize: { xs: "13px", lg: "14px" },
-                      lineHeight: { xs: "20px", lg: "22px" },
+                      fontFamily: FONT_FAMILY.body,
+                      fontWeight: FONT_WEIGHT.regular,
+                      fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
+                      lineHeight: { xs: LINE_HEIGHT.small, lg: "22px" },
                       color: "#676767",
-                      minHeight: "88px",
-                    }}
-                  >
+                      minHeight: "88px"
+                    }}>
+                    
                     {item.description}
                   </Typography>
                 </Box>
 
-                {showDuration && (
-                  <Box
-                    sx={{
-                      mt: "auto",
-                      pt: "16px",
-                      width: { xs: "100%", lg: "226px" }, 
-                      borderTop: "1px solid rgba(0,0,0,0.08)",
-                    }}
-                  >
+                {showDuration &&
+                <Box
+                  sx={{
+                    mt: "auto",
+                    pt: "16px",
+                    width: { xs: "100%", lg: "226px" },
+                    borderTop: "1px solid rgba(0,0,0,0.08)"
+                  }}>
+                  
                     <Typography
-                      sx={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: 400,
-                        fontSize: "13px",
-                        lineHeight: "20px",
-                        color: "#6E6E6E",
-                      }}
-                    >
+                    sx={{
+                      fontFamily: FONT_FAMILY.body,
+                      fontWeight: FONT_WEIGHT.regular,
+                      fontSize: FONT_SIZE.small,
+                      lineHeight: LINE_HEIGHT.small,
+                      color: "#6E6E6E"
+                    }}>
+                    
                       {item.duration}
                     </Typography>
                   </Box>
-                )}
-              </Box>
-            );
+                }
+              </Box>);
+
           })}
         </Box>
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }

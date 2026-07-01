@@ -1,4 +1,4 @@
-"use client";
+"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { ImageContentSplitData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
@@ -9,7 +9,7 @@ interface ImageContentSplitSectionProps {
 }
 
 export default function ImageContentSplitSection({
-  data,
+  data
 }: ImageContentSplitSectionProps) {
   return (
     <Container
@@ -18,9 +18,9 @@ export default function ImageContentSplitSection({
         maxWidth: "1160px",
         mx: "auto",
         px: { xs: 3, md: 4, lg: 0 },
-        py: { xs: 1, md: 6, lg: 8 },
-      }}
-    >
+        py: { xs: 1, md: 6, lg: 8 }
+      }}>
+      
     
       <Box
         sx={{
@@ -28,29 +28,30 @@ export default function ImageContentSplitSection({
           gridTemplateColumns: { xs: "1fr", md: "1fr 1fr", lg: "563px 510px" },
           gap: { xs: 4, md: 6, lg: "87px" },
           alignItems: "start",
-          mb: { xs: 3, md: 8, lg: "100px" },
-        }}
-      >
+          mb: { xs: 3, md: 8, lg: "100px" }
+        }}>
+        
         <Box>
-          {data.topSection.description.map((paragraph, index) => (
-            <Typography
-              key={index}
-              sx={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 400,
-                fontSize: { xs: "16px", md: "18px", lg: "20px" },
-                lineHeight: { xs: "28px", md: "32px", lg: "36px" },
-                letterSpacing: "-0.03em",
-                color: "#777777",
-                mb:
-                  index === data.topSection.description.length - 1
-                    ? 0
-                    : { xs: 3, lg: "36px" },
-              }}
-            >
+          {data.topSection.description.map((paragraph, index) =>
+          <Typography
+            key={index}
+            sx={{
+               textAlign: { xs: "center", md: "left" }, 
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: FONT_WEIGHT.regular,
+              fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+              lineHeight: { xs: "28px", md: "32px", lg: "36px" },
+              letterSpacing: "-0.03em",
+              color: "#777777",
+              mb:
+              index === data.topSection.description.length - 1 ?
+              0 :
+              { xs: 3, lg: "36px" }
+            }}>
+            
               {paragraph}
             </Typography>
-          ))}
+          )}
         </Box>
 
         <Box
@@ -61,15 +62,15 @@ export default function ImageContentSplitSection({
             maxWidth: "510px",
             height: { xs: "280px", md: "350px", lg: "401px" },
             borderRadius: "16px",
-            overflow: "hidden",
-          }}
-        >
+            overflow: "hidden"
+          }}>
+          
           <Image
             src={data.topSection.image}
             alt="Top Section"
             fill sizes="100vw"
-            style={{ objectFit: "cover" }}
-          />
+            style={{ objectFit: "cover" }} />
+          
         </Box>
       </Box>
 
@@ -79,55 +80,56 @@ export default function ImageContentSplitSection({
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "1fr 1fr", lg: "510px 563px" },
           gap: { xs: 4, md: 6, lg: "87px" },
-          alignItems: "start",
-        }}
-      >
+          alignItems: "start"
+        }}>
+        
         <Box
           sx={{
             order: { xs: 2, md: 1 },
-             mx: { xs: "auto", md: 0 },
+            mx: { xs: "auto", md: 0 },
             position: "relative",
             width: "100%",
             maxWidth: "510px",
             height: { xs: "280px", md: "350px", lg: "401px" },
             borderRadius: "16px",
-            overflow: "hidden",
-          }}
-        >
+            overflow: "hidden"
+          }}>
+          
           <Image
             src={data.bottomSection.image}
             alt="Bottom Section"
             fill sizes="100vw"
-            style={{ objectFit: "cover" }}
-          />
+            style={{ objectFit: "cover" }} />
+          
         </Box>
 
         <Box
           sx={{
-            order: { xs: 1, md: 2 },
-          }}
-        >
-          {data.bottomSection.description.map((paragraph, index) => (
-            <Typography
-              key={index}
-              sx={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 400,
-                fontSize: { xs: "16px", md: "18px", lg: "20px" },
-                lineHeight: { xs: "28px", md: "32px", lg: "36px" },
-                letterSpacing: "-0.03em",
-                color: "#777777",
-                mb:
-                  index === data.bottomSection.description.length - 1
-                    ? 0
-                    : { xs: 3, lg: "36px" },
-              }}
-            >
+            order: { xs: 1, md: 2 }
+          }}>
+          
+          {data.bottomSection.description.map((paragraph, index) =>
+          <Typography
+            key={index}
+            sx={{
+               textAlign: { xs: "center", md: "left" }, 
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: FONT_WEIGHT.regular,
+              fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.lead, lg: FONT_SIZE.leadLarge },
+              lineHeight: { xs: "28px", md: "32px", lg: "36px" },
+              letterSpacing: "-0.03em",
+              color: "#777777",
+              mb:
+              index === data.bottomSection.description.length - 1 ?
+              0 :
+              { xs: 3, lg: "36px" }
+            }}>
+            
               {paragraph}
             </Typography>
-          ))}
+          )}
         </Box>
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }

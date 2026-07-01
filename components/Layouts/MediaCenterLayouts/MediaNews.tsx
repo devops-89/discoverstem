@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { MediaNewsItem } from "@/utils/Types";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -19,13 +19,13 @@ export default function MediaNewsSection({
   id,
   title,
   items,
-  layoutType = "featured",
+  layoutType = "featured"
 }: MediaNewsSectionProps) {
   const router = useRouter();
- 
+
   const displayLimit = layoutType === "featured" ? 5 : 8;
   const visibleItems = items.slice(0, displayLimit);
-  
+
   const featured = layoutType === "featured" ? visibleItems[0] : null;
   const cards = layoutType === "featured" ? visibleItems.slice(1) : visibleItems;
 
@@ -39,28 +39,28 @@ export default function MediaNewsSection({
         maxWidth: "1159px",
         mx: "auto",
         mb: { xs: 4, lg: "100px" },
-        scrollMarginTop: "120px",
-      }}
-    >
+        scrollMarginTop: "120px"
+      }}>
+      
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          mb: { xs: 4, lg: "75px" },
-        }}
-      >
+          mb: { xs: 4, lg: "75px" }
+        }}>
+        
         <Typography
           sx={{
-            fontFamily: "Work Sans, sans-serif",
-            fontWeight: 600,
-            fontSize: { xs: "16px", md: "28px", lg: "36px" },
-            lineHeight: { xs: "32px", md: "36px", lg: "46px" },
+            fontFamily: FONT_FAMILY.heading,
+            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.cardHeading, lg: FONT_SIZE.subSectionHeading },
+            lineHeight: { xs: LINE_HEIGHT.extraLarge, md: "36px", lg: LINE_HEIGHT.xl5 },
             letterSpacing: "-0.02em",
             color: "#111827",
             mr: "14px",
-            flexShrink: 0,
-          }}
-        >
+            flexShrink: 0
+          }}>
+          
           {title}
         </Typography>
 
@@ -68,53 +68,53 @@ export default function MediaNewsSection({
           sx={{
             height: "1px",
             bgcolor: "#000000",
-            flexGrow: 1,
-          }}
-        />
+            flexGrow: 1
+          }} />
+        
 
-        {items.length > 5 && (
-          <Box
-            onClick={() => router.push(`/media/category/${id}`)}
-            sx={{
-              ml: "18px",
-              display: "flex",
-              alignItems: "center",
-              cursor: "pointer",
-              color: "#7B53A1",
-              flexShrink: 0,
-            }}
-          >
+        {items.length > 5 &&
+        <Box
+          onClick={() => router.push(`/media/category/${id}`)}
+          sx={{
+            ml: "18px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+            color: "#7B53A1",
+            flexShrink: 0
+          }}>
+          
             <Typography
-              sx={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 600,
-                fontSize: { xs: "14px", md: "15px", lg: "16px" },
-                lineHeight: "24px",
-              }}
-            >
+            sx={{
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: FONT_WEIGHT.semiBold,
+              fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
+              lineHeight: LINE_HEIGHT.medium
+            }}>
+            
               View More
             </Typography>
 
             <KeyboardArrowRightIcon sx={{ fontSize: 18 }} />
           </Box>
-        )}
+        }
       </Box>
 
-      {featured && (
-        <FeaturedMediaCard item={featured} />
-      )}
+      {featured &&
+      <FeaturedMediaCard item={featured} />
+      }
 
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
-          gap: "23px",
-        }}
-      >
-        {cards.map((item) => (
-          <MediaNewsCard key={item.id} item={item} />
-        ))}
+          gap: "23px"
+        }}>
+        
+        {cards.map((item) =>
+        <MediaNewsCard key={item.id} item={item} />
+        )}
       </Box>
-    </Box>
-  );
+    </Box>);
+
 }

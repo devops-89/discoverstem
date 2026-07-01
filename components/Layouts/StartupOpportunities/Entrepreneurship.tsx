@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { entrepreneurshipFundingData } from "@/assets/Generic-data";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -14,32 +14,36 @@ export default function EntrepreneurshipFunding() {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-       
+
         px: { xs: 3, lg: 0 },
-        py: { xs: 3, lg: 10 },
-      }}
-    >
+        py: { xs: 3, lg: 10 }
+      }}>
+      
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
-          
-            lg: "688px 451.5px",
+
+            lg: "688px 451.5px"
           },
           gap: { xs: 5, lg: "20px" },
-          alignItems: "start",
-        }}
-      >
+          alignItems: "start"
+        }}>
+        
         <Box>
           <Typography
             component="div"
             sx={{
+              // 🔥 FIX: Changed md to lg so it stays centered on 1024px!
+              textAlign: { xs: "center", lg: "left" },
+              // 🔥 FIX: Added mx auto so the block itself sits in the true center of the screen!
+              mx: { xs: "auto", lg: 0 },
               maxWidth: "702px",
-              fontFamily: "Work Sans, sans-serif",
-              fontWeight: 600,
-            
-              fontSize: { xs: "28px", md: "32px", lg: "36px" },
+              fontFamily: FONT_FAMILY.heading,
+              fontWeight: FONT_WEIGHT.semiBold,
+
+              fontSize: { xs: FONT_SIZE.cardHeading, md: FONT_SIZE.articleHeading, lg: FONT_SIZE.subSectionHeading },
               lineHeight: { xs: "36px", md: "40px", lg: "41px" },
               letterSpacing: "-0.9px",
               color: "#171717",
@@ -47,23 +51,26 @@ export default function EntrepreneurshipFunding() {
 
               "& strong": {
                 color: "#7B53A1",
-                fontWeight: 600,
-              },
+                fontWeight: FONT_WEIGHT.semiBold
+              }
             }}
-            dangerouslySetInnerHTML={{ __html: data.title }}
-          />
+            dangerouslySetInnerHTML={{ __html: data.title }} />
+          
 
           <Typography
             sx={{
               maxWidth: "687px",
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 400,
-              fontSize: { xs: "14px", lg: "16px" },
-              lineHeight: { xs: "24px", lg: "26px" },
+              // 🔥 FIX: Changed md to lg here too!
+              textAlign: { xs: "center", lg: "left" },
+              mx: { xs: "auto", lg: 0 },
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: FONT_WEIGHT.regular,
+              fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+              lineHeight: { xs: LINE_HEIGHT.medium, lg: LINE_HEIGHT.mediumLarge },
               color: "#777777",
-              mb: { xs: 4, lg: "52px" },
-            }}
-          >
+              mb: { xs: 4, lg: "52px" }
+            }}>
+            
             {data.description}
           </Typography>
 
@@ -72,51 +79,51 @@ export default function EntrepreneurshipFunding() {
               display: "grid",
               gridTemplateColumns: {
                 xs: "1fr",
-               
+
                 sm: "repeat(2, 1fr)",
-                lg: "repeat(2, 338.12px)",
+                lg: "repeat(2, 338.12px)"
               },
-              gap: "12px",
-            }}
-          >
-            {data.points.map((point) => (
-              <Box
-                key={point}
-                sx={{
-                  width: "100%",
-                  maxWidth: { xs: "100%", lg: "338.12px" },
-                  minHeight: "53.6px",
-                  backgroundColor: "#FFFFFF",
-                  border: "0.8px solid rgba(0, 0, 0, 0.05)",
-                  borderRadius: "14px",
-                  px: "16px",
-                  py: "16px",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "12px",
-                }}
-              >
+              gap: "12px"
+            }}>
+            
+            {data.points.map((point) =>
+            <Box
+              key={point}
+              sx={{
+                width: "100%",
+                maxWidth: { xs: "100%", lg: "338.12px" },
+                minHeight: "53.6px",
+                backgroundColor: "#FFFFFF",
+                border: "0.8px solid rgba(0, 0, 0, 0.05)",
+                borderRadius: "14px",
+                px: "16px",
+                py: "16px",
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "12px"
+              }}>
+              
                 <CheckCircleIcon
-                  sx={{
-                    fontSize: "20px",
-                    color: "#7B53A1",
-                    flexShrink: 0,
-                  }}
-                />
+                sx={{
+                  fontSize: FONT_SIZE.leadLarge,
+                  color: "#7B53A1",
+                  flexShrink: 0
+                }} />
+              
 
                 <Typography
-                  sx={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 400,
-                    fontSize: { xs: "13px", lg: "14px" },
-                    lineHeight: "20px",
-                    color: "#262626",
-                  }}
-                >
+                sx={{
+                  fontFamily: FONT_FAMILY.body,
+                  fontWeight: FONT_WEIGHT.regular,
+                  fontSize: { xs: FONT_SIZE.small, lg: FONT_SIZE.bodySmall },
+                  lineHeight: LINE_HEIGHT.small,
+                  color: "#262626"
+                }}>
+                
                   {point}
                 </Typography>
               </Box>
-            ))}
+            )}
           </Box>
         </Box>
 
@@ -129,19 +136,19 @@ export default function EntrepreneurshipFunding() {
             borderRadius: "29px",
             overflow: "hidden",
             backgroundColor: "#C4C4C4",
-            mx: { xs: "auto", lg: 0 },
-          }}
-        >
-          {data.image && (
-            <Image
-              src={data.image}
-              alt={data.imageAlt}
-              fill sizes="100vw"
-              style={{ objectFit: "cover" }}
-            />
-          )}
+            mx: { xs: "auto", lg: 0 }
+          }}>
+          
+          {data.image &&
+          <Image
+            src={data.image}
+            alt={data.imageAlt}
+            fill sizes="100vw"
+            style={{ objectFit: "cover" }} />
+
+          }
         </Box>
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }

@@ -5,7 +5,7 @@ import InfoSection from "@/components/Widgets/common/InfoSection";
 import OutcomesSection from "@/components/Layouts/AerospaceResearchLab/Outcomes";
 import ResearchModulesSection from "@/components/Layouts/AerospaceResearchLab/Modules";
 import ExploreLabsSection from "@/components/Widgets/common/Explore";
-import InnovationShowcaseSection from "@/components/Widgets/common/Researchlab";
+import {InnovationShowcaseSection} from "@/components/Widgets/common/Researchlab";
 import VideoSection from "@/components/Layouts/AerospaceResearchLab/Aerospacevideo";
 
 const featuredInnovations = innovationCardsData.slice(0, 6);

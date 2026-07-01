@@ -1,4 +1,4 @@
-import { ctaBannerData, mediaCenterNewsData } from "@/assets/Generic-data";
+import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";import { ctaBannerData, mediaCenterNewsData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import MediaNewsCard from "@/components/Layouts/MediaCenterLayouts/MediaNewsCard";
 import FeaturedMediaCard from "@/components/Layouts/MediaCenterLayouts/PressCard";
@@ -24,52 +24,52 @@ export default function MoreNewsPage() {
           maxWidth: "1159px",
           mx: "auto",
           px: { xs: 2, md: 0 },
-          py: { xs: 6, md: 8 },
-        }}
-      >
+          py: { xs: 6, md: 8 }
+        }}>
+        
         <Typography
           variant="h1"
           sx={{
-            fontFamily: "Work Sans, sans-serif",
-            fontWeight: 700,
-            fontSize: { xs: "32px", md: "48px" },
+            fontFamily: FONT_FAMILY.heading,
+            fontWeight: FONT_WEIGHT.bold,
+            fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.pageHeadingSmall },
             color: "#111827",
             mb: 6,
-            textTransform: "capitalize",
-          }}
-        >
+            textTransform: "capitalize"
+          }}>
+          
           More News
         </Typography>
 
-        {items.length > 0 ? (
-          <Box>
+        {items.length > 0 ?
+        <Box>
          
             <FeaturedMediaCard item={items[0]} />
 
            
-            {items.length > 1 && (
-              <Box
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
-                  gap: "23px",
-                }}
-              >
-                {items.slice(1).map((item) => (
-                  <MediaNewsCard key={item.id} item={item} />
-                ))}
-              </Box>
+            {items.length > 1 &&
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
+              gap: "23px"
+            }}>
+            
+                {items.slice(1).map((item) =>
+            <MediaNewsCard key={item.id} item={item} />
             )}
-          </Box>
-        ) : (
-          <Typography sx={{ color: "#777", fontSize: "18px" }}>
+              </Box>
+          }
+          </Box> :
+
+        <Typography sx={{ color: "#777", fontSize: FONT_SIZE.lead }}>
             No articles found.
           </Typography>
-        )}
+        }
       </Container>
       
      
            <CtaBanner data={ctaBannerData} />
-    </Box>
-  );
+    </Box>);
+
 }

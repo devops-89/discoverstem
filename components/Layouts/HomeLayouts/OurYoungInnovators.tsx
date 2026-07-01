@@ -1,6 +1,6 @@
-"use client";
+"use client";import { FONT_SIZE, FONT_WEIGHT, FONT_FAMILY } from "@/utils/theme";
 
-import { FONT_FAMILY } from "@/utils/Fonts";
+
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import {
   Box,
@@ -8,21 +8,21 @@ import {
   Container,
   Grid,
   IconButton,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import React, { useState } from "react";
 import Link from "next/link";
 
-const PlayIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+const PlayIcon = () =>
+<svg width="32" height="32" viewBox="0 0 24 24" fill="white">
     <circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.2)" />
     <polygon points="10,8 18,12 10,16" fill="white" />
-  </svg>
-);
+  </svg>;
+
 
 export default function OurYoungInnovators() {
   const [isPlaying, setIsPlaying] = useState(false);
-  
+
   return (
     <Container
       maxWidth={false}
@@ -30,47 +30,50 @@ export default function OurYoungInnovators() {
         maxWidth: "1196px",
         mx: "auto",
         py: { xs: 5, sm: 6, md: 7 },
-        px: { xs: 2, sm: 3, md: 4 },
-      }}
-    >
+        px: { xs: 2, sm: 3, md: 4 }
+      }}>
+      
       <Grid
         container
         spacing={{ xs: 2, md: 4, lg: 6 }}
         justifyContent="space-between"
         alignItems="center"
-        sx={{ mb: { xs: 5, md: 7, lg: 8 } }}
-      >
-        <Grid size={{ xs: 12, md: 5 }}>
+        sx={{ mb: { xs: 5, md: 7, lg: 8 } }}>
+        
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.heading,
               fontSize: {
-                xs: "24px",
-                sm: "34px",
-                md: "38px",
-                lg: "44px",
+                xs: FONT_SIZE.titleLarge,
+                sm: FONT_SIZE.articleHeadingLarge,
+                md: FONT_SIZE.subSectionHeadingLarge,
+                lg: "36px" // 🔥 Updated to match Figma exactly
               },
               lineHeight: {
                 xs: "36px",
                 sm: "42px",
                 md: "48px",
-                lg: "52px",
+                lg: "58px" // 🔥 Updated to match Figma exactly
               },
-              fontWeight: 500,
+              fontWeight: FONT_WEIGHT.medium,
               textAlign: { xs: "center", md: "left" },
               wordBreak: "break-word",
-            }}
-          >
+              color: "#101010",
+              // 🔥 FIX: Added the Figma width to force it into exactly three lines
+              maxWidth: { xs: "100%", md: "543px" } 
+            }}>
+            
             Texas State Capitol Honors{" "}
             <Box
               component="span"
               sx={{
                 background:
-                  "linear-gradient(90deg, #814D9F 6.25%, #EC532A 15.87%, #F5AA33 27.4%, #5C9246 43.75%)",
+                "linear-gradient(90deg, #814D9F 6.25%, #EC532A 15.87%, #F5AA33 27.4%, #5C9246 43.75%)",
                 WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
+                WebkitTextFillColor: "transparent"
+              }}>
+              
               DiscoverSTEM
             </Box>{" "}
             and Our Young Innovators
@@ -78,22 +81,23 @@ export default function OurYoungInnovators() {
         </Grid>
 
         <Grid
-          size={{ xs: 12, md: 5.5 }}
+          size={{ xs: 12, md: 4.4 }}
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: { xs: "center", md: "flex-start" },
-            textAlign: { xs: "center", md: "left" },
-          }}
-        >
+            textAlign: { xs: "center", md: "left" }
+          }}>
+          
           <Typography
             sx={{
-              color: "#555",
+              color: "#000000",
               lineHeight: 1.7,
-              fontSize: { xs: "15px", sm: "16px", md: "17px" },
-              maxWidth: "100%",
-            }}
-          >
+              fontWeight:400,
+              fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.bodyXLarge },
+              maxWidth: "100%"
+            }}>
+            
             The Texas House of Representatives passed a House Resolution #403,
             commemorating DiscoverSTEM&apos;s profound impact on shaping the next
             generation of innovators & leaders.
@@ -112,15 +116,15 @@ export default function OurYoungInnovators() {
               color: "#ee4823",
               px: 3,
               py: 1,
-              fontWeight: 500,
+              fontWeight: FONT_WEIGHT.medium,
               textTransform: "none",
               minWidth: "160px",
               "&:hover": {
                 bgcolor: "#fff5f2",
-                borderColor: "#ee4823",
-              },
-            }}
-          >
+                borderColor: "#ee4823"
+              }
+            }}>
+            
             Learn More
           </Button>
         </Grid>
@@ -132,110 +136,110 @@ export default function OurYoungInnovators() {
           overflow: "hidden",
           position: "relative",
           height: { xs: 260, sm: 340, md: 420, lg: 476 },
-          background: "#111",
-        }}
-      >
-        {!isPlaying ? (
-          <>
+          background: "#111"
+        }}>
+        
+        {!isPlaying ?
+        <>
             <Box
-              component="img"
-              src="/Images/Home/YoungInnovators.png"
-              alt="Watch how we make it work"
-              sx={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                opacity: 0.75,
-              }}
-            />
-
-            <Box
-              sx={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15))",
-              }}
-            />
-
-            <Box
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                flexDirection: { xs: "column", sm: "row" },
-                gap: { xs: 2, md: 3 },
-
-                width: "100%",
-                maxWidth: "500px",
-              }}
-            >
-              <IconButton
-                onClick={() => setIsPlaying(true)}
-                sx={{
-                  width: { xs: 50, md: 72 },
-                  height: { xs: 50, md: 72 },
-                  bgcolor: "rgba(255,255,255,0.18)",
-                  border: "2px solid rgba(255,255,255,0.7)",
-                  color: "#fff",
-                  "&:hover": { bgcolor: "rgba(255,255,255,0.28)" },
-                }}
-              >
-                <PlayIcon />
-              </IconButton>
-
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: { xs: "center", sm: "flex-start" },
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#fff",
-                    fontWeight: 600,
-                    fontSize: { xs: "18px", md: "24px" },
-                  }}
-                >
-                  Watch
-                </Typography>
-
-                <Typography
-                  sx={{
-                    color: "rgba(255,255,255,0.85)",
-                    fontSize: { xs: "14px", md: "16px" },
-                  }}
-                >
-                  That&apos;s how we make it work?
-                </Typography>
-              </Box>
-            </Box>
-          </>
-        ) : (
-          <Box
-            component="video"
-            src="https://discoverstem.info/wp-content/uploads/2025/11/videoplayback.mp4"
-            autoPlay
-            controls
+            component="img"
+            src="/Images/Home/YoungInnovators.png"
+            alt="Watch how we make it work"
             sx={{
               position: "absolute",
               inset: 0,
               width: "100%",
               height: "100%",
               objectFit: "cover",
-            }}
-          />
-        )}
+              opacity: 0.75
+            }} />
+          
+
+            <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              background:
+              "linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15))"
+            }} />
+          
+
+            <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+
+              flexDirection: { xs: "column", sm: "row" },
+              gap: { xs: 2, md: 3 },
+
+              width: "100%",
+              maxWidth: "500px"
+            }}>
+            
+              <IconButton
+              onClick={() => setIsPlaying(true)}
+              sx={{
+                width: { xs: 50, md: 72 },
+                height: { xs: 50, md: 72 },
+                bgcolor: "rgba(255,255,255,0.18)",
+                border: "2px solid rgba(255,255,255,0.7)",
+                color: "#fff",
+                "&:hover": { bgcolor: "rgba(255,255,255,0.28)" }
+              }}>
+              
+                <PlayIcon />
+              </IconButton>
+
+              <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", sm: "flex-start" }
+              }}>
+              
+                <Typography
+                sx={{
+                  color: "#fff",
+                  fontWeight: FONT_WEIGHT.semiBold,
+                  fontSize: { xs: FONT_SIZE.lead, md: FONT_SIZE.titleLarge }
+                }}>
+                
+                  Watch
+                </Typography>
+
+                <Typography
+                sx={{
+                  color: "rgba(255,255,255,0.85)",
+                  fontSize: { xs: FONT_SIZE.bodySmall, md: FONT_SIZE.bodyLarge }
+                }}>
+                
+                  That&apos;s how we make it work?
+                </Typography>
+              </Box>
+            </Box>
+          </> :
+
+        <Box
+          component="video"
+          src="https://discoverstem.info/wp-content/uploads/2025/11/videoplayback.mp4"
+          autoPlay
+          controls
+          sx={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover"
+          }} />
+
+        }
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }

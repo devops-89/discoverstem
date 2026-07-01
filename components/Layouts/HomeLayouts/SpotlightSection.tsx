@@ -1,4 +1,4 @@
-"use client";
+"use client";import { FONT_WEIGHT } from "@/utils/theme";
 import React, { useRef } from "react";
 import { Container, Box, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,73 +9,73 @@ import { studentSpotlight } from "@/assets/Generic-data";
 
 export default function SpotlightSection() {
   const swiperRef = useRef<import("swiper").Swiper | null>(null);
-  
+
   return (
     <Container id="spotlight" sx={{ py: { xs: 2, md: 6 } }}>
       <SectionHeading
         label="Celebrating excellence and innovation"
         title="Student Spotlight"
         swiperRef={swiperRef}
-        viewAllHref="/success-stories/college-acceptance"
-      />
+        viewAllHref="/success-stories/college-acceptance" />
+      
       <Box
         sx={{
-          "& .swiper": { width: "100%", pb: 1 },
-        }}
-      >
+          "& .swiper": { width: "100%", pb: 1 }
+        }}>
+        
         <Swiper
           modules={[Autoplay]}
           loop
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 12 }, 
+            0: { slidesPerView: 1, spaceBetween: 12 },
             480: { slidesPerView: 2, spaceBetween: 16 },
             768: { slidesPerView: 3, spaceBetween: 20 },
-            900: { slidesPerView: 4, spaceBetween: 20 },
+            900: { slidesPerView: 4, spaceBetween: 20 }
           }}
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}
-        >
-          {[...studentSpotlight, ...studentSpotlight].map((student, i) => (
-            <SwiperSlide key={i}>
+          onSwiper={(swiper) => {swiperRef.current = swiper;}}>
+          
+          {[...studentSpotlight, ...studentSpotlight].map((student, i) =>
+          <SwiperSlide key={i}>
               <Box
+              sx={{
+                borderRadius: "16px",
+                height: { xs: 280, sm: 320, md: 340 },
+                overflow: "hidden",
+                position: "relative"
+              }}>
+              
+                <Box
+                component="img"
+                src={student.image}
+                alt={student.name}
+                sx={{ width: 1, height: 1, objectFit: "cover", display: "block" }} />
+              
+                <Box
                 sx={{
-                  borderRadius: "16px",
-                  height: { xs: 280, sm: 320, md: 340 },
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
-                <Box
-                  component="img"
-                  src={student.image}
-                  alt={student.name}
-                  sx={{ width: 1, height: 1, objectFit: "cover", display: "block" }}
-                />
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: "linear-gradient(transparent, rgba(0,0,0,0.75))",
-                    p: 2,
-                    pt: 5,
-                  }}
-                >
-                  <Typography sx={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  background: "linear-gradient(transparent, rgba(0,0,0,0.75))",
+                  p: 2,
+                  pt: 5
+                }}>
+                
+                  <Typography sx={{ color: "#fff", fontWeight: FONT_WEIGHT.bold, fontSize: 16 }}>
                     {student.name}
                   </Typography>
-                  {student.college && (
-                    <Typography sx={{ color: "#e0e0e0", fontWeight: 500, fontSize: 13 }}>
+                  {student.college &&
+                <Typography sx={{ color: "#e0e0e0", fontWeight: FONT_WEIGHT.medium, fontSize: 13 }}>
                       {student.college}
                     </Typography>
-                  )}
+                }
                 </Box>
               </Box>
             </SwiperSlide>
-          ))}
+          )}
         </Swiper>
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }

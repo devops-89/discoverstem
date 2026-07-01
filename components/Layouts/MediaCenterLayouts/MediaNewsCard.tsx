@@ -1,4 +1,4 @@
-"use client";
+"use client";import { FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
 
 import { MediaNewsItem } from "@/utils/Types";
 import { Box, Typography, Modal, IconButton } from "@mui/material";
@@ -31,9 +31,9 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           bgcolor: "#D9D9D9",
           overflow: "hidden",
           mb: { xs: 3, lg: "35px" },
-          textDecoration: "none",
-        }}
-      >
+          textDecoration: "none"
+        }}>
+        
         <Box
           component="img"
           src={item.image}
@@ -41,36 +41,36 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            objectFit: "cover"
+          }} />
+        
+        {videoUrl &&
+        <Box
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setOpenVideo(true);
           }}
-        />
-        {videoUrl && (
-          <Box
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setOpenVideo(true);
-            }}
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              bgcolor: "rgba(0,0,0,0.5)",
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "60px",
-              height: "60px",
-              "&:hover": {
-                bgcolor: "rgba(0,0,0,0.7)",
-              },
-            }}
-          >
-            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: "40px" }} />
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "rgba(0,0,0,0.5)",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "60px",
+            height: "60px",
+            "&:hover": {
+              bgcolor: "rgba(0,0,0,0.7)"
+            }
+          }}>
+          
+            <PlayCircleOutlineIcon sx={{ color: "#fff", fontSize: FONT_SIZE.sectionHeadingSmall }} />
           </Box>
-        )}
+        }
       </Box>
 
       <Typography
@@ -78,23 +78,23 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
         href={`/media/${item.slug}`}
         sx={{
           display: "block",
-          fontFamily: "Work Sans, sans-serif",
-          fontWeight: 600,
-         
-          fontSize: { xs: "14px", lg: "16px" },
+          fontFamily: FONT_FAMILY.heading,
+          fontWeight: FONT_WEIGHT.semiBold,
+
+          fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
           lineHeight: { xs: "20px", lg: "22px" },
           letterSpacing: "-0.02em",
           color: "#111827",
           textDecoration: "none",
-          mb: { xs: 1, lg: "14px" },
-        }}
-      >
+          mb: { xs: 1, lg: "14px" }
+        }}>
+        
         {item.title}
       </Typography>
 
       <Box sx={{ display: "flex", alignItems: "center", gap: "9px" }}>
       
-        <Typography sx={{ fontSize: { xs: "14px", lg: "16px" }, color: "#474A55" }}>
+        <Typography sx={{ fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#474A55" }}>
           {item.publishedDate}
         </Typography>
       </Box>
@@ -104,8 +104,8 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
         open={openVideo}
         onClose={() => setOpenVideo(false)}
         aria-labelledby="video-modal-title"
-          disableScrollLock={true} 
-      >
+        disableScrollLock={true}>
+        
         <Box
           sx={{
             position: "absolute",
@@ -113,14 +113,14 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
             left: "50%",
             transform: "translate(-50%, -50%)",
             width: { xs: "90%", md: "800px" },
-            bgcolor: "#000", 
+            bgcolor: "#000",
             boxShadow: 24,
-            borderRadius: "16px", 
-            overflow: "hidden", 
-            outline: "none",
-          }}
-        >
-          <IconButton 
+            borderRadius: "16px",
+            overflow: "hidden",
+            outline: "none"
+          }}>
+          
+          <IconButton
             onClick={() => setOpenVideo(false)}
             sx={{
               position: "absolute",
@@ -131,39 +131,39 @@ export default function MediaNewsCard({ item }: MediaNewsCardProps) {
               backgroundColor: "#fff",
               boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
               zIndex: 10,
-              "&:hover": { backgroundColor: "#f5f5f5" },
-            }}
-          >
-            <CloseIcon sx={{ fontSize: "20px", color: "red" }} />
+              "&:hover": { backgroundColor: "#f5f5f5" }
+            }}>
+            
+            <CloseIcon sx={{ fontSize: FONT_SIZE.leadLarge, color: "red" }} />
           </IconButton>
 
           <Box
             sx={{
               position: "relative",
-              paddingBottom: "56.25%", 
+              paddingBottom: "56.25%",
               height: 0,
-              overflow: "hidden",
-            }}
-          >
-                       {videoUrl && (
-              <iframe
-                src={videoUrl}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  border: 0,
-                }}
-              />
-            )}
+              overflow: "hidden"
+            }}>
+            
+                       {videoUrl &&
+            <iframe
+              src={videoUrl}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: 0
+              }} />
+
+            }
           </Box>
         </Box>
       </Modal>
-    </Box>
-  );
+    </Box>);
+
 }

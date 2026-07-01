@@ -1,4 +1,4 @@
-import { mediaCenterNewsData, mediaCategories, ctaBannerData } from "@/assets/Generic-data";
+import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";import { mediaCenterNewsData, mediaCategories, ctaBannerData } from "@/assets/Generic-data";
 import { Box, Container, Typography } from "@mui/material";
 import MediaNewsCard from "@/components/Layouts/MediaCenterLayouts/MediaNewsCard";
 import FeaturedMediaCard from "@/components/Layouts/MediaCenterLayouts/PressCard";
@@ -9,14 +9,14 @@ import CategoryNavWrapper from "./CategoryNavWrapper"; // We will create this cl
 import CtaBanner from "@/components/Widgets/common/CommonCta";
 
 export default async function CategoryPage({
-  params,
-}: {
-  params: Promise<{ categorySlug: string }>;
-}) {
+  params
+
+
+}: {params: Promise<{categorySlug: string;}>;}) {
   const { categorySlug } = await params;
 
- 
-  const categoryItem = mediaCategories.find(c => c.sectionId === categorySlug);
+
+  const categoryItem = mediaCategories.find((c) => c.sectionId === categorySlug);
   const categoryTitle = categoryItem ? categoryItem.label : categorySlug.replace("-", " ");
 
   const items = mediaCenterNewsData.filter(
@@ -35,50 +35,51 @@ export default async function CategoryPage({
           maxWidth: "1159px",
           mx: "auto",
           px: { xs: 3, md: 4, lg: 0 },
-          py: { xs: 2, md: 7, lg: 8 },
-        }}
-      >
+          py: { xs: 2, md: 7, lg: 8 }
+        }}>
+        
         <Typography
           variant="h1"
           sx={{
-            fontFamily: "Work Sans, sans-serif",
-            fontWeight: 700,
-            fontSize: { xs: "32px", md: "40px", lg: "48px" },
+            textAlign: { xs: "center", sm: "left" }, 
+            fontFamily: FONT_FAMILY.heading,
+            fontWeight: FONT_WEIGHT.bold,
+            fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
             color: "#111827",
             mb: { xs: 4, lg: 6 },
-            textTransform: "capitalize",
-          }}
-        >
+            textTransform: "capitalize"
+          }}>
+          
           {categoryTitle}
         </Typography>
 
-        {items.length > 0 ? (
-          <Box>
+        {items.length > 0 ?
+        <Box>
            <FeaturedMediaCard item={items[0]} />
-            {items.length > 1 && (
-              <Box
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
-                  gap: "23px",
-                }}
-              >
-                {items.slice(1).map((item) => (
-                  <MediaNewsCard key={item.id} item={item} />
-                ))}
-              </Box>
+            {items.length > 1 &&
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
+              gap: "23px"
+            }}>
+            
+                {items.slice(1).map((item) =>
+            <MediaNewsCard key={item.id} item={item} />
             )}
-          </Box>
-        ) : (
-          <Typography sx={{ color: "#777", fontSize: "18px" }}>
+              </Box>
+          }
+          </Box> :
+
+        <Typography sx={{ color: "#777", fontSize: FONT_SIZE.lead }}>
             No articles found in this category.
           </Typography>
-        )}
+        }
       </Container>
       
       <CtaBanner data={ctaBannerData} />
-    </Box>
-  );
+    </Box>);
+
 }
 
 function getSectionId(title: string) {

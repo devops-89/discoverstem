@@ -1,39 +1,39 @@
-"use client";
+"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { Box, Button, ButtonProps } from "@mui/material";
 
 interface PrimaryButtonProps extends ButtonProps {
-            children: React.ReactNode;
-            showIcon?: boolean;
+  children: React.ReactNode;
+  showIcon?: boolean;
 }
 
 const PrimaryButton = ({
-                children,
-                showIcon = true,
-                sx,
-                ...props
+  children,
+  showIcon = true,
+  sx,
+  ...props
 }: PrimaryButtonProps) => {
-return (
+  return (
     <Button
-    {...props}
-    sx={{
+      {...props}
+      sx={{
         position: "relative",
         backgroundColor: "#7B53A1",
         color: "#fff",
 
         height: { xs: "52px", sm: "56px", md: "60px" },
         px: { xs: "18px", sm: "22px", md: "24px" },
-        pr: showIcon
-        ? { xs: "52px", sm: "56px", md: "60px" }
-        : undefined,
+        pr: showIcon ?
+        { xs: "52px", sm: "56px", md: "60px" } :
+        undefined,
 
         borderRadius: "999px",
         textTransform: "none",
 
-        fontFamily: "Poppins, sans-serif",
-        fontWeight: 500,
-        fontSize: { xs: "14px", sm: "15px", md: "16px" },
+        fontFamily: FONT_FAMILY.body,
+        fontWeight: FONT_WEIGHT.medium,
+        fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, md: FONT_SIZE.bodyLarge },
 
         display: "inline-flex",
         alignItems: "center",
@@ -42,45 +42,45 @@ return (
         width: { xs: "100%", sm: "auto" },
 
         "&:hover": {
-        backgroundColor: "#7B53A1",
+          backgroundColor: "#7B53A1"
         },
 
-        ...sx,
-    }}
-    >
+        ...sx
+      }}>
+      
     {children}
 
-    {showIcon && (
-        <Box
+    {showIcon &&
+      <Box
         sx={{
-            position: "absolute",
-            right: "6px",
-            top: "50%",
-            transform: "translateY(-50%)",
+          position: "absolute",
+          right: "6px",
+          top: "50%",
+          transform: "translateY(-50%)",
 
-            width: { xs: "40px", sm: "44px", md: "50px" },
-            height: { xs: "40px", sm: "44px", md: "48px" },
+          width: { xs: "40px", sm: "44px", md: "50px" },
+          height: { xs: "40px", sm: "44px", md: "48px" },
 
-            borderRadius: "50%",
-            backgroundColor: "#fff",
+          borderRadius: "50%",
+          backgroundColor: "#fff",
 
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-        }}
-        >
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}>
+        
         <ArrowOutwardIcon
-            sx={{
-            width:{xs:"100%",md:"20px"},
-            height:{xs:"auto",md:"20px"},
-            fontSize: { xs: "14px", sm: "15px", md: "16px" },
-            color: "#7B53A1",
-            }}
-        />
+          sx={{
+            width: { xs: "100%", md: "20px" },
+            height: { xs: "auto", md: "20px" },
+            fontSize: { xs: FONT_SIZE.bodySmall, sm: FONT_SIZE.body, md: FONT_SIZE.bodyLarge },
+            color: "#7B53A1"
+          }} />
+        
         </Box>
-    )}
-    </Button>
-);
+      }
+    </Button>);
+
 };
 
 export default PrimaryButton;

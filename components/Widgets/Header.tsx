@@ -1,7 +1,7 @@
 "use client";
 
 // 🔥 Imports the data from your Generic-data file
-import { HEADER_DATA } from "@/assets/Generic-data";
+import { FONT_SIZE, FONT_WEIGHT } from "@/utils/theme";import { HEADER_DATA } from "@/assets/Generic-data";
 
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -13,8 +13,8 @@ import {
   IconButton,
   Popover,
   Stack,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -35,10 +35,10 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20); 
+      setIsScrolled(window.scrollY > 20);
     };
-    
-    handleScroll(); 
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -72,16 +72,16 @@ export default function Header() {
     <>
       <Box
         sx={{
-          position: "fixed", 
-          top: 32, 
+          position: "fixed",
+          top: 32,
           left: 0,
           right: 0,
-          zIndex: 100, 
+          zIndex: 100,
           display: "flex",
           justifyContent: "center",
-          px: { xs: 1, md: 8 },
-        }}
-      >
+          px: { xs: 1, md: 8 }
+        }}>
+        
         <Stack
           direction="row"
           alignItems="center"
@@ -92,14 +92,14 @@ export default function Header() {
             WebkitBackdropFilter: isScrolled ? "blur(16px)" : "none",
             boxShadow: isScrolled ? "0px 10px 30px rgba(0,0,0,0.08)" : "none",
             transition: "all 0.3s ease",
-            
+
             borderRadius: "999px",
             px: { xs: 2, md: "40.5px" },
             height: { xs: "45px", md: "68px" },
             width: "1196px",
-            maxWidth: "calc(100% - 32px)",
-          }}
-        >
+            maxWidth: "calc(100% - 32px)"
+          }}>
+          
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
             <Box sx={{ width: { xs: "70px", md: "100px", lg: "120px" }, display: "flex" }}>
               <Image
@@ -109,8 +109,8 @@ export default function Header() {
                 height={80}
                 quality={100}
                 priority
-                style={{ width: "100%", height: "auto" }}
-              />
+                style={{ width: "100%", height: "auto" }} />
+              
             </Box>
           </Link>
 
@@ -119,31 +119,31 @@ export default function Header() {
             direction="row"
             spacing={{ md: 2, lg: 4 }}
             alignItems="center"
-            sx={{ display: { xs: "none", lg: "flex" } }}
-          >
+            sx={{ display: { xs: "none", lg: "flex" } }}>
+            
             {HEADER_DATA.map((item) => {
               if (item.items) {
                 return (
                   <Box
                     key={item.label}
                     onMouseEnter={(e) => handleOpen(e, item.label)}
-                    onMouseLeave={handleClose}
-                  >
+                    onMouseLeave={handleClose}>
+                    
                     <Box
                       sx={{
                         display: "flex",
                         alignItems: "center",
                         gap: "2px",
-                        cursor: "pointer",
-                      }}
-                    >
+                        cursor: "pointer"
+                      }}>
+                      
                       <Typography
                         sx={{
                           color: activeMenu === item.label ? "#000" : "#666",
-                          fontSize: "15px",
-                          "&:hover": { color: "#000" },
-                        }}
-                      >
+                          fontSize: FONT_SIZE.body,
+                          "&:hover": { color: "#000" }
+                        }}>
+                        
                         {item.label}
                       </Typography>
 
@@ -152,12 +152,12 @@ export default function Header() {
                           fontSize: 18,
                           color: activeMenu === item.label ? "#000" : "#666",
                           transform:
-                            activeMenu === item.label
-                              ? "rotate(180deg)"
-                              : "rotate(0deg)",
-                          transition: "0.25s",
-                        }}
-                      />
+                          activeMenu === item.label ?
+                          "rotate(180deg)" :
+                          "rotate(0deg)",
+                          transition: "0.25s"
+                        }} />
+                      
                     </Box>
 
                     <Popover
@@ -173,8 +173,8 @@ export default function Header() {
                       sx={{
                         pointerEvents: "none",
                         "& .MuiPopover-paper": {
-                          pointerEvents: "auto",
-                        },
+                          pointerEvents: "auto"
+                        }
                       }}
                       slotProps={{
                         paper: {
@@ -186,153 +186,153 @@ export default function Header() {
                             minWidth: 260,
                             boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
                             p: 1,
-                            backgroundColor: "#fff", 
-                            overflow: "visible", 
-                          },
-                        },
-                      }}
-                    >
+                            backgroundColor: "#fff",
+                            overflow: "visible"
+                          }
+                        }
+                      }}>
+                      
                       {item.items.map((sub) =>
-                        sub.items ? (
-                          <Box
-                            key={sub.label}
-                            onMouseEnter={() => setOpenDesktopNestedMenu(sub.label)}
-                            sx={{ position: "relative" }} 
-                          >
+                      sub.items ?
+                      <Box
+                        key={sub.label}
+                        onMouseEnter={() => setOpenDesktopNestedMenu(sub.label)}
+                        sx={{ position: "relative" }}>
+                        
                             <Stack
-                              direction="row"
-                              alignItems="center"
-                              justifyContent="space-between"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setOpenDesktopNestedMenu(
-                                  openDesktopNestedMenu === sub.label ? null : sub.label
-                                );
-                              }}
-                              sx={{
-                                px: 2,
-                                py: 1.2,
-                                cursor: "pointer",
-                                borderRadius: 1,
-                                // 🔥 FIX: Set background hover to match other items
-                                "&:hover": { background: "#7B53A1" },
-                                "&:hover .menu-text": { color: "#FFFFFF" },
-                                "&:hover .menu-icon": { color: "#FFFFFF" },
-                                // Keep it purple if the flyout is currently open
-                                background: openDesktopNestedMenu === sub.label ? "#7B53A1" : "transparent",
-                              }}
-                            >
+                          direction="row"
+                          alignItems="center"
+                          justifyContent="space-between"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setOpenDesktopNestedMenu(
+                              openDesktopNestedMenu === sub.label ? null : sub.label
+                            );
+                          }}
+                          sx={{
+                            px: 2,
+                            py: 1.2,
+                            cursor: "pointer",
+                            borderRadius: 1,
+                            // 🔥 FIX: Set background hover to match other items
+                            "&:hover": { background: "#7B53A1" },
+                            "&:hover .menu-text": { color: "#FFFFFF" },
+                            "&:hover .menu-icon": { color: "#FFFFFF" },
+                            // Keep it purple if the flyout is currently open
+                            background: openDesktopNestedMenu === sub.label ? "#7B53A1" : "transparent"
+                          }}>
+                          
                               <Typography
-                                className="menu-text"
-                                sx={{
-                                  // 🔥 FIX: Changed color and font weight to match normal items
-                                  color: openDesktopNestedMenu === sub.label ? "#FFFFFF" : "#666",
-                                  fontSize: "14px",
-                                  transition: "0.2s",
-                                }}
-                              >
+                            className="menu-text"
+                            sx={{
+                              // 🔥 FIX: Changed color and font weight to match normal items
+                              color: openDesktopNestedMenu === sub.label ? "#FFFFFF" : "#666",
+                              fontSize: FONT_SIZE.bodySmall,
+                              transition: "0.2s"
+                            }}>
+                            
                                 {sub.label}
                               </Typography>
                               <KeyboardArrowDownIcon
-                                className="menu-icon"
-                                sx={{
-                                  fontSize: 18,
-                                  // 🔥 FIX: Icon color perfectly matches text
-                                  color: openDesktopNestedMenu === sub.label ? "#FFFFFF" : "#666",
-                                  transform: "rotate(-90deg)",
-                                  transition: "0.2s",
-                                }}
-                              />
+                            className="menu-icon"
+                            sx={{
+                              fontSize: 18,
+                              // 🔥 FIX: Icon color perfectly matches text
+                              color: openDesktopNestedMenu === sub.label ? "#FFFFFF" : "#666",
+                              transform: "rotate(-90deg)",
+                              transition: "0.2s"
+                            }} />
+                          
                             </Stack>
 
-                            {openDesktopNestedMenu === sub.label && (
-                              <Box
-                                sx={{
-                                  position: "absolute",
-                                  top: 0,
-                                  left: "100%", 
-                                  pl: "20px", 
-                                  zIndex: 100,
-                                }}
-                              >
+                            {openDesktopNestedMenu === sub.label &&
+                        <Box
+                          sx={{
+                            position: "absolute",
+                            top: 0,
+                            left: "100%",
+                            pl: "20px",
+                            zIndex: 100
+                          }}>
+                          
                                 <Box
-                                  sx={{
-                                    backgroundColor: "#fff",
-                                    boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
-                                    borderRadius: 2,
-                                    p: 1,
-                                    minWidth: 300,
-                                  }}
-                                >
+                            sx={{
+                              backgroundColor: "#fff",
+                              boxShadow: "0px 10px 30px rgba(0,0,0,0.08)",
+                              borderRadius: 2,
+                              p: 1,
+                              minWidth: 300
+                            }}>
+                            
                                   {sub.items.map((nested) =>
-                                    nested.href ? (
-                                      <Link
-                                        key={nested.label}
-                                        href={nested.href}
-                                        style={{ textDecoration: "none" }}
-                                        onClick={handleClose}
-                                      >
+                            nested.href ?
+                            <Link
+                              key={nested.label}
+                              href={nested.href}
+                              style={{ textDecoration: "none" }}
+                              onClick={handleClose}>
+                              
                                         <Box
-                                          sx={{
-                                            px: 2,
-                                            py: 1.2,
-                                            borderRadius: 1,
-                                            "&:hover": { background: "#7B53A1" },
-                                            "&:hover .menu-text": { color: "#FFFFFF" },
-                                          }}
-                                        >
+                                sx={{
+                                  px: 2,
+                                  py: 1.2,
+                                  borderRadius: 1,
+                                  "&:hover": { background: "#7B53A1" },
+                                  "&:hover .menu-text": { color: "#FFFFFF" }
+                                }}>
+                                
                                           <Typography
-                                            className="menu-text"
-                                            sx={{ color: "#666", fontSize: "14px", transition: "0.2s" }}
-                                          >
+                                  className="menu-text"
+                                  sx={{ color: "#666", fontSize: FONT_SIZE.bodySmall, transition: "0.2s" }}>
+                                  
                                             {nested.label}
                                           </Typography>
                                         </Box>
-                                      </Link>
-                                    ) : null
-                                  )}
+                                      </Link> :
+                            null
+                            )}
                                 </Box>
                               </Box>
-                            )}
-                          </Box>
-                        ) : sub.href ? (
-                          <Link
-                            key={sub.label}
-                            href={sub.href}
-                            style={{ textDecoration: "none" }}
-                            onClick={handleClose}
-                            onMouseEnter={() => setOpenDesktopNestedMenu(null)}
-                          >
+                        }
+                          </Box> :
+                      sub.href ?
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        style={{ textDecoration: "none" }}
+                        onClick={handleClose}
+                        onMouseEnter={() => setOpenDesktopNestedMenu(null)}>
+                        
                             <Box
-                              sx={{
-                                px: 2,
-                                py: 1.2,
-                                borderRadius: 1,
-                                "&:hover": {
-                                  background: "#7B53A1",
-                                },
-                                "&:hover .menu-text": {
-                                  color: "#FFFFFF",
-                                },
-                              }}
-                            >
+                          sx={{
+                            px: 2,
+                            py: 1.2,
+                            borderRadius: 1,
+                            "&:hover": {
+                              background: "#7B53A1"
+                            },
+                            "&:hover .menu-text": {
+                              color: "#FFFFFF"
+                            }
+                          }}>
+                          
                               <Typography
-                                className="menu-text"
-                                sx={{
-                                  color: "#666",
-                                  fontSize: "14px",
-                                  transition: "0.2s",
-                                }}
-                              >
+                            className="menu-text"
+                            sx={{
+                              color: "#666",
+                              fontSize: FONT_SIZE.bodySmall,
+                              transition: "0.2s"
+                            }}>
+                            
                                 {sub.label}
                               </Typography>
                             </Box>
-                          </Link>
-                        ) : null
+                          </Link> :
+                      null
                       )}
                     </Popover>
-                  </Box>
-                );
+                  </Box>);
+
               }
 
               if (!item.href) return null;
@@ -343,19 +343,19 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  style={{ textDecoration: "none" }}
-                >
+                  style={{ textDecoration: "none" }}>
+                  
                   <Typography
                     sx={{
                       color: isActive ? "#000" : "#666",
-                      fontSize: "15px",
-                      "&:hover": { color: "#000" },
-                    }}
-                  >
+                      fontSize: FONT_SIZE.body,
+                      "&:hover": { color: "#000" }
+                    }}>
+                    
                     {item.label}
                   </Typography>
-                </Link>
-              );
+                </Link>);
+
             })}
           </Stack>
 
@@ -364,9 +364,9 @@ export default function Header() {
             onClick={() => setMobileOpen(true)}
             sx={{
               display: { xs: "flex", lg: "none" },
-              color: "#666",
-            }}
-          >
+              color: "#666"
+            }}>
+            
             <MenuIcon sx={{ fontSize: { xs: 30, sm: 32, md: 36 } }} />
           </IconButton>
         </Stack>
@@ -383,10 +383,10 @@ export default function Header() {
             maxWidth: "360px",
             p: 3,
             borderTopLeftRadius: "20px",
-            borderBottomLeftRadius: "20px",
-          },
-        }}
-      >
+            borderBottomLeftRadius: "20px"
+          }
+        }}>
+        
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Link href="/" onClick={closeMobileMenu} style={{ display: "flex" }}>
             <Box sx={{ width: "100px", display: "flex" }}>
@@ -395,8 +395,8 @@ export default function Header() {
                 alt="logo"
                 width={130}
                 height={70}
-                style={{ width: "100%", height: "auto" }}
-              />
+                style={{ width: "100%", height: "auto" }} />
+              
             </Box>
           </Link>
 
@@ -415,20 +415,20 @@ export default function Header() {
                   key={item.label}
                   href={item.href}
                   style={{ textDecoration: "none" }}
-                  onClick={closeMobileMenu}
-                >
+                  onClick={closeMobileMenu}>
+                  
                   <Typography
                     sx={{
                       py: 1.6,
-                      fontSize: "16px",
+                      fontSize: FONT_SIZE.bodyLarge,
                       color: pathname.startsWith(item.href) ? "#000" : "#555",
-                      borderBottom: "1px solid #eee",
-                    }}
-                  >
+                      borderBottom: "1px solid #eee"
+                    }}>
+                    
                     {item.label}
                   </Typography>
-                </Link>
-              );
+                </Link>);
+
             }
 
             return (
@@ -438,120 +438,120 @@ export default function Header() {
                   alignItems="center"
                   justifyContent="space-between"
                   onClick={() =>
-                    setOpenMobileMenu(
-                      openMobileMenu === item.label ? null : item.label
-                    )
+                  setOpenMobileMenu(
+                    openMobileMenu === item.label ? null : item.label
+                  )
                   }
                   sx={{
                     py: 1.6,
                     cursor: "pointer",
-                    borderBottom: "1px solid #eee",
-                  }}
-                >
-                  <Typography sx={{ fontSize: "16px", color: "#555" }}>
+                    borderBottom: "1px solid #eee"
+                  }}>
+                  
+                  <Typography sx={{ fontSize: FONT_SIZE.bodyLarge, color: "#555" }}>
                     {item.label}
                   </Typography>
 
                   <KeyboardArrowDownIcon
                     sx={{
                       transform:
-                        openMobileMenu === item.label
-                          ? "rotate(180deg)"
-                          : "rotate(0deg)",
-                      transition: "0.25s",
-                    }}
-                  />
+                      openMobileMenu === item.label ?
+                      "rotate(180deg)" :
+                      "rotate(0deg)",
+                      transition: "0.25s"
+                    }} />
+                  
                 </Stack>
 
                 <Collapse in={openMobileMenu === item.label}>
                   <Box sx={{ pl: 2, py: 1 }}>
                     {item.items.map((sub) =>
-                      sub.items ? (
-                        <Box key={sub.label}>
+                    sub.items ?
+                    <Box key={sub.label}>
                           <Stack
-                            direction="row"
-                            alignItems="center"
-                            justifyContent="space-between"
-                            onClick={() =>
-                              setOpenNestedMenu(
-                                openNestedMenu === sub.label ? null : sub.label
-                              )
-                            }
-                            sx={{ py: 1.2, cursor: "pointer" }}
-                          >
+                        direction="row"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        onClick={() =>
+                        setOpenNestedMenu(
+                          openNestedMenu === sub.label ? null : sub.label
+                        )
+                        }
+                        sx={{ py: 1.2, cursor: "pointer" }}>
+                        
                             <Typography
-                              sx={{
-                                fontSize: "15px",
-                                fontWeight: 600,
-                                color: "#222",
-                              }}
-                            >
+                          sx={{
+                            fontSize: FONT_SIZE.body,
+                            fontWeight: FONT_WEIGHT.semiBold,
+                            color: "#222"
+                          }}>
+                          
                               {sub.label}
                             </Typography>
 
                             <KeyboardArrowDownIcon
-                              sx={{
-                                fontSize: 18,
-                                transform:
-                                  openNestedMenu === sub.label
-                                    ? "rotate(180deg)"
-                                    : "rotate(0deg)",
-                                transition: "0.25s",
-                              }}
-                            />
+                          sx={{
+                            fontSize: 18,
+                            transform:
+                            openNestedMenu === sub.label ?
+                            "rotate(180deg)" :
+                            "rotate(0deg)",
+                            transition: "0.25s"
+                          }} />
+                        
                           </Stack>
 
                           <Collapse in={openNestedMenu === sub.label}>
                             <Box sx={{ pl: 2 }}>
                               {sub.items.map((nested) =>
-                                nested.href ? (
-                                  <Link
-                                    key={nested.label}
-                                    href={nested.href}
-                                    style={{ textDecoration: "none" }}
-                                    onClick={closeMobileMenu}
-                                  >
+                          nested.href ?
+                          <Link
+                            key={nested.label}
+                            href={nested.href}
+                            style={{ textDecoration: "none" }}
+                            onClick={closeMobileMenu}>
+                            
                                     <Typography
-                                      sx={{
-                                        py: 1,
-                                        fontSize: "14px",
-                                        color: "#666",
-                                      }}
-                                    >
+                              sx={{
+                                py: 1,
+                                fontSize: FONT_SIZE.bodySmall,
+                                color: "#666"
+                              }}>
+                              
                                       {nested.label}
                                     </Typography>
-                                  </Link>
-                                ) : null
-                              )}
+                                  </Link> :
+                          null
+                          )}
                             </Box>
                           </Collapse>
-                        </Box>
-                      ) : sub.href ? (
-                        <Link
-                          key={sub.label}
-                          href={sub.href}
-                          style={{ textDecoration: "none" }}
-                          onClick={closeMobileMenu}
-                        >
+                        </Box> :
+                    sub.href ?
+                    <Link
+                      key={sub.label}
+                      href={sub.href}
+                      style={{ textDecoration: "none" }}
+                      onClick={closeMobileMenu}>
+                      
                           <Typography
-                            sx={{
-                              py: 1.2,
-                              fontSize: "15px",
-                              color: "#666",
-                            }}
-                          >
+                        sx={{
+                          py: 1.2,
+                          fontSize: FONT_SIZE.body,
+                          color: "#666"
+                        }}>
+                        
                             {sub.label}
                           </Typography>
-                        </Link>
-                      ) : null
+                        </Link> :
+                    null
                     )}
                   </Box>
                 </Collapse>
-              </Box>
-            );
+              </Box>);
+
           })}
         </Box>
       </Drawer>
-    </>
-  );
+    </>);
+
 }

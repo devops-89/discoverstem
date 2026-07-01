@@ -1,8 +1,8 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
 
 import { inputStyle, multilineStyle } from "@/assets/formStyles";
 import PrimaryButton from "@/components/Widgets/PrimaryButton";
-import { FONT_FAMILY } from "@/utils/Fonts";
+
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
@@ -11,23 +11,23 @@ import {
   Container,
   Grid,
   TextField,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const options = [
-  { label: "General Inquiry" },
-  { label: "Support" },
-  { label: "Business" },
-];
+{ label: "General Inquiry" },
+{ label: "Support" },
+{ label: "Business" }];
+
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
   subject: Yup.object().nullable().required("Subject is required"),
-  message: Yup.string().required("Message is required"),
+  message: Yup.string().required("Message is required")
 });
 
 const AboutForm = () => {
@@ -36,7 +36,7 @@ const AboutForm = () => {
       name: "",
       email: "",
       subject: null,
-      message: "",
+      message: ""
     },
     validationSchema,
 
@@ -53,7 +53,7 @@ const AboutForm = () => {
       } finally {
         setSubmitting(false);
       }
-    },
+    }
   });
 
   return (
@@ -62,9 +62,9 @@ const AboutForm = () => {
       sx={{
         maxWidth: "min(1196px, 100%)",
         py: { xs: 2, md: 7 },
-        px: { xs: 2, md: 4 },
-      }}
-    >
+        px: { xs: 2, md: 4 }
+      }}>
+      
       <Box
         component="form"
         onSubmit={formik.handleSubmit}
@@ -74,21 +74,21 @@ const AboutForm = () => {
           px: { xs: 2, sm: 4, md: 6, lg: 10 },
           py: { xs: 4, md: 6, lg: "50px" },
           maxWidth: "1320px",
-          mx: "auto",
-        }}
-      >
+          mx: "auto"
+        }}>
+        
         <Typography
           sx={{
             textAlign: "center",
             fontFamily: FONT_FAMILY.heading,
-            fontWeight: 600,
-            fontSize: { xs: "20px", sm:24, md: "36px" }, 
-            lineHeight: { xs: "38px", md: "46px" },
+            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: FONT_SIZE.leadLarge, sm: 24, md: FONT_SIZE.subSectionHeading },
+            lineHeight: { xs: "38px", md: LINE_HEIGHT.xl5 },
             letterSpacing: "-0.02em",
             color: "#111827",
-            mb: { xs: 4, md: 5 }, 
-          }}
-        >
+            mb: { xs: 4, md: 5 }
+          }}>
+          
           Send Your Message To Us
         </Typography>
 
@@ -103,8 +103,8 @@ const AboutForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.name && Boolean(formik.errors.name)}
               helperText={formik.touched.name && formik.errors.name}
-              sx={inputStyle}
-            />
+              sx={inputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
@@ -117,8 +117,8 @@ const AboutForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email && formik.errors.email}
-              sx={inputStyle}
-            />
+              sx={inputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }}>
@@ -131,18 +131,18 @@ const AboutForm = () => {
                 formik.setFieldTouched("subject", true);
               }}
               popupIcon={<KeyboardArrowDownIcon />}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Choose an option"
-                  error={
-                    formik.touched.subject && Boolean(formik.errors.subject)
-                  }
-                  helperText={formik.touched.subject && formik.errors.subject}
-                  sx={inputStyle}
-                />
-              )}
-            />
+              renderInput={(params) =>
+              <TextField
+                {...params}
+                label="Choose an option"
+                error={
+                formik.touched.subject && Boolean(formik.errors.subject)
+                }
+                helperText={formik.touched.subject && formik.errors.subject}
+                sx={inputStyle} />
+
+              } />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }}>
@@ -157,8 +157,8 @@ const AboutForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.message && Boolean(formik.errors.message)}
               helperText={formik.touched.message && formik.errors.message}
-              sx={multilineStyle}
-            />
+              sx={multilineStyle} />
+            
           </Grid>
         </Grid>
 
@@ -166,13 +166,13 @@ const AboutForm = () => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            mt: { xs: 4, md: 6 },
-          }}
-        >
+            mt: { xs: 4, md: 6 }
+          }}>
+          
           <PrimaryButton
             type="submit"
             disabled={formik.isSubmitting}
-            showIcon={false} 
+            showIcon={false}
             sx={{
               // EXACT Figma Auto Layout
               display: "flex",
@@ -180,27 +180,27 @@ const AboutForm = () => {
               justifyContent: "center",
               alignItems: "center",
               gap: "10px",
-              padding: "6px 6px 6px 24px !important", 
+              padding: "6px 6px 6px 24px !important",
               width: "max-content",
               minWidth: "231px",
               height: "56px",
-              
+
               borderRadius: "30px",
-              textTransform: "none", 
-            }}
-          >
+              textTransform: "none"
+            }}>
+            
           
             <Typography
               component="span"
               sx={{
                 fontFamily: "'JUST Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: "16px",
-                lineHeight: "24px",
+                fontWeight: FONT_WEIGHT.semiBold,
+                fontSize: FONT_SIZE.bodyLarge,
+                lineHeight: LINE_HEIGHT.medium,
                 letterSpacing: "-0.01em",
-                whiteSpace: "nowrap", // Forces text into exactly one line!
-              }}
-            >
+                whiteSpace: "nowrap" // Forces text into exactly one line!
+              }}>
+              
               {formik.isSubmitting ? "Sending..." : "Send Message Here"}
             </Typography>
             <Box
@@ -212,21 +212,21 @@ const AboutForm = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                flexShrink: 0, // Prevents the circle from squishing
-              }}
-            >
+                flexShrink: 0 // Prevents the circle from squishing
+              }}>
+              
               <ArrowOutwardIcon
                 sx={{
-                  fontSize: "20px",
-                  color: "#111827", 
-                }}
-              />
+                  fontSize: FONT_SIZE.leadLarge,
+                  color: "#111827"
+                }} />
+              
             </Box>
           </PrimaryButton>
         </Box>
       </Box>
-    </Container>
-  );
+    </Container>);
+
 };
 
 export default AboutForm;

@@ -1,4 +1,4 @@
-"use client";
+"use client";import { FONT_FAMILY, FONT_SIZE } from "@/utils/theme";
 
 import { TextField } from "@mui/material";
 
@@ -11,7 +11,7 @@ interface PatentFacesFilterProps {
 export default function PatentFacesFilter({
   search,
   setSearch,
-  placeholder,
+  placeholder
 }: PatentFacesFilterProps) {
   return (
     <TextField
@@ -22,26 +22,26 @@ export default function PatentFacesFilter({
       sx={{
         width: {
           xs: "100%",
-          sm: "384px",
+          sm: "384px"
         },
         "& .MuiOutlinedInput-root": {
-         
+
           height: { xs: "40px", sm: "45.6px" },
           borderRadius: "999px",
           backgroundColor: "#FAFAFA",
-          fontFamily: "Inter, sans-serif",
-          fontSize: "12px",
+          fontFamily: FONT_FAMILY.accent,
+          fontSize: FONT_SIZE.caption,
           color: "#737373",
 
           "& fieldset": {
-            border: "0.8px solid #0000001A",
-          },
+            border: "0.8px solid #0000001A"
+          }
         },
         "& input": {
           px: "20px",
-          py: "12px",
-        },
-      }}
-    />
-  );
+          py: "12px"
+        }
+      }} />);
+
+
 }

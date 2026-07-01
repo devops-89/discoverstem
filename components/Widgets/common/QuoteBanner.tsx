@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { QuoteBannerData } from "@/utils/Types";
 import { Box, Typography } from "@mui/material";
@@ -19,35 +19,35 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        textAlign: "center",
-      }}
-    >
+        textAlign: "center"
+      }}>
+      
       <Box sx={{ width: "100%", maxWidth: "976px" }}>
         <Typography
           sx={{
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 600,
-            fontSize: { xs: "28px", md: "32px", lg: "36px" },
+            fontFamily: FONT_FAMILY.body,
+            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: FONT_SIZE.cardHeading, md: FONT_SIZE.articleHeading, lg: FONT_SIZE.subSectionHeading },
             lineHeight: { xs: "34px", md: "38px", lg: "42px" },
             color: "#F9A51E",
-            mb: 2,
-          }}
-        >
+            mb: 2
+          }}>
+          
           “
         </Typography>
 
         <Typography
           sx={{
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 500,
-            fontSize: { xs: "16px", md: "20px", lg: "25.6px" },
-            lineHeight: { xs: "26px", md: "30px", lg: "34.56px" },
+            fontFamily: FONT_FAMILY.body,
+            fontWeight: FONT_WEIGHT.medium,
+            fontSize: { xs: FONT_SIZE.bodyLarge, md: FONT_SIZE.leadLarge, lg: "25.6px" },
+            lineHeight: { xs: LINE_HEIGHT.mediumLarge, md: "30px", lg: LINE_HEIGHT.xl2 },
             letterSpacing: "-0.64px",
             color: "#000000",
             textAlign: "center",
-            whiteSpace: "pre-line",
-          }}
-        >
+            whiteSpace: "pre-line"
+          }}>
+          
           {data.quote}
         </Typography>
 
@@ -57,26 +57,26 @@ export default function QuoteBanner({ data }: QuoteBannerProps) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "12px",
-          }}
-        >
+            gap: "12px"
+          }}>
+          
           <Box sx={{ width: "44px", height: "1px", bgcolor: "#00000033" }} />
 
           <Typography
             sx={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 400,
-              fontSize: "14px",
-              lineHeight: "20px",
-              color: "#000000B2",
-            }}
-          >
+              fontFamily: FONT_FAMILY.body,
+              fontWeight: FONT_WEIGHT.regular,
+              fontSize: FONT_SIZE.bodySmall,
+              lineHeight: LINE_HEIGHT.small,
+              color: "#000000B2"
+            }}>
+            
             {data.author}
           </Typography>
 
           <Box sx={{ width: "44px", height: "1px", bgcolor: "#00000033" }} />
         </Box>
       </Box>
-    </Box>
-  );
+    </Box>);
+
 }

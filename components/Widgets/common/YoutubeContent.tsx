@@ -1,4 +1,4 @@
-"use client";
+"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { VideoSectionData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
@@ -14,53 +14,53 @@ export default function VideoSection({ data }: VideoSectionProps) {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        
+
         px: { xs: 3, md: 4, lg: 0 },
-       
-        py: { xs: 5, md: 8, lg: 10 },
-      }}
-    >
+
+        py: { xs: 5, md: 8, lg: 10 }
+      }}>
+      
       <Typography
         sx={{
           textAlign: "center",
-          fontFamily: "Work Sans, sans-serif",
-          fontWeight: 600,
-         
-          fontSize: { xs: "24px", md: "40px", lg: "48px" },
+          fontFamily: FONT_FAMILY.heading,
+          fontWeight: FONT_WEIGHT.semiBold,
+
+          fontSize: { xs: FONT_SIZE.titleLarge, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
           lineHeight: { xs: "30px", md: "50px", lg: "62px" },
           letterSpacing: "-0.03em",
           color: "#111827",
-          mb: 1,
-        }}
-      >
+          mb: 1
+        }}>
+        
         {data.title}
       </Typography>
 
-      {data.subtitle && (
-        <Typography
-          sx={{
-            textAlign: "center",
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 400,
-            fontSize: { xs: "13px", md: "15px", lg: "16px" },
-            color: "#777777",
-            mb: { xs: 5, lg: "55px" },
-          }}
-        >
+      {data.subtitle &&
+      <Typography
+        sx={{
+          textAlign: "center",
+          fontFamily: FONT_FAMILY.body,
+          fontWeight: FONT_WEIGHT.regular,
+          fontSize: { xs: FONT_SIZE.small, md: FONT_SIZE.body, lg: FONT_SIZE.bodyLarge },
+          color: "#777777",
+          mb: { xs: 5, lg: "55px" }
+        }}>
+        
           {data.subtitle}
         </Typography>
-      )}
+      }
 
       <Box
         sx={{
           width: "100%",
-          
+
           height: { xs: "220px", sm: "350px", md: "540px", lg: "658px" },
           borderRadius: "20px",
           overflow: "hidden",
-          backgroundColor: "#000",
-        }}
-      >
+          backgroundColor: "#000"
+        }}>
+        
         <iframe
           src={data.videoUrl}
           title={data.title}
@@ -69,10 +69,10 @@ export default function VideoSection({ data }: VideoSectionProps) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           style={{
-            border: "none",
-          }}
-        />
+            border: "none"
+          }} />
+        
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }

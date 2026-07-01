@@ -1,7 +1,7 @@
 "use client";
 
 import { Box } from "@mui/material";
-import { FONT_FAMILY } from "@/utils/Fonts";
+
 
 import HeroSection from "./HeroSection";
 import OurYoungInnovators from "./OurYoungInnovators";
@@ -32,6 +32,6 @@ export default function HomeLayout() {
       <AwardsSection />
       <TestimonialsSection />
        <CtaBanner data={ctaBannerData} />
-    </>
-  );
+    </>);
+
 }

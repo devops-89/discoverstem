@@ -4227,13 +4227,9 @@ export const faqData: FaqCategory[] = [
 
 export const partnersEcosystemTextData: SimpleTextSectionData = {
   paragraphs: [
-    `Over the last couple of years, our young innovators have been generating great ideas that can positively  
-    impact the world. But what good an idea will do by staying on paper & patents, and not getting
-    commercialized?`,
+    `Over the last couple of years, our young innovators have been generating great ideas that can positively impact the world. But what good an idea will do by staying on paper & patents, and not getting commercialized?`,
 
-    `Many of our students want to launch their startups and commercialize their innovations. So, we've gone ahead and developed an ecosystem of partners worldwide, which include Business Mentors, Technology Mentors, 
-    Management Consultants, Product Designers, Product Prototyping firms, Manufacturers, Packagers, Marketing 
-    & Promotion firms, Shipping firms, Clearing & Forwarding Agencies, CPA and Attorneys among others.`,
+    `Many of our students want to launch their startups and commercialize their innovations. So, we've gone ahead and developed an ecosystem of partners worldwide, which include Business Mentors, Technology Mentors, Management Consultants, Product Designers, Product Prototyping firms, Manufacturers, Packagers, Marketing & Promotion firms, Shipping firms, Clearing & Forwarding Agencies, CPA and Attorneys among others.`,
 
     `We've taken care of everything to launch an idea into the market. All we need are bright and promising individuals to pick up an idea and run their company. What's more, over and above, we provide a seed capital between $10,000/- to $30,000/- per startup to kickstart their business.`,
 

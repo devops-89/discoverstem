@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_SIZE, FONT_FAMILY, FONT_WEIGHT } from "@/utils/theme";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Dialog, IconButton, Typography } from "@mui/material";
@@ -35,17 +35,17 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
         paper: {
           sx: {
             width: "1160px",
-            maxWidth: { xs: "calc(100vw - 32px)", lg: "95vw" }, 
+            maxWidth: { xs: "calc(100vw - 32px)", lg: "95vw" },
             maxHeight: "90vh",
             borderRadius: { xs: "20px", lg: "29px" },
             backgroundColor: "#F7F7F7",
             overflowY: "auto",
             position: "relative",
-            m: { xs: 2, lg: 4 }, 
-          },
-        },
-      }}
-    >
+            m: { xs: 2, lg: 4 }
+          }
+        }
+      }}>
+      
     
       <IconButton
         onClick={onClose}
@@ -54,135 +54,135 @@ export default function ExpertsModal({ open, onClose, data }: Props) {
           top: { xs: 16, lg: 24 },
           right: { xs: 16, lg: 24 },
           zIndex: 20,
-          width: { xs: 40, lg: 48 }, 
+          width: { xs: 40, lg: 48 },
           height: { xs: 40, lg: 48 },
           bgcolor: "#fff",
           boxShadow: "0px 4px 12px rgba(0,0,0,0.08)",
           "&:hover": {
-            bgcolor: "#f5f5f5",
-          },
-        }}
-      >
-        <CloseIcon sx={{ fontSize: { xs: "20px", lg: "24px" }, color:"red" }} />
+            bgcolor: "#f5f5f5"
+          }
+        }}>
+        
+        <CloseIcon sx={{ fontSize: { xs: FONT_SIZE.leadLarge, lg: FONT_SIZE.titleLarge }, color: "red" }} />
       </IconButton>
 
       <Box
         sx={{
           p: {
             xs: 3,
-            lg: "30px", 
-          },
-        }}
-      >
+            lg: "30px"
+          }
+        }}>
+        
        
         <Box
           sx={{
             position: "relative",
-          
+
             float: {
               xs: "none",
-              lg: "left", 
+              lg: "left"
             },
             width: {
               xs: "100%",
-              lg: "250px",
+              lg: "250px"
             },
             height: {
-              xs: "250px", 
-              sm: "350px", 
-              lg: "280px", 
+              xs: "250px",
+              sm: "350px",
+              lg: "280px"
             },
             borderRadius: "11px",
             overflow: "hidden",
             mr: {
               xs: 0,
-              lg: "30px",
+              lg: "30px"
             },
-            mb: { xs: 3, lg: "20px" }, 
-            bgcolor: "#D9D9D9",
-          }}
-        >
+            mb: { xs: 3, lg: "20px" },
+            bgcolor: "#D9D9D9"
+          }}>
+          
           <Image
             src={data.image}
             alt={data.name}
             fill
             sizes="100vw"
             style={{
-              objectFit: "cover",
-            }}
-          />
+              objectFit: "cover"
+            }} />
+          
         </Box>
 
        
         <Typography
           sx={{
-            fontFamily: "Poppins",
-            fontWeight: 400,
-            fontSize: "16px",
-            lineHeight: "16px",
+            fontFamily: FONT_FAMILY.body,
+            fontWeight: FONT_WEIGHT.regular,
+            fontSize: FONT_SIZE.bodyLarge,
+            lineHeight: LINE_HEIGHT.extraSmall,
             letterSpacing: "2.4px",
             textTransform: "uppercase",
             color: "#F9A51E",
-            mb: 2,
-          }}
-        >
+            mb: 2
+          }}>
+          
           {data.category}
         </Typography>
 
     
         <Typography
           sx={{
-            fontFamily: "Poppins",
-            fontWeight: 600,
+            fontFamily: FONT_FAMILY.body,
+            fontWeight: FONT_WEIGHT.semiBold,
             fontSize: {
-              xs: "22px",
-              lg: "25.6px",
+              xs: FONT_SIZE.title,
+              lg: "25.6px"
             },
             lineHeight: "29.4px",
             letterSpacing: "-0.64px",
             color: "#000000",
-            mb: 1,
-          }}
-        >
+            mb: 1
+          }}>
+          
           {data.name}
         </Typography>
 
         
         <Typography
           sx={{
-            fontFamily: "Poppins",
-            fontWeight: 400,
-            fontSize: "14px",
-            lineHeight: "20px",
+            fontFamily: FONT_FAMILY.body,
+            fontWeight: FONT_WEIGHT.regular,
+            fontSize: FONT_SIZE.bodySmall,
+            lineHeight: LINE_HEIGHT.small,
             color: "rgba(0,0,0,0.75)",
-            mb: 3,
-          }}
-        >
+            mb: 3
+          }}>
+          
           {data.degree}
           {data.org ? ` · ${data.org}` : ""}
         </Typography>
 
         
-        {descriptions.map((paragraph, index) => (
-          <Typography
-            key={index}
-            sx={{
-              fontFamily: "Poppins",
-              fontWeight: 400,
-              fontSize: "16px",
-              lineHeight: "20px",
-              letterSpacing: "-0.03em",
-              color: "#777777",
-              mb: index === descriptions.length - 1 ? 0 : 1.2,
-            }}
-          >
+        {descriptions.map((paragraph, index) =>
+        <Typography
+          key={index}
+          sx={{
+            fontFamily: FONT_FAMILY.body,
+            fontWeight: FONT_WEIGHT.regular,
+            fontSize: FONT_SIZE.bodyLarge,
+            lineHeight: LINE_HEIGHT.small,
+            letterSpacing: "-0.03em",
+            color: "#777777",
+            mb: index === descriptions.length - 1 ? 0 : 1.2
+          }}>
+          
             {paragraph}
           </Typography>
-        ))}
+        )}
 
         
         <Box sx={{ clear: "both" }} />
       </Box>
-    </Dialog>
-  );
+    </Dialog>);
+
 }

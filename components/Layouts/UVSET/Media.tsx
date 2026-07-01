@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { MediaSectionData } from "@/utils/Types";
 import { Box, Container, Typography, Modal, IconButton } from "@mui/material";
@@ -39,25 +39,25 @@ export default function MediaSection({ data }: MediaSectionProps) {
       sx={{
         maxWidth: "1157px",
         mx: "auto",
-       
+
         px: { xs: 3, md: 4, lg: 0 },
         pt: { xs: 1, md: 6, lg: 8 },
-         pb: { xs: 5, md: 6, lg: 8 },
-      }}
-    >
+        pb: { xs: 5, md: 6, lg: 8 }
+      }}>
+      
       <Typography
         sx={{
-          fontFamily: "Work Sans, sans-serif",
-          fontWeight: 600,
-         
-          fontSize: { xs: "32px", md: "40px", lg: "48px" },
+          fontFamily: FONT_FAMILY.heading,
+          fontWeight: FONT_WEIGHT.semiBold,
+    textAlign: { xs: "center", md: "left" }, 
+          fontSize: { xs: FONT_SIZE.articleHeading, md: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
           lineHeight: { xs: "40px", md: "44px", lg: "36.8px" },
           letterSpacing: "-0.8px",
           color: "#171717",
           mb: { xs: 4, md: 6, lg: "70px" },
-          textTransform: "capitalize",
-        }}
-      >
+          textTransform: "capitalize"
+        }}>
+        
         {data.title}
       </Typography>
 
@@ -67,186 +67,186 @@ export default function MediaSection({ data }: MediaSectionProps) {
           gridTemplateColumns: {
             xs: "1fr",
             sm: "repeat(2, 1fr)",
-            lg: "repeat(3, 1fr)",
+            lg: "repeat(3, 1fr)"
           },
-          gap: { xs: 3, lg: "22px" },
-        }}
-      >
-        {data.items.map((item) => (
-          <Box
-            key={item.id}
-            sx={{
-              width: "100%",
-              maxWidth: "371px",
-              
-              height: { xs: "auto", lg: "431px" },
-              borderRadius: "16px",
-              border: "0.8px solid #0000000D",
-              overflow: "hidden",
-              backgroundColor: "#fff",
-              mx: "auto",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
+          gap: { xs: 3, lg: "22px" }
+        }}>
+        
+        {data.items.map((item) =>
+        <Box
+          key={item.id}
+          sx={{
+            width: "100%",
+            maxWidth: "371px",
+
+            height: { xs: "auto", lg: "431px" },
+            borderRadius: "16px",
+            border: "0.8px solid #0000000D",
+            overflow: "hidden",
+            backgroundColor: "#fff",
+            mx: "auto",
+            display: "flex",
+            flexDirection: "column"
+          }}>
+          
             <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-               
-                height: { xs: "220px", md: "230px", lg: "245.66px" },
-                flexShrink: 0,
-              }}
-            >
+            sx={{
+              position: "relative",
+              width: "100%",
+
+              height: { xs: "220px", md: "230px", lg: "245.66px" },
+              flexShrink: 0
+            }}>
+            
               <Image
-                src={item.image}
-                alt={item.title}
-                fill sizes="100vw"
-                style={{ objectFit: "cover" }}
-              />
+              src={item.image}
+              alt={item.title}
+              fill sizes="100vw"
+              style={{ objectFit: "cover" }} />
+            
 
               <Box
-                sx={{
-                  position: "absolute",
-                  top: "12px",
-                  left: "12px",
-                  minWidth: "81.55px",
-                  height: "23.99px",
-                  borderRadius: "999px",
-                  backgroundColor: "#fff",
-                  px: "12px",
-                  py: "4px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              sx={{
+                position: "absolute",
+                top: "12px",
+                left: "12px",
+                minWidth: "81.55px",
+                height: "23.99px",
+                borderRadius: "999px",
+                backgroundColor: "#fff",
+                px: "12px",
+                py: "4px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}>
+              
                 <Typography
-                  sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "12px",
-                    lineHeight: "16px",
-                    letterSpacing: "0.6px",
-                    textTransform: "uppercase",
-                    color: "#171717",
-                  }}
-                >
+                sx={{
+                  fontFamily: FONT_FAMILY.accent,
+                  fontWeight: FONT_WEIGHT.semiBold,
+                  fontSize: FONT_SIZE.caption,
+                  lineHeight: LINE_HEIGHT.extraSmall,
+                  letterSpacing: "0.6px",
+                  textTransform: "uppercase",
+                  color: "#171717"
+                }}>
+                
                   {item.tag}
                 </Typography>
               </Box>
             </Box>
 
             <Box
-              sx={{
-                px: "21.8px",
-                pt: "14px",
-                pb: "20px",
-                display: "flex",
-                flexDirection: "column",
-                flex: 1,
-              
-                height: { xs: "auto", lg: "185.34px" },
-              }}
-            >
+            sx={{
+              px: "21.8px",
+              pt: "14px",
+              pb: "20px",
+              display: "flex",
+              flexDirection: "column",
+              flex: 1,
+
+              height: { xs: "auto", lg: "185.34px" }
+            }}>
+            
               <Typography
-                sx={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "12px",
-                  lineHeight: "16px",
-                  letterSpacing: "0.6px",
-                  textTransform: "uppercase",
-                  color: "#7B53A1",
-                  mb: "8px",
-                }}
-              >
+              sx={{
+                fontFamily: FONT_FAMILY.body,
+                fontWeight: FONT_WEIGHT.regular,
+                fontSize: FONT_SIZE.caption,
+                lineHeight: LINE_HEIGHT.extraSmall,
+                letterSpacing: "0.6px",
+                textTransform: "uppercase",
+                color: "#7B53A1",
+                mb: "8px"
+              }}>
+              
                 {item.source}
               </Typography>
 
               <Typography
-                sx={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 600,
-                  
-                  fontSize: { xs: "16px", lg: "18px" },
-                  lineHeight: { xs: "22px", lg: "24.75px" },
-                  letterSpacing: "-0.45px",
-                  color: "#171717",
-                  minHeight: "50px",
-                }}
-              >
+              sx={{
+                fontFamily: FONT_FAMILY.body,
+                fontWeight: FONT_WEIGHT.semiBold,
+
+                fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.lead },
+                lineHeight: { xs: "22px", lg: "24.75px" },
+                letterSpacing: "-0.45px",
+                color: "#171717",
+                minHeight: "50px"
+              }}>
+              
                 {item.title}
               </Typography>
 
               <Box
-                sx={{
-                  mt: "auto",
-                  pt: "10px",
-                  minHeight: "46px",
-                  borderTop: "0.8px solid #0000000D",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "8px",
-                }}
-              >
+              sx={{
+                mt: "auto",
+                pt: "10px",
+                minHeight: "46px",
+                borderTop: "0.8px solid #0000000D",
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "8px"
+              }}>
+              
                 <Box
-                  component="a"
-                  href={item.visitLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    borderRadius: "999px",
-                    backgroundColor: "#171717",
-                    color: "#fff",
-                    px: "16px",
-                    py: "6px",
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "12px",
-                    lineHeight: "16px",
-                    textDecoration: "none",
-                    display: "inline-flex",
-                  }}
-                >
+                component="a"
+                href={item.visitLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  borderRadius: "999px",
+                  backgroundColor: "#171717",
+                  color: "#fff",
+                  px: "16px",
+                  py: "6px",
+                  fontFamily: FONT_FAMILY.body,
+                  fontWeight: FONT_WEIGHT.regular,
+                  fontSize: FONT_SIZE.caption,
+                  lineHeight: LINE_HEIGHT.extraSmall,
+                  textDecoration: "none",
+                  display: "inline-flex"
+                }}>
+                
                   Visit Link
                 </Box>
 
                 <Box
-                  component="a"
-                  href={item.tag === "Talk" ? item.visitLink : item.pdfLink}
-                  onClick={(e: React.MouseEvent) => handleOpen(e, item.tag === "Talk" ? item.visitLink : item.pdfLink, item.tag !== "Talk")}
-                  sx={{
-                    borderRadius: "999px",
-                    backgroundColor: "#fff",
-                    color: "#171717",
-                    border: "0.8px solid #0000001A",
-                    px: "16px",
-                    py: "6px",
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "12px",
-                    lineHeight: "16px",
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    cursor: "pointer"
-                  }}
-                >
-                  {item.tag === "Talk" ? (
-                    <>
-                      <i className="fas fa-play-circle" style={{ fontSize: "14px" }}></i>
+                component="a"
+                href={item.tag === "Talk" ? item.visitLink : item.pdfLink}
+                onClick={(e: React.MouseEvent) => handleOpen(e, item.tag === "Talk" ? item.visitLink : item.pdfLink, item.tag !== "Talk")}
+                sx={{
+                  borderRadius: "999px",
+                  backgroundColor: "#fff",
+                  color: "#171717",
+                  border: "0.8px solid #0000001A",
+                  px: "16px",
+                  py: "6px",
+                  fontFamily: FONT_FAMILY.body,
+                  fontWeight: FONT_WEIGHT.regular,
+                  fontSize: FONT_SIZE.caption,
+                  lineHeight: LINE_HEIGHT.extraSmall,
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  cursor: "pointer"
+                }}>
+                
+                  {item.tag === "Talk" ?
+                <>
+                      <i className="fas fa-play-circle" style={{ fontSize: FONT_SIZE.bodySmall }}></i>
                       Watch Video
-                    </>
-                  ) : (
-                    "Read PDF"
-                  )}
+                    </> :
+
+                "Read PDF"
+                }
                 </Box>
               </Box>
             </Box>
           </Box>
-        ))}
+        )}
       </Box>
 
       <Modal
@@ -258,15 +258,15 @@ export default function MediaSection({ data }: MediaSectionProps) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          p: { xs: 2, lg: 4 },
-        }}
-      >
+          p: { xs: 2, lg: 4 }
+        }}>
+        
         <Box
           sx={{
             position: "relative",
             width: "100%",
             maxWidth: isPdf ? "800px" : "900px",
-           
+
             height: isPdf ? "85vh" : { xs: "auto", lg: "500px" },
             aspectRatio: isPdf ? "auto" : { xs: "16/9", lg: "auto" },
             backgroundColor: "#fff",
@@ -274,9 +274,9 @@ export default function MediaSection({ data }: MediaSectionProps) {
             overflow: "hidden",
             boxShadow: 24,
             display: "flex",
-            flexDirection: "column",
-          }}
-        >
+            flexDirection: "column"
+          }}>
+          
           <Box
             sx={{
               display: "flex",
@@ -284,26 +284,26 @@ export default function MediaSection({ data }: MediaSectionProps) {
               p: 1,
               borderBottom: "1px solid #E5E5E5",
               backgroundColor: "#f5f5f5"
-            }}
-          >
+            }}>
+            
             <IconButton onClick={handleClose} size="small" aria-label="close">
               <CloseIcon />
             </IconButton>
           </Box>
           <Box sx={{ flexGrow: 1, position: "relative" }}>
-            {modalUrl && (
-              <iframe
-                src={modalUrl}
-                width="100%"
-                height="100%"
-                style={{ border: "none", display: "block" }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            )}
+            {modalUrl &&
+            <iframe
+              src={modalUrl}
+              width="100%"
+              height="100%"
+              style={{ border: "none", display: "block" }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen />
+
+            }
           </Box>
         </Box>
       </Modal>
-    </Container>
-  );
+    </Container>);
+
 }

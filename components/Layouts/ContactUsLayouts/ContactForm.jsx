@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
@@ -7,24 +7,24 @@ import {
   Box,
   Grid,
   TextField,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const gradeOptions = [
-  { label: "K" }, { label: "1" }, { label: "2" }, { label: "3" },
-  { label: "4" }, { label: "5" }, { label: "6" }, { label: "7" },
-  { label: "8" }, { label: "9" }, { label: "10" }, { label: "11" },
-  { label: "12" }, { label: "Undergraduate" },
-];
+{ label: "K" }, { label: "1" }, { label: "2" }, { label: "3" },
+{ label: "4" }, { label: "5" }, { label: "6" }, { label: "7" },
+{ label: "8" }, { label: "9" }, { label: "10" }, { label: "11" },
+{ label: "12" }, { label: "Undergraduate" }];
+
 
 const hearOptions = [
-  { label: "Google Search" }, { label: "Social Media" },
-  { label: "Friend/Family" }, { label: "School/Teacher" },
-  { label: "Advertisement" }, { label: "Other" },
-];
+{ label: "Google Search" }, { label: "Social Media" },
+{ label: "Friend/Family" }, { label: "School/Teacher" },
+{ label: "Advertisement" }, { label: "Other" }];
+
 
 const validationSchema = Yup.object({
   studentName: Yup.string().trim().required("Student name is required"),
@@ -34,29 +34,29 @@ const validationSchema = Yup.object({
   country: Yup.string().required("Country is required"),
   parentName: Yup.string().required("Parent name is required"),
   email: Yup.string().email("Enter valid email").required("Email is required"),
-  phone: Yup.string()
-    .matches(/^[0-9]{10}$/, "Enter valid 10-digit phone")
-    .required("Phone is required"),
+  phone: Yup.string().
+  matches(/^[0-9]{10}$/, "Enter valid 10-digit phone").
+  required("Phone is required"),
   hear: Yup.object().nullable().required("This field is required"),
-  message: Yup.string().required("Message is required"),
+  message: Yup.string().required("Message is required")
 });
 
 const labelStyle = {
-  fontFamily: "'Poppins', sans-serif",
-  fontWeight: 500,
-  fontSize: { xs: "14px", lg: "16px" },
-  lineHeight: { xs: "24px", lg: "30px" },
+  fontFamily: FONT_FAMILY.body,
+  fontWeight: FONT_WEIGHT.medium,
+  fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+  lineHeight: { xs: LINE_HEIGHT.medium, lg: "30px" },
   color: "#000000",
   opacity: 0.7,
-  mb: "8px",
+  mb: "8px"
 };
 
 const helperTextStyle = {
   "& .MuiFormHelperText-root": {
     minHeight: "20px",
     marginLeft: 0,
-    marginTop: "4px",
-  },
+    marginTop: "4px"
+  }
 };
 
 const figmaInputStyle = {
@@ -70,16 +70,16 @@ const figmaInputStyle = {
     "& input": {
       padding: 0,
       height: "100%",
-      fontFamily: "'Poppins', sans-serif",
-      fontWeight: 400,
-      fontSize: { xs: "14px", lg: "16px" },
+      fontFamily: FONT_FAMILY.body,
+      fontWeight: FONT_WEIGHT.regular,
+      fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
       color: "#474A55",
       "&::placeholder": {
         color: "#474A55",
-        opacity: 0.7,
-      },
-    },
-  },
+        opacity: 0.7
+      }
+    }
+  }
 };
 
 const figmaAutocompleteStyle = {
@@ -92,19 +92,19 @@ const figmaAutocompleteStyle = {
     "& fieldset": { border: "none" },
     "& input": {
       padding: "0 !important",
-      fontFamily: "'Poppins', sans-serif",
-      fontWeight: 400,
-      fontSize: { xs: "14px", lg: "16px" },
+      fontFamily: FONT_FAMILY.body,
+      fontWeight: FONT_WEIGHT.regular,
+      fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
       color: "#474A55",
       "&::placeholder": {
         color: "#474A55",
-        opacity: 0.7,
-      },
+        opacity: 0.7
+      }
     },
     "& .MuiAutocomplete-endAdornment": {
-      right: { xs: "16px", lg: "24px" },
-    },
-  },
+      right: { xs: "16px", lg: "24px" }
+    }
+  }
 };
 
 const figmaMultilineStyle = {
@@ -118,24 +118,24 @@ const figmaMultilineStyle = {
     "& fieldset": { border: "none" },
     "& textarea": {
       padding: 0,
-      fontFamily: "'Poppins', sans-serif",
-      fontWeight: 400,
-      fontSize: { xs: "14px", lg: "16px" },
-      lineHeight: { xs: "24px", lg: "30px" },
+      fontFamily: FONT_FAMILY.body,
+      fontWeight: FONT_WEIGHT.regular,
+      fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+      lineHeight: { xs: LINE_HEIGHT.medium, lg: "30px" },
       color: "#474A55",
       "&::placeholder": {
         color: "#474A55",
-        opacity: 0.7,
-      },
-    },
-  },
+        opacity: 0.7
+      }
+    }
+  }
 };
 
 const ContactForm = () => {
   const formik = useFormik({
     initialValues: {
       studentName: "", grade: null, city: "", state: "", country: "",
-      parentName: "", email: "", phone: "", hear: null, message: "",
+      parentName: "", email: "", phone: "", hear: null, message: ""
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
@@ -147,7 +147,7 @@ const ContactForm = () => {
       } catch (err) {
         toast.error("Failed to send", { id: toastId });
       }
-    },
+    }
   });
 
   return (
@@ -155,9 +155,9 @@ const ContactForm = () => {
       sx={{
         width: "100%",
         maxWidth: "585px",
-        mx: "auto", 
-      }}
-    >
+        mx: "auto"
+      }}>
+      
       <Box
         component="form"
         onSubmit={formik.handleSubmit}
@@ -165,7 +165,7 @@ const ContactForm = () => {
         sx={{
           width: "100%",
           maxWidth: "585px",
-          mx: "auto", 
+          mx: "auto",
           minHeight: { xs: "auto", lg: "1476px" },
           backgroundColor: "#FAF5FF",
           borderRadius: "18px",
@@ -174,22 +174,22 @@ const ContactForm = () => {
           pb: { xs: "30px", lg: "26px" },
           boxSizing: "border-box",
           display: "flex",
-          flexDirection: "column",
-        }}
-      >
+          flexDirection: "column"
+        }}>
+        
         <Typography
           sx={{
             width: "100%",
             textAlign: "center",
-            fontFamily: "'Work Sans', sans-serif",
-            fontWeight: 700,
-            fontSize: { xs: "24px", lg: "28px" },
-            lineHeight: "46px",
+            fontFamily: FONT_FAMILY.heading,
+            fontWeight: FONT_WEIGHT.bold,
+            fontSize: { xs: FONT_SIZE.titleLarge, lg: FONT_SIZE.cardHeading },
+            lineHeight: LINE_HEIGHT.xl5,
             letterSpacing: "-0.02em",
             color: "#111827",
-            mb: { xs: "20px", lg: "30px" },
-          }}
-        >
+            mb: { xs: "20px", lg: "30px" }
+          }}>
+          
           Send Your Message To Us
         </Typography>
 
@@ -205,8 +205,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.studentName && Boolean(formik.errors.studentName)}
               helperText={formik.touched.studentName ? formik.errors.studentName || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -221,17 +221,17 @@ const ContactForm = () => {
               }}
               onBlur={() => formik.setFieldTouched("grade", true)}
               disableClearable
-              popupIcon={<KeyboardArrowDownIcon sx={{ color: "#474A55", fontSize: "24px" }} />}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  placeholder="Select Grade"
-                  error={formik.touched.grade && Boolean(formik.errors.grade)}
-                  helperText={formik.touched.grade ? (formik.errors.grade) || " " : " "}
-                  sx={figmaAutocompleteStyle}
-                />
-              )}
-            />
+              popupIcon={<KeyboardArrowDownIcon sx={{ color: "#474A55", fontSize: FONT_SIZE.titleLarge }} />}
+              renderInput={(params) =>
+              <TextField
+                {...params}
+                placeholder="Select Grade"
+                error={formik.touched.grade && Boolean(formik.errors.grade)}
+                helperText={formik.touched.grade ? formik.errors.grade || " " : " "}
+                sx={figmaAutocompleteStyle} />
+
+              } />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -245,8 +245,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.city && Boolean(formik.errors.city)}
               helperText={formik.touched.city ? formik.errors.city || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -260,8 +260,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.state && Boolean(formik.errors.state)}
               helperText={formik.touched.state ? formik.errors.state || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -275,8 +275,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.country && Boolean(formik.errors.country)}
               helperText={formik.touched.country ? formik.errors.country || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -290,8 +290,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.parentName && Boolean(formik.errors.parentName)}
               helperText={formik.touched.parentName ? formik.errors.parentName || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -305,8 +305,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email ? formik.errors.email || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -320,8 +320,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.phone && Boolean(formik.errors.phone)}
               helperText={formik.touched.phone ? formik.errors.phone || " " : " "}
-              sx={figmaInputStyle}
-            />
+              sx={figmaInputStyle} />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "3px" }}>
@@ -336,17 +336,17 @@ const ContactForm = () => {
               }}
               onBlur={() => formik.setFieldTouched("hear", true)}
               disableClearable
-              popupIcon={<KeyboardArrowDownIcon sx={{ color: "#474A55", fontSize: "24px" }} />}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  placeholder="Select the source"
-                  error={formik.touched.hear && Boolean(formik.errors.hear)}
-                  helperText={formik.touched.hear ? (formik.errors.hear) || " " : " "}
-                  sx={figmaAutocompleteStyle}
-                />
-              )}
-            />
+              popupIcon={<KeyboardArrowDownIcon sx={{ color: "#474A55", fontSize: FONT_SIZE.titleLarge }} />}
+              renderInput={(params) =>
+              <TextField
+                {...params}
+                placeholder="Select the source"
+                error={formik.touched.hear && Boolean(formik.errors.hear)}
+                helperText={formik.touched.hear ? formik.errors.hear || " " : " "}
+                sx={figmaAutocompleteStyle} />
+
+              } />
+            
           </Grid>
 
           <Grid size={{ xs: 12 }} sx={{ mb: "7px" }}>
@@ -361,8 +361,8 @@ const ContactForm = () => {
               onBlur={formik.handleBlur}
               error={formik.touched.message && Boolean(formik.errors.message)}
               helperText={formik.touched.message ? formik.errors.message || " " : " "}
-              sx={figmaMultilineStyle}
-            />
+              sx={figmaMultilineStyle} />
+            
           </Grid>
         </Grid>
 
@@ -385,25 +385,25 @@ const ContactForm = () => {
               cursor: "pointer",
               transition: "all 0.2s ease-in-out",
               "&:hover": {
-                background: "#6A458D",
+                background: "#6A458D"
               },
               "&:disabled": {
                 opacity: 0.6,
-                cursor: "not-allowed",
-              },
-            }}
-          >
+                cursor: "not-allowed"
+              }
+            }}>
+            
             <Typography
               sx={{
                 fontFamily: "'JUST Sans', 'Poppins', sans-serif",
-                fontWeight: 600,
-                fontSize: { xs: "14px", lg: "16px" },
-                lineHeight: "24px",
+                fontWeight: FONT_WEIGHT.semiBold,
+                fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge },
+                lineHeight: LINE_HEIGHT.medium,
                 letterSpacing: "-0.01em",
                 color: "#FFFFFF",
-                textAlign: "left",
-              }}
-            >
+                textAlign: "left"
+              }}>
+              
               {formik.isSubmitting ? "Sending..." : "Send Message Here"}
             </Typography>
 
@@ -416,15 +416,15 @@ const ContactForm = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                flexShrink: 0,
-              }}
-            >
+                flexShrink: 0
+              }}>
+              
               <NorthEastIcon
                 sx={{
-                  fontSize: { xs: "16px", lg: "20px" },
-                  color: "#111827",
-                }}
-              />
+                  fontSize: { xs: FONT_SIZE.bodyLarge, lg: FONT_SIZE.leadLarge },
+                  color: "#111827"
+                }} />
+              
             </Box>
           </Box>
         </Box>
@@ -434,18 +434,18 @@ const ContactForm = () => {
         sx={{
           width: "100%",
           maxWidth: "556px",
-          mx: "auto", 
+          mx: "auto",
           letterSpacing: "-0.03em",
           lineHeight: "22px",
           mt: "30px",
           textAlign: { xs: "center", lg: "left" },
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 400,
-          fontSize: { xs: "14px", lg: "18px" },
-          color: "#111827",
-        }}
-      >
-        <Box component="span" sx={{ fontWeight: 600 }}>
+          fontFamily: FONT_FAMILY.body,
+          fontWeight: FONT_WEIGHT.regular,
+          fontSize: { xs: FONT_SIZE.bodySmall, lg: FONT_SIZE.lead },
+          color: "#111827"
+        }}>
+        
+        <Box component="span" sx={{ fontWeight: FONT_WEIGHT.semiBold }}>
           Privacy Note:
         </Box>{" "}
         We do not sell or share your contact details with anyone, EVER.
@@ -453,8 +453,8 @@ const ContactForm = () => {
         We never follow up except for a one-time text to help ensure you
         don&apos;t miss our email.
       </Typography>
-    </Box>
-  );
+    </Box>);
+
 };
 
 export default ContactForm;

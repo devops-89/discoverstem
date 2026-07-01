@@ -1,4 +1,4 @@
-"use client";
+"use client";import { LINE_HEIGHT, FONT_WEIGHT, FONT_SIZE, FONT_FAMILY } from "@/utils/theme";
 
 import { patentsData } from "@/assets/Generic-data";
 import { PatentFilterType } from "@/utils/Types";
@@ -11,8 +11,8 @@ import {
   Container,
   Pagination,
   TextField,
-  Typography,
-} from "@mui/material";
+  Typography } from
+"@mui/material";
 import { US, ZA } from "country-flag-icons/react/3x2";
 import { useState } from "react";
 
@@ -26,9 +26,9 @@ export default function PatentFilterSection() {
   const filteredPatents = patentsData.filter((item) => {
     const matchFilter = filter === "All" || item.type === filter;
     const matchSearch =
-      item.title.toLowerCase().includes(search.toLowerCase()) ||
-      item.inventors.toLowerCase().includes(search.toLowerCase()) ||
-      item.id.toLowerCase().includes(search.toLowerCase());
+    item.title.toLowerCase().includes(search.toLowerCase()) ||
+    item.inventors.toLowerCase().includes(search.toLowerCase()) ||
+    item.id.toLowerCase().includes(search.toLowerCase());
 
     return matchFilter && matchSearch;
   });
@@ -49,18 +49,18 @@ export default function PatentFilterSection() {
           width: "16px",
           height: "12px",
           display: "flex",
-          flexShrink: 0,
-        }}
-      >
+          flexShrink: 0
+        }}>
+        
         <Flag
           style={{
             width: "100%",
             height: "100%",
-            display: "block",
-          }}
-        />
-      </Box>
-    );
+            display: "block"
+          }} />
+        
+      </Box>);
+
   };
 
   return (
@@ -72,9 +72,9 @@ export default function PatentFilterSection() {
         mx: "auto",
         px: { xs: 3, md: 4, lg: 0 },
         pt: { xs: 7, md: 10 },
-        pb: { xs: 8, md: 14 },
-      }}
-    >
+        pb: { xs: 8, md: 14 }
+      }}>
+      
       <Box
         sx={{
           border: "1px solid #eee",
@@ -85,44 +85,44 @@ export default function PatentFilterSection() {
           justifyContent: "space-between",
           gap: 2,
           mb: 2,
-          
-          backgroundColor: "#fff",
-        }}
-      >
+
+          backgroundColor: "#fff"
+        }}>
+        
         <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
-          {(["All", "US", "SA"] as PatentFilterType[]).map((item) => (
-            <Chip
-              key={item}
-              label={
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "6px",
-                  }}
-                >
+          {(["All", "US", "SA"] as PatentFilterType[]).map((item) =>
+          <Chip
+            key={item}
+            label={
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px"
+              }}>
+              
                   {item === "US" && renderFlag("US")}
                   {item === "SA" && renderFlag("SA")}
                   <span>
-                    {item === "All"
-                      ? "All Patents"
-                      : item === "US"
-                      ? "US"
-                      : "SA"}
+                    {item === "All" ?
+                "All Patents" :
+                item === "US" ?
+                "US" :
+                "SA"}
                   </span>
                 </Box>
-              }
-              onClick={() => {
-                setFilter(item);
-                setPage(1);
-              }}
-              sx={{
-                backgroundColor: filter === item ? "#7B53A1" : "#fff",
-                color: filter === item ? "#fff" : "#111827",
-                fontWeight: 600,
-              }}
-            />
-          ))}
+            }
+            onClick={() => {
+              setFilter(item);
+              setPage(1);
+            }}
+            sx={{
+              backgroundColor: filter === item ? "#7B53A1" : "#fff",
+              color: filter === item ? "#fff" : "#111827",
+              fontWeight: FONT_WEIGHT.semiBold
+            }} />
+
+          )}
         </Box>
 
         <TextField
@@ -138,17 +138,17 @@ export default function PatentFilterSection() {
             "& .MuiOutlinedInput-root": {
               borderRadius: "24px",
               backgroundColor: "#F9FAFB",
-              fontSize: { xs: "11px", md: "16px" },
+              fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.bodyLarge }
             },
             "& .MuiInputBase-input::placeholder": {
-              fontSize: { xs: "11px", md: "16px" },
-              opacity: 1,
-            },
-          }}
-        />
+              fontSize: { xs: FONT_SIZE.footnote, md: FONT_SIZE.bodyLarge },
+              opacity: 1
+            }
+          }} />
+        
       </Box>
 
-      <Typography sx={{ fontSize: "12px", color: "#777", mb: 6 }}>
+      <Typography sx={{ fontSize: FONT_SIZE.caption, color: "#777", mb: 6 }}>
         Showing {filteredPatents.length} of {patentsData.length} patents · 221+ named inventors
       </Typography>
 
@@ -158,261 +158,261 @@ export default function PatentFilterSection() {
           gridTemplateColumns: {
             xs: "1fr",
             sm: "repeat(2, 1fr)",
-            md: "repeat(3, 1fr)",
+            md: "repeat(3, 1fr)"
           },
-          gap: { xs: 3, md: 4 },
-        }}
-      >
-        {paginatedPatents.map((item) => (
-          <Card
-            key={item.id}
-            sx={{
-              width: "100%",
-              maxWidth: { xs: "100%", sm: "450px", md: "351px" },
-              minHeight: { xs: "auto", md: "540px" },
-              borderRadius: "16px",
-              border: "0.8px solid #E5E7EB",
-              boxShadow: "none",
-              mx: "auto",
-            }}
-          >
+          gap: { xs: 3, md: 4 }
+        }}>
+        
+        {paginatedPatents.map((item) =>
+        <Card
+          key={item.id}
+          sx={{
+            width: "100%",
+            maxWidth: { xs: "100%", sm: "450px", md: "351px" },
+            minHeight: { xs: "auto", md: "540px" },
+            borderRadius: "16px",
+            border: "0.8px solid #E5E7EB",
+            boxShadow: "none",
+            mx: "auto"
+          }}>
+          
             <CardContent
-              sx={{
-                p: "24px 24px 24px 12px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                height: "100%",
-                "&:last-child": {
-                  pb: "24px",
-                },
-              }}
-            >
+            sx={{
+              p: "24px 24px 24px 12px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+              height: "100%",
+              "&:last-child": {
+                pb: "24px"
+              }
+            }}>
+            
               <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center"
+              }}>
+              
                 <Chip
-                  label={
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "6px",
-                      }}
-                    >
+                label={
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px"
+                  }}>
+                  
                       {renderFlag(item.type)}
                       <span>
                         {item.type === "US" ? "US Patent" : "SA Patent"}
                       </span>
                     </Box>
+                }
+                size="small"
+                sx={{
+                  height: "24px",
+                  borderRadius: "26843500px",
+                  px: "4px",
+                  backgroundColor:
+                  item.type === "US" ? "#1B0F2A" : "#F59E0B",
+                  color: item.type === "US" ? "#fff" : "#111827",
+                  fontFamily: FONT_FAMILY.body,
+                  fontSize: FONT_SIZE.caption,
+                  fontWeight: FONT_WEIGHT.semiBold,
+                  "& .MuiChip-label": {
+                    px: "12px"
                   }
-                  size="small"
-                  sx={{
-                    height: "24px",
-                    borderRadius: "26843500px",
-                    px: "4px",
-                    backgroundColor:
-                      item.type === "US" ? "#1B0F2A" : "#F59E0B",
-                    color: item.type === "US" ? "#fff" : "#111827",
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    "& .MuiChip-label": {
-                      px: "12px",
-                    },
-                  }}
-                />
+                }} />
+              
 
                 <Typography
-                  sx={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "12px",
-                    lineHeight: "16px",
-                    color: "#737373",
-                  }}
-                >
+                sx={{
+                  fontFamily: FONT_FAMILY.body,
+                  fontWeight: FONT_WEIGHT.regular,
+                  fontSize: FONT_SIZE.caption,
+                  lineHeight: LINE_HEIGHT.extraSmall,
+                  color: "#737373"
+                }}>
+                
                   #{item.id}
                 </Typography>
               </Box>
 
               <Box
-                component="img"
-                src={item.image}
-                alt={item.title}
-                sx={{
-                  width: "100%",
-                  height: { xs: "190px", md: "202px" },
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                }}
-              />
+              component="img"
+              src={item.image}
+              alt={item.title}
+              sx={{
+                width: "100%",
+                height: { xs: "190px", md: "202px" },
+                objectFit: "cover",
+                borderRadius: "8px"
+              }} />
+            
 
               <Box
-                sx={{
-                  minHeight: "90px",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
+              sx={{
+                minHeight: "90px",
+                display: "flex",
+                flexDirection: "column"
+              }}>
+              
                 <Typography
-                  sx={{
-                    width: "100%",
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    fontSize: { xs: "15px", sm: "16px", md: "15px", lg: "18px" },
-                    lineHeight: { xs: "20px", sm: "22px", md: "20px", lg: "23.4px" },
-                    letterSpacing: "-0.45px",
-                    color: "#111827",
-                    mb: "12px",
-                    display: "-webkit-box",
-                    WebkitLineClamp: 3,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                  }}
-                >
+                sx={{
+                  width: "100%",
+                  fontFamily: FONT_FAMILY.body,
+                  fontWeight: FONT_WEIGHT.semiBold,
+                  fontSize: { xs: FONT_SIZE.body, sm: FONT_SIZE.bodyLarge, md: FONT_SIZE.body, lg: FONT_SIZE.lead },
+                  lineHeight: { xs: LINE_HEIGHT.small, sm: "22px", md: LINE_HEIGHT.small, lg: LINE_HEIGHT.baseSmall },
+                  letterSpacing: "-0.45px",
+                  color: "#111827",
+                  mb: "12px",
+                  display: "-webkit-box",
+                  WebkitLineClamp: 3,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden"
+                }}>
+                
                   {item.title}
                 </Typography>
 
                 <Typography
-                  sx={{
-                    mt: "auto",
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: { xs: "10px", md: "12px" },
-                    lineHeight: { xs: "14px", md: "16px" },
-                    color: "#737373",
-                    textTransform: "uppercase",
-                  }}
-                >
+                sx={{
+                  mt: "auto",
+                  fontFamily: FONT_FAMILY.body,
+                  fontSize: { xs: FONT_SIZE.tiny, md: FONT_SIZE.caption },
+                  lineHeight: { xs: "14px", md: LINE_HEIGHT.extraSmall },
+                  color: "#737373",
+                  textTransform: "uppercase"
+                }}>
+                
                   Inventors · {item.inventorCount} Students
                 </Typography>
               </Box>
 
               <Typography
-                sx={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 400,
-                  fontSize: { xs: "12px", sm: "13px", md: "12px", lg: "14px" },
-                  lineHeight: { xs: "18px", sm: "20px", md: "18px", lg: "22.75px" },
-                  color: "#374151",
-                }}
-              >
+              sx={{
+                fontFamily: FONT_FAMILY.body,
+                fontWeight: FONT_WEIGHT.regular,
+                fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.small, md: FONT_SIZE.caption, lg: FONT_SIZE.bodySmall },
+                lineHeight: { xs: LINE_HEIGHT.lessSmall, sm: LINE_HEIGHT.small, md: LINE_HEIGHT.lessSmall, lg: LINE_HEIGHT.mediumSmall },
+                color: "#374151"
+              }}>
+              
                 {item.inventors}
               </Typography>
 
               <Box
-                sx={{
-                  mt: "auto",
-                  display: "flex",
-                  gap: { xs: "12px", sm: "16px", md: "46px" },
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: { xs: "space-between", md: "flex-start" },
-                  flexWrap: "nowrap",
-                }}
-              >
+              sx={{
+                mt: "auto",
+                display: "flex",
+                gap: { xs: "12px", sm: "16px", md: "46px" },
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: { xs: "space-between", md: "flex-start" },
+                flexWrap: "nowrap"
+              }}>
+              
                 <Box
-                  component="a"
-                  href={item.googlePatentLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                    color: "#7B53A1",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                  }}
-                >
+                component="a"
+                href={item.googlePatentLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  color: "#7B53A1",
+                  textDecoration: "none",
+                  cursor: "pointer"
+                }}>
+                
                   <Typography
-                    sx={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: { xs: "12px", sm: "11px", md: "11px", lg: "14px" },
-                      lineHeight: "20px",
-                      color: "#7B53A1",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
+                  sx={{
+                    fontFamily: FONT_FAMILY.accent,
+                    fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.footnote, md: FONT_SIZE.footnote, lg: FONT_SIZE.bodySmall },
+                    lineHeight: LINE_HEIGHT.small,
+                    color: "#7B53A1",
+                    whiteSpace: "nowrap"
+                  }}>
+                  
                     Google Patents
                   </Typography>
 
-                  <NorthEastIcon sx={{ fontSize: { xs: "12px", sm: "14px", md: "14px", lg: "16px" }, color: "#7B53A1" }} />
+                  <NorthEastIcon sx={{ fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#7B53A1" }} />
                 </Box>
 
                 <Box
-                  component="a"
-                  href={item.certificateLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                    color: "#7B53A1",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                  }}
-                >
+                component="a"
+                href={item.certificateLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  color: "#7B53A1",
+                  textDecoration: "none",
+                  cursor: "pointer"
+                }}>
+                
                   <Typography
-                    sx={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: { xs: "12px", sm: "11px", md: "11px", lg: "14px" },
-                      lineHeight: "20px",
-                      color: "#7B53A1",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
+                  sx={{
+                    fontFamily: FONT_FAMILY.accent,
+                    fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.footnote, md: FONT_SIZE.footnote, lg: FONT_SIZE.bodySmall },
+                    lineHeight: LINE_HEIGHT.small,
+                    color: "#7B53A1",
+                    whiteSpace: "nowrap"
+                  }}>
+                  
                     Patent Certificate
                   </Typography>
 
-                  <NorthEastIcon sx={{ fontSize: { xs: "12px", sm: "14px", md: "14px", lg: "16px" }, color: "#7B53A1" }} />
+                  <NorthEastIcon sx={{ fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall, md: FONT_SIZE.bodySmall, lg: FONT_SIZE.bodyLarge }, color: "#7B53A1" }} />
                 </Box>
               </Box>
             </CardContent>
           </Card>
-        ))}
+        )}
       </Box>
 
-      {pageCount > 1 && (
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+      {pageCount > 1 &&
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
           <Pagination
-            count={pageCount}
-            page={page}
-            onChange={(_, value) => {
-              setPage(value);
-              const section = document.getElementById("patent-filter-section");
-              if (section) {
-                const y = section.getBoundingClientRect().top + window.scrollY - 100;
-                window.scrollTo({ top: y, behavior: "smooth" });
-              } else {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-            sx={{
-              "& .MuiPaginationItem-root": {
-                fontWeight: 600,
-                minWidth: { xs: "26px", sm: "32px" },
-                height: { xs: "26px", sm: "32px" },
-                fontSize: { xs: "12px", sm: "14px" },
-                margin: { xs: "0 2px", sm: "0 3px" },
-              },
-              "& .Mui-selected": {
-                backgroundColor: "#7B53A1 !important",
-                color: "#fff",
-              },
-              "& ul": {
-                flexWrap: "nowrap",
-                justifyContent: "center",
-              },
-            }}
-          />
+          count={pageCount}
+          page={page}
+          onChange={(_, value) => {
+            setPage(value);
+            const section = document.getElementById("patent-filter-section");
+            if (section) {
+              const y = section.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            } else {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          sx={{
+            "& .MuiPaginationItem-root": {
+              fontWeight: FONT_WEIGHT.semiBold,
+              minWidth: { xs: "26px", sm: "32px" },
+              height: { xs: "26px", sm: "32px" },
+              fontSize: { xs: FONT_SIZE.caption, sm: FONT_SIZE.bodySmall },
+              margin: { xs: "0 2px", sm: "0 3px" }
+            },
+            "& .Mui-selected": {
+              backgroundColor: "#7B53A1 !important",
+              color: "#fff"
+            },
+            "& ul": {
+              flexWrap: "nowrap",
+              justifyContent: "center"
+            }
+          }} />
+        
         </Box>
-      )}
-    </Container>
-  );
+      }
+    </Container>);
+
 }

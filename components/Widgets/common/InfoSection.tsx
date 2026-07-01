@@ -1,4 +1,4 @@
-"use client";
+"use client";import { FONT_FAMILY, FONT_WEIGHT, FONT_SIZE } from "@/utils/theme";
 
 import { ResearchMentorTextData } from "@/utils/Types";
 import { Box, Container, Typography } from "@mui/material";
@@ -8,7 +8,7 @@ interface CommonTextInfoSectionProps {
 }
 
 export default function InfoSection({
-  data,
+  data
 }: CommonTextInfoSectionProps) {
   return (
     <Container
@@ -17,26 +17,27 @@ export default function InfoSection({
         maxWidth: "1160px",
         mx: "auto",
         px: { xs: 3, sm: 5, lg: 0 },
-        py: { xs: 4, sm: 6, lg: 10 },
-      }}
-    >
+        py: { xs: 4, sm: 6, lg: 10 }
+      }}>
+      
       <Box
         sx={{
           width: "100%",
-          minHeight: { xs: "auto", lg: "674px" },
-        }}
-      >
+          minHeight: { xs: "auto", lg: "674px" }
+        }}>
+        
         <Typography
           sx={{
-            fontFamily: "Work Sans, sans-serif",
-            fontWeight: 600,
-            fontSize: { xs: "24px", sm: "40px", lg: "48px" },
+            textAlign: { xs: "center", sm: "left" },
+            fontFamily: FONT_FAMILY.heading,
+            fontWeight: FONT_WEIGHT.semiBold,
+            fontSize: { xs: FONT_SIZE.titleLarge, sm: FONT_SIZE.sectionHeadingSmall, lg: FONT_SIZE.pageHeadingSmall },
             lineHeight: { xs: "30px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 1, sm: 3, lg: "30px" },
-          }}
-        >
+            mb: { xs: 1, sm: 3, lg: "30px" }
+          }}>
+          
           {data.title}
         </Typography>
 
@@ -48,22 +49,23 @@ export default function InfoSection({
                   key={index}
                   component="div"
                   sx={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 400,
-                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
-                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" }, 
+                    textAlign: { xs: "center", sm: "left" },
+                    fontFamily: FONT_FAMILY.body,
+                    fontWeight: FONT_WEIGHT.regular,
+                    fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",
                     color: "#777777",
                     mb: { xs: 2.5, sm: 3, lg: "26px" },
 
                     "& strong": {
-                      fontWeight: 600,
-                      color: "#111827",
-                    },
+                      fontWeight: FONT_WEIGHT.semiBold,
+                      color: "#111827"
+                    }
                   }}
-                  dangerouslySetInnerHTML={{ __html: item.text }}
-                />
-              );
+                  dangerouslySetInnerHTML={{ __html: item.text }} />);
+
+
             }
 
             if (item.type === "heading") {
@@ -71,45 +73,46 @@ export default function InfoSection({
                 <Typography
                   key={index}
                   sx={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    fontSize: { xs: "16px", sm: "18px", lg: "22px" },
+                    textAlign: { xs: "center", sm: "left" },
+                    fontFamily: FONT_FAMILY.body,
+                    fontWeight: FONT_WEIGHT.semiBold,
+                    fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
                     lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",
                     color: "#111827",
                     mt: { xs: 3, sm: 4, lg: "42px" },
-                    mb: { xs: 1.5, lg: 1 },
-                  }}
-                >
+                    mb: { xs: 1.5, lg: 1 }
+                  }}>
+                  
                   {item.text}
-                </Typography>
-              );
+                </Typography>);
+
             }
 
             return (
               <Box key={index} component="ul" sx={{ m: 0, pl: { xs: "18px", lg: "24px" } }}>
-                {item.items.map((point, pointIndex) => (
-                  <Typography
-                    key={pointIndex}
-                    component="li"
-                    sx={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 400,
-                      fontSize: { xs: "16px", sm: "18px", lg: "22px" },
-                      lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
-                      letterSpacing: "-0.03em",
-                      color: "#777777",
-                      mb: { xs: 1, lg: 0 }, 
-                    }}
-                  >
+                {item.items.map((point, pointIndex) =>
+                <Typography
+                  key={pointIndex}
+                  component="li"
+                  sx={{
+                    fontFamily: FONT_FAMILY.body,
+                    fontWeight: FONT_WEIGHT.regular,
+                    fontSize: { xs: FONT_SIZE.bodyLarge, sm: FONT_SIZE.lead, lg: FONT_SIZE.title },
+                    lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
+                    letterSpacing: "-0.03em",
+                    color: "#777777",
+                    mb: { xs: 1, lg: 0 }
+                  }}>
+                  
                     {point}
                   </Typography>
-                ))}
-              </Box>
-            );
+                )}
+              </Box>);
+
           })}
         </Box>
       </Box>
-    </Container>
-  );
+    </Container>);
+
 }
