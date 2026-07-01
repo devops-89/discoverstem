@@ -42,7 +42,7 @@ export default function MediaCenterPage() {
   const topFeaturedSlugs = [
   "young-minds-big-innovations-discoverstem-marks-innovation-day-2025-with-breakthrough-patentable-ideas",
   "discoverstem-students-learn-research-methodology-from-top-who-scientist-dr-zisis-kozlakidis",
-  "nobel-laureates-meet-discoverstem-innovators"];
+  "nobel-laureates-meet-discoverstem-innovators","grand-finale-of-top-young-innovators-2024-gets-featured-in-leading-media-websites","uvset-our-students-healthcare-innovation-abstract-featured-in-iddb-journal", ];
 
 
   const topFeaturedItems = topFeaturedSlugs.
@@ -84,17 +84,18 @@ export default function MediaCenterPage() {
 
         
           {topFeaturedItems.length > 1 &&
-        <Box
+               <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
+            
+            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" },
             gap: "23px"
           }}>
           
-              {topFeaturedItems.slice(1, 3).map((item: any) =>
+              {topFeaturedItems.slice(1, 5).map((item: any) =>
           <MediaNewsCard key={item.id} item={item} />
           )}
-            </Box>
+        </Box>
         }
         </Container>
       }

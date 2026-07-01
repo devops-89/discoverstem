@@ -22,6 +22,7 @@ export default function RecentPost({ recentPosts }: RecentPostProps) {
       
       <Typography
         sx={{
+          textAlign: { xs: "center", lg: "left" },
           fontFamily: "JUST Sans, Poppins, sans-serif",
           fontWeight: 600,
           fontSize: { xs: "20px", lg: "24px" },

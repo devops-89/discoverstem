@@ -142,7 +142,8 @@ export default function ArticleContent({
             src={article.image}
             alt={article.title}
             fill
-            style={{ objectFit: "cover" }} />
+           
+            style={{ objectFit: "contain" }} />
 
           }
           </Box>
@@ -175,10 +176,9 @@ export default function ArticleContent({
               maxWidth: "100%",
               height: "auto",
               "@media (max-width: 899px)": {
+               
                 width: "100% !important",
                 height: "auto !important",
-                aspectRatio: "16 / 9",
-                objectFit: "cover"
               }
             },
             "& video": {
@@ -188,10 +188,9 @@ export default function ArticleContent({
               maxWidth: "100%",
               height: "auto",
               "@media (max-width: 899px)": {
+                
                 width: "100% !important",
                 height: "auto !important",
-                aspectRatio: "16 / 9",
-                objectFit: "cover",
                 "&::-webkit-media-controls-play-button": {
                   transform: "scale(0.6) !important"
                 },

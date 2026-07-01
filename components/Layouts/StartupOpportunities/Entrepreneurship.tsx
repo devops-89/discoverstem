@@ -12,7 +12,7 @@ export default function EntrepreneurshipFunding() {
     <Container
       maxWidth={false}
       sx={{
-        maxWidth: "1160px",
+        maxWidth: "1159px",
         mx: "auto",
 
         px: { xs: 3, lg: 0 },

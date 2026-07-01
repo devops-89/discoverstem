@@ -15,7 +15,7 @@ export default function SimpleTextSection({ data }: SimpleTextSectionProps) {
       sx={{
         maxWidth: "1160px",
         mx: "auto",
-        px: { xs: 3, lg: "20px "},
+        px: { xs: 3, lg: "0px "},
         py: { xs: 6, lg: 10 }
       }}>
       
