@@ -24,12 +24,12 @@ export default function ImageTextPartnerSection({
       <Box sx={{ width: "100%" }}>
         <Typography
           sx={{
-            // 🔥 FIX: Centers heading on small screens, aligns left on lg screens
-            textAlign: { xs: "center", lg: "left" }, 
+           
+            textAlign: { xs: "left", lg: "left" }, 
             fontFamily: FONT_FAMILY.body,
             fontWeight: 600,
-            fontSize: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
-            lineHeight: { xs: "34px", sm: "38px", md: "46px", lg: "62px" },
+            fontSize: { xs: "22px", sm: "28px", md: "32px", lg: "36px" },
+            lineHeight: { xs: "30px", sm: "38px", md: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#000000",
             mb: { xs: 4, lg: "76px" }
@@ -51,7 +51,7 @@ export default function ImageTextPartnerSection({
             <Typography
               key={index}
               sx={{
-                textAlign: { xs: "center", lg: "left" }, 
+                  textAlign: { xs: "justify", sm: "left" },
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 400,
                 fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "20px" },

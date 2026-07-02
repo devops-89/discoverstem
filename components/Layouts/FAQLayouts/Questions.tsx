@@ -201,6 +201,7 @@ export default function FaqSection() {
                 <Typography
                 sx={{
                   fontFamily: FONT_FAMILY.body,
+                  textAlign: { xs: "justify", md: "left" },
                   fontSize: {
                     xs: "16px",
                     md: "20px"
@@ -216,6 +217,7 @@ export default function FaqSection() {
               {openFaq === index &&
             <Typography
               sx={{
+                textAlign: { xs: "justify", md: "left" },
                 mt: 2,
                 ml: { xs: "36px", md: "36px" },
                 fontFamily: FONT_FAMILY.body,

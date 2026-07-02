@@ -87,9 +87,12 @@ export default function PatentCertificatesShared({
                 onClick={() => setSelectedVideo(item.videoUrl)}
                 sx={{
                   position: "relative",
+                  
+                  // 🔥 FIX: Made it exactly 233.6px everywhere, including mobile!
                   width: "233.6px",
                   maxWidth: "100%",
-                  height: "292px",
+                 
+                  height: { xs: "240px", md: "292px" },
                   borderRadius: "16px",
                   border: "0.8px solid #0000000D",
                   overflow: "hidden",

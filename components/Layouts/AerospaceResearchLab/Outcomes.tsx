@@ -69,7 +69,7 @@ export default function OutcomesSection() {
 
             <Typography
               sx={{
-                textAlign: { xs: "center", sm: "left" },
+                textAlign: { xs: "left", md: "left" },
                 whiteSpace: "pre-line",
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 600,
@@ -85,7 +85,7 @@ export default function OutcomesSection() {
 
             <Typography
               sx={{
-                textAlign: { xs: "center", sm: "left" },
+                textAlign: { xs: "justify", md: "left" },
                 maxWidth: { xs: "100%", lg: "444px" },
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 400,

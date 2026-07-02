@@ -41,7 +41,7 @@ export default function IlmSuccessStorySection() {
             
             <Typography
               sx={{
-                 textAlign: { xs: "center", sm: "left" },
+                 textAlign: { xs: "left", md: "left" },
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 600,
                 fontSize: { xs: "28px", md: "36px", lg: "48px" },
@@ -56,7 +56,7 @@ export default function IlmSuccessStorySection() {
 
             <Typography
               sx={{
-                 textAlign: { xs: "center", sm: "left" },
+                textAlign: { xs: "justify", md: "left" },
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 400,
                 fontSize: { xs: "15px", md: "18px", lg: "22px" },

@@ -23,10 +23,10 @@ export default function HeroSection({ slides }: HeroSectionProps) {
       id="home"
       sx={{
 
-        mt: { xs: 1.5, md: "19px" },
+        mt: { xs: 0.5, md: "19px" },
         mx: "auto",
 
-        /* 🔥 FIX: Ensures there is always a pixel gap on 1024 screens! */
+       
         width: {
           xs: "calc(100% - 24px)",
           md: "calc(100% - 48px)"

@@ -50,7 +50,7 @@ export default function CommonTextSection({
         {data.title &&
         <Typography
           sx={{
-            textAlign: { xs: "center", md: "left" }, 
+             textAlign: { xs: "left", sm: "left" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
 
@@ -80,7 +80,7 @@ export default function CommonTextSection({
             {data.description &&
           <Typography
             sx={{
-              textAlign: { xs: "center", md: "left" }, 
+              textAlign: { xs: "justify", sm: "left" },
               width: "100%",
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
@@ -123,6 +123,7 @@ export default function CommonTextSection({
               sx={{
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 600,
+                textAlign: { xs: "justify", md: "left" },
 
                 fontSize: {
                   xs: "14px",

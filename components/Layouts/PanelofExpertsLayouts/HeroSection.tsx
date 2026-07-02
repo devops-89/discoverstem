@@ -13,7 +13,7 @@ export default function HeroSection() {
     <Box
       sx={{
 
-        mt: { xs: 1.5, md: 2, lg: "18px" },
+        mt: { xs: 0.5, md: 2, lg: "18px" },
         mx: "auto",
         width: "100%",
 

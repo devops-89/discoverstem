@@ -121,8 +121,8 @@ export default function WhatWeDoSection() {
             
   <Box
               sx={{
-                width: { xs: 50, md: 56 },
-                height: { xs: 50, md: 56 },
+                width: { xs: 45, md: 56 },
+                height: { xs: 30, md: 56 },
                 borderRadius: 2,
                 bgcolor:
                 featureIconColors[card.title] ?? "rgba(0,0,0,0.08)",
@@ -161,9 +161,9 @@ export default function WhatWeDoSection() {
               sx={{
                 color: "#4a5565",
                 lineHeight: { xs: 1.6, md: 1.7 },
-                fontSize: { xs: "14px", md: "15px" },
+                fontSize: { xs: "15px", md: "15px" },
                 width: "100%",
-                textAlign: "left",
+                textAlign: { xs: "justify", md: "left" },
                 flex: 1
               }}>
               

@@ -31,7 +31,7 @@ export default function SimpleTextSection({ data }: SimpleTextSectionProps) {
         <Typography
           key={index}
           sx={{
-             textAlign: {xs:"center",sm:"left"},
+             textAlign: { xs: "justify", md: "left" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },

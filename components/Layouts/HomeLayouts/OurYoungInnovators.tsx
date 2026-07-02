@@ -85,7 +85,7 @@ export default function OurYoungInnovators() {
             display: "flex",
             flexDirection: "column",
             alignItems: { xs: "center", md: "flex-start" },
-            textAlign: { xs: "center", md: "left" }
+            textAlign: { xs: "justify", md: "left" }
           }}>
           
           <Typography

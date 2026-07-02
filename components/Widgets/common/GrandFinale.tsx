@@ -77,7 +77,7 @@ export default function GrandFinaleSection({
           fontSize: { xs: "15px", sm: "18px", md: "20px", lg: "22px" },
           lineHeight: { xs: "28px", sm: "34px", md: "38px", lg: "43px" },
           letterSpacing: "-0.03em",
-          textAlign: "center",
+           textAlign: { xs: "justify", md: "center" }, 
           color: "#777777",
 
           "& strong": {

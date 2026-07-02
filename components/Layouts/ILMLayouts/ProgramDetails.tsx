@@ -31,7 +31,7 @@ export default function ProgramDetailsSection() {
             lineHeight: { xs: "38px", sm: "46px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-             textAlign: { xs: "center", sm: "left" }
+             textAlign: { xs: "left", sm: "left" }
           }}>
           
           {data.title}
@@ -39,7 +39,7 @@ export default function ProgramDetailsSection() {
 
         <Typography
           sx={{
-            textAlign: { xs: "center", sm: "left" },
+          textAlign: { xs: "justify", md: "left" },
             whiteSpace: "pre-line",
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,

@@ -25,7 +25,7 @@ const FounderAwards = () => {
           letterSpacing: "-0.02em",
           color: "#111827",
           mb: { xs: 3, md: 8 },
-          textAlign: { xs: "center", md: "left" } 
+          textAlign: { xs: "justify", md: "left" },
         }}>
         
         Awards & Honors
@@ -42,7 +42,7 @@ const FounderAwards = () => {
                 lineHeight: LINE_HEIGHT.extraLarge,
                 color: "#474A55",
                 mb: { xs: 3, md: 5 },
-                textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "justify", md: "left" },
               }}>
               
               {mirzaFaizan.awards.leftTitle}
@@ -96,7 +96,7 @@ const FounderAwards = () => {
                 color: "#474A55",
                 mb: { xs: 3, lg: "38px" },
               
-                textAlign: { xs: "center", md: "left" }
+                textAlign: { xs: "justify", md: "left" },
               }}>
               
               {mirzaFaizan.awards.rightTitle}

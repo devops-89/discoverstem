@@ -22,7 +22,7 @@ export default function StudentStories() {
       <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1 }}>
         <Typography
           sx={{
-             textAlign: { xs: "center", sm: "left" },
+             textAlign: { xs: "left", sm: "left" },
             width: { xs: "100%", lg: "309px" },
             height: { xs: "auto", lg: "43px" },
             fontFamily: FONT_FAMILY.body,
@@ -38,7 +38,7 @@ export default function StudentStories() {
       </Stack>
       <Typography
         sx={{
-           textAlign: { xs: "center", sm: "left" },
+           textAlign: { xs: "left", sm: "left" },
           fontFamily: FONT_FAMILY.heading,
           width: { xs: "100%", lg: "546px" },
           height: { xs: "auto", lg: "62px" },

@@ -29,7 +29,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
           sx={{
             width: "100%",
             maxWidth: "1160px",
-             textAlign: { xs: "center", md: "left" }, 
+             textAlign: { xs: "left", md: "left" }, 
             minHeight: { xs: "auto", lg: "155px" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
@@ -48,7 +48,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
        
         <Typography
           sx={{
-             textAlign: { xs: "center", md: "left" }, 
+             textAlign: { xs: "left", md: "left" }, 
             width: { xs: "100%", lg: "330px" },
             height: { xs: "auto", lg: "37px" },
             fontFamily: FONT_FAMILY.accent,
@@ -184,6 +184,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               sx={{
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 400,
+                textAlign: { xs: "justify", sm: "left" },
                 fontSize: { xs: "16px", md: "18px", lg: "20px" },
                 lineHeight: { xs: "28px", md: "34px", lg: "43px" },
                 letterSpacing: "-0.03em",
@@ -212,6 +213,7 @@ export default function StartupDetail({ data }: StartupDetailProps) {
               key={index}
               sx={{
                 fontFamily: FONT_FAMILY.body,
+                textAlign: { xs: "justify", sm: "left" },
                 fontWeight: 400,
                 fontSize: { xs: "16px", md: "18px", lg: "20px" },
                 lineHeight: { xs: "28px", md: "34px", lg: "43px" },

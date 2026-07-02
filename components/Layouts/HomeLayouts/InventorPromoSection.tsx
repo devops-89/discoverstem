@@ -130,6 +130,7 @@ export default function InventorPromoSection() {
                   <Typography
                   variant="h2"
                   sx={{
+                    
                     fontFamily: "var(--font-geist-sans), sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: 22, sm: 30, md: 40, lg: 48 },
@@ -146,6 +147,7 @@ export default function InventorPromoSection() {
                   variant="body1"
                   sx={{
                     fontFamily: "var(--font-geist-sans), sans-serif",
+                    textAlign:{ xs:"justify", md:"left"},
                     fontSize: { xs: 14, sm: 16, md: 18, lg: 20 },
                     color: "#333",
                     lineHeight: 1.6,

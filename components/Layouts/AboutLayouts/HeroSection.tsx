@@ -19,7 +19,7 @@ export default function HeroSection() {
           lg: "1403px"
         }, 
         height: { xs: '450px', sm: '550px', md: '80vh', lg: '100vh' },
-        mt: { xs: 1.5, md: 2 },
+        mt: { xs: 0.5, md: 2 },
         mx: "auto",
         borderRadius: { xs: '14px', md: '20px' },
         overflow: 'hidden' 

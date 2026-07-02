@@ -34,7 +34,7 @@ export default function HeroSection() {
     <Box
       id="home"
       sx={{
-        mt: { xs: 1.5, md: 2 },
+        mt: { xs: 0.5, md: 2 },
         mx: "auto",
         width: "100%",
         maxWidth: {

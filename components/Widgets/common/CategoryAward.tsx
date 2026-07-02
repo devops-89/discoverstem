@@ -107,6 +107,7 @@ export default function AccordionSection({
                     fontSize: { xs: "15px", md: "16px", lg: "18px" },
                     lineHeight: "26px",
                     letterSpacing: "-0.03em",
+                    
                     color: "#000000"
                   }}>
                   

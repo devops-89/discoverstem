@@ -64,7 +64,7 @@ const FounderSection = () => {
             pt: { xs: 0, md: 3, lg: "42px" },
             display: "flex",
             flexDirection: "column",
-            textAlign: { xs: "center", md: "left" } 
+            textAlign: { xs: "justify", md: "left" },
           }}>
           
           

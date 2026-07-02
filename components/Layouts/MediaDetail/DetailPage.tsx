@@ -47,7 +47,8 @@ export default function ArticleContent({
 
         <Typography
           sx={{
-            textAlign: { xs: "center", md: "left" },
+          
+            textAlign: { xs: "justify", md: "left" },
             color: "#7B53A1",
             fontSize: { xs: "22px", md: "30px", lg: "36px" },
             fontWeight: 600,
@@ -60,7 +61,8 @@ export default function ArticleContent({
 
         <Typography
           sx={{
-            textAlign: { xs: "center", md: "left" },
+        
+            textAlign: { xs: "left", md: "left" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
             fontSize: { xs: "20px", md: "30px", lg: "36px" },
@@ -73,7 +75,7 @@ export default function ArticleContent({
           {article.title}
         </Typography>
 
-        <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, alignItems: "center", gap: 2, mb: 5 }}>
+        <Box sx={{ display: "flex", justifyContent: { xs: "flex-start", md: "flex-start" }, alignItems: "center", gap: 2, mb: 5 }}>
           <Avatar
             sx={{
               width: 40,
@@ -102,7 +104,8 @@ export default function ArticleContent({
 
         <Typography
           sx={{
-            textAlign: { xs: "center", md: "left" },
+          
+            textAlign: { xs: "justify", md: "left" },
             fontFamily: FONT_FAMILY.body,
             fontSize: { xs: "16px", md: "18px", lg: "20px" },
             lineHeight: { xs: "28px", md: "30px", lg: "32px" },
@@ -152,7 +155,8 @@ export default function ArticleContent({
         <Typography
           component="div"
           sx={{
-            textAlign: { xs: "center", md: "left" }, 
+           
+            textAlign: { xs: "justify", md: "left" },
             fontFamily: FONT_FAMILY.body,
             fontSize: { xs: "16px", md: "18px", lg: "20px" },
             lineHeight: { xs: "28px", md: "30px", lg: "32px" },
@@ -212,7 +216,7 @@ export default function ArticleContent({
 
             "& h1, & h2, & h3, & h4, & h5, & h6": { color: "#000", fontWeight: 600, mt: { xs: 3, md: 4 }, mb: { xs: 1, md: 2 } },
             
-            
+           
             "& ul, & ol": { textAlign: "left", pl: 3, mb: { xs: 2, md: 3 } },
 
             "& li": {

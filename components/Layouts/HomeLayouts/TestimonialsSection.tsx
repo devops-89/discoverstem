@@ -238,6 +238,7 @@ export default function TestimonialsSection() {
                     sx={{
                       fontFamily: FONT_FAMILY.heading,
                       fontWeight: 500,
+                      textAlign:{ xs:"justify", md:"left"},
                       fontSize: { xs: "14px", sm: "16px", md: "21px", lg: "28px" },
                       lineHeight: { xs: "18px", md: "25px", lg: "33px" },
                       textTransform: "uppercase",
@@ -255,6 +256,7 @@ export default function TestimonialsSection() {
                       width: { xs: "100%", md: "420px", lg: "559px" },
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 400,
+                      textAlign:{ xs:"justify", md:"left"},
                       fontSize: { xs: "15px", sm: "16px", md: "16px", lg: "22px" },
                       lineHeight: { xs: "24px", sm: "28px", md: "26px", lg: "34px" },
                       color: "#060606",

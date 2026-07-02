@@ -51,7 +51,7 @@ export default function OtherProgramsSection({
 
         <Typography
           sx={{
-             textAlign: { xs: "center", sm: "left" },
+             textAlign: { xs: "left", sm: "left" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
             fontSize: { xs: "22px", sm: "36px", lg: "48px" },
@@ -99,8 +99,8 @@ export default function OtherProgramsSection({
             
               <Box
               sx={{
-                width: { xs: "40px", lg: "48px" }, // Shrunk slightly for mobile
-                height: { xs: "40px", lg: "48px" }, // Shrunk slightly for mobile
+                width: { xs: "40px", lg: "48px" }, 
+                height: { xs: "40px", lg: "48px" }, 
                 borderRadius: "14px",
                 background:
                 "linear-gradient(135deg, #7B53A1 0%, #EE4823 100%)",
@@ -114,7 +114,7 @@ export default function OtherProgramsSection({
                 sx={{
                   fontFamily: FONT_FAMILY.accent,
                   fontWeight: 700,
-                  fontSize: { xs: "14px", lg: "16px" }, // Shrunk for mobile
+                  fontSize: { xs: "14px", lg: "16px" }, 
                   lineHeight: { xs: "20px", lg: "24px" },
                   color: "#FFFFFF"
                 }}>
@@ -125,9 +125,10 @@ export default function OtherProgramsSection({
 
               <Typography
               sx={{
+                
                 fontFamily: FONT_FAMILY.body,
                 fontWeight: 600,
-                fontSize: { xs: "16px", lg: "18px" }, // Shrunk for mobile
+                fontSize: { xs: "16px", lg: "18px" }, 
                 lineHeight: { xs: "24px", lg: "27px" },
                 letterSpacing: "-0.45px",
                 color: "#171717"
@@ -139,11 +140,12 @@ export default function OtherProgramsSection({
 
             <Typography
             sx={{
+              textAlign: { xs: "justify", md: "left" },
               maxWidth: "538.4px",
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
-              fontSize: { xs: "14px", lg: "16px" }, // Shrunk for mobile
-              lineHeight: { xs: "22px", lg: "26px" }, // Shrunk for mobile
+              fontSize: { xs: "14px", lg: "16px" }, 
+              lineHeight: { xs: "22px", lg: "26px" }, 
               color: "#404040",
               flexGrow: 1,
               mb: "24px"

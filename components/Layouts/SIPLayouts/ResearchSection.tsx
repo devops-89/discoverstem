@@ -39,7 +39,7 @@ export default function ResearchSection() {
       <Box sx={{ mb: 4 }}>
         <Typography
           sx={{
-             textAlign: { xs: "center", md: "left" },
+            textAlign: { xs: "justify", md: "left" },
             fontFamily: FONT_FAMILY.heading,
             fontSize: { xs: "22px", sm: "28px", lg: "48px" },
             fontWeight: 600,
@@ -54,7 +54,7 @@ export default function ResearchSection() {
 
         <Typography
           sx={{
-             textAlign: { xs: "center", md: "left" },
+            textAlign: { xs: "justify", md: "left" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             letterSpacing: "-0.03em",

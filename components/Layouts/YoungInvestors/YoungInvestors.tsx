@@ -35,7 +35,7 @@ export default function CenterDescriptionSection() {
             lg: "43px"
           },
           letterSpacing: "-0.03em",
-          textAlign: "center",
+        textAlign: { xs: "justify", sm: "center" },
           color: "#777777",
           whiteSpace: "pre-line"
         }}>

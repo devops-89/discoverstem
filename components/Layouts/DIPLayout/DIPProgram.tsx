@@ -43,11 +43,12 @@ export default function DipProgramDetailsSection() {
             key={index}
             component="div"
             sx={{
+              textAlign: { xs: "justify", md: "center" },
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
               fontSize: { xs: "15px", sm: "18px", lg: "22px" },
               lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
-              textAlign: "center",
+              
               letterSpacing: "-0.03em",
               color: "#777777",
               mb: index === data.content.length - 1 ? 0 : { xs: 3, sm: 4, lg: "43px" },

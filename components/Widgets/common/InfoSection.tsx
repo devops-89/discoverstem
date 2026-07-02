@@ -28,14 +28,14 @@ export default function InfoSection({
         
         <Typography
           sx={{
-            textAlign: { xs: "center", sm: "left" },
+            textAlign: { xs: "left", sm: "left" },
             fontFamily: FONT_FAMILY.heading,
             fontWeight: 600,
             fontSize: { xs: "24px", sm: "40px", lg: "48px" },
             lineHeight: { xs: "30px", sm: "52px", lg: "62px" },
             letterSpacing: "-0.03em",
             color: "#111827",
-            mb: { xs: 1, sm: 3, lg: "30px" }
+            mb: { xs: 3, sm: 3, lg: "30px" }
           }}>
           
           {data.title}
@@ -49,7 +49,7 @@ export default function InfoSection({
                   key={index}
                   component="div"
                   sx={{
-                    textAlign: { xs: "center", sm: "left" },
+                    textAlign: { xs: "justify", md: "left" },
                     fontFamily: FONT_FAMILY.body,
                     fontWeight: 400,
                     fontSize: { xs: "16px", sm: "18px", lg: "22px" },
@@ -73,7 +73,7 @@ export default function InfoSection({
                 <Typography
                   key={index}
                   sx={{
-                    textAlign: { xs: "center", sm: "left" },
+                    textAlign: { xs: "justify", md: "left" },
                     fontFamily: FONT_FAMILY.body,
                     fontWeight: 600,
                     fontSize: { xs: "16px", sm: "18px", lg: "22px" },
@@ -98,6 +98,7 @@ export default function InfoSection({
                   sx={{
                     fontFamily: FONT_FAMILY.body,
                     fontWeight: 400,
+                    textAlign: { xs: "justify", md: "left" },
                     fontSize: { xs: "16px", sm: "18px", lg: "22px" },
                     lineHeight: { xs: "28px", sm: "34px", lg: "43px" },
                     letterSpacing: "-0.03em",

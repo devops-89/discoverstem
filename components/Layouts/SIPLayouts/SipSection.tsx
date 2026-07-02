@@ -33,7 +33,7 @@ export default function SipSection() {
               letterSpacing: "-0.03em",
               color: "#111827",
               mb: { xs: 3, lg: 5 },
-              textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "left", md: "left" }
             }}>
             
             {sipData.title}
@@ -50,7 +50,7 @@ export default function SipSection() {
               letterSpacing: "-0.01em",
               color: "#111827",
               whiteSpace: { xs: "normal", lg: "nowrap" },
-              textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "left", md: "left" },
             }}>
         A{" "}
         <Box component="span" sx={{ color: "#111827", fontWeight: 700 }}>
@@ -78,7 +78,7 @@ export default function SipSection() {
               letterSpacing: "-0.03em",
               color: "#777777",
               lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
-              textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "justify", md: "left" },
             }}>
             
             {sipData.description1}
@@ -95,7 +95,7 @@ export default function SipSection() {
               letterSpacing: "-0.03em",
               color: "#777777",
               lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
-              textAlign: { xs: "center", md: "left" }
+             textAlign: { xs: "justify", md: "left" },
             }}>
             
             {sipData.description2}
@@ -138,7 +138,7 @@ export default function SipSection() {
             letterSpacing: "-0.03em",
             color: "#111827",
             mb: { xs: 3, lg: 5 },
-            textAlign: { xs: "center", md: "left" }
+        textAlign: { xs: "justify", md: "left" },
           }}>
           
         {sipData.statsTitle}
@@ -155,7 +155,7 @@ export default function SipSection() {
             lineHeight: { xs: "26px", sm: "32px", lg: "43px" },
             letterSpacing: "-0.03em",
             mb: { xs: 3, lg: 6 },
-            textAlign: { xs: "center", md: "left" }
+           textAlign: { xs: "justify", md: "left" },
           }}>
           
         {sipData.statsDescription}

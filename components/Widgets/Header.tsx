@@ -73,7 +73,7 @@ export default function Header() {
       <Box
         sx={{
           position: "fixed",
-          top: 32,
+        top: {xs: 10, md:32},
           left: 0,
           right: 0,
           zIndex: 100,

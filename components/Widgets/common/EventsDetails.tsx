@@ -51,7 +51,7 @@ export default function ContentSection({
               lg: "43px"
             },
             letterSpacing: "-0.03em",
-            textAlign: { xs: "center", md: "left" }, 
+            textAlign: { xs: "justify", md: "left" },
             color: "#777777",
 
             "& strong": {

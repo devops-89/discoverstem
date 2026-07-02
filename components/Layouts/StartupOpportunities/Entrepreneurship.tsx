@@ -35,14 +35,16 @@ export default function EntrepreneurshipFunding() {
           <Typography
             component="div"
             sx={{
-              textAlign: { xs: "center", lg: "left" },
+              
+              textAlign: { xs: "left", md: "center", lg: "left" },
+              
               mx: { xs: "auto", lg: 0 },
               maxWidth: "702px",
               fontFamily: FONT_FAMILY.heading,
               fontWeight: 600,
 
-              fontSize: { xs: "28px", md: "32px", lg: "36px" },
-              lineHeight: { xs: "36px", md: "40px", lg: "41px" },
+              fontSize: { xs: "24px", md: "32px", lg: "36px" },
+              lineHeight: { xs: "30px", md: "40px", lg: "41px" },
               letterSpacing: "-0.9px",
               color: "#171717",
               mb: "18px",
@@ -58,7 +60,9 @@ export default function EntrepreneurshipFunding() {
           <Typography
             sx={{
               maxWidth: "687px",
-              textAlign: { xs: "center", lg: "left" },
+            
+              textAlign: { xs: "justify", lg: "left" },
+              
               mx: { xs: "auto", lg: 0 },
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
@@ -73,6 +77,9 @@ export default function EntrepreneurshipFunding() {
 
           <Box
             sx={{
+         
+              maxWidth: "687px",
+              mx: { xs: "auto", lg: 0 },
               display: "grid",
               gridTemplateColumns: {
                 xs: "1fr",
@@ -114,7 +121,8 @@ export default function EntrepreneurshipFunding() {
                   fontWeight: 400,
                   fontSize: { xs: "13px", lg: "14px" },
                   lineHeight: "20px",
-                  color: "#262626"
+                  color: "#262626",
+                  textAlign: "left" 
                 }}>
                 
                   {point}
@@ -133,6 +141,7 @@ export default function EntrepreneurshipFunding() {
             borderRadius: "29px",
             overflow: "hidden",
             backgroundColor: "#C4C4C4",
+            
             mx: { xs: "auto", lg: 0 }
           }}>
           

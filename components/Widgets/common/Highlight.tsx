@@ -36,7 +36,7 @@ export default function ImageContentSplitSection({
           <Typography
             key={index}
             sx={{
-               textAlign: { xs: "center", md: "left" }, 
+                textAlign: { xs: "justify", md: "left" }, 
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
               fontSize: { xs: "16px", md: "18px", lg: "20px" },
@@ -111,7 +111,7 @@ export default function ImageContentSplitSection({
           <Typography
             key={index}
             sx={{
-               textAlign: { xs: "center", md: "left" }, 
+              textAlign: { xs: "justify", md: "left" }, 
               fontFamily: FONT_FAMILY.body,
               fontWeight: 400,
               fontSize: { xs: "16px", md: "18px", lg: "20px" },

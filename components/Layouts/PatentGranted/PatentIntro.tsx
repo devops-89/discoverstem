@@ -16,7 +16,7 @@ export default function PatentIntroSection() {
       
       <Typography
         sx={{
-          textAlign: { xs: "center", lg: "left" }, 
+            textAlign: { xs: "justify", sm: "left" },
           fontFamily: FONT_FAMILY.heading,
           fontWeight: 700,
           fontSize: { xs: "28px", sm: "32px", md: "48px" },
@@ -30,7 +30,7 @@ export default function PatentIntroSection() {
 
       <Typography
         sx={{
-          textAlign: { xs: "center", lg: "left" }, 
+            textAlign: { xs: "justify", sm: "left" },
           maxWidth: "1060px",
           fontFamily: FONT_FAMILY.body,
           fontSize: { xs: "15px", sm: "16px", md: "22px" },

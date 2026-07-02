@@ -46,8 +46,8 @@ export default function ImpactQuoteSection() {
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             fontSize: { xs: "22px", sm: "26px", lg: "30px" },
-            lineHeight: { xs: "36px", sm: "42px", lg: "48.75px" },
-            textAlign: "center",
+            lineHeight: { xs: "30px", sm: "42px", lg: "48.75px" },
+           textAlign: "center",
             color: "#171717",
 
             "& span": {

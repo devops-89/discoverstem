@@ -38,7 +38,7 @@ const ContactData = () => {
           width: { xs: "100%", lg: "484px" },
           height: "auto",
           mb: { xs: 4, lg: "45px" },
-          textAlign: { xs: "center", lg: "left" }
+           textAlign: { xs: "justify", md: "left" }, 
         }}>
         
         {contactData.title}
@@ -51,7 +51,7 @@ const ContactData = () => {
           height: "auto",
           whiteSpace: "pre-line",
           mb: { xs: 5, lg: "70px" },
-          textAlign: { xs: "center", lg: "left" }
+           textAlign: { xs: "justify", md: "left" }, 
         }}>
         
         {contactData.description}
@@ -62,7 +62,7 @@ const ContactData = () => {
         key={i}
         sx={{
           mb: { xs: 5, lg: "45px" },
-          textAlign: { xs: "center", lg: "left" }
+          textAlign: { xs: "justify", md: "left" }, 
         }}>
         
           <Typography
@@ -89,7 +89,7 @@ const ContactData = () => {
         sx={{
           ...descStyle,
           whiteSpace: "pre-line",
-          textAlign: { xs: "center", lg: "left" }
+          textAlign: { xs: "justify", md: "left" }, 
         }}>
         
         {contactInfoSessionNote}

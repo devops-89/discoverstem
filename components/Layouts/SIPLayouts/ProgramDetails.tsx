@@ -28,7 +28,7 @@ export default function ProgramDetails() {
           letterSpacing: "-0.03em",
           color: "#111827",
           mb: { xs: 2, lg: 4 },
-          textAlign: { xs: "center", md: "left" }
+          textAlign: { xs: "justify", md: "left" },
         }}>
         
           {programDetailsData.title}
@@ -48,7 +48,7 @@ export default function ProgramDetails() {
           color: "#777777",
           whiteSpace: "pre-line",
           mb: { xs: 6, lg: 10 },
-          textAlign: { xs: "center", md: "left" }
+          textAlign: { xs: "justify", md: "left" },
         }}>
         
           {programDetailsData.description}
@@ -111,8 +111,8 @@ export default function ProgramDetails() {
                 mt: { xs: 2, lg: 4 },
                 fontSize: { xs: "16px", lg: "18px" },
                 color: "#777777",
-                // 🔥 FIX: Centered card description on small screens
-                textAlign: { xs: "center", md: "left" }
+               
+               textAlign: { xs: "justify", md: "left" },
               }}>
               
                   {card.description}
@@ -129,7 +129,7 @@ export default function ProgramDetails() {
                 mt: 1,
                 fontSize: { xs: "16px", lg: "18px" },
                 color: "#777777",
-                textAlign: { xs: "center", md: "left" }
+                textAlign: { xs: "justify", md: "left" },
               }}>
               
                   <Box component="span" sx={{ color: "#000", fontWeight: 600 }}>
@@ -150,7 +150,7 @@ export default function ProgramDetails() {
                 mt: { xs: 2, lg: 4 },
                 fontSize: { xs: "16px", lg: "18px" },
                 color: "#7B53A1",
-                // 🔥 FIX: Centered card footer on small screens
+                
                 textAlign: { xs: "center", md: "left" }
               }}>
               

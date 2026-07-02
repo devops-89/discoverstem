@@ -34,7 +34,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
             letterSpacing: "-0.03em",
             color: "#000",
             mb: { xs: 3, md: 8 },
-            textAlign: { xs: "center", md: "left" }
+          textAlign: { xs: "left", md: "left" },
           }}>
           
           {data.about.heading}
@@ -54,7 +54,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
               letterSpacing: "-0.03em",
               color: "#777777",
               mb: { xs: 3, md: 4 },
-              textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "justify", md: "left" },
             }}>
             
               {item}
@@ -86,7 +86,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
           letterSpacing: "-0.03em",
           color: "#000",
           mb: { xs: 3, md: 4 },
-          textAlign: { xs: "center", md: "left" }
+         textAlign: { xs: "justify", md: "left" },
         }}>
         
         {section.title}
@@ -104,7 +104,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
           letterSpacing: "-0.03em",
           color: "#777777",
           mb: section.image || section.points.length ? { xs: 3, md: 4 } : 0,
-          textAlign: { xs: "center", md: "left" }
+          textAlign: { xs: "justify", md: "left" },
         }}>
         
         {section.description}

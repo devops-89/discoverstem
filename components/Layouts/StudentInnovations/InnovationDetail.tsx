@@ -27,7 +27,7 @@ export default function CenterTextSection() {
         
         <Typography
           sx={{
-            textAlign: "center",
+              textAlign: { xs: "justify", sm: "center" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
@@ -42,7 +42,7 @@ export default function CenterTextSection() {
         <Typography
           sx={{
 
-            textAlign: "center",
+           textAlign: { xs: "justify", sm: "center" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
@@ -56,7 +56,7 @@ export default function CenterTextSection() {
 
         <Typography
           sx={{
-            textAlign: "center",
+           textAlign: { xs: "justify", sm: "center" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
@@ -71,7 +71,7 @@ export default function CenterTextSection() {
         <Typography
           sx={{
 
-            textAlign: "center",
+           textAlign: { xs: "justify", sm: "center" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             fontSize: { xs: "15px", sm: "16px", md: "18px", lg: "22px" },
