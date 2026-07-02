@@ -1,5 +1,5 @@
 "use client";
-import { FONT_FAMILY } from "@/utils/theme";
+
 import { MediaNewsItem } from "@/utils/Types";
 import { Avatar, Box, Container, Typography } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
@@ -13,7 +13,7 @@ interface ArticleContentProps {
 
 export default function ArticleContent({
   article,
-  recentPosts
+  recentPosts,
 }: ArticleContentProps) {
   const videoMatch = article.content.match(/src=["'](https:\/\/www\.youtube\.com\/embed\/[^"']+)["']/);
   const videoUrl = article.videoUrl || (videoMatch ? videoMatch[1] : null);
@@ -24,78 +24,76 @@ export default function ArticleContent({
       sx={{
         maxWidth: "1140px",
         mx: "auto",
-
+      
         pt: { xs: "70px", lg: "120px" },
         pb: { xs: "70px", lg: "100px" },
-
-        px: { xs: 3, md: 4, lg: 0 }
-      }}>
-      
+   
+        px: { xs: 3, md: 4, lg: 0 },
+      }}
+    >
       <Box sx={{ width: "100%" }}>
         
         <Box
           sx={{
             display: { xs: "none", lg: "block" },
             float: "right",
-            ml: "44px",
-            mb: "44px",
-            width: "420px"
-          }}>
-          
+            ml: "44px", 
+            mb: "44px", 
+            width: "420px",
+          }}
+        >
           <RecentPost recentPosts={recentPosts} />
         </Box>
 
         <Typography
           sx={{
-          
             textAlign: { xs: "justify", md: "left" },
             color: "#7B53A1",
-            fontSize: { xs: "22px", md: "30px", lg: "36px" },
+             fontSize: { xs: "22px", md: "30px", lg: "36px" },
             fontWeight: 600,
             mb: 3,
-            textTransform: "uppercase"
-          }}>
-          
+            textTransform: "uppercase",
+          }}
+        >
           {article.category}
         </Typography>
 
         <Typography
           sx={{
-        
             textAlign: { xs: "left", md: "left" },
-            fontFamily: FONT_FAMILY.heading,
+            fontFamily: "Work Sans, sans-serif",
             fontWeight: 600,
             fontSize: { xs: "20px", md: "30px", lg: "36px" },
             lineHeight: { xs: "28px", md: "40px", lg: "46px" },
             letterSpacing: "-0.02em",
             color: "#000",
-            mb: 4
-          }}>
-          
+            mb: 4,
+          }}
+        >
           {article.title}
         </Typography>
 
-        <Box sx={{ display: "flex", justifyContent: { xs: "flex-start", md: "flex-start" }, alignItems: "center", gap: 2, mb: 5 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 5 }}>
           <Avatar
             sx={{
               width: 40,
               height: 40,
               bgcolor: "#D9D9D9",
               color: "#7B53A1",
-              flexShrink: 0
-            }}>
-            
+              flexShrink: 0,
+            }}
+          >
             <PersonIcon />
           </Avatar>
 
           <Typography
             sx={{
-              textAlign: { xs: "left", md: "left" },
+              textAlign: { xs: "justify", md: "left" },
               color: "rgba(0,0,0,0.5)",
               fontSize: "14px",
-              lineHeight: "21px"
-            }}>
-            
+              lineHeight: "21px",
+            }}
+          >
             Published on {article.publishedDate}
             <br />
             By {article.author} | DiscoverSTEM
@@ -104,66 +102,63 @@ export default function ArticleContent({
 
         <Typography
           sx={{
-          
             textAlign: { xs: "justify", md: "left" },
-            fontFamily: FONT_FAMILY.body,
+            fontFamily: "Poppins, sans-serif",
             fontSize: { xs: "16px", md: "18px", lg: "20px" },
             lineHeight: { xs: "28px", md: "30px", lg: "32px" },
             letterSpacing: "-0.03em",
             color: "rgba(0,0,0,0.6)",
             mb: { xs: 4, md: 6 },
-            whiteSpace: "pre-line"
-          }}>
-          
+            whiteSpace: "pre-line",
+          }}
+        >
           {article.description}
         </Typography>
 
-        {(videoUrl || article.image) &&
-        <Box
-          sx={{
-            position: "relative",
-            width: "auto",
-            height: { xs: "auto", md: "400px", lg: "380px" },
-            aspectRatio: { xs: "16 / 9", md: "auto" },
-            borderRadius: "12px",
-            overflow: "hidden",
-            mb: { xs: 3, md: 5 }
-          }}>
-          
-            {videoUrl ?
-          <iframe
-            width="100%"
-            height="100%"
-            src={videoUrl}
-            title={article.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ borderRadius: "12px", border: 0 }} /> :
-
-
-          <Image
-            src={article.image}
-            alt={article.title}
-            fill
-           
-            style={{ objectFit: "contain" }} />
-
-          }
+        {(videoUrl || article.image) && (
+          <Box
+            sx={{
+              position: "relative",
+              width: "auto",
+              height: { xs: "auto", md: "400px", lg: "380px" },
+              aspectRatio: { xs: "16 / 9", md: "auto" },
+              borderRadius: "12px",
+              overflow: "hidden",
+              mb: { xs: 3, md: 5 },
+            }}
+          >
+            {videoUrl ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={videoUrl}
+                title={article.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "12px", border: 0 }}
+              />
+            ) : (
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            )}
           </Box>
-        }
+        )}
         
         <Typography
           component="div"
           sx={{
-           
             textAlign: { xs: "justify", md: "left" },
-            fontFamily: FONT_FAMILY.body,
+            fontFamily: "Poppins, sans-serif",
             fontSize: { xs: "16px", md: "18px", lg: "20px" },
             lineHeight: { xs: "28px", md: "30px", lg: "32px" },
             letterSpacing: "-0.03em",
             color: "rgba(0,0,0,0.6)",
-            "& p": { mb: { xs: 2, md: 3 } },
-
+            "& p": { mb: { xs: 2, md: 3 } }, 
+            
             "& .wp-block-spacer": {
               "@media (max-width: 899px)": {
                 height: "16px !important"
@@ -173,28 +168,30 @@ export default function ArticleContent({
             "& figure": { my: { xs: 1, md: 4 }, mx: "auto", textAlign: "center", width: "100%", maxWidth: "100%" },
             "& .wp-block-embed": { my: { xs: 1, md: 4 }, width: "100%", maxWidth: "100%" },
             "& .wp-block-embed__wrapper": { width: "100%" },
-            "& img": {
+            "& img": { 
               display: "block",
-              mx: "auto",
+              mx: "auto", 
               borderRadius: "12px",
               maxWidth: "100%",
               height: "auto",
               "@media (max-width: 899px)": {
-               
                 width: "100% !important",
-                height: "auto !important",
+                height: "auto !important", 
+                aspectRatio: "16 / 9",
+                objectFit: "cover"
               }
             },
-            "& video": {
+            "& video": { 
               display: "block",
-              mx: "auto",
+              mx: "auto", 
               borderRadius: "12px",
               maxWidth: "100%",
               height: "auto",
               "@media (max-width: 899px)": {
-                
                 width: "100% !important",
                 height: "auto !important",
+                aspectRatio: "16 / 9",
+                objectFit: "cover",
                 "&::-webkit-media-controls-play-button": {
                   transform: "scale(0.6) !important"
                 },
@@ -204,32 +201,30 @@ export default function ArticleContent({
               }
             },
 
-            "& iframe": {
+            "& iframe": { 
               display: "block",
               mx: "auto",
               width: "100% !important",
               height: "auto !important",
-              aspectRatio: "16 / 9",
+              aspectRatio: "16 / 9", 
               maxWidth: "100%",
               borderRadius: "12px"
             },
-
-            "& h1, & h2, & h3, & h4, & h5, & h6": { color: "#000", fontWeight: 600, mt: { xs: 3, md: 4 }, mb: { xs: 1, md: 2 } },
             
-           
-            "& ul, & ol": { textAlign: "left", pl: 3, mb: { xs: 2, md: 3 } },
-
-            "& li": {
+            "& h1, & h2, & h3, & h4, & h5, & h6": { color: "#000", fontWeight: 600, mt: { xs: 3, md: 4 }, mb: { xs: 1, md: 2 } },
+            "& ul, & ol": { pl: 3, mb: { xs: 2, md: 3 } },
+            
+            "& li": { 
               mb: 1,
               fontSize: { xs: "16px !important", md: "18px !important" },
               lineHeight: { xs: "26px !important", md: "30px !important" }
             },
-
+            
             "& a": { color: "#7B53A1", textDecoration: "none" },
             "& a:hover": { textDecoration: "underline" }
           }}
-          dangerouslySetInnerHTML={{ __html: article.content }} />
-        
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
 
         <Box sx={{ clear: "both" }} />
       </Box>
@@ -237,6 +232,6 @@ export default function ArticleContent({
       <Box sx={{ display: { xs: "block", lg: "none" }, mt: { xs: 4, md: 6 } }}> 
         <RecentPost recentPosts={recentPosts} />
       </Box>
-    </Container>);
-
+    </Container>
+  );
 }

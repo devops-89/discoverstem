@@ -91,7 +91,7 @@ export default function NewsSection({
             <Box
             component={Link}
             href={`/media/${item.slug}`}
-            target="_blank"
+            // 🔥 REMOVED: target="_blank" removed here so it opens in the same tab
             sx={{
               display: "block",
               height: { xs: "200px", md: "220px", lg: "258px" },
@@ -115,7 +115,7 @@ export default function NewsSection({
             <Typography
             component={Link}
             href={`/media/${item.slug}`}
-            target="_blank"
+            // 🔥 REMOVED: target="_blank" removed here so it opens in the same tab
             sx={{
               display: "block",
               fontFamily: FONT_FAMILY.heading,
