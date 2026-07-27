@@ -1,12 +1,16 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, PaletteColor, PaletteColorOptions } from "@mui/material/styles";
 import React from "react";
 
 declare module "@mui/material/styles" {
   interface Palette {
     extended: any;
+    heading: PaletteColor;
+    highlight: PaletteColor;
   }
   interface PaletteOptions {
     extended?: any;
+    heading?: PaletteColorOptions;
+    highlight?: PaletteColorOptions;
   }
 }
 
