@@ -1,4 +1,6 @@
 "use client";
+import { ASSETS } from "@/assets/images";
+
 
 import { Box } from "@mui/material";
 
@@ -15,15 +17,15 @@ export default function DiscoverStemFoundationLayout(){
     const mySlides = [
     { 
       title: "DiscoverSTEM Foundation",
-      image: "/Images/AboutUs/HeroSection.png" 
+      image: ASSETS.IMAGES.ABOUTUS_HEROSECTION 
     },
     { 
       title: "DiscoverSTEM Foundation",
-      image: "/Images/AboutUs/HeroSection.png" 
+      image: ASSETS.IMAGES.ABOUTUS_HEROSECTION 
     },
     { 
       title: "DiscoverSTEM Foundation",
-      image: "/Images/AboutUs/HeroSection.png" 
+      image: ASSETS.IMAGES.ABOUTUS_HEROSECTION 
     },
   ];
 

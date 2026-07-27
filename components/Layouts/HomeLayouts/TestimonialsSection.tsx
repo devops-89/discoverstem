@@ -1,4 +1,6 @@
 "use client";
+import { ASSETS } from "@/assets/images";
+
 import { FONT_FAMILY } from "@/utils/theme";
 import React, { useRef } from "react";
 import { Container, Stack, Divider, Typography, Box } from "@mui/material";
@@ -12,31 +14,31 @@ const testimonialSlides = [
   name: "Dr. Hashima Hasan",
   role: "Program Scientist, NASA.",
   quote: "What started as a small mentoring program in 2016 has now evolved to one where students have won NASA innovation awards, patented their innovations, and heading towards commercialization. DiscoverSTEM brings to life the true scientific process. Rather than being a bookish activity, the students are encouraged to be inquisitive about real-life situations and seek answers through research.",
-  image: "/Images/Home/Testimonials/impect1dr.hashima.jpg"
+  image: ASSETS.IMAGES.HOME_TESTIMONIALS_IMPECT1DR_HASHIMA
 },
 {
   name: "Dr. Charles A. Rodenberger",
   role: "(NASA Scientist) -Designer of the Apollo Spacecraft -Inventor of Hypervelocity Gun -Researcher for NASA related to meteoroid protection of spacecraft",
   quote: "As a scientist and designer of NASA Apollo spacecraft, I’ve seen intensive brainstorming and innovation activities in our team when we were designing systems to land a man on the moon and safely bring them back! The next time I saw such an activity is at DiscoverSTEM… This is the best STEM & Innovation program I’ve ever seen.",
-  image: "/Images/Home/Testimonials/impect2.jpg"
+  image: ASSETS.IMAGES.HOME_TESTIMONIALS_IMPECT2
 },
 {
   name: "Shreeya Dasikan",
   role: "Inventor of – Vehicle Collision Avoidance System (DiscoverSTEM Innovation Program 2018-19)",
   quote: "My favorite part about the program was when all of us would sit in the meeting room and begin to brainstorm ideas…I deeply enjoyed those moments when we were gathered together, throwing out crazy ideas that only seemed crazy until we made them a reality.",
-  image: "/Images/Home/Testimonials/WhatsApp-Image-2022-01-25-at-11.16.02-AM.jpeg"
+  image: ASSETS.IMAGES.HOME_TESTIMONIALS_WHATSAPP_IMAGE_2022_01_25_AT_11_16_02_AM
 },
 {
   name: "Jim Christensen",
   role: "Director of Education, NASA Kennedy Space Center",
   quote: "One thing which is fascinating is 'How kids can be trained to be innovative’?... Mirza has come up with a step-by-step kind of program and approach to help people create innovations, and I just love that… This program absolutely fascinates me!",
-  image: "/Images/Home/Testimonials/impect3.jpg"
+  image: ASSETS.IMAGES.HOME_TESTIMONIALS_IMPECT3
 },
 {
   name: "Kayla Goodrich",
   role: "DiscoverSTEM Innovation Program 2019-20",
   quote: "My time at Innovation Program has been awesome! It has given me a constructive environment to learn how to think like an innovator and build on other people's ideas. I also love how it challenges me to think outside of the box and innovate. With these skills, my future has no limit!",
-  image: "/Images/Home/Testimonials/WhatsApp-Image-2022-01-25-at-11.16.58-AM.jpeg"
+  image: ASSETS.IMAGES.HOME_TESTIMONIALS_WHATSAPP_IMAGE_2022_01_25_AT_11_16_58_AM
 }];
 
 

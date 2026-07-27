@@ -1,4 +1,6 @@
 "use client";
+import { ASSETS } from "@/assets/images";
+
 import { FONT_FAMILY } from "@/utils/theme";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { Box, Container, Typography } from "@mui/material";
@@ -9,37 +11,37 @@ import { usePathname } from "next/navigation";
 const labsData = [
 {
   title: "Aerospace Research Lab",
-  icon: "/Images/aerospace-lab/aerospace.png",
+  icon: ASSETS.IMAGES.AEROSPACE_LAB_AEROSPACE,
   slug: "aerospace_research_lab",
   color: "#7B53A1"
 },
 {
   title: "AI-ML and Autonomous Tech Lab",
-  icon: "/Images/aerospace-lab/ai-ml.png",
+  icon: ASSETS.IMAGES.AEROSPACE_LAB_AI_ML,
   slug: "ai-autonomous-tech-and-robotics-research-lab",
   color: "#7B53A1"
 },
 {
   title: "Banking, Finance & Fintech Lab",
-  icon: "/Images/aerospace-lab/banking.png",
+  icon: ASSETS.IMAGES.AEROSPACE_LAB_BANKING,
   slug: "banking-finance-fintech-research-lab",
   color: "#7B53A1"
 },
 {
   title: "Energy & Environment Lab",
-  icon: "/Images/aerospace-lab/energy.png",
+  icon: ASSETS.IMAGES.AEROSPACE_LAB_ENERGY,
   slug: "energy-environment-research-lab",
   color: "#7B53A1"
 },
 {
   title: "Genomics, Biotechnology & Health Sciences Lab",
-  icon: "/Images/aerospace-lab/genomics.png",
+  icon: ASSETS.IMAGES.AEROSPACE_LAB_GENOMICS,
   slug: "genomics-biotechnology-health-sciences-research-lab",
   color: "#7B53A1"
 },
 {
   title: "Neurotechnology & Brain-Computer Interface Lab",
-  icon: "/Images/aerospace-lab/brain.png",
+  icon: ASSETS.IMAGES.AEROSPACE_LAB_BRAIN,
   slug: "neurotech-brain-computer-interface",
   color: "#7B53A1"
 }];

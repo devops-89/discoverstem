@@ -1,4 +1,6 @@
 "use client";
+import { ASSETS } from "@/assets/images";
+
 import { FONT_FAMILY } from "@/utils/theme";
 
 import NorthEastIcon from "@mui/icons-material/NorthEast";
@@ -142,7 +144,7 @@ export default function OurYoungInnovators() {
         <>
             <Box
             component="img"
-            src="/Images/Home/YoungInnovators.png"
+            src={ASSETS.IMAGES.HOME_YOUNGINNOVATORS}
             alt="Watch how we make it work"
             sx={{
               position: "absolute",

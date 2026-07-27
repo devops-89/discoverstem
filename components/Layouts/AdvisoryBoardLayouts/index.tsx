@@ -1,3 +1,4 @@
+import { ASSETS } from "@/assets/images";
 import { Box } from "@mui/material";
 
 import AdvisorySection from "./AdvisorySection";
@@ -9,19 +10,19 @@ export default function AdvisoryBoardLayout(){
 
     const advisorySlides = [
     {
-      image: "/Images/AboutUs/HeroSection.png",
+      image: ASSETS.IMAGES.ABOUTUS_HEROSECTION,
       title: "Advisory Board",
       description:
         "A distinguished group of leaders from aerospace, medicine, entrepreneurship, and law — guiding DiscoverSTEM's mission to inspire the next generation of innovators.",
     },
     {
-      image: "/Images/AboutUs/HeroSection.png",
+      image: ASSETS.IMAGES.ABOUTUS_HEROSECTION,
       title: "Advisory Board",
       description:
         "A distinguished group of leaders from aerospace, medicine, entrepreneurship, and law — guiding DiscoverSTEM's mission to inspire the next generation of innovators.",
     },
     {
-      image: "/Images/AboutUs/HeroSection.png",
+      image: ASSETS.IMAGES.ABOUTUS_HEROSECTION,
       title: "Advisory Board",
       description:
         "A distinguished group of leaders from aerospace, medicine, entrepreneurship, and law — guiding DiscoverSTEM's mission to inspire the next generation of innovators.",

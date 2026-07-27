@@ -101,6 +101,15 @@ export const theme = createTheme({
       
       contrastText: "#FFFFFF",
     },
+    heading:{
+      main:" #000000 ",
+      light:"#111827",
+
+    },
+    highlight:{
+     main:"#777777"
+  
+    },
     error: {
       main: "#FF4D2E",
     },

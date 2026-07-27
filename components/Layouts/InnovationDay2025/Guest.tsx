@@ -1,4 +1,6 @@
 "use client";
+import { ASSETS } from "@/assets/images";
+
 import { FONT_FAMILY } from "@/utils/theme";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
@@ -45,7 +47,7 @@ export default function ChiefGuestSection() {
             }}>
             
             <Image
-              src="/Images/finale/chiefguest.png"
+              src={ASSETS.IMAGES.FINALE_CHIEFGUEST}
               alt="Gurvinder Singh Ahluwalia"
               fill sizes="100vw"
               style={{

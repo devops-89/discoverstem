@@ -1,4 +1,6 @@
 "use client";
+import { ASSETS } from "@/assets/images";
+
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,7 +14,7 @@ export default function InventorPromoSection() {
     "How many STEM programs have you heard of that can transform your child into\nan inventor?",
     description:
     "600+ Kids aged 6-18 years from DiscoverSTEM have filed patents for their innovations.\n314 kids got their patents granted in the last two years!",
-    image: "/Images/Home/Image1.jpg",
+    image: ASSETS.IMAGES.HOME_IMAGE1,
     cta: "Imagine your child innovating solutions to\nsome of the world’s biggest problems"
   },
   {
@@ -20,14 +22,14 @@ export default function InventorPromoSection() {
     "How many STEM programs have you heard of that directly impact selection at top universities?",
     description:
     "DiscoverSTEM students are regularly accepted in top universities like Harvard, Stanford, Princeton, Duke,UC Berkeley,Rice University, Cornell & MIT among several others.\n\nImagine your child being in the elite list of the top 0.2% of the world population by innovating patentable solutions",
-    image: "/Images/Home/Image3.jpg",
+    image: ASSETS.IMAGES.HOME_IMAGE3,
     cta: "See our student success stories"
   },
   {
     title: "Are you ready to turn your child into\na prodigy?",
     description:
     "90+ Kids from DiscoverSTEM have won International Innovation Competitions, 3 listed among ’25 under 25 Most Innovative Kids’ in their region.\nImagine your child impacting billions by their futuristic innovations.",
-    image: "/Images/Home/Image2.jpg",
+    image: ASSETS.IMAGES.HOME_IMAGE2,
     cta: "Learn more about our mentorship program"
   },
   {
@@ -35,7 +37,7 @@ export default function InventorPromoSection() {
     "How many STEM programs have you heard of whose students get featured\nin leading media publications?",
     description:
     "100+ DiscoverSTEM Students have featured on National & International Media for their innovations & achievements.\nImagine your child being acknowledged by the entire world for their innovative solutions.",
-    image: "/Images/Home/Image4.jpg",
+    image: ASSETS.IMAGES.HOME_IMAGE4,
     cta: "Start your innovation journey today"
   }];
 
