@@ -23,7 +23,7 @@ export default function StudentStories() {
         <Typography
           sx={{
              textAlign: { xs: "left", sm: "left" },
-            width: { xs: "100%", lg: "309px" },
+            width: { xs: "100%", lg: "340px" },
             height: { xs: "auto", lg: "43px" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,

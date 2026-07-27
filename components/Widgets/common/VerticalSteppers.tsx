@@ -104,7 +104,7 @@ export default function VerticalStepper({
 
             <Box
             sx={{
-              width: { xs: "fit-content", lg: "131px" },
+              width: { xs: "fit-content", lg: "151px" },
               minWidth: { xs: "100px", lg: "131px" },
               height: { xs: "auto", lg: "60px" },
               display: "inline-block",

@@ -43,7 +43,7 @@ export default function ProcessSection() {
         
         <Typography
           sx={{
-            width: { xs: "100%", lg: "160px" },
+            width: { xs: "100%", lg: "200px" },
             fontFamily: FONT_FAMILY.body,
             fontWeight: 400,
             color: "#777777",
