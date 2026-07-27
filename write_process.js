@@ -1,11 +1,11 @@
-
+const fs = require('fs');
+const content = `
 "use client";
 import { FONT_FAMILY } from "@/utils/theme";
 import { stepsData } from "@/assets/Generic-data";
 import {
   Box,
   Container,
-  Divider,
   Stack,
   Typography,
 } from "@mui/material";
@@ -37,7 +37,7 @@ const Colors = {
 
 export default function ProcessSection() {
   return (
-    <Box sx={{ py: { xs: 4, md: 6 }, bgcolor: "#fff" }}>
+    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "#fff" }}>
       <Container
         maxWidth={false}
         sx={{
@@ -51,22 +51,6 @@ export default function ProcessSection() {
           textAlign="center"
           sx={{ mb: { xs: 6, md: 8 } }}
         >
-          <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1, justifyContent: "center" }}>
-            <Divider sx={{ width: 36, borderColor: "#9e9e9e", borderWidth: "1.5px" }} />
-            <Typography
-              sx={{
-                width: { xs: "100%", lg: "200px" }, 
-                fontFamily: FONT_FAMILY.body,
-                fontWeight: 400,
-                color: "#777777",
-                fontSize: { xs: "16px", sm: "18px", lg: "22px" }, 
-                letterSpacing: "0.03em",
-                lineHeight: { xs: "28px", sm: "32px", lg: "43px" }, 
-              }}
-            >
-              Selection Flow
-            </Typography>
-          </Stack>
           <Typography
             sx={{
               fontFamily: FONT_FAMILY.heading,
@@ -94,7 +78,7 @@ export default function ProcessSection() {
           >
             From signing up to presenting your breakthrough idea at the finale,
             this journey helps you build confidence, gain mentorship, and move
-            closer to becoming Americaï¿½s Top Young Innovator.
+            closer to becoming America’s Top Young Innovator.
           </Typography>
         </Stack>
 
@@ -130,7 +114,7 @@ export default function ProcessSection() {
                   "&:hover": {
                     borderColor: Colors.SECONDARY,
                     transform: "translateY(-10px)",
-                    boxShadow: `0 4px 14px ${Colors.BUTTON_SHADOW}`,
+                    boxShadow: \`0 4px 14px \${Colors.BUTTON_SHADOW}\`,
 
                     "& .step-badge": {
                       backgroundColor: Colors.SECONDARY,
@@ -273,3 +257,6 @@ export default function ProcessSection() {
     </Box>
   );
 }
+`;
+fs.writeFileSync('components/Widgets/common/ProccessSelection.tsx', content, 'utf8');
+console.log('Done');

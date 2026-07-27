@@ -139,7 +139,7 @@ export default function SuccessStoriesCards() {
                       fontFamily: FONT_FAMILY.body,
                       fontWeight: 400,
                       fontSize: { xs: "14px", md: "15px", lg: "16px" },
-                      lineHeight: { xs: "24px", md: "28px", lg: "32px" },
+                      lineHeight: { xs: "24px", md: "28px", lg: "30px" },
                       letterSpacing: "-0.03em",
                       color: "#777777",
                       display: "-webkit-box",

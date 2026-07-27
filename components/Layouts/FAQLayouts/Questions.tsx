@@ -100,7 +100,7 @@ export default function FaqSection() {
             alignItems: "center",
             justifyContent: "center",
             gap: 1,
-            flexWrap: { xs: "nowrap", lg: "wrap" },
+            flexWrap: "nowrap",
             flexGrow: { xs: 1, sm: 0 }
           }}>
           
@@ -206,7 +206,8 @@ export default function FaqSection() {
                     xs: "16px",
                     md: "20px"
                   },
-                  lineHeight: "26px",
+                  hyphens: "auto",
+                  lineHeight: "25px",
                   color: openFaq === index ? "#7B53A1" : "#000",
                   transition: "color 0.3s ease"
                 }}>
@@ -221,11 +222,12 @@ export default function FaqSection() {
                 mt: 2,
                 ml: { xs: "36px", md: "36px" },
                 fontFamily: FONT_FAMILY.body,
+                hyphens: "auto",
                 fontSize: {
-                  xs: "15px",
-                  md: "18px"
+                  xs: "14px",
+                  md: "16px"
                 },
-                lineHeight: "32px",
+                lineHeight: "20px",
                 color: "#777777"
               }}>
               

@@ -81,12 +81,12 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
         sx={{
           fontFamily: FONT_FAMILY.heading,
           fontWeight: 600,
-          fontSize: { xs: "24px", sm: "28px", md: "36px" },
-          lineHeight: { xs: "32px", sm: "40px", md: "60px" },
+          fontSize: { xs: "22px", sm: "28px", md: "36px" },
+          lineHeight: { xs: "25px", sm: "40px", md: "60px" },
           letterSpacing: "-0.03em",
           color: "#000",
           mb: { xs: 3, md: 4 },
-         textAlign: { xs: "justify", md: "left" },
+         textAlign: "left",
         }}>
         
         {section.title}
@@ -152,6 +152,7 @@ export default function StemEducationSection({ activeSection }: StemEducationSec
               letterSpacing: "-0.03em",
               fontWeight: 400,
               color: "#777777",
+              textAlign: { xs: "justify", md: "left" },
               mb: 1.5
             }}>
             

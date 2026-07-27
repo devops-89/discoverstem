@@ -1,4 +1,5 @@
-
+const fs = require('fs');
+const content = `
 "use client";
 
 import { FONT_FAMILY } from "@/utils/theme";
@@ -117,11 +118,11 @@ export default function FoundationNav({ active, onChange }: FoundationNavProps) 
                 },
                 // ?? FIX: Scaled the chip height slightly to fit nicely inside the smaller 48px navbar
                 height: { xs: "36px", md: "44px" },
-                px: { xs: "12px", lg: "12px" },
+                px: { xs: "12px", lg: "16px" },
                 borderRadius: "30px",
                 fontFamily: FONT_FAMILY.heading,
                 fontWeight: 500,
-                fontSize: { xs: "13px", sm: "14px", lg: "14px" }, // Scaled gracefully for narrow views
+                fontSize: { xs: "13px", sm: "14px", lg: "15px" }, // Scaled gracefully for narrow views
                 lineHeight: "20px",
                 whiteSpace: "nowrap",
                 flexShrink: 0, // Prevents chips from squishing
@@ -155,3 +156,5 @@ export default function FoundationNav({ active, onChange }: FoundationNavProps) 
     </Container>
   );
 }
+`;
+fs.writeFileSync('components/Layouts/DiscoverStemFoundationLayouts/FoundationNav.tsx', content, 'utf8');
